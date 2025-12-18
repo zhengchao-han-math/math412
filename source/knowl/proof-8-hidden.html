@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">Define <span class="process-math">\(\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}\text{.}\)</span> Then <span class="process-math">\(\psi_{k,l}\in L^{1}[a, b]\)</span> and <span class="process-math">\(\psi_{k,l}(x)\ge \psi_{k,l+1}(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span> <span class="process-math">\(\phi_{k}\)</span> and <span class="process-math">\(\psi_{k,l}\)</span> are no longer necessarily non-negative, but <span class="process-math">\(|\psi_{k,l}(x)|\le g(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Then <span class="process-math">\(\{ g(x)\pm \psi_{k,l}(x)\}\)</span> are non-negative functions in <span class="process-math">\(L^{1}[a, b]\text{,}\)</span> monotone in <span class="process-math">\(l\text{.}\)</span> Therefore, <span class="process-math">\(\lim_{l\to\infty} (g(x)\pm \psi_{k,l}(x)) \in L^{1}[a, b]\text{,}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/MCT.html">
+\begin{equation*}
+\int_{a}^{b}\left( g \pm \lim_{l\to\infty} \psi_{k,l}\right)
+=\lim_{l\to\infty} \int_{a}^{b}\left( g\pm \psi_{k,l}\right),
+\end{equation*}
+</div>
+<div class="para">from which it follows that <span class="process-math">\(\Phi_{k}= \lim_{l\to\infty} \psi_{k,l}\in L^{1}[a, b]\text{,}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/MCT.html">
+\begin{equation*}
+\int_{a}^{b} \Phi_{k} = \lim_{l\to\infty} \int_{a}^{b} \psi_{k,l}.
+\end{equation*}
+</div>
+<div class="para">Note that it follows from <span class="process-math">\(\phi_{k}(x)\to \phi(x)\)</span> <span class="process-math">\(\ a.e.\)</span> that  <span class="process-math">\(\Phi_{k}(x)\to \phi (x)\)</span> <span class="process-math">\(\ a.e.\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span> Therefore by <a href="" class="xref" data-knowl="./knowl/MCT.html" title="Theorem 2.17: Monotone Convergence Theorem">Theorem 2.17</a> <span class="process-math">\(\phi \in L^{1}[a, b]\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We can now apply Fatou Theorem to the sequence of non-negative functions <span class="process-math">\(2 g - |\phi_{k}-\phi| \in L^{1}[a, b]\)</span> to imply</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)
+\le \liminf_{k\to\infty} \int_{a}^{b} \left( 2 g - |\phi_{k}-\phi|\right)
+= \int_{a}^{b} 2g - \limsup_{k\to\infty} \int_{a}^{b} |\phi_{k}-\phi|.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)=2g\text{,}\)</span> it follows that <span class="process-math">\(\limsup_{k\to\infty}  \int_{a}^{b }|\phi_{k}-\phi|=0\text{.}\)</span>
+</div>
+</div></article></body>
+</html>

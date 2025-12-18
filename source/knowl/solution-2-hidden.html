@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">First we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{f(x)-f(0)}{x} = \sum_{k=1}^{\infty} \frac{\cos (kx) -1}{x k^2}= -2  \sum_{k=1}^{\infty} \frac{ \sin^2 (\frac{kx}{2})}{xk^2}= -2x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Note that for <span class="process-math">\(x&gt;0\text{,}\)</span> <span class="process-math">\(x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2\)</span> is a Riemann sum for the improper integral <span class="process-math">\(\int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy\text{,}\)</span> so we expect</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\to 0+} x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2 = \int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy &gt;0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/thm-uniformconvint.html" title="Theorem 1.2.4: Interchange of Limits and Integration">Theorem 1.2.4</a> does not directly apply here. One way to justify the assertion above is to use the divide-and-conquer strategy. For any <span class="process-math">\(\epsilon &gt;0\)</span> given, first we find <span class="process-math">\(L&gt;\epsilon^{-1}\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+\int_{L} ^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">Then, we break the summation into <span class="process-math">\(k \le x^{-1}L\)</span> and <span class="process-math">\(k &gt; x^{-1}L\text{.}\)</span> We estimate</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+x \sum_{k&gt; x^{-1}L} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2 
+\le x^{-1} \sum_{k&gt; x^{-1}L} \frac{1}{k^{2}} \le x^{-1} \int_{x^{-1}L}^{\infty} \frac{dy}{y^{2}}
+\le L^{-1} \le \epsilon.
+\end{equation*}
+</div>
+<div class="para">Finally, the summation <span class="process-math">\(x \sum_{k\le x^{-1}L } \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2\)</span> is a Riemann sum for the proper Riemann integral <span class="process-math">\(\int_0^{L}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy\text{,}\)</span> so as the step size <span class="process-math">\(x\to 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+\left| x \sum_{k\le x^{-1}L } \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2- 
+\int_0^{L}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy \right| &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">This justifies the limiting process above and concludes that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\to 0+}  \frac{f(x)-f(0)}{x} = - 2  \int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy  &lt; 0.
+\end{equation*}
+</div>
+<div class="para">Similarly,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\to 0-}  \frac{f(x)-f(0)}{x} =  2  \int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy  &gt; 0.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(f'(0)\)</span> does not exist. This proves indirectly that the series for <span class="process-math">\(f'(x)\)</span> can't converge uniformly in a neighborhood of <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+</div>
+</div></body>
+</html>

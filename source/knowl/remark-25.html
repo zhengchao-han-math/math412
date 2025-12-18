@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.22</span><span class="period">.</span>
+</h3>
+<div class="para">So far we have not addressed the issue whether <span class="process-math">\(S_{N}[g](x)\)</span> converges to <span class="process-math">\(g(x)\)</span> in the mean square sense, namely whether <span class="process-math">\(\int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> From the above we see that the answer depends	on whether equality holds in the Bessel's inequality. Another possible approach is to show  that there exists a sequence <span class="process-math">\(p_{N}(x)=\sum_{n=-N}^{N}c_{n }' e^{\frac{i nx}{l}}\)</span> such that <span class="process-math">\(\int_{-l}^{l} |g(x)-p_{N}(x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\)</span> and appeal to the Best Approximation Property of the Fourier series. This would be the case if the set of finite linear combination of functions from <span class="process-math">\(\{ e^{\frac{i nx}{l}}\}\)</span> is dense in the mean square norm  in the set of function spaces, such as <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\text{,}\)</span> in which we are interested in making such a Fourier series expansion.</div> <div class="para logical">
+<div class="para">Given any <span class="process-math">\(g\)</span> in <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\text{,}\)</span> using the orthogonality relations we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-l}^{l} |S_{N'}[g](x)-S_{N}[g](x)|^{2}\, dx =l \sum_{n=N}^{N'} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right]
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(N' \gt N\text{.}\)</span> The Bessel's inequality implies then that the sequence <span class="process-math">\(\{ S_{N}[g](x) \}\)</span> is a Cauchy sequence in the mean square norm.  At this point we need the property of completeness of the function space on which we are working. Unfortunately, neither <span class="process-math">\(\cR[-l, l]\)</span> nor <span class="process-math">\(C[-l, l]\)</span> is complete with respect to the mean square norm. The completion of either <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\)</span> turns out to the space of  Lebesgue square integrable functions <span class="process-math">\(L^{2}[-l, l]\text{.}\)</span>  So a more proper discussion on the issue of mean square convergence should be on the complete space <span class="process-math">\(L^{2}[-l, l]\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Without discussing details of Lebesgue integrable functions, we may assume that there exists some <span class="process-math">\(\hat g\in L^{2}[-l, l]\)</span> such that <span class="process-math">\(\int_{-l}^{l} |\hat g-S_{N}[g](x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> We claim the following property:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(g-\hat g, e^{\frac{i mx}{l}})=0 \quad \text{for any $m\in \bbZ$.}
+\end{equation*}
+</div>
+<div class="para">This follows by noting that for any <span class="process-math">\(N\gt m\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(g-S_{N}[g](x), e^{\frac{i mx}{l}})=(g, e^{\frac{i mx}{l}})-(S_{N}[g](x), e^{\frac{i mx}{l}})=2l\left(c_{m}-c_{m}\right)=0,
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(g-\hat g, e^{\frac{i mx}{l}})=(g-S_{N}[g](x), e^{\frac{i mx}{l}})+(S_{N}[g](x)-\hat g, e^{\frac{i mx}{l}})
+= (S_{N}[g](x)-\hat g, e^{\frac{i mx}{l}}),
+\end{equation*}
+</div>
+<div class="para">while by the Cauchy-Schwarz inequality</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert (S_{N}[g](x)-\hat g, e^{\frac{i mx}{l}}) \vert \le \Vert S_{N}[g](x)-\hat g\Vert \Vert e^{\frac{i mx}{l}}\Vert \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(N\to \infty\text{,}\)</span> which shows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(g-\hat g, e^{\frac{i mx}{l}})= 0.
+\end{equation*}
+</div>
+</div> <div class="para">So a key to our question is whether the only function which is orthogonal to all <span class="process-math">\(e^{\frac{i mx}{l}}\)</span> is the <span class="process-math">\(0\)</span> function. This discussion makes sense on a general inner product space.</div></article><span class="incontext"><a href="sec-orthogonal.html#remark-25" class="internal">in-context</a></span>
+</body>
+</html>

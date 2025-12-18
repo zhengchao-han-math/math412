@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">A geometric application of the Implicit Function Theorem.</span>
+</h4>
+<div class="para">Suppose that <span class="process-math">\(\bff(x)\)</span> is a  mapping from a neighborhood of <span class="process-math">\(\bx_0=(x_{01},\ldots, x_{0n})\)</span> in <span class="process-math">\(\mathbb R^n \)</span> into <span class="process-math">\(\mathbb R^m\)</span> (<span class="process-math">\(m \lt  n\)</span>), with <span class="process-math">\(\bff(\bx_0)=\by_0\text{,}\)</span> that it has continuous partial derivatives and the submatrix <span class="process-math">\([\frac{\partial f_i}{\partial x_j}], 1 \le i, j \le m\text{,}\)</span> of the the Jacobian matrix  <span class="process-math">\(\bff_{\bx}(\bx_0)\)</span> invertible. Such an <span class="process-math">\(\bff\)</span> is called an <dfn class="terminology">submersion</dfn> near <span class="process-math">\(\bx_0\)</span>
+</div> <div class="para logical">
+<div class="para">Then by the Implicit Function Theorem there is a neighborhood <span class="process-math">\(V\)</span> of <span class="process-math">\((x_{0 (m+1)},\ldots, x_{0n})\text{,}\)</span> a neighborhood <span class="process-math">\(U\)</span> of <span class="process-math">\((x_{0 1},\ldots, x_{0m})\text{,}\)</span> and a differentiable map <span class="process-math">\(\Phi: V\mapsto U\)</span>  such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bff (\Phi(x_{m+1},\ldots, x_{n}), x_{m+1},\ldots, x_{n})=\by_{0}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\((x_{m+1},\ldots, x_{n})\in V\text{.}\)</span> Furthermore, for any  <span class="process-math">\((x_{m+1},\ldots, x_{n})\in V\text{,}\)</span>  the only solution in <span class="process-math">\(U\times V\)</span> of <span class="process-math">\(\bff(\bx)=\by_{0}\)</span> such that the last <span class="process-math">\((n-m)\)</span>-components of <span class="process-math">\(\bx\)</span> is <span class="process-math">\((x_{m+1},\ldots, x_{n})\)</span> must be given by this <span class="process-math">\((\Phi(x_{m+1},\ldots, x_{n}), x_{m+1},\ldots, x_{n})\text{.}\)</span>
+</div>
+</div> <div class="para">For describing the set of all solutions of <span class="process-math">\({\mathbf f}({\mathbf x})= {\mathbf y}_0 \text{,}\)</span> if <span class="process-math">\({\mathbf f}\)</span> satisfies the assumption that its Jabobian at <em class="emphasis">any solution</em> of <span class="process-math">\({\mathbf f}({\mathbf x})= {\mathbf y}_0 \)</span> is rank <span class="process-math">\(m\text{,}\)</span> then one can apply the Implicit Function Theorem near any solution and conclude that the set of solutions near any single solution is described by a <span class="process-math">\(C^1\)</span> graph over an <span class="process-math">\(n-m\)</span>-dimensional ball. These are examples of what are called <span class="process-math">\(C^1\)</span> manifolds. The simplest such cases are when <span class="process-math">\(m=1\text{,}\)</span> where the condition on the Jacobian becomes the non-vanishing of the gradient vector <span class="process-math">\((D_{1}f({\mathbf x}_{0}), \ldots, D_{n}f({\mathbf x}_{0}))\text{,}\)</span> and the resulting manifold is a piece of a hypersurface.</div> <div class="para logical">
+<div class="para">Here is a simple example of <span class="process-math">\(m=2, n=3\text{:}\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{(x, y, z): x^{2}+y^{2}-z^{2}=1, x -y =c\}
+\end{equation*}
+</div>
+<div class="para">represents the intersection of the hyperboloid <span class="process-math">\(\{(x, y, z): x^{2}+y^{2}-z^{2}=1\)</span> and the vertical plane <span class="process-math">\(\{(x, y, z):  x -y =c\}\text{.}\)</span>  We set <span class="process-math">\(f(x, y, z)= x^{2}+y^{2}-z^{2}\)</span> and <span class="process-math">\(g(x, y, z)=x-y\)</span> and check the rank of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} \frac{\partial f}{\partial x} \amp \frac{\partial f}{\partial y}
+\amp \frac{\partial f}{\partial z} \\
+\frac{\partial g}{\partial x} \amp \frac{\partial g}{\partial y}
+\amp \frac{\partial g}{\partial z} \end{bmatrix}
+=\begin{bmatrix} 2x \amp 2y \amp -2z \\ 1 \amp -1 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\det \begin{bmatrix}  2y \amp -2z \\  -1 \amp 0 \end{bmatrix}=-2z\text{,}\)</span> which is <span class="process-math">\(\ne 0\)</span> whenever <span class="process-math">\(z\ne 0\text{,}\)</span> so if the intersection does not contain any point with <span class="process-math">\(z=0\text{,}\)</span> the level set can be represented in the form of <span class="process-math">\((y, z)=(g(x), h(x))\)</span> for some differentiable <span class="process-math">\(g, h\text{.}\)</span>  The intersection has solutions with <span class="process-math">\(z=0\)</span> only when <span class="process-math">\(c\)</span> is the range <span class="process-math">\([-\sqrt 2, \sqrt 2]\text{.}\)</span> We can  thus conclude that if <span class="process-math">\(c\)</span> is not in such a range, then the intersection can be represented in the form of <span class="process-math">\((y, z)=(g(x), h(x))\)</span> for some differentiable <span class="process-math">\(g, h\text{.}\)</span>The derivatives can be found by  implicit differentiation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2x + 2y \frac{\partial y}{\partial x} - 2 z \frac{\partial z}{\partial x}=0\quad 1-\frac{\partial y}{\partial x}=0.\text{.}
+\end{equation*}
+</div>
+</div> <div class="para">In the above setting one could also apply the Implicit Function Theorem to the <span class="process-math">\((x, z)\)</span> variables to represent the graph as functions of the <span class="process-math">\(y\)</span> variable.</div></article><span class="incontext"><a href="section-19.html#example-11" class="internal">in-context</a></span>
+</body>
+</html>

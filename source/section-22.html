@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Convexity and Some Applications</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="
+	Zheng-Chao Han
+	">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes:</span> <span class="subtitle">Analysis of Functions of Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-21.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_differentiaion.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="exercises-3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="frontmatter.html#abstract-1" class="internal"><span class="title">Abstract</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">1</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="uniformconv.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li><div class="toc-item"><a href="uniformconvprop.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="termwiseintex.html" class="internal"><span class="codenumber">1.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="xlimitdiff.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li><div class="toc-item"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="equicontinuity.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="SW.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Stone-Weierstrass Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="exercises-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_powerseries.html" class="internal"><span class="codenumber">2</span> <span class="title">Power Series</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_psradius.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li><div class="toc-item"><a href="sec_psproperties.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exponential.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li><div class="toc-item"><a href="exe-ps.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Additional Problems</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Fseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSConv.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li><div class="toc-item"><a href="int-diff.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_differentiaion.html" class="internal"><span class="codenumber">4</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_continuity.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-linearmaps.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-17.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-17.html#subsection-differentiation" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsec-chainrule" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsec-diffCrit" class="internal"><span class="codenumber">4.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-contraction.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-19.html#subsec-ift" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section-19.html#subsection-8" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-higherderiv.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="section-22.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-22.html#subsection-9" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-22.html#subsection-10" class="internal"><span class="codenumber">4.8.2</span> <span class="title">Review of properties  of univariate convex  functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-22.html#subsection-11" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Some properties of convex functions of several variables</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="exercises-3.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_integration.html" class="internal"><span class="codenumber">5</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-int-def.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li><div class="toc-item"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="section-22"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Convexity and Some Applications</span>
+</h2>
+<div class="para" id="p-333">Convexity plays an important role in many extremal problems and inequalities. We include this section here to illustrate how some of the continuity and compactness arguments are used in the context of convex functions.</div>
+<section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">Convex sets vs Convex Functions</span>
+</h3>
+<div class="para" id="p-334">The notion of a convex set in <span class="process-math">\(\mathbb R^{n}\)</span> is more general than that of a convex function.</div>
+<article class="definition definition-like" id="definition-19"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.8.1</span><span class="period">.</span>
+</h4>A set <span class="process-math">\(C\)</span> in <span class="process-math">\(\mathbb R^{n}\)</span> is called convex, if for any <span class="process-math">\(\mathbf a, \mathbf b\in C\)</span> and any <span class="process-math">\(t\in \mathbb R, 0\le t \le 1\text{,}\)</span> we have <span class="process-math">\((1-t)\mathbf a + t \mathbf b \in C\text{.}\)</span></article><div class="para" id="p-335">Geometrically, the set <span class="process-math">\(\{(1-t)\mathbf a + t \mathbf b: 0\le t \le 1\}\)</span> is the line segment in <span class="process-math">\(\mathbb R^{n}\)</span> with <span class="process-math">\(\mathbf a, \mathbf b\)</span> as its ends. A convex set needs not have any interior point.</div>
+<article class="definition definition-like" id="definition-20"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.8.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-336">
+<div class="para">A real-valued function <span class="process-math">\(f\)</span> defined on a convex set <span class="process-math">\(C\)</span> is called convex, if for any <span class="process-math">\(\mathbf a, \mathbf b\in C\)</span> and any <span class="process-math">\(t\in \mathbb R, 0\le t \le 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f((1-t)\mathbf a + t \mathbf b)\le (1-t) f(\mathbf a) + t f(\mathbf b).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-337">
+<div class="para">
+<span class="process-math">\(f\)</span> is called strictly convex if we have the strict inequality</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f((1-t)\mathbf a + t \mathbf b)\lt (1-t) f(\mathbf a) + t f(\mathbf b) \text{ for any } 0\lt t \lt 1.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-338">
+<span class="process-math">\(f\)</span> is called concave if <span class="process-math">\(-f\)</span> is convex. Equivalently, the defining inequality above is reversed for a concave function.</div></article><div class="para logical" id="p-339">
+<div class="para">Geometrically, if we construct a line in <span class="process-math">\(\mathbb R^{n}\times \mathbb R\supset C\times \mathbb R\)</span> through the points <span class="process-math">\((\mathbf a, f(\mathbf a)), (\mathbf b, f(\mathbf b))\text{,}\)</span> then it has parametric equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf x=((1-t)\mathbf a + t \mathbf b, (1-t) f(\mathbf a) + t f(\mathbf b)),
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\((1-t) f(\mathbf a) + t f(\mathbf b)\)</span> is the “height of the line above the point” <span class="process-math">\((1-t)\mathbf a + t \mathbf b\text{.}\)</span> When <span class="process-math">\(f\)</span> is convex, <span class="process-math">\(f((1-t)\mathbf a + t \mathbf b)\)</span> stays below the height at <span class="process-math">\((1-t)\mathbf a + t \mathbf b\)</span> of the above line segment for <span class="process-math">\(0\le t\le 1\text{.}\)</span> <a class="external" href="https://www.desmos.com/calculator/mbdd9ymzug" target="_blank">Here</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a> is a Desmos page illustrating this geometric property.</div>
+</div>
+<div class="para" id="p-340">
+<span class="process-math">\(f\)</span> is  a convex function iff the set <span class="process-math">\(\{(\mathbf x, y): \mathbf x\in C, y\ge f(\mathbf x)\}\)</span> in <span class="process-math">\(\mathbb R^{n}\times \mathbb R\text{,}\)</span> called the <dfn class="terminology">epigraph</dfn> of <span class="process-math">\(f\text{,}\)</span> is convex.  Another characterization of a convex function is that for every real number <span class="process-math">\(c\text{,}\)</span> the <dfn class="terminology">sub level set</dfn> of <span class="process-math">\(f\)</span> defined by <span class="process-math">\(\{\mathbf x: f(\mathbf x)\le c\}\)</span> is a convex set.</div>
+<div class="para" id="p-341">Because of this relation, properties of convex functions can often be studied as properties of convex functions. We will later discuss briefly the notion of <dfn class="terminology">supporting hyperplane</dfn> of a convex set and that of the graph of a convex function.</div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Review of properties  of univariate convex  functions</span>
+</h3>
+<div class="para logical" id="p-342">
+<div class="para">The  illustration above in the previous subsection also includes a sketch of the argument that the slope of the secant lines on a convex function of a single variable is an increasing function. Geometrically it seems clear that if <span class="process-math">\(f\)</span> is a convex function of a single variable on an interval that contains <span class="process-math">\(a\lt b \lt c\text{,}\)</span> then <span class="process-math">\(f(c)\)</span> stays above the secant line through <span class="process-math">\((a, f(a), (b, f(b))\text{.}\)</span> This can be derived from the above property of secant lines: for <span class="process-math">\(c&gt;b\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{f(c)-f(a)}{c-a} \ge \frac{f(b)-f(a)}{b-a}  \Leftrightarrow f(c)\ge f(a)+ \frac{f(b)-f(a)}{b-a}(c-a).
+\end{equation*}
+</div>
+<div class="para">These inequalities also hold when <span class="process-math">\(c\lt a\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-343">
+<div class="para">The continuity of a convex function of one variable at an interior point is proved using these bounds by linear functions. Say, <span class="process-math">\(a\)</span> is an interior point. Then there exist <span class="process-math">\(b, c\)</span> in the domain such that <span class="process-math">\(b&gt;a&gt;c\text{,}\)</span> and the above property of secant lines implies that for any <span class="process-math">\(x, b&gt;x&gt;a\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(a)+  \frac{f(c)-f(a)}{c-a}(x-a)\le f(x)\le  f(a)+ \frac{f(b)-f(a)}{b-a}(x-a).
+\end{equation*}
+</div>
+<div class="para">Then the sandwich theorem implies that <span class="process-math">\(f(x)\to f(a)\)</span> as <span class="process-math">\(x\to a+\text{.}\)</span> The direction when <span class="process-math">\(x\to a-\)</span> is done in a similar way.</div>
+</div>
+<article class="question example-like" id="question-1"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-1"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">4.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">How can we extend this argument to higher dimensions?</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-1"><article class="question example-like">A convex function is certainly continuous at an interior point when constrained along any one-dimensional lines, but there are infinitely many lines through any given point. Here we will see some ideas of compactness at play.<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<div class="para" id="p-344">We will assume that the origin is in the interior of the domain of <span class="process-math">\(f\text{;}\)</span> in fact, we will assume the domain of <span class="process-math">\(f\)</span> includes the unit ball centered at the origin,  and describe ideas to prove the continuity of <span class="process-math">\(f\)</span> at the origin.</div> <div class="para logical" id="p-345">
+<div class="para">On key idea is that <em class="emphasis">there exist a finite number of points on the unit sphere</em>, in fact <span class="process-math">\(2n\)</span> points, such that any <span class="process-math">\(\bx\)</span> with sufficiently small <span class="process-math">\(\Vert \bx\Vert\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html" id="mdn-4">
+\begin{align}
+\bx\amp =s\bar \bx \text{ for some
+$s, 0 \le s \le 1$ and}\tag{4.8.1}\\
+\bar\bx\amp = t_{1}\mathbf a_{1}+\cdots+ t_{n}\mathbf a_{n} \text{ 
+for some $t_{i}\ge 0, t_{1}+\cdots+ t_{n}=1$}\text{,}\tag{4.8.2}
+\end{align}
+</div>
+<div class="para">where  <span class="process-math">\(\{\mathbf a_{1}, \ldots, \mathbf a_{n}\}\)</span> are among the <span class="process-math">\(2n\)</span> points on the unit sphere. Technically</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html">
+\begin{equation*}
+(x_{1},x_{2},\ldots, x_{n})=|x_{1}|\tilde \be_{1}+|x_{2}|\tilde\be_{2}+\ldots+|x_{n}|\tilde\be_{n},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\tilde\be_{i}=\text{sgn} (x_{i}) \be_{i}\text{.}\)</span> If we set <span class="process-math">\(s=|x_{1}|+|x_{2}|+\ldots+|x_{n}|\text{,}\)</span> and when <span class="process-math">\((x_{1},x_{2},\ldots, x_{n})\ne (0, 0,\ldots, 0)\text{,}\)</span> <span class="process-math">\(t_{i}=|x_{i}|/s\text{,}\)</span> and <span class="process-math">\(\mathbf a_{i}= \tilde\be_{i}\text{,}\)</span> <span class="process-math">\(\bar\bx=t_{1} \tilde\be_{1}+ t_{2}\tilde\be_{2}+\ldots+ t_{n}
+\tilde\be_{n}\text{,}\)</span> then   we get <a href="" class="xref" data-knowl="./knowl/convexline.html" title="Equation 4.8.1">(4.8.1)</a>, <a href="" class="xref" data-knowl="./knowl/convexcomb.html" title="Equation 4.8.2">(4.8.2)</a>. The condition   <span class="process-math">\(s\le 1\)</span> is satisfied when <span class="process-math">\(\Vert \mathbf x \Vert \le \frac{1}{\sqrt n},\)</span> for, by the Cauchy-Schwarz inequality</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html">
+\begin{equation*}
+s=|x_{1}|+\cdots+|x_{n}|\le \sqrt n \sqrt{ x_{1}^{2}+\cdots+x_{n}^{2}}\le 1.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-346">
+<div class="para">It then follows that</div>
+<div class="displaymath process-math" id="md-47">
+\begin{align*}
+f(\mathbf x) \le \amp [1-s] f(\mathbf 0)+ s f(\bar\bx)\\
+\le \amp [1-s] f(\mathbf 0)+ s\left[ t_{1}f(\mathbf a_{1})+\cdots+ 
+t_{n}f(\mathbf a_{n}) \right]\\
+\le \amp f(\mathbf 0) +s\left[M-f(\mathbf 0)\right].
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(M\)</span> is chosen so that <span class="process-math">\(f( \tilde \be_{i})\le M\)</span> for all <span class="process-math">\(i\text{.}\)</span> This implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x)-f(\mathbf 0)\le (M -f(\mathbf 0)) (  |x_{1}|+\cdots+|x_{n}|)\to 0 \text{ as }
+\mathbf x \to 0.
+\end{equation*}
+</div>
+<div class="para">We can certainly cover <span class="process-math">\(\mathbb S^{n-1}\)</span> by a finite number of similarly constructed sets, and carry out this argument, which would allow us to prove that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limsup_{\mathbf x\to \mathbf 0 }f(\mathbf x)\le f(0).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-347">
+<div class="para">To prove <span class="process-math">\(\liminf_{\mathbf x\to \mathbf 0}f(\mathbf x)\ge f(0)\text{,}\)</span> we use the property of the secant lines as done in the one-dimensional case. For any <span class="process-math">\(\mathbf x\)</span> such that <span class="process-math">\(\Vert \mathbf x \Vert \le \frac{1}{\sqrt n}\text{.}\)</span> We bound <span class="process-math">\(f(\mathbf x)\)</span> from below by the secant line through <span class="process-math">\((-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n}, f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})),
+(\mathbf 0, f(\mathbf 0))\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x)-f(\mathbf 0) 
+\ge \frac{f(\mathbf 0)-f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})}{(\sqrt n)^{-1}}
+\Vert \mathbf x \Vert.
+\end{equation*}
+</div>
+<div class="para">Since the slope <span class="process-math">\(\frac{f(\mathbf 0)-f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})}{(\sqrt n)^{-1}}\)</span> has a lower bound due to the upper bound of <span class="process-math">\(f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})\text{,}\)</span> this allows us to conclude that <span class="process-math">\(\liminf_{\mathbf x\to \mathbf 0}f(\mathbf x)\ge f(0)\text{.}\)</span>
+</div>
+</div>
+</div></div>
+</div></article></div>
+<div class="para logical" id="p-348">
+<div class="para">The secant line property of a convex function implies that, if <span class="process-math">\([a, a+\epsilon]\)</span> is in the domain of a convex function, then the slope of the secant line <span class="process-math">\(\frac{f(x)-f(a)}{x-a}\)</span> has a limit as <span class="process-math">\(x\to a+\text{,}\)</span> although this limit could be <span class="process-math">\(-\infty\text{.}\)</span> If <span class="process-math">\(a\)</span> is an interior point of the domain, then picking some <span class="process-math">\(c\lt a\)</span> in the domain implies a lower bound of <span class="process-math">\(\frac{f(x)-f(a)}{x-a}\)</span> in terms of <span class="process-math">\(\frac{f(c)-f(a)}{c-a}\)</span> when <span class="process-math">\(x&gt;a\text{,}\)</span> so in such a case, <span class="process-math">\(f\)</span> has a finite <dfn class="terminology">left derivative</dfn> <span class="process-math">\(D_{-}f(a)\)</span> and <dfn class="terminology">right derivative</dfn> <span class="process-math">\(D_{+}f(a)\)</span> at <span class="process-math">\(a\text{,}\)</span> and <span class="process-math">\(D_{-}f(a)\le D_{+}f(a)\text{.}\)</span> Furthermore, for any <span class="process-math">\(k, D_{-}f(a)\le k \le D_{+}f(a)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="md-48">
+\begin{align*}
+\frac{f(x)-f(a)}{x-a}  \ge D_{+}f(a) \ge k, \amp \text{ for } x&gt; a; \\
+\frac{f(x)-f(a)}{x-a} \le D_{-}f(a)\le k, \amp \text{ for } x\lt a. 
+\end{align*}
+</div>
+<div class="para">This then implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)\ge f(a)+k(x-a) \text{ for all }  x  \text{ in the domain of } f.
+\end{equation*}
+</div>
+<div class="para">Since the right hand side, <span class="process-math">\(f(a)+k(x-a)\text{,}\)</span> represents a straight line, the above inequality shows that <em class="emphasis">a convex function has a (linear) <dfn class="terminology">support function</dfn> at any interior point of its domain.</em>
+</div>
+</div>
+<div class="para" id="p-349">The support function property of a convex function can be used to give a simple proof of Jensen's inequality. <article class="theorem theorem-like" id="theorem-30"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Jensen's inequality.</span>
+</h4>
+<div class="para logical" id="p-350">
+<div class="para">Suppose that <span class="process-math">\(f:X\mapsto (A, B)\)</span> and <span class="process-math">\(p(x)\ge 0\)</span> is a density function on <span class="process-math">\(X\text{,}\)</span> namely, <span class="process-math">\(\int_{X}p(x)\, dx=1\text{.}\)</span> Suppose that <span class="process-math">\(\phi:(A, B) \mapsto \mathbb R\)</span> is convex, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi \left( \int_{X} f(x)p(x)\, dx \right)\le \int_{X}\phi(f(x))p(x)\, dx.
+\end{equation*}
+</div>
+<div class="para">In words, “<span class="process-math">\(\phi\)</span> evaluated at the average of <span class="process-math">\(f\)</span> is not more than the average of <span class="process-math">\(\phi\circ f\text{.}\)</span>”</div>
+</div></article><article class="hiddenproof" id="proof-37"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof">Set <span class="process-math">\(\bar f=  \int_{X} f(x)p(x)\, dx\text{.}\)</span> It is easy to rule out the possibility that <span class="process-math">\(\bar f= A\)</span> or <span class="process-math">\(B\text{,}\)</span> so we may assume that <span class="process-math">\(A\lt \bar f\lt B\text{.}\)</span> Using the support property of <span class="process-math">\(\phi\)</span> at <span class="process-math">\(\bar f\text{,}\)</span> there exists some <span class="process-math">\(k\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+\phi (y) \ge \phi (\bar f) + k(y - \bar f) \text{ for all } y \in (A, B).
+\end{equation*}
+</div>Substituting <span class="process-math">\(y \)</span> by <span class="process-math">\(f(x)\text{,}\)</span> multiplying the above inequality by <span class="process-math">\(p(x)\)</span> and integrating over <span class="process-math">\(x\in X\text{,}\)</span> we get<div class="displaymath process-math">
+\begin{equation*}
+\int_{X}\phi(f(x))p(x)\, dx\ge \phi (\bar f) \int_{X}p(x)\, dx + k\left( \int_{X} f(x)p(x)\, dx
+- \bar f \int_{X}p(x)\, dx\right).
+\end{equation*}
+</div>The right hand side is simply <span class="process-math">\(\phi (\bar f) \text{,}\)</span> which proves the Jensen's inequality.</article></div>
+</div>
+<div class="para" id="p-351">Commonly used cases of Jensen's inequalities include <span class="process-math">\(\phi(y)=-\ln y\)</span> or <span class="process-math">\(y \ln y\text{.}\)</span> Proofs for Hölder's and Minkowski's inequalities also use convexity in crucial ways.</div>
+<article class="exercise exercise-like" id="exercise-36"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-36"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Prove that <span class="process-math">\(\ln \left( \int_{X} e^{u(x)}p(x)\, dx\right) \ge
+\int_{X} u(x)p(x)\, dx\)</span> for <span class="process-math">\(p(x)\ge 0, \int_{X}p(x)\, dx=1\)</span>.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"></article></div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Some properties of convex functions of several variables</span>
+</h3>When proving the continuity of a convex function of several variables, we already saw the complications for multi-dimensions. We do not intend to do a serious study of properties of convex functions of several variables, but only want to briefly discuss a few properties related to the notion of <em class="emphasis">supporting planes</em> to illustrate how the notion of compactness comes into play.<div class="para" id="p-352">
+<article class="definition definition-like" id="definition-21"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.8.6</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(K\)</span> be a convex set, <span class="process-math">\(\mathbf x_{0}\)</span> be a point on the boundary of <span class="process-math">\(K\text{.}\)</span> <span class="process-math">\(K\)</span> is said to have a supporting hyperplane at <span class="process-math">\(\mathbf x_{0}\)</span> if there exists a  vector <span class="process-math">\(\mathbf n\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+(\mathbf x - \mathbf x_{0})\cdot \mathbf n \ge 0 \text{ for all } \mathbf x \in K.
+\end{equation*}
+</div></article> <article class="definition definition-like" id="definition-22"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.8.7</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(K\)</span> be a convex set and <span class="process-math">\(f(\mathbf x) \)</span> be a convex function defined on <span class="process-math">\(K\text{.}\)</span> Let <span class="process-math">\(\mathbf x_{0}\in K\text{.}\)</span> The graph of <span class="process-math">\(f\)</span> at <span class="process-math">\((\mathbf x_{0}, f(\mathbf x_{0}))\)</span> is said to have a supporting hyperplane if there exists a non-zero vector <span class="process-math">\(\mathbf v\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x) \ge f(\mathbf x_{0}) +\mathbf v \cdot (\mathbf x- \mathbf x_{0}) \text{ for all }
+\mathbf x \in K.
+\end{equation*}
+</div></article> Note that we use the same terminology in these two contexts, but they have a slight distinction, as illustrated by the simple example <span class="process-math">\(f(x)=-\sqrt{x}\)</span> on <span class="process-math">\([0, 1]\text{.}\)</span> As a function it does not have a supporting hyperplane (a straight line here) at <span class="process-math">\(x=0\text{,}\)</span> but its epigraph has a supporting hyperplane at <span class="process-math">\((0, 0)\)</span> (a vertical line).</div>
+<div class="para" id="p-353">For a convex function of a single variable we gave a proof of the existence of a supporting line at any interior point using the property of secant lines. We can apply this argument along any direction to a convex function of several variables, but it alone would not give us a supporting hyperplane at a point on the graph.  The extension to multi-dimensions would necessarily involve some kind of limiting argument and compactness. We will discuss the following theorems.</div>
+<article class="theorem theorem-like" id="theorem-31"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of a supporting hyperplane of a closed convex set.</span>
+</h4>
+<div class="para" id="p-354">Any boundary point of a closed convex set has a supporting hyperplane.</div></article><article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para logical" id="p-355">
+<div class="para">Let <span class="process-math">\(\mathbf x_{0}\in K\)</span> be a boundary point of the closed convex set <span class="process-math">\(K\text{.}\)</span> Then there exists a sequence <span class="process-math">\(\mathbf x_{k} \not\in K, \mathbf x_{k} \to \mathbf x_{0}\text{.}\)</span> Each <span class="process-math">\(\mathbf x_{k}\)</span> also has a closest point <span class="process-math">\(\mathbf p_{k}\in K\text{.}\)</span> This is done either by the Bolzano-Weierstrass compactness theorem or the parallelogram law of the Euclidean norm</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\Vert \frac{\mathbf p -\mathbf q}{2}\Vert^{2}=\Vert \mathbf p- \mathbf x_{k}\Vert^{2}
++ \Vert \mathbf q- \mathbf x_{k}\Vert^{2}-2 \Vert \frac{\mathbf p +\mathbf q}{2}- \mathbf x_{k}\Vert^{2}
+\end{equation*}
+</div>
+<div class="para">and the completeness of <span class="process-math">\(\mathbb R^{n}\text{.}\)</span> This law shows that if <span class="process-math">\(\mathbf q_{l}\in K\)</span> is such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert \mathbf q_{l}- \mathbf x_{k} \Vert \to \inf \{\Vert \mathbf x- \mathbf x_{k} \Vert: \mathbf x \in K\},
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(\mathbf q_{l}\)</span> is a Cauchy sequence, therefore has a limit, and  that limit is in <span class="process-math">\(K\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-356">
+<div class="para">Next we claim that</div>
+<div class="displaymath process-math" id="zephyr">
+\begin{equation}
+(\mathbf p_{k}- \mathbf x_{k})\cdot (\mathbf x - \mathbf p_{k})\ge 0 \text{ for all } \mathbf x \in K.\tag{4.8.3}
+\end{equation}
+</div>
+<div class="para">This follows from considering</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(t) :=(t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k})\cdot (t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k}).
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(h(t)=\Vert t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k}\Vert^{2}\text{,}\)</span> and <span class="process-math">\(t\mathbf x +(1-t) \mathbf p_{k}\in K\)</span> for <span class="process-math">\(0\le t \le 1\text{,}\)</span> so <span class="process-math">\(h(0)\le h(t)\)</span> for all <span class="process-math">\(0 \le t\le 1\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h'(0)=2 (\mathbf p_{k}- \mathbf x_{k})\cdot (\mathbf x - \mathbf p_{k})\ge 0.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-357">
+<div class="para">Define <span class="process-math">\(\mathbf n_{k}=(\mathbf p_{k}- \mathbf x_{k})/\Vert \mathbf p_{k}- \mathbf x_{k}\Vert\text{.}\)</span> Then <span class="process-math">\(\mathbf n_{k}\)</span> is a sequence of unit vectors, so there exists a subsequence, still denoted by itself, and a limiting unit vector <span class="process-math">\(\mathbf n\)</span> such that <span class="process-math">\(\mathbf n_{k}\to \mathbf n\text{.}\)</span> We also know that <span class="process-math">\(\mathbf p_{k} \to \mathbf x_{0}\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/zephyr.html">
+\begin{equation*}
+\Vert \mathbf p_{k} - \mathbf x_{0} \Vert \le \Vert \mathbf p_{k} - \mathbf x_{k} \Vert 
++ \Vert \mathbf x_{k} - \mathbf x_{0} \Vert \le 2 \Vert \mathbf x_{k}-\mathbf x_{0} \Vert.
+\end{equation*}
+</div>
+<div class="para">For  each fixed <span class="process-math">\(\mathbf x \in K\text{,}\)</span>  dividing through both sides of <a href="" class="xref" data-knowl="./knowl/zephyr.html" title="Equation 4.8.3">(4.8.3)</a>  by <span class="process-math">\(\Vert \mathbf p_{k}- \mathbf x_{k}\Vert\text{,}\)</span> and passing to the limit, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/zephyr.html">
+\begin{equation*}
+\mathbf n \cdot ( \mathbf x - \mathbf x_{0}) \ge 0,
+\end{equation*}
+</div>
+<div class="para">which is the inequality defining a supporting hyperplane.</div>
+</div> <div class="para" id="p-358">In summary, the idea is  that, in the absence of a direct construction of a supporting plane at the given point, one finds a relatively easy way to construct a supporting plane at a nearby, but unspecified point, and one then takes a limiting process to obtain a supporting plane at the given point.</div></article></div>
+<article class="theorem theorem-like" id="theorem-32"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of a supporting hyperplane of the graph of a convex function at an interior point.</span>
+</h4>
+<div class="para" id="p-359">Let <span class="process-math">\(f(\mathbf x) \)</span> be a convex function defined on the convex set <span class="process-math">\(K\text{.}\)</span> If <span class="process-math">\(\mathbf x_{0}\in K\)</span> in an interior point of <span class="process-math">\(K\text{,}\)</span> then the graph of <span class="process-math">\(f\)</span> has a  supporting hyperplane at <span class="process-math">\((\mathbf x_{0}, f(\mathbf x_{0}))\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-39"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><div class="para logical" id="p-360">
+<div class="para">The epigraph <span class="process-math">\(G_{f}=\{(\mathbf x, y):\mathbf x\in K, y\ge f(\mathbf x)\}\)</span> is a  convex set. Its closure <span class="process-math">\(\overline{G_{f}}\)</span> is a closed convex set, and <span class="process-math">\((\mathbf x_{0}, f(\mathbf x_{0}))\)</span> is on the boundary of <span class="process-math">\(\overline{G_{f}}\text{.}\)</span> By the previous theorem, there exists a non-zero vector <span class="process-math">\(\mathbf n=(\mathbf v, c)\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf v \cdot (\mathbf x- \mathbf x_{0}) + c (y-f(\mathbf x_{0}))\ge 0 \text{ for all }
+(\mathbf x, y) \in \overline{G_{f}}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\mathbf x_{0}\in K\)</span> in an interior point of <span class="process-math">\(K\text{,}\)</span> we claim that <span class="process-math">\(c\ne 0\text{.}\)</span> For, otherwise, we would have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf v \cdot (\mathbf x- \mathbf x_{0})\ge 0 \text{ for all } \mathbf x\in K,
+\end{equation*}
+</div>
+<div class="para">which would force <span class="process-math">\(\mathbf v=\mathbf 0\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-361">
+<div class="para">Next we claim  that <span class="process-math">\(c&gt;0\text{.}\)</span> This is because <span class="process-math">\((\mathbf x_{0}, f(\mathbf x_{0})+t)
+\in G_{f}\)</span> for any <span class="process-math">\(t&gt;0\text{,}\)</span> and the above inequality then forces <span class="process-math">\(c&gt;0\text{.}\)</span> Now it follows that for any <span class="process-math">\(\mathbf x\in K\text{,}\)</span> applying the above inequality for <span class="process-math">\(y=f(\mathbf x)\)</span> implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x) \ge f(\mathbf x_{0}) -c^{-1} \mathbf v \cdot (\mathbf x- \mathbf x_{0}),
+\end{equation*}
+</div>
+<div class="para">which demonstrates a supporting hyperplane to the graph of <span class="process-math">\(f\)</span> at  <span class="process-math">\((\mathbf x_{0}, f(\mathbf x_{0}))\text{.}\)</span>
+</div>
+</div></article></div>
+<div class="para" id="p-362">It is possible to prove this theorem directly using the properties of a convex function, along the lines of proof for the one dimensional case. You should try to construct such a proof, at least for the two dimensional case.</div>
+<article class="exercise exercise-like" id="exercise-37"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-37"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.8.10</span><span class="period">.</span><span class="space"> </span><span class="title">The tangent plane of a convex function at a differentiable point is a supporting plane to the graph of the function. Furthermore, if the point is in the interior of the domain, then it is the unique supporting plane.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-37"><article class="exercise exercise-like"><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like">If <span class="process-math">\(f\)</span> denotes the function, and <span class="process-math">\(Df(\mathbf x_{0})\)</span> denotes the gradient of <span class="process-math">\(f\)</span> at <span class="process-math">\(\mathbf x_{0}\text{,}\)</span> it may be geometrically easier to consider<div class="displaymath process-math">
+\begin{equation*}
+g(\mathbf x)=f(\mathbf x)-f(\mathbf x_{0})-Df(\mathbf x_{0})\cdot (\mathbf x-\mathbf x_{0})\text{,}
+\end{equation*}
+</div>which is also convex.</div></div>
+</div></article></div>
+<div class="para" id="p-363">We close this subsection by discussing a more subtle application of convex/concave functions in an optimization problem.</div>
+<article class="example example-like" id="example-16"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-16"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.8.11</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><div class="para" id="p-364">Using concavity to identify the minimum of <span class="process-math">\(\frac{ \Big| \sum_{i=1}^{n}a_{i}b_{i}\Big|}{\left(\sum_{i=1}^{n}a_{i}^{2}\right)^{1/2}
+\left(\sum_{i=1}^{n}b_{i}^{2}\right)^{1/2}}\)</span> under some constraints on <span class="process-math">\((a_{1},\ldots, a_{n}), (b_{1},\ldots, b_{n})\)</span>
+</div> <div class="para" id="p-365">The constraints will be <span class="process-math">\(0\lt a\le a_{i}\le A\text{,}\)</span> <span class="process-math">\(0 \lt b\le b_{i}\le B\text{.}\)</span>
+</div> <div class="para logical" id="p-366">
+<div class="para">We introduce the new variables <span class="process-math">\(u_{i}=a_{i}^{2}, v_{i}=b_{i}^{2}\text{,}\)</span> and reformulate the problem in terms of <span class="process-math">\(u_{i}, v_{i}\text{.}\)</span> The quotient then becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\sum_{i} \sqrt{u_{i} v_{i}}}{\sqrt{(\sum_{i} u_{i}) (\sum_{i} v_{i})}},
+\end{equation*}
+</div>
+<div class="para">and the constraints become</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^{2} \le u_{i}\le A^{2}; b^{2}\le v_{i}\le A^{2}.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-367">Our argument will be based on the following observation. <ol class="decimal">
+<li id="li-57"><div class="para" id="p-derived-li-57">
+<span class="process-math">\(\sqrt{uv}\)</span> is a concave function in the first quadrant.</div></li>
+<li id="li-58"><div class="para" id="p-derived-li-58">For any <span class="process-math">\((u, v)\)</span> in the rectangle <span class="process-math">\([a^2, A^2]\times[b^2, B^2]\text{,}\)</span> there exists unique <span class="process-math">\((p, q)\)</span> with <span class="process-math">\(p, q \ge 0\text{,}\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+(u, v)=p (a^2, B^2) + q(A^2, b^2).
+\end{equation*}
+</div>
+</div></li>
+<li id="li-59"><div class="para" id="p-derived-li-59">In the set up above, we have<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{uv}\ge p aB+ q Ab,
+\end{equation*}
+</div>with equality iff <span class="process-math">\((u, v)\)</span> equals <span class="process-math">\((a^2, B^2)\text{,}\)</span> or <span class="process-math">\((A^2, b^2)\text{,}\)</span> equivalently, <span class="process-math">\((p, q)=(1, 0)\text{,}\)</span> or <span class="process-math">\((0, 1)\text{.}\)</span>
+</div></li>
+</ol>
+</div> <div class="para logical" id="p-368">
+<div class="para">For the second item, note that for any <span class="process-math">\((u, v)\)</span> in the rectangle <span class="process-math">\([a^2, A^2]\times[b^2, B^2]\text{,}\)</span> there exists a unique <span class="process-math">\(s&gt;0\text{,}\)</span> such that <span class="process-math">\(s (u, v)\)</span> lies on the diagonal  from <span class="process-math">\((a^2, B^2)\)</span> to <span class="process-math">\((A^2, b^2)\text{,}\)</span> which implies the existence of a unique <span class="process-math">\(0\le t \le 1\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s (u, v)= (1-t) (a^2, B^2) + t(A^2, b^2).
+\end{equation*}
+</div>
+<div class="para">This then implies our desired relation.</div>
+</div> <div class="para" id="p-369">We remark that in proving the last item above, only the (strict) concavity of <span class="process-math">\(\sqrt{uv}\)</span> along the diagonal from <span class="process-math">\((a^2, B^2)\)</span> to <span class="process-math">\((A^2, b^2)\)</span> is used. It is this last item that makes it possible to bound <span class="process-math">\(\sum_{i} \sqrt{u_{i} v_{i}}\)</span> from below.</div> <div class="para logical" id="p-370">
+<div class="para">Now for each <span class="process-math">\((u_{i}, v_{i})\text{,}\)</span> we find <span class="process-math">\((p_{i}, q_{i})\)</span> according to the second item above</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(u_{i}, v_{i})= p_{i} (a^2, B^2) + q_{i}(A^2, b^2),
+\end{equation*}
+</div>
+<div class="para">then we can bound the quotient as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\sum_{i}  \sqrt{u_{i} v_{i}}}{\sqrt{(\sum_{i} u_{i}) (\sum_{i} u_{i})}}\ge 
+\frac{\sum_{i} (p_{i} aB+ q_{i} Ab)}
+{\sqrt{[\sum_{i} (p_{i} a^2 +q_{i} A^{2})][ \sum_{i} (p_{i}B^{2}+q_{i}b^{2})]}}.
+\end{equation*}
+</div>
+<div class="para">Setting <span class="process-math">\(p=\sum_{i} p_{i}, q=\sum_{i} q_{i}\text{,}\)</span> <span class="process-math">\(\alpha=A/a, \beta=B/b\text{,}\)</span>  and after dividing  both the numerator and denominator of the quotient  on the right hand above by <span class="process-math">\(ab\text{,}\)</span> it  becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{p \beta + 	q \alpha}{\sqrt{ (p +q \alpha^{2})(p\beta^{2}+q)}},
+\end{equation*}
+</div>
+<div class="para">and now the task is to find the infimum of this quotient when <span class="process-math">\(p, q\ge 0\text{,}\)</span> and identify when equality can occur. This calculus problem can be solved in a routine way, and the answer is <span class="process-math">\(\frac{2\sqrt{\alpha \beta}}{ \alpha \beta+1}\text{.}\)</span>
+</div>
+</div></article></div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/calculator/mbdd9ymzug</code></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-21.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="exercises-3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h3>
+<div class="para">Condition <a href="" class="xref" data-knowl="./knowl/locLip.html" title="Equation 3.2.1">(3.2.1)</a> implies that <span class="process-math">\(g(t)\)</span> is continuous at <span class="process-math">\(x\text{.}\)</span>  Note that if <span class="process-math">\(g'(x)\)</span> exists, then <a href="" class="xref" data-knowl="./knowl/locLip.html" title="Equation 3.2.1">(3.2.1)</a> is satisfied at <span class="process-math">\(x\text{.}\)</span> In fact, <a href="" class="xref" data-knowl="./knowl/locLip.html" title="Equation 3.2.1">(3.2.1)</a> is satisfied at <span class="process-math">\(x\)</span> if both the left derivative <span class="process-math">\(g'(x-)\)</span> and the right derivative <span class="process-math">\(g'(x+)\)</span> exist.</div> <div class="para logical">
+<div class="para">If <span class="process-math">\(g(t)\)</span> has both a right limit <span class="process-math">\(g(x+)\)</span> and a left limit <span class="process-math">\(g(x-)\)</span> at <span class="process-math">\(x\)</span> and <span class="process-math">\(g(x+)\ne g(x-)\text{,}\)</span> we can rewrite <span class="process-math">\(S_N[g]( x)\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_N[g]( x)= \frac{1}{2\pi} \int_{0}^{\pi}\left[ g(x-t)+g(x+t)\right] D_{N}(t)\, dt,
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp S_N[g]( x)-\frac{g(x+)+g(x-)}{2}\\
+= \amp \frac{1}{2\pi} \int_{0}^{\pi}\left[ g(x-t)-g(x-)+g(x+t)-g(x+)\right] D_{N}(t)\, dt.
+\end{align*}
+</div>
+<div class="para">If <span class="process-math">\(g(t)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert g(x-t)-g(x-) \vert, \vert g(x+t)-g(x+)\vert \le M t\text{ for $t&gt;0$ near $0$},
+\end{equation*}
+</div>
+<div class="para">we can make the same argument to show that <span class="process-math">\(S_N[g]( x)-\frac{g(x+)+g(x-)}{2}\to 0\)</span> as <span class="process-math">\(N\to\infty\text{.}\)</span>
+</div>
+</div> <div class="para">Note that whether or not  <span class="process-math">\(h(x; t)\)</span> is integrable so as to apply  <a href="" class="xref" data-knowl="./knowl/RLL.html" title="Lemma 3.2.1: Riemann-Lebesgue Lemma">Lemma 3.2.1</a> depends only on the the local behavior of <span class="process-math">\(g(t)\)</span> near <span class="process-math">\(x\text{,}\)</span> so whether or not <span class="process-math">\(S_N[g]( x)\)</span> converges depends only on the local behavior of <span class="process-math">\(g(t)\)</span> near <span class="process-math">\(x\text{.}\)</span> This is known as the <em class="emphasis">Riemann's localization theorem</em>.</div></article><span class="incontext"><a href="sec-FSConv.html#remark-26" class="internal">in-context</a></span>
+</body>
+</html>

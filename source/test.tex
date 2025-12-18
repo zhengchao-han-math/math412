@@ -1,0 +1,992 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2023-02-04T10:50:24-05:00       *%
+%*   A recent stable commit (2022-07-01):   *%
+%* 6c761d3dba23af92cba35001c852aac04ae99a5f *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% The tcolorbox library loads TikZ, its calc package is generally useful,
+%% and is necessary for some smaller documents that use partial tcolor boxes
+%% See:  https://github.com/PreTeXtBook/pretext/issues/1624
+\usetikzlibrary{calc}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Footnote counters and part/chapter counters are manipulated
+%% April 2018:  chngcntr  commands now integrated into the kernel,
+%% but circa 2018/2019 the package would still try to redefine them,
+%% so we need to do the work of loading conditionally for old kernels.
+%% From version 1.1a,  chngcntr  should detect defintions made by LaTeX kernel.
+\ifdefined\counterwithin
+\else
+    \usepackage{chngcntr}
+\fi
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use publisher page-geometry entry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Default Monospace font: Inconsolata (aka zi4)
+%% Sponsored by TUG: http://levien.com/type/myfonts/inconsolata.html
+%% Loaded for documents with intentional objects requiring monospace
+%% See package documentation for excellent instructions
+%% fontspec will work universally if we use filename to locate OTF files
+%% Loads the "upquote" package as needed, so we don't have to
+%% Upright quotes might come from the  textcomp  package, which we also use
+%% We employ the shapely \ell to match Google Font version
+%% pdflatex: "varl" package option produces shapely \ell
+%% pdflatex: "var0" package option produces plain zero (not used)
+%% pdflatex: "varqu" package option produces best upright quotes
+%% xelatex,lualatex: add OTF StylisticSet 1 for shapely \ell
+%% xelatex,lualatex: add OTF StylisticSet 2 for plain zero (not used)
+%% xelatex,lualatex: add OTF StylisticSet 3 for upright quotes
+%%
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+\IfFontExistsTF{Inconsolatazi4-Regular.otf}{}{\GenericError{}{The font "Inconsolatazi4-Regular.otf" requested by PreTeXt output is not available.  Either a file cannot be located in default locations via a filename, or a font is not known by its name as part of your system.}{Consult the PreTeXt Guide for help with LaTeX fonts.}{}}
+\IfFontExistsTF{Inconsolatazi4-Bold.otf}{}{\GenericError{}{The font "Inconsolatazi4-Bold.otf" requested by PreTeXt output is not available.  Either a file cannot be located in default locations via a filename, or a font is not known by its name as part of your system.}{Consult the PreTeXt Guide for help with LaTeX fonts.}{}}
+\usepackage{zi4}
+\setmonofont[BoldFont=Inconsolatazi4-Bold.otf,StylisticSet={1,3}]{Inconsolatazi4-Regular.otf}
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+\usepackage[varqu,varl]{inconsolata}
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Micromanage spacing, etc.  The named "microtype-options"
+%% template may be employed to fine-tune package behavior
+\usepackage{microtype}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC 
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% Fixes a bug with transition from chapters to appendices in a "book"
+%% See generating XSL code for more details about necessity
+\newtitlemark{\chaptertitlename}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+%% Plain pages should have the same font for page numbers
+\renewpagestyle{plain}{%
+\setfoot{}{\pagefont\thepage}{}%
+}%
+%% Single pages as in default LaTeX
+\renewpagestyle{headings}{%
+\sethead{\pagefont\slshape\MakeUppercase{\ifthechapter{\chaptertitlename\space\thechapter.\space}{}\chaptertitle}}{}{\pagefont\thepage}%
+}%
+\pagestyle{headings}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "acknowledgement" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{acknowledgement}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter*{#2}%
+\addcontentsline{toc}{chapter}{#4}
+\label{#7}%
+}{}%
+%% Environment for a PTX "preface" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{preface}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter*{#2}%
+\addcontentsline{toc}{chapter}{#4}
+\label{#7}%
+}{}%
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\section[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "subsection" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{subsectionptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\subsection[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "section"
+\NewDocumentEnvironment{exercises-section}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\section[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "section"
+\NewDocumentEnvironment{exercises-section-numberless}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\section*{#2}%
+\addcontentsline{toc}{section}{#4}
+\label{#7}%
+}{}%
+%% Environment for a PTX "solutions" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{solutions-chapter}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "solutions" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{solutions-chapter-numberless}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter*{#2}%
+\addcontentsline{toc}{chapter}{#4}
+\label{#7}%
+}{}%
+%% Environment for a PTX "appendix" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{appendixptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter[{#4}]{#2}%
+\label{#7}%
+}{}%
+%% Environment for a PTX "index" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{indexptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\chapter*{#2}%
+\addcontentsline{toc}{chapter}{#4}
+\label{#7}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% End: Semantic Macros
+%% begin: environments for duplicates in solutions divisions
+%% Solutions to division exercises, not in exercise group
+%% Parameter #1 is type-name and is ignored
+\tcbset{ divisionsolutionstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, after title={\space}, breakable, parbox=false } }
+\newtcolorbox{divisionsolution}[4]{divisionsolutionstyle, title={\hyperlink{#4}{#2}.\notblank{#3}{\space#3}{}}}
+%% Divisional exercises (and worksheet) as LaTeX environments
+%% Third argument is option for extra workspace in worksheets
+%% Hanging indent occupies a 5ex width slot prior to left margin
+%% Experimentally this seems just barely sufficient for a bold "888."
+%% Division exercises, not in exercise group
+\tcbset{ divisionexercisestyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, breakable, parbox=false } }
+\newtcolorbox{divisionexercise}[4]{divisionexercisestyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline\vfill}{\par}}}
+%% "tcolorbox" environment for a single image, occupying entire \linewidth
+%% arguments are left-margin, width, right-margin, as multiples of
+%% \linewidth, and are guaranteed to be positive and sum to 1.0
+\tcbset{ imagestyle/.style={bwminimalstyle} }
+\NewTColorBox{image}{mmm}{imagestyle,left skip=#1\linewidth,width=#2\linewidth}
+%% Footnote Numbering
+%% Specified by numbering.footnotes.level
+%% Undo counter reset by chapter for a book
+\counterwithout{footnote}{chapter}
+\counterwithin*{footnote}{section}
+%% Support for index creation
+%% imakeidx package does not require extra pass (as with makeidx)
+%% Title of the "Index" section set via a keyword
+%% Language support for the "see" and "see also" phrases,
+%% but to do so presumes exactly one "index-list" generator is present
+\usepackage{imakeidx}
+\makeindex[title=Index, intoc=true]
+\renewcommand{\seename}{See}
+\renewcommand{\alsoname}{See also}
+%% Package for tables (potentially) spanning multiple pages
+\usepackage{longtable}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% configure hyperref's  \href{}{}  and  \nolinkurl  to match listings' inline verbatim
+\renewcommand\UrlFont{\small\ttfamily}
+%% Hyperlinking active in electronic PDFs, all links without surrounding boxes and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+%% Less-clever names for hyperlinks are more reliable, *especially* for structural parts
+%% See comments in the code to learn more about the importance of tnis setting
+\hypersetup{hypertexnames=false}
+\hypersetup{pdftitle={A Book}}
+%% If you manually remove hyperref, leave in this next command
+%% This will allow LaTeX compilation, employing this no-op command
+\providecommand\phantomsection{}
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%%
+%% tcolorbox, with styles, for THEOREM-LIKE
+%%
+%% theorem: fairly simple numbered block/structure
+\tcbset{ theoremstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{theorem}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, theoremstyle, }
+%% corollary: fairly simple numbered block/structure
+\tcbset{ corollarystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{corollary}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, corollarystyle, }
+%%
+%% tcolorbox, with styles, for PROOF-LIKE
+%%
+%% proof: title is a replacement
+\tcbset{ proofstyle/.style={bwminimalstyle, fonttitle=\blocktitlefont\itshape, attach title to upper, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\blacksquare\)},
+} }
+\newtcolorbox{proof}[3]{title={\notblank{#2}{#2}{#1.}}, phantom={\hypertarget{#3}{}}, breakable, parbox=false, after={\par}, proofstyle }
+%%
+%% tcolorbox, with styles, for EXAMPLE-LIKE
+%%
+%% example: fairly simple numbered block/structure
+\tcbset{ examplestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\square\)}, } }
+\newtcolorbox[use counter from=block]{example}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, examplestyle, }
+%%
+%% tcolorbox, with styles, for FIGURE-LIKE
+%%
+%% figureptx: 2-D display structure
+\tcbset{ figureptxstyle/.style={bwminimalstyle, middle=1ex, blockspacingstyle, fontlower=\blocktitlefont} }
+\newtcolorbox[use counter from=block]{figureptx}[4]{lower separated=false, before lower={{\textbf{#1~\thetcbcounter}\space#2}}, phantomlabel={#3}, unbreakable, parbox=false, figureptxstyle, }
+%%
+%% xparse environments for introductions and conclusions of divisions
+%%
+%% introduction: in a structured division
+\NewDocumentEnvironment{introduction}{m}
+{\notblank{#1}{\noindent\textbf{#1}\space}{}}{\par\medskip}
+%% conclusion: in a structured division
+\NewDocumentEnvironment{conclusion}{m}
+{\par\medskip\noindent\notblank{#1}{\textbf{#1}\space}{}}{}
+%%
+%% tcolorbox, with styles, for miscellaneous environments
+%%
+%% assemblage: fairly simple un-numbered block/structure
+\tcbset{ assemblagestyle/.style={size=normal, colback=white, colbacktitle=white, coltitle=black, colframe=black, rounded corners, titlerule=0.0pt, center title, fonttitle=\blocktitlefont\bfseries, blockspacingstyle, } }
+\newtcolorbox{assemblage}[3]{title={\notblank{#2}{#2}{}}, phantomlabel={#3}, breakable, parbox=false, assemblagestyle}
+%% back colophon, at the very end, typically on its own page
+\tcbset{ backcolophonstyle/.style={bwminimalstyle, blockspacingstyle, before skip=5ex, left skip=0.15\textwidth, right skip=0.15\textwidth, fonttitle=\blocktitlefont\large\bfseries, center title, halign=center, bottomtitle=2ex} }
+\newtcolorbox{backcolophon}[2]{title={#1}, phantom={\hypertarget{#2}{}}, breakable, parbox=false, backcolophonstyle}
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning,matrix,arrows}
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from PTX for XML characters
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\spt}{\text{support }}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern8mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\mathchoice
+    {\mkern10mu\underline{\vphantom{\intop}\mkern8mu}\mkern-24mu}
+    {\mkern7mu\underline{\vphantom{\int}\mkern7mu}\mkern-10mu}
+    {\mkern7mu\underline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\underline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+	\int}
+
+\makeatletter
+\def\catlim{
+  \relax\if@display
+    \expandafter\varprojlim
+  \else
+    \expandafter\lim
+  \fi
+}
+\makeatother
+
+\makeatletter
+\newcommand{\oset}[2]{
+  \mathrel{\mathop{#2}\limits^{
+    \vbox to -3\ex@{\kern-2\ex@
+    \hbox{$\hspace{6pt}#1$}\vss}}}}
+\newcommand{\uset}[2]{
+   {\mathop{#2}\limits_{\vbox to 3.5\ex@{\kern-\tw@\ex@
+    \hbox{$\hspace{-3pt} #1$}}}}}
+\makeatother
+
+\newcommand{\Uint}{{\oset{\bar{}}{\int}\!\!\!}} 
+\newcommand{\Lint}{{\uset{\bar{}}{\int}\!\!\!\!}}
+\makeatletter
+\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
+\newcommand\tb@int[2]{
+  \sbox\z@{$\m@th#1\int$}
+  \if#2t
+    \rlap{\hbox to\wd\z@{
+      \hfil
+      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+      \kern.05em 
+    }}
+  \else
+    \rlap{\hbox to\wd\z@{
+      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+      \hfil
+    }}
+  \fi
+}
+\makeatother
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+%% bottom alignment is explicit, since it normally depends on oneside, twoside
+\raggedbottom
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.28\textheight}
+{\Huge A Book}\\[2\baselineskip]
+{\LARGE Analysis of Functions of Several Variables}\\
+}
+\clearpage
+%% end:   half-title
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.14\textheight}
+%% Target for xref to top-level element is ToC
+\addtocontents{toc}{\protect\hypertarget{book-test}{}}
+{\Huge A Book}\\[\baselineskip]
+{\LARGE Analysis of Functions of Several Variables}\\[3\baselineskip]
+{\Large Zheng-Chao Han}\\[0.5\baselineskip]
+{\Large Rutgers University \slash{}\slash{} Piscataway, NJ 08854}\\[3\baselineskip]
+{\Large February 4, 2023}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\hypertarget{colophon-meta_frontmatter-b}{}\vspace*{\stretch{2}}
+\noindent{\bfseries Website}: \href{http:\slash{}\slash{}pretextbook.org}{\mono{my-website.org}}\par\medskip
+\noindent\textcopyright{}2022\textendash{}2023\quad{}Zheng-Chao Han\\[0.5\baselineskip]
+ This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{CreativeCommons.org}\footnote{\nolinkurl{creativecommons.org/licenses/by-sa/4.0}\label{fn-meta_frontmatter-b-b-c-b}}\par\medskip
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+%% begin: dedication-page
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\begin{center}\Large%
+For ...%
+\end{center}
+\vspace*{\stretch{2}}
+\clearpage
+%% end:   dedication-page
+%
+%
+\typeout{************************************************}
+\typeout{Acknowledgements  Acknowledgements}
+\typeout{************************************************}
+%
+\begin{acknowledgement}{Acknowledgements}{Acknowledgements}{}{Acknowledgements}{}{}{acknowledgement-meta_frontmatter-d}
+I would like to thank...%
+\end{acknowledgement}
+%
+%
+\typeout{************************************************}
+\typeout{Preface  Preface}
+\typeout{************************************************}
+%
+\begin{preface}{Preface}{Preface}{}{Preface}{}{}{preface-meta_frontmatter-preface}
+About this book:%
+\end{preface}
+%
+%
+\typeout{************************************************}
+\typeout{Preface  Not just that..}
+\typeout{************************************************}
+%
+\begin{preface}{Preface}{Not just that..}{}{Not just that..}{}{}{preface-meta_frontmatter-f}
+I still have more to say!%
+\end{preface}
+%% begin: table of contents
+%% Adjust Table of Contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 1 My First Chapter}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Chapter}{My First Chapter}{}{My First Chapter}{}{}{chapter-ch_first}
+\renewcommand*{\chaptername}{Chapter}
+\begin{introduction}{}%
+This is the introduction to the chapter%
+\end{introduction}%
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.1 Introduction to First Chapter}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{Introduction to First Chapter}{}{Introduction to First Chapter}{}{}{section-sec_first-intro}
+\begin{introduction}{}%
+Intro to section, because we will have subsections.%
+\par
+Another paragraph of the introduction.%
+\end{introduction}%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.1 A subsection}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Subsection}{A subsection}{}{A subsection}{}{}{subsection-subsec_a-subsection}
+Content of the subsection.%
+\par
+More content.%
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.2 Another Subsection}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Subsection}{Another Subsection}{}{Another Subsection}{}{}{subsection-subsec_another-subsection}
+Text with some math: \(\sin(x) = \cos(x)\) only for some values of \(x\).%
+\end{subsectionptx}
+\begin{conclusion}{}%
+After the last subsection, you might have a conclusion.%
+\end{conclusion}%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.2 Examples}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{Examples}{}{Examples}{}{}{section-sec_first-examples}
+Here is an example:%
+\begin{example}{Example}{}{example-sec_first-examples-c}%
+The statement of the example, since it will have a solution.  What is the solution? \(\upint_{R}\,f, \lowint_{R}\,f \) (\mono{\textbackslash{}upint\_\{R\}\textbackslash{},f, \textbackslash{}lowint\_\{R\}\textbackslash{},f }). \(\catlim_{i\in N}\) (\mono{\textbackslash{}catlim\_\{i\textbackslash{}in N\}}). \(\uset{a}{b}\) (\mono{\textbackslash{}uset\{a\}\{b\}}).%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{solution-sec_first-examples-c-b}{}\quad{}This is the solution.%
+\end{example}
+Here is another example, but without a solution%
+\begin{example}{Example}{}{example-sec_first-examples-e}%
+This is an example of an example without a solution (or hint or answer) so the paragraph doesn't need to be inside a statement tag.%
+\end{example}
+Although the next things are not examples, they give examples of blocks that are not examples.  First a theorem.%
+\begin{theorem}{Theorem}{Theorem Title.}{}{theorem-thm_first-examples-theorem}%
+This is the statement of the theorem.%
+\end{theorem}
+\begin{proof}{Proof}{}{proof-thm_first-examples-theorem-c}
+And this is its proof.%
+\end{proof}
+\begin{corollary}{Corollary}{}{}{corollary-cor_first-examples-corollary}%
+A corollary that doesn't need a proof.%
+\end{corollary}
+Perhaps at the end of the section, you want to summarize your important theorems.%
+\begin{assemblage}{Summary}{Important Theorems.}{assemblage-asm_first-examples-summary}%
+List important results here.%
+\end{assemblage}
+Of course, if you want more information, you might see \hyperref[theorem-thm_first-examples-theorem]{Theorem~{\xreffont\ref{theorem-thm_first-examples-theorem}}}.%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Exercises 1.3 My Exercises}
+\typeout{************************************************}
+%
+\begin{exercises-section}{Exercises}{My Exercises}{}{My Exercises}{}{}{exercises-ex_first}
+\begin{divisionexercise}{1}{}{}{exercise-ex_first-b}%
+Is this an exercise?%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Answer}.\hypertarget{answer-ex_first-b-b}{}\quad{}Yes.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{solution-ex_first-b-c}{}\quad{}It is, but not a very good one.%
+\end{divisionexercise}%
+\begin{divisionexercise}{2}{}{}{exercise-ex_first-c}%
+Another, with a hint.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Hint}.\hypertarget{hint-ex_first-c-b}{}\quad{}The hint.%
+\end{divisionexercise}%
+\end{exercises-section}
+\end{chapterptx}
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 2 Examples of PreTeXt features}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Chapter}{Examples of PreTeXt features}{}{Examples of PreTeXt features}{}{}{chapter-ch_features}
+\renewcommand*{\chaptername}{Chapter}
+\begin{introduction}{}%
+Below are examples of a lot of PreTeXt elements.%
+\end{introduction}%
+%
+%
+\typeout{************************************************}
+\typeout{Section 2.1 Environments and Blocks}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{Environments and Blocks}{}{Environments and Blocks}{}{}{section-sec_features-blocks}
+Some text%
+\begin{theorem}{Theorem}{My Theorem.}{}{theorem-thm_features-blocks-my-theorem}%
+Theorem statement.%
+\end{theorem}
+\begin{proof}{Proof}{}{proof-thm_features-blocks-my-theorem-c}
+Proof of theorem.%
+\end{proof}
+\begin{example}{Example}{}{example-sec_features-blocks-d}%
+Statement of example%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{solution-sec_features-blocks-d-b}{}\quad{}The solution.%
+\end{example}
+Now a figure.%
+\begin{figureptx}{Figure}{A frog}{figure-sec_features-blocks-f}{}%
+\begin{image}{0.25}{0.5}{0.25}%
+\includegraphics[width=\linewidth]{frog.jpg}
+\end{image}%
+\tcblower
+\end{figureptx}%
+\end{sectionptx}
+\end{chapterptx}
+ Finally we place the backmatter in its own file and include %
+\appendix%
+%
+\clearpage\phantomsection%
+\addcontentsline{toc}{part}{Appendices}%
+%
+%
+\typeout{************************************************}
+\typeout{Appendix A Selected Hints}
+\typeout{************************************************}
+%
+\begin{solutions-chapter}{Appendix}{Selected Hints}{}{Selected Hints}{}{}{solutions-meta_backmatter-b}
+\par\medskip
+\noindent\textbf{\Large{}1\space\textperiodcentered\space{}My First Chapter\\
+1.3\space\textperiodcentered\space{}My Exercises}
+\begin{divisionsolution}{Exercise}{1.3.2}{}{exercise-ex_first-c}%
+\noindent\hypertarget{hint-ex_first-c-b-back}{}The hint.%
+\end{divisionsolution}%
+\end{solutions-chapter}
+%
+%
+\typeout{************************************************}
+\typeout{Appendix B Selected Solutions}
+\typeout{************************************************}
+%
+\begin{solutions-chapter}{Appendix}{Selected Solutions}{}{Selected Solutions}{}{}{solutions-meta_backmatter-c}
+\par\medskip
+\noindent\textbf{\Large{}1\space\textperiodcentered\space{}My First Chapter\\
+1.3\space\textperiodcentered\space{}My Exercises}
+\begin{divisionsolution}{Exercise}{1.3.1}{}{exercise-ex_first-b}%
+\noindent\hypertarget{solution-ex_first-b-c-back}{}It is, but not a very good one.%
+\end{divisionsolution}%
+\end{solutions-chapter}
+%
+%
+\typeout{************************************************}
+\typeout{Appendix C List of Symbols}
+\typeout{************************************************}
+%
+\begin{appendixptx}{Appendix}{List of Symbols}{}{List of Symbols}{}{}{appendix-meta_backmatter-d}
+\renewcommand*{\appendixname}{Appendix}
+\begin{longtable}[l]{lp{0.60\textwidth}r}
+\addtocounter{table}{-1}
+\textbf{Symbol}&\textbf{Description}&\textbf{Page}\\[1em]
+\endfirsthead
+\textbf{Symbol}&\textbf{Description}&\textbf{Page}\\[1em]
+\endhead
+\multicolumn{3}{r}{(Continued on next page)}\\
+\endfoot
+\endlastfoot
+\end{longtable}
+\end{appendixptx}
+%
+\backmatter%
+%
+\clearpage\phantomsection%
+\addcontentsline{toc}{part}{Back Matter}%
+%
+%% The index is here, setup is all in preamble
+%% Index locators are cross-references, so same font here
+{\xreffont\printindex}
+%
+\clearpage
+\pagestyle{empty}
+\vspace*{\stretch{1}}
+\begin{backcolophon}{Colophon}{colophon-meta_backmatter-f}%
+This book was authored in PreTeXt.%
+\end{backcolophon}%
+\vspace*{\stretch{2}}
+\end{document}

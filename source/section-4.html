@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Notes412Integral.html"><span class="title">Notes on the Completion of the Space of Continuous Functions under Integral Norms</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="Notes412Integral.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon">&gt;</span></span></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth1"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li><div class="toc-item"><a href="RS-int.html" class="internal"><span class="codenumber">1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div></li>
+<li><div class="toc-item"><a href="chp-int.html" class="internal"><span class="codenumber">2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span>
+</h2>
+<section class="introduction" id="introduction-3"><a href="" class="xref" data-knowl="./knowl/cor-ftcr.html" title="Corollary 1.12">Corollary 1.12</a> extends the Fundamental Theorem of Calculus to those monotone functions <span class="process-math">\(\alpha\)</span> such that <span class="process-math">\(\alpha'\)</span> exists and is Riemann integrable. Here we discuss its further generalization and related issues. Questions that need to be addressed include <ol class="upper-roman">
+<li id="li-14"><div class="para" id="p-derived-li-14">Identify conditions that guarantee that <span class="process-math">\(\alpha'\)</span> exists and is Riemann integrable, or <span class="process-math">\(a.e.\)</span> exists and is in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span>
+</div></li>
+<li id="li-15"><div class="para" id="p-derived-li-15">Does <a href="" class="xref" data-knowl="./knowl/eq-ftcr.html" title="Equation 1.3">(1.3)</a> hold for any function <span class="process-math">\(\alpha\)</span> such that <span class="process-math">\(\alpha'\)</span>  <span class="process-math">\(a.e.\)</span> exists and is in <span class="process-math">\(L^{1}[a, b]\text{?}\)</span> More generally, under what conditions on a function <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\)</span>  there would exist a function <span class="process-math">\(g\in L^{1}[a, b]\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ftcr.html" id="eq-ftcl">
+\begin{equation}
+f(t)-f(a) =\int_{a}^{t} g(x)\, dx\tag{4.1}
+\end{equation}
+</div>holds?</div></li>
+</ol> The last question has two parts: (a). The necessary conditions for <a href="" class="xref" data-knowl="./knowl/eq-ftcl.html" title="Equation 4.1">(4.1)</a> to hold, in particular, does it hold that <span class="process-math">\(f'(x)=g(x)\)</span> for <span class="process-math">\(a.e.\)</span> <span class="process-math">\(x\in [a, b]\text{?}\)</span> (b). The sufficient conditions for  <a href="" class="xref" data-knowl="./knowl/eq-ftcl.html" title="Equation 4.1">(4.1)</a> to hold.</section><article class="definition definition-like" id="def-uniform-abs-contin-fn"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Absolute Continuous Function.</span>
+</h3> <div class="para logical" id="p-79">
+<div class="para">A function <span class="process-math">\(f\)</span> defined  on <span class="process-math">\([a, b]\)</span> is said to be <dfn class="terminology">absolutely continuous</dfn> on <span class="process-math">\([a, b]\)</span> if for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(\delta &gt; 0\)</span> such that for any finite collection	 of disjoint intervals <span class="process-math">\(\{[a_{i}, b_{i}]: 1\le i \le k\}\)</span> of <span class="process-math">\([a, b]\)</span> with its total length <span class="process-math">\(\sum_{i=1}^{k}(b_{i}-a_{i}) &lt; \delta\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="eq-abcfn">
+\begin{equation}
+\sum_{i=1}^{k}|f(b_{i})-f(a_{i})| &lt; \epsilon.\tag{4.2}
+\end{equation}
+</div>
+</div></article><div class="para" id="p-80">By <a href="" class="xref" data-knowl="./knowl/exe-abc.html" title="Exercise 2.3">Exercise 2.3</a>, if <a href="" class="xref" data-knowl="./knowl/eq-ftcl.html" title="Equation 4.1">(4.1)</a> holds, then <span class="process-math">\(f\)</span> is absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span>
+</div>
+<div class="para" id="p-81">If <span class="process-math">\(f\)</span> is <dfn class="terminology">Lipschitz continuous</dfn> on <span class="process-math">\([a, b]\text{,}\)</span> namely, there exists some <span class="process-math">\(L &gt; 0\)</span> such that <span class="process-math">\(|f(x)-f(y)|\le L |y-x|\)</span> for any <span class="process-math">\(x, y\in [a, b]\text{,}\)</span> then <span class="process-math">\(f\)</span> is absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span>
+</div>
+<div class="para" id="p-82">If <span class="process-math">\(f\in C[a, b]\)</span> is differentiable everywhere in <span class="process-math">\((a, b)\)</span> and <span class="process-math">\(f'\)</span> is bounded on <span class="process-math">\((a, b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is Lipschitz continuous on <span class="process-math">\([a, b]\text{,}\)</span> therefore, is absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span>
+</div>
+<div class="para" id="p-83">Cantor's function is differentiable <span class="process-math">\(a.e.\)</span> in <span class="process-math">\((a, b)\text{,}\)</span> yet is not absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-16"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-16"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-16"><article class="exercise exercise-like"><div class="para" id="p-84">Suppose that  <span class="process-math">\(f\in C[a, b]\)</span> is differentiable <span class="process-math">\(a.e.\)</span> in <span class="process-math">\((a, b)\)</span> and <span class="process-math">\(|f'|\le M &lt; \infty\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\((a, b)\text{.}\)</span> Is <span class="process-math">\(f\)</span> necessarily Lipschitz continuous on <span class="process-math">\([a, b]\text{?}\)</span> Is it necessarily absolutely continuous on <span class="process-math">\([a, b]\text{?}\)</span>
+</div></article></div>
+<div class="para" id="p-85">We will prove below that any absolutely continuous function on <span class="process-math">\([a, b]\)</span> is differentiable <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> with its derivative a function in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> Assuming this for now, we prove</div>
+<article class="theorem theorem-like" id="thm-lebes-diff"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiability of an Indefinite Integral.</span>
+</h3>Suppost that <span class="process-math">\(g\in L^{1}[a, b]\text{.}\)</span> Then the function <span class="process-math">\(f(x) :=\int_{a}^{x} g(t)\, dt\)</span> is differentiable <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(f'(x)=g(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span></article><article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><div class="para" id="p-86">According to our discussion above, <span class="process-math">\(f(x) :=\int_{a}^{x} g(t)\, dt\)</span> is differentiable <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(f'(x)\in L^{1}[a, b]\text{.}\)</span> This implies that <span class="process-math">\(g_{h}(x) := h^{-1}\int_{x}^{x+h} g(t)\, dt =h^{-1}(f(x+h)-f(x)) \to f'(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> as <span class="process-math">\(|h|\to 0\text{.}\)</span>
+</div> <div class="para" id="p-87">On the other hand, according to <a href="" class="xref" data-knowl="./knowl/exe-avcn.html" title="Exercise 2.12">Exercise 2.12</a>, <span class="process-math">\(\int_{a}^{b}|g_{h}(x)-g(x)|\, dx\to 0\)</span> as <span class="process-math">\(h\to 0\text{.}\)</span> Then by (i) of <a href="" class="xref" data-knowl="./knowl/lprealization.html" title="Proposition 2.8: Realization of elements of L^{p}[a, b]">Proposition 2.8</a>,  there exists a sequence <span class="process-math">\(h_{k}\to 0\)</span> such that <span class="process-math">\(g_{h_{k}}(x)\to g(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span> This then identifies <span class="process-math">\(f'(x)=g(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span>
+</div> <div class="para logical" id="p-88">
+<div class="para">We could also complete the last part by using the Fatou Theorem:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lprealization.html" id="md-3">
+\begin{align*}
+\int_{a}^{b} |f'(x)-g(x)|\, dx \amp= \int_{a}^{b} \lim_{k\to \infty }|g_{h_{k}}(x)-g(x)|\, dx \\
+\amp \le \liminf{k\to \infty}  \int_{a}^{b} |g_{h_{k}}(x)-g(x)|\, dx=0,
+\end{align*}
+</div>
+<div class="para">from which we conclude that <span class="process-math">\(f'(x)=g(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> via (ii) of <a href="" class="xref" data-knowl="./knowl/lprealization.html" title="Proposition 2.8: Realization of elements of L^{p}[a, b]">Proposition 2.8</a>.</div>
+</div></article></div>
+<div class="para" id="p-89">For the remaining part, we will state and use Lebesgue's differentiability theorem of a monotone function but will skip its proof.</div>
+<article class="theorem theorem-like" id="thm-Lebes-diff"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Lebesgue's Differentiability Theorem of a Monotone Function.</span>
+</h3>
+<div class="para" id="p-90">Any monotone function on <span class="process-math">\([a, b]\)</span> is differentiable <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span>
+</div></article><article class="proposition theorem-like" id="prop-mono-int"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integrability of the Derivative of a Monotone Function.</span>
+</h3>Suppose that <span class="process-math">\(f\)</span> is a monotone increasing function on <span class="process-math">\([a, b]\text{,}\)</span> then its derivative, <span class="process-math">\(f'(x)\text{,}\)</span> is the realization of a function in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> Furthermore,<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{b} f'(x)\,dx \le f(b)-f(a).
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof">According to <a href="" class="xref" data-knowl="./knowl/thm-Lebes-diff.html" title="Theorem 4.4: Lebesgue's Differentiability Theorem of a Monotone Function">Theorem 4.4</a>, <span class="process-math">\(h^{-1}(f(x+h)-f(x))\to f'(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> For each <span class="process-math">\(h &gt; 0\text{,}\)</span> <span class="process-math">\(h^{-1}(f(x+h)-f(x)) \)</span> is a non-negative function in <span class="process-math">\(\cR[a, b]\)</span> (extend <span class="process-math">\(f(x)=f(b)\)</span> for <span class="process-math">\(x &gt; b\)</span>), and<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Lebes-diff.html">
+\begin{equation*}
+\int_{a}^{b} h^{-1}(f(x+h)-f(x)) \, dx =h^{-1}\left( \int_{b}^{b+h} f(x)\,dx - \int_{a}^{a+h} f(x)\, dx\right)
+\le f(b)- f(a),
+\end{equation*}
+</div>using <span class="process-math">\(\int_{a}^{a+h} f(x)\, dx\ge f(a) h\text{.}\)</span> Thus by Fatou Theorem,<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Lebes-diff.html" id="md-4">
+\begin{align*}
+\int_{a}^{b} f'(x)\, dx \amp = \int_{a}^{b} \liminf_{h\to 0+} h^{-1}(f(x+h)-f(x)) \, dx\\
+\amp  \le
+\liminf_{h\to 0+} \int_{a}^{b}  h^{-1}(f(x+h)-f(x)) \, dx \le f(b)-f(a).
+\end{align*}
+</div></article></div>
+<article class="definition definition-like" id="def-bv"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Function of Bounded Variation.</span>
+</h3> <div class="para logical" id="p-91">
+<div class="para">A function <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\)</span> is said to have bounded variation on <span class="process-math">\([a, b]\text{,}\)</span> if there exists some <span class="process-math">\(M &gt; 0\)</span> such that for any partition <span class="process-math">\(\cP=\{a=a_{0} &lt; a_{1} &lt; \cdots &lt; a_{k}=b\}\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})| \le M.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\sup_{\cP} \sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})|\)</span> is called the total variation of <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\)</span> and is denoted as <span class="process-math">\(V(f, [a, b])\text{.}\)</span>
+</div>
+</div></article><div class="para" id="p-92">If <span class="process-math">\(f\)</span> is a monotone increasing function on <span class="process-math">\([a, b]\text{,}\)</span> then it has bounded variation on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(V(f, [a, b])=f(b)-f(a)\text{.}\)</span>
+</div>
+<div class="para" id="p-93">If <span class="process-math">\(f=g-h\)</span> is the difference of two monotone increasing functions on <span class="process-math">\([a, b]\text{,}\)</span> then it has bounded variation on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(V(f, [a, b])\le V(g, [a, b])+V(h, [a, b])\text{.}\)</span>
+</div>
+<article class="proposition theorem-like" id="prop-bv-mono"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.7</span><span class="period">.</span>
+</h3>Any function of bounded variation on <span class="process-math">\([a, b]\)</span> is the difference of  two monotone increasing functions.</article><article class="hiddenproof" id="proof-15"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><div class="para" id="p-94">Let <span class="process-math">\(f\)</span> be a function of bounded variation on <span class="process-math">\([a, b]\text{.}\)</span> Define <span class="process-math">\(g(x) :=V(f, [a, x])\text{.}\)</span> Then <span class="process-math">\(g(x)\)</span> is a monotone increasing function on <span class="process-math">\([a, b]\text{.}\)</span> We now prove that <span class="process-math">\(h(x):=g(x)-f(x)\)</span> is a monotone increasing function on <span class="process-math">\([a, b]\text{.}\)</span>
+</div> <div class="para logical" id="p-95">
+<div class="para">Take <span class="process-math">\(x &lt; y\)</span> in <span class="process-math">\([a, b]\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(y)-h(x)=g(y)-g(x)-[f(y)-f(x)]=V(f, [x, y]) -[f(y)-f(x)].
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(V(f, [x, y])\)</span> is the supremum of <span class="process-math">\(\sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})|\)</span> for any partition <span class="process-math">\(\{x= a_{0} &lt; a_{1} &lt; \cdots &lt; a_{k}=y\}\text{,}\)</span> so <span class="process-math">\(V(f, [x, y])\ge |f(y)-f(x)|\text{.}\)</span>
+</div>
+</div></article></div>
+<div class="para" id="p-96">An absolutely continuous function on <span class="process-math">\([a, b]\)</span> has bounded variation on <span class="process-math">\([a, b]\text{,}\)</span> therefore, according to <a href="" class="xref" data-knowl="./knowl/prop-bv-mono.html" title="Proposition 4.7">Proposition 4.7</a>, <a href="" class="xref" data-knowl="./knowl/thm-Lebes-diff.html" title="Theorem 4.4: Lebesgue's Differentiability Theorem of a Monotone Function">Theorem 4.4</a> and <a href="" class="xref" data-knowl="./knowl/prop-mono-int.html" title="Proposition 4.5: Integrability of the Derivative of a Monotone Function">Proposition 4.5</a>, has its derivative in <span class="process-math">\(L^{1}[a,  b]\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="thm-ac"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Calculus.</span>
+</h3>A function <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\)</span> satisfies <a href="" class="xref" data-knowl="./knowl/eq-ftcl.html" title="Equation 4.1">(4.1)</a> for some function <span class="process-math">\(g\in L^{1}[a, b]\)</span> iff <span class="process-math">\(f\)</span> is absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span> When <a href="" class="xref" data-knowl="./knowl/eq-ftcl.html" title="Equation 4.1">(4.1)</a> holds, <span class="process-math">\(f'(x)=g(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span></article><article class="hiddenproof" id="proof-16"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><div class="para" id="p-97">We already discussed the necessary	part. For the sufficient part, suppose that <span class="process-math">\(f\)</span> is absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span> Then, according to our discussion above, <span class="process-math">\(f'(x)\)</span> exists <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\)</span> and is an element in <span class="process-math">\(L^{1}[a,  b]\text{.}\)</span> Set <span class="process-math">\(F(x)=\int_{a}^{x} f'(t)\, dt\text{.}\)</span> Then, according to <a href="" class="xref" data-knowl="./knowl/thm-lebes-diff.html" title="Theorem 4.3: Differentiability of an Indefinite Integral">Theorem 4.3</a>, <span class="process-math">\(F(x)\)</span> is is absolutely continuous on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(F'(x)=f'(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span>
+</div> <div class="para" id="p-98">Now <span class="process-math">\(f(x)-F(x)\)</span> is  absolutely continuous on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\((f(x)-F(x))'=0\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> We can draw our conclusion based on the following Lemma.</div></article></div>
+<article class="lemma theorem-like" id="lemm-ac"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Absolute Function with Vanishing Derivative.</span>
+</h3>Suppose that <span class="process-math">\(g(x)\)</span> is absolutely continuous on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(g'(x)=0\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> Then <span class="process-math">\(g\)</span> must be a constant function on <span class="process-math">\([a, b]\text{.}\)</span></article><div class="para" id="p-99">We will use the concept and properties of Vitali covering in proving this.</div>
+<article class="definition definition-like" id="def-vitali"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Vitali Covering.</span>
+</h3> <div class="para" id="p-100">Suppose that <span class="process-math">\(\Gamma =\{I_{\alpha}\}\)</span> is a family of intervals covering a set <span class="process-math">\(E\subset (a,b)\text{.}\)</span> Suppose that for any <span class="process-math">\(\epsilon &gt;0\)</span> and any <span class="process-math">\(x\in E\text{,}\)</span> there exists an interval <span class="process-math">\(I\in \Gamma\)</span> such that <span class="process-math">\(x\in I\)</span> and <span class="process-math">\(|I| &lt; \epsilon\text{.}\)</span> Then <span class="process-math">\(\Gamma\)</span> is said for form a Vitali covering of <span class="process-math">\(E\)</span>
+</div></article><article class="lemma theorem-like" id="lemm-vitali"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Vitali Covering Lemma.</span>
+</h3>Suppose that <span class="process-math">\(\Gamma =\{I_{\alpha}\}\)</span> is a Vitali covering of <span class="process-math">\(E\subset (a,b)\text{.}\)</span> Then for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a finite collection of disjoint intervals <span class="process-math">\(\{I_{i}, 1\le i \le k\}\)</span> of <span class="process-math">\(\Gamma\)</span> such that <span class="process-math">\(E\setminus \cup_{i=1}^{k}I_{i}\)</span> can be covered by an open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \epsilon\text{.}\)</span></article><article class="hiddenproof" id="proof-17"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><div class="para" id="p-101">We may take the <span class="process-math">\(I_{\alpha}\)</span> to be closed intervals in <span class="process-math">\((a, b)\text{.}\)</span> We choose <span class="process-math">\(I_{i}\)</span> inductively. Choose <span class="process-math">\(I_{1}\)</span> from <span class="process-math">\(\Gamma\)</span> such that <span class="process-math">\(2|I_{1}| &gt; \sup |I_{\alpha}|\text{.}\)</span>  After <span class="process-math">\(\{I_{i}, 1\le i \le l\}\)</span> are chosen, if <span class="process-math">\(E\setminus \cup_{i=1}^{l}I_{i} \ne \emptyset\text{,}\)</span> define <span class="process-math">\(\delta_{l+1}=\sup\{|I_{\alpha}|: I_{\alpha} \cap I_{i} =\emptyset, i=1,\cdots, l\}\text{.}\)</span> Then <span class="process-math">\(\delta_{l+1} &gt; 0\)</span> and we choose some <span class="process-math">\(I_{l+1}\in \Gamma\)</span> such that <span class="process-math">\(I_{l+1} \cap I_{i} =\emptyset, i=1,\cdots, l\)</span> and <span class="process-math">\(2|I_{l+1}| &gt; \delta_{l+1}\text{.}\)</span>
+</div> <div class="para" id="p-102">Since this collection of disjoint intervals are all contained in <span class="process-math">\((a, b)\text{,}\)</span> <span class="process-math">\(\sum_{l} |I_{l}| &lt; \infty\text{.}\)</span> Thus, for a given <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists <span class="process-math">\(k\)</span> such that <span class="process-math">\(\sum_{l&gt; k} |I_{l}| &lt;  \epsilon/5\text{.}\)</span>
+</div> <div class="para" id="p-103">Any <span class="process-math">\(x\in E\setminus \cup_{i=1}^{l}I_{i}\)</span> must be contained in some <span class="process-math">\(I\in \Gamma\)</span> such that <span class="process-math">\(I \cap I_{i}=\emptyset, i=1,\cdots, k\text{.}\)</span> Since <span class="process-math">\(|I| &gt; 0\)</span> and <span class="process-math">\(\delta_{l}\to 0\)</span> as <span class="process-math">\(l\to\infty\text{,}\)</span> we claim that <span class="process-math">\(I\cap I_{l}\ne \emptyset\)</span> for some <span class="process-math">\(l &gt; k\text{,}\)</span> for, whenever <span class="process-math">\(\delta_{l'} &lt; |I|\text{,}\)</span> <span class="process-math">\(I\cap I_{l}\ne \emptyset\)</span> for some <span class="process-math">\(l &lt; l'\text{.}\)</span> Let <span class="process-math">\(I_{l}'\)</span> be the interval with the same center point as <span class="process-math">\(I_{l}\)</span> but <span class="process-math">\(|I_{l}'|=5 |I_{l}|\text{,}\)</span> then <span class="process-math">\(I\subset I_{l}'\)</span> whenever <span class="process-math">\(I\cap I_{l}\ne \emptyset\text{.}\)</span> Thus <span class="process-math">\(\cup_{l &gt; k} I_{l}'\)</span> covers <span class="process-math">\(E\setminus \cup_{i=1}^{l}I_{i}\)</span> with <span class="process-math">\(\sum_{l &gt; k}  |I_{l}'| =5 \sum_{l &gt; k}  |I_{l}|&lt; \epsilon\text{.}\)</span>
+</div></article></div>
+<article class="hiddenproof" id="proof-18"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h3 class="heading"><span class="title">Proof of Lemma 4.9.</span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"> <div class="para logical" id="p-104">
+<div class="para">Suppose <span class="process-math">\(g\)</span> is not a constant function on <span class="process-math">\([a, b]\text{.}\)</span> Then there exists some <span class="process-math">\(c\in (a, b)\)</span> such that <span class="process-math">\(|g(c)-g(a)| &gt; 2\epsilon\)</span> for some <span class="process-math">\(\epsilon  &gt; 0\text{.}\)</span> Consider <span class="process-math">\(E_{c} :=\{x\in (a, c): g'(x)=0\}\text{.}\)</span> Then <span class="process-math">\([a, c]\setminus E_{c}\)</span> is negligible. For any <span class="process-math">\(x\in E_{c}\)</span> and any <span class="process-math">\(r &gt; 0\text{,}\)</span> for all sufficiently small <span class="process-math">\(h &gt; 0\text{,}\)</span> we have <span class="process-math">\([x, x+h]\subset (a, c)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|g(x+h)-g(x)|\le r h.
+\end{equation*}
+</div>
+<div class="para">Thus for any fixed such <span class="process-math">\(r &gt; 0\text{,}\)</span> the family <span class="process-math">\(\{[x, x+h]: x\in E_{c}\}\)</span> forms a Vitali cover of <span class="process-math">\(E_{c}\text{.}\)</span> Thus, for any <span class="process-math">\(\delta &gt; 0\text{,}\)</span> there exists disjoint intervals</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[x_{1}, x_{1}+h_{1}], \cdots, [x_{k}, x_{k}+h_{k}]
+\end{equation*}
+</div>
+<div class="para">such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[a, c] \setminus  \cup_{i=1}^{k} [x_{i}, x_{i}+h_{i}]
+\subset \left([a, c]\setminus E_{c}\right) \cup \left( E_{c}\setminus \cup_{i=1}^{k} [x_{i}, x_{i}+h_{i}]\right)
+\end{equation*}
+</div>
+<div class="para">can be covered by  an open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \delta\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-105">
+<div class="para">We may assume that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a &lt; x_{1} &lt; x_{1}+h_{1} &lt; x_{2} &lt; x_{2}+h_{2} &lt; \cdots &lt; x_{k} &lt; x_{k}+h_{k} &lt; c.
+\end{equation*}
+</div>
+<div class="para">These points, together with <span class="process-math">\(a \)</span> and <span class="process-math">\(c\text{,}\)</span> forms a partition of <span class="process-math">\([a, c]\text{.}\)</span> The sum of the lengths of those intervals of this partition not-overlapping with any of <span class="process-math">\((x_{i}, x_{i}+h_{i})\)</span> is <span class="process-math">\(&lt; \delta\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\epsilon &lt; |g(c)-g(a)| \le \sum_{i=1}^{k} |g(x_{i})-g(x_{i}+h_{i})| + \sum_{i=0}^{k} |g(x_{i}+h_{i})-g(x_{i+1})|
+\end{equation*}
+</div>
+<div class="para">where we set <span class="process-math">\(x_{0}+h_{0}=a\)</span> and <span class="process-math">\(x_{k+1}=c\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-106">
+<div class="para">We fix <span class="process-math">\(r &gt; 0\)</span> such that <span class="process-math">\(r(b-a) &lt; \epsilon\text{.}\)</span> Using the absolute continuity of <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> there exists some <span class="process-math">\(\delta &gt; 0\)</span> such that for any collection of disjoint intervals <span class="process-math">\([a_{j}, b_{j}]\)</span> with <span class="process-math">\(\sum_{j} (b_{j}-a_{j}) &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\sum_{j}|g(b_{j})-g(a_{j})| &lt; \epsilon\text{.}\)</span> For this reason, <span class="process-math">\(\sum_{i=0}^{k} |g(x_{i}+h_{i})-g(x_{i+1})| &lt; \epsilon\text{.}\)</span> But</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^{k} |g(x_{i})-g(x_{i}+h_{i})| \le \sum_{i=1}^{k}r h_{i} \le r(b-a) &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">We now see a contradiction and must conclude that <span class="process-math">\(g\)</span> is a constant function on <span class="process-math">\([a, b]\)</span>
+</div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-17"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-17"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.12</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-17"><article class="exercise exercise-like"><div class="para" id="p-107">Suppose that  <span class="process-math">\(f\)</span> is absolutely continuous on  <span class="process-math">\((a, b)\)</span> and <span class="process-math">\(|f'|\le M &lt; \infty\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\((a, b)\text{.}\)</span> Is <span class="process-math">\(f\)</span> necessarily Lipschitz continuous on <span class="process-math">\([a, b]\text{?}\)</span>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-18"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-18"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.13</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-18"><article class="exercise exercise-like"><div class="para" id="p-108">Suppose that  <span class="process-math">\(f\)</span> has bounded variation on <span class="process-math">\([0, 1]\)</span> and is absolutely continuous on  <span class="process-math">\([\epsilon ,1]\)</span> for any <span class="process-math">\(0 &lt; \epsilon &lt; 1\text{.}\)</span> Furthermore, suppose that <span class="process-math">\(f(x)\)</span> is continuous at <span class="process-math">\(x=0\text{.}\)</span> Prove that <span class="process-math">\(f\)</span> is absolutely continuous on  <span class="process-math">\([0 ,1]\text{.}\)</span>
+</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon">&gt;</span></span>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

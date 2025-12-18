@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Interchange of Differentiation and Limit of a Sequence of  Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="
+	Zheng-Chao Han
+	">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes:</span> <span class="subtitle">Analysis of Functions of Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="termwiseintex.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-SSFunctions.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="fcnspacemetric.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="frontmatter.html#abstract-1" class="internal"><span class="title">Abstract</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">1</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="uniformconv.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li><div class="toc-item"><a href="uniformconvprop.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="termwiseintex.html" class="internal"><span class="codenumber">1.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="xlimitdiff.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li><div class="toc-item"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="equicontinuity.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="SW.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Stone-Weierstrass Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="exercises-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_powerseries.html" class="internal"><span class="codenumber">2</span> <span class="title">Power Series</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_psradius.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li><div class="toc-item"><a href="sec_psproperties.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exponential.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li><div class="toc-item"><a href="exe-ps.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Additional Problems</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Fseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-FSConv.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li><div class="toc-item"><a href="int-diff.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_differentiaion.html" class="internal"><span class="codenumber">4</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_continuity.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-linearmaps.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li><div class="toc-item"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-17.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-17.html#subsection-differentiation" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsec-chainrule" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsec-diffCrit" class="internal"><span class="codenumber">4.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-contraction.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-19.html#subsec-ift" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="section-19.html#subsection-8" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-higherderiv.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-22.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-22.html#subsection-9" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-22.html#subsection-10" class="internal"><span class="codenumber">4.8.2</span> <span class="title">Review of properties  of univariate convex  functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-22.html#subsection-11" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Some properties of convex functions of several variables</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="exercises-3.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_integration.html" class="internal"><span class="codenumber">5</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-int-def.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li><div class="toc-item"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="xlimitdiff"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span>
+</h2>
+<article class="theorem theorem-like" id="thm-xlimitdiff"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions.</span>
+</h3>
+<div class="para logical" id="p-43">
+<div class="para">Suppose that <span class="process-math">\(\{f_n(x)\}\)</span> is a sequence of functions differentiable on <span class="process-math">\([a, b]\)</span> and that <span class="process-math">\(\{f_n(x_0)\}\)</span> converges for some <span class="process-math">\(x_0 \in [a, b]\text{.}\)</span> Suppose, in addition, that <span class="process-math">\(\{f_n'(x)\}\)</span> converges uniformly on <span class="process-math">\([a, b]\text{.}\)</span> Then <span class="process-math">\(\{f_n(x)\}\)</span> converges uniformly on <span class="process-math">\([a, b]\)</span> to a differentiable function <span class="process-math">\(f(x)\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x)=\lim_{n\to \infty} f_n'(x).
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><div class="para logical" id="p-44">
+<div class="para">Let's first give a proof under a stronger assumption: each <span class="process-math">\(f_n'(x)\)</span> is continuous on <span class="process-math">\([a, b]\text{,}\)</span> and let's denote <span class="process-math">\(\lim_{n\to\infty} f_n'(x)\)</span> by <span class="process-math">\(g(x)\text{.}\)</span> Then  <span class="process-math">\(g(x)\)</span> is continuous on <span class="process-math">\([a, b]\text{,}\)</span> <span class="process-math">\(f_n(x)=f_n(x_0)+\int_{x_0}^x f_n'(t)\, dt\text{,}\)</span> and <a href="" class="xref" data-knowl="./knowl/thm-uniformconvint.html" title="Theorem 1.2.4: Interchange of Limits and Integration">Theorem 1.2.4</a> implies that <span class="process-math">\(\int_{x_0}^x f_n'(t)\, dt\to \int_{x_0}^x g(t)\, dt\text{,}\)</span> so <span class="process-math">\(\lim_{n\to\infty} f_n(x)\)</span> exists---denote it as <span class="process-math">\(f(x)\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+f(x)=\lim_{n\to\infty} f_n(x_0)+  \int_{x_0}^x g(t)\, dt\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+f'(x)= g(x)=\lim_{n\to \infty} f_n'(x).
+\end{equation*}
+</div>
+<div class="para">Furthermore, the convergence above is uniform over <span class="process-math">\(x\in [a, b]\text{,}\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-uniformconvint.html">
+\begin{equation*}
+\sup_{x\in [a, b]} \left| \int_{x_0}^x f_n'(t)\, dt- \int_{x_0}^x g(t)\, dt \right|
+\le \int_a^b \left| f_n'(t)-g(t)\right|\, dt \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(n\to \infty\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-45">
+<div class="para">We now do a proof in the general case. First, we prove that <span class="process-math">\(\{f_n(x)\}\)</span> converges uniformly over <span class="process-math">\([a, b]\text{.}\)</span> Under the assumption of uniform convergence of <span class="process-math">\(\{f_n'(x)\}\)</span> over <span class="process-math">\([a, b]\text{,}\)</span> for any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists <span class="process-math">\(N\)</span> such that for <span class="process-math">\(n, m\ge N, x\in [a, b]\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="duc">
+\begin{equation}
+|f_n'(x)-f_m'(x)| \lt \epsilon.\tag{1.4.1}
+\end{equation}
+</div>
+<div class="para">Applying the theorem of the mean to <span class="process-math">\(f_n(x)-f_m(x)-\left[ f_n(x_0)-f_m(x_0)\right]\text{,}\)</span> we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n(x)-f_m(x)-\left[ f_n(x_0)-f_m(x_0)\right]=\left(f_n'(x^*)-f_m'(x^*)\right)(x-x_0)
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(x^*\)</span> depending on <span class="process-math">\(n, m, x\text{.}\)</span> This leads to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left| f_n(x)-f_m(x)\right| \le \left| f_n(x_0)-f_m(x_0)\right| +  \epsilon (b-a).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(f_n(x_0)-f_m(x_0) \to 0\)</span> as <span class="process-math">\(n, m \to \infty\text{,}\)</span> this shows that <span class="process-math">\(\{f_n(x)\}\)</span> satisfies the Cauchy Criterion for Uniform Convergence on <span class="process-math">\([a, b]\text{,}\)</span> therefore it converges uniformly to some <span class="process-math">\(f(x)\)</span> on <span class="process-math">\([a, b]\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-46">Next for any <span class="process-math">\(x\in (a, b)\)</span> we define <span class="process-math">\(g_n(h)=\left[f_n(x+h)-f_n(x)\right]/h\)</span> for <span class="process-math">\(0 \lt |h| \lt \delta\)</span> for some <span class="process-math">\(\delta &gt;0\)</span> (when <span class="process-math">\(x=a\)</span> or <span class="process-math">\(b\text{,}\)</span> we restrict <span class="process-math">\(h\)</span> to have appropriate sign). Note that <span class="process-math">\(g_n(h)\to f_n'(x)\)</span> as <span class="process-math">\(h\to 0\)</span> and that <span class="process-math">\(g_n(h)\to \left[f(x+h)-f(x)\right]/h\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span> We next show that this convergence is uniform for <span class="process-math">\(0 \lt |h| \lt \delta\text{.}\)</span>
+</div> <div class="para logical" id="p-47">
+<div class="para">We apply the theorem of the mean to <span class="process-math">\(g_n(h)-g_m(h)\)</span> to get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/duc.html ./knowl/uniformconvconti.html">
+\begin{equation*}
+g_n(h)-g_m(h)=f_n'(x^*)-f_m'(x^*)
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(x^*\)</span> between <span class="process-math">\(x\)</span> and <span class="process-math">\(x+h\)</span> depending on <span class="process-math">\(n, m, x, h\text{.}\)</span> But <a href="" class="xref" data-knowl="./knowl/duc.html" title="Equation 1.4.1">(1.4.1)</a> holds for <span class="process-math">\(n, m\ge N, x\in [a, b]\text{,}\)</span> so we get <span class="process-math">\(| g_n(h)-g_m(h) | \lt \epsilon\)</span> for <span class="process-math">\(n, m\ge N\)</span> uniformly in <span class="process-math">\(0 \lt |h| \lt \delta\text{.}\)</span> This shows that <span class="process-math">\(g_n(h)\)</span> converges to <span class="process-math">\(\left[f(x+h)-f(x)\right]/h\)</span> uniformly in <span class="process-math">\(0 \lt |h| \lt \delta\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span> Now <a href="" class="xref" data-knowl="./knowl/uniformconvconti.html" title="Theorem 1.2.1: The Limit of A Uniformly Convergent Sequence of Continuous Functions is Continuous">Theorem 1.2.1</a> applies to <span class="process-math">\(g_n(h)\)</span> to conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/duc.html ./knowl/uniformconvconti.html">
+\begin{equation*}
+\lim_{h\to 0} \left[f(x+h)-f(x)\right]/h = \lim_{n\to \infty} f_n'(x).
+\end{equation*}
+</div>
+<div class="para">Namely, <span class="process-math">\(f'(x)\)</span> exists and equals <span class="process-math">\(\lim_{n\to \infty} f_n'(x)\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="remark remark-like" id="remark-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h3>In <a href="" class="xref" data-knowl="./knowl/thm-xlimitdiff.html" title="Theorem 1.4.1: Interchange of Differentiation and Limit of a Sequence of  Functions">Theorem 1.4.1</a>, the assumptions are only sufficient, but not necessary conditions.  E.g. <span class="process-math">\(f_n(x)= x^n/n\)</span> converges to <span class="process-math">\(f(x)=0\)</span> uniformly on <span class="process-math">\(I=(-1,1)\text{,}\)</span> and <span class="process-math">\(f(x)=0\)</span> is differentiable on <span class="process-math">\(I\text{,}\)</span> yet the convergence of <span class="process-math">\(f'_n(x)=x^{n-1}\)</span> (to <span class="process-math">\(f'(x)=0\)</span>) is not uniform on <span class="process-math">\(I\)</span> (although when restricted to <span class="process-math">\((-\delta, \delta)\)</span> for any fixed <span class="process-math">\(0 &lt; \delta &lt; 1\text{,}\)</span> the convergence is uniform.). Another example is <span class="process-math">\(f_n(x)= \sin (nx)/n\text{,}\)</span> which converges to <span class="process-math">\(f(x)=0\)</span> uniformly on <span class="process-math">\(\mathbb R\text{,}\)</span> yet <span class="process-math">\(f'_n(x)= \cos (nx)\)</span> would not converge for many values of <span class="process-math">\(x\)</span> (e.g. all rational multiples of <span class="process-math">\(\pi\)</span>).</article><article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><div class="para logical" id="p-48">
+<div class="para">Define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-xlimitdiff.html">
+\begin{equation*}
+f(x)= \sum_{k=1}^{\infty} \frac{ \cos (kx)}{k^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">The series converges uniformly for <span class="process-math">\(x\in\bbR\)</span> so it defines a continuous function on <span class="process-math">\(\bbR\text{.}\)</span> To check its differentiability at any <span class="process-math">\(x\text{,}\)</span> we need to check whether the differentiated series</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-xlimitdiff.html">
+\begin{equation*}
+- \sum_{k=1}^{\infty} \frac{ \sin (kx)}{k}
+\end{equation*}
+</div>
+<div class="para">converges uniformly in a neighborhood of <span class="process-math">\(x\text{,}\)</span> according to <a href="" class="xref" data-knowl="./knowl/thm-xlimitdiff.html" title="Theorem 1.4.1: Interchange of Differentiation and Limit of a Sequence of  Functions">Theorem 1.4.1</a>.</div>
+</div> <div class="para logical" id="p-49">
+<div class="para">We studied this series earlier and showed that for any <span class="process-math">\(\delta, 0 \lt \delta \lt \pi\text{,}\)</span> it converges uniformly when restricted to <span class="process-math">\(\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}\text{.}\)</span> Thus in that region, we do have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x)= -\sum_{k=1}^{\infty} \frac{ \sin (kx)}{k}\text{.}
+\end{equation*}
+</div>
+</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="termwiseintex.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="fcnspacemetric.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

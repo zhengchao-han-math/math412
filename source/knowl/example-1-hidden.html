@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"> <ol class="decimal">
+<li>
+<div class="para logical">
+<div class="para">We continue to work with <span class="process-math">\(f_{n}(x)=x^{n}\)</span> and consider it on <span class="process-math">\([0, 1]\text{.}\)</span> It still converges point-wise, but the limiting function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\begin{cases} 0 \amp 0\le x \lt 1 \\
+1 \amp x=1\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">fails to be continuous at <span class="process-math">\(x=1\text{.}\)</span> This is due to the failure of uniform convergence on <span class="process-math">\([0, 1]\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Here we still have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to \infty} \int_{0}^{1}x^{n}\, dx = \int_{0}^{1} f(x)\, dx\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li><div class="para">If we modify <span class="process-math">\(f_{n}(x)\)</span> into<div class="displaymath process-math">
+\begin{equation*}
+g_{n}(x)=(n+1) x^{n}(1-x)\text{.}
+\end{equation*}
+</div>Then <span class="process-math">\(g_{n}(x)\to g(x):=0\)</span> point-wise on <span class="process-math">\([0, 1]\text{,}\)</span> although the convergence is still not uniform, as <span class="process-math">\(\max_{[0,1]}g_{n}(x)=\left(\frac{n}{n+1}\right)^{n}\to e^{-1}\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span>  When we examine <span class="process-math">\(\int_{0}^{1}g_{n}(x)\, dx\text{,}\)</span> we find it equal to <span class="process-math">\((n+2)^{-1}\to 0\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span>
+</div></li>
+<li><div class="para">However, if we modify <span class="process-math">\(g_{n}(x)\)</span> into <span class="process-math">\(h_{n}(x) :=(n+2)g_{n}(x)\text{,}\)</span> we continue to have <span class="process-math">\(h_{n}(x) \to 0\)</span> point-wise on <span class="process-math">\([0, 1]\text{.}\)</span> The convergence is not uniform, as <span class="process-math">\(\max_{[0,1]}h_{n}(x)= (n+2)\left(\frac{n}{n+1}\right)^{n} \to \infty\text{.}\)</span> And we find that<div class="displaymath process-math">
+\begin{equation*}
+\int_{0}^{1}h_{n}(x) = 1 \not \to \int_{0}^{1} 0\, dx\text{!}
+\end{equation*}
+</div>
+</div></li>
+</ol> <div class="para logical">
+<div class="para">Note that in all the cases above, once we fix some <span class="process-math">\(0 &lt; \delta &lt; 1\text{,}\)</span> the relevant sequences of functions converge to <span class="process-math">\(0\)</span> uniformly over <span class="process-math">\([0,\delta]\text{,}\)</span> so they fail to converge uniformly only over a neighborhood of <span class="process-math">\(x=1\text{.}\)</span> To examine question (b) raised earlier, we just need to answer whether the following holds:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\forall \; \epsilon&gt;0, \exists \; 0 &lt; \delta &lt; 1 \text{ and } N \text{ such that for all }  n\ge N,\\
+\left| \int_{\delta}^{1} k_{n}(x)\, dx \right| &lt; \epsilon,
+\end{gather*}
+</div>
+<div class="para">where <span class="process-math">\((k_{n}(x))\)</span> stands for one of the sequences  <span class="process-math">\(\{ f_{n}(x)\}, \{g_{n}(x)\}, \{h_{n}(x)\}\)</span> above. Through direct examination we find that this holds for  <span class="process-math">\(\{f_{n}(x)\}, \{g_{n}(x)\}\text{,}\)</span> but fails for <span class="process-math">\(\{h_{n}(x)\}\text{.}\)</span>
+</div>
+</div></article></body>
+</html>

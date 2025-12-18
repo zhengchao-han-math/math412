@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(||T||\)</span> depends on the specific norms used on <span class="process-math">\(X, Y\text{.}\)</span> For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I(u)(x) :=\int_{a}^{x}u(t)\, dt
+\end{equation*}
+</div>
+<div class="para">is a linear map from <span class="process-math">\(X=C[a, b]\)</span> to <span class="process-math">\(Y=\{v\in C^{1}[a, b]: v(a)=0\}\text{,}\)</span> where both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are endowed with the <span class="process-math">\(C[a, b]\)</span> norm: <span class="process-math">\(||u||_{C[a, b]} :=\max_{x\in [a, b]} |u(x)|\text{.}\)</span> Then clearly <span class="process-math">\(||I(u)||_{C[a, b]} \le (b-a) ||u||_{C[a, b]}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(I:X\mapsto Y\)</span> here is invertible, with <span class="process-math">\(I^{-1}(v)=v'(x)\)</span> for any <span class="process-math">\(v\in Y\text{.}\)</span> However, <span class="process-math">\(I^{-1}\)</span> does not have a finite operator norm with respect to the norms we have chosen here, for, that would require the existence of some <span class="process-math">\(C'&gt;0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||I^{-1}(v)||_{C[a, b]}\le C' ||v||_{C[a, b]} \text{ for all $v\in Y$.}
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(v_{k}=\sin k(x-a)\)</span>  is a family in <span class="process-math">\(Y\text{,}\)</span> with <span class="process-math">\(||v_{k}||_{C[a, b]}=1\text{,}\)</span> yet <span class="process-math">\(||v_{k}'||_{C[a, b]}=|k|\text{,}\)</span> so the above inequality can't hold when <span class="process-math">\(|k|\to \infty\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">If we endow <span class="process-math">\(Y\)</span> with the <span class="process-math">\(C^{1}[a, b]\)</span> norm:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||v||_{C^{1}[a, b]} :=\max_{x\in [a, b]} |v(x)| + \max_{x\in [a, b]} |v'(x)|\text{,}
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(I\)</span> still has a finite norm: <span class="process-math">\(||I(u)||_{C^{1}[a, b]}\le (b-a+1) ||u||_{C[a, b]}\)</span> for all <span class="process-math">\(u\in X\text{,}\)</span> and its inverse also has a finite norm:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||I^{-1}(v)||_{C[a, b]} \le ||v||_{C^{1}[a, b]} \text{ for all $v\in Y$.}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="section-linearmaps.html#remark-31" class="internal">in-context</a></span>
+</body>
+</html>

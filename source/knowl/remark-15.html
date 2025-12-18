@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h3>In computing the radius of convergence of a power series, one often has to make some adaptation. For instance, to determine the radius of convergence of<div class="displaymath process-math">
+\begin{equation*}
+\sum_{m=0}^{\infty} (-1)^{m}\frac{x^{2m+1}}{(2m+1)!},
+\end{equation*}
+</div>if one applies the radius of convergence formula directly, then one needs to identify<div class="displaymath process-math">
+\begin{equation*}
+a_{n}=\begin{cases} \frac{(-1)^{m}}{(2m+1)!} \amp \quad\text{ if } n=2m+1 \\
+0 \amp \quad\text{ if } n \text{ is even},
+\end{cases}
+\end{equation*}
+</div>and evaluate <span class="process-math">\(\limsup_{n \to\infty} \sqrt[n]{|a_{n}|}\text{,}\)</span> which would involve evaluation of<div class="displaymath process-math">
+\begin{equation*}
+\limsup_{m \to\infty} \{(2m+1)!\}^{\frac{1}{2m+1}}\text{,}
+\end{equation*}
+</div>which can be done but requires some work.  One could apply the ratio test but needs some adaptation, as <span class="process-math">\(a_{n}=0\)</span> for all even <span class="process-math">\(n\)</span>'s. One could  treat <span class="process-math">\(x^{2m+1}\)</span> as the <span class="process-math">\(m\)</span>-th term, in stead of <span class="process-math">\((2m+1)\)</span>-th term. Then one only needs to make sure that<div class="displaymath process-math">
+\begin{equation*}
+|x|^{2} \limsup_{m\to \infty} \frac{(2m+1)!}{(2m+3)!} &lt; 1.
+\end{equation*}
+</div>This turns out to hold for any <span class="process-math">\(x\text{.}\)</span> Thus the radius of convergence here is <span class="process-math">\(\infty\text{.}\)</span></article><span class="incontext"><a href="sec_psradius.html#remark-15" class="internal">in-context</a></span>
+</body>
+</html>

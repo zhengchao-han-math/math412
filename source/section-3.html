@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Space of Riemann Integrable Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Notes412Integral.html"><span class="title">Notes on the Completion of the Space of Continuous Functions under Integral Norms</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="chp-int.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="Notes412Integral.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="section-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth1"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li><div class="toc-item"><a href="RS-int.html" class="internal"><span class="codenumber">1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div></li>
+<li><div class="toc-item"><a href="chp-int.html" class="internal"><span class="codenumber">2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3</span> <span class="title">The Space of Riemann Integrable Functions</span>
+</h2>
+<section class="introduction" id="introduction-2">Here we discuss the relation between the space of Riemann integrable functions on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(L^{1}[a, b]\text{,}\)</span> the completion of <span class="process-math">\(C[a, b]\)</span> under the <span class="process-math">\(L^{1}[a, b]\)</span> norm.</section><div class="para" id="p-57">We first make the following definition.</div>
+<article class="definition definition-like" id="def-osc"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
+</h3> <div class="para logical" id="p-58">
+<div class="para">Let <span class="process-math">\(f\)</span> be defined on an interval <span class="process-math">\(I\text{.}\)</span> The oscillation of a function <span class="process-math">\(f\)</span> over the set <span class="process-math">\(S \subset I\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sup_{S}f - \inf_{S}f = M(f, S)-m(f, S)
+\end{equation*}
+</div>
+<div class="para">and is denoted as <span class="process-math">\(\osc(f, S)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-59">
+<div class="para">The oscillation of a function <span class="process-math">\(f\)</span>  at a point <span class="process-math">\(x\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{r\searrow 0} \osc(f, I\cap I(x, r)),
+\end{equation*}
+</div>
+<div class="para">and is denoted as <span class="process-math">\(\osc(f)(x)\text{.}\)</span> Here <span class="process-math">\(I(x, r)\)</span> is the open interval of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(x\text{.}\)</span>
+</div>
+</div></article><article class="proposition theorem-like" id="proposition-6"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Upper semi-continuity of <span class="process-math">\(\osc(f)(x)\)</span>.</span>
+</h3>The function <span class="process-math">\(\osc(f)(x)\)</span> is upper 	semi-continuous. As a consequence, for any real number <span class="process-math">\(a\text{,}\)</span> the set <span class="process-math">\(\{x: 	\osc(f)(x)\ge a \}\)</span> is closed.</article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para" id="p-60">For any real number <span class="process-math">\(a\text{,}\)</span> if <span class="process-math">\(x_{0}\in \{x: 	\osc(f)(x) &lt; a\}\text{,}\)</span> then there exists some <span class="process-math">\(r&gt;0\)</span> such that <span class="process-math">\(\osc(f, I(x_{0}, r)) &lt; a\text{.}\)</span> For any <span class="process-math">\(x \in I(x_{0}, r)\text{,}\)</span> we observe that <span class="process-math">\(\osc(f)(x)\le \osc(f, I(x_{0}, r)) &lt; a\text{.}\)</span> Thus <span class="process-math">\(I(x_{0}, r) \subset \{x: 	\osc(f)(x) &lt; a\}\text{,}\)</span> proving that the latter is open.</div></article></div>
+<div class="para logical" id="p-61">
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="eqn-discont">
+\begin{equation}
+\{x: f \text{ discontinuous at } x\}=
+\cup_{k\in \bbN} \{y: \osc(f)(y)\ge \frac 1k\},\tag{3.1}
+\end{equation}
+</div>
+<div class="para">namely, <span class="process-math">\(\{x: f \text{ discontinuous at } x\}\)</span> is a countable union of of the closed sets <span class="process-math">\(\{y: \osc(f)(y)\ge \frac 1k\}\text{.}\)</span>
+</div>
+</div>
+<article class="theorem theorem-like" id="thm-Riemann-integrability-oscillation"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann integrability criterion in terms of the oscillation of the integrand.</span>
+</h3>
+<div class="para logical" id="p-62">
+<div class="para">A bounded real-valued function <span class="process-math">\(f\)</span> defined on the interval <span class="process-math">\(I\)</span> is Riemann integrable iff</div>
+<div class="displaymath process-math" id="eqn-int-osc">
+\begin{equation}
+\forall \epsilon &gt;0, \exists  \text{ a partition }
+\cP:=\{I_{\alpha}\} \text{ such that } 
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert &lt; \epsilon.\tag{3.2}
+\end{equation}
+</div>
+</div> <div class="para" id="p-63">In particular, if <span class="process-math">\(f\)</span> is continuous on the closed interval <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para logical" id="p-64">
+<div class="para">Suppose that <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\)</span> and that <span class="process-math">\(\epsilon&gt;0\)</span> is given. Then the Darboux integrability criterion gives us a partition <span class="process-math">\(\cP:=\{I_{\alpha}\}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{I}\, f -\frac{\epsilon}{2} &lt; L(f, \cP)\le \int_{I}\, f \le 
+U (f, \cP)  &lt; \int_{I}\, f  + \frac{\epsilon}{2},
+\end{equation*}
+</div>
+<div class="para">which implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert
+=U (f, \cP)-L (f, \cP) &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-65">
+<div class="para">Suppose that <a href="" class="xref" data-knowl="./knowl/eqn-int-osc.html" title="Equation 3.2">(3.2)</a> holds. Then <span class="process-math">\(U (f, \cP)-L (f, \cP) &lt; \epsilon,\)</span>  and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn-int-osc.html">
+\begin{equation*}
+0\le \upint_{I}\, f  -\lowint_{I} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\epsilon &gt;0\)</span> is arbitrary, it follows that <span class="process-math">\(\upint_{I}\, f -\lowint_{I} \, f=0\text{,}\)</span>  and <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-66">
+<div class="para">Finally, suppose that <span class="process-math">\(f\)</span> is continuous on the closed interval <span class="process-math">\(I\text{,}\)</span> then it is uniformly continuous on <span class="process-math">\(I\text{.}\)</span> For any given <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists <span class="process-math">\(\delta &gt;0\)</span> such that for any partition <span class="process-math">\(\cP:=\{I_{\alpha}\}\)</span> of <span class="process-math">\(I\)</span> with <span class="process-math">\(\lambda (P) &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\osc(f, I_{\alpha}) &lt; \epsilon/\vert I\vert\)</span> for all <span class="process-math">\(I_{\alpha} \in \cP\text{.}\)</span> It then follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert \le \epsilon,
+\end{equation*}
+</div>
+<div class="para">proving the Riemann integrability of <span class="process-math">\(f\)</span> on <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="definition definition-like" id="def-content0"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4</span><span class="period">.</span>
+</h3> <div class="para logical" id="p-67">
+<div class="para">A set <span class="process-math">\(S\subset \bbR\)</span> is said to have content <span class="process-math">\(0\text{,}\)</span> if for any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists a <em class="emphasis">finite</em> cover <span class="process-math">\(\{I_{i}\} \)</span> of <span class="process-math">\(S\)</span> by intervals such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i}\vert I_{i}\vert &lt; \epsilon.
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-68">We are now ready to formulate the following theorem.</div>
+<article class="theorem theorem-like" id="thm-integrability-osc0"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann integrability in terms of the set of discontinuity.</span>
+</h3>
+<div class="para" id="p-69">A bounded function <span class="process-math">\(f\)</span> on a bounded closed interval <span class="process-math">\(I\)</span> is Riemann integrable on <span class="process-math">\(I\)</span> iff its set of discontinuity is negligible.</div></article><article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><div class="para" id="p-70">We will use <a href="" class="xref" data-knowl="./knowl/eqn-discont.html" title="Equation 3.1">(3.1)</a> for the only if part.</div> <div class="para" id="p-71">Suppose that <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\text{.}\)</span> For each <span class="process-math">\(k\in \bbN\text{,}\)</span> we will prove that the closed set <span class="process-math">\(D_{k}:=\{y: \osc(f)(y)\ge \frac 1k\}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div> <div class="para logical" id="p-72">
+<div class="para">Given any <span class="process-math">\(\epsilon &gt;0\text{.}\)</span> There exists a partition <span class="process-math">\(\cP=\{I_{\alpha}\}\)</span> of <span class="process-math">\(I\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f, I_{\alpha})\vert I_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
+\end{equation*}
+</div>
+<div class="para">The intervals in <span class="process-math">\(\cP\)</span> are divided into two subgroups: the subgroup <span class="process-math">\(\cL_{k}\)</span> consisting those <span class="process-math">\(I_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, I_{\alpha})\ge \frac{1}{2k}\text{,}\)</span> and the subgroup <span class="process-math">\(\cS_{k}\)</span> consisting those <span class="process-math">\(I_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, I_{\alpha})&lt; \frac{1}{2k}\text{.}\)</span> Then it follows from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2k} \sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert \le
+\sum_{I_{\alpha}\in \cL_{k} } \osc(f, I_{\alpha})\vert I_{\alpha} \vert &lt; \frac{\epsilon}{2k}
+\end{equation*}
+</div>
+<div class="para">that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-73">
+<div class="para">We now claim that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{k}\subset \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}.
+\end{equation*}
+</div>
+<div class="para">This will show that <span class="process-math">\(D_{k}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-74">If the claim were not true, there would exist some <span class="process-math">\(x \in D_{k}
+\setminus \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\text{.}\)</span> Thus <span class="process-math">\(x \in \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\text{.}\)</span> Since the complement of <span class="process-math">\(\cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\)</span> is open, there exists some interval <span class="process-math">\(I(x, r)
+\subset \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\text{.}\)</span> If <span class="process-math">\(x\in \text{ interior}(I_{\alpha})\)</span> for some <span class="process-math">\(I_{\alpha} \in \cS_{k}\text{,}\)</span> it would force <span class="process-math">\(\frac 1k \le \osc(f)(x)\le \osc(f, I_{\alpha}) &lt; \frac{1}{2k}\text{,}\)</span> which would be a contradiction. So <span class="process-math">\(x\)</span> can only be on the boundary of one or more <span class="process-math">\(I_{\alpha} \in \cS_{k}\text{.}\)</span> We can choose <span class="process-math">\(r&gt;0\)</span> small enough such that any <span class="process-math">\(y\in I(x, r)\)</span> and <span class="process-math">\(x\)</span> will be in one such common interval. Therefore, <span class="process-math">\(\vert f(y)-f(x)\vert &lt; \frac{1}{2k}\text{.}\)</span> This would lead to <span class="process-math">\(\osc(f)(x)\le \osc(f, I(x, r)) &lt; \frac 1k\text{,}\)</span> contradicting <span class="process-math">\(x \in D_{k}\text{.}\)</span>
+</div> <div class="para logical" id="p-75">
+<div class="para">For the if part, take any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> then choose <span class="process-math">\(k\)</span> such that <span class="process-math">\(k^{-1} &lt; \epsilon\text{.}\)</span> The closed set <span class="process-math">\(D_{k}=\{y: \osc(f)(y)\ge \frac 1k\}\)</span> is a subset of the negligible set <span class="process-math">\(D\text{,}\)</span> so can be covered by a union <span class="process-math">\(G\)</span> of a finite number of intervals such that <span class="process-math">\(|G| &lt; \epsilon\text{.}\)</span> Every point <span class="process-math">\(x\in [a, b]\setminus G\)</span> has an open interval <span class="process-math">\(I(x, r)\)</span> such that <span class="process-math">\(\osc(f, I(x, r)) &lt; k^{-1}\text{.}\)</span> The closed set <span class="process-math">\([a, b]\setminus G\)</span> can be covered by the union of a finite number of such intervals and one can find a fine enough partition <span class="process-math">\(\cP=\{I_{i}\}\)</span> of <span class="process-math">\([a, b]\)</span> such that if any <span class="process-math">\(I_{i}\)</span> contains a point of <span class="process-math">\(D_{k}^{c}\text{,}\)</span> then <span class="process-math">\(\osc(f, I_{i})&lt; k^{-1}\text{;}\)</span> and the union of those <span class="process-math">\(I_{i}\subset D_{k} \)</span> has their sum of lengths <span class="process-math">\(&lt; \epsilon\text{.}\)</span> This would give</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i} \osc(f, I_{i})|I_{i}| \le k^{-1}(b-a) + 2\epsilon \sup_{[a, b]}|f| ,
+\end{equation*}
+</div>
+<div class="para">which proves that <span class="process-math">\(f\)</span>  satisfies the Riemann integrability criterion.</div>
+</div></article></div>
+<article class="corollary theorem-like" id="corollary-3"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Approximation Property of Functions in <span class="process-math">\(\cR[a, b]\)</span>.</span>
+</h3>Any Riemann integrable function <span class="process-math">\(f\in \cR[a, b]\)</span> lies in <span class="process-math">\(L^{p}[a, b]\)</span> for any <span class="process-math">\(1\le p &lt; \infty\text{,}\)</span> and for any <span class="process-math">\(\epsilon &gt; 0\)</span> there exists a continuous function <span class="process-math">\(c\in C[a, b]\)</span> and an open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> such that <span class="process-math">\(|G| &lt; \epsilon\text{,}\)</span> <span class="process-math">\(f=c\)</span> on <span class="process-math">\(G^{c}\text{,}\)</span> and <span class="process-math">\(\max_{[a, b]}|c| \le \max_{[a,b]}|f|\text{.}\)</span></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof">Since the set <span class="process-math">\(D\)</span> of discontinuity of <span class="process-math">\(f\)</span> is negligible, for any <span class="process-math">\(\epsilon &gt; 0\)</span> there exists  an open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> such that it covers <span class="process-math">\(D\)</span> and <span class="process-math">\(|G| &lt; \epsilon\text{.}\)</span> For every point <span class="process-math">\(x\)</span> in the closed set <span class="process-math">\([a, b]\setminus G\text{,}\)</span> <span class="process-math">\(\osc(f)(x)=0\text{,}\)</span> so <span class="process-math">\(f\)</span> is a continuous function on this closed set.   It can be extended to a continuous function <span class="process-math">\(c\)</span> on <span class="process-math">\([a, b]\)</span> such that <span class="process-math">\(\max_{[a, b]}|c| \le \max_{[a,b]}|f|\text{.}\)</span> Then this <span class="process-math">\(c\)</span> satisfies our requirements.</article></div>
+<article class="exercise exercise-like" id="exercise-13"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-13"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.7</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-13"><article class="exercise exercise-like"><div class="para" id="p-76">Suppose that <span class="process-math">\(c(x)\in C[a, b]\)</span> and <span class="process-math">\(E\subset [a, b]\)</span> is negligible. Is it true that any modification of <span class="process-math">\(c(x)\)</span> on <span class="process-math">\(E\)</span> into a bounded  function <span class="process-math">\(\tilde c(x)\)</span> will remain to have a negligible set of discontinuity and remain Riemann integrable on <span class="process-math">\([a, b]\text{?}\)</span>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-14"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-14"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.8</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-14"><article class="exercise exercise-like"><div class="para" id="p-77">Suppose that <span class="process-math">\(E\)</span> is a closed negligible subset of <span class="process-math">\([a, b]\text{.}\)</span> Prove that the set of discontinuity of the characteristic function <span class="process-math">\(\chi_{E}(x)\)</span> is precisely <span class="process-math">\(E\text{.}\)</span>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-15"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-15"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.9</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-15"><article class="exercise exercise-like"><div class="para" id="p-78">Suppose that <span class="process-math">\(E\)</span> is the union of at most countably many closed negligible subsets of <span class="process-math">\([a, b]\text{.}\)</span> Prove that there is a bounded function <span class="process-math">\(f(x)\)</span> defined on <span class="process-math">\([a, b]\)</span> whose set of discontinuity is precisely <span class="process-math">\(E\text{.}\)</span>
+</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="chp-int.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A Brief Summary of Riemann-Stieltjes Integral</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Notes412Integral.html"><span class="title">Notes on the Completion of the Space of Continuous Functions under Integral Norms</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="Notes412Integral.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chp-int.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth1"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="RS-int.html" class="internal"><span class="codenumber">1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div></li>
+<li><div class="toc-item"><a href="chp-int.html" class="internal"><span class="codenumber">2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="RS-int"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span>
+</h2>
+<section class="introduction" id="introduction-1"><div class="para" id="p-1">In the context of probability, if a random variable has a probability density function <span class="process-math">\(p(x)\text{,}\)</span> then the probability that the variable falls into <span class="process-math">\([a, b]\)</span> is given by <span class="process-math">\(\int_{a}^{b} p(x)\, dx\text{.}\)</span> Such a random variable can't have a positive probability taking on a single value. A general random variable <span class="process-math">\(X\)</span> has a cumulative distribution	function <span class="process-math">\(F(x) :=\cP(x: X\le x)\text{.}\)</span> It is a non-decreasing function of <span class="process-math">\(x\)</span>---we will also use the terminology increasing function interchangeably. The Riemann-Stieltjes integral with respect to an increasing function is a step in describing the probability of a general random variable in terms of integrals.</div> <div class="para" id="p-2">In the context of functional analysis, there is a need to consider possible convergence of a sequence of linear functional on <span class="process-math">\(C[a, b]\text{,}\)</span> given in the form of <span class="process-math">\(g\in C[a, b]\mapsto \int_{a}^{b} g(x)f_{k}(x)\, dx\text{,}\)</span> where <span class="process-math">\(\{f_{k}\}\)</span> is a sequence of continuous or Riemann integrable functions on <span class="process-math">\([a, b]\)</span> with certain bounds, say, <span class="process-math">\(\int_{a}^{b} |f_{k}(x)|\, dx\le M\)</span> for all <span class="process-math">\(k\text{.}\)</span> If there is a limit, then it could be given in terms of the Riemann-Stieltjes integral with respect to some increasing function.</div></section><div class="para logical" id="p-3">
+<div class="para">Given a monotone increasing function <span class="process-math">\(\alpha\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> we can mimic the steps in defining the usual Riemann integral of a given bounded function <span class="process-math">\(f\)</span> on <span class="process-math">\([a, b]\)</span> to define the lower sum</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(f, \cP, d \alpha)  :=\sum_{i=1}^{k} m_{I_{i}} (f) d\alpha(I_{i})
+\end{equation*}
+</div>
+<div class="para">and upper sum</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U(f, \cP, d \alpha)  :=\sum_{i=1}^{k} M_{I_{i}} (f) d\alpha (I_{i})
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(f\)</span> with respect to a partition <span class="process-math">\(\cP=\{a=x_{0} &lt; x_{1} &lt; \cdots &lt; x_{k}=b\}\)</span> of <span class="process-math">\([a, b]\text{,}\)</span> with <span class="process-math">\(I_{i}=[x_{i-1}, x_{i}]\text{,}\)</span> <span class="process-math">\(d\alpha (I_{i})=\alpha(x_{i})-\alpha(x_{i-1})\text{,}\)</span> <span class="process-math">\(m_{I_{i}} (f)=\inf_{I_{i}}f\text{,}\)</span> and <span class="process-math">\(M_{I_{i}} (f) =\sum_{I_{i}}f\text{.}\)</span>
+</div>
+</div>
+<article class="definition definition-like" id="def-upperlower-int-def"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
+</h3> <div class="para" id="p-4">Suppose that <span class="process-math">\(f\)</span> is a bounded function defined on the interval <span class="process-math">\([a, b]\text{.}\)</span> Then its upper integral, and respectively lower integral, on <span class="process-math">\([a, b]\)</span>  with respect to <span class="process-math">\(\alpha\)</span> is defined as <span class="process-math">\(\inf_{\cP}U(f, \cP, \alpha)\text{,}\)</span> and respectively <span class="process-math">\(\sup_{\cP}U(f, \cP, \alpha)\text{,}\)</span> where <span class="process-math">\(\cP\)</span> runs over all partitions of <span class="process-math">\(\cP\text{.}\)</span>
+</div> <div class="para" id="p-5">The upper integral is denoted as <span class="process-math">\(\upint_{a}^{b}\,f\, d\alpha\text{,}\)</span> while the lower integral is denoted as <span class="process-math">\(\lowint_{a}^{b}\,f\, d\alpha\text{.}\)</span>
+</div></article><div class="para" id="p-6">When <span class="process-math">\(\alpha(x)=x\text{,}\)</span> we write <span class="process-math">\(U(f, \cP)\)</span> for <span class="process-math">\(U(f, \cP, dx)\text{,}\)</span> and <span class="process-math">\(L(f, \cP)\)</span> for <span class="process-math">\(L(f, \cP, dx)\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-1"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-1"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><div class="para" id="p-7">Let <span class="process-math">\(\cC\)</span> denote the standard tertiary Cantor set on <span class="process-math">\([0, 1]\)</span> and <span class="process-math">\(\chi_{\cC}\)</span> denote its characteristic function which takes  value <span class="process-math">\(1\)</span> on <span class="process-math">\(\cC\)</span> and <span class="process-math">\(0\)</span> elsewhere. Let <span class="process-math">\(\cP\)</span> be a partition of <span class="process-math">\([0, 1]\)</span> into intervals of equal length <span class="process-math">\(3^{-k}\)</span> for some <span class="process-math">\(k\in \bbN\text{.}\)</span> Find <span class="process-math">\(U(\chi_{\cC}, \cP)\)</span> and <span class="process-math">\(L(\chi_{\cC}, \cP)\text{.}\)</span> Is there a positive lower bound of <span class="process-math">\(L(\chi_{\cC}, \cP)\)</span> independent of <span class="process-math">\(\cP\text{?}\)</span>
+</div></article></div>
+<article class="proposition theorem-like" id="propos-upperlower-int"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Basic property of upper and lower integral of a bounded real-valued function.</span>
+</h3>Suppose that <span class="process-math">\(f\)</span> is a bounded function defined on the interval <span class="process-math">\([a, b]\text{.}\)</span> Then<div class="displaymath process-math">
+\begin{equation*}
+\lowint_a^b\,f\, d\alpha \le  \upint_a^b\,f\, d\alpha.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para logical" id="p-8">
+<div class="para">Let <span class="process-math">\(\cP_{1}, \cP_{2}\)</span> be two arbitrary partitions of <span class="process-math">\([a, b]\text{,}\)</span> and <span class="process-math">\(\cP^{*}\)</span> be a refinement of both <span class="process-math">\(\cP_{1}\)</span> and <span class="process-math">\(\cP_{2}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(f, \cP_{1},d\alpha)\le L(f, \cP^{*}, d \alpha)\le U(f, \cP^{*}, d \alpha)\le U(f, \cP_{2}, d \alpha).
+\end{equation*}
+</div>
+<div class="para">As a result,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(f, \cP_{1}, d \alpha)\le  \upint_a^b \,f\, d \alpha) =\inf_{\cP_{2}} U(f, \cP_{2}, d \alpha),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lowint_a^b \,f\, d \alpha =\sup_{\cP_{1}} L(f, \cP_{1}, d \alpha)\le \upint_a^b \,f\, d \alpha.
+\end{equation*}
+</div>
+</div> </article></div>
+<article class="definition definition-like" id="def-riemann-stieltjes-integrable"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h3> <div class="para logical" id="p-9">
+<div class="para">A bounded real-valued function <span class="process-math">\(f\)</span> defined on an interval <span class="process-math">\([a, b]\)</span> is called <dfn class="terminology">Riemann-Stieltjes integrable</dfn> with respect to <span class="process-math">\(d\alpha\text{,}\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lowint_a^b\,f\, d\alpha =  \upint_a^b\,f\, d\alpha.
+\end{equation*}
+</div>
+<div class="para">In such a case we write <span class="process-math">\(f\in \cR(\alpha)\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> and use <span class="process-math">\(\int_{a}^{b} \,f\, d\alpha\)</span> for <span class="process-math">\(\lowint_a^b\,f\, d\alpha \text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="theorem-1"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann-Stieltjes integrability criterion.</span>
+</h3>A bounded real-valued function <span class="process-math">\(f\)</span> defined on the interval <span class="process-math">\([a, b]\)</span> is Riemann-Stieltjes integrable iff for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a partition <span class="process-math">\(\cP\)</span> of <span class="process-math">\([a, b]\)</span> such that<div class="displaymath process-math" id="RS-IntC">
+\begin{equation}
+U(f, \cP, d\alpha) - L(f, \cP, d\alpha) &lt; \epsilon.\tag{1.1}
+\end{equation}
+</div></article><article class="exercise exercise-like" id="exercise-2"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-2"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><div class="para logical" id="p-10">
+<div class="para">Define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H(x)=\begin{cases} 1 \amp x \ge 0 \\ 0 \amp x &lt; 0 
+\end{cases}
+\text{ and }
+G(x) =\begin{cases} 1 \amp x &gt; 0 \\ 0 \amp x \le 0 
+\end{cases} 
+\end{equation*}
+</div>
+<div class="para">Determine <span class="process-math">\(\lowint_{-1}^{1} H(x)\, dH(x)\text{,}\)</span> <span class="process-math">\(\upint_{-1}^{1} H(x)\, dH(x)\text{,}\)</span> <span class="process-math">\(\lowint_{-1}^{1} G(x)\, dH(x)\text{,}\)</span> <span class="process-math">\(\upint_{-1}^{1} G(x)\, dH(x)\text{,}\)</span> and find out if either <span class="process-math">\(H\)</span> or <span class="process-math">\(G\)</span> is in <span class="process-math">\(\cR(dH)\)</span> over <span class="process-math">\([-1, 1]\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7</span><span class="period">.</span>
+</h3>If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a, b]\text{,}\)</span> then <span class="process-math">\(f\in \cR (\alpha)\)</span> on <span class="process-math">\([a, b]\text{.}\)</span></article><article class="theorem theorem-like" id="theorem-3"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span>
+</h3>If <span class="process-math">\(f\)</span> is monotone on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(\alpha\)</span> continuous on <span class="process-math">\([a, b]\text{,}\)</span> then <span class="process-math">\(f\in \cR (\alpha)\)</span> on <span class="process-math">\([a, b]\text{.}\)</span></article><article class="theorem theorem-like" id="theorem-4"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
+</h3>If <span class="process-math">\(f\)</span> is bounded on <span class="process-math">\([a, b]\)</span> and has only finitely many points of discontinuity, and <span class="process-math">\(\alpha\)</span> is continuous at every point at which <span class="process-math">\(f\)</span> is discontinuous, then <span class="process-math">\(f\in \cR (\alpha)\)</span> on <span class="process-math">\([a, b]\text{.}\)</span></article><article class="theorem theorem-like" id="theorem-5"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Riemann-Stieltjes Integral.</span>
+</h3>Suppose that <span class="process-math">\(f_{1}, f_{2} \in \cR(\alpha)\)</span> on <span class="process-math">\([a,  b]\text{.}\)</span> <ol class="lower-alpha">
+<li id="li-1"><div class="para" id="p-derived-li-1">
+<span class="process-math">\(f_{1}+f_{2} \in \cR(\alpha)\)</span> and <span class="process-math">\(c f_{1}  \in \cR(\alpha)\)</span> on <span class="process-math">\([a,  b]\)</span> for any scalar <span class="process-math">\(c\text{,}\)</span> and<div class="displaymath process-math" id="md-1">
+\begin{align*}
+\int_{a}^{b} (f_{1}+f_{2})\, d\alpha \amp= \int_{a}^{b} f_{1} d\alpha +\int_{a}^{b} f_{2}\, d\alpha\\
+\int_{a}^{b}c f_{1} d\alpha \amp= c  \int_{a}^{b} f_{1} d\alpha.
+\end{align*}
+</div>
+</div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2"><span class="process-math">\(f_{1} f_{2} \in \cR(\alpha)\text{.}\)</span></div></li>
+<li id="li-3"><div class="para" id="p-derived-li-3">
+<span class="process-math">\(|f_{1}| \in \cR(\alpha)\)</span> and <span class="process-math">\(\left| \int_{a}^{b} f_{1} d\alpha\right|
+\le \int_{a}^{b} |f_{1}| d\alpha\text{.}\)</span>
+</div></li>
+<li id="li-4"><div class="para" id="p-derived-li-4">If <span class="process-math">\(f_{1}(x)\le f_{2}(x)\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> then<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{b} f_{1} d\alpha \le  \int_{a}^{b} f_{2} d\alpha.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-5"><div class="para" id="p-derived-li-5">For any <span class="process-math">\(c, a &lt; c &lt; b\text{,}\)</span> then <span class="process-math">\(f_{1}\in \cR(\alpha)\)</span> on <span class="process-math">\([a, c]\)</span> and on <span class="process-math">\([c, b]\text{,}\)</span> and<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{c} f_{1} d\alpha +  \int_{c}^{b} f_{1} d\alpha =  \int_{a}^{b} f_{1} d\alpha.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-6"><div class="para" id="p-derived-li-6">If <span class="process-math">\(|f_{1}(x)|\le M\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> then<div class="displaymath process-math">
+\begin{equation*}
+\left|  \int_{a}^{b} f_{1} d\alpha \right|\le M[\alpha(b)-\alpha(b)].
+\end{equation*}
+</div>
+</div></li>
+<li id="li-7"><div class="para" id="p-derived-li-7">If <span class="process-math">\(\beta\)</span> is another monotone increasing function on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(f_{1} \in \cR(\beta)\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> then <span class="process-math">\(f_{1} \in cR(\alpha +\beta)\)</span> on <span class="process-math">\([a, b]\)</span> and<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{b} f_{1} d(\alpha+\beta) = \int_{a}^{b} f_{1} d\alpha + \int_{a}^{b} f_{1} d\beta.
+\end{equation*}
+</div>
+</div></li>
+</ol></article><article class="theorem theorem-like" id="theorem-6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span>
+</h3>Assume that <span class="process-math">\(f\)</span> is bounded on <span class="process-math">\([a, b]\)</span> and that <span class="process-math">\(\alpha' \in \cR\)</span> on <span class="process-math">\([a, b]\)</span> (namely, <span class="process-math">\(\alpha'\)</span> is Riemann integrable on <span class="process-math">\([a, b]\)</span>). Then <span class="process-math">\(f\in \cR(\alpha)\)</span> on <span class="process-math">\([a, b]\)</span> iff <span class="process-math">\(f\alpha' \in \cR\)</span> on <span class="process-math">\([a, b]\text{,}\)</span> and<div class="displaymath process-math" id="int-rseval">
+\begin{equation}
+\int_{a}^{b} f\, d\alpha = \int_{a}^{b} f \alpha'\, dx.\tag{1.2}
+\end{equation}
+</div></article><article class="corollary theorem-like" id="cor-ftcr"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
+</h3>Assume that <span class="process-math">\(\alpha' \in \cR\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> Then for any <span class="process-math">\(t\in [a, b]\)</span><div class="displaymath process-math" id="eq-ftcr">
+\begin{equation}
+\int_{a}^{t} \alpha'(x)\, dx = \alpha(t)-\alpha(a).\tag{1.3}
+\end{equation}
+</div></article><article class="remark remark-like" id="remark-1"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-11">The assumption <span class="process-math">\(\alpha' \in \cR\)</span> on <span class="process-math">\([a, b]\)</span> is needed. Using a construction similar to that of a Cantor set, Volterra constructed a function (not monotone though) which had derivative everywhere in <span class="process-math">\([0, 1]\)</span> but its derivative is not Riemann integrable. Cantor's function is monotone increasing in <span class="process-math">\([0, 1]\text{,}\)</span> equals a constant in any of the middle third interval removed, therefore has derivative equal <span class="process-math">\(0\)</span> at any point of those intervals. Since Cantor's set has measure <span class="process-math">\(0\text{,}\)</span> Cantor's function has derivative equal <span class="process-math">\(0\)</span> almost everywhere in <span class="process-math">\([0, 1]\text{.}\)</span> If we can define an integral for such a function, its integral on any subinterval of <span class="process-math">\([0, 1]\)</span> must be <span class="process-math">\(0\text{,}\)</span> thus the above equality relation can't hold in such a case.</div></article><article class="remark remark-like" id="remark-2"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-12">Suppose that <span class="process-math">\(f\in \cR(\alpha)\)</span> on <span class="process-math">\([a, b]\)</span> and <span class="process-math">\(a &lt; c &lt; b\text{.}\)</span> Then <span class="process-math">\(\int_{a}^{c}1\, d \alpha=\alpha(c)-\alpha(a)\text{,}\)</span> <span class="process-math">\(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha=\alpha(c+0)-\alpha(a)\text{.}\)</span> Since <span class="process-math">\([a, c]=\cap_{k}[a, c+ \frac 1k]\text{,}\)</span> or one could think of <span class="process-math">\(\int_{a}^{c}1\, d \alpha\)</span> as <span class="process-math">\(\int \chi_{[a, c]} (x)\, d\alpha\text{,}\)</span> and since <span class="process-math">\(\lim_{k\to\infty} \chi_{[a, c+\frac 1k]} (x)=\chi_{[a, c]} (x)\text{,}\)</span> one expects <span class="process-math">\(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha= \int_{a}^{c}1\, d \alpha\text{.}\)</span> This would require <span class="process-math">\(\alpha(c+0)=\alpha(c)\text{.}\)</span> For this reason, one often chooses to work with an <span class="process-math">\(\alpha\)</span> which is right-continuous.</div> <div class="para" id="p-13">Since <span class="process-math">\(\lim_{k\to\infty} \int_{a}^{c- \frac 1k}1\, d \alpha=\alpha(c-0)-\alpha(a)\)</span> and <span class="process-math">\([a, c)=\cup_{k}[a, c- \frac 1k]\text{,}\)</span> it is reasonable to treat <span class="process-math">\(\lim_{k\to\infty} \int_{a}^{c- \frac 1k}1\, d \alpha\)</span> as <span class="process-math">\(\int_{[a, c)} 1\, d\alpha\)</span> and <span class="process-math">\(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha\)</span> as <span class="process-math">\(\int_{[a, c]} 1\, d\alpha\text{;}\)</span> namely, the notation of integration over a set is more precise than that of integration over a lower and upper limit.</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chp-int.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

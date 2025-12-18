@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.5.10</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">The rule for determining	the derivative of the implicit function is just a form of implicit differentiation. For example, on the level set <span class="process-math">\(f(x, y, z)=x^{2}+y^{2}+z^{2}=1\text{,}\)</span> since <span class="process-math">\(f_{z}(x, y, z)=2z\text{,}\)</span> at any point <span class="process-math">\((x, y, z)\)</span> where <span class="process-math">\(z\ne 0\text{,}\)</span> the Implicit Function Theorem applies to imply that <span class="process-math">\(z\)</span> can be solved as a function of <span class="process-math">\((x, y)\)</span> from <span class="process-math">\(x^{2}+y^{2}+z^{2}=1\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2x + 2z \frac{\partial z}{\partial x} =0,\quad 2y + 2z \frac{\partial z}{\partial y} =0
+\end{equation*}
+</div>
+<div class="para">from which one gets <span class="process-math">\(\frac{\partial z}{\partial x} =-\frac xz\text{,}\)</span> <span class="process-math">\(\frac{\partial z}{\partial y} =-\frac yz\text{.}\)</span>
+</div>
+</div> <div class="para">Our formulation allows us to study <span class="process-math">\(\bff (\bx, \by)=\mathbf 0\)</span> when <span class="process-math">\(\bff\)</span> may not be differentiable in <span class="process-math">\(\by\text{.}\)</span> E.g., <span class="process-math">\(f(x, y)=x |y|+e^{x}\)</span> is differentiable in <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(f(0, 0)=1\text{,}\)</span> <span class="process-math">\(D_{x}f(x, y)=|y|+e^{x}\)</span> is continuous with <span class="process-math">\(D_{x}f(0, 0)=1\text{,}\)</span> so <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> allows us to conclude that there exists a continuous <span class="process-math">\(x=g(y)\)</span> for <span class="process-math">\(y\)</span> near <span class="process-math">\(0\)</span> with <span class="process-math">\(g(0)=0\)</span> such that <span class="process-math">\(|y|g(y)+e^{g(y)}=1\text{.}\)</span>
+</div> <div class="para">The formulation of <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> specifies a splitting of the variables <span class="process-math">\((\bx, \by)\text{.}\)</span> In applications, one often has some flexibility in making a choice of the splitting. For example, suppose that <span class="process-math">\(f(x, y, z)\)</span> has continuous partial derivatives, and one is interested in understanding the set <span class="process-math">\(\{(x, y, z): f(x, y, z)=f(x_{0}, y_{0},z_{0})\}\)</span> for <span class="process-math">\((x, y, z)\)</span> near <span class="process-math">\((x_{0}, y_{0},z_{0})\)</span>---this is called a level set of <span class="process-math">\(f\text{.}\)</span> <span class="process-math">\(f(x, y, z)\)</span> here is a scalar function so any application of <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> is to solve for one of the variables in terms of the remaining two.</div> <div class="para logical">
+<div class="para">To be able to solve <span class="process-math">\(z\)</span> in terms of <span class="process-math">\((x, y)\text{,}\)</span> one needs to check whether <span class="process-math">\(D_{z}f(x_{0}, y_{0},z_{0})\)</span> as a linear map from <span class="process-math">\(\bbR\)</span> to <span class="process-math">\(\bbR\)</span> is invertible. In this case, this is equivalent to whether <span class="process-math">\(\frac{\partial f}{\partial z }(x_{0}, y_{0},z_{0})\ne 0\text{.}\)</span> But it's possible that <span class="process-math">\(\frac{\partial f}{\partial x}(x_{0}, y_{0},z_{0})\ne 0\)</span> or <span class="process-math">\(\frac{\partial f}{\partial  y}(x_{0}, y_{0},z_{0})\ne 0\text{.}\)</span> Then it would mean that near <span class="process-math">\((x_{0}, y_{0},z_{0})\)</span> the set <span class="process-math">\(\{(x, y, z): f(x, y, z)=f(x_{0}, y_{0},z_{0})\}\)</span> can be described as a graph of <span class="process-math">\(x\)</span> in terms of <span class="process-math">\((y, z)\)</span> or a graph of <span class="process-math">\(y\)</span> in terms of <span class="process-math">\((x, z)\text{.}\)</span> Thus as long as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/implicitFT.html">
+\begin{equation*}
+Df(x_{0}, y_{0},z_{0})=(\frac{\partial f}{\partial x}(x_{0}, y_{0},z_{0}), \frac{\partial f}{\partial y}(x_{0}, y_{0},z_{0}),\frac{\partial f}{\partial z}(x_{0}, y_{0},z_{0}))
+\ne (0, 0, 0)
+\end{equation*}
+</div>
+<div class="para">one can apply <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> with respect to one of the variables to conclude that the level set <span class="process-math">\(\{(x, y, z): f(x, y, z)=f(x_{0}, y_{0},z_{0})\}\)</span> for <span class="process-math">\((x, y, z)\)</span> near <span class="process-math">\((x_{0}, y_{0},z_{0})\)</span> is given by the graph of a function of two of the variables.</div>
+</div> <div class="para logical">
+<div class="para">Suppose <span class="process-math">\(g(x, y, z)\)</span> is another function with continuous partial derivatives and one is interested in understanding the set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/implicitFT.html">
+\begin{equation}
+\{(x, y, z): f(x, y, z)=f(x_{0}, y_{0},z_{0}), g(x, y, z)=g(x_{0}, y_{0},z_{0})\}\text{.}\tag{4.5.6}
+\end{equation}
+</div>
+<div class="para">We are imposing two conditions, so an application of <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> would need to solve for two of the variables in terms of the remaining single variable. Geometrically, the set above is the intersection of a level set of <span class="process-math">\(f\)</span> with a level set of <span class="process-math">\(g\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Suppose that we want to check whether the conditions of <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> hold for the <span class="process-math">\((x, y)\)</span> variables, then we would need to check whether</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/implicitFT.html ./knowl/implicitFT.html ./knowl/eq-leveline.html">
+\begin{equation*}
+\begin{bmatrix} \frac{\partial f}{\partial x}(x_{0}, y_{0},z_{0}) \amp \frac{\partial f}{\partial y}(x_{0}, y_{0},z_{0})\\
+\frac{\partial g}{\partial x}(x_{0}, y_{0},z_{0}) \amp \frac{\partial g}{\partial y}(x_{0}, y_{0},z_{0})\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is invertible.  One could formulate similar criteria with respect to the other choices of a pair of variables. Note that one just needs one of the invertibility criteria to hold to apply <a href="" class="xref" data-knowl="./knowl/implicitFT.html" title="Theorem 4.5.8: Implicit Function Theorem">Theorem 4.5.8</a> to conclude that the set in <a href="" class="xref" data-knowl="./knowl/eq-leveline.html" title="Equation 4.5.6">(4.5.6)</a> near <span class="process-math">\((x_{0}, y_{0},z_{0})\)</span> is a curved  represented as a graph over one of the  three variables. Thus a streamlined condition is that the matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/implicitFT.html ./knowl/implicitFT.html ./knowl/eq-leveline.html">
+\begin{equation*}
+\begin{bmatrix} \frac{\partial f}{\partial x}(x_{0}, y_{0},z_{0}) \amp \frac{\partial f}{\partial y}(x_{0}, y_{0},z_{0})
+\amp \frac{\partial f}{\partial z}(x_{0}, y_{0},z_{0}) \\
+\frac{\partial g}{\partial x}(x_{0}, y_{0},z_{0}) \amp \frac{\partial g}{\partial y}(x_{0}, y_{0},z_{0})
+\amp \frac{\partial g}{\partial z}(x_{0}, y_{0},z_{0}) \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">has ranke <span class="process-math">\(2\text{.}\)</span> Geometrically, this means that the two row vectors of the above matrix are linearly independent.</div>
+</div></article><span class="incontext"><a href="section-19.html#remark-41" class="internal">in-context</a></span>
+</body>
+</html>

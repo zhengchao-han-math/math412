@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">A geometric application of the Inverse Function Theorem.</span>
+</h4>
+<div class="para">Suppose that <span class="process-math">\(\bff(x)\)</span> is a  mapping from a neighborhood of <span class="process-math">\(\bx_0\)</span> in <span class="process-math">\(\mathbb R^m \)</span> into <span class="process-math">\(\mathbb R^n\)</span> (<span class="process-math">\(m \lt  n\)</span>), with <span class="process-math">\(\bff(\bx_0)=\by_0=(y_{01},\ldots, y_{0n})\text{,}\)</span> that it has continuous partial derivatives and the submatrix <span class="process-math">\([\frac{\partial f_i}{\partial x_j}], 1 \le i, j \le m\text{,}\)</span> of the the Jacobian matrix  <span class="process-math">\(\bff_{\bx}(\bx_0)\)</span> invertible. Such an <span class="process-math">\(\bff\)</span> is called an <dfn class="terminology">immersion</dfn> near <span class="process-math">\(\bx_0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Then by the Inverse Function Theorem the mapping <span class="process-math">\(\bx\mapsto (f_{1}(\bx),\ldots, f_{m}(\bx))\)</span> has a differentiable inverse defined in a neighborhood <span class="process-math">\(V\)</span> of <span class="process-math">\((y_{01},\ldots, y_{0m})\text{.}\)</span> Call it <span class="process-math">\(\Phi\)</span> and let <span class="process-math">\(U=\Phi(V)\text{.}\)</span> Then <span class="process-math">\(U\)</span> is an open neighborhood of <span class="process-math">\(\bx_{0}\)</span> in <span class="process-math">\(\bbR^{m}\text{,}\)</span> and any point <span class="process-math">\(\bff(\bx)\)</span> for <span class="process-math">\(\bx \in U\)</span> can be represented as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(y_{1},\ldots, y_{m}, f_{m+1}(\Phi(y_{1},\ldots, y_{m})), \ldots, f_{n}(\Phi(y_{1},\ldots, y_{m})))
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\((y_{1},\ldots, y_{m})\in V\text{.}\)</span> Namely <span class="process-math">\(\bff(U)\)</span> is represented as a graph over <span class="process-math">\(V\)</span> with continuous partial derivatives.</div>
+</div> <div class="para logical">
+<div class="para">Note that <span class="process-math">\(\bff\)</span> could have been defined on a bigger domain <span class="process-math">\(\cM\text{,}\)</span> and the above discussion only says that when <span class="process-math">\(\bff\)</span> is restricted to a small domain <span class="process-math">\(U\)</span> near <span class="process-math">\(\bx_{0}\text{,}\)</span> <span class="process-math">\(\bff(U)\)</span> is represented as a graph; it does not say that <span class="process-math">\(\bff(\cM)\)</span> in a neighborhood of <span class="process-math">\(\bff(\bx_{0})\)</span> is represented as a graph. A simple example is the <a class="external" href="https://www.desmos.com/calculator/skduzarzqh" target="_blank">Lemniscate of Genoro</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-1-hidden.html" title="Footnote 4.5.1"><sup> 1 </sup></a> given by <span class="process-math">\(t\mapsto G(t):=(x, y)=(\sin t, \sin t \cos t)\)</span> for <span class="process-math">\(t\in \bbR\text{.}\)</span> Its image in <span class="process-math">\(\bbR^{2}\)</span> is a figure eight crossing the origin. Near <span class="process-math">\(t=0\text{,}\)</span> <span class="process-math">\(x'(0)=\cos 0=1, y'(0)=\cos^{2}0-\sin^{2}0=1\text{,}\)</span> so <span class="process-math">\(t\mapsto x=\sin t\)</span> has an inverse <span class="process-math">\(t=\sin^{-1}(x)\)</span> near <span class="process-math">\(x=0\text{,}\)</span> from which one gets <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\text{,}\)</span> and <span class="process-math">\(\frac{d y}{dx}\)</span> can be computed via the chain rule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{d y}{dx}=\frac{dy}{dt} \frac{dt}{dx}= \frac{dy}{dt}/ \frac{dx}{dt},
+\end{equation*}
+</div>
+<div class="para">which evaluates to <span class="process-math">\(1\)</span> at <span class="process-math">\(t=0\text{.}\)</span> Note that in the case here the parametric curve can be represented explicitly as <span class="process-math">\(y=x\sqrt{1-x^{2}}\text{;}\)</span> but this graph does not include the other branch crossing <span class="process-math">\((0, 0)\text{.}\)</span>
+</div>
+</div> <div class="para">But we could equally apply the Inverse Function Theorem to <span class="process-math">\(t\mapsto y=\sin t \cos t\)</span> at <span class="process-math">\(t=0\)</span> here, as <span class="process-math">\(y'(0)=1\text{,}\)</span> from which we get an inverse <span class="process-math">\(t=g(y)\)</span>---we can work out an explicit form for <span class="process-math">\(g(y)\)</span> here, but we can carry on the analysis without knowing it.  So the same parametric curve near <span class="process-math">\(t=0\)</span> can also be represented as <span class="process-math">\(x=\sin (g(y))\text{.}\)</span>
+</div></article><span class="incontext"><a href="section-19.html#example-10" class="internal">in-context</a></span>
+</body>
+</html>

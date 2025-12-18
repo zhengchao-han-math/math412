@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">We will use <a href="" class="xref" data-knowl="./knowl/eqn-discont.html" title="Equation 3.1">(3.1)</a> for the only if part.</div> <div class="para">Suppose that <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\text{.}\)</span> For each <span class="process-math">\(k\in \bbN\text{,}\)</span> we will prove that the closed set <span class="process-math">\(D_{k}:=\{y: \osc(f)(y)\ge \frac 1k\}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Given any <span class="process-math">\(\epsilon &gt;0\text{.}\)</span> There exists a partition <span class="process-math">\(\cP=\{I_{\alpha}\}\)</span> of <span class="process-math">\(I\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f, I_{\alpha})\vert I_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
+\end{equation*}
+</div>
+<div class="para">The intervals in <span class="process-math">\(\cP\)</span> are divided into two subgroups: the subgroup <span class="process-math">\(\cL_{k}\)</span> consisting those <span class="process-math">\(I_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, I_{\alpha})\ge \frac{1}{2k}\text{,}\)</span> and the subgroup <span class="process-math">\(\cS_{k}\)</span> consisting those <span class="process-math">\(I_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, I_{\alpha})&lt; \frac{1}{2k}\text{.}\)</span> Then it follows from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2k} \sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert \le
+\sum_{I_{\alpha}\in \cL_{k} } \osc(f, I_{\alpha})\vert I_{\alpha} \vert &lt; \frac{\epsilon}{2k}
+\end{equation*}
+</div>
+<div class="para">that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">We now claim that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{k}\subset \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}.
+\end{equation*}
+</div>
+<div class="para">This will show that <span class="process-math">\(D_{k}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div>
+</div> <div class="para">If the claim were not true, there would exist some <span class="process-math">\(x \in D_{k}
+\setminus \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\text{.}\)</span> Thus <span class="process-math">\(x \in \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\text{.}\)</span> Since the complement of <span class="process-math">\(\cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\)</span> is open, there exists some interval <span class="process-math">\(I(x, r)
+\subset \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\text{.}\)</span> If <span class="process-math">\(x\in \text{ interior}(I_{\alpha})\)</span> for some <span class="process-math">\(I_{\alpha} \in \cS_{k}\text{,}\)</span> it would force <span class="process-math">\(\frac 1k \le \osc(f)(x)\le \osc(f, I_{\alpha}) &lt; \frac{1}{2k}\text{,}\)</span> which would be a contradiction. So <span class="process-math">\(x\)</span> can only be on the boundary of one or more <span class="process-math">\(I_{\alpha} \in \cS_{k}\text{.}\)</span> We can choose <span class="process-math">\(r&gt;0\)</span> small enough such that any <span class="process-math">\(y\in I(x, r)\)</span> and <span class="process-math">\(x\)</span> will be in one such common interval. Therefore, <span class="process-math">\(\vert f(y)-f(x)\vert &lt; \frac{1}{2k}\text{.}\)</span> This would lead to <span class="process-math">\(\osc(f)(x)\le \osc(f, I(x, r)) &lt; \frac 1k\text{,}\)</span> contradicting <span class="process-math">\(x \in D_{k}\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For the if part, take any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> then choose <span class="process-math">\(k\)</span> such that <span class="process-math">\(k^{-1} &lt; \epsilon\text{.}\)</span> The closed set <span class="process-math">\(D_{k}=\{y: \osc(f)(y)\ge \frac 1k\}\)</span> is a subset of the negligible set <span class="process-math">\(D\text{,}\)</span> so can be covered by a union <span class="process-math">\(G\)</span> of a finite number of intervals such that <span class="process-math">\(|G| &lt; \epsilon\text{.}\)</span> Every point <span class="process-math">\(x\in [a, b]\setminus G\)</span> has an open interval <span class="process-math">\(I(x, r)\)</span> such that <span class="process-math">\(\osc(f, I(x, r)) &lt; k^{-1}\text{.}\)</span> The closed set <span class="process-math">\([a, b]\setminus G\)</span> can be covered by the union of a finite number of such intervals and one can find a fine enough partition <span class="process-math">\(\cP=\{I_{i}\}\)</span> of <span class="process-math">\([a, b]\)</span> such that if any <span class="process-math">\(I_{i}\)</span> contains a point of <span class="process-math">\(D_{k}^{c}\text{,}\)</span> then <span class="process-math">\(\osc(f, I_{i})&lt; k^{-1}\text{;}\)</span> and the union of those <span class="process-math">\(I_{i}\subset D_{k} \)</span> has their sum of lengths <span class="process-math">\(&lt; \epsilon\text{.}\)</span> This would give</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i} \osc(f, I_{i})|I_{i}| \le k^{-1}(b-a) + 2\epsilon \sup_{[a, b]}|f| ,
+\end{equation*}
+</div>
+<div class="para">which proves that <span class="process-math">\(f\)</span>  satisfies the Riemann integrability criterion.</div>
+</div></article></body>
+</html>

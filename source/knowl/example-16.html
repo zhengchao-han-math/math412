@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.8.11</span><span class="period">.</span>
+</h4>
+<div class="para">Using concavity to identify the minimum of <span class="process-math">\(\frac{ \Big| \sum_{i=1}^{n}a_{i}b_{i}\Big|}{\left(\sum_{i=1}^{n}a_{i}^{2}\right)^{1/2}
+\left(\sum_{i=1}^{n}b_{i}^{2}\right)^{1/2}}\)</span> under some constraints on <span class="process-math">\((a_{1},\ldots, a_{n}), (b_{1},\ldots, b_{n})\)</span>
+</div> <div class="para">The constraints will be <span class="process-math">\(0\lt a\le a_{i}\le A\text{,}\)</span> <span class="process-math">\(0 \lt b\le b_{i}\le B\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We introduce the new variables <span class="process-math">\(u_{i}=a_{i}^{2}, v_{i}=b_{i}^{2}\text{,}\)</span> and reformulate the problem in terms of <span class="process-math">\(u_{i}, v_{i}\text{.}\)</span> The quotient then becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\sum_{i} \sqrt{u_{i} v_{i}}}{\sqrt{(\sum_{i} u_{i}) (\sum_{i} v_{i})}},
+\end{equation*}
+</div>
+<div class="para">and the constraints become</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^{2} \le u_{i}\le A^{2}; b^{2}\le v_{i}\le A^{2}.
+\end{equation*}
+</div>
+</div> <div class="para">Our argument will be based on the following observation. <ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(\sqrt{uv}\)</span> is a concave function in the first quadrant.</div></li>
+<li><div class="para">For any <span class="process-math">\((u, v)\)</span> in the rectangle <span class="process-math">\([a^2, A^2]\times[b^2, B^2]\text{,}\)</span> there exists unique <span class="process-math">\((p, q)\)</span> with <span class="process-math">\(p, q \ge 0\text{,}\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+(u, v)=p (a^2, B^2) + q(A^2, b^2).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">In the set up above, we have<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{uv}\ge p aB+ q Ab,
+\end{equation*}
+</div>with equality iff <span class="process-math">\((u, v)\)</span> equals <span class="process-math">\((a^2, B^2)\text{,}\)</span> or <span class="process-math">\((A^2, b^2)\text{,}\)</span> equivalently, <span class="process-math">\((p, q)=(1, 0)\text{,}\)</span> or <span class="process-math">\((0, 1)\text{.}\)</span>
+</div></li>
+</ol>
+</div> <div class="para logical">
+<div class="para">For the second item, note that for any <span class="process-math">\((u, v)\)</span> in the rectangle <span class="process-math">\([a^2, A^2]\times[b^2, B^2]\text{,}\)</span> there exists a unique <span class="process-math">\(s&gt;0\text{,}\)</span> such that <span class="process-math">\(s (u, v)\)</span> lies on the diagonal  from <span class="process-math">\((a^2, B^2)\)</span> to <span class="process-math">\((A^2, b^2)\text{,}\)</span> which implies the existence of a unique <span class="process-math">\(0\le t \le 1\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s (u, v)= (1-t) (a^2, B^2) + t(A^2, b^2).
+\end{equation*}
+</div>
+<div class="para">This then implies our desired relation.</div>
+</div> <div class="para">We remark that in proving the last item above, only the (strict) concavity of <span class="process-math">\(\sqrt{uv}\)</span> along the diagonal from <span class="process-math">\((a^2, B^2)\)</span> to <span class="process-math">\((A^2, b^2)\)</span> is used. It is this last item that makes it possible to bound <span class="process-math">\(\sum_{i} \sqrt{u_{i} v_{i}}\)</span> from below.</div> <div class="para logical">
+<div class="para">Now for each <span class="process-math">\((u_{i}, v_{i})\text{,}\)</span> we find <span class="process-math">\((p_{i}, q_{i})\)</span> according to the second item above</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(u_{i}, v_{i})= p_{i} (a^2, B^2) + q_{i}(A^2, b^2),
+\end{equation*}
+</div>
+<div class="para">then we can bound the quotient as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\sum_{i}  \sqrt{u_{i} v_{i}}}{\sqrt{(\sum_{i} u_{i}) (\sum_{i} u_{i})}}\ge 
+\frac{\sum_{i} (p_{i} aB+ q_{i} Ab)}
+{\sqrt{[\sum_{i} (p_{i} a^2 +q_{i} A^{2})][ \sum_{i} (p_{i}B^{2}+q_{i}b^{2})]}}.
+\end{equation*}
+</div>
+<div class="para">Setting <span class="process-math">\(p=\sum_{i} p_{i}, q=\sum_{i} q_{i}\text{,}\)</span> <span class="process-math">\(\alpha=A/a, \beta=B/b\text{,}\)</span>  and after dividing  both the numerator and denominator of the quotient  on the right hand above by <span class="process-math">\(ab\text{,}\)</span> it  becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{p \beta + 	q \alpha}{\sqrt{ (p +q \alpha^{2})(p\beta^{2}+q)}},
+\end{equation*}
+</div>
+<div class="para">and now the task is to find the infimum of this quotient when <span class="process-math">\(p, q\ge 0\text{,}\)</span> and identify when equality can occur. This calculus problem can be solved in a routine way, and the answer is <span class="process-math">\(\frac{2\sqrt{\alpha \beta}}{ \alpha \beta+1}\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="section-22.html#example-16" class="internal">in-context</a></span>
+</body>
+</html>
