@@ -14,6 +14,10 @@
   <!-- source PreTeXt file                                      -->
   <source>
     <directories external="../assets" generated="../generated-assets"/>
+        <localization>
+            <rename element="aside" language="en-US">Question</rename>
+            <rename element="theorem" language="en-US">#1 #2 (#3)</rename>
+        </localization>
   </source>
 
   <numbering>
@@ -34,6 +38,7 @@
     <projects level="2"/>
     <equations level="2"/>
     <footnotes level="2"/>
+    <remark level="0" /> <!-- remark level 0 means no numbering -->
   </numbering>
 
     <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
@@ -44,17 +49,17 @@
     <asymptote links="no"/>
   </latex>
   
-  <html>
-    <!-- Whether to knowl a particular elements is set here    -->
-    <!-- Lots of elements have this possibility; see the guide -->
+    <html>
     <knowl remark="no" example="yes" proof="yes"/>
+    <css theme="default-modern" colors="blue_red"/> 
+    <css style="margin-bottom: 2px;"/>
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->
     <!-- @colors now implemented                               -->
     <!-- also @knowls, @toc, and @banner, although no          -->
     <!-- alternative styles exist yet for those.               -->
-    <css style="default" colors="blue_red"/>
+  
     <!-- Magic IDs identify HTML pages to analytics services   -->
     <!-- Presence implies relevant Javascript will be added    -->
     <!-- StatCounter requires both values to be set            -->

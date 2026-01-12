@@ -20,14 +20,11 @@
 <!-- <rename element="exercises">Additional Problems</rename> -->
 <rename element="inlineexercise" xml:lang="en-US">Exercise</rename> 
 <rename element="divisionexercise" xml:lang="en-US">Problems</rename> 
-
-<math-package latex-name="amssymb"/>
-  <math-package latex-name="mathtools"/>
-  <math-package latex-name="mathrsfs"/>
-<docinfo>
-    <math-package latex-name="euscript" latex-options="mathscr"/>
-</docinfo>
-
+<math-package latex-name="amssymb" />
+<math-package latex-name="mathtools" />
+<math-package latex-name="mathrsfs" />
+<math-package latex-name="euscript" latex-options="mathscr"/>
+<math-package latex-name="eufrak"/>
 
 <macros>
 \newcommand{\bC}{\mathbf{C}}
@@ -84,20 +81,25 @@
 \newcommand{\spt}{\text{support }}
 \newcommand{\osc}{\text{osc}}
 
-<!--for upper integral-->
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+<!--for upper and lower integrals-->
+
 \def\upint{\mathchoice%
-    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
   \int}
-  <!--for lower integral-->
-\def\lowint{\relax\if@display
- \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
-\else 
-\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
-\fi}
-\makeatletter
+  <!--  
+\newcommand{\upint}{{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}\int}
+  \def\lowint{\mathchoice%
+    {\mkern7mu\underline{\vphantom{\intop}\mathstrut\mkern7mu}\mkern-10mu}% Display Style
+    {\underline{\vphantom{q}\mkern7mu}\mkern-9mu}% Text Style
+    {\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu}% Script Style
+    {\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu}% Script-Script Style
+	\int}
+-->
 </macros>
 
 </docinfo>
@@ -136,16 +138,22 @@
     <!-- provided by the CLI. Uncomment to view this chapter, and comment    -->
     <!-- features you don't wish to generate.                                -->
     
-    <frontmatter xml:id="frontmatter">
-	<titlepage>
-	<author>
-	<personname>
-	Zheng-Chao Han
-	</personname>
-	<email>zchan@rutgers.edu</email>
-	</author>
-	<date><today /></date>
-	</titlepage>
+	<frontmatter xml:id="frontmatter">
+
+  <bibinfo>
+    <author>
+      <personname>Zheng-Chao Han</personname>
+      <email>zchan@rutgers.edu</email>
+    </author>
+    <date><today /></date>
+  </bibinfo>
+
+  <titlepage>
+    <titlepage-items>
+    </titlepage-items>
+  </titlepage>
+
+  
 	<preface>
 	<p>These notes have been constructed to cover the topics in Math412.  While there are many
 	excellent textbooks covering the analysis of differential and integral calculus in a single variable---the 
@@ -158,7 +166,7 @@
 	the  notions of pointwise convergence and uniform convergence.
 	 </p>
 	 
-	<p>Among the most basic questions of this part are</p>
+	<p>Among the most basic questions of this part are
  <ul>
  <li> If a sequence of continuous functions <m>f_{k}</m> on <m>[a, b]</m> converges pointwise to a function
  <m>f</m>, what can be said about <m>f</m>? Is <m>f</m> necessarily continuous, Riemann integrable, or bounded? The answers to these questions are no in general.
@@ -184,7 +192,8 @@
  </p>
  </li>
  </ul>
- 
+ </p>
+
  <p>We will also discuss relations between convergence in integral norms and pointwise or uniform convergence.
  </p>
  <p>The issues above also have  their analogues in the context of sequences and series: 
@@ -234,28 +243,79 @@ of the basic notions involved: curl and divergence of vector fields and differen
   
  	<section xml:id="RS-int"><title>A Brief Summary of Riemann-Stieltjes Integral</title>
 	
-	<introduction><p> In the context of probability, if a random variable has a probability density function
+	<introduction><p>There is a need to extend the usual Riemann integral to other contexts. Let us first briefly review the main ingredients in defining the usual Riemann integral of a bounded real-valued function <m>f</m> on an interval <m>[a, b]</m>. 
+		<ol>
+			<li>
+				<p>
+                 Do a partition of the interval <m>[a, b]</m> into subintervals. This partitions the interval <m>[a, b]</m> into a union of finitely many non-overlapping subintervals.
+				</p>
+			</li>
+			<li>
+				<p>
+				 On each subinterval, find the infimum and supremum of <m>f</m>. Alternatively, one may choose to evaluate <m>f</m> at some point in each subinterval.	
+				</p>
+			</li>
+			<li>
+				<p>
+				 Multiply the infimum, respectively the supremum, (or the function value at the chosen point) by the length of each subinterval, and add them up 
+				 to form the lower sum, respectively the upper sum, (or Riemann sum) of <m>f</m> corresponding to the partition.
+				</p>
+			</li>
+			<li>
+				<p>
+				 Take the supremum of all lower sums, and respectively the infimum of all upper sums, (or take limit of Riemann sums as the partition size goes to zero) to define the lower integral, and respectively the upper integral of <m>f</m> on <m>[a, b]</m> (or to examine the convergence of Riemann sums).
+				</p>
+			</li>
+
+		</ol>
+		</p> 
+		<observation>
+			<p> This procedure necessarily requires the function <m>f</m> to be bounded, and the interval <m>[a, b]</m> to be compact. This is because that this procedure starts with a finite sum, which requires each of the term to be finite. When either assumption
+			fails,  the lower sum and upper sum (or Riemann sum) of <m>f</m> may not be finite for a generic choice in steps 1 and 2.</p>
+		</observation>
+	<p> To extend the usual Riemann integral, still for a bounded function defined on <m>[a, b]</m>, we can modify step 3 above 
+		by replacing the length of each subinterval by the increment of a given monotone increasing function <m>\alpha</m> on <m>[a, b]</m> over the subinterval. 
+		This leads to the Riemann-Stieltjes integral with respect to <m>d\alpha</m>. There are several contexts in which this extension is needed, 
+		one of which is in probability theory, and another in functional analysis. 
+	</p> 
+		<p> In the context of probability, if a random variable has a probability density function
 	<m>p(x)</m>, then the probability that the variable falls into <m>[a, b]</m> is given by
 	<m>\int_{a}^{b} p(x)\, dx</m>. Such a random variable can't have a positive probability taking on
 	a single value. A general random variable <m>X</m> has a cumulative distribution	function
-	<m>F(x) :=\cP(x: X\le x)</m>. It is a non-decreasing function of <m>x</m>---we will also use the
-	terminology increasing function interchangeably. The Riemann-Stieltjes integral with respect to
-	an increasing function is a step in describing the probability of a general random variable in terms of
-	integrals.
-	</p>
-	<p> In the context of functional analysis, there is a need to consider possible
+	<m>F(x) :=\cP(x: X\le x)</m>. It is a non-decreasing right continuous function of <m>x</m>---we will also use the
+	terminology increasing function interchangeably. The probability that the variable falls into <m>(a, b]</m> is given by <m>\cP((a,b])=F(b)-F(a)</m>, 
+	and the probability that the variable falls into <m>\{a\}</m> is <m>\cP(\{a\})=F(a)-F(a-0)</m>, where <m>F(a-0)</m> is the left-hand limit of <m>F</m> at <m>a</m>. The Riemann-Stieltjes integral with respect to
+	such an increasing function is a step in describing the probability of a general random variable in terms of
+	a general integral. For example, we can use <term>finite additivity</term> to define <me> \cP([a, b])=\cP((a,b])+\cP({a})=F(b)-F(a-0)</me>.
+	Since <m>(a,b)=\cup_{n=1}^{\infty} (a,b-\frac1n]</m>, we use a limit process to define <me>\cP((a,b))=\lim_{n\to\infty} \cP((a,b-\frac1n])=F(b-0)-F(a)</me>.
+	This allows us to define <m>\cP(I)</m>  for any interval <m>I</m>. The key property of such a <term>probability measure</term> <m>\cP</m> 
+	is that it is <term>countably additive</term>, meaning that if <m>\{I_{i}\}</m> is a countable collection of disjoint intervals, then
+	<md>
+	<mrow> 
+	\cP(\cup_i I_i) =\sum_i \cP(I_i) 	
+	</mrow>
+	</md>
+	We will not pursue the verification of this property here, but it is relatively easy to verify it for a finite collection of disjoint intervals. 
+	<em>Finite additivity or countable additivity defined on a suitable family of subsets of the domain of integration is the main basis for us  to extend Riemann's integral to more general contexts.</em>
+	</p> 
+		<p> In the context of functional analysis, there is a need to consider possible
 	convergence of a sequence of linear functional on <m>C[a, b]</m>, given
 	in the form of <m>g\in C[a, b]\mapsto \int_{a}^{b} g(x)f_{k}(x)\, dx</m>, where
 	<m>\{f_{k}\}</m> is a sequence of continuous or Riemann integrable functions on <m>[a, b]</m>
 	with certain bounds, say, <m>\int_{a}^{b} |f_{k}(x)|\, dx\le M</m> for all <m>k</m>. 
-	If there is a limit, then it could be given in terms of the 
+	If the  limit <m> \lim_{k\to \infty} \int_{a}^{b} g(x)f_{k}(x)\, dx</m> exists for every <m>g\in C[a, b]</m>, then it could be given in terms of the 
 	Riemann-Stieltjes integral with respect to some increasing function <m>\alpha</m>
 	in the sense that <m>\int_{a}^{b} g(x)f_{k}(x)\, dx\to \int_{a}^{b} g\, d\alpha</m> (to be defined below).
 	</p>
 	</introduction>
+	<subsection xml:id="subsec-summary-RSintegral">
+    <title>Summary of Riemann-Stieltjes Integral</title>
+	<p>
+		In the following we briefly summarize the main definitions and properties of the Riemann-Stieltjes integral.
+	</p>
 	<p> Given a <em>monotone increasing function</em> <m>\alpha</m> on <m>[a, b]</m> (this will
 	be a standing assumption throughout this chapter), we can mimic the steps
-	in defining the usual Riemann integral of a given bounded function <m>f</m> on <m>[a, b]</m> 
+	in defining the usual Riemann integral of a given bounded real-valued function <m>f</m> on <m>[a, b]</m> 
 	to define the lower sum 
 	<me>
 	L(f, \cP, d \alpha)  :=\sum_{i=1}^{k} m_{I_{i}} (f) d\alpha(I_{i})
@@ -266,18 +326,23 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</me>
 	of <m>f</m> with respect to a partition 
 	<m>\cP=\{a=x_{0} &lt; x_{1} &lt; \cdots &lt; x_{k}=b\}</m> of <m>[a, b]</m>,
-	with <m>I_{i}=[x_{i-1}, x_{i}]</m>, <m>d\alpha (I_{i})=\alpha(x_{i})-\alpha(x_{i-1})</m>,
+	with <m>I_{i}=(x_{i-1}, x_{i}]</m>, <m>d\alpha (I_{i})=\alpha(x_{i})-\alpha(x_{i-1})</m>,
 	<m>m_{I_{i}} (f)=\inf_{I_{i}}f</m>, and
-	<m>M_{I_{i}} (f) =\sum_{I_{i}}f</m>.
+	<m>M_{I_{i}} (f) =\sup_{I_{i}}f</m>.
 	</p>
+	<remark>
+		<p> In many treatments at this level, such as done by Rudin, the partition is defined as a finite set of points in the interval of integration, and there is no distinction between closed and open (or half-open) subintervals, and 
+			finite additivity is only implicitly used but not explicitly formulated. Also note that this definition allows <m>(a, b)</m> to be a non-compact interval as long as <m>d\alpha (I_{i})</m> is finite for each subinterval <m>I_{i}</m>.
+		 </p>
+	</remark>
 	<definition xml:id="def-1Dupperlower-int-def">
 						<idx>upper integral, lower integral</idx>
 						<notation>
-							<usage><m>\upint_{a}^{b}\,f\, d \alpha), \lowint_{a}^{b}\,f\, d \alpha) </m></usage>
+							<usage><m>\upint_{a}^{b}\,f\, d \alpha), \lowint_{\;a}^{b}\,f\, d \alpha) </m></usage>
 							<description>upper integral and lower integral of a function</description>
 						</notation>
 						<statement>
-						<p>Suppose that <m>f</m> is a bounded function defined
+						<p>Suppose that <m>f</m> is a bounded real-valued function defined
 					on the interval <m>[a, b]</m>. Then its upper integral,
 					and respectively lower integral, on
 					<m> [a, b]</m>  with respect to <m>\alpha</m> 
@@ -288,13 +353,18 @@ of the basic notions involved: curl and divergence of vector fields and differen
 					<p>
 					The upper integral is denoted
 					as <m>\upint_{a}^{b}\,f\, d\alpha</m>, while the lower integral is denoted
-					as <m>\lowint_{a}^{b}\,f\, d\alpha</m>.
+					as <m>\lowint_{\;a}^{\;b}\,f\, d\alpha</m>.
 					</p>
 					</statement>
 					</definition>
 					<p>When <m>\alpha(x)=x</m>, we write <m>U(f, \cP)</m> for <m>U(f, \cP, dx)</m>,
 					and <m>L(f, \cP)</m> for <m>L(f, \cP, dx)</m>.
 					</p>
+					<aside>
+						<p>If <m>f</m> is complex-valued, do you see an easy way to extend the above definitions? Also need to watch out 
+						for how the subsequent discussion is affected.</p>
+</aside>					
+					
 					<exercise> <p>Let <m>\cC</m> denote the standard tertiary Cantor
 							set on 
 							<m>[0, 1]</m> and <m>\chi_{\cC}</m> denote its characteristic function
@@ -308,11 +378,12 @@ of the basic notions involved: curl and divergence of vector fields and differen
 							<proposition xml:id="propos-1Dupperlower-int">
 					<title>Basic Property of Upper and Lower Integral of 
 					a Bounded Real-valued Function</title>
-					<statement>Suppose that <m>f</m> is a bounded function defined
+					<statement><p>Suppose that <m>f</m> is a bounded real-valuedfunction defined
 					on the interval <m>[a, b]</m>. Then
 					<me>
-					 \lowint_a^b\,f\, d\alpha \le  \upint_a^b\,f\, d\alpha.
+					 \lowint_{\;a}^{\;b}\,f\, d\alpha \le  \upint_a^b\,f\, d\alpha.
 					</me>
+					</p>
 					</statement>
 					<proof> <p> Let <m>\cP_{1}, \cP_{2}</m> be two arbitrary partitions of <m>[a, b]</m>,
 					and <m>\cP^{*}</m> be a refinement of both 
@@ -322,11 +393,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 					</me>
 					As a result,   
 										<me>
-		L(f, \cP_{1}, d \alpha)\le  \upint_a^b \,f\, d \alpha) =\inf_{\cP_{2}} U(f, \cP_{2}, d \alpha),
+		L(f, \cP_{1}, d \alpha)\le  \upint_a^b \,f\, d \alpha =\inf_{\cP_{2}} U(f, \cP_{2}, d \alpha),
 		</me>
 		and 
 		<me>
-		\lowint_a^b \,f\, d \alpha =\sup_{\cP_{1}} L(f, \cP_{1}, d \alpha)\le \upint_a^b \,f\, d \alpha.
+		\lowint_{\;a}^{\;b} \,f\, d \alpha =\sup_{\cP_{1}} L(f, \cP_{1}, d \alpha)\le \upint_a^b \,f\, d \alpha.
 		</me>
 		</p>
 		<!-- % below is only for usual Riemann integral
@@ -386,17 +457,17 @@ of the basic notions involved: curl and divergence of vector fields and differen
 						on an interval <m>[a, b]</m> is called <term>Riemann-Stieltjes integrable</term>
 						with respect to <m>d\alpha</m>, if
 						<me>
-						 \lowint_a^b\,f\, d\alpha =  \upint_a^b\,f\, d\alpha.
+						 \lowint_{\;a}^{\;b}\,f\, d\alpha =  \upint_{\;a}^{\;b}\,f\, d\alpha.
 						</me> 
 						In such a case we write <m>f\in \cR(\alpha)</m> on <m>[a, b]</m>,
 						and use <m>\int_{a}^{b} \,f\, d\alpha</m> 
-						for <m> \lowint_a^b\,f\, d\alpha </m>.
+						for <m> \lowint_{\;a}^{\;b}\,f\, d\alpha </m>.
 						</p>
 						</statement>
 						</definition>
 				<theorem>
 							<title>Riemann-Stieltjes Integrability Criterion</title>
-							<statement>A bounded real-valued function <m>f</m> defined on the
+							<statement><p>A bounded real-valued function <m>f</m> defined on the
 						interval <m>[a, b]</m> is Riemann-Stieltjes integrable iff 	
 							for any <m>\epsilon &gt; 0</m>, there exists a partition
 							<m>\cP</m> of <m>[a, b]</m> such that
@@ -404,9 +475,15 @@ of the basic notions involved: curl and divergence of vector fields and differen
 							U(f, \cP, d\alpha) - L(f, \cP, d\alpha) =
 							\sum_{i=1}^{k}\left( M_{I_{i}} (f) -m_{I_{i}} (f)\right) d\alpha (I_{i})&lt; \epsilon.
 							</men>
+						</p>
 							</statement>
 							</theorem>
-							
+				<remark>
+		<p> A useful observation is that one often verifies criterion <xref ref="RS-IntC"/> by separating the intervals <m>I_i</m> into two  groups: 
+			those intervals where <m> M_{I_{i}} (f) -m_{I_{i}} (f)</m> is smaller than a portion of <m>\epsilon</m>  and those where it is larger, 
+			and shows that the sum over each group is less than a portion of <m>\epsilon</m>.
+		</p>
+				</remark>			
 		<exercise><p>Define 
 		<me>H(x)=\begin{cases} 1 \amp x \ge 0 \\ 0 \amp x &lt; 0 
 		\end{cases}
@@ -414,17 +491,17 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		 G(x) =\begin{cases} 1 \amp x &gt; 0 \\ 0 \amp x \le 0 
 		\end{cases} 
 		</me>
-		Determine <m>\lowint_{-1}^{1} H(x)\, dH(x)</m>, <m>\upint_{-1}^{1} H(x)\, dH(x)</m>,
-		<m>\lowint_{-1}^{1} G(x)\, dH(x)</m>, <m>\upint_{-1}^{1} G(x)\, dH(x)</m>,
+		Determine <m>\lowint_{\;-1}^{\;1} H(x)\, dH(x)</m>, <m>\upint_{-1}^{1} H(x)\, dH(x)</m>,
+		<m>\lowint_{\;-1}^{\;1} G(x)\, dH(x)</m>, <m>\upint_{-1}^{1} G(x)\, dH(x)</m>,
 		and find out if either <m>H</m> or <m>G</m> is in <m>\cR(dH)</m> over
 		<m>[-1, 1]</m>.
 		</p>
 		</exercise>
 						<theorem>
-						<statement> If <m>f</m> is continuous on <m>[a, b]</m>, then
-						<m>f\in \cR (\alpha)</m> on <m>[a, b]</m>.
+						<statement> <p>If <m>f</m> is continuous on <m>[a, b]</m>, then
+						<m>f\in \cR (\alpha)</m> on <m>[a, b]</m>.</p>
 						</statement>
-						<proof> Note that in order to make
+						<proof> <p>Note that in order to make
 						<me>
 						U(f, \cP, d \alpha)  -L(f, \cP, d \alpha) 
 						=\sum_{i=1}^{k}\left( M_{I_{i}} (f) -m_{I_{i}} (f)\right) d\alpha (I_{i}) &lt; \epsilon,
@@ -434,27 +511,30 @@ of the basic notions involved: curl and divergence of vector fields and differen
 						to find a partition <m>\cP</m> of <m>[a, b]</m> such that each
 						<m>M_{I_{i}} (f) -m_{I_{i}} (f) &lt; \epsilon/(\alpha(b)-\alpha(a))</m>.
 						It then follows that <m> U(f, \cP, d \alpha)  -L(f, \cP, d \alpha) &lt; \epsilon</m>.
-						</proof>
+					</p>
+				</proof>
 						</theorem>
 						<theorem>
-						<statement> If <m>f</m> is monotone on <m>[a, b]</m> and
+						<statement> <p>If <m>f</m> is monotone on <m>[a, b]</m> and
 						<m>\alpha</m> (monotone) continuous on <m>[a, b]</m>, then
-						<m>f\in \cR (\alpha)</m> on <m>[a, b]</m>.
+						<m>f\in \cR (\alpha)</m> on <m>[a, b]</m>.</p>
 						</statement>
-						<proof> Here we make use of the
+						<proof> <p>Here we make use of the
 						uniform continuity of <m>\alpha</m> on <m>[a, b]</m>
 						to find a partition <m>\cP</m> of <m>[a, b]</m> such that  each
-						<m>\alpha(x_{i})-\alpha(x_{i-1}) &lt; \epsilon/(f(b)-f(a))</m>.
-						It then follows that <m> U(f, \cP, d \alpha)  -L(f, \cP, d \alpha) &lt; \epsilon</m>.
+						<m>\alpha(x_{i})-\alpha(x_{i-1}) &lt; \epsilon/(f(b)-f(a))</m>. Noting that <m> M_{I_{i}} (f) -m_{I_{i}} (f)=f(x_{i})-f(x_{i-1}+0)</m>
+						and <m>\sum_{i=1}^{k} (f(x_{i})-f(x_{i-1}+0))&lt;f(b)-f(a)</m>,
+						it then follows that <m> U(f, \cP, d \alpha)  -L(f, \cP, d \alpha) &lt; \epsilon</m>.</p>
 						</proof>
 						</theorem>
 	<theorem>
-						<statement> If <m>f</m> is bounded on <m>[a, b]</m> and
+						<statement> <p>If <m>f</m> is bounded on <m>[a, b]</m> and
 						has only finitely many points of discontinuity, and <m>\alpha</m>
 						is continuous at every point at which <m>f</m> is discontinuous, then
 						<m>f\in \cR (\alpha)</m> on <m>[a, b]</m>.
+						</p>
 						</statement>
-						<proof> Let <m>M &gt; 0</m> be such that
+						<proof> <p>Let <m>M &gt; 0</m> be such that
 						<m>|f(x)| \le M</m> for all <m>x\in [a, b]</m> and
 						<m>p_{1} &lt; p_{2} &lt; \cdots &lt; p_{k}</m> be all the points of
 						discontinuity of <m>f</m> in <m>[a, b]</m> (Here we are assuming
@@ -470,11 +550,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 			<me> \sum_{j} \left(M_{j}(f)-m_{j}(f)\right) (\alpha(x_{j})-\alpha(x_{j}) &lt; \epsilon/2.
 			</me>
 			Adjoining <m>\cP</m> with <m> \cup_{i=1}^{k} [l_{i}, r_{i}]</m> forms a partition of <m>[a, b]</m>
-			for which <xref ref="RS-IntC"/> holds.
+			for which <xref ref="RS-IntC"/> holds.</p>
 			</proof>
 						</theorem>
 						<theorem><title>Properties of Riemann-Stieltjes Integral</title>
-						<statement> Suppose that <m>f_m{1}, f_{2} \in \cR(\alpha)</m> on <m>[a,  b]</m>.
+						<statement> <p>Suppose that <m>f_{1}, f_{2} \in \cR(\alpha)</m> on <m>[a,  b]</m>.
 						<ol marker="(a)">
 						<li> <m>f_{1}+f_{2} \in \cR(\alpha)</m> and <m>c f_{1}  \in \cR(\alpha)</m>
 						on <m>[a,  b]</m> for any scalar <m>c</m>, and
@@ -507,16 +587,17 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		   </me>
 		   </li>
 		   <li> If <m>\beta</m> is another monotone increasing function on <m>[a, b]</m> and
-		   <m>f_{1} \in \cR(\beta)</m> on <m>[a, b]</m>, then <m>f_{1} \in cR(\alpha +\beta)</m>
+		   <m>f_{1} \in \cR(\beta)</m> on <m>[a, b]</m>, then <m>f_{1} \in \cR(\alpha +\beta)</m>
 		   on <m>[a, b]</m> and
 		   <me>
 		   \int_{a}^{b} f_{1} d(\alpha+\beta) = \int_{a}^{b} f_{1} d\alpha + \int_{a}^{b} f_{1} d\beta.
 		   </me>
 		   </li>
 		   </ol>
+		   </p>
 		   </statement>
 		   </theorem>
-		   <theorem><statement>Assume that <m>f</m> is bounded on <m>[a, b]</m> and
+		   <theorem><statement><p>Assume that <m>f</m> is bounded on <m>[a, b]</m> and
 		   that <m>\alpha \in C[a, b]</m> and 
 		   <m>\alpha' \in \cR</m> on <m>[a, b]</m> (namely, <m>\alpha'</m> is Riemann
 		   integrable on <m>[a, b]</m>). Then <m>f\in \cR(\alpha)</m> on <m>[a, b]</m> iff
@@ -524,6 +605,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		   <men xml:id="int-rseval"> 
 		   \int_{a}^{b} f\, d\alpha = \int_{a}^{b} f \alpha'\, dx.
 		   </men>
+		   </p>
 		   </statement>
 		   <proof><p>We only outline the main ingredients.  Let <m>M=\sup_{[a, b]}|f(x)|</m>.
 		   For any given <m>\epsilon &gt; 0</m>,
@@ -540,11 +622,15 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		    \sum_{i=1}^{k} f(s_{i}) \alpha'(s_{i})(x_{i}-x_{i-1})\right| \le M\epsilon.
 		    </men>
 		    It follows from
-		    <me>
-		    \sum_{i=1}^{k} f(s_{i}) (\alpha (x_{i})-\alpha (x_{i-1})) \le 
+		    <md>
+				 <mrow>
+		    \sum_{i=1}^{k} f(s_{i}) (\alpha (x_{i})-\alpha (x_{i-1})) \amp \le 
 		     \sum_{i=1}^{k} f(s_{i}) \alpha'(s_{i})(x_{i}-x_{i-1}) + M\epsilon
-		     \le U(f \alpha', \cP, dx) +M\epsilon
-		     </me>
+			 </mrow>
+			 <mrow>
+		     \amp \le U(f \alpha', \cP, dx) +M\epsilon
+			 </mrow>
+		     </md>
 		     that
 		     <me>
 		     U(f, \cP, d\alpha) \le U(f \alpha', \cP, dx) +M\epsilon.
@@ -587,18 +673,19 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		    </men>
 		    Similarly,
 		    <men xml:id="pf-rs6">
-		    \lowint_{a}^{b} f\, d\alpha  = \lowint_{a}^{b} f \alpha' \, dx.
+			    \lowint_{\;a}^{\;b} f\, d\alpha  = \lowint_{\;a}^{\;b} f \alpha' \, dx.
 		    </men>
-		    Thus <m>\upint_{a}^{b} f\, d\alpha=\lowint_{a}^{b} f\, d\alpha</m>
-		    iff <m>\upint_{a}^{b} f \alpha' \, dx= \lowint_{a}^{b} f \alpha' \, dx</m>.
+		    Thus <m>\upint_{a}^{b} f\, d\alpha=\lowint_{\;a}^{\;b} f\, d\alpha</m>
+		    iff <m>\upint_{a}^{b} f \alpha' \, dx= \lowint_{\;a}^{\;b} f \alpha' \, dx</m>.
 		    </p>
 		   </proof>
 		   </theorem>
-		   <corollary xml:id="cor-ftcr"><statement>Assume that <m>\alpha \in C[a, b]</m> and 
+		   <corollary xml:id="cor-ftcr"><statement><p>Assume that <m>\alpha \in C[a, b]</m> and 
 		    <m>\alpha' \in \cR</m> on <m>[a, b]</m>. Then for any <m>t\in [a, b]</m>
 		    <men xml:id="eq-ftcr">
 		    \int_{a}^{t} \alpha'(x)\, dx = \alpha(t)-\alpha(a).
 		    </men>
+		    </p>
 		    </statement>
 		    </corollary>
 		    <remark><p>If <m>\alpha</m> has a finite 
@@ -621,7 +708,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		   <m>\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha=\alpha(c+0)-\alpha(a)</m>.
 		   Since <m>[a, c]=\cap_{k}[a, c+ \frac 1k]</m>, or one could think of 
 		   <m>\int_{a}^{c}1\, d \alpha</m> as <m>\int \chi_{[a, c]} (x)\, d\alpha</m>, and since
-		   <m> \lim_{k\to\infty} \chi_{[a, c+\frac 1k]} (x)=\chi_{[a, c]} (x)</m>, one expects
+		   <m> \lim_{k\to\infty} \chi_{[a, c+\frac 1k]} (x)=\chi_{[a, c]} (x)</m>, one would expect
 		   <m> \lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha= \int_{a}^{c}1\, d \alpha</m>.
 		   This would require <m>\alpha(c+0)=\alpha(c)</m>. For this reason, one often chooses
 		   to work with an <m>\alpha</m> which is right-continuous.
@@ -638,8 +725,25 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		   precise than that of integration over a lower and upper limit.
 		  </p>
 		   </remark>
+		   <exercise><p>
+			Show that the lower  Riemann-Stieltjes integrals satisfy the super-additivity property: for any <m>f, g</m> bounded on <m>[a, b]</m>,
+			<me>
+			\lowint_{\;a}^{\;b} (f+g)\, d\alpha &gt; \lowint_{\;a}^{\;b} f\, d\alpha + \lowint_{\;a}^{\;b} g\, d\alpha
+			</me>
+			and give an example where the inequality is strict.
+			</p>
+			</exercise>
+	 <remark>
+		<p> In the context of Lebesgue integration, the partition of the interval <m>[a, b]</m> is done with more general <term>measurable sets</term>
+		rather than subintervals of <m>[a, b]</m>, and if one defines lower sums with respect to such partitions and define the lower integral as the supremum
+		of the lower sums over all such partitions, then, for non-negative <term>measurable functions</term>, the lower integral so defined satisfies the additivity property. See (2.14) and (2.15) in Folland's Real Analysis book (2nd edition).
+		We use the Dirichlet function  <m>f(x)</m>, which is <m>1</m> on rationals and <m>0</m> on irrationals, to illustrate the difference after allowing more general partitions. If only partitions into subintervals is allowed, then
+		each lower sum is <m>0</m> as <m>f(x)</m> is <m>0</m> on irrationals so <m>m_{I_i}(f)=0</m> for each interval <m>I_i</m>.  However, if we allow partitions into measurable sets, then for any partition that includes the rationals in <m>[0, 1]</m> as one of the partition sets, 
+			the lower sum would be at least <m>1</m> as <m>m_{Q}(f)=1</m> where <m>Q</m> is the set of rationals in <m>[0, 1]</m>. Thus the lower integral of <m>f</m> defined with respect to measurable set partitions is at least <m>1</m>, which is different from that defined with respect to interval partitions.
+		</p>
+	 </remark>
+		</subsection> 
 	</section>
-	
 	<section xml:id="chp-int"><title> The Completion of the Space of Continuous Functions under Integral Norms</title>
 	<p> We sketch below some main properties of  the completion of the space of continuous functions under integral norms. The main line of approach is adapted from the following article by P. Lax,
 	<em>Rethinking the Lebesgue Integral</em>, The American Mathematical Monthly, Dec., 2009, Vol. 116, No. 10 (Dec., 2009), pp. 863-881. Although the discussion can be done with respect to the
@@ -657,7 +761,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	<p> For any <m>1\le p &lt; \infty</m>, let <m>L^{p}[a,  b]</m> denote the completion of <m>C[a, b]</m>
 	under the norm <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m>. 
 	From the abstract completion process, each element <m>\phi\in L^{p}[a,  b]</m>
-	is an equivalence class of Cauchy sequences <m>\{ c_{k}\}</m> in <m>C[a, b]</m>
+	is an equivalence class of  sequences <m>\{ c_{k}\}</m> in <m>C[a, b]</m> which is Cauchy
 	under the <m>L^{p}[a,  b]</m>-norm. We would like to address the following questions
 	</p>
 	<p>
@@ -675,7 +779,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</ol>
 	</p>
 	
-	<paragraphs><title>An elementary observation</title> Suppose that
+	<paragraphs><title>An elementary observation</title> <p>Suppose that
 	<m>\{ c_{k}\}</m> is a Cauchy sequence in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm. Then for <m>[a', b']\subset [a, b]</m>,
 	<m>\int_{a'}^{b'} c_{k}(x)\, dx</m> is a Cauchy sequence in <m>\bbR</m>; and for any <m>1\le q \le p</m>,
@@ -683,7 +787,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	\Vert c_{k} \Vert_{L^{q}[c,d]}</m>  is a Cauchy sequence in <m>\bbR</m>.
 	Furthermore, <m>\lim_{k\to\infty} \int_{a'}^{b'} c_{k}(x)\, dx</m>
 	and <m> \lim_{k\to\infty}\Vert c_{k} \Vert_{L^{q}[c,d]}</m> remain the same if
-	<m>\{ c_{k}\}</m> is replaced by an equivalent Cauchy sequence. 
+	<m>\{ c_{k}\}</m> is replaced by an equivalent Cauchy sequence. </p> 
 	</paragraphs>
 	<p>These properties are simple consequences of the triangle inequalities:
 	<md>
@@ -733,7 +837,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	
 	 </p>
 	 <definition xml:id="def-uniform-abs-contin">
-	 <title>Uniform Absolute Continuity of A Sequence of Integrals</title>
+	 <title>Uniform Absolute Continuity of A Sequence of Integrals in <m>L^{p}[a, b]</m></title>
+	 <statement>
 	 <p>The <m>L^{p}</m>-integrals of a sequence of functions <m>\{ c_{k}\}</m>  in <m>C[a, b]</m>
 	 are said to be <term>uniformly absolutely continuous</term> on <m>[a, b]</m>
 	 if for any <m>\epsilon &gt; 0</m>,
@@ -743,14 +848,16 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	\int_{G} |c_{k}(x)|^{p}\, dx &lt; \epsilon \text{ for all } k.
 	</me>
 </p>
-</definition>
+</statement>
+	 </definition>
+	 
 	 <proposition xml:id="uniform-abs-contin"><title>Uniform Absolute Continuity of the Integrals of
-	 a Cauchy Sequence in <m>C[a, b]</m></title>
-	 <statement>
+	 a  Sequence in <m>C[a, b]</m> which is Cauchy in the <m>L^{p}[a, b]</m> norm</title>
+	 <statement><p>
 	The <m>L^{p}</m>-integrals of any  Cauchy sequence  <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.
+	under the <m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.</p>
 	</statement>
-	<proof> For the given <m>\epsilon &gt; 0</m>, there exists some <m>N</m> such that 
+	<proof> <p>For the given <m>\epsilon &gt; 0</m>, there exists some <m>N</m> such that 
 	for all <m>k, l \ge N</m>, <m>\Vert c_{k} -c_{l}\Vert_{L^{p}[a,b]} &lt; \epsilon^{1/p}/2</m>.
 	Since <m>c_{i}\in C[a, b]</m> for <m>i=1,\cdots, N</m>, there exists a 
 	common <m>M &gt; 0</m> such that <m>|c_{k}(x)|\le M</m> for all
@@ -766,7 +873,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	\Vert c_{l}\Vert_{L^{p}(G)} \le \Vert c_{l}-c_{N}\Vert_{L^{p}(G)}+ \Vert c_{N}\Vert_{L^{p}(G)}
 	\le  \epsilon^{1/p}/2 +  \epsilon^{1/p}/2.
 	</me>
-	from which our conclusion follows.
+	from which our conclusion follows.</p>
 	</proof>
 	</proposition>
 	<exercise xml:id="exe-abc"><p> 
@@ -805,9 +912,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</exercise>
 	
 		<definition><title>Negligible Set</title>
+			<statement>
 	<p>A point set is called negligible if it can be covered by an open set of arbitrarily small volume, namely,
 	for any <m>\epsilon &gt; 0</m>, there exists an open cover <m>G</m> such that <m>|G| &lt; \epsilon</m>.
 	</p>
+	</statement>
 	</definition>
 	<p>The notion of negligible set here is a special case
 	in the context of Lebesgue measure on <m>\bbR</m> of the notion of a set of measure <m>0</m>.
@@ -817,6 +926,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	When two functions are equal  except on a negligible set, we use the customary language that they are equal <m>a.e.</m>.
 	</p>
 	<definition><title>Realization of a Cauchy Sequence in <m>L^{p}[a, b]</m></title>
+		<statement>
 	<p> A function <m>\phi (x)</m> defined <m>a.e.</m> on <m>[a,  b]</m>
 	 is said to be a realization of <m>\phi \in L^{p}[a, b]</m> if there exists a Cauchy sequence <m>\{c_{k}\}</m>
 	  of continuous functions in <m>[a, b]</m> in the equivalence class of <m>\phi</m> which converges a.e to 
@@ -825,10 +935,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	  \lim_{k\to \infty} c_{k}(x)\to \phi (x) \ a.e..
 	  </me>
 	  </p>
+	  </statement>
 	  </definition>
 	  <p> Note that if <m>I</m> is any interval of finite length (either open or closed) in <m>[a, b]</m>, 
 	  then for any <m>k</m>, one can find a continuous function <m>c_{k}(x)</m> with support in
-	  the interior of <m>I</m>, such that <m>\int |\chi_{I}(x)-c_{k}(x)|\, dx &lt; 1/k</m>. This shows that
+	  the interior of <m>I</m>, such that <m>\int |\chi_{I}(x)-c_{k}(x)|^p\, dx &lt; 1/k</m>. This shows that
 	  the characteristic function <m>\chi_{I}(x)</m> of <m>I</m>  is a realization of a function
 	  in <m>L^{p}[a, b]</m>, namely, it is a function
 	  in <m>L^{p}[a, b]</m>. The same applies to the linear combination of  a finite number of
@@ -844,7 +955,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	  </p>
 	  
 	  <proposition xml:id="lprealization"><title> Realization of Elements of <m>L^{p}[a, b]</m></title>
-	  <statement> 
+	  <statement> <p>
 	  <ol marker="(i)">
 	  <li> Any Cauchy sequence <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm has a subsequence which converges pointwise <m>a.e.</m> on 
@@ -874,6 +985,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	<m>L^{p}[a,  b]</m>.
 	</li>
 		</ol>
+	</p>
 	</statement>
 	<proof><p> Any Cauchy sequence <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm has a subsequence, still denoted as 
@@ -1015,7 +1127,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</corollary>
 	
 		<proposition xml:id="rcsthm"><title>Rapidly Convergent Sequence in <m>L^{p}[a, b]</m></title>
-	<statement>
+	<statement><p>
 	Let <m>\{\phi_{k}\}</m> be a sequence of elements in <m>L^{p}[a, b]</m> converging rapidly
 	in the sense
 	<me>
@@ -1024,8 +1136,9 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	where <m>\sum_{k}  \epsilon_{k}</m> converges. Then there exists a unique
 	<m>\phi \in L^{p}[a, b]</m> such that <m> \Vert \phi_{k} - \phi \Vert_{L^{p}[a, b]}\to 0</m>
 	and <m> \phi_{k} (x) \to \phi (x)</m> <m>\ a.e.</m> as <m>k\to \infty</m>.
+	</p>
 	</statement>
-	<proof> For each <m>\phi_{k}</m> there exists some <m>c_{k} \in C[a,  b]</m> 
+	<proof> <p> For each <m>\phi_{k}</m> there exists some <m>c_{k} \in C[a,  b]</m> 
 	and an open set  <m>G_{k}</m> with <m> |G_{k}| &lt; \epsilon_{k}</m> such that
 	<me>
 	\Vert \phi_{k} - c_{k} \Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}, \text{ and } 
@@ -1045,15 +1158,18 @@ there exists a unique
 <me>\Vert c_{k} - \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
 </me>
 We can then conclude our proof by appealing to the triangle inequalities.
+</p>
 </proof>
 
 	</proposition>
 	
 	
 	<definition>  <title>Nonnegative Elements of <m>L^{p}[a, b]</m></title>
+		<statement>
 	<p> An element <m>\phi \in L^{p}[a, b]</m> is said to be non-negative if its realization <m>\phi (x)</m>
 	satisfies <m>\phi (x) \ge 0</m>  <m>a.e.</m> on <m>[a, b]</m>.
 	</p>
+	</statement>
 	</definition>
 	<proposition xml:id="poselem"><title>Characterization of Nonnegative Elements of <m>L^{p}[a, b]</m></title>
 	<statement>
@@ -1110,7 +1226,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	that <m>f(x)g(x)\in L[a, b]</m> whenever <m>f(x), g(x)\in L[a, b]</m>. However we have the 
 	following</p>
 	<proposition xml:id="prop-prod">
-	<statement> 
+	<statement> <p> 
 	<ol marker="(a).">
 	<li>Suppose that <m>f(x)\in L^{p}[a, b]</m> and <m>g(x)\in L^{p'}[a, b]</m> for some
 	<m>p, p'\ge1</m> such that <m>1/p +1/p'=1</m>. Then 
@@ -1125,6 +1241,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	\int_{a}^{b}|f(x)g(x)|\, dx\le M \int_{a}^{b} |f(x)|\, dx</me>.
 	</li>
 		</ol>
+	</p>
 	</statement>
 	<proof><p> For (a), take <m>\{b_{k}\}\subset \in C[a, b]</m> such that
 	<m>b_{k}\to f</m> in <m>L^{p}[a, b]</m> and
@@ -1290,10 +1407,10 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	</p>
 	</proof>
 	</theorem>
-	<corollary xml:id="cor-desc-open"><statement>
+	<corollary xml:id="cor-desc-open"><statement><p> 
 	Suppose that <m>G_{n}</m> is a sequence of open set such that <m>G_{n+1}\subset G_{n}</m>
 	for all <m>n</m> and <m>\cap_{n=1}^{\infty}G_{n}</m> is negligible and that <m>|G_{1}| &lt; \infty</m>, 
-	then  <m>|G_{n}|\to 0</m> as <m>n\to \infty</m>.
+	then  <m>|G_{n}|\to 0</m> as <m>n\to \infty</m>.</p>
 	</statement>
 	<proof> <p> Note that <m>\chi_{G_{n+1}}(x)\le \chi_{G_{n}}(x)</m> and that <m> \chi_{G_{n}}(x) \to 0</m>
 	except on <m> \cap_{n=1}^{\infty}G_{n}</m>. It follows that
@@ -1333,7 +1450,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	 </p></exercise>
 
 	<theorem xml:id="fatou"><title>Fatou Theorem</title>
-	<statement>
+	<statement><p>
 	Suppose that <m>\{\phi_{k}\}</m> is a sequence in <m>L^{1}[a, b]</m> such that
 	<m>\phi_{k}(x)\ge 0</m> <m>\ a.e.</m> for all <m>k</m>
 	and that  <m> \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)</m> is finite. Then
@@ -1343,6 +1460,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<me>
 	\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) \le \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x).
 	</me>
+	</p> 
 	</statement>
 	<proof>
 	<p>
@@ -1375,12 +1493,13 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	</exercise>
 	
 	<theorem xml:id="DCT"><title>Dominated Convergence Theorem</title>
-	<statement> 
+	<statement> <p> 
 	Suppose that <m>\{\phi_{k}\}</m> is a sequence in <m>L^{1}[a, b]</m> such that
 	<m>\lim_{k\to\infty} \phi_{k}(x) =\phi (x)</m> exists <m>a.e.</m>, and there exists
 	a <m>g\in L^{1}[a, b]</m> such that <m>|\phi_{k}(x)|\le g(x)</m> <m>\ a.e.</m>.
 	Then <m>\phi \in L^{1}[a, b]</m> and <m> \phi_{k}\to \phi</m> in <m>L^{1}[a, b]</m>.
 	As a consequence, <m>\int_{a}^{b} \phi_{k} \to \int_{a}^{b} \phi</m> as <m>k\to \infty</m>.
+	</p>
 	</statement>
 	<proof> <p>Define <m>\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}</m>. Then
 	<m>\psi_{k,l}\in L^{1}[a, b]</m> and <m>\psi_{k,l}(x)\ge \psi_{k,l+1}(x)</m> <m> a.e.</m>.
@@ -1468,16 +1587,17 @@ We can then conclude our proof by appealing to the triangle inequalities.
 
 	</section>
 	<section><title>The Space of Riemann Integrable Functions</title>
-	<introduction> Here we discuss the relation between the space of Riemann integrable functions
+	<paragraphs>
+    <title>Introduction</title> <p>  Here we discuss the relation between the space of Riemann integrable functions
 	on <m>[a, b]</m> and <m>L^{1}[a, b]</m>, the completion of <m>C[a, b]</m> under the
-	<m>L^{1}[a, b]</m> norm. 
-	</introduction>
+	<m>L^{1}[a, b]</m> norm. </p>
+	</paragraphs>
 	
 	<p> We first make the following definition.</p>
 			<definition xml:id="def-1Dosc">
 				<idx>oscillation of a function</idx>
 				<notation>
-					<usage><m>\osc(f, I)</m> and <m>\osc(f)(x)</m></usage>
+					<usage><m>\osc(f, I)</m>, <m>\osc(f)(x)</m></usage>
 					<description>
 					The oscillation of a function <m>f</m> over a set <m>S</m>.
 					 The oscillation of a function <m>f</m>  at a point <m>x</m>. </description>
@@ -1503,8 +1623,8 @@ We can then conclude our proof by appealing to the triangle inequalities.
 				</statement>
 				</definition>
 <proposition><title>Upper Semi-continuity of <m>\osc(f)(x)</m></title>
-				<statement>The function <m>	\osc(f)(x)</m> is upper 	semi-continuous. As a consequence, for any real number <m>a</m>, the set <m>\{x: 	\osc(f)(x)\ge a \}</m> is closed.
-				</statement>
+				<statement><p> The function <m>	\osc(f)(x)</m> is upper 	semi-continuous. As a consequence, for any real number <m>a</m>, the set <m>\{x: 	\osc(f)(x)\ge a \}</m> is closed.
+				</p></statement>
 				<proof>
 				<p> For any real number <m>a</m>, if <m>x_{0}\in \{x: 	\osc(f)(x) &lt; a\}</m>,
 				then there exists some <m>r>0</m> such that
@@ -1553,10 +1673,10 @@ We can then conclude our proof by appealing to the triangle inequalities.
 						<p>Suppose that <xref ref="eqn-1Dint-osc"/> holds. 
 						Then <m>U (f, \cP)-L (f, \cP) &lt; \epsilon,</m>  and
 						<me>
-						0\le \upint_{I}\, f  -\lowint_{I} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
+						0\le \upint_{I}\, f  -\lowint_{\;I} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
 						</me>
 						Since <m>\epsilon >0</m> is arbitrary, it follows that
-						<m> \upint_{I}\, f -\lowint_{I} \, f=0</m>,  and  
+						<m> \upint_{I}\, f -\lowint_{\;I} \, f=0</m>,  and  
 						<m>f</m> is Riemann integrable on <m>I</m>.
 						</p>
 						<p>Finally, suppose that <m>f</m> is continuous on the closed interval
@@ -1671,14 +1791,15 @@ We can then conclude our proof by appealing to the triangle inequalities.
 						</proof>
 					</theorem>
 					<corollary><title>Approximation Property of Functions in <m>\cR[a, b]</m></title>
-					<statement> Any Riemann integrable function <m>f\in \cR[a, b]</m> lies in
+					<statement><p>  Any Riemann integrable function <m>f\in \cR[a, b]</m> lies in
 					<m>L^{p}[a, b]</m> for any <m>1\le p &lt; \infty</m>, and for any
 					<m>\epsilon &gt; 0</m> there exists a continuous function 
 					<m>c\in C[a, b]</m> and an open set <m>G</m> in <m>[a, b]</m>
 					such that <m>|G| &lt; \epsilon</m>, <m>f=c</m> on <m>G^{c}</m>,
 					and <m>\max_{[a, b]}|c| \le \max_{[a,b]}|f|</m>.
+					</p>
 					</statement>
-					<proof> Since the set <m>D</m> of discontinuity of <m>f</m> is negligible, 
+					<proof><p> Since the set <m>D</m> of discontinuity of <m>f</m> is negligible, 
 					for any <m>\epsilon &gt; 0</m> there exists  an open set <m>G</m> in <m>[a, b]</m>
 					such that it covers <m>D</m> and <m>|G| &lt; \epsilon</m>. For
 					every point <m>x</m> in the closed set
@@ -1686,6 +1807,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 					function on this closed set.   It can be extended to a continuous function 
 					<m>c</m> on <m>[a, b]</m> such that <m>\max_{[a, b]}|c| \le \max_{[a,b]}|f|</m>.
 					Then this <m>c</m> satisfies our requirements. 
+					</p>
 					</proof>
 					</corollary>
 					<exercise><p>Suppose that <m>c(x)\in C[a, b]</m> and <m>E\subset [a, b]</m>
@@ -1711,7 +1833,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 </section>
 <section><title>Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</title>
 
-<introduction>
+<paragraphs><title>introduction</title> <p>
 <xref ref="cor-ftcr"/> extends the Fundamental Theorem of Calculus to those monotone functions
 <m>\alpha</m> such that <m>\alpha'</m> exists and is Riemann integrable. Here we discuss
 its further generalization and related issues. Questions that need to be addressed include
@@ -1732,10 +1854,12 @@ holds?
 The last question has two parts: (a). The necessary conditions for <xref ref="eq-ftcl"/> to hold, 
 in particular, does it hold that <m>f'(x)=g(x)</m> for <m>a.e.</m> <m>x\in [a, b]</m>? (b).
 The sufficient conditions for  <xref ref="eq-ftcl"/> to hold. 
-</introduction>
+</p> 
+</paragraphs>
 
 <definition xml:id="def-uniform-abs-contin-fn">
 	 <title> Absolute Continuous Function</title>
+	 <statement>
 	 <p>A function <m>f</m> defined  on <m>[a, b]</m>
 	 is said to be <term>absolutely continuous</term> on <m>[a, b]</m>
 	 if for any <m>\epsilon &gt; 0</m>,
@@ -1746,6 +1870,7 @@ The sufficient conditions for  <xref ref="eq-ftcl"/> to hold.
 	\sum_{i=1}^{k}|f(b_{i})-f(a_{i})| &lt; \epsilon.
 	</men>
 </p>
+	</statement>
 </definition>
 <p> By <xref ref="exe-abc"/>, if <xref ref="eq-ftcl"/> holds, then <m>f</m> is absolutely continuous on
 <m>[a, b]</m>.
@@ -1772,9 +1897,10 @@ differentiable <m>a.e.</m> on <m>[a, b]</m> with its derivative a function in
 <m>L^{1}[a, b]</m>. Assuming this for now, we prove
 </p>
 <theorem xml:id="thm-lebes-diff"><title>Differentiability of an Indefinite Integral</title>
-<statement> Suppost that <m>g\in L^{1}[a, b]</m>. Then the function
+<statement> <p> Suppost that <m>g\in L^{1}[a, b]</m>. Then the function
 <m>f(x) :=\int_{a}^{x} g(t)\, dt</m> is differentiable <m>a.e.</m> on <m>[a, b]</m> and
 <m> f'(x)=g(x)</m> <m>a.e.</m> on <m>[a, b]</m>.
+</p>
 </statement>
 <proof> <p>According to our discussion above, 
 <m>f(x) :=\int_{a}^{x} g(t)\, dt</m> is differentiable <m>a.e.</m> on <m>[a, b]</m> and
@@ -2017,18 +2143,18 @@ Furthermore, suppose that <m>f(x)</m> is continuous at <m>x=0</m>. Prove that
 	analysis, and it is an important way of how  new classes of functions arise. It is crucial to understand whether and when certain properties of the functions in the sequence (such as continuity or integrability) will pass to the limit function. The question is also equivalent to whether 
 	two different limit processes applied to a sequence of functions can be <em>exchanged</em>.
 	</p>
-	<p>The main questions that concern us in this chapter are the following.
+	<p>
 	Suppose that <m>\{ f_n(x)\}</m> is a sequence of functions defined on a set <m>E</m>,
 	and for any <m>x\in E</m>, <m>f_n(x) \to f(x)</m> as <m>n\to \infty</m>. Some of the
 	questions can be raised for fairly general <m>E</m>, but one may first restrict to the case when
-	<m>E</m> is an interval of <m>\mathbb R</m>.
+	<m>E</m> is an interval of <m>\mathbb R</m>. The main questions that concern us in this chapter are the following.
 	<ol marker="(a).">
 	<li>If each <m> f_n(x)</m> is continuous on <m>E</m>, does it imply that <m>f(x)</m> is
 	continuous on <m>E</m>? If not, what kind of "bad" behavior	can <m>f(x)</m> exhibit? What
 	additional conditions on the convergence would guarantee that <m>f(x)</m> is
 	continuous on <m>E</m>? Here we formulate the question using continuity over <m>E</m>, but we 
 	could also formulate the question using continuity at a specific point <m>\bx_0</m> in <m>E</m>.
-	Then answer to the question depends on whether we can exchange the following two 
+	Then the answer to the question depends on whether we can exchange the following two 
 	limits to get an equality:
 	<me>
 	\lim_{\bx\to \bx_0} \lim_{n\to \infty} f_n(\bx)=  \lim_{n\to \infty} \lim_{\bx\to \bx_0} f_n(\bx)
@@ -7876,10 +8002,10 @@ Let <m>f(\mathbf x) </m> be a convex function defined
     along the lines of proof for the one dimensional case. 
     You should try to construct such a proof, at least for the two dimensional case.
     </p>
-    <exercise><title>The tangent plane of a convex function at a differentiable point is a supporting
+    <exercise><statement><p>The tangent plane of a convex function at a differentiable point is a supporting
     plane to the graph of the function.
-    Furthermore, if the point is in the interior of the domain, then it is the unique supporting plane</title>
-    <statement></statement>
+    Furthermore, if the point is in the interior of the domain, then it is the unique supporting plane</p>
+    </statement>
     <hint>If <m>f</m> denotes the function, and <m>Df(\mathbf x_{0})</m> denotes the 
     gradient of <m>f</m> at <m>\mathbf x_{0}</m>, it may be geometrically easier to consider
     <me>g(\mathbf x)=f(\mathbf x)-f(\mathbf x_{0})-Df(\mathbf x_{0})\cdot (\mathbf x-\mathbf x_{0})</me>,
@@ -8084,9 +8210,11 @@ in Analysis I</q> </p>
 	In the next chapter we will extend the discussion, where the domain of
 	integration is a lower dimensional surface in the Euclidean space <m>\bbR^{n}</m>, 
 	and, first, the integrand is a scalar function as usual, 
-	then, the integrand is given in terms of <em>coupling</em> of a vector field and the tangent
-	plane of the surface, or more formally, the integration of a differential form over a surface or
-	a <term>singular chain</term>.  </p>
+	then, the integrand is given in terms of <em>coupling</em> of a  <term>differential form</term> of
+	degree <m>k</m> and a <m>k</m>-dimensional surface,  namely, the integration of a differential form over a surface or
+	a <term>singular chain</term>. This is a generalization of the notion of the circulation of a vector field along
+	a curve or of the flux of a vector field over a surface, where the coupling is done involving the tangent of the curve or the normal
+	of the tangent plane of the surface, </p>
 
 
 <p>Below are some main issues to be addressed.</p>
@@ -8150,7 +8278,8 @@ in Analysis I</q> </p>
  <li>The implementation of the above approach still requires substantial preparation work.
  First, the existence and construction of such a partition would require careful proof. Second,
  there is usually no canonical parametrization for a patch of a surface, so one has to verify
- that different parametrizations do not lead to different values of the integrals.</li>
+ that different parametrizations do not lead to different values of the integrals.It is here that the change
+of variables in multiple integrals becomes crucial.</li>
 
  </ol>
    </introduction>
@@ -8336,7 +8465,7 @@ in Analysis I</q> </p>
 					<definition xml:id="def-upperlower-int-def">
 						<idx>upper integral, lower integral</idx>
 						<notation>
-							<usage><m>\upint_{R}\,f, \lowint_{R}\,f </m></usage>
+							<usage><m>\upint_{R}\,f, \lowint_{\;R}\,f </m></usage>
 							<description>upper integral and lower integral of a function on a set</description>
 						</notation>
 						<statement>
@@ -8348,7 +8477,7 @@ in Analysis I</q> </p>
 					<m>\cP</m> runs over all partitions of <m>\cP</m>. 
 					The upper integral is denoted
 					as <m>\upint_{R}\,f</m>, while the lower integral is denoted
-					as <m>\lowint_{R}\,f</m>.
+					as <m>\lowint_{\;R}\,f</m>.
 					</statement>
 					</definition>
 							<exercise> <p>Let <m>\cC</m> denote the standard tertiary Cantor
@@ -8373,11 +8502,11 @@ in Analysis I</q> </p>
 					</me>
 					and
 					<me>
-					 \lowint_{R}\,f = \lim_{\lambda(\cP)\to 0} L(f, \cP).
+					 \lowint_{\;R}\,f = \lim_{\lambda(\cP)\to 0} L(f, \cP).
 					</me>
 					Furthermore,
 					<me>
-					 \lowint_{R}\,f \le  \upint_{R}\,f.
+					 \lowint_{\;R}\,f \le  \upint_{R}\,f.
 					</me>
 					</statement>
 					<proof> <p> Let <m>\cP_{1}, \cP_{2}</m> be two arbitrary partitions of <m>R</m>,
@@ -8392,7 +8521,7 @@ in Analysis I</q> </p>
 		</me>
 		and 
 		<me>
-		\lowint_{R} \, f =\sup_{\cP_{1}} L(f, \cP_{1})\le \upint_{R} \, f.
+		\lowint_{\;R} \, f =\sup_{\cP_{1}} L(f, \cP_{1})\le \upint_{R} \, f.
 		</me>
 		</p>
 		<p>
@@ -8517,7 +8646,7 @@ in Analysis I</q> </p>
 						a <em>necessary condition</em>
 						that <m>f </m> be Riemann integrable on <m>R</m> is that
 						<men xml:id="eqn-Darboux" marker="eqn-Darboux">
-						\lowint_{R} \, f  =\upint_{R}\, f.
+						\lowint_{\;R} \, f  =\upint_{R}\, f.
 						</men>
 						This turns out to be also <em>sufficient</em>.
 						</p>
@@ -8566,7 +8695,7 @@ in Analysis I</q> </p>
 							</p>
 <p>For any partition <m>\cP_{1}: 0=s_{0} &lt;  s_{1} &lt; \cdots &lt; s_{k}=1 </m> of <m>[0, 1]</m> in the
 <m>x</m> variable,  <m>U(f, \cP_{1})=1</m> and <m>L(f, \cP_{1})=0</m>. Thus
-<m>\lowint_{[0,1]}\, f(x)\, dx =0</m> , <m>\upint_{[0, 1]}\, f(x)\, dx =1</m>, and <m>f</m> is not
+<m>\lowint_{\;[0,1]}\, f(x)\, dx =0</m> , <m>\upint_{[0, 1]}\, f(x)\, dx =1</m>, and <m>f</m> is not
 Riemann integrable on <m>[0, 1]</m>.
 </p>
 <p>For any partition <m>\cP_{2}: 0=t_{0} &lt;  t_{1} &lt; \cdots &lt; t_{l}=1 </m> of <m>[0, 1]</m> in the
@@ -8577,12 +8706,12 @@ M(g, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=\begin{cases} 1 \quad j=0,\\
 \end{cases}
 </me>
 Thus <m>L(g, \cP_{1}\times \cP_{2})=0</m>, <m>U(g, \cP_{1}\times \cP_{2})=t_{1}</m>,
-and <m>\lowint_{[0,1]\times [0,1]}\, g =0</m>,   <m> \upint_{[0,1]\times [0,1]}\, g =0</m>, so
+and <m>\lowint_{\;[0,1]\times [0,1]}\, g =0</m>,   <m> \upint_{[0,1]\times [0,1]}\, g =0</m>, so
 we conclude that <m>g</m> is Riemann integrable on <m>[0,1]\times [0,1]</m>,
 and <m>\int_{[0,1]\times [0,1]} g =0</m>.  
 </p>
 <p>For <m>h</m>, we have <m>m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=0,
-m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(h, \cP_{1}\times \cP_{2})=0</m>, <m>U(g, \cP_{1}\times \cP_{2})=1</m>. As a result, <m>\lowint_{[0,1]\times [0,1]}\, h =0</m>,
+m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(h, \cP_{1}\times \cP_{2})=0</m>, <m>U(g, \cP_{1}\times \cP_{2})=1</m>. As a result, <m>\lowint_{\;[0,1]\times [0,1]}\, h =0</m>,
 <m>\upint_{[0,1]\times [0,1]}\, h =1</m>, so <m>h</m> is not Riemann integrable on <m>[0,1]\times [0,1]</m>.
 </p>
 						</example>
@@ -8701,10 +8830,10 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						<p>Suppose that <xref ref="eqn-int-osc"/> holds. 
 						Then <m>U (f, \cP)-L (f, \cP) &lt; \epsilon,</m>  and
 						<me>
-						0\le \upint_{R}\, f  -\lowint_{R} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
+						0\le \upint_{R}\, f  -\lowint_{\;R} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
 						</me>
 						Since <m>\epsilon >0</m> is arbitrary, it follows that
-						<m> \upint_{R}\, f -\lowint_{R} \, f=0</m>,  and  
+						<m> \upint_{R}\, f -\lowint_{\;R} \, f=0</m>,  and  
 						<m>f</m> is Riemann integrable on <m>R</m>.
 						</p>
 						<p>Finally, suppose that <m>f</m> is continuous on the closed rectangle
@@ -9015,7 +9144,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    </me>
    when the integral exists. Likewise the upper and lower integrals
    <me>
-   \upint_{R_{2}}f(\bx, \by)\, d\by \text{ and } \lowint_{R_{2}}f(\bx, \by)\, d\by
+   \upint_{R_{2}}f(\bx, \by)\, d\by \text{ and } \lowint_{\;R_{2}}f(\bx, \by)\, d\by
    </me>
    make natural sense.
    </p>
@@ -9164,14 +9293,14 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     \end{cases}
     </me>
     This <m>f(x,y)</m> fails to be Riemann integrable in <m>y\in [0, 1]</m> for every <m>x\in \bbQ</m>.
-    Yet, both <m>\upint_{0}^{1} f(x, y)\, dy</m> and <m>\lowint_{0}^{1} f(x, y)\, dy</m> are well
+    Yet, both <m>\upint_{0}^{1} f(x, y)\, dy</m> and <m>\lowint_{\;0}^{\;1} f(x, y)\, dy</m> are well
     defined for every <m>x\in [0, 1]</m>. It turns out that we can formulate
     and prove a Fubini theorem using either the upper or the lower integral as a replacement in
     the iterated integral.
     </p>
     <exercise><p>Verify that the function <m>f(x, y)</m> above is Riemann integrable on
     <m>[0, 1]\times [0, 1]</m>. Also evaluate 
-    <m>\upint_{0}^{1} f(x, y)\, dy</m> and <m>\lowint_{0}^{1} f(x, y)\, dy</m> for each <m>x \in [0, 1]</m> and determine their integrability in <m>x \in [0, 1]</m>.
+    <m>\upint_{0}^{1} f(x, y)\, dy</m> and <m>\lowint_{\;0}^{\;1} f(x, y)\, dy</m> for each <m>x \in [0, 1]</m> and determine their integrability in <m>x \in [0, 1]</m>.
     </p>
     </exercise>
     <p>Here is a typical application of the Fubini's Theorem.</p>
@@ -9210,17 +9339,17 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    are two rectangles in <m>\bbR^{n}</m> and <m>\bbR^{m}</m> respectively, and
    <m>f(\bx, \by)</m> is a Riemann integrable function on <m>R:=R_{1}\times R_{2}</m>.  Then
    both 
-   <m>\upint_{R_{2}} f(\bx, \by)\, d\by</m>  and <m>\lowint_{R_{2}} f(\bx, \by)\, d\by</m>
+   <m>\upint_{R_{2}} f(\bx, \by)\, d\by</m>  and <m>\lowint_{\;R_{2}} f(\bx, \by)\, d\by</m>
    are Riemann integrable  of <m>\bx \in R_{1}</m>, and
    <men xml:id="eq-fubini-ul">
     \int_{R} f(\bx, \by)\; dA = \int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx
-   = \int_{R_{1}} \left( \lowint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx.
+   = \int_{R_{1}} \left( \lowint_{\;R_{2}} f(\bx, \by)\, d\by \right)\, d\bx.
     </men>
-    Likewise, both <m>\upint_{R_{1}} f(\bx, \by)\, d\bx</m>  and <m>\lowint_{R_{1}} f(\bx, \by)\, d\bx</m>
+    Likewise, both <m>\upint_{R_{1}} f(\bx, \by)\, d\bx</m>  and <m>\lowint_{\;R_{1}} f(\bx, \by)\, d\bx</m>
    are Riemann integrable  of <m>\by \in R_{2}</m>, and
    <me>
    \int_{R} f(\bx, \by)\; dA = \int_{R_{2}} \left( \upint_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by
-   = \int_{R_{2}} \left( \lowint_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
+   = \int_{R_{2}} \left( \lowint_{\;R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
     </me>
         </statement>
         <proof> We will focus on the first equality in <xref ref="eq-fubini-ul"/>. It
@@ -9239,7 +9368,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
         This follows by noting that
         <me>
         \sum_{S_{2,\beta}\in \cP_{2}} m_{S_{2,\beta}}(f(\bx, \by)) |S_{2,\beta}|
-        \le \lowint_{R_{2}} f(\bx, \by)\, d\by
+        \le \lowint_{\;R_{2}} f(\bx, \by)\, d\by
         </me>
         and
         <me>
@@ -9257,7 +9386,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
          |S_{1,\alpha}| |S_{2,\beta}| </mrow>
          <mrow>
          \le \amp 
-         \sum_{S_{1,\alpha}\in \cP_{1}} m_{S_{1,\alpha}} ( \lowint_{R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|</mrow>
+         \sum_{S_{1,\alpha}\in \cP_{1}} m_{S_{1,\alpha}} ( \lowint_{\;R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|</mrow>
         <mrow>
          \le \amp 
          \sum_{S_{1,\alpha}\in \cP_{1}} m_{S_{1,\alpha}} ( \upint_{R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|</mrow>
@@ -9296,16 +9425,16 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 <corollary> <title>A Riemann integrable function <m>f(\bx, \by)</m> of <m>(\bx, \by)</m> is
 Riemann integrable in <m>\by</m> except  perhaps for <m>\bx</m> on a set of measure <m>0</m></title>
 <statement><p> In the setting of the above theorem, 
-<m>\upint_{R_{2}} f(\bx, \by)\, d\by= \lowint_{R_{2}} f(\bx, \by)\, d\by</m> 
+<m>\upint_{R_{2}} f(\bx, \by)\, d\by= \lowint_{\;R_{2}} f(\bx, \by)\, d\by</m> 
 except perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
 </p>
 </statement>
 <proof> It follows from <xref ref="eq-fubini-ul"/> that
 <me>
-\int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{R_{2}} f(\bx, \by)\, d\by\right)\, d\bx
+\int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{\;R_{2}} f(\bx, \by)\, d\by\right)\, d\bx
 =0.
 </me>
-Since <m>\upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{R_{2}} f(\bx, \by)\, d\by\ge 0</m>
+Since <m>\upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{\;R_{2}} f(\bx, \by)\, d\by\ge 0</m>
 for every <m>\bx\in R_{1}</m>, the conclusion follows from the following exercise.
 </proof>
 </corollary>
@@ -10708,7 +10837,7 @@ in a bilinear and antisymmetric fashion. This is a heuristic reason for the noti
 of a <term>tensor</term>.
 </p>
 <p>Another important question is <em>how do vector fields and their curls transform under a 
-change of variables</em>? This is particularly important in the theory of <m>manifolds</m>,
+change of variables</em>? This is particularly important in the theory of <em>manifolds</em>,
 where there is usually no canonical coordinates to work with. </p>
 <p>If <m>{\mathbf y}=T({\mathbf x})</m> is a continuously differentiable change of
 variables, then any continuously differentiable curve <m> {\mathbf x}=\vec{\gamma}(t)</m>
@@ -10753,7 +10882,7 @@ namely, at each point <m>\mathbf x</m>,
 <m>\mathbf u \mapsto \langle X(\mathbf x),  \mathbf u\rangle :=X(\mathbf x)\cdot \mathbf u</m> 
 is a linear function on the vector space of
 tangent vectors at that point. The simplification  is due to the transformation laws of vectors and covectors,
-to be introduced next.
+to be introduced next.  It is such consideration that makes differential forms, instead of vector-fields, the natural objects for integration on surfaces.
 </p>
 <exercise> 
 <statement><p>Determine
