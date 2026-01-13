@@ -110,7 +110,7 @@
   <book xml:id="Math412-Notes">
     <!-- The book needs a title and can have a subtitle  -->
     <title>Math412 Notes</title>
-    <subtitle>Analysis of Functions of Several Variables</subtitle>
+    <subtitle>Select Topics in Mathematical Analysis of Functions of One or Several Variables</subtitle>
 
     <!-- Now we include files containing each main devision.       -->
 
@@ -1944,7 +1944,7 @@ its derivative, <m>f'(x)</m>, is the realization of a function in <m>L^{1}[a, b]
 \int_{a}^{b} f'(x)\,dx \le f(b)-f(a).
 </me>
 </statement>
-<proof> According to <xref ref="thm-Lebes-diff"/>, <m> h^{-1}(f(x+h)-f(x))\to f'(x)</m> 
+<proof> <p> According to <xref ref="thm-Lebes-diff"/>, <m> h^{-1}(f(x+h)-f(x))\to f'(x)</m> 
 <m>a.e.</m> on <m>[a, b]</m>. For each <m>h &gt; 0</m>, 
 <m> h^{-1}(f(x+h)-f(x)) </m> is a non-negative function in <m>\cR[a, b]</m> (extend <m>f(x)=f(b)</m>
 for <m>x &gt; b</m>), and
@@ -1962,6 +1962,7 @@ using <m>\int_{a}^{a+h} f(x)\, dx\ge f(a) h</m>. Thus by Fatou Theorem,
  \liminf_{h\to 0+} \int_{a}^{b}  h^{-1}(f(x+h)-f(x)) \, dx \le f(b)-f(a).
  </mrow>
  </md>
+</p>
  </proof>
 </proposition>
 <definition xml:id="def-bv"><title>Function of Bounded Variation</title>
@@ -2568,7 +2569,7 @@ Then <m>f</m> has a convergent integral
 </me>
 </p>
 </statement>
-<proof>First, for any <m>a' &lt; b', a \le a' &lt; b' &lt; b</m>, 
+<proof> <p>First, for any <m>a' &lt; b', a \le a' &lt; b' &lt; b</m>, 
 we can apply <xref ref="thm-uniformconvint"/>
 on <m>[a', b']</m> to conclude that
 <me>
@@ -2607,6 +2608,7 @@ on <m>[a, c]</m>, we find some <m>N</m> such that
   \left| \int_{a}^{b} f(x)\, d\alpha - \int_{a}^{b} f_{n}(x)\, d\alpha \right| &lt; 3\epsilon
   </me>
   for all <m>n\ge N</m>, therefore proving the claimed conclusion.
+ </p>
 </proof>
 </theorem>
 <note><p> What is called <em>uniform integrability</em> is also called <em>equi-integrability</em>.
@@ -3082,12 +3084,13 @@ equisummable in <m>l^{p}</m>.
 
  <section xml:id="SW"><title>Weierstrass Theorem</title>
  <theorem xml:id="WThm"><title>Weierstrass Theorem</title>
- <statement>Let <m>-\infty &lt; a &lt; b &lt; \infty</m>. Every continuous  <m>f:[a,b]\to\mathbb R</m>
+ <statement><p>Let <m>-\infty &lt; a &lt; b &lt; \infty</m>. Every continuous  <m>f:[a,b]\to\mathbb R</m>
   can be uniformly approximated by polynomials.   In other words, for every continuous 
   <m>f:[a,b] \to \mathbb{R}</m> there is a sequence of polynomials <m>(p_n(f))_{n \in \mathbb{N}}</m> so that
     <me>
-    \sup_{x \in [a,b]}|p_n(f)(x)-f(x)|   \ _{\overrightarrow{n \to \infty}}\ 0.
+    \sup_{x \in [a,b]}|p_n(f)(x)-f(x)|   {\xrightarrow{n \to \infty}}\ 0.
     </me>
+	</p>
     </statement>
     </theorem>
  <p>
@@ -3145,17 +3148,18 @@ equisummable in <m>l^{p}</m>.
    n\to \infty.
    </me>
    </p>
-   <remark>This technique can be extended to the case of continuous functions on a compact subset
+   <remark><p>This technique can be extended to the case of continuous functions on a compact subset
    of <m>\mathbb R^{n}</m>---after the integration theory has been extended to that context. In the
    case of <m>n=2</m>, the <m>P_{m}</m>'s  will be  polynomials in <m>x</m> and <m>y</m>, not
    in <m>z=x+iy</m>, as one may think that a polynomial in <m>z</m> should be the general 
-   extension of a polynomial in <m>x</m>.
+   extension of a polynomial in <m>x</m>.</p>
    </remark>
-   <paragraphs><title>Question</title>  If <m>f\in C^{1}[a,b]</m>, can the proof above be adapted to
+   <paragraphs><title>Question</title> <p> If <m>f\in C^{1}[a,b]</m>, can the proof above be adapted to
    prove that there exists a sequence of polynomials <m>P_{m}</m> such that 
    <me>
    P_{m}\to f  \text{ and } P_{m}' \to f' \text{ uniformly on } [a, b]?
    </me>
+</p>
    </paragraphs>
    
    
@@ -3344,18 +3348,20 @@ Thus <m>f'(0)</m> does not exist. This proves indirectly that the series for <m>
 	</p>
 	</proof>
 	</proposition>
-	<remark> The proof above shows that the Proposition holds  for any complex <m>z</m> 
+	<remark> <p> The proof above shows that the Proposition holds  for any complex <m>z</m> 
 	such that <m>|z-x_{0}|\le r \lt  |y-x_{0}|</m> so the domain of  convergence is  a round disc
 	centered at <m>x_{0}</m>. The the disc <m>D(x_{0}, R)</m> with radius <m>R</m> is the
-	largest disc centered at <m>x_{0}</m> in which the power series converges.
+	largest disc centered at <m>x_{0}</m> in which the power series converges. </p>
 	</remark>
   		<definition><title>Radius of Convergence of  a Power Series</title>
+			<p>
 		For any power series <m> \sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m>, we define
 		<me>
 		R =\sup\{ |x-x_{0}|:  \sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}
 \text{ converges}\}
 </me>
-as the radius of convergence of  this power series.		</definition>
+as the radius of convergence of  this power series.	
+</p>	</definition>
 <remark>
 <p> Note that <m>R</m> could be <m>0</m> or <m>\infty</m>, and that, if <m>0 \lt R \lt \infty</m>,
 then
@@ -3380,7 +3386,7 @@ R \limsup_{n\to\infty} \vert a_{n}\vert^{1/n}=1,
 where we take <m>R=0</m> when <m>\limsup_{n\to\infty} \vert a_{n}\vert^{1/n}=\infty</m> and 
 take <m>R=\infty</m> when <m>\limsup_{n\to\infty} \vert a_{n}\vert^{1/n}=0</m>.
 </statement>
-<proof> This follows from the root test: when
+<proof> <p> This follows from the root test: when
 <me>
 \vert x-x_{0}\vert \limsup_{n\to\infty} \vert a_{n}\vert^{1/n}= \limsup_{n\to\infty} \vert a_{n}(x-x_{0})^{n}\vert^{1/n} \lt 1,
 </me>
@@ -3390,6 +3396,7 @@ condition would imply the existence of a subsequence <m>n_{k}\to \infty</m> such
 <m>\vert a_{n_{k}}(x-x_{0})^{n_{k}}\vert^{1/n_{k}}\ge 1</m>, which would then imply
 <m> \vert a_{n_{k}}(x-x_{0})^{n_{k}}\vert \ge 1</m>, so <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m>
 can't converge at such an <m>x</m>.
+</p>
 </proof>
 </theorem>
 <p> Whether  <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m> converges for <m>x</m> with
@@ -3426,7 +3433,7 @@ R\ge \left( \limsup_{n\to \infty} |\frac{a_{n+1}}{a_n}|\right)^{-1},
 </me>
 </statement>
 </proposition>
-<remark>In computing the radius of convergence of a power series, one often has to make some adaptation.
+<remark> <p>In computing the radius of convergence of a power series, one often has to make some adaptation.
 For instance, to determine the radius of convergence of
 <me>
 \sum_{m=0}^{\infty} (-1)^{m}\frac{x^{2m+1}}{(2m+1)!},
@@ -3447,6 +3454,7 @@ Then one only needs to make sure that
 |x|^{2} \limsup_{m\to \infty} \frac{(2m+1)!}{(2m+3)!} &lt; 1.
 </me>
 This turns out to hold for any <m>x</m>. Thus the radius of convergence here is <m>\infty</m>.
+</p>
 </remark>
 <exercise> <title>Radius of Convergence of a Power Series</title>
 <statement> Suppose that the radius of convergence of <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m> is <m>R</m>. What is the radius of convergence of the series 
@@ -3532,8 +3540,9 @@ This can also be written as
   \sum_{n=0}^{\infty}\int_{x_{0}}^{x_{0}+t} a_{n} (x-x_{0})^{n}\, dx =\sum_{n=0}^{\infty} \frac{a_{n}t^{n+1}}{n+1}.
   </me>
  </statement>
-  <proof> This follows simply using the knowledge that the power series converges 
+  <proof> <p>This follows simply using the knowledge that the power series converges 
   uniformly for <m>x</m> such that <m>x_{0} \le x \le x_{0}+t</m>.
+  </p>
   </proof>
 </theorem>
 
@@ -3575,7 +3584,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   f^{(k)}(x_{0})=k! a_{k}.
   </me>
   </statement>
-  <proof>  One simply notes that the series <m>\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1}</m>
+  <proof> <p> One simply notes that the series <m>\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1}</m>
   converges iff the series <m>\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n}</m> converges, so these
   two series have the same radii of convergence. But the radius of convergence of  the latter is given by
   <me>
@@ -3593,6 +3602,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   <xref ref="eq-psderivative"/> holds for <m> \vert x-x_{0}\vert \le r</m>. Since
   this holds for any  <m>0\lt r \lt R</m>, we conclude that <xref ref="eq-psderivative"/> holds for <m> \vert x-x_{0}\vert \lt R</m>.
   The rest cases for <m>k\gt 1</m> follow by repeating this procedure.
+  </p> 
   </proof>
   </theorem>
   <remark> <p>The previous Theorem reveals that a convergent power series 
@@ -3675,7 +3685,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   </p>
   </proof>
   </theorem>
-  <remark> It is possible for the radius of convergence of
+  <remark> <p> It is possible for the radius of convergence of
   the power series <m>\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}</m> to be greater than
   <m>R-|x_{1}-x_{0}| </m>, as seen in the case of 
   <m>\sum_{n=0}^{\infty} x^{n}</m> and <m>x_{1}=-\frac 12</m>, where, instead of 
@@ -3687,6 +3697,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   =\frac 23 \left(\sum_{n=0}^{\infty}\left(\frac{x+\frac{1}{2}}{\frac{3}{2}} \right)^{n}\right),
   </me>
   which converges as long as <m> |x+\frac{1}{2}| \lt \frac{3}{2}</m>. 
+  </p>
   </remark>
   <theorem><title>A Non-zero Convergent Power Series Has Isolated Zeroes</title>
   <statement>Suppose that the radius <m>R</m> of convergence of the power series
@@ -3726,11 +3737,12 @@ that <m>Z</m> must consists of all points of the disc
 </p>
 </proof>
   </theorem>
-  <remark>In the above theorem, it is important that the limit point referred to is in the
+  <remark><p>In the above theorem, it is important that the limit point referred to is in the
   disc of convergence of the power series.
 The function <m>f(x)=(x+1)\sin\frac{1}{x+1}</m> has a convergent power series expansion
 at <m>x=0</m> with radius of convergence equal to <m>1</m>, and <m>f(x_{n})=0</m> for
 <m>x_{n}=-1+\frac{1}{n\pi}\to -1</m>, yet <m>f(x)\not\equiv 0</m>.
+  </p>
 </remark>
 <theorem> <title>Product of  Two Power Series</title>
 <statement>Suppose that <m>f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}</m> and
@@ -3740,16 +3752,17 @@ in <m>x</m> converging for
 <m>|x|\lt R</m>, and <m>c_{n}=a_{0}b_{n} + a_{1}b_{n-1}+\cdots+a_{n}b_{0}</m> is the
     <term>Cauchy product</term> of the sequence <m>\{a_{n}\}</m> and <m>\{b_{n}\}</m>.
     </statement>
-    <proof> For any <m>x</m> with <m>|x|\lt R</m>, we know that both 
+    <proof> <p> For any <m>x</m> with <m>|x|\lt R</m>, we know that both 
     <m>f(x)=\sum_{n=1}^{\infty} a_{n} x^{n}</m> and
 <m>g(x)=\sum_{n=1}^{\infty} b_{n} x^{n}</m> converge absolutely, so 
 <m>f(x)g(x)</m> equals the Cauchy product given as 
 <me> 
 \sum_{n=0}^{\infty} \left( \sum_{m=0}^{n} a_{m}b_{n-m}\right) x^{n}.
 </me>
+</p>
 </proof>
 </theorem>
-Combing this Theorem and Abel's Theorem gives us
+<p> Combining this Theorem and Abel's Theorem gives us </p> 
 <corollary><statement> Suppose that <m>\sum_{n=0}^{\infty} a_{n} </m>,
 <m>\sum_{n=0}^{\infty} b_{n} </m>, and <m>\sum_{n=0}^{\infty} b_{n} </m> all converge, where
 <m>c_{n} =\sum_{m=0}^{n} a_{m}b_{n-m}</m> is  the Cauchy product of sequence <m>\{a_{n}\}</m> and <m>\{b_{n}\}</m>.
@@ -3758,7 +3771,7 @@ Then
 \left(\sum_{n=0}^{\infty} a_{n} \right)\left( \sum_{n=0}^{\infty} b_{n} \right)=\sum_{n=0}^{\infty} c_{n}.
 </me>
 </statement>
-<proof> Set <m>f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}</m> and
+<proof> <p>  Set <m>f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}</m> and
 <m>g(x)=\sum_{n=0}^{\infty} b_{n} x^{n}</m>. Then the two power series converge at <m>x=1</m>. Thus
 <m>f(x)g(x)= \sum_{n=0}^{\infty} c_{n} x^{n}</m> for all <m>x</m> with <m>|x|\lt 1</m>. Abel Theorem
 is applicable to all three power series here for <m>x=1</m>, so
@@ -3767,13 +3780,15 @@ is applicable to all three power series here for <m>x=1</m>, so
 =\lim_{x\to 1-} \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left( \sum_{n=0}^{\infty} b_{n} x^{n}\right)
 =\lim_{x\to 1-} \sum_{n=0}^{\infty} c_{n} x^{n}= \sum_{n=0}^{\infty} c_{n}.
 </me>
+</p>
 </proof>
 </corollary>
-<remark>The condition that all three series converge can't be  dropped. For the case 
+<remark> <p> The condition that all three series converge can't be  dropped. For the case 
 that <m>a_{n}=b_{n}=\frac{(-1)^{n}}{n+1}</m>, it turns out that the series of the Cauchy product
 <m>\sum_{n=0}^{\infty} c_{n}</m> does not converge.
+  </p>
 </remark>
-<remark> It can be proved that the quotient of two convergent power series centered at some
+<remark> <p> It can be proved that the quotient of two convergent power series centered at some
 <m>x_{0}</m> has a convergent power series expansion centered at <m>x_{0}</m> 
 in some neighborhood of <m>x_{0}</m>, provided that the denominator does not vanish at <m>x_{0}</m>.
 Similarly it can be proved that if <m>f(x)</m> has a convergent power series expansion
@@ -3781,6 +3796,7 @@ centered at <m>x_{0}</m> with <m>y_{0}=f(x_{0})</m>, and <m>g(y)</m> has a
 convergent power series expansion
 centered at <m>y_{0}</m>, then the composition <m>g\circ f (x)</m> has a convergent power series expansion
 centered at <m>x_{0}</m> .
+  </p>
 </remark>
   </section>
    <section xml:id="sec-exponential">
@@ -4039,9 +4055,13 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   has a natural inner product: <m>(f, g) :=\int_{a}^{b} f(x)g(x)\, dx</m>.
   </p>
   <definition><title>Orthogonal Relation</title>
+	<statement>
+		<p>
   Two vectors <m>x, y</m> in an inner product space <m>V</m> are said to be orthogonal to
   each other if
   <m> (x, y)=0</m>.
+		</p>
+	</statement>
   </definition>
   <p>Note that, since <m>(y, x)=(x, y)</m>, it follows that if <m>(x, y)=0</m>, then <m>(y, x)=0</m>.
   So the orthogonal relation is symmetric in <m>x</m> and <m>y</m>.
@@ -4083,10 +4103,13 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
       This proves the Cauchy-Schwarz inequality when <m>y\ne 0</m>. But the case of <m>y=0</m> is trivial.
       </p>
       <p>The triangle inequality follows from the Cauchy-Schwarz inequality by
-      <me>
-      \Vert  x +y  \Vert^{2}=(x+y, x+y)=(x, x)+2(x, y)+(y, y) \le (x, x)+2\Vert x \Vert  \Vert y \Vert  +(y, y)
-      =\left(\Vert x \Vert + \Vert y \Vert \right)^{2}.
-      </me>
+      <md>
+		<mrow>
+      \Vert  x +y  \Vert^{2} \amp =(x+y, x+y)=(x, x)+2(x, y)+(y, y) </mrow>
+	  <mrow> 
+		\amp \le (x, x)+2\Vert x \Vert  \Vert y \Vert  +(y, y)
+      =\left(\Vert x \Vert + \Vert y \Vert \right)^{2}. </mrow>
+      </md>
       The Pythagorean relation clearly follows from the above line of proof when <m>(x, y)=0</m>.
       </p>
             </proof>
@@ -4110,11 +4133,9 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   </me>
   Then show that
   <me>
-\int_{0}^{l} \vert \sum_{n=1}^{N}b_{n} \sin \left(\frac{n \pi x}{l}\right)\vert^{2} \, dx
- =\frac l2 \left( \sum_{n=1}^{N} |b_{n}|^{2} \right).
+  \int_{0}^{l} \vert \sum_{n=1}^{N}b_{n} \sin \left(\frac{n \pi x}{l}\right)\vert^{2} \, dx 
+ =  \frac l2 \left( \sum_{n=1}^{N} |b_{n}|^{2} \right).
  </me>
-
-
   </statement>
   <hint> Use the relation <m>2\sin A \sin B=\cos(A-B)-\cos(A+B)</m>.</hint>
   </exercise>
@@ -4127,10 +4148,14 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   $n\in\mathbb N$.}
   </me>
   Then show that
-  <me>
- \int_{0}^{2l} \vert a_{0}+\sum_{n=1}^{N}\left(a_{n} \cos \left(\frac{n \pi x}{l}\right) + b_{n} \sin \left(\frac{n \pi x}{l}\right)\right) \vert^{2} \, dx
- =l\left( 2 |a_{0}|^{2} + \sum_{n=1}^{N}\left(|a_{n}|^{2} + |b_{n}|^{2}\right) \right).
- </me>
+  <md>
+	<mrow>
+ \amp \int_{0}^{2l} \vert a_{0}+\sum_{n=1}^{N}\left(a_{n} \cos \left(\frac{n \pi x}{l}\right) + b_{n} \sin \left(\frac{n \pi x}{l}\right)\right) \vert^{2} \, dx
+ </mrow>
+ <mrow>
+ = \amp l\left( 2 |a_{0}|^{2} + \sum_{n=1}^{N}\left(|a_{n}|^{2} + |b_{n}|^{2}\right) \right).
+ </mrow>
+  </md>
   </statement>
   <hint> Use the relations <m>2\sin A \sin B=\cos(A-B)-\cos(A+B), 2 \cos A \cos B= \cos(A-B)+\cos(A+B),
   2\sin A \cos B=\sin(A+B)-\sin(A-B)</m>.</hint>
@@ -4232,7 +4257,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   </p>
   </statement>
   </exercise>
-  <remark> When two vectors <m>x, y</m> are orthogonal in a complex vector space <m>V</m> with a Hermitian
+  <remark> <p> When two vectors <m>x, y</m> are orthogonal in a complex vector space <m>V</m> with a Hermitian
   inner product, the Pythagorean relation holds in the same way as for case in a vector space with a Euclidean inner 
   product.  In this sense it is a proper generalization of the orthogonal relation in Euclidean geometry. 
   On the other hand, there is a subtle difference: suppose <m>\{\bv_{1},\cdots, \bv_{m}\}</m> is an 
@@ -4247,19 +4272,30 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   <m>\bbC</m>, where <m>(z, w)=z \bar w</m>, so <m>(1, i)=-i \ne 0</m>, while in the
   geometric representation of complex numbers, <m>1, i</m> are orthogonal---they are orthogonal in the 
   induced <m>G</m> inner product, which is the standard Euclidean inner product.
+  </p>
   </remark>
   <p>In the following we will not distinguish between a Hermitian inner product and a Euclidean inner product,
   and will let the context to imply the appropriate one. 
   </p>
-  <definition><title>Orthonormal Vectors</title> A set of vectors
+  <definition><title>Orthonormal Vectors</title>
+	<statement>
+		<p>
+	A set of vectors
   <m>\{\bv_{1}, \bv_{2},\cdots \}</m> (finite or infinite) in an inner product space <m>V</m> is called an
   orthonormal set, if any two distinct vectors in this set are orthogonal to each other and each one is a unit
-  vector.</definition>
+  vector.
+</p>
+	</statement> 
+</definition>
   <definition><title>Fourier Coefficients and Fourier Series</title>
+	<statement>
+		<p>
    Let <m>\{\bv_{1}, \bv_{2},\cdots \}</m> be a set of orthonormal vectors in an inner product space <m>V</m>.
    For any vector <m>\bv\in V</m>, define <m>c_{k}=(\bv, \bv_{k})</m>. Then 
    <m>\{c_{k}\}</m> are called the Fourier coefficients of <m>\bv</m> with respect to this set of orthonormal vectors, and the series <m>\sum_{k} c_{k} \bv_{k}</m> is called the Fourier series of
    <m>\bv</m> with respect to this set of orthonormal vectors.
+		</p>
+	</statement>
    </definition>
    <p>In the above definition the convergence of <m>\sum_{k} c_{k} \bv_{k}</m> in the
    case of an infinite set of orthonormal vectors is not directly addressed; one either needs to show that the series 
@@ -4380,14 +4416,16 @@ using either the relation <m>
    <p>The second assertion follows by using  the orthogonality relations above
    <md>
    <mrow>
-    \Vert \bv \Vert^{2} \amp =   \left( (\bv - \sum_{k=1}^{N} c_{k} \bv_{k})+  \sum_{k=1}^{N} c_{k} \bv_{k},
+    \Vert \bv \Vert^{2}  = \amp  \left( (\bv - \sum_{k=1}^{N} c_{k} \bv_{k})+  \sum_{k=1}^{N} c_{k} \bv_{k},
     (\bv - \sum_{k=1}^{N} c_{k} \bv_{k})+  \sum_{k=1}^{N} c_{k} \bv_{k} \right)</mrow>
     <mrow>
-    \amp = (  \bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \bv - \sum_{k=1}^{N} c_{k} \bv_{k})+
-    2(\bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \sum_{k=1}^{N} c_{k} \bv_{k})+
-    (\sum_{k=1}^{N} c_{k} \bv_{k},\sum_{k=1}^{N} c_{k} \bv_{k})</mrow>
+     = \amp (  \bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \bv - \sum_{k=1}^{N} c_{k} \bv_{k})+
+    2(\bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \sum_{k=1}^{N} c_{k} \bv_{k})
+	</mrow>
+	<mrow>
+    \amp + (\sum_{k=1}^{N} c_{k} \bv_{k},\sum_{k=1}^{N} c_{k} \bv_{k})</mrow>
     <mrow> 
-    \amp = \Vert \bv - \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}+ \Vert \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}
+     = \amp \Vert \bv - \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}+ \Vert \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}
     </mrow>
     using <m>(\bv - \sum_{k=1}^{N} c_{k} \bv_{k}, \bv_{k})=0</m> for any <m>k</m>.
     </md>
@@ -4413,11 +4451,15 @@ using either the relation <m>
 </proof>
    </theorem>
    <definition><title>Orthogonal Projection</title>
+	<statement>
+		<p>
     Let <m>\{\bv_{1}, \bv_{2},\cdots, \bv_{N} \}</m> be a finite set of orthonormal vectors in an inner product space <m>V</m>.
   For any vector <m>\bv\in V</m>, let <m>\sum_{k=1}^{N} c_{k} \bv_{k}</m> be the Fourier series of
    <m>\bv</m> with respect to this set of orthonormal vectors. Then
     <m>\sum_{k=1}^{N} c_{k} \bv_{k}</m> is also called the orthogonal projection of
-    <m>\bv</m> in the span of this set of orthonormal vectors.
+    <m>\bv</m> in the span of this set of orthonormal vectors.	
+		</p>
+	</statement>
    </definition>
    <exercise>
    <title>Find Orthogonal Projections</title>
@@ -4440,12 +4482,13 @@ using either the relation <m>
    \sum_{k} |c_{k}|^{2}\le \Vert \bv\Vert^{2} \quad\text{ (Bessel's inequality)}.
    </me>
    </statement>
-   <proof> Take any finite subset <m>\{\bv_{1}, \bv_{2},\cdots, \bv_{N}\}</m>. Then
+   <proof> <p> Take any finite subset <m>\{\bv_{1}, \bv_{2},\cdots, \bv_{N}\}</m>. Then
    we have already proved that
    <me>
    \Vert \bv\Vert^{2}\ge \Vert \sum_{k=1}^{N }  c_{k }\bv_{k}\Vert^{2}=  \sum_{k=1}^{N} |c_{k}|^{2}.
    </me>
    Since this holds for any finite <m>N</m>, Bessel's inequality follows immediately. 
+   </p>
    </proof>
   </theorem>
  <corollary> <title>Bessel's inequality for trigonometric Fourier series</title>
@@ -4522,8 +4565,12 @@ product space.
 </p>
  </remark>
  <definition><title>A Complete (or Maximal) Orthonormal Set</title> 
+	<statement>
+		<p>
  A set of orthonormal vectors in an inner product space is called complete (or maximal) if the only vector orthogonal to
  each of these vectors is the zero vector.
+		</p>
+	</statement>
  </definition>
  
   </section>
@@ -4604,8 +4651,9 @@ for all sufficiently large <m>\lambda</m>, which concludes our proof.
 </men>
 Then <m>S_N[g]( x)-g(x)\to 0</m> as <m>N\to\infty</m>.
 </statement>
-<proof> Under our assumption, <m> h(x; t)=\frac{g(x-t) -g(x)}{\sin \frac t2}</m> is Riemann integrable on
+<proof> <p> Under our assumption, <m> h(x; t)=\frac{g(x-t) -g(x)}{\sin \frac t2}</m> is Riemann integrable on
 <m>(-\pi, \pi)</m>, so we can apply the Riemann-Lebesgue  <xref ref="RLL"/> to draw our conclusion.
+</p>
 </proof>
 </theorem>
 
@@ -4751,7 +4799,7 @@ As a consequence, the following Parseval equality holds:
 \int_{0}^{2l} |g(x)|^{2}\, dx = \pi\left( 2 |a_{0}|^{2}+ \sum_{n=1}^{\infty} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right]\right).
 </me>
 </statement>
-<proof>Since the span of <m>\{ e^{i nx}\}_{n=-N'}^{N'}</m> is a subspace of <m>\{ e^{i nx}\}_{n=-N}^{N}</m>
+<proof> <p> Since the span of <m>\{ e^{i nx}\}_{n=-N'}^{N'}</m> is a subspace of <m>\{ e^{i nx}\}_{n=-N}^{N}</m>
 when <m>N' \le N</m>, the Best Approximation Theorem implies that
 <me>
 \Vert S_{N}(g)-g\Vert\le \Vert S_{N'}(g)-g\Vert \text{ when $N' \le N$.}
@@ -4761,13 +4809,14 @@ For any <m>\epsilon \gt 0</m>, Fejér's theorem gives some trigonometric polynom
 Best Approximation Theorem implies that <m>\Vert S_{N'}(g)-g\Vert \lt \epsilon</m>. Then for all
 <m>N\ge N'</m>, we have <m>\Vert S_{N}(g)-g\Vert\le \epsilon</m>. The Parseval equality follows
 from <xref ref="parseval"/>.
+</p>
 </proof>
 </theorem>
 <theorem>
 <statement><m>\{ e^{i nx}\}_{n=-\infty}^{\infty}</m> is a set of maximal orthogonal functions	 in
 <m>L^{2}[-\pi, \pi]</m>
 </statement>
-<proof> Suppose not. Let <m>g\in L^{2}[-\pi, \pi]</m> be a non-zero 
+<proof> <p> Suppose not. Let <m>g\in L^{2}[-\pi, \pi]</m> be a non-zero 
 function in <m>L^{2}[-\pi, \pi]</m> orthogonal to each <m>e^{i nx}</m>. We may assume that
 <m>\Vert g \Vert =1</m>. Then for any trigonometric	 polynomial <m>p</m> of
 the form <m>\sum_{n=-N}^{N}c_{n }e^{i nx}</m>, the orthogonality property implies that
@@ -4780,6 +4829,7 @@ the form <m>\sum_{n=-N}^{N}c_{n }e^{i nx}</m> such that  <m>\Vert p-f\Vert \lt \
 Then the triangle inequality implies that  
 <me>\Vert g-p\Vert \le \Vert g-f\Vert+ \Vert p-f\Vert \lt \frac 12</me>,
 which contradicts the property <m> \Vert g - p\Vert\ge 1</m> established earlier.
+</p>
 </proof>
 </theorem>
   </section>
@@ -4843,7 +4893,7 @@ In other words, <em>under our assumptions here</em>, the
 Fourier series expansion of <m>g'(x)</m> on <m> [-\pi, \pi]</m> can be obtained by 
 term-wise differentiation of the Fourier series expansion of <m>g(x)</m> on <m> [-\pi, \pi]</m>.
 </statement>
-<proof> Note that, for $n=0$,
+<proof> <p> Note that, for $n=0$,
 <me>
 2\pi a_{0}'=\int_{-\pi}^{\pi} g'(x)\, dx=g(\pi)-g(-\pi)=0,
 </me>
@@ -4861,10 +4911,11 @@ and for $n\ge 1$, integration by parts gives
   <mrow> = \amp - n \int_{-\pi}^{\pi} g(x) \cos (nx) \, dx </mrow>
   <mrow>   = \amp -\pi n a_{n}. </mrow> 
 </md>
+</p>
 </proof>
 </theorem>
-<remark> Note that the continuity and periodicity of <m>g</m> can't be dropped, as can be seen by
-the Fourier expansion of <m>g(x)=x</m> on <m>(-\pi, \pi)</m>.
+<remark> <p> Note that the continuity and periodicity of <m>g</m> can't be dropped, as can be seen by
+the Fourier expansion of <m>g(x)=x</m> on <m>(-\pi, \pi)</m>. </p>
 </remark>
 <exercise> <title>Relation Between the Fourier Series of a Function and its Derivative</title>
 <p>Compute the Fourier series of <m>g(x)=x</m> and <m>g'(x)=1</m> on <m>(-\pi, \pi)</m>,
@@ -5068,10 +5119,14 @@ This follows from using the triangle inequality to get </p>
 </task>
 <task> <p> Define <m>S(u)=u(x)^{2}</m> for any <m>u\in C[a, b]</m>, then <m>u\mapsto S(u)\in C[a, b]</m>
 is continuous in <m>C[a, b]</m>. We check that
-<me>
-\vert S(u+h)(x)-S(u)(x)\vert =\vert 2 u(x)h(x)+h(x)^{2}\vert \le 2 \Vert u \Vert_{C[a, b]} \Vert h\Vert_{C[a, b]}+
+<md>
+	<mrow>
+\vert S(u+h)(x)-S(u)(x)\vert = \amp \vert 2 u(x)h(x)+h(x)^{2}\vert 
+	</mrow>
+	<mrow> \le \amp 2 \Vert u \Vert_{C[a, b]} \Vert h\Vert_{C[a, b]}+
 \Vert h\Vert_{C[a, b]}^{2}
-</me>
+ </mrow>
+</md>
 so <m> \Vert S(u+h)(x)-S(u)(x)\Vert_{C[a, b]}^{2} \to 0</m> as <m>\Vert h\Vert_{C[a, b]} \to 0</m>, proving the
 continuity of <m>S(u)</m>.</p>
 </task>
@@ -5245,6 +5300,8 @@ If so, determine whether this map is invertible.</li>
 <title>Operator Norm of a Linear Map</title>
 
   <definition><title>Operator Norm of a Linear Map</title>
+	<statement>
+		<p>
   If <m>X</m> and <m>Y</m> are normed vector spaces, and <m>T:X\mapsto Y</m> 
   is a linear map, then the operator norm, also called Frobenius norm, of <m>T</m> is defined as
   <me>
@@ -5255,14 +5312,16 @@ If so, determine whether this map is invertible.</li>
   ||T|| :=\sup\left\{ ||T({\mathbf x})||_{Y}/||{\mathbf x}||_{X}: {\mathbf x}\ne {\mathbf 0}\right\}.
   </me>
   Sometimes we use the notation <m>||T||_{\cF}</m>.
+		</p>
+	</statement>
   </definition>
   <p>It follows that
   <me>
-  ||T({\mathbf x})||_{Y} \le ||T|| ||{\mathbf x}||_{X} \text{ for any vector } {\mathbf x},
+  ||T({\mathbf x})||_{Y} \le ||T|| ||{\mathbf x}||_{X} \text{  for any vector } {\mathbf x},
   </me>
   and <m>||T||</m> is the smallest number <m>C</m> such that
   <me> 
-   ||T({\mathbf x})||_{Y} \le C ||{\mathbf x}||_{X} \text{ for any vector } {\mathbf x}.
+   ||T({\mathbf x})||_{Y} \le C ||{\mathbf x}||_{X} \text{  for any vector } {\mathbf x}.
    </me>
   </p>
     <p>In applications we often work normed vector spaces and linear maps with a finite
@@ -5293,17 +5352,18 @@ If so, determine whether this map is invertible.</li>
   <me> ||I^{-1}(v)||_{C[a, b]} \le ||v||_{C^{1}[a, b]} \text{ for all $v\in Y$.}</me>
  </p>
   </remark>
-  <remark> As seen from the example above, when <m>X</m> is not finite dimensional it is possible that a 
+  <remark> <p> As seen from the example above, when <m>X</m> is not finite dimensional it is possible that a 
   linear map from 
 <m>X</m> to  <m>Y</m> may not have a finite norm. However, when 
 <m>X</m> is  finite dimensional, we will prove the following proposition.
+  </p>
 </remark>
 <proposition xml:id="finite-norm">
 <p>Suppose that <m>X</m> is a finite dimensional normed vector space, 
 then for any normed vector space <m>Y</m> and <m>T: X\mapsto Y</m> a 
   linear map from 
 <m>X</m> to  <m>Y</m>, its operator norm <m>||T||</m> is finite.</p>
-<proof> Let <m>\left\{{\mathbf x}_{1}, \ldots, {\mathbf x}_{n}\right\}</m> be a basis of <m>X</m>. Then 
+<proof> <p>  Let <m>\left\{{\mathbf x}_{1}, \ldots, {\mathbf x}_{n}\right\}</m> be a basis of <m>X</m>. Then 
 any <m>{\mathbf x}\in X</m> has coordinates <m>(c_{1}, \ldots, c_{n})</m> in this basis:
 <m> {\mathbf x}=\sum_{j=1}^{n}c_{j} {\mathbf x}_{j}</m>, and
 <me>
@@ -5318,6 +5378,7 @@ constant <m>C>0</m> such that
 \text{ for all $\bx \in X$}.
 </me>
 This shows that <m>||T||</m> is finite and <m>||T||\le C \left( \sum_{j=1}^{n}|| T({\mathbf x}_{j})||^{2}\right)^{1/2}</m>.
+</p>
 </proof>
 </proposition>
 <p>Unless indicated otherwise, we will restrict to the situation that
@@ -5416,7 +5477,7 @@ a normed vector space.
   </ol>
   </statement>
   </exercise>
-  <remark>When a linear map <m>T</m> from <m>X</m> to <m>Y</m>
+  <remark> <p> When a linear map <m>T</m> from <m>X</m> to <m>Y</m>
   has a finite norm, it is a continuous map, as
   <me>
   ||T({\mathbf x}) -T({\mathbf y})||=||T({\mathbf x}- {\mathbf y})||\le ||T|| || {\mathbf x}- {\mathbf y}||.
@@ -5434,6 +5495,7 @@ a normed vector space.
   <me>
   ||T({\mathbf x})||\le  \frac{\epsilon}{\delta} ||{\mathbf x}||.
   </me>
+</p>
   </remark>
   <p>When <m>X</m> and <m>Y</m> are finite dimensional, most questions about
   a linear map from <m>X</m> to <m>Y</m> can be formulated as a question
@@ -5648,9 +5710,11 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    But in this formulation there is no condition on how <m>{\mathbf v}</m> may depend on <m>{\mathbf u}</m>
    and the <m>\delta</m> here may also depend on <m>{\mathbf u}</m>. </p>
    
-   <remark>The definition of differentiability involves the norm on <m>X</m> and <m>Y</m>. But
+   <remark> <p>The definition of differentiability involves the norm on <m>X</m> and <m>Y</m>. But
    due to <xref ref="lem-norms"/>,
    when <m>X</m> is finite dimensional, it does not matter what norm to use on <m>X</m>.
+   Similarly, when <m>Y</m> is finite dimensional, it does not matter what norm to use on <m>Y</m>.
+   </p>
    </remark>
    
    
@@ -5691,7 +5755,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
   the <m>(i, j)</m> entry of <m>[D\mathbf f (\bx)]</m> is <m>\displaystyle{\frac{\partial f_i}{\partial x_j}(\bx)}</m>,
   where <m>\bff(\bx) =(f_1(\bx), \cdots, f_m(\bx))</m>.
   </statement>
-  <proof>The only part that we have not provided detail is to prove the continuity of <m>\bff</m> at 
+  <proof> <p> The only part that we have not provided detail is to prove the continuity of <m>\bff</m> at 
   <m>\bx</m>. For any <m>\epsilon >0</m>, there exists some <m>\delta>0</m> such that
    <me>
    \Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert\le \epsilon \Vert {\mathbf h} \Vert
@@ -5708,12 +5772,12 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    <m>\Vert {\mathbf h} \Vert &lt; \delta</m>, we have <m>\Vert A{\mathbf h}\Vert \lt \epsilon</m>, which
    would guarantee that <m> \Vert {\mathbf f}({\mathbf x}+{\mathbf h}) - {\mathbf f}({\mathbf x})\Vert \le 
    2 \epsilon</m>, proving the continuity of <m>\bff</m> at <m>\bx</m>.
-
+   </p>
 </proof>
     </proposition>
    
-   <paragraphs><title>Question</title> Here are  a few basic questions related to the concept of
-   a function differentiable at a point and having partial derivatives or directional derivatives there.
+   <paragraphs><title>Question</title> <p> Here are  a few basic questions related to the concept of
+   a function differentiable at a point and having partial derivatives or directional derivatives there.</p>
    <ul>
    <li>Suppose a function has partial derivatives at a point in all its coordinate directions. Does it imply that
    the function has directional derivatives at that point in any direction? Does it imply that
@@ -5798,8 +5862,8 @@ For any direction <m>{\mathbf u}=(\cos\theta, \sin\theta)</m>,
     </p>
     </example>
         
-        <example> A function may be differentiable at a point but may not have partial derivatives at 
-        nearby points. <m>f(x, y)=|xy|</m> near <m>(0, 0)</m> is such an example.
+        <example> <p> A function may be differentiable at a point but may not have partial derivatives at 
+        nearby points. <m>f(x, y)=|xy|</m> near <m>(0, 0)</m> is such an example. </p>
         </example>
         
         <p>In addition to the possible difference of behavior as illustrated above when 
@@ -5839,9 +5903,14 @@ some <m>\delta >0</m>  <xref ref="meanbd"/> holds for <m>c\in [a, a+\delta]</m>.
 our assumption. Then using <m>\Vert\bff'(c^{*})\Vert\le M</m>,
 there exists some <m>\delta^{*}>0</m> such that <m>\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})</m> for
 <m>c\in [c^{*}, c^{*}+\delta^{*}]</m>, it then follows that, for <m>c\in [c^{*}, c^{*}+\delta^{*}]</m>,
-<me>
-\Vert\bff(c)-\bff(a)\Vert\le \Vert\bff(c)- \bff(c^{*})\Vert + \Vert\bff(c^{*})-\bff(a)\Vert\le (M+\epsilon)(c-c^{*}) + (M+\epsilon)(c^{*}-a) +\epsilon
-</me>
+<md>
+	<mrow>
+\Vert\bff(c)-\bff(a)\Vert\le \amp \Vert\bff(c)- \bff(c^{*})\Vert + \Vert\bff(c^{*})-\bff(a)\Vert
+	</mrow>
+	<mrow>
+		\le \amp (M+\epsilon)(c-c^{*}) + (M+\epsilon)(c^{*}-a) +\epsilon
+		  </mrow>
+</md>
 showing that <xref ref="meanbd"/> continues to hold for <m>c\in [c^{*}, c^{*}+\delta^{*}]</m>,
 contradicting the definition of <m>c^{*}</m>.
 </p>
@@ -6008,10 +6077,14 @@ and <m> \frac{\Vert \bw (\bx, \bx_0) \Vert}{\Vert \bx -\bx_0 \Vert}\to 0</m> as 
 we can find some <m>\sigma \gt 0</m> such that when <m> \Vert \bx -\bx_0\Vert \lt \sigma</m>,
 <m>\Vert \bw (\bx, \bx_0) \Vert \lt \epsilon \Vert \bx -\bx_0\Vert</m>,
 so
-<me>
-\Vert \by-\by_0 \Vert\le \epsilon \Vert \bx -\bx_0\Vert + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert
-\le \left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert \lt \delta.
-</me>
+<md>
+	<mrow>
+\Vert \by-\by_0 \Vert\le \amp \epsilon \Vert \bx -\bx_0\Vert + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert
+	</mrow>
+	<mrow>
+\le \amp \left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert \lt \delta.
+</mrow>
+</md>
  Putting these together, when <m> \Vert \bx -\bx_0\Vert \lt \sigma</m>  we have
 <me>
 \Vert \bz (\by, \by_0) \Vert \le \epsilon \Vert \by-\by_0 \Vert\le  \epsilon 
@@ -6039,7 +6112,7 @@ for <m>\bx</m> sufficiently close to <m>\bx_0</m>. Using this and the Squeeze Th
 </p>
    	</proof>
    </theorem>
-   <example>Suppose that <m>\mathbf f:D\subset \bbR^n\mapsto E\subset \bbR^m</m>
+   <example> <p> Suppose that <m>\mathbf f:D\subset \bbR^n\mapsto E\subset \bbR^m</m>
    and <m>\mathbf g:E \mapsto D</m> are inverse of each other:
    <me>
    {\mathbf g}\circ {\mathbf f}(\bx)=\bx \text{ for all $\bx\in D$ and ${\mathbf f}\circ {\mathbf g}(\by)=\by$
@@ -6054,6 +6127,7 @@ for <m>\bx</m> sufficiently close to <m>\bx_0</m>. Using this and the Squeeze Th
 		</me>
 		As a result  both <m>[D \mathbf f(\bx_{0})]</m> and <m>[D \mathbf g(\by_{0})]</m>
 		are inverse matrices of each other  and <m>n=m</m>.
+		   </p>
    </example>
    
    <exercise> <title>Jacobian Matrix of Composite Function</title>
@@ -6206,7 +6280,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 	<statement>Suppose that <m>\phi:X\mapsto X</m> is a contraction of <m>X</m>. Then it can have
 	at most one fixed point.
 	</statement>
-	<proof> Suppose that <m>\bx, \by\in X</m> are fixed points of <m>\phi</m>, namely,
+	<proof> <p> Suppose that <m>\bx, \by\in X</m> are fixed points of <m>\phi</m>, namely,
 	<m>\phi(\bx)=\bx, \phi(\by)=\by</m>. Then
 	<me>
 	0\le d(\bx, \by)=d(\phi(\bx), \phi(\by)) \le c\, d(\bx, \by)
@@ -6214,6 +6288,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 	and  <m> 0\lt c \lt 1</m> imply that <m>d(\bx, \by)=0</m>. This forces <m>\bx=\by</m>,
 	proving that <m>\phi</m> can have
 	at most one fixed point.
+	</p>
 	</proof>
 	</proposition>
 	<theorem xml:id="thm-fixedpt">
@@ -6282,6 +6357,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 		</proof>
 	</corollary>
   		<example> <title>Existence of a Local Solution of an Initial Value Problem of an ODE</title>
+			<p>
 		Suppose that <m>f(x, t)</m> is a continuous function defined on 
 		<m>(x, t)\in [x_{0}-\delta_{0}, x_{0}+\delta_{0}]\times [-\epsilon_{0}, \epsilon_{0}]</m>,
 		and that there exists some <m>L\gt 0</m> such that
@@ -6294,6 +6370,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 		<men xml:id="SIVP">
 		x'(t)=f(x(t), t), \; t\in [ -\epsilon, \epsilon]; \; x(0)=x_{0}.
 		</men>
+		</p>
 		<p>A solution <m>x(t)</m> to <xref ref="SIVP"/> is equivalent to a solution of
 		<me>
 		x(t) =x_{0} +\int_{0}^{t} f(x(s), s)\, ds,
@@ -6317,13 +6394,18 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 		</me>
 		Then, for any <m>x\in X_{\epsilon}</m>,
 		<me>
-		|\phi(x)-x_{0}|\le \left| \int_{0}^{t} f(x(s), s)\, ds \right| \le M |t| \le \delta_{0}</me>
+		|\phi(x)-x_{0}|\le \left| \int_{0}^{t} f(x(s), s)\, ds \right| \le M |t| \le \delta_{0}
+	</me> 
 		provided that <m>0\lt \epsilon \le \epsilon_{0}</m> is chosen such that <m>M \epsilon \le \delta_{0}</m>.</p>
 		<p>Then for any <m>x(t), y(t)\in X_{\epsilon}</m>, we have
-		<me>
-		|\phi(x(t))-\phi(y(t))|\le \left| \int_{0}^{t} \left( f(x(s), s)-f(y(s), s)\right) \, ds \right|
-		\le L |t|\ \max_{s\in [ -\epsilon, \epsilon]} |x(s)-y(s)|
-		</me>
+		<md>
+			<mrow>
+		|\phi(x(t))-\phi(y(t))|\le \amp \left| \int_{0}^{t} \left( f(x(s), s)-f(y(s), s)\right) \, ds \right|
+			</mrow>
+			<mrow>
+		\le \amp L |t|\ \max_{s\in [ -\epsilon, \epsilon]} |x(s)-y(s)|
+			</mrow>
+		</md>
 		for <m>t\in [ -\epsilon, \epsilon]</m>. Thus if <m>\epsilon</m> is chosen to further
 		satisfy <m>L\epsilon \lt 1</m>, then <m>\phi</m> becomes a contraction on <m>X_{\epsilon}</m>.
 		Note that <m>X_{\epsilon}</m> is a complete metric space with the metric
@@ -6859,7 +6941,7 @@ or <m>{\mathbf x}</m> is a fixed point of the mapping
  </p>
 </proof>
 </theorem>
-<remark> If,  for  
+<remark> <p> If,  for  
 part 1,  one assumes <m>\bff</m> is jointly
 differentiable in <m>({\mathbf x}, {\mathbf y})</m> and the 
 derivatives are continuous at <m>(\bx_{0}, \by_{0})</m>, then one can get a simple proof by using the Inverse Function Theorem. One simply defines
@@ -6875,6 +6957,7 @@ and <m>\bbR^{m}</m>components, we get
 <me>
 G(\mathbf 0, \by)=(g(\mathbf 0, \by), \by), \quad \bff(g(\mathbf 0, \by),\by)=\mathbf 0.
 </me>
+</p>
 </remark>
 
 <remark><p>The rule for determining	the derivative of the implicit function is just a form
@@ -7845,7 +7928,7 @@ is satisfied when
     In words, <q><m>\phi</m> evaluated at the average of <m>f</m> is not more than
     the average of <m>\phi\circ f</m>.</q>
     </p>
-    <proof> Set <m>\bar f=  \int_{X} f(x)p(x)\, dx</m>. It is easy to rule out the possibility that
+    <proof> <p> Set <m>\bar f=  \int_{X} f(x)p(x)\, dx</m>. It is easy to rule out the possibility that
     <m> \bar f= A</m> or <m>B</m>, so we may assume that <m>A\lt \bar f\lt B</m>. Using the
     support property of <m>\phi</m> at <m>\bar f</m>, there exists some <m> k</m> such that
     <me>
@@ -7858,6 +7941,7 @@ is satisfied when
     - \bar f \int_{X}p(x)\, dx\right).
     </me>
     The right hand side is simply <m> \phi (\bar f) </m>, which proves the Jensen's inequality.
+	</p>
     </proof>
     </theorem>
     </p>
@@ -8445,10 +8529,8 @@ of variables in multiple integrals becomes crucial.</li>
 					</statement>
 					</definition>
 					<figure xml:id="fig-partition-refinement">
-						<caption>An illustration of a common refinement of two given partitions</caption>
-						<image width="50%"   source="•">
-							
-						</image>
+						<caption>An illustration of a common refinement of two given partitions generated with the help of Gemini</caption>
+						<image    source="images/Gemini_Generated_Image_partitions.pdf"/>
 					</figure>
 					<p>Note that if <m>\cP^{*}</m> is a refinement of partition <m>\cP</m>, then
 					<m>\lambda(\cP^{*})\le \lambda(\cP)</m>, and that
@@ -8656,7 +8738,7 @@ of variables in multiple integrals becomes crucial.</li>
 						rectangle <m>R</m> is Riemann integrable iff 
 						 <xref ref="eqn-Darboux"/> holds.
 							</statement>
-							<proof> We only need to prove the if part. Suppose 
+							<proof> <p> We only need to prove the if part. Suppose 
 							 <xref ref="eqn-Darboux"/> holds. 
 			Call the value on both sides <m>\int_{R}\, f</m>. 
 			Our proof in  <xref ref="propos-upperlower-int"/> essentially
@@ -8673,6 +8755,7 @@ of variables in multiple integrals becomes crucial.</li>
 						\int_{R}\, f-\epsilon &lt; L(f, \cP) \le R(f, \cP, \{\bx_{\alpha}\})\le U(f, \cP) &lt; \int_{R}\, f +\epsilon,
 							</me>
 							which shows that <m>f</m> is Riemann integrable on <m>R</m>.
+							</p>
 							</proof>
 							
 						
@@ -9162,7 +9245,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     \int_{R} f(\bx, \by)\; dA = \int_{R_{2}} \left( \int_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
     </men>
     </statement>
-    <proof>The key property used here is the uniform continuity of <m>f</m> on <m>R</m>:
+    <proof> <p> The key property used here is the uniform continuity of <m>f</m> on <m>R</m>:
     both sides of <xref ref= "eq-fubini-y"/> and <xref ref="eq-fubini-x"/> can be approximated by
     any Riemann sum with respect to a partition whose size is sufficiently small. 
     More specifically, for any <m>\epsilon >0</m>, there exists <m>\delta >0</m> such that
@@ -9271,6 +9354,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     - \sum_{S_{1}\in \cP_{1}} \int_{R_{2}} f(\bx_{\alpha}, \by)\, d\by |S_{1}| \right\vert \lt \epsilon |R_{1}|.
     </me>
    -->
+	</p> 
     </proof>
     </theorem>
     <exercise> <p> Verify that <m> \sum_{S_{\alpha}\in \cP_{1}} U(f(\bx_{\alpha}, \by), \cP_{2}) |S_{\alpha}| </m> is sandwiched
@@ -9352,7 +9436,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    = \int_{R_{2}} \left( \lowint_{\;R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
     </me>
         </statement>
-        <proof> We will focus on the first equality in <xref ref="eq-fubini-ul"/>. It
+        <proof> <p> We will focus on the first equality in <xref ref="eq-fubini-ul"/>. It
         relies on the observation that the lower and upper sums of <m>\upint_{R_{2}} f(\bx, \by)\, d\by</m>
         for any partition <m>\cP_{1}</m> of <m>R_{1}</m> and <m>\cP_{2}</m> of <m>R_{2}</m>
         are sandwiched between the lower sum <m>L(f(\bx, \by), \cP_{1}\times \cP_{2})</m>
@@ -9419,6 +9503,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
         = \int_{R} f(\bx, \by)\; dA.
         </me>
         The rest of the equalities can be proved in a similar way.
+		</p>
         </proof>
         
 </theorem>
@@ -9429,13 +9514,14 @@ Riemann integrable in <m>\by</m> except  perhaps for <m>\bx</m> on a set of meas
 except perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
 </p>
 </statement>
-<proof> It follows from <xref ref="eq-fubini-ul"/> that
+<proof> <p> It follows from <xref ref="eq-fubini-ul"/> that
 <me>
 \int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{\;R_{2}} f(\bx, \by)\, d\by\right)\, d\bx
 =0.
 </me>
 Since <m>\upint_{R_{2}} f(\bx, \by)\, d\by - \lowint_{\;R_{2}} f(\bx, \by)\, d\by\ge 0</m>
 for every <m>\bx\in R_{1}</m>, the conclusion follows from the following exercise.
+</p>
 </proof>
 </corollary>
 <exercise><p>Suppose that <m>g(\bx)\ge 0</m> on <m>R_{1}</m>
@@ -9477,11 +9563,12 @@ perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
 	and denote it as <m>\int_{G}f</m>.
 	</statement>
 	</definition>
-	<remark> The above definition is legitimate due to the following property: if
+	<remark> <p> The above definition is legitimate due to the following property: if
 	<m>S_{1}, S_{2}</m> are two rectangles containing <m>G</m> and 
 	<m>\chi_{G}(\bx)f(\bx)</m> is  Riemann integrable in <m>S_{1}</m>, then it is
 	Riemann integrable in <m>S_{2}</m> and
 	<m>\int_{S_{1}} \chi_{G}(\bx)f(\bx)=\int_{S_{2}} \chi_{G}(\bx)f(\bx)</m>.
+	</p>
 	</remark>
 	<proposition><title>Basic Properties of Jordan Measurable Sets and Riemann Integrable Functions</title>
 	<statement> Suppose that <m>A</m> and <m>B</m> are Jordan measurable sets in <m>\bbR^{n}</m>.
@@ -9654,11 +9741,11 @@ Then for any function <m>f</m> which is integrable on <m>T(E)</m>,
 <xref ref="chofvar"/> holds.
 </statement>
 </theorem>
-<remark xml:id="Tprop"> 
+<remark xml:id="Tprop">  <p>
 The formulation of the above theorem implicitly assumes that <m>T(E)</m> is Jordan measurable.
 This, together with the following, are consequences of  <xref ref="Tass"/> using 
 the Inverse Function Theorem.
-
+</p>
 <ol marker="(i)">
 <li> <m>T(U)</m> is an open set
 and there is a well defined inverse of <m>T</m> on <m>T(U)</m>, which is 
@@ -9668,17 +9755,17 @@ continuously differentiable.
 <li><m>T</m> maps any set of <m>U</m> of measure zero to a set of measure zero.</li>
 <li><m>T</m> maps any Jordan-measurable set of <m>U</m> to a Jordan measurable set.</li>
 </ol>
-
+<p>
 Recall that the volume of a set <m>E</m> is defined as <m>\int_{E}\chi_{E}</m> when
 the latter is well defined; this turns out to be equivalent to (a). <m>\partial E</m> has
 measure zero, and (b). <m>v(E)=\sup\left\{\sum_{S_{i} \subset E}v(S_{i})\right\}</m>, where <m>S_{i}</m>
 are sub rectangles of a partition. (b) is simply a restatement of
 <m>v(E)=\sup L(\chi_{E}, \cP)</m>, noting that <m>L(\chi_{E}, \cP)= \sum_{S_{i} \subset E}v(S_{i})</m>
 for any partition <m>\cP</m>.
-
+</p>
 </remark>
 
-<remark>
+<remark> <p> 
 In the one-variable case, the change of variables transformation <m>y=T(x)</m>
 is not required to be a bijection, and we don't put in the absolute value sign around the 
 Jabobian, as our conventional notation encodes the orientation:
@@ -9691,6 +9778,7 @@ where, in case <m>T</m> is a bijection and <m>T(a)>T(b)</m>, we have <m>\int_{T(
 <me>
 \int_{T[a, b]} f(y)\, dy = \int_{[a, b]} f(T(x)) |T'(x)|\, dx.
 </me>
+</p>
 </remark>
 <proof> (of properties in <xref ref="Tprop"/>) <p> We only provide some details for item (iii). 
 We first construct a sequence of compact closed subsets <m>U_{i}</m> of <m>U</m> satisfying
@@ -9779,16 +9867,6 @@ can be used to prove the following lemma, which could have been used to simplify
 Any open set <m>U</m> of <m>\bbR^{n}</m> is a countable union
 of non-overlapping  hypercubes of equal side lengths. 
 </statement>
-</lemma>
-
-<corollary> <statement> Suppose that   <m>E</m> in <m>\bbR^{n}</m> is a set of measure zero. For any
-<m>\epsilon >0</m>, there exists a 
-countable union
-of non-overlapping  hypercubes of equal side lengths <m>Q_{j}</m> covering <m>E</m> such that 
-<m>\sum_{j} |Q_{j}| \lt \epsilon</m>.
-</statement>
-</corollary>
-
 <proof> (of <xref ref="volchange"/>) <p>
 The central idea in proving <xref ref="volchange"/> is that for any 
 open subset <m>U'\subset U</m> with a compact closure <m>\bar U' \subset U</m>
@@ -9913,6 +9991,14 @@ that
 
 
 </proof>
+</lemma>
+
+<corollary> <statement> Suppose that   <m>E</m> in <m>\bbR^{n}</m> is a set of measure zero. For any
+<m>\epsilon >0</m>, there exists a 
+countable union
+of non-overlapping  hypercubes of equal side lengths <m>Q_{j}</m> covering <m>E</m> such that 
+<m>\sum_{j} |Q_{j}| \lt \epsilon</m>.
+</statement>
 <proof> (of <xref ref="chofvar"/>) <p> First, since the set of discontinuity of 
 <m>f(T(\bx))|\det DT(\bx)|</m> is <m>T^{-1}(D)</m>, where
 <m>D</m> is the set of discontinuity of <m>f(\by)</m> in <m>T(E)</m>, and <m>T^{-1}(D)</m>
@@ -9938,7 +10024,7 @@ where we have used <m> |\det DT(T^{-1}({\mathbf y}))| |\det D T^{-1} ({\mathbf y
 <xref ref="chofvar"/> for non-negative integrable functions.
 </p>
 </proof>
-
+</corollary>
 <remark> <p> In applications often we can't apply the change of variables formula directly
 as the assumptions may not be satisfied in the form as stated, and we need to apply some
 approximation procedure. </p>
@@ -10060,7 +10146,7 @@ at every $\bu \in U$ such that $F(\bu)=F(\mathbf u_{0})$.}
 <m>\{\bu\in U: F(\bu)=F(\mathbf u_{0})\}</m> is an <m>m</m>-dimensional surface containing 
 <m>\bu_{0}</m>.</p>
 </statement>
-<proof> This is a direction application of <xref ref="implicitFT"/>. 
+<proof> <p> This is a direction application of <xref ref="implicitFT"/>. </p>
 </proof>
 </proposition>
 
@@ -10171,7 +10257,7 @@ We now develop a formula for higher dimensional settings in the absence of cross
 \text{ Volume} (F(U)) =\sqrt {\det (A^{\rm T}A)} \text{ Volume}(U).
 </men>
 </statement>
-<proof>
+<proof> <p>
 Choose an orthonormal basis <m>\tau_1,\ldots, \tau_m</m> of <m>F(\mathbb R^m)</m>, 
 and express
 each  <m>\text{ col}_j(A)</m> in terms of this  basis:
@@ -10212,7 +10298,7 @@ Now it follows that
 (<m>B</m> is square while <m>A</m> may
 not be square, so we can not have <m>\det (A^{\rm T}A)=\det (A^{\rm T})\det (A)</m>), and we arrive at
 <xref ref="eq-cubeform"/>.
-
+</p>
 </proof>
 </theorem>
 
@@ -12062,13 +12148,14 @@ as a system in the polar coordinate <m>(r, \theta)</m> of <m>(x, y)</m> and the 
     </remark>
     
       
-   <remark> Our consideration for the dual space of the space of tangent vectors and the pull-back
+   <remark> <p> Our consideration for the dual space of the space of tangent vectors and the pull-back
    maps on tensors is because they provide a natural setting for us to relate <m>M</m> to
    <m>N</m> whenever there is a differentiable map <m>F: M\mapsto N</m>.  For our specific
    problem of developing an integration theory on differential forms, we often take <m>M</m> to be
    a standard cell (such as a cube or simplex) in <m>\bbR^{m}</m>, the pull-back maps allow us
    to represent forms on <m>N</m> as forms on the cell in the Euclidean space and use the developed
    integration theory in the Euclidean space as a tool.
+   </p>
    </remark>
    
    <exercises>
@@ -12650,8 +12737,13 @@ Here <m>c_{R, m}(t)=R(\cos(2\pi m t), \sin (2\pi m t))</m>.
 
   </subsection>
   <subsection><title>Closed and Exact Forms</title>
-  <definition>A <m>k</m>-form <m>\omega</m> is called closed if <m>d\omega=0</m>; it is
+  <definition>
+	<statement>
+		<p>
+		A <m>k</m>-form <m>\omega</m> is called closed if <m>d\omega=0</m>; it is
   called exact if there exists a <m>(k-1)</m>-form <m>\eta</m> such that <m>\omega=d\eta</m>.
+		</p>
+	</statement>
   </definition>
  <p> Note that, due to <m>d\circ d=0</m>, any exact form must be closed.</p>
   
@@ -12697,9 +12789,13 @@ differentiable function <m>f</m> on <m>\bbR^{2}\setminus\{0\}</m>, then for any
 <m>\int_{c} df =0</m> when <m>c(1)=c(0)</m>. But if we take <m>c(t)=(\cos (2\pi t), \sin (2\pi t))</m>,
 <m>0\le t \le 1</m>, we find that <m>\int_{c} \omega= 2\pi</m>.
 </p>
-<definition>A set <m>A\subset \bbR^{m}</m> is called star-shaped, if there exists some
+<definition>
+	<statement>
+		<p>   A domain <m>A\subset \bbR^{m}</m> is called star-shaped if there exists a point
 <m>O\in A</m> such that for any <m>P\in A</m> and any <m>t\in [0, 1]</m>,
 <m>(1-t)O+tP\in A</m>. 
+		</p>
+	</statement>	
 </definition>
 <theorem><title>Poincarè Lemma</title> 
 <statement>Assume that <m>A</m> is an open star-shaped domain in <m>\bbR^{m}</m>, then
@@ -12767,7 +12863,9 @@ It is then straightforward to verify that
 Below are the verifications.
 <md>
 <mrow>
-dI(\omega) 
+ \amp dI(\omega) 
+</mrow>
+<mrow>
 = \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \left\{\sum_{l=1}^{m}
 \left( \int_{0}^{1} t^{k}D_{l}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) dx_{l}\wedge
 \left(x_{i_{1}} dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}} \right. \right.</mrow>
@@ -12786,7 +12884,9 @@ dI(\omega)
 while
 <md>
 <mrow>
-I(d\omega) 
+\amp I(d\omega) 
+</mrow>
+<mrow>
 = \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m; 1\le l \le m} \left\{
 \left( \int_{0}^{1} t^{k}D_{l}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) 
 \left(x_{l} d x_{i_{1}}\wedge dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}} 

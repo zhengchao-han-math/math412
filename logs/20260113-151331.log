@@ -1,0 +1,42 @@
+WARNING : Using CLI version 2.33.2 but project's `requirements.txt`
+WARNING : is configured to use 0.8.2a4. Consider either installing
+WARNING : CLI version 0.8.2a4 or running `pretext update`
+WARNING : to update `requirements.txt` and other managed files to match 2.33.2.
+INFO    : Building target web
+INFO    : XSL conversion of /Users/zchan/Desktop/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /Users/zchan/Desktop/math412-PreTeXt/output/web.
+INFO    : discovering source file's directory name: /Users/zchan/Desktop/math412-PreTeXt/source
+INFO    : verifying and expanding input directory: /Users/zchan/Desktop/math412-PreTeXt/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/zchan/Desktop/math412-PreTeXt/generated-assets
+INFO    : verifying and expanding input directory: /Users/zchan/Desktop/math412-PreTeXt/source/.
+INFO    : input directory expanded to absolute path: /Users/zchan/Desktop/math412-PreTeXt/source
+INFO    : discovering source file's directory name: /Users/zchan/Desktop/math412-PreTeXt/source
+INFO    : XSL conversion of /Users/zchan/Desktop/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 7.11.9
+INFO    : Downloading Runestone Services, version 7.11.9
+INFO    : Extracting Runestone Services from archive file
+INFO    : Building custom css theme: theme-default-modern
+INFO    : converting /Users/zchan/Desktop/math412-PreTeXt/source/main.ptx to HTML in /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-r4on1m36
+INFO    : XSL conversion of /Users/zchan/Desktop/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking all deprecated elements.
+WARNING : * PTX:DEPRECATE: (2024-07-24) Experiments using the @permid attribute have concluded, and the attribute is now being ignored.  You can safely remove them all and then this message will stop. (1 time)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2024-07-12) the html/css/@style publication file entry has been deprecated for replacement by @theme. See the Guide for theme options.
+INFO    : * --------------
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/pretext-html.xsl
+INFO    : Removing temporary directory /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-r4on1m36
+INFO    : Removing temporary directory /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-mym3raxz
+INFO    : 
+Finished build for target web. Run `pretext view web` to see the results.
+
+INFO    : 
+Success!  Built requested target(s) without errors.
+
+INFO    : 

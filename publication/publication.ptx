@@ -13,7 +13,7 @@
   <!-- stored or created.  Directories are relative to the main -->
   <!-- source PreTeXt file                                      -->
   <source>
-    <directories external="../assets" generated="../generated-assets"/>
+    <directories external="." generated="../generated-assets"/>
         <localization>
             <rename element="aside" language="en-US">Question</rename>
             <rename element="theorem" language="en-US">#1 #2 (#3)</rename>
