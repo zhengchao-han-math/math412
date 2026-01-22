@@ -2153,7 +2153,8 @@ then <m>f(\bx)</m> is continuous on <m>E</m>.
 </p>
 </statement>
 <proof> <p>We will first show that <m>\{L_n\}</m> is Cauchy as <m>n\to\infty</m> and
-that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m>.</p>
+that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m>. The latter means that <m>\epsilon &gt; 0</m>, there exists a neighborhood of
+<m>B(\bx_0)</m> of <m>\bx_0</m> such that <m>\vert f(\bx)-f(\by)\vert \lt \epsilon</m> for all <m>\bx, \by \in B(\bx_0)</m>.</p>
 <p>For any <m>\epsilon \gt 0</m>, by the uniform convergence assumption, there exists some
 <m>N\in \bbN</m> such that
 <me>
@@ -2175,10 +2176,14 @@ Using <m>\lim_{\bx\in E, \bx \to \bx_0} f_n(\bx) :=L_n</m> we obtain
 This shows that <m>\{L_n\}</m> is Cauchy as <m>n\to\infty</m>, so has a limit. Call it <m>L</m>.
 </p>
 <p>In the same setting, for <m>\bx, \by \in B(\bx_0)</m>,
-<me>
-\vert f(\bx)-f(\by)\vert \le \vert f(\bx)-f_N(\bx)\vert + \vert f_N(\bx)-f_N(\by)\vert + \vert f_N(\by)-f(\by)\vert
-\le 2\epsilon + \vert f_N(\bx)-f_N(\by)\vert.
-</me>
+<md>
+	<mrow>
+\vert f(\bx)-f(\by)\vert \amp \le \vert f(\bx)-f_N(\bx)\vert + \vert f_N(\bx)-f_N(\by)\vert + \vert f_N(\by)-f(\by)\vert
+</mrow>
+<mrow>
+\amp \le 2\epsilon + \vert f_N(\bx)-f_N(\by)\vert.
+</mrow>
+</md>
 But <m> \vert f_N(\bx)-f_N(\by)\vert \le \vert f_N(\bx)-L_N\vert +\vert L_N-f_N(\by)\vert\le 2\epsilon</m>,
 so we have <m> \vert f(\bx)-f(\by)\vert \le 4\epsilon</m>, for <m>\bx, \by \in B(\bx_0)</m>,
 which shows that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m> and
@@ -2227,7 +2232,7 @@ if we assume that <m>f_{n}(x)\to f(x)</m> uniformly over <m>E</m>.
 </p>
 <p>
 One often cannot apply  <xref ref="uniformconvconti"/> directly on the entire interval on which the question is being asked. For example, we know that the sequence of functions <m>s_n(x)=\sum_{m=1}^n \frac{x^m}{m}</m> converges for every <m>x\in (-1,1)</m>, but does not converge uniformly on <m>(-1,1)</m> 
-(can you provide a proof?).
+(Can you provide a proof?).
 Using the Cauchy Criterion for Uniform Convergence
 we can also see that, for any <m>0&lt; r &lt;1</m>, the sequence of 
  <m>s_n(x)=\sum_{m=1}^n \frac{x^m}{m}</m> converges uniformly on <m>[-r,r]</m>, therefore, 
@@ -2267,10 +2272,11 @@ we need to examine whether, for any <m>\epsilon>0</m>, we can find
 </me>
 </p>
 <p>This series can be analyzed by applying the
-summation by parts via Abel's Lemma.  Set <m>s_m(x)= \sum_{k=1}^{m}  \sin (kx)</m>. Then
+summation by parts via Abel's Lemma.  Set <m>s_m(x)= \sum_{k=1}^{m}  \sin (kx)</m>. Then, using that each 
+<m>\sin (kx)</m> is the imaginary part of <m>e^{ikx}</m> and a simple formula for the sum of the latter, we have
 <me>
-s_m(x)=\frac{\cos \frac t2 -\cos \left(m+\frac 12\right) t}{2\sin \frac t2}
-= \frac{\sin \frac{mt}{2} \sin \frac{(m+1)t}{2}}{\sin \frac t2}
+s_m(x)=\frac{\cos \frac x2 -\cos \left(m+\frac 12\right) x}{2\sin \frac x2}
+= \frac{\sin \frac{mx}{2} \sin \frac{(m+1)x}{2}}{\sin \frac x2}
 </me>.
 Note that <m>  s_m(\frac 1m)/m \to 2\sin^2\frac 12</m>, so <m>s_m(x)</m> does not remain bounded
 uniformly in <m>m</m> near <m>x=0</m>. However, for any  <m>\pi>\delta>0</m>, 
@@ -2296,7 +2302,13 @@ Then for such <m>x</m> the Abel summation-by-parts formula gives
 </md>, 
 provided <m>n > m\ge N</m> for some sufficiently large <m>N</m> depending on <m>\epsilon</m>
 and <m>C</m> (therefore
-depending on <m>\delta</m>).  This verifies the Cauchy Criterion for Uniform Convergence
+depending on <m>\delta</m>). Here, a crucial property used is the monotonicity of <m>\frac 1n</m>, which is used 
+in 
+<me>
+	\left| \frac{1}{m+1}-\frac{1}{m+2}\right|=\frac{1}{m+1}-\frac{1}{m+2}
+</me>
+which then allows for telescoping.
+ This verifies the Cauchy Criterion for Uniform Convergence
 on <m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>.
 </p>
 <p>
@@ -2431,10 +2443,14 @@ integrability</em> conditions are assumed, then the conclusions of
 on <m>[a,c]</m>, and that each <m>f_{n}</m> has a convergent integral
 <m>\int_{a}^{b} f_{n}(x)\, d\alpha</m> (if it is improper at <m>x=b</m>). Furthermore, assume
 the following uniform integrability of the family <m>\left\{f_{n}\right\}</m>:
-<men xml:id="unifib">
+<mdn xml:id="unifib">
+	<mrow>
 \forall \; \epsilon>0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, 
+	</mrow>
+	<mrow>	
 \left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon.
-</men>
+	</mrow>
+</mdn>
 Then <m>f</m> has a convergent integral
 <m>\int_{a}^{b} f(x)\, d\alpha</m>, and
 <me>
@@ -2442,7 +2458,7 @@ Then <m>f</m> has a convergent integral
 </me>
 </p>
 </statement>
-<proof>First, for any <m>a' &lt; b', a \le a' &lt; b' &lt; b</m>, 
+<proof><p> First, for any <m>a' &lt; b', a \le a' &lt; b' &lt; b</m>, 
 we can apply <xref ref="thm-uniformconvint"/>
 on <m>[a', b']</m> to conclude that
 <me>
@@ -2481,6 +2497,7 @@ on <m>[a, c]</m>, we find some <m>N</m> such that
   \left| \int_{a}^{b} f(x)\, d\alpha - \int_{a}^{b} f_{n}(x)\, d\alpha \right| &lt; 3\epsilon
   </me>
   for all <m>n\ge N</m>, therefore proving the claimed conclusion.
+</p>
 </proof>
 </theorem>
 <note><p> What is called <em>uniform integrability</em> is also called <em>equi-integrability</em>.
