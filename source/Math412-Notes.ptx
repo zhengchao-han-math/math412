@@ -160,8 +160,8 @@
 	 
 	<p>Among the most basic questions of this part are</p>
  <ul>
- <li> If a sequence of continuous functions <m>f_{k}</m> on <m>[a, b]</m> converges pointwise to a function
- <m>f</m>, what can be said about <m>f</m>? Is <m>f</m> necessarily continuous, Riemann integrable, or bounded? The answers to these questions are no in general.
+ <li> <p>If a sequence of continuous functions <m>f_{k}</m> on <m>[a, b]</m> converges pointwise to a function
+ <m>f</m>, what can be said about <m>f</m>? Is <m>f</m> necessarily continuous, Riemann integrable, or bounded? The answers to these questions are no in general.</p>
  </li>
  <li><p> If a sequence of continuous functions <m>f_{k}</m> 
  on <m>[a, b]</m> converges uniformly on <m>[a, b]</m> to a function
@@ -308,7 +308,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 							<proposition xml:id="propos-1Dupperlower-int">
 					<title>Basic Property of Upper and Lower Integral of 
 					a Bounded Real-valued Function</title>
-					<statement>Suppose that <m>f</m> is a bounded function defined
+					<statement> Suppose that <m>f</m> is a bounded function defined
 					on the interval <m>[a, b]</m>. Then
 					<me>
 					 \lowint_a^b\,f\, d\alpha \le  \upint_a^b\,f\, d\alpha.
@@ -2283,7 +2283,7 @@ uniformly in <m>m</m> near <m>x=0</m>. However, for any  <m>\pi>\delta>0</m>,
 when <m>x</m> is restricted to 
 <m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>, there exists some <m>C>0</m> depending 
 on <m>\delta</m> such that <m>\vert s_m(x)\vert \le C</m> uniformly in <m>m</m>.
-Then for such <m>x</m> the Abel summation-by-parts formula gives
+Then for such <m>x</m> the cd summation-by-parts formula gives
 <md>
 <mrow>
 \amp |\frac{ \sin (m+1)x }{m+1} + \cdots + \frac{\sin nx}{n}| </mrow>

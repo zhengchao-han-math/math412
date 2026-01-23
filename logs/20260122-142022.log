@@ -1,0 +1,69 @@
+WARNING : Using CLI version 2.33.2 but project's `requirements.txt`
+WARNING : is configured to use 0.8.2a4. Consider either installing
+WARNING : CLI version 0.8.2a4 or running `pretext update`
+WARNING : to update `requirements.txt` and other managed files to match 2.33.2.
+INFO    : Now preparing local server to preview your project directory `/Users/zchan/Documents/math412-PreTeXt`.
+INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
+INFO    :   GitHub Pages site that can be shared with readers who cannot access your
+INFO    :   personal computer.)
+INFO    : 
+INFO    : starting server ...
+INFO    : setting up PreTeXt web server ...
+INFO    : Added pretext web server entry f8eddae92c 14329 8132 localhost
+
+INFO    : Server will soon be available at http://localhost:8132
+INFO    : Opening browser for target `web` at http://localhost:8132/output/web
+WARNING : Port 8132 could not be used.
+WARNING : Trying port 8133 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8133 localhost
+
+INFO    : Server will soon be available at http://localhost:8133
+INFO    : Opening browser for target `web` at http://localhost:8133/output/web
+WARNING : Port 8133 could not be used.
+WARNING : Trying port 8134 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8134 localhost
+
+INFO    : Server will soon be available at http://localhost:8134
+INFO    : Opening browser for target `web` at http://localhost:8134/output/web
+WARNING : Port 8134 could not be used.
+WARNING : Trying port 8135 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8135 localhost
+
+INFO    : Server will soon be available at http://localhost:8135
+INFO    : Opening browser for target `web` at http://localhost:8135/output/web
+WARNING : Port 8135 could not be used.
+WARNING : Trying port 8136 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8136 localhost
+
+INFO    : Server will soon be available at http://localhost:8136
+INFO    : Opening browser for target `web` at http://localhost:8136/output/web
+WARNING : Port 8136 could not be used.
+WARNING : Trying port 8137 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8137 localhost
+
+INFO    : Server will soon be available at http://localhost:8137
+INFO    : Opening browser for target `web` at http://localhost:8137/output/web
+WARNING : Port 8137 could not be used.
+WARNING : Trying port 8138 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8138 localhost
+
+INFO    : Server will soon be available at http://localhost:8138
+INFO    : Opening browser for target `web` at http://localhost:8138/output/web
+WARNING : Port 8138 could not be used.
+WARNING : Trying port 8139 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 14329 8139 localhost
+
+INFO    : Server will soon be available at http://localhost:8139
+INFO    : Opening browser for target `web` at http://localhost:8139/output/web
+WARNING : Port 8139 could not be used.
+WARNING : Trying port 8140 instead.
+
+INFO    : There are 10 or more servers on file. Cleaning up ...
+ERROR   : Attempt to terminate PreTeXt web server failed for process 8529 on port 8129.

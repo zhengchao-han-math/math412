@@ -2280,7 +2280,8 @@ then <m>f(\bx)</m> is continuous on <m>E</m>.
 </p>
 </statement>
 <proof> <p>We will first show that <m>\{L_n\}</m> is Cauchy as <m>n\to\infty</m> and
-that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m>.</p>
+that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m>. The latter means that <m>\epsilon &gt; 0</m>, there exists a neighborhood of
+<m>B(\bx_0)</m> of <m>\bx_0</m> such that <m>\vert f(\bx)-f(\by)\vert \lt \epsilon</m> for all <m>\bx, \by \in B(\bx_0)</m>.</p>
 <p>For any <m>\epsilon \gt 0</m>, by the uniform convergence assumption, there exists some
 <m>N\in \bbN</m> such that
 <me>
@@ -2302,10 +2303,14 @@ Using <m>\lim_{\bx\in E, \bx \to \bx_0} f_n(\bx) :=L_n</m> we obtain
 This shows that <m>\{L_n\}</m> is Cauchy as <m>n\to\infty</m>, so has a limit. Call it <m>L</m>.
 </p>
 <p>In the same setting, for <m>\bx, \by \in B(\bx_0)</m>,
-<me>
-\vert f(\bx)-f(\by)\vert \le \vert f(\bx)-f_N(\bx)\vert + \vert f_N(\bx)-f_N(\by)\vert + \vert f_N(\by)-f(\by)\vert
-\le 2\epsilon + \vert f_N(\bx)-f_N(\by)\vert.
-</me>
+<md>
+	<mrow>
+\vert f(\bx)-f(\by)\vert \amp \le \vert f(\bx)-f_N(\bx)\vert + \vert f_N(\bx)-f_N(\by)\vert + \vert f_N(\by)-f(\by)\vert
+	</mrow>
+	<mrow>
+\amp \le 2\epsilon + \vert f_N(\bx)-f_N(\by)\vert.
+	</mrow>
+</md>
 But <m> \vert f_N(\bx)-f_N(\by)\vert \le \vert f_N(\bx)-L_N\vert +\vert L_N-f_N(\by)\vert\le 2\epsilon</m>,
 so we have <m> \vert f(\bx)-f(\by)\vert \le 4\epsilon</m>, for <m>\bx, \by \in B(\bx_0)</m>,
 which shows that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m> and
@@ -2394,10 +2399,11 @@ we need to examine whether, for any <m>\epsilon>0</m>, we can find
 </me>
 </p>
 <p>This series can be analyzed by applying the
-summation by parts via Abel's Lemma.  Set <m>s_m(x)= \sum_{k=1}^{m}  \sin (kx)</m>. Then
+summation by parts via Abel's Lemma.  Set <m>s_m(x)= \sum_{k=1}^{m}  \sin (kx)</m>. Then, using that each 
+<m>\sin (kx)</m> is the imaginary part of <m>e^{ikx}</m> and a simple formula for the sum of the latter, we have
 <me>
-s_m(x)=\frac{\cos \frac t2 -\cos \left(m+\frac 12\right) t}{2\sin \frac t2}
-= \frac{\sin \frac{mt}{2} \sin \frac{(m+1)t}{2}}{\sin \frac t2}
+s_m(x)=\frac{\cos \frac x2 -\cos \left(m+\frac 12\right) x}{2\sin \frac x2}
+= \frac{\sin \frac{mx}{2} \sin \frac{(m+1)x}{2}}{\sin \frac x2}
 </me>.
 Note that <m>  s_m(\frac 1m)/m \to 2\sin^2\frac 12</m>, so <m>s_m(x)</m> does not remain bounded
 uniformly in <m>m</m> near <m>x=0</m>. However, for any  <m>\pi>\delta>0</m>, 
@@ -2423,7 +2429,13 @@ Then for such <m>x</m> the Abel summation-by-parts formula gives
 </md>, 
 provided <m>n > m\ge N</m> for some sufficiently large <m>N</m> depending on <m>\epsilon</m>
 and <m>C</m> (therefore
-depending on <m>\delta</m>).  This verifies the Cauchy Criterion for Uniform Convergence
+depending on <m>\delta</m>).  Here, a crucial property used is the monotonicity of <m>\frac 1k</m>, which is used 
+in 
+<me>
+	\left| \frac{1}{k+1}-\frac{1}{k+2}\right|=\frac{1}{k+1}-\frac{1}{k+2}
+</me>
+which then allows for telescoping.
+This verifies the Cauchy Criterion for Uniform Convergence
 on <m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>.
 </p>
 <p>
@@ -2558,10 +2570,14 @@ integrability</em> conditions are assumed, then the conclusions of
 on <m>[a,c]</m>, and that each <m>f_{n}</m> has a convergent integral
 <m>\int_{a}^{b} f_{n}(x)\, d\alpha</m> (if it is improper at <m>x=b</m>). Furthermore, assume
 the following uniform integrability of the family <m>\left\{f_{n}\right\}</m>:
-<men xml:id="unifib">
-\forall \; \epsilon>0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, 
+<mdn>
+	<mrow>
+\forall \; \epsilon>0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, \notag
+	</mrow>
+	<mrow  xml:id="unifib">	
 \left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon.
-</men>
+	</mrow>
+</mdn>
 Then <m>f</m> has a convergent integral
 <m>\int_{a}^{b} f(x)\, d\alpha</m>, and
 <me>
@@ -3011,13 +3027,18 @@ and <m>i=1,\cdots, m</m>.
 <p> Using the finite cover <m>\{V_{i}\}_{i=1}^{m}</m> of <m>K</m>
 and <xref ref="equicont"/> on <m>\{f_{n_{k}}\}</m>, we find that for any <m>x\in K</m>, 
 <m>d(x, q_{j_i}) &lt; \delta </m> for some <m>i=1,\cdots, m</m>, therefore,
-<me>
-|f_{n_{k}}(x)-f_{n_{l}}(x)|\le |f_{n_{k}}(x)-f_{n_{k}}(q_{j_i})|+| f_{n_{k}}(q_{j_i})-f_{n_{l}}(q_{j_i})|
+<md>
+	<mrow>
+\amp |f_{n_{k}}(x)-f_{n_{l}}(x)|
+</mrow>
+<mrow>
+\le \amp |f_{n_{k}}(x)-f_{n_{k}}(q_{j_i})|+| f_{n_{k}}(q_{j_i})-f_{n_{l}}(q_{j_i})|
 + |f_{n_{l}}(q_{j_i})-f_{n_{l}}(x)| \le 3\epsilon
-</me>
+</mrow>	
+</md>
 for all <m>k, l\ge N</m>.
-</p>
 This show that <m>\{f_{n_{k}}\}</m> is uniformly Cauchy on <m>K</m>, therefore proving (b).
+</p>
 </proof>
 
 
@@ -3124,10 +3145,13 @@ equisummable in <m>l^{p}</m>.
   <p>This indicates that <m> P_{n}(x)</m> is a weighted average of <m>f</m>, with more
   weight near <m>t=0</m> due to item (3) above. We now use items (1)--(3) to see that
   <md>
-  <mrow> |f(x)-P_{n}(x)|\amp =\left| \int_{-1}^{1} \left(f(x)-f(x+t)\right) Q_{n}(t)\, dt\right|</mrow>
-  <mrow> \amp \le \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) |f(x)-f(x+t)|Q_{n}(t) \, dt +
+  <mrow>  \amp |f(x)-P_{n}(x)|
+  </mrow>
+	<mrow>
+		  = \amp\left| \int_{-1}^{1} \left(f(x)-f(x+t)\right) Q_{n}(t)\, dt\right|</mrow>
+  <mrow> \le \amp  \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) |f(x)-f(x+t)|Q_{n}(t) \, dt +
   \int_{-\delta}^{\delta} |f(x)-f(x+t)|Q_{n}(t) \, dt</mrow>
-  <mrow>\amp \le 2 \max |f| \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) Q_{n}(t) \, dt +
+  <mrow> \le \amp 2 \max |f| \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) Q_{n}(t) \, dt +
    \int_{-\delta}^{\delta} |f(x)-f(x+t)|Q_{n}(t) \, dt.</mrow>
    </md>
    Now for any <m>\epsilon>0</m>, using the uniform continuity of <m>f</m>, we find a
@@ -3666,10 +3690,14 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   as a doubly indexed series. We show that this doubly indexed series
   converges absolutely for any <m>x</m> such that  <m>|x-x_{1}| \lt r=R- |x_{1}-x_{0}| </m>.
   As a result, we can exchange the order of summation to obtain
-  <me>
-  \sum_{n=0}^{\infty}  \sum_{k=0}^{n}a_{n} \binom{n}{k} (x-x_{1})^{k}  (x_{1}-x_{0})^{n-k}
-  =\sum_{k=0}^{\infty}  \sum_{n=k}^{\infty} a_{n} \binom{n}{k} (x_{1}-x_{0})^{n-k} (x-x_{1})^{k},
-  </me>
+  <md>
+	<mrow>
+  \amp \sum_{n=0}^{\infty}  \sum_{k=0}^{n}a_{n} \binom{n}{k} (x-x_{1})^{k}  (x_{1}-x_{0})^{n-k}
+	</mrow>
+	<mrow>
+  = \amp \sum_{k=0}^{\infty}  \sum_{n=k}^{\infty} a_{n} \binom{n}{k} (x_{1}-x_{0})^{n-k} (x-x_{1})^{k},
+	</mrow>
+  </md>
   which is the desired <m>\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}</m>.
   </p>
   <p>The absolute convergence of the  doubly indexed series is seen by noting that
@@ -3775,11 +3803,15 @@ Then
 <m>g(x)=\sum_{n=0}^{\infty} b_{n} x^{n}</m>. Then the two power series converge at <m>x=1</m>. Thus
 <m>f(x)g(x)= \sum_{n=0}^{\infty} c_{n} x^{n}</m> for all <m>x</m> with <m>|x|\lt 1</m>. Abel Theorem
 is applicable to all three power series here for <m>x=1</m>, so
-<me>
+<md>
+	<mrow>
 \left(\sum_{n=0}^{\infty} a_{n} \right)\left( \sum_{n=0}^{\infty} b_{n} \right)
-=\lim_{x\to 1-} \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left( \sum_{n=0}^{\infty} b_{n} x^{n}\right)
-=\lim_{x\to 1-} \sum_{n=0}^{\infty} c_{n} x^{n}= \sum_{n=0}^{\infty} c_{n}.
-</me>
+\amp =\lim_{x\to 1-} \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left( \sum_{n=0}^{\infty} b_{n} x^{n}\right)
+</mrow>
+<mrow>
+\amp =\lim_{x\to 1-} \sum_{n=0}^{\infty} c_{n} x^{n}= \sum_{n=0}^{\infty} c_{n}.
+</mrow>	
+</md>
 </p>
 </proof>
 </corollary>
@@ -4501,8 +4533,11 @@ be the Fourier series of <m>g\in \cR[-l, l]</m> with respect to the set of ortho
 on <m>[-l, l]</m>. Then 
 <mdn >
 <mrow>
-\int_{-l}^{l} |g(x)|^{2}\, dx\amp = \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+\int_{-l}^{l} |S_{N}[g](x)|^{2}\, dx </mrow>
-<mrow xml:id="parseval"> \amp = \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+ 2l |a_{0}|^{2}+l \sum_{n=1}^{N} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right].</mrow>
+\amp \int_{-l}^{l} |g(x)|^{2}\, dx
+ </mrow> 
+ <mrow> 
+	 = \amp \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+\int_{-l}^{l} |S_{N}[g](x)|^{2}\, dx </mrow>
+<mrow xml:id="parseval">  = \amp \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+ 2l |a_{0}|^{2}+l \sum_{n=1}^{N} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right].</mrow>
 </mdn>
 As a consequence the following Bessel's inequality holds
 <me>
@@ -4542,14 +4577,23 @@ as <m>N\to \infty</m>. We claim the following property:
 (g-\hat g, e^{\frac{i m\pi x}{l}})=0 \quad \text{for any $m\in \bbZ$.}
 </me>
 This follows by noting that for any <m>N\gt m</m>,
-<me>
-(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}})=(g, e^{\frac{i m\pi x}{l}})-(S_{N}[g](x), e^{\frac{i m\pi x}{l}})=2l\left(c_{m}-c_{m}\right)=0,
-</me>
+<md>
+	<mrow>
+(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}}) \amp =(g, e^{\frac{i m\pi x}{l}})-(S_{N}[g](x), e^{\frac{i m\pi x}{l}})
+	</mrow>
+	<mrow>
+		 \amp = 2l\left(c_{m}-c_{m}\right)=0,
+		 </mrow>
+</md>
 so  
-<me>
-(g-\hat g, e^{\frac{i m\pi x}{l}})=(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}})+(S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}})
-= (S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}}),
-</me>
+<md>
+	<mrow>
+(g-\hat g, e^{\frac{i m\pi x}{l}}) \amp =(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}})+(S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}})
+	</mrow>
+	<mrow>
+	 \amp		= (S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}}),
+	</mrow>	
+</md>
 while by the Cauchy-Schwarz inequality
 <me>
 \vert (S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}}) \vert \le \Vert S_{N}[g](x)-\hat g\Vert \Vert e^{\frac{i m\pi x}{l}}\Vert \to 0
@@ -5172,8 +5216,8 @@ much of this discussion is a review of some relevant concepts and properties fro
   a basis <m>\left\{{\mathbf x}_{1}, \ldots, {\mathbf x}_{n}\right\}</m> of <m>X</m>  and a basis 
   <m>\left\{{\mathbf y}_{1}, \ldots, {\mathbf y}_{m}\right\}</m> of <m>Y</m> are chosen, <m>T</m> can be 
   represented through a matrix multiplication as follows:
-  <men xml:id="linear-basis">
-  \text{There exist coefficients } a_{ij} \text{ such that for each } 1\le j \le n, 
+  There exist coefficients <m>a_{ij}</m> such that for each <m>1\le j \le n</m>,
+  <men xml:id="linear-basis"> 
   T( {\mathbf x}_{j})=\sum_{i=1}^{m}a_{ij} {\mathbf y}_{i},
   </men>
   <me>
@@ -5366,11 +5410,16 @@ then for any normed vector space <m>Y</m> and <m>T: X\mapsto Y</m> a
 <proof> <p>  Let <m>\left\{{\mathbf x}_{1}, \ldots, {\mathbf x}_{n}\right\}</m> be a basis of <m>X</m>. Then 
 any <m>{\mathbf x}\in X</m> has coordinates <m>(c_{1}, \ldots, c_{n})</m> in this basis:
 <m> {\mathbf x}=\sum_{j=1}^{n}c_{j} {\mathbf x}_{j}</m>, and
-<me>
-||T({\mathbf x})||=||\sum_{j=1}^{n}c_{j} T({\mathbf x}_{j})||\le 
-\sum_{j=1}^{n}|c_{j}| || T({\mathbf x}_{j})|| \le 
+<md>
+	<mrow>
+||T({\mathbf x})||=||\sum_{j=1}^{n}c_{j} T({\mathbf x}_{j})||\le \amp
+\sum_{j=1}^{n}|c_{j}| || T({\mathbf x}_{j})|| 
+</mrow>
+<mrow>
+\le \amp 
 \left( \sum_{j=1}^{n}|| T({\mathbf x}_{j})||^{2}\right)^{1/2} \left( \sum_{j=1}^{n}|c_{j}|^{2}\right)^{1/2}.
-</me>
+</mrow>	
+</md>
 At the end of this subsection, we will prove a Lemma which implies that there exists some
 constant <m>C>0</m> such that
 <me>
@@ -5733,12 +5782,16 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    
    <p>When <m>\bff</m> is differentiable at <m>\bx</m>, then
     if we take any unit vector <m>\bu</m> and <m>{\mathbf h} =t {\mathbf u}</m>, we get
-   <me>
-   \lim_{{\mathbf h}\to {\mathbf 0}}
+   <mdn>
+	<mrow> 
+   \amp \lim_{{\mathbf h}\to {\mathbf 0}}
    \frac{\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-[D\mathbf f (\bx)]{\mathbf h} \Vert}{\Vert {\mathbf h} \Vert}
-   =\lim_{t\to 0}
+   </mrow>
+   <mrow>
+   = \amp \lim_{t\to 0}
    \Vert \frac{ {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t [D\mathbf f (\bx)]{\mathbf u} }{t} \Vert=0,
-   </me>
+   </mrow>	
+   </mdn>
   This  means that the directional derivative of <m>{\mathbf f}</m> at <m>{\mathbf x}</m>
    in the direction <m>{\mathbf u}</m> exists, and  <m>D_{{\mathbf u}} {\mathbf f}({\mathbf x})=[D\mathbf f (\bx)]\bu</m>.  In particular, if
    we take <m>{\mathbf u}={\mathbf e}_{j}</m>, the standard unit vector along the <m>x_{j}</m>
@@ -6208,9 +6261,10 @@ relation using an orthogonal matrix:
 		<mrow>
 		= \amp \frac{\partial f_i}{\partial x_2}(x_1, b)x_2+ \frac{\partial f_i}{\partial x_1}(a, 0)x_1</mrow>
 		<mrow>
-		= \amp \frac{\partial f_i}{\partial x_1}(0, 0) x_1 + \frac{\partial f_i}{\partial x_2}(0, 0)x_2</mrow>
+		= \amp \frac{\partial f_i}{\partial x_1}(0, 0) x_1 + \frac{\partial f_i}{\partial x_2}(0, 0)x_2
+	+ \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1 </mrow>
 		<mrow>
-		\amp + \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1+
+		\amp +
 		\left[ \frac{\partial f_i}{\partial x_2}(x_1, b)- \frac{\partial f_i}{\partial x_2}(0, 0)\right] x_2
 		</mrow>
 		</md>
@@ -6499,7 +6553,7 @@ the above is equivalent to
  implies the existence of some <m>\delta >0</m> such that 
  <men xml:id="der1-2">
  \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right]
-  \Vert \le \frac 12 \text{ for all } {\mathbf x} \text{ such that }
+  \Vert \le \frac 12 \text{ for all } {\mathbf x},
  \Vert {\mathbf x}-{\mathbf x}_{0}\Vert \le \delta.
  </men>
  By <xref ref="vecmeanvalue"/>  it follows that
@@ -6575,10 +6629,15 @@ then, with <xref ref="contraction"/>, for any
 B({\mathbf y}_{0}, r)</m>, we examine
 <mdn>
 <mrow number="no">
-{\mathbf y}_{2}- {\mathbf y}_{1}= \amp {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1)
-=\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
-\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) </mrow>
-<mrow xml:id="invcon"> \amp + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),</mrow>
+\amp {\mathbf y}_{2}- {\mathbf y}_{1}
+ </mrow>
+ <mrow number="no">
+= \amp {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1)
+ </mrow>
+ <mrow xml:id="invcon"> 
+= \amp \left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) 
+ + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),</mrow>
 </mdn>
 where we use <m>{\mathbf f}({\mathbf x})- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}</m>
 in place of <m>{\mathbf f}({\mathbf x})</m> as its  derivative in <m>{\mathbf x}</m>
@@ -7429,10 +7488,15 @@ t^{k} +R_{k}(t)
 	</p>
 	<p> To get  the dependence	of <m>R_{k}(t)</m> in  <xref ref="taylor1"/> on <m>\bv</m>,
 	we use a version of  <xref ref="taylor1"/> with an integral remainder term:
-	<men xml:id="eq-remainder">
-	g(t)=g(0)+g'(0)t+\frac{g''(0)}{2!}t^{2}+\cdots+ \frac{g^{(k-1)}(0)}{(k-1)!}t^{k-1}
+	<mdn>
+	<mrow number="no"    >
+	\amp g(t)    
+	</mrow>
+	<mrow  xml:id="eq-remainder">	
+	= \amp g(0)+g'(0)t+\frac{g''(0)}{2!}t^{2}+\cdots+ \frac{g^{(k-1)}(0)}{(k-1)!}t^{k-1}
 	+\frac{1}{(k-1)!}\int_{0}^{t}g^{(k)}(s)(t-s)^{k-1}\, ds
-	</men>,
+	</mrow>	
+	</mdn>,
 	from which we find
 	<me>
 	R_{k}(t)=\frac{1}{(k-1)!}\int_{0}^{t}\left( g^{(k)}(s)- g^{(k)}(0)\right) (t-s)^{k-1}\, ds.
@@ -7480,11 +7544,16 @@ t^{k} +R_{k}(t)
 		 <statement> Suppose that <m>f\in C^{k}(U)</m> and <m>\bx \in U \subset \bbR^{n}</m>. Then 
 		 the <m>k</m>th order Taylor expansion of <m>f</m> at <m>\bx</m>, 
 		 <m>T_{k}(f,\bx)(\bh) </m>, defined as 
-		 <me>
-		  f(\bx)+	\sum_{j=1}^{n} h_{j}\frac{\partial f}{\partial x_{j}}(\bx)+
+		 <md>
+			<mrow>
+		 \amp  f(\bx)+	\sum_{j=1}^{n} h_{j}\frac{\partial f}{\partial x_{j}}(\bx)+
 	\frac{1}{2!} \sum_{i, j=1}^{n} h_{j}h_{i}\frac{\partial^{2} f}{\partial x_{i}\partial x_{j}}(\bx)
-	+\cdots +  \frac{1}{k!}\sum_{j_{1},\ldots,j_{k}=1}^{n} h_{j_{1}}\cdots h_{j_{k}}\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)
-	</me>
+	+\cdots 
+	</mrow>
+	<mrow>
+	+ \amp  \frac{1}{k!}\sum_{j_{1},\ldots,j_{k}=1}^{n} h_{j_{1}}\cdots h_{j_{k}}\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)
+	</mrow>	
+	</md>
 	satisfies
 		 <men xml:id="eq-taylor">
 		\Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
@@ -7619,9 +7688,9 @@ We will also use <m>f(x, t)</m> in place of <m>\phi(x, t)</m>.
 Our strategy is to break the integral into an integral on a finite integral, which we can handle by the earlier method, and the tail part, which will be made small by some reasonable assumption.
 More specifically,  we assume that the improper integral <m>\int_a^{\infty} D_t f(x,s)\,dx</m> converges  <em> uniformly with respect to 
 <m>s</m> in some neighborhood </em> <m>I</m> of <m>t</m>, namely, 
-<blockquote>
+<blockquote><p>
 For any <m>\epsilon \gt 0</m>, there exists <m>L</m> such that  for any <m>N>M\ge L</m>, 
-<m> | \int_M^{N} D_t f(x,s)\,dx | &lt; \epsilon/4</m> for all <m>s\in I</m>.
+<m> | \int_M^{N} D_t f(x,s)\,dx | &lt; \epsilon/4</m> for all <m>s\in I</m>.</p> 
 </blockquote>
 </p>
 <theorem>
@@ -7639,9 +7708,9 @@ for <m>t\in I</m>.
 \amp \left| \int_a^{\infty}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right|</mrow>
 <mrow> \le \amp 
 \left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right| 
-+ \left| \int_L^{\infty}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| </mrow>
+ </mrow>
 <mrow> 
-\amp + \left| \int_L^{\infty}   D_t f(x,t) \, dx \right|.
+\amp + \left| \int_L^{\infty}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| + \left| \int_L^{\infty}   D_t f(x,t) \, dx \right|.
 </mrow>
 </md>
 </p>
@@ -8889,7 +8958,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						rectangle <m>R</m> is Riemann integrable iff 
 						<men xml:id="eqn-int-osc" label="eqn-int-osc">
 						\forall \epsilon >0, \exists  \text{ a partition }
-						\cP:=\{R_{\alpha}\} \text{ such that } 
+						\cP:=\{R_{\alpha}\} \text{ s.t. } 
 						\sum_{\alpha} \osc(f,R_{\alpha})\vert R_{\alpha} \vert &lt; \epsilon.
 						</men> </p>
 						<p>
@@ -9425,10 +9494,15 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    both 
    <m>\upint_{R_{2}} f(\bx, \by)\, d\by</m>  and <m>\lowint_{\;R_{2}} f(\bx, \by)\, d\by</m>
    are Riemann integrable  of <m>\bx \in R_{1}</m>, and
-   <men xml:id="eq-fubini-ul">
-    \int_{R} f(\bx, \by)\; dA = \int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx
+   <mdn>
+	<mrow number="no">
+    \int_{R} f(\bx, \by)\; dA \amp = \int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx
+	</mrow>
+	<mrow  xml:id="eq-fubini-ul"  >
+	\amp
    = \int_{R_{1}} \left( \lowint_{\;R_{2}} f(\bx, \by)\, d\by \right)\, d\bx.
-    </men>
+   </mrow>
+    </mdn>
     Likewise, both <m>\upint_{R_{1}} f(\bx, \by)\, d\bx</m>  and <m>\lowint_{\;R_{1}} f(\bx, \by)\, d\bx</m>
    are Riemann integrable  of <m>\by \in R_{2}</m>, and
    <me>
@@ -9731,9 +9805,9 @@ which gives the volume  <m>v(T(E))</m> of <m>T(E)</m>, defined as <m>\int_{T(E)}
  Here is a version of the change of variables formula.
 <theorem xml:id="thm-chofva">
 <statement> Suppose that <m>U</m> is an open set in <m>\bbR^{n}</m>
-and <m>T: U\mapsto \bbR^{n}</m> is 
+and <m>T: U\mapsto \bbR^{n}</m> is continuously differentiable,
 <men xml:id="Tass">
-\text{continuously differentiable, injective on } U \text{ and } |\det DT({\mathbf x})| >0 \text{ for all } {\mathbf x}\in U.
+\text{ injective on } U \text{ and } |\det DT({\mathbf x})| >0 \text{ for all } {\mathbf x}\in U.
 </men>
 Suppose that <m>E</m> is any
 Jordan-measurable subset of <m>U</m> such that its closure is in <m>U</m>. 
@@ -10414,10 +10488,14 @@ Since <m>D\Phi(\bv)^{\rm T}  </m>, <m>DF(\Phi(\bv))^{\rm T}  DF(\Phi(v))</m>, an
   \amp= \det ( DF(\Phi(\bv))^{\rm T}DF(\Phi(\bv)) ) |\det D\Phi (\bv) |^{2}.</mrow>
   </md>
   This results in
-  <men xml:id="eq-volumeform">
-  \sqrt{\det (D{\hat F}(\bv)^{\rm T}D{\hat F}(\bv))}
-  =\sqrt{\det ( DF(\Phi(\bv))^{\rm T}DF(\Phi(\bv)) )} |\det D\Phi (\bv)|,
-  </men>
+  <mdn>
+	<mrow number="no">
+  \amp \sqrt{\det (D{\hat F}(\bv)^{\rm T}D{\hat F}(\bv))}
+  </mrow>
+  <mrow  xml:id="eq-volumeform">	
+  =\amp \sqrt{\det ( DF(\Phi(\bv))^{\rm T}DF(\Phi(\bv)) )} |\det D\Phi (\bv)|,
+  </mrow>
+  </mdn>
   which, when applied to the left hand side of <xref ref="areainv"/> in 
   making the change of variables <m>\bu=\Phi(\bv)</m>, confirms <xref ref="areainv"/>.
   </p>
@@ -10438,7 +10516,10 @@ and the relations above  <xref ref="eq-metricform"/>
 and <xref ref="eq-volumeform"/> become
 <me>
 (\hat g_{ij}(\bv))=D\Phi(\bv)^{\rm T} (g_{ij}(\Phi(\bv))) D\Phi(\bv)
-\text{ and }  \sqrt{\det (\hat g_{ij}(\bv))}\, d\bv = \sqrt{\det (g_{ij}(\bu))}\, d\bu.
+</me>
+ and 
+<me>
+\sqrt{\det (\hat g_{ij}(\bv))}\, d\bv = \sqrt{\det (g_{ij}(\bu))}\, d\bu.
 </me>
 </p>
 
@@ -10789,7 +10870,9 @@ and we take <m>\Gamma</m> to be a small square loop of side length
 <mrow> \amp \int_{\Gamma} \vec{X}\cdot d\vec{r} </mrow>
 <mrow> = \amp
 \int_{x_{0}-\epsilon}^{x_{0}+\epsilon} \left\{X_{1}(x, y_{0}-\epsilon)- X_{1}(x, y_{0}+\epsilon)\right\}\, dx
-+ \int_{y_{0}-\epsilon}^{y_{0}+\epsilon} \left\{X_{2}(x_{0}+\epsilon, y)-X_{2}(x_{0}-\epsilon, y)\right\}\, dy
+</mrow>
+<mrow>
+\amp + \int_{y_{0}-\epsilon}^{y_{0}+\epsilon} \left\{X_{2}(x_{0}+\epsilon, y)-X_{2}(x_{0}-\epsilon, y)\right\}\, dy
 </mrow>
 <mrow> = \amp 
 \int_{x_{0}-\epsilon}^{x_{0}+\epsilon} \int_{y_{0}-\epsilon}^{y_{0}+\epsilon} 
@@ -12511,10 +12594,14 @@ where  <m> \widehat{dx_{i}}</m> means that the <m>dx_{i}</m> is omitted in the w
 The same argument works for <m>c_{i, 1}^{*}(\omega)</m>.
 </p>
 <p> Note that
-<me>
-df_{i}(\bx)\wedge dx_{1}\wedge \cdots \wedge \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}
-=(-1)^{i+1}D_{i} f_{i}(\bx) dx_{1}\wedge \cdots \wedge dx_{i}\wedge \cdots \wedge dx_{k+1},
-</me>
+<md>
+	<mrow>
+\amp df_{i}(\bx)\wedge dx_{1}\wedge \cdots \wedge \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}
+</mrow>
+<mrow>
+= \amp (-1)^{i+1}D_{i} f_{i}(\bx) dx_{1}\wedge \cdots \wedge dx_{i}\wedge \cdots \wedge dx_{k+1},
+</mrow>
+</md>
 so
 <md>
 <mrow> 
