@@ -2787,12 +2787,13 @@ A similar modification for <xref ref="unifib"/> can be formulated.
 </theorem>
 
 
-<remark> In <xref ref="thm-xlimitdiff"/>, the assumptions are only sufficient, but 
+<remark><p>  In <xref ref="thm-xlimitdiff"/>, the assumptions are only sufficient, but 
 not necessary conditions.  E.g. <m>f_n(x)= x^n/n</m> converges to <m>f(x)=0</m> uniformly on <m>I=(-1,1)</m>, and <m>f(x)=0</m> is differentiable on <m>I</m>, yet the convergence of <m>f'_n(x)=x^{n-1}</m> 
 (to <m>f'(x)=0</m>) is not uniform on <m>I</m> (although when restricted to <m>(-\delta, \delta)</m>
 for any fixed <m> 0 &lt; \delta &lt; 1</m>, the convergence is uniform.).
  Another example is <m>f_n(x)= \sin (nx)/n</m>, which converges to <m>f(x)=0</m> uniformly on <m>\mathbb R</m>, yet <m>f'_n(x)= \cos (nx)</m> 
 would not converge for many values of <m>x</m> (e.g. all rational multiples of <m>\pi</m>). 
+</p>
 </remark>
 <example> <p> Define
 <me>f(x)= \sum_{k=1}^{\infty} \frac{ \cos (kx)}{k^2}</me>.
