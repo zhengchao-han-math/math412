@@ -1833,7 +1833,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 </section>
 <section><title>Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</title>
 
-<paragraphs><title>introduction</title> <p>
+<paragraphs><title>Introduction</title> <p>
 <xref ref="cor-ftcr"/> extends the Fundamental Theorem of Calculus to those monotone functions
 <m>\alpha</m> such that <m>\alpha'</m> exists and is Riemann integrable. Here we discuss
 its further generalization and related issues. Questions that need to be addressed include
@@ -1982,8 +1982,8 @@ bounded variation on <m>[a, b]</m> and <m>V(f, [a, b])=f(b)-f(a)</m>.
 <p> If <m>f=g-h</m> is the difference of two monotone increasing functions on <m>[a, b]</m>, then it has 
 bounded variation on <m>[a, b]</m> and <m>V(f, [a, b])\le V(g, [a, b])+V(h, [a, b])</m>.
 </p>
-<proposition xml:id="prop-bv-mono"><statement>Any function of bounded variation 
-on <m>[a, b]</m> is the difference of  two monotone increasing functions.
+<proposition xml:id="prop-bv-mono"><statement><p>Any function of bounded variation 
+on <m>[a, b]</m> is the difference of  two monotone increasing functions.</p>
 </statement>
 <proof><p> Let <m>f</m> be a function of bounded variation 
 on <m>[a, b]</m>. Define <m>g(x) :=V(f, [a, x])</m>. Then <m>g(x)</m> is a monotone increasing
@@ -2182,10 +2182,10 @@ as well as on <m>x</m> such that when <m>n\ge N</m>, we have
 convergence.
 </p>
 <definition><title>Uniform Convergence</title>
-<statement>Let <m>\{ f_n(x)\}</m> be a sequence of functions defined on a set <m>E</m>. Then <m>\{ f_n(x)\}</m> converges uniformly on <m>E</m> to a limit function <m>f(x)</m> on <m>E</m> if, 
+<statement><p> Let <m>\{ f_n(x)\}</m> be a sequence of functions defined on a set <m>E</m>. Then <m>\{ f_n(x)\}</m> converges uniformly on <m>E</m> to a limit function <m>f(x)</m> on <m>E</m> if, 
 for every <m>\epsilon >0</m>, there exists
 <m>N\in \mathbb N</m> such that <m>|f_n(x)-f(x)| &lt; \epsilon</m> for all <m>n\ge N</m>
- and for <em>all </em>   <m>\; x\in E</m>.
+ and for <em>all </em>   <m>\; x\in E</m>.</p>
  </statement>
 </definition>
 <remark><p> Note that one needs to specify the set <m>E</m> when discussing the notion of
@@ -2864,11 +2864,11 @@ We put a quotation mark on "metric" because it satisfies all the conditions of a
 continue to use <m> \mathcal R (\alpha)</m> to denote the space of equivalence classes of 
 <m> \mathcal R (\alpha)</m> under this equivalence relation.
 </p>
-<p> 
-<paragraphs><title>Question</title> Is <m>\mathcal R (\alpha)</m> a complete metric space 
-under this metric?
+
+<paragraphs><title>Question</title> <p>Is <m>\mathcal R (\alpha)</m> a complete metric space 
+under this metric?</p>
 </paragraphs>
-</p>
+
 <p>
 The answer turns out to be negative in general, 
 and this turns out a major drawback of Riemann integrable.
@@ -2967,20 +2967,21 @@ is uniformly Cauchy on <m>E</m>.
 </remark>
 
 <definition xml:id="def-ptwsbd">
-	<statement>A sequence of functions <m>\{f_{n}\} </m> defined on <m>E</m> is said to be
+	<statement><p>A sequence of functions <m>\{f_{n}\} </m> defined on <m>E</m> is said to be
 	<term>pointwise bounded</term> on <m>E</m> if for every <m>x\in E</m>  the 
 	sequence of scalars <m>\{f_{n}(x)\} </m> is bounded. <m>\{f_{n}\} </m>  is said to be
 	uniformly bounded on <m>E</m> if there exists <m>M &gt; 0</m> such that
 	<me>
 	|f_{n}(x)| &lt; M \text{ for all } n \text{ and } x\in E.
 	</me>
+	</p>
 	</statement>
 	</definition>
 		
 		<proposition xml:id="slctconvsubs"><title>Selecting a Convergent Subsequence</title>
-		<statement> Suppose that  <m>\{f_{n}\} </m> is a sequence of pointwise bounded 
+		<statement><p> Suppose that  <m>\{f_{n}\} </m> is a sequence of pointwise bounded 
 		functions on a <em>countable</em> set <m>C</m>. Then it has a subsequence
-		<m>\{f_{n_{k}}\}</m> such that <m>\{f_{n_{k}}(x)\}</m> converges for every <m>x\in C</m>.
+		<m>\{f_{n_{k}}\}</m> such that <m>\{f_{n_{k}}(x)\}</m> converges for every <m>x\in C</m>.</p>
 		</statement>
 		<proof><p>Let <m>\{p_{i}\}</m>, <m>i=1,\cdots</m>, be the points of <m>C</m> arranged in a 
 		sequence. Then <m>\{f_{n}(p_{1})\} </m> is a bounded sequence, therefore, has a convergent
@@ -2996,12 +2997,13 @@ is uniformly Cauchy on <m>E</m>.
 		</proposition>
 		
 <theorem xml:id="Ascolli-Arzela"><title>Ascolli-Arzelà Theorem</title>
-<statement> Suppose that <m>K</m> is a compact metric space and that <m>\{f_{n}\} </m> is a sequence
+<statement> <p> Suppose that <m>K</m> is a compact metric space and that <m>\{f_{n}\} </m> is a sequence
 in <m>C(K)</m> pointwise bounded and equicontinuous on <m>K</m>.  Then
  <ol marker="(a)">
 <li> <m>\{f_{n}\} </m> is uniformly bounded on <m>K</m>,</li>
 <li> <m>\{f_{n}\} </m> contains a uniformly convergent subsequence.</li>
 </ol>
+</p>
 </statement>
 <proof><p> For any <m>\epsilon &gt; 0</m>, let <m>\delta &gt; 0</m> be such that
 <xref ref="equicont"/> holds. Since <m>K</m> is compact, it can be covered by
@@ -3272,12 +3274,13 @@ Show that <m>\{f_n(x)\}\to f(x) </m> uniformly on <m>K</m>.
                                <exercise><title>Investigate the differentiability of 
                                <m>f(x)=\sum_{k=1}^{\infty}\frac{\cos(kx)}{k^2}</m>
                                at <m>x=0</m>   </title>  
-                                  <hint>
+                                  <hint><p> 
   Note that
  <m>f(x)</m> is an even function of <m>x</m>, 
  so if <m>f'(0)</m> exists, we would have
 <m>f'(0)=0</m>. Examine the difference quotient of <m>f(x)</m> at <m>x=0</m>  to see whether
 it converges to <m>0</m>.
+ </p>
 </hint>
 <solution><p>First we have
 <me>
@@ -3450,12 +3453,13 @@ one often needs to provide an estimate for it.
 true; construct some examples.)
 </li></ol>
 </exercise>
-<proposition>  <statement> The radius <m>R</m> of convergence of the power
+<proposition>  <statement><p> The radius <m>R</m> of convergence of the power
 series  <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m>  satisfies
 <me>
 R\ge \left( \limsup_{n\to \infty} |\frac{a_{n+1}}{a_n}|\right)^{-1}, 
 \text{ with equality if $\lim_{n\to \infty} |\frac{a_{n+1}}{a_n}|$ exists}.
 </me>
+</p>
 </statement>
 </proposition>
 <remark> <p>In computing the radius of convergence of a power series, one often has to make some adaptation.
@@ -3592,7 +3596,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
 </example>
 
   <theorem> <title>Infinite Differentiability of a Convergent Power Series</title>
-  <statement>
+  <statement><p>
   Suppose  that the radius <m>R</m> of convergence of the power series
   <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m> is non zero. Then 
   the power series defines an infinitely many times differentiable function <m>f(x)</m>
@@ -3608,6 +3612,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   <me>
   f^{(k)}(x_{0})=k! a_{k}.
   </me>
+</p>
   </statement>
   <proof> <p> One simply notes that the series <m>\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1}</m>
   converges iff the series <m>\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n}</m> converges, so these
@@ -3671,7 +3676,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   </p>
   </exercise>
   <theorem><title>A Convergent Power Series' Expansion at a Different Center</title>
-  <statement>Suppose that the radius <m>R</m> of convergence of the power series
+  <statement><p> Suppose that the radius <m>R</m> of convergence of the power series
   <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m> is non zero and <m>x_{1}</m> satisfies
   <m>|x_{1}-x_{0}| \lt R</m>. Let <m>r=R- |x_{1}-x_{0}| </m>. Then the following holds
   <me>
@@ -3682,6 +3687,7 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   <me>
   b_{k}=\sum_{n=k}^{\infty} \binom{n}{k} a_{n}(x_{1}-x_{0})^{n-k}.
   </me>
+</p>
   </statement>
   <proof> <p>We use the binomial expansion 
   <me>
@@ -3729,11 +3735,12 @@ and the series on the right converges at <m>t=1</m>,  <xref ref="thm-Abel"/> imp
   </p>
   </remark>
   <theorem><title>A Non-zero Convergent Power Series Has Isolated Zeroes</title>
-  <statement>Suppose that the radius <m>R</m> of convergence of the power series
+  <statement><p> Suppose that the radius <m>R</m> of convergence of the power series
   <m>\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}</m> is non zero, and that it has
   a sequence of distinct zeroes approaching some <m>x_{1}</m>
   with <m>|x_{1}-x_{0}|\lt R</m>, then it must be identically <m>0</m> for all <m>x</m> with
   <m>|x-x_{0}|\lt R</m>.
+  </p> 
    </statement>
    <proof> <p>
    We first represent the series as a power series in <m>x-x_{1}</m> for <m>|x-x_{1}|\lt R-|x_{1}-x_{0}|</m>
@@ -3958,25 +3965,27 @@ using <m>E(x)</m>.
 
  <exercises xml:id="exe-ps">
   <exercise> <title>Binomial Power Series Expansion</title>
-    <statement>
+    <statement><p>
     For any real number <m>\alpha</m> and nonnegative integer <m>n</m>, define
   <m>\binom{\alpha}{n}=\alpha (\alpha-1)\cdots (\alpha-n+1)/n!</m>. Show that the radius of convergence of 
   the power series <m>\sum_{n=0}^{\infty} \binom{\alpha}{n} x^{n}</m> equals <m>1</m>. Then show
   that <m>(1+x)^{\alpha}= \sum_{n=0}^{\infty} \binom{\alpha}{n} x^{n}</m> for <m>|x|\lt 1</m>.
+  </p>
   </statement>
-   <hint>Estimate the remainder term in the  Taylor expansion of <m>(1+x)^{\alpha}</m>.
+   <hint><p> Estimate the remainder term in the  Taylor expansion of <m>(1+x)^{\alpha}</m>.</p> 
   </hint>
   </exercise>
   <exercise>
-    <statement>
+    <statement><p> 
     Suppose that the power series <m>\sum_{n=0}^{\infty} a_{n}x^{n}</m> has radius of
   convergence equal to <m>1</m>, that each <m>a_{n}\ge 0</m> and 
   that <m>\sum_{n=0}^{\infty} a_{n}=\infty</m>. Show that <m>\lim_{x\to 1-} \sum_{n=0}^{\infty} a_{n}x^{n}=\infty</m>.
+  </p>
   </statement>
 </exercise>
   
   <exercise> <title>Composition of Convergent Power Series</title>
-    <statement>Suppose that the power series <m>f(x)=\sum_{n=0}^{\infty} a_{n}x^{n}</m> has a positive radius
+    <statement><p> Suppose that the power series <m>f(x)=\sum_{n=0}^{\infty} a_{n}x^{n}</m> has a positive radius
     of convergence, and <m>g(y)=\sum_{n=0}^{\infty} b_{n} (y-a_{0})^{n}</m> also 
   has a positive radius of convergence <m>R</m>. Prove that for all <m>x</m> such that
   <m> \sum_{n=1}^{\infty}  |a_{n}x^{n}| \lt R</m>, the composite function
@@ -3985,9 +3994,10 @@ using <m>E(x)</m>.
   and <m>c_{n}=\sum_{k=0}^{n} b_{k} a_{n}(k)</m> for positive integer <m>n</m>, with
   <m>a_{n}(k)</m> defined from the relation <m> (\sum_{k=1}^{\infty} a_{k}x^{k})^{n}
   =\sum_{k=1}^{\infty} a_{k}(n) x^{k}</m>.
+  </p>
   </statement>
-  <hint> Substitute <m>y=f(x)</m> into the power series expansion of <m>g(y)</m> in <m>y-a_{0}</m>
-  and justify the interchange of order of summation.
+  <hint><p>  Substitute <m>y=f(x)</m> into the power series expansion of <m>g(y)</m> in <m>y-a_{0}</m>
+  and justify the interchange of order of summation.</p> 
   </hint>
   </exercise>
   </exercises>
@@ -4107,7 +4117,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   interval such as <m>[0, l/2]</m>.
   </p>
   <proposition><title>Basic Properties of an Inner Product Space</title>
-  <statement> Suppose that <m>V</m> is an inner product space over the reals <m>\bbR</m>. Then the
+  <statement><p>  Suppose that <m>V</m> is an inner product space over the reals <m>\bbR</m>. Then the
   <term>Cauchy-Schwarz inequality</term> holds:
   <me>
       |(x, y)|\le \sqrt{(x, x)} \sqrt{(y, y)} \text{ for  all $x, y\in V$.}
@@ -4124,6 +4134,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   we also have  the Pythagorean relation:
       <me> \Vert x+y\Vert^{2} =\Vert x\Vert^{2} + \Vert y\Vert^{2}.
       </me>
+	</p> 
   </statement>
   <proof> <p>
   For any <m>x, y\in V</m>, the function <m>t\mapsto (x+t y, x+t y)</m> in <m>t</m> is a
@@ -4158,7 +4169,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
       </p>
 
   <exercise> <title>A Set of Functions Orthogonal on <m>[0, l]</m></title>
-  <statement>Verify that the set of functions <m>\left\{  \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}</m> are 
+  <statement> <p> Verify that the set of functions <m>\left\{  \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}</m> are 
   mutually orthogonal to each other on <m> [0, l]</m> and that
   <me>
   \Vert \sin \left(\frac{n \pi x}{l}\right)\Vert = \sqrt{\frac l2} \text{ for 
@@ -4169,12 +4180,13 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   \int_{0}^{l} \vert \sum_{n=1}^{N}b_{n} \sin \left(\frac{n \pi x}{l}\right)\vert^{2} \, dx 
  =  \frac l2 \left( \sum_{n=1}^{N} |b_{n}|^{2} \right).
  </me>
+</p> 
   </statement>
-  <hint> Use the relation <m>2\sin A \sin B=\cos(A-B)-\cos(A+B)</m>.</hint>
+  <hint> <p> Use the relation <m>2\sin A \sin B=\cos(A-B)-\cos(A+B)</m>.</p></hint>
   </exercise>
   
   <exercise><title>A Set of Functions Orthogonal on <m> [-l, l]</m></title>
-  <statement>Verify that the set of functions <m>\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}</m> are 
+  <statement><p>Verify that the set of functions <m>\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}</m> are 
   mutually orthogonal to each other on <m> [-l, l]</m> and that
   <me>
   \Vert 1 \Vert =\sqrt{2l}, \Vert \cos \left(\frac{n \pi x}{l}\right) \Vert =\Vert \sin \left(\frac{n \pi x}{l}\right)\Vert = \sqrt{l} \text{ for 
@@ -4189,9 +4201,10 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
  = \amp l\left( 2 |a_{0}|^{2} + \sum_{n=1}^{N}\left(|a_{n}|^{2} + |b_{n}|^{2}\right) \right).
  </mrow>
   </md>
+  </p>
   </statement>
-  <hint> Use the relations <m>2\sin A \sin B=\cos(A-B)-\cos(A+B), 2 \cos A \cos B= \cos(A-B)+\cos(A+B),
-  2\sin A \cos B=\sin(A+B)-\sin(A-B)</m>.</hint>
+  <hint><p>  Use the relations <m>2\sin A \sin B=\cos(A-B)-\cos(A+B), 2 \cos A \cos B= \cos(A-B)+\cos(A+B),
+  2\sin A \cos B=\sin(A+B)-\sin(A-B)</m>.</p> </hint>
   </exercise>
   <p>It is often necessary and productive to work with spaces of complex valued functions, which should be
   regarded as vector spaces over <m>\bbC</m>. The notion of an inner product can be extended to a
@@ -4229,7 +4242,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   </p>
   
   <exercise><title>The Orthogonal Family <m>\{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\}</m> on <m>[-l, l]</m></title>
-  <statement>Verify that the set of functions <m>\{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\}</m> are 
+  <statement><p> Verify that the set of functions <m>\{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\}</m> are 
   orthogonal on <m>[-l, l]</m> and that
   <me>
   \Vert e^{i\frac{n\pi x}{l}} \Vert= \sqrt{2l} \text{ for all $n\in \bbZ$.}
@@ -4239,6 +4252,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
  \int_{-l}^{l}  \vert \sum_{-N}^{N}c_{n} e^{i\frac{n\pi x}{l}}\vert^{2}\, dx
  = 2l\left( \sum_{-N}^{N} |c_{n}|^{2}\right).
  </me>
+</p>
   </statement>
   </exercise>
   <remark><p>Two modifications are made in  the defining properties of a Hermitian inner product: (i). allowing
@@ -4419,7 +4433,7 @@ using either the relation <m>
   or <m> \cos \left(\frac{n\pi s}{l} \right)= \text{Re}(e^{\frac{i n\pi s}{l} })</m>.</hint>
 </exercise>
    <theorem><title>Best Approximation Property of Fourier Series</title>
-   <statement>
+   <statement><p> 
   Let <m>\{\bv_{1}, \bv_{2},\cdots, \bv_{N} \}</m> be a finite set of orthonormal vectors in an inner product space <m>V</m>.
   For any vector <m>\bv\in V</m>, let <m>\sum_{k=1}^{N} c_{k} \bv_{k}</m> be the Fourier series of
    <m>\bv</m> with respect to this set of orthonormal vectors. Then
@@ -4439,6 +4453,7 @@ using either the relation <m>
   namely, <m>\sum_{k=1}^{N} c_{k} \bv_{k}</m> is closest to <m>\bv</m> among all vectors in
   the span of
    this set of orthonormal vectors.
+</p> 
    </statement>
    <proof> <p>The first assertion follows directly from
    <me>
@@ -4496,24 +4511,26 @@ using either the relation <m>
    </definition>
    <exercise>
    <title>Find Orthogonal Projections</title>
-   <statement>Find the orthogonal projections of the functions <m>f(x)=1</m> and
+   <statement><p> Find the orthogonal projections of the functions <m>f(x)=1</m> and
 <m>g(x)=\cos x</m>  in the span of  the set of orthogonal functions  
-<m>\left\{ \sin (nx): 1\le n \le  N\right\}</m> on <m>[0, \pi]</m>.
+<m>\left\{ \sin (nx): 1\le n \le  N\right\}</m> on <m>[0, \pi]</m>.</p> 
 </statement>
 </exercise>
-<exercise><statement>Find the orthogonal projection of the function <m>f(x)=x</m> 
+<exercise><statement><p> Find the orthogonal projection of the function <m>f(x)=x</m> 
  in the span of  the set of orthogonal functions  
 <m>\left\{1, \cos (nx),  \sin (nx): 1\le n \le  N\right\}</m> on <m>[-\pi, \pi]</m>.
+</p>
 </statement>
 </exercise>
   <theorem><title>Bessel's Inequality</title>
-  <statement>
+  <statement><p> 
   Let <m>\{\bv_{1}, \bv_{2},\cdots \}</m> be a set of orthonormal vectors in an inner product space <m>V</m>.
   For any vector <m>\bv\in V</m>, let <m>\sum_{k} c_{k} \bv_{k}</m> be the Fourier series of
    <m>\bv</m> with respect to this set of orthonormal vectors. Then
       <me>
    \sum_{k} |c_{k}|^{2}\le \Vert \bv\Vert^{2} \quad\text{ (Bessel's inequality)}.
    </me>
+   </p>
    </statement>
    <proof> <p> Take any finite subset <m>\{\bv_{1}, \bv_{2},\cdots, \bv_{N}\}</m>. Then
    we have already proved that
@@ -4525,7 +4542,7 @@ using either the relation <m>
    </proof>
   </theorem>
  <corollary> <title>Bessel's inequality for trigonometric Fourier series</title>
- <statement>Let 
+ <statement><p> Let 
  <me>
  g(x)\sim a_0 +\sum_{n=1}^{\infty}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right].
   </me>
@@ -4544,6 +4561,7 @@ As a consequence the following Bessel's inequality holds
 <me>
 \int_{-l}^{l} |g(x)|^{2}\, dx \ge 2l |a_{0}|^{2}+l \sum_{n=1}^{\infty} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right].
 </me>
+</p>
 </statement>
  </corollary>
  <remark><p>So far we have not addressed the issue whether <m>S_{N}[g](x)</m> converges to <m>g(x)</m>
@@ -4922,7 +4940,7 @@ This implies that the function is continuous at every point of <m>[a, b]</m> wit
 the <m>a_{k}</m>'s and that it has both left and right limits at each of these <m>a_{k}</m>'s.
 </p>
  <theorem xml:id="termwisediff"> <title>Term-wise Differentiation of Fourier Series </title>
- <statement>Suppose that  <m>g(x)</m> is 
+ <statement> <p> Suppose that  <m>g(x)</m> is 
 <em> continuous</em> on <m> [-\pi, \pi]</m>, and  <m> g(-\pi)=g(\pi)</m>, and that
 <m>g'(x)</m> exists except at a finite number of points and is piecewise continuous. 
  Denote the
@@ -4937,6 +4955,7 @@ a_0'=0, \text{ and } a_n'=n b_{n}, b_n'=- n a_{n}.
 In other words, <em>under our assumptions here</em>, the 
 Fourier series expansion of <m>g'(x)</m> on <m> [-\pi, \pi]</m> can be obtained by 
 term-wise differentiation of the Fourier series expansion of <m>g(x)</m> on <m> [-\pi, \pi]</m>.
+</p> 
 </statement>
 <proof> <p> Note that, for $n=0$,
 <me>
@@ -5728,7 +5747,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    satisfy the condition in the definition.
    </p>
    <definition><title>Directional Derivative </title>
-   <statement>Suppose <m>D\subset X</m>, <m>\bx</m> is an interior point of <m> D</m>, 
+   <statement> <p> Suppose <m>D\subset X</m>, <m>\bx</m> is an interior point of <m> D</m>, 
      <m>{\mathbf u}</m>
    is any non-zero vector (often taken as a unit vector).  <m>{\mathbf f}</m> is said to have
     directional derivative  at <m>{\mathbf x}</m>
@@ -5737,6 +5756,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    In such a case the derivative of this one variable function at <m>t=0</m> is called
    the directional derivative  <m>f</m> at <m>{\mathbf x}</m>
    in the direction <m>{\mathbf u}</m>, and is denoted as <m>D_{{\mathbf u}} {\mathbf f}({\mathbf x})</m>.
+   </p> 
    </statement>
    </definition>
    
@@ -5800,7 +5820,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    <m>D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})=[D\mathbf f (\bx)]{\mathbf e}_{j}</m>,
    which is the <m>j</m>th column of <m>[D\mathbf f (\bx)]</m>.
    </p>
-  <proposition> <statement>Suppose that <m>\bff</m> is differentiable at <m>\bx</m>, with <m>[D\mathbf f (\bx)]</m>
+  <proposition> <statement><p> Suppose that <m>\bff</m> is differentiable at <m>\bx</m>, with <m>[D\mathbf f (\bx)]</m>
   denoting its Jacobian matrix at <m>\bx</m>, then it is continuous at <m>\bx</m>. Furthermore, it has 
   directional derivative in any direction at <m>\bx</m> and the 
   directional derivative <m>D_{{\mathbf u}} {\mathbf f}({\mathbf x})</m> 
@@ -5808,6 +5828,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    in the direction <m>{\mathbf u}</m>   equals <m>[D\mathbf f (\bx)]\bu</m>. As a consequence,
   the <m>(i, j)</m> entry of <m>[D\mathbf f (\bx)]</m> is <m>\displaystyle{\frac{\partial f_i}{\partial x_j}(\bx)}</m>,
   where <m>\bff(\bx) =(f_1(\bx), \cdots, f_m(\bx))</m>.
+  </p>
   </statement>
   <proof> <p> The only part that we have not provided detail is to prove the continuity of <m>\bff</m> at 
   <m>\bx</m>. For any <m>\epsilon >0</m>, there exists some <m>\delta>0</m> such that
@@ -5866,10 +5887,10 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
     <m>D_{(\cos\theta, \sin\theta)}f(0,0)</m> does not exist unless <m>\theta</m> points
     along either the <m>x</m> or <m>y</m> coordinate axis.
     </p>
-    
-     <statement>A function may
+
+     <statement><p> A function may
    have directional derivative at some <m>{\mathbf x}</m>  in each direction, yet can still fail to be
-   differentiable there.</statement>
+   differentiable there.</p> </statement>
    <solution><p> Here is a simple example.
    <me>
    f(x, y)=\begin{cases} \frac{x^{2}y}{x^{2}+y^{2}} \amp\text{ if } (x, y)\ne (0, 0),\\
@@ -6023,11 +6044,11 @@ contradicting the definition of <m>c^{*}</m>.
    the partial derivative <m>D_{j}f_{i}({\mathbf x}):=\frac{\partial f_{i} }{\partial x_{j}}({\mathbf x})</m>.
    </p>
    <exercise><title>Matrix Commuting with Rotation Matrix</title>
-   <statement>Let <m>\displaystyle{A=\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}}</m>.
+   <statement> <p> Let <m>\displaystyle{A=\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}}</m>.
    Verify that <m>A</m> satisfies <xref ref="cpxcmm"/> iff there exist some real
    <m>r, \varphi</m> such that 
    <m>\displaystyle{A=\begin{bmatrix} r\cos\varphi \amp -r \sin\varphi \\ r \sin\varphi \amp r \cos\varphi \end{bmatrix}}</m>.
-   </statement>
+   </p> </statement>
    </exercise>
    <p>The most important	properties regarding differentiability are the chain rule 
    and differentiability of functions with continuous partial derivatives.</p>
@@ -6185,9 +6206,9 @@ for <m>\bx</m> sufficiently close to <m>\bx_0</m>. Using this and the Squeeze Th
    </example>
    
    <exercise> <title>Jacobian Matrix of Composite Function</title>
-    <statement> Define <m>S(x, y)=(x^{2}-y^{2}, 2 x y)</m> and
+    <statement><p>  Define <m>S(x, y)=(x^{2}-y^{2}, 2 x y)</m> and
    <m>f(x, y)=(e^{x}\cos y, e^{x}\sin y)</m>. Compute the Jacobian matrix of
-   <m>S, f</m>, <m>f\circ S</m>, and <m>S\circ f</m>.
+   <m>S, f</m>, <m>f\circ S</m>, and <m>S\circ f</m>.</p> 
 </statement>
 </exercise>
 
@@ -6307,11 +6328,12 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 </remark>
 
 <exercise><title>Differentiability of a norm function on <m>\bbR^{n}</m></title>
-   <statement> Consider the norm
+   <statement> <p> Consider the norm
    <m>||(x_{1}, \ldots, x_{n})||_{p}:= \left( \sum_{i=1}^{n}|x_{i}|^{p}\right)^{1/p}</m> for some <m>1 \le p \lt 
   \infty</m> as a function on <m>\bbR^{n}</m>. Identify the set of points at which this function
   is differentiable. Repeat the exercise when the norm is 
   <m>||(x_{1}, \ldots, x_{n})||_{\infty}:=\max_{1\le i \le n} |x_{i}|</m>.
+  </p>
   </statement>
   </exercise>
   </subsection>
@@ -6480,7 +6502,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
   <title>Inverse Function Theorem</title>
   
   <theorem>
-  <statement>
+  <statement><p> 
   Suppose that <m>{\mathbf f}</m> is a differentiable mapping from a neighborhood of 
   <m>{\mathbf x}_0</m>
 in <m>\mathbb R^n</m> into <m>\mathbb R^n</m>, with 
@@ -6506,6 +6528,7 @@ such that <m>\forall {\mathbf y} \in B({\mathbf y}_0, r), \exists ! {\mathbf x} 
 <me> D{\mathbf f}^{-1} ({\mathbf y}) = \left[D{\mathbf f}({\mathbf x})\right]^{-1}|_{x={\mathbf f}^{-1}({\mathbf y})}.</me>
 </li>
 </ol>
+</p> 
 </statement>
 <proof>
 <p>The heuristic idea is to use the differentiability of <m>{\mathbf f}</m> to 
@@ -6727,23 +6750,23 @@ on <m> B(\bx_{0}, \delta)</m>, where <m>\delta</m> is chosen to satisfy <xref re
 
 
 
-<exercise> <statement>Identify points <m>(x_{0}, y_{0})</m>
+<exercise> <statement><p> Identify points <m>(x_{0}, y_{0})</m>
 where  the function <m>S(x, y)=(x^{2}-y^{2}, 2 x y)</m> satisfies the conditions
 of the Inverse Function Theorem; at points <m>(x_{0}, y_{0})</m> where
 the conditions
 of the Inverse Function Theorem are not satisfied, examine the solvability of <m>S(x, y)=(u, v)</m>
-for <m>(u, v)</m> near <m>S(x_{0}, y_{0})</m>.
+for <m>(u, v)</m> near <m>S(x_{0}, y_{0})</m>.</p> 
 </statement>
 </exercise>
 
-<exercise> <statement>Compute the Jacobian matrix of the function
+<exercise> <statement><p>Compute the Jacobian matrix of the function
 <m>(u, v)=f(x, y)=(e^{x}\cos y, e^{x}\sin y)</m> and verify that it satisfies the conditions
 of the Inverse Function Theorem. Determine the largest disc <m>U</m> around 
 <m>(x, y)=(0, 0)</m> on which the function <m>f</m> has a well-defined differentiable 
 inverse function. Determine the largest disc <m>V</m> around 
 <m>(u, v)=(1, 0)</m> on which  <m>f^{-1}</m> is a well-defined differentiable function.
 What if one drops the condition that <m>U</m> or <m>V</m> be a disc, but just requires it to be
-an open set?
+an open set?</p> 
 </statement>
 </exercise>
 <example> <title>A geometric application of the Inverse Function Theorem</title>
@@ -7184,7 +7207,7 @@ for <m>c</m> in the range <m>[-\sqrt 2, \sqrt 2]</m>. When it is applicable, fin
 </exercise>
 
 <exercise><title>Limacon  curve</title>
-<statement> The level set of <m>f(x, y; a)=(x^{2}+y^{2}-x)^{2}-a^{2}(x^{2}+y^{2})=0</m> is a curve called
+<statement><p>  The level set of <m>f(x, y; a)=(x^{2}+y^{2}-x)^{2}-a^{2}(x^{2}+y^{2})=0</m> is a curve called
  a <url href="https://www.desmos.com/calculator/51n6sf9wxz">Limacon</url>---we treat <m>a</m> as a parameter. 
  <ul>
  <li>Identify the point(s) where this curve intersects the <m>x</m> axis and examine whether 
@@ -7194,8 +7217,9 @@ for <m>c</m> in the range <m>[-\sqrt 2, \sqrt 2]</m>. When it is applicable, fin
  <li> Note that <m>(0, 0)</m> is a solution for any choice of <m>a</m>.
  Examine the set of solutions near <m>(0, 0)</m> for different values of the parameter <m>a</m>.</li>
  </ul>
+</p>
   </statement>
- <hint> Examine the plots  would give some idea of the behavior to expect.</hint>
+ <hint> <p> Examine the plots  would give some idea of the behavior to expect.</p> </hint>
 </exercise>
 <exercise> <title>Differentiability of the level set of <m>\Vert \bx \Vert =c</m></title>
 <statement>Consider <m>\Vert\bx\Vert =\left(\sum_{i=1}^{n}|x_{i}|^{p}\right)^{1/p}</m>
@@ -7542,7 +7566,7 @@ t^{k} +R_{k}(t)
 	 	 </p>
 		 <p>We summarize this as </p>
 		 <theorem xml:id="thm-taylor"><title>Taylor Expansion</title>
-		 <statement> Suppose that <m>f\in C^{k}(U)</m> and <m>\bx \in U \subset \bbR^{n}</m>. Then 
+		 <statement><p>  Suppose that <m>f\in C^{k}(U)</m> and <m>\bx \in U \subset \bbR^{n}</m>. Then 
 		 the <m>k</m>th order Taylor expansion of <m>f</m> at <m>\bx</m>, 
 		 <m>T_{k}(f,\bx)(\bh) </m>, defined as 
 		 <md>
@@ -7566,6 +7590,7 @@ t^{k} +R_{k}(t)
 		 \Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert \le \epsilon \Vert \bh \Vert^{k} \text{ for all $\bx\in U',
 		 \Vert \bh \Vert \lt \delta$.}
 		 </me>
+		</p> 
 		 </statement>
 		 </theorem>
 		 <remark> <p><xref ref="eq-taylor"/> can also be established under the weaker assumption
@@ -7881,10 +7906,11 @@ uniform convergence criterion near <m>t>0</m> and <m>t=0</m>, where
     Then the sandwich theorem implies that <m>f(x)\to f(a)</m> as <m>x\to a+</m>.
     The direction when <m>x\to a-</m> is done in a similar way.
     </p>
-    <question><title>How can we extend this argument to higher dimensions? </title> <statement>
+    <question><title>How can we extend this argument to higher dimensions? </title> <statement><p> 
     A convex function is certainly continuous at an interior point
     when constrained along any one-dimensional lines, but there are infinitely many lines
     through any given point. Here we will see some ideas of compactness at play.
+	</p>
     </statement>
     <solution><p> We will assume that the origin is in the interior of the domain of
     <m>f</m>; in fact, we will assume the domain of <m>f</m> includes the unit ball
@@ -8160,10 +8186,10 @@ Let <m>f(\mathbf x) </m> be a convex function defined
     plane to the graph of the function.
     Furthermore, if the point is in the interior of the domain, then it is the unique supporting plane</p>
     </statement>
-    <hint>If <m>f</m> denotes the function, and <m>Df(\mathbf x_{0})</m> denotes the 
+    <hint> <p> If <m>f</m> denotes the function, and <m>Df(\mathbf x_{0})</m> denotes the 
     gradient of <m>f</m> at <m>\mathbf x_{0}</m>, it may be geometrically easier to consider
     <me>g(\mathbf x)=f(\mathbf x)-f(\mathbf x_{0})-Df(\mathbf x_{0})\cdot (\mathbf x-\mathbf x_{0})</me>,
-    which is also convex.</hint>
+    which is also convex.</p> </hint>
     </exercise>
     <p>We close this subsection by discussing a more subtle application of
     convex/concave functions in an optimization problem.
@@ -8313,10 +8339,10 @@ that <m>m=n</m>. Prove that <m>\bff (\bx)=\by</m> in the above and
     <m>\begin{bmatrix} 1 \amp 0 \\ 0 \amp -1\end{bmatrix}</m>?
     </p>
     </statement>
-    <hint> It may not be practical to work out the Jacobian matrix in the usual matrix form, but it
+    <hint> <p> It may not be practical to work out the Jacobian matrix in the usual matrix form, but it
     suffices to obtain a linear function <m>L(H)\in \cM^{n\times n}</m> of <m>H\in \cM^{n\times n}</m>
     such that <m>\Vert (A+H)^{2}-A^{2}-L(H)\Vert/\Vert H\Vert \to 0</m> as <m>\Vert H\Vert \to 0</m>.
-    </hint>
+    </p></hint>
     
     </exercise>
 
@@ -9303,7 +9329,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    </p>
    
    <theorem xml:id="Fubini-cont"><title>Fubini's Theorem for Continuous Functions</title>
-   <statement> Suppose that <m>R_{1}\subset \bbR^{n}</m> and <m>R_{2}\subset \bbR^{m}</m>
+   <statement><p> Suppose that <m>R_{1}\subset \bbR^{n}</m> and <m>R_{2}\subset \bbR^{m}</m>
    are two rectangles in <m>\bbR^{n}</m> and <m>\bbR^{m}</m> respectively, and
    <m>f(\bx, \by)</m> is a continuous function on <m>R:=R_{1}\times R_{2}</m>.  Then
    <m>\int_{R_{2}} f(\bx, \by)\, d\by</m> is a continuous function of <m>\bx \in R_{1}</m>, and
@@ -9314,6 +9340,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     <men xml:id="eq-fubini-x">
     \int_{R} f(\bx, \by)\; dA = \int_{R_{2}} \left( \int_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
     </men>
+	</p>
     </statement>
     <proof> <p> The key property used here is the uniform continuity of <m>f</m> on <m>R</m>:
     both sides of <xref ref= "eq-fubini-y"/> and <xref ref="eq-fubini-x"/> can be approximated by
@@ -9489,7 +9516,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     </exercise>
     
     <theorem xml:id="Fubini-gen"><title>Fubini's Theorem for  Riemann Integrable Functions</title>
-   <statement> Suppose that <m>R_{1}\subset \bbR^{n}</m> and <m>R_{2}\subset \bbR^{m}</m>
+   <statement> <p> Suppose that <m>R_{1}\subset \bbR^{n}</m> and <m>R_{2}\subset \bbR^{m}</m>
    are two rectangles in <m>\bbR^{n}</m> and <m>\bbR^{m}</m> respectively, and
    <m>f(\bx, \by)</m> is a Riemann integrable function on <m>R:=R_{1}\times R_{2}</m>.  Then
    both 
@@ -9510,6 +9537,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    \int_{R} f(\bx, \by)\; dA = \int_{R_{2}} \left( \upint_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by
    = \int_{R_{2}} \left( \lowint_{\;R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
     </me>
+	</p>
         </statement>
         <proof> <p> We will focus on the first equality in <xref ref="eq-fubini-ul"/>. It
         relies on the observation that the lower and upper sums of <m>\upint_{R_{2}} f(\bx, \by)\, d\by</m>
@@ -10068,11 +10096,12 @@ that
 </proof>
 </lemma>
 
-<corollary> <statement> Suppose that   <m>E</m> in <m>\bbR^{n}</m> is a set of measure zero. For any
+<corollary> <statement> <p> Suppose that   <m>E</m> in <m>\bbR^{n}</m> is a set of measure zero. For any
 <m>\epsilon >0</m>, there exists a 
 countable union
 of non-overlapping  hypercubes of equal side lengths <m>Q_{j}</m> covering <m>E</m> such that 
 <m>\sum_{j} |Q_{j}| \lt \epsilon</m>.
+</p>
 </statement>
 <proof> (of <xref ref="chofvar"/>) <p> First, since the set of discontinuity of 
 <m>f(T(\bx))|\det DT(\bx)|</m> is <m>T^{-1}(D)</m>, where
@@ -10429,8 +10458,8 @@ area (volume) form <m> \sqrt {\det (g_{ij})}\, d\bu</m>.
  with <m>(1, 0, 0, 0)</m>, <m>(0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)</m>
  as vertices. 
       </p></statement>
-      <hint> The three dimensional volume of a tetrahedron equals <m>1/6</m>
-       of the volume of a parallelepiped sharing three adjacent edges with the tetrahedron.</hint>
+      <hint> <p> The three dimensional volume of a tetrahedron equals <m>1/6</m>
+       of the volume of a parallelepiped sharing three adjacent edges with the tetrahedron.</p> </hint>
       </exercise>
       </exercises>
       
@@ -11069,8 +11098,8 @@ of the plane
    </me>.
    </p>
    </statement>
-   <hint> One could avoid finding explicitly an orthonormal basis for the plane by using
-   <xref ref="exe-extprod"/>.
+   <hint><p>  One could avoid finding explicitly an orthonormal basis for the plane by using
+   <xref ref="exe-extprod"/>.</p> 
    </hint>
    </exercise>
    
@@ -12554,12 +12583,13 @@ assigning the components in the <m>i+1</m> through <m>k+1</m> position as
  <p> Once these definitions are properly developed, we are be ready to prove 
  a version of Stokes Theorem on a singular cube (or chain).
  </p>
- <theorem><title>Stokes Theorem on Singular Chains</title> <statement> If 
+ <theorem><title>Stokes Theorem on Singular Chains</title> <statement> <p> If 
  <m>\omega</m> is  a <m>k</m>-form in <m>A</m>, and <m>c</m> is a
  singular <m>(k+1)</m>-cube (or chain), then
  <me>
  \int_{\partial c} \omega = \int_{c} d\omega.
  </me>
+</p> 
  </statement>
  <proof>
  <p>  <m>c^{*}(\omega)</m> is a <m>k</m>-form on <m>I^{k+1}</m>, so can be written as

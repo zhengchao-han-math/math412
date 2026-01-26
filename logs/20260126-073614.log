@@ -1,0 +1,40 @@
+WARNING : Using CLI version 2.33.2 but project's `requirements.txt`
+WARNING : is configured to use 0.8.2a4. Consider either installing
+WARNING : CLI version 0.8.2a4 or running `pretext update`
+WARNING : to update `requirements.txt` and other managed files to match 2.33.2.
+INFO    : Building target print
+INFO    : XSL conversion of /Users/zchan/Documents/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /Users/zchan/Documents/math412-PreTeXt/output/print.
+INFO    : discovering source file's directory name: /Users/zchan/Documents/math412-PreTeXt/source
+INFO    : verifying and expanding input directory: /Users/zchan/Documents/math412-PreTeXt/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/zchan/Documents/math412-PreTeXt/generated-assets
+INFO    : verifying and expanding input directory: /Users/zchan/Documents/math412-PreTeXt/source/.
+INFO    : input directory expanded to absolute path: /Users/zchan/Documents/math412-PreTeXt/source
+INFO    : discovering source file's directory name: /Users/zchan/Documents/math412-PreTeXt/source
+INFO    : XSL conversion of /Users/zchan/Documents/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : converting /Users/zchan/Documents/math412-PreTeXt/source/main.ptx to LaTeX as /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-domsmn9k/main.tex
+INFO    : XSL conversion of /Users/zchan/Documents/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/pretext-latex.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking all deprecated elements.
+WARNING : * PTX:DEPRECATE: (2024-07-24) Experiments using the @permid attribute have concluded, and the attribute is now being ignored.  You can safely remove them all and then this message will stop. (1 time)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2024-07-12) the html/css/@style publication file entry has been deprecated for replacement by @theme. See the Guide for theme options.
+INFO    : * --------------
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/pretext-latex.xsl
+INFO    : XSL conversion of /Users/zchan/Documents/math412-PreTeXt/source/main.ptx by /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/zchan/.ptx/2.33.2/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Removing temporary directory /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-domsmn9k
+INFO    : Removing temporary directory /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-n2a9_4zf
+INFO    : Removing temporary directory /var/folders/gl/5v_gndc978984dhdlht9fqn40000gp/T/ptx-7dbpv9oq
+INFO    : 
+Finished build for target print. The output is in /Users/zchan/Documents/math412-PreTeXt/output/print.
+
+INFO    : 
+Success!  Built requested target(s) without errors.
+
+INFO    : 
