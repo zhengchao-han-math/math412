@@ -8147,8 +8147,8 @@ is satisfied when
     <m> y \ln y</m>. Proofs for Hlder's and Minkowski's inequalities also use 
     convexity in crucial ways.</p>
     <exercise><title> </title> 
-		<statement><p> Prove that <m> \ln \left( \int_{X} e^{u(x)}p(x)\, dx\right) \ge
-    \int_{X} u(x)p(x)\, dx</m> for <m>p(x)\ge 0, \int_{X}p(x)\, dx=1</m></p> </statement>
+		<statement><p> Prove that <me> \ln \left( \int_{X} e^{u(x)}p(x)\, dx\right) \ge
+    \int_{X} u(x)p(x)\, dx</me> for <m>p(x)\ge 0, \int_{X}p(x)\, dx=1</m></p> </statement>
     </exercise>
     </subsection>
     <subsection><title>Some Properties of Convex Functions of Several Variables</title>
@@ -13077,7 +13077,7 @@ differentiable function <m>f</m> on <m>\bbR^{2}\setminus\{0\}</m>, then for any
 		</p>
 	</statement>	
 </definition>
-<theorem><title>Poincar Lemma</title> 
+<theorem><title>Poincaré Lemma</title> 
 <statement><p> Assume that <m>A</m> is an open star-shaped domain in <m>\bbR^{m}</m>, then
 any closed form on <m>A</m> is an exact form.</p> </statement>
 <proof><p>We may assume that <m>A</m> is star-shaped with respect to the origin. 
@@ -13184,7 +13184,7 @@ this proof can be adapted to work for other homotopy. In particular, it can be u
 that if <m>F(t, \cdot)</m> is a (differentiable) homotopy for <m>t\in [a, b]</m>, 
 and <m>\omega</m> is a closed 
 form, then <m>F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)</m> is exact, and often one can
-construct an <m>\eta=I(\omega)</m> explicitly as described in the proof of Poincar's Lemma
+construct an <m>\eta=I(\omega)</m> explicitly as described in the proof of Poincaré's Lemma
 so that <m>d\eta= F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)</m>.
 </p>
 </remark>
