@@ -13,3 +13,63 @@ INFO    : Added pretext web server entry f8eddae92c 53184 8136 localhost
 
 INFO    : Server will soon be available at http://localhost:8136
 INFO    : Opening browser for target `web` at http://localhost:8136/output/web
+WARNING : Port 8136 could not be used.
+WARNING : Trying port 8137 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8137 localhost
+
+INFO    : Server will soon be available at http://localhost:8137
+INFO    : Opening browser for target `web` at http://localhost:8137/output/web
+WARNING : Port 8137 could not be used.
+WARNING : Trying port 8138 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8138 localhost
+
+INFO    : Server will soon be available at http://localhost:8138
+INFO    : Opening browser for target `web` at http://localhost:8138/output/web
+WARNING : Port 8138 could not be used.
+WARNING : Trying port 8139 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8139 localhost
+
+INFO    : Server will soon be available at http://localhost:8139
+INFO    : Opening browser for target `web` at http://localhost:8139/output/web
+WARNING : Port 8139 could not be used.
+WARNING : Trying port 8140 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8140 localhost
+
+INFO    : Server will soon be available at http://localhost:8140
+INFO    : Opening browser for target `web` at http://localhost:8140/output/web
+WARNING : Port 8140 could not be used.
+WARNING : Trying port 8141 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8141 localhost
+
+INFO    : Server will soon be available at http://localhost:8141
+INFO    : Opening browser for target `web` at http://localhost:8141/output/web
+WARNING : Port 8141 could not be used.
+WARNING : Trying port 8142 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8142 localhost
+
+INFO    : Server will soon be available at http://localhost:8142
+INFO    : Opening browser for target `web` at http://localhost:8142/output/web
+WARNING : Port 8142 could not be used.
+WARNING : Trying port 8143 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8143 localhost
+
+INFO    : Server will soon be available at http://localhost:8143
+INFO    : Opening browser for target `web` at http://localhost:8143/output/web
+WARNING : Port 8143 could not be used.
+WARNING : Trying port 8144 instead.
+
+INFO    : Added pretext web server entry f8eddae92c 53184 8144 localhost
+
+INFO    : Server will soon be available at http://localhost:8144
+INFO    : Opening browser for target `web` at http://localhost:8144/output/web
+WARNING : Port 8144 could not be used.
+WARNING : Trying port 8145 instead.
+
+INFO    : There are 10 or more servers on file. Cleaning up ...

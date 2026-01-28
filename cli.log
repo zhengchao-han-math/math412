@@ -1,0 +1,21 @@
+PreTeXt project found in `/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt`.
+
+[33mwarning: [0mAssets like latex-images will not be regenerated for this build
+[33mwarning: [0m(previously generated assets will be used if they exist).
+[33mwarning: [0mTo generate these assets before building, run `pretext build -g`.
+[31merror: [0mXInclude Error caused build to fail:
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx:9:7:FATAL:PARSER:ERR_HYPHEN_IN_COMMENT: Double hyphen within comment: <!--
+[31merror: [0m% !TEX TS-program =PreTeXt-HTML
+[31merror: [0m
+[31merror: [0m
+[31merror: [0m<pretext xml:la
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx:11:5:FATAL:PARSER:ERR_DOCUMENT_END: Extra content at the end of the document
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/main.ptx:33:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load /Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx, and no fallback was found
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx:9:7:FATAL:PARSER:ERR_HYPHEN_IN_COMMENT: Double hyphen within comment: <!--
+[31merror: [0m% !TEX TS-program =PreTeXt-HTML
+[31merror: [0m
+[31merror: [0m
+[31merror: [0m<pretext xml:la
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx:11:5:FATAL:PARSER:ERR_DOCUMENT_END: Extra content at the end of the document
+[31merror: [0m/Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/main.ptx:47:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load /Users/zchan/Library/CloudStorage/Box-Box/math412-PreTeXt/source/ch_integration.ptx, and no fallback was found
+

@@ -1286,7 +1286,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<me>
 	\int_{a}^{b} |g(x)|^{p'}\, dx= \lim_{k\to \infty} \int_{a}^{b} |c_{k}(x)|^{p'}\, dx
 	</me>
-	it follows from the Hlder's inequality
+	it follows from the Hölder's inequality
 	<me>
 	\int_{a}^{b} |b_{k}(x)||c_{k}(x)|\, dx
 	\le \left(\int_{a}^{b} |b_{k}(x)|^{p}\, dx\right)^{1/p}
@@ -3007,7 +3007,7 @@ is uniformly Cauchy on <m>E</m>.
 		</proof>
 		</proposition>
 		
-<theorem xml:id="Ascolli-Arzela"><title>Ascolli-Arzel Theorem</title>
+<theorem xml:id="Ascolli-Arzela"><title>Ascolli-Arzelà Theorem</title>
 <statement> <p> Suppose that <m>K</m> is a compact metric space and that <m>\{f_{n}\} </m> is a sequence
 in <m>C(K)</m> pointwise bounded and equicontinuous on <m>K</m>.  Then
  <ol marker="(a)">
@@ -3059,7 +3059,7 @@ This show that <m>\{f_{n_{k}}\}</m> is uniformly Cauchy on <m>K</m>, therefore p
 </theorem>
 
 <remark>
-<p> The Bolzano-Weierstrass/Ascolli-Arzel property has extensions 
+<p> The Bolzano-Weierstrass/Ascolli-Arzelà property has extensions 
 to function spaces where the convergence is not 
 uniform but in integral norms. We first describe 
  a generalization  in the context of the space <m>l^{p}</m>, 
@@ -4017,7 +4017,7 @@ using <m>E(x)</m>.
     of convergence, and <m>g(y)=\sum_{n=0}^{\infty} b_{n} (y-a_{0})^{n}</m> also 
   has a positive radius of convergence <m>R</m>. Prove that for all <m>x</m> such that
   <m> \sum_{n=1}^{\infty}  |a_{n}x^{n}| \lt R</m>, the composite function
-  <m>g\circ f(x)</m> has a convergent power series expansion of the form
+  <m>g\circ f(x)</m> ha a convergent power series expansion of the form
   <m>\sum_{n=0}^{\infty} c_{n}x^{n}</m>, where <m>c_{0}=b_{0}</m>
   and <m>c_{n}=\sum_{k=0}^{n} b_{k} a_{n}(k)</m> for positive integer <m>n</m>, with
   <m>a_{n}(k)</m> defined from the relation <m> (\sum_{k=1}^{\infty} a_{k}x^{k})^{n}
@@ -4810,14 +4810,14 @@ expansion is that the series equals the <m>2\pi</m> periodic extension of the gi
 <p>For any <m>x\in (-\pi, \pi)</m>, there exist continuous functions <m>f</m> such that 
 <m>S_N[f](x)</m> does not converge, so continuity of <m>f</m> at <m>x</m> alone may not
 guarantee that <m>S_N[f]( x)</m> converges as <m>N\to\infty</m>.</p>
-<p>However, a modified trigonometric series, the <term>Fejr</term> series, defined as
+<p>However, a modified trigonometric series, the <term>Fejér</term> series, defined as
 the arithmetic average of <m>S_{n}[f] (x)</m>'s:
 <me>
 \sigma_{N}[f](x)=\frac{S_{0}[f](x)+S_{1}[f](x)+\cdots+S_N[f]( x)}{N+1}
 </me>
 does converge to <m>f(x)</m> for any <m>f</m> which is continuous at <m>x</m>.</p>
 </remark>
-<theorem><title>Fejr Theorem</title>
+<theorem><title>Fejér Theorem</title>
 <statement><p> Suppose that the Riemann integrable function <m>f</m> on <m>(-\pi, \pi)</m> is
 continuous at <m>x\in (-\pi, \pi)</m>, then <m>\sigma_{N}[f](x)\to f(x)</m> as <m>N\to \infty</m>.
 If <m>f</m> is continuous on <m>[-\pi, \pi]</m> and is <m>2\pi</m> periodic, then
@@ -4885,7 +4885,7 @@ to carry out a similar convergence argument.
 </p>
 </proof>
 </theorem>
-<p>Fejr's theorem implies  that the span of <m>\{ e^{i nx}\}</m> (equivalently <m>\{\cos(nx), \sin(nx)\}</m>)
+<p>Fejér's theorem implies  that the span of <m>\{ e^{i nx}\}</m> (equivalently <m>\{\cos(nx), \sin(nx)\}</m>)
 is  dense in both <m>C[-\pi, \pi]</m> and <m>\cR[-\pi ,\pi]</m> in the mean square sense, for, given
 any <m>g\in \cR[-\pi ,\pi]</m> and <m>\epsilon \gt 0</m>, first find a <m>2\pi</m> periodic and continuous
 function <m>f</m> such that <m>\Vert f-g\Vert :=\left(\int_{-\pi}^{\pi}|f(t)-g(t)|^{2}\, dt\right)^{1/2}\lt \epsilon</m>.
@@ -4907,7 +4907,7 @@ when <m>N' \le N</m>, the Best Approximation Theorem implies that
 <me>
 \Vert S_{N}(g)-g\Vert\le \Vert S_{N'}(g)-g\Vert \text{ when $N' \le N$.}
 </me>
-For any <m>\epsilon \gt 0</m>, Fejr's theorem gives some trigonometric polynomial 
+For any <m>\epsilon \gt 0</m>, Fejér's theorem gives some trigonometric polynomial 
 <m>p</m> of degree <m>N'</m> such that <m>\Vert g- p\Vert \lt \epsilon</m>. Then the
 Best Approximation Theorem implies that <m>\Vert S_{N'}(g)-g\Vert \lt \epsilon</m>. Then for all
 <m>N\ge N'</m>, we have <m>\Vert S_{N}(g)-g\Vert\le \epsilon</m>. The Parseval equality follows
@@ -5258,7 +5258,6 @@ much of this discussion is a review of some relevant concepts and properties fro
   linear transformation).
 </p>
 </introduction>
-
 <subsection xml:id="subsec-linearmap">
 <title>Definition of  Linear Functions and Their Matrix Representation</title>
 <definition xml:id="linearmap">
@@ -5318,7 +5317,7 @@ much of this discussion is a review of some relevant concepts and properties fro
   \begin{bmatrix} T({\mathbf x}_{1}) \amp \ldots\amp  T({\mathbf x}_{n})\end{bmatrix} \amp 
   = \begin{bmatrix} {\mathbf y}_{1} \amp \ldots \amp {\mathbf y}_{m}\end{bmatrix}
   \begin{bmatrix} a_{11} \amp a_{12}\amp \ldots \amp a_{1n}  \\
-  a_{21}\amp a_{22}\amp \ldots \amp a_{2n} \\
+  a_{21}\amp \a_{22}\amp \ldots \amp a_{2n} \\
   \vdots \amp \vdots \amp \vdots \amp \vdots \\
   a_{m1}\amp a_{m2}\amp \ldots \amp a_{mn}\end{bmatrix},
   </mrow>
@@ -5332,7 +5331,7 @@ much of this discussion is a review of some relevant concepts and properties fro
    <mrow>
    \amp =\begin{bmatrix} {\mathbf y}_{1}\amp \ldots\amp {\mathbf y}_{m}\end{bmatrix}
   \begin{bmatrix} a_{11} \amp a_{12}\amp \ldots \amp a_{1n}  \\
-  a_{21}\amp a_{22}\amp \ldots \amp a_{2n} \\
+  a_{21}\amp \a_{22}\amp \ldots \amp a_{2n} \\
   \vdots \amp \vdots \amp \vdots \amp \vdots \\
   a_{m1}\amp a_{m2}\amp \ldots \amp a_{mn}\end{bmatrix} 
   \begin{bmatrix} c_{1}\\ \vdots \\ c_{n}\end{bmatrix}
@@ -5353,7 +5352,6 @@ much of this discussion is a review of some relevant concepts and properties fro
   </mrow>
   </md>
   </p>
-
   <p>There is a natural addition <m>S+T</m> of two linear maps <m>S</m> and <m>T</m>
   from a vector space <m>X</m> to a vector space <m>Y</m>, and a scalar multiplication
   <m>c S</m> of a linear map. This makes the set <m>L(X, Y)</m> of linear maps
@@ -8144,7 +8142,7 @@ is satisfied when
     </proof>
     </theorem>
     <p>Commonly used cases of Jensen's inequalities include <m>\phi(y)=-\ln y</m> or 
-    <m> y \ln y</m>. Proofs for Hlder's and Minkowski's inequalities also use 
+    <m> y \ln y</m>. Proofs for Hölder's and Minkowski's inequalities also use 
     convexity in crucial ways.</p>
     <exercise><title> </title> 
 		<statement><p> Prove that <m> \ln \left( \int_{X} e^{u(x)}p(x)\, dx\right) \ge
@@ -8475,7 +8473,7 @@ the <m>N</m>th Fourier series partial sum <m>s_{N}(f; x)</m> of
     \left(  \int_{x_{1}}^{x_{2}}g(x)^{2}\,dx\right)    }}</m> when <m>f(x), g(x)</m> are subject to positive upper and lower
     bounds. 
    This problem is from #93 in
-      Part II, Chapter 2 of Polya and Szeg's classic <q>Problems and Theorems
+      Part II, Chapter 2 of Polya and Szegö's classic <q>Problems and Theorems
 in Analysis I</q> </p>
       <p>
     Let <m>a, A, b, B</m> be positive numbers such that <m>a\lt A, b\lt B</m>. 
@@ -10155,7 +10153,7 @@ v(T(Q)) \le \left|\det \left(DT(\bar {\mathbf x})\right)\right| (1+\Lambda \epsi
 </me>
 </p>
 <p>The approach here follows that in the article by <em>J. Schwartz, 
-The formula for change in variables in a multiple integral, Amer. Math. Monthly 61, (1954), 81--85. </em>
+The formula for change in variables in a multiple integral, Amer. Math. Monthly 61, (1954), 81 85. </em>
 </p>
 <p>
 The above estimate also holds for hypercubes  whose ratios of side lengths are within <m>1\pm \epsilon</m>,
@@ -10458,9 +10456,9 @@ as  the least upper bound of the area
 of the inscribed triangulated  surfaces turns out not valid. H. A. Schwarz found that 
 even in the case of the round cylinder, the least upper bound of area 
 of the inscribed triangulated  surfaces is <m>\infty</m>. This is explained in 
-Rad's <em>Length and Area</em>, AMS Colloquium Lectures, 1948. 
+Radó's <em>Length and Area</em>, AMS Colloquium Lectures, 1948. 
 </p> 
- <figure><caption>Rad's description of H. A. Schwarz's discovery that 
+ <figure><caption>Radó's description of H. A. Schwarz's discovery that 
  the least upper bound of area 
 of the inscribed triangulated  surfaces of a section of the round cylinder is infinity.</caption>
   <sidebyside widths="40% 40%" margins="auto">
@@ -13077,7 +13075,7 @@ differentiable function <m>f</m> on <m>\bbR^{2}\setminus\{0\}</m>, then for any
 		</p>
 	</statement>	
 </definition>
-<theorem><title>Poincar Lemma</title> 
+<theorem><title>Poincarè Lemma</title> 
 <statement><p> Assume that <m>A</m> is an open star-shaped domain in <m>\bbR^{m}</m>, then
 any closed form on <m>A</m> is an exact form.</p> </statement>
 <proof><p>We may assume that <m>A</m> is star-shaped with respect to the origin. 
@@ -13184,7 +13182,7 @@ this proof can be adapted to work for other homotopy. In particular, it can be u
 that if <m>F(t, \cdot)</m> is a (differentiable) homotopy for <m>t\in [a, b]</m>, 
 and <m>\omega</m> is a closed 
 form, then <m>F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)</m> is exact, and often one can
-construct an <m>\eta=I(\omega)</m> explicitly as described in the proof of Poincar's Lemma
+construct an <m>\eta=I(\omega)</m> explicitly as described in the proof of Poincarè's Lemma
 so that <m>d\eta= F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)</m>.
 </p>
 </remark>

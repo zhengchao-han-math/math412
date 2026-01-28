@@ -1,1 +1,2 @@
-pretextbook == 0.8.2a4
+# This file was automatically generated with PreTeXt 2.33.2.
+pretext == 2.33.2
