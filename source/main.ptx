@@ -367,7 +367,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 					
 					<exercise> <p>Let <m>\cC</m> denote the standard tertiary Cantor
 							set on 
-							<m>[0, 1]</m> and <m>\chi_{\cC}</m> denote its characteristic function
+							<m>[0, 1]</m> and <m>\chi_{\cC}</m> denote its <term>characteristic function</term>,
 							which takes  value <m>1</m> on <m>\cC</m> and <m>0</m>
 							elsewhere. Let <m>\cP</m> be a partition of <m>[0, 1]</m> into intervals
 							of equal length <m>3^{-k}</m> for some <m>k\in \bbN</m>. Find
@@ -690,7 +690,13 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		    </corollary>
 		    <remark><p>If <m>\alpha</m> has a finite 
 		    number of jump discontinuity, then the right hand side of <xref ref="int-rseval"/>
-		    and <xref ref="eq-ftcr"/> need to account for contributions from these points.
+		    and <xref ref="eq-ftcr"/> need to account for contributions from these points. For example,
+		    if <m>\alpha</m> has a single jump discontinuity at <m>c\in (a, b)</m>, then
+		    <me>
+		    \int_{a}^{b} f\, d\alpha = \int_{a}^{c} f \alpha' \, dx + \int_{c}^{b} f \alpha' \, dx + f(c)(\alpha(c+0)-\alpha(c-0)).
+						    </me>
+						</p>
+						<p> 
 		    The assumption <m>\alpha' \in \cR</m> on <m>[a, b]</m> is needed.
 		     Using a construction similar to that of a Cantor set,
 		     Volterra constructed a function (not monotone though) which had 
@@ -703,8 +709,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		    thus the above equality relation can't hold in such a case.
 		    </p>
 		    </remark>
-		   <remark><p> Suppose that <m>f\in \cR(\alpha)</m> on <m>[a, b]</m> and <m>a &lt; c &lt; b</m>.
-		   Then <m>\int_{a}^{c}1\, d \alpha=\alpha(c)-\alpha(a)</m>,
+		   <remark><p> For any  <m>a &lt; c &lt; b</m>,
+		    <m>\int_{a}^{c}1\, d \alpha=\alpha(c)-\alpha(a)</m>,
 		   <m>\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha=\alpha(c+0)-\alpha(a)</m>.
 		   Since <m>[a, c]=\cap_{k}[a, c+ \frac 1k]</m>, or one could think of 
 		   <m>\int_{a}^{c}1\, d \alpha</m> as <m>\int \chi_{[a, c]} (x)\, d\alpha</m>, and since
@@ -737,9 +743,9 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		<p> In the context of Lebesgue integration, the partition of the interval <m>[a, b]</m> is done with more general <term>measurable sets</term>
 		rather than subintervals of <m>[a, b]</m>, and if one defines lower sums with respect to such partitions and define the lower integral as the supremum
 		of the lower sums over all such partitions, then, for non-negative <term>measurable functions</term>, the lower integral so defined satisfies the additivity property. See (2.14) and (2.15) in Folland's Real Analysis book (2nd edition).
-		We use the Dirichlet function  <m>f(x)</m>, which is <m>1</m> on rationals and <m>0</m> on irrationals, to illustrate the difference after allowing more general partitions. If only partitions into subintervals is allowed, then
-		each lower sum is <m>0</m> as <m>f(x)</m> is <m>0</m> on irrationals so <m>m_{I_i}(f)=0</m> for each interval <m>I_i</m>.  However, if we allow partitions into measurable sets, then for any partition that includes the rationals in <m>[0, 1]</m> as one of the partition sets, 
-			the lower sum would be at least <m>1</m> as <m>m_{Q}(f)=1</m> where <m>Q</m> is the set of rationals in <m>[0, 1]</m>. Thus the lower integral of <m>f</m> defined with respect to measurable set partitions is at least <m>1</m>, which is different from that defined with respect to interval partitions.
+		We use the Dirichlet function  <m>f(x)</m>, which is <m>0</m> on rationals and <m>1</m> on irrationals, to illustrate the difference after allowing more general partitions. If only partitions into subintervals is allowed, then
+		each lower sum is <m>0</m> as <m>f(x)</m> is <m>0</m> on rationals so <m>m_{I_i}(f)=0</m> for each interval <m>I_i</m>.  However, if we allow partitions into measurable sets, then for any partition that includes the irrationals in <m>[0, 1]</m> as one of the partition sets, 
+			the lower sum would be at least <m>1</m> as <m>m_{[0,1]\setminus Q}(f)=1</m> where <m>Q</m> is the set of rationals in <m>[0, 1]</m>. Thus the lower integral of <m>f</m> defined with respect to measurable set partitions is at least <m>1</m>, which is different from that defined with respect to interval partitions.
 		</p>
 	 </remark>
 		</subsection> 
@@ -830,7 +836,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</p>
 	<p>Any open set <m>G</m> of <m>\bbR</m> is a union of at most countably many 
 	disjoint open intervals
-	<m>(c_{i}, d_{i})</m>. For any <m>c\in C[a, b]</m> and any open subset <m>G</m> of <m>[a, b]</m>, 
+	<m>(c_{i}, d_{i})</m>. For any <m>c(x) \in C[a, b]</m> and any open subset <m>G</m> of <m>[a, b]</m>, 
 	the integrals  <m>\int_{G} c(x)\, dx</m> and <m>\int_{G} |c(x)|^{p}\, dx</m> have  clearly defined meanings
 	as the (absolutely convergent) sum of the integrals on each constitutive open interval,
 	with <m>\int_{G} 1\, dx=|G|</m>, the length of <m>G</m> .
@@ -839,7 +845,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 <definition xml:id="def-uniform-abs-contin">
 	 <title>Uniform Absolute Continuity of A Sequence of Integrals in <m>L^{p}[a, b]</m></title>
 	 <statement>
-	 <p>The <m>L^{p}</m>-integrals of a sequence of functions <m>\{ c_{k}\}</m>  in <m>C[a, b]</m>
+	 <p>The <m>L^{p}</m>-integrals of a sequence of functions <m>\{ c_{k}(x)\}</m>  in <m>C[a, b]</m>
 	 are said to be <term>uniformly absolutely continuous</term> on <m>[a, b]</m>
 	 if for any <m>\epsilon &gt; 0</m>,
 	there exists a <m>\delta &gt; 0</m> such that for any open subset <m>G</m> of <m>[a, b]</m>
@@ -854,7 +860,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 <proposition xml:id="uniform-abs-contin"><title>Uniform Absolute Continuity of the Integrals of
 	 a  Sequence in <m>C[a, b]</m> which is Cauchy in the <m>L^{p}[a, b]</m> norm</title>
 	 <statement><p>
-	The <m>L^{p}</m>-integrals of any  Cauchy sequence  <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
+	The <m>L^{p}</m>-integrals of any  Cauchy sequence  <m>\{ c_{k}(x) \}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.</p>
 	</statement>
 	<proof> <p>For the given <m>\epsilon &gt; 0</m>, there exists some <m>N</m> such that 
@@ -897,12 +903,24 @@ of the basic notions involved: curl and divergence of vector fields and differen
  </p>
  </exercise>
  <exercise>
+	<statement>
 	<p> Construct <m>b_{k, l}\ge 0</m> for <m>k, l</m> such that <m> \lim_{k\to\infty}  b_{k, l}</m>
 	exists for each <m>l</m> (the convergence can even be uniform in <m>l</m>) and
 	<me>
 	\lim_{k\to\infty} \sum_{l} b_{k, l}\ne \sum_{l} \lim_{k\to\infty}  b_{k, l}.
 	</me>
 	</p>
+	</statement>
+	<hint>
+		<p>
+	One can set <m>b_{k, l} = \frac 1k</m> for <m>l \le k</m> and <m>b_{k, l} =0</m> for <m>l &gt; k</m>. If one thinks of <m>\sum_{l} b_{k, l}</m> as the integral of a function defined on <m>[0, \infty)</m>,
+	then an analog of the notion of uniform absolute continuity is needed to justify the interchange of limit and summation, and that notion would require, for any <m>\epsilon &gt; 0</m>, the existence of some <m>N</m> such that
+	<me>
+	|\sum_{l=N+1}^{\infty} b_{k, l}| &lt; \epsilon \text{ for all } k.
+	</me>
+	The example above fails to satisfy this requirement.
+		</p>
+	</hint>
 	</exercise>
 	<exercise><p> Construct a sequence of non-negative functions <m>\{c_{k}(x)\}</m> in <m>C[0, 1]</m>
 	such that <m>\lim_{k\to\infty} c_{k}(x)=0</m> for each <m>x\in [0, 1]</m> but
@@ -913,8 +931,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	
 		<definition><title>Negligible Set</title>
 			<statement>
-	<p>A point set is called negligible if it can be covered by an open set of arbitrarily small volume, namely,
-	for any <m>\epsilon &gt; 0</m>, there exists an open cover <m>G</m> such that <m>|G| &lt; \epsilon</m>.
+	<p>A point set <m>E</m> is called negligible if it can be covered by an open set of arbitrarily small volume, namely,
+	for any <m>\epsilon &gt; 0</m>, there exists an open cover <m>G</m> of <m>E</m> such that <m>|G| &lt; \epsilon</m>.
 	</p>
 	</statement>
 	</definition>
@@ -987,9 +1005,9 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		</ol>
 	</p>
 	</statement>
-	<proof><p> Any Cauchy sequence <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
+	<proof><p> Any Cauchy sequence <m>\{ c_{k}(x) \}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm has a subsequence, still denoted as 
-	 <m>\{ c_{k}\}</m>, such that
+	 <m>\{ c_{k}(x) \}</m>, such that
 	 <me>
 	 \Vert c_{k} -c_{k+1}\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
 	 </me>
@@ -1011,13 +1029,14 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 <me>|\cup_{k=N}^{\infty}D_{k}|\le 
 	 \sum_{k=N}^{\infty}|D_{k}| \le \sum_{k=N}^{\infty}\epsilon_{k}^{p}\to 0</me>,
 	 as <m>N\to\infty</m>. Here, the <m>D_{k}</m>'s may not be disjoint, but this subadditivity 
-	 property used above holds. Therefore, the set <m>E</m><fn><m>E</m> is the set of points that 
-	 belong to infinitely many <m>D_{k}</m>'s, and <m>E^{c}</m> is then the set of points that belong to at most a finite number of
-	 <m>D_{k}</m>'s.</fn> defined by
+	 property used above holds.  Define the set <m>E</m> by
 	 <me>
-	 E=\cap_{N=1}^{\infty}  \cup_{k=N}^{\infty}D_{k}
+	 E=\cap_{N=1}^{\infty}  \cup_{k=N}^{\infty}D_{k}.
 	 </me>
-	 is negligible, and for any <m>x\in E^{c}</m>, there exists some <m>N_{x}</m>
+	 Note that <m>E</m> is the set of points that 
+	 belong to infinitely many <m>D_{k}</m>'s, and <m>E^{c}</m> is then the set of points that belong to at most a finite number of
+	 <m>D_{k}</m>'s. Since <m>|\cup_{k=N}^{\infty}D_{k}|\to 0</m> as <m>N\to \infty</m>, 
+	 <m>E</m> is negligible, and for any <m>x\in E^{c}</m>, there exists some <m>N_{x}</m>
 	 such that <m>x\in \cap_{k=N_{x}}^{\infty}D_{k}^{c}</m>, which makes 
 	 <m>\{c_{k}(x)\}</m> a Cauchy sequence in <m>\bbR</m>, therefore
 	 <m>\lim_{k\to\infty} c_{k}(x)</m> exists. Furthermore, for any
@@ -1026,8 +1045,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 <m>\cup_{k=N_{\epsilon}}^{\infty}D_{k}</m>, <m>\vert c_{k}(x) -c_{k+1}(x)\vert \le \epsilon_{k}</m>
 	 for all <m>k\ge N_{\epsilon}</m>, implying that <m>\{c_{k}(x)\}</m> converges uniformly on this set.
 	 </p>
-	 <p> For (ii), we can use the equivalent Cauchy sequences <m>\{ c_{k}\}</m> and <m>\{ \tilde c_{k}\}</m> 
-	 to construct a new Cauchy sequence, say, with <m> c_{k}</m> as the <m>(2k-1)</m>-th term and
+	 <p> For (ii), we can use the equivalent Cauchy sequences <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> 
+	 to construct a new Cauchy sequence, say, with <m> c_{k}(x)</m> as the <m>(2k-1)</m>-th term and
 	  <m>\{ \tilde c_{k}\}</m> as the <m>(2k)</m>-th term, then appeal to the proof of (i), making sure that
 	  in selecting the subsequence, infinitely many terms from both sequences are selected. This 
 	  subsequence, selected from two <m>a.e.</m> convergent  sequences, converges <m>a.e.</m>, which
@@ -1082,7 +1101,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</p>
 	 </proof>
 	</proposition>
-	<remark><p> As a consequence of <xref ref="lprealization"/>, for any realization 
+	<remark><p> The second part of (i) of <xref ref="lprealization"/> is usually called Egorov's Theorem. As a consequence of it, for any realization 
 	<m>\phi (x)</m> of some <m>\phi \in L^{p}[a, b]</m> and any <m>\epsilon &gt; 0</m>,
 	there exists a closed set <m>F</m> of <m>[a, b]</m> with <m>|F^{c}| &lt; \epsilon</m>
 	such that the <em>restriction</em> of <m>\phi(x)</m> on <m>F</m> is continuous. Note that
