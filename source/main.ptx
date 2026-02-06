@@ -751,6 +751,9 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		</subsection> 
 	</section>
 	<section xml:id="chp-int"><title> The Completion of the Space of Continuous Functions under Integral Norms</title>
+		<p> The space <m>C[a, b]</m> of continuous  functions on a closed interval <m>[a, b]</m> is a closed metric space under the uniform norm <m>\Vert f \Vert_{C^0} :=\max_{x\in [a, b]} |f(x)|</m>. However, it is not complete under the integral norms <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m> for any <m>1\le p &lt; \infty</m>. 
+			The completion of <m>C[a, b]</m> under these integral norms leads to the important class of functions called <term>integrable functions</term>, which are more general than continuous functions but still have well-defined integrals.	Such functions play important roles in analysis and its applications.
+		</p>
 	<p> We sketch below some main properties of  the completion of the space of continuous functions under integral norms. The main line of approach is adapted from the following article by P. Lax,
 	<em>Rethinking the Lebesgue Integral</em>, The American Mathematical Monthly, Dec., 2009, Vol. 116, No. 10 (Dec., 2009), pp. 863-881. Although the discussion can be done with respect to the
 	Riemann-Stieltjes integral, we limit our discussion to the standard Riemann integral.
@@ -767,15 +770,15 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	<p> For any <m>1\le p &lt; \infty</m>, let <m>L^{p}[a,  b]</m> denote the completion of <m>C[a, b]</m>
 	under the norm <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m>. 
 	From the abstract completion process, each element <m>\phi\in L^{p}[a,  b]</m>
-	is an equivalence class of  sequences <m>\{ c_{k}\}</m> in <m>C[a, b]</m> which is Cauchy
+	is an equivalence class of  sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> which is Cauchy
 	under the <m>L^{p}[a,  b]</m>-norm. We would like to address the following questions
 	</p>
 	<p>
 	<ol marker="a.">
-	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
+	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm associate to a pointwise-defined function on <m>[a, b]</m>?
 	</li>
-	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
+	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm associate to a well-defined integral? What usual properties 
 	of integrals are preserved?
 	</li>
@@ -786,14 +789,14 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</p>
 	
 	<paragraphs><title>An elementary observation</title> <p>Suppose that
-	<m>\{ c_{k}\}</m> is a Cauchy sequence in <m>C[a, b]</m> 
+	<m>\{ c_{k}(x)\}</m> is a Cauchy sequence in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm. Then for <m>[a', b']\subset [a, b]</m>,
 	<m>\int_{a'}^{b'} c_{k}(x)\, dx</m> is a Cauchy sequence in <m>\bbR</m>; and for any <m>1\le q \le p</m>,
 	<m> 
-	\Vert c_{k} \Vert_{L^{q}[c,d]}</m>  is a Cauchy sequence in <m>\bbR</m>.
+	\Vert c_{k}(x)\Vert_{L^{q}[c,d]}</m>  is a Cauchy sequence in <m>\bbR</m>.
 	Furthermore, <m>\lim_{k\to\infty} \int_{a'}^{b'} c_{k}(x)\, dx</m>
-	and <m> \lim_{k\to\infty}\Vert c_{k} \Vert_{L^{q}[c,d]}</m> remain the same if
-	<m>\{ c_{k}\}</m> is replaced by an equivalent Cauchy sequence. </p> 
+	and <m> \lim_{k\to\infty}\Vert c_{k}(x)\Vert_{L^{q}[c,d]}</m> remain the same if
+	<m>\{ c_{k}(x)\}</m> is replaced by an equivalent Cauchy sequence. </p> 
 	</paragraphs>
 	<p>These properties are simple consequences of the triangle inequalities:
 	<md>
@@ -804,21 +807,21 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	\amp\le \left(\int_{a'}^{b'} \vert c_{k}(x)-c_{l}(x)\vert^{p} \, dx\right)^{1/p}(b'-a')^{1-1/p},
 	</mrow>
 	<mrow>
-	 \left| \Vert c_{k} \Vert_{L^{q}[a', b']} -\Vert c_{l} \Vert_{L^{q}[a', b']}\right| \amp\le \Vert c_{k} -c_{l}\Vert_{L^{q}[a', b']}
+	 \left| \Vert c_{k}(x)\Vert_{L^{q}[a', b']} -\Vert c_{l}(x) \Vert_{L^{q}[a', b']}\right| \amp\le \Vert c_{k}(x)-c_{l}(x)\Vert_{L^{q}[a', b']}
 </mrow>
 <mrow>
-\amp 	\le  \Vert c_{k} -c_{l}\Vert_{L^{p}[a', b']}(b'-a')^{1/q-1/p}.
+\amp 	\le  \Vert c_{k}(x) -c_{l}(x)\Vert_{L^{p}[a', b']}(b'-a')^{1/q-1/p}.
 	</mrow>
 	</md>
 	</p>
 	<p>
-	As a result, if we denote by <m>\phi</m> the equivalence class of <m>\{ c_{k}\}</m>, it makes sense
+	As a result, if we denote by <m>\phi</m> the equivalence class of <m>\{ c_{k}(x)\}</m>, it makes sense
 	to define
 	<me>
 	\int_{a'}^{b'} \phi = \lim_{k\to\infty} \int_{a'}^{b'} c_{k}(x)\, dx, \quad
-	\Vert \phi \Vert_{L^{q}[a', b']}= \lim_{k\to\infty}\Vert c_{k} \Vert_{L^{q}[a', b']}.
+	\Vert \phi \Vert_{L^{q}[a', b']}= \lim_{k\to\infty}\Vert c_{k}(x)\Vert_{L^{q}[a', b']}.
 	</me>
-	Any <m>c\in C[a, b]</m> defines a Cauchy sequence <m>\{c_{k} = c\}</m> in <m>L^{p}[a, b]</m>
+	Any <m>c(x)\in C[a, b]</m> defines a Cauchy sequence <m>\{c_{k}(x)= c(x)\}</m> in <m>L^{p}[a, b]</m>
 	and <m>\Vert c \Vert_{L^{q}[c,d]}</m> as defined through the limiting process above equals
 	the definition through Riemann's integral.
 	</p>
@@ -864,8 +867,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	under the <m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.</p>
 	</statement>
 	<proof> <p>For the given <m>\epsilon &gt; 0</m>, there exists some <m>N</m> such that 
-	for all <m>k, l \ge N</m>, <m>\Vert c_{k} -c_{l}\Vert_{L^{p}[a,b]} &lt; \epsilon^{1/p}/2</m>.
-	Since <m>c_{i}\in C[a, b]</m> for <m>i=1,\cdots, N</m>, there exists a 
+	for all <m>k, l \ge N</m>, <m>\Vert c_{k}(x) -c_{l}(x)\Vert_{L^{p}[a,b]} &lt; \epsilon^{1/p}/2</m>.
+	Since <m>c_{i}(x)\in C[a, b]</m> for <m>i=1,\cdots, N</m>, there exists a 
 	common <m>M &gt; 0</m> such that <m>|c_{k}(x)|\le M</m> for all
 	<m>x\in [a, b]</m> and <m>1\le k \le N</m>, therefore, there exists <m>\delta &gt; 0</m> such that
 	for any open subset <m>G</m> of <m>[a, b]</m>
@@ -876,7 +879,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	Now for <m>l &gt; N</m>, the triangle inequality continues to hold for integrals on <m>G</m>, which implies
 	that
 	<me>
-	\Vert c_{l}\Vert_{L^{p}(G)} \le \Vert c_{l}-c_{N}\Vert_{L^{p}(G)}+ \Vert c_{N}\Vert_{L^{p}(G)}
+	\Vert c_{l}(x)\Vert_{L^{p}(G)} \le \Vert c_{l}(x)-c_{N}(x)\Vert_{L^{p}(G)}+ \Vert c_{N}(x)\Vert_{L^{p}(G)}
 	\le  \epsilon^{1/p}/2 +  \epsilon^{1/p}/2.
 	</me>
 	from which our conclusion follows.</p>
@@ -946,7 +949,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	<definition><title>Realization of a Cauchy Sequence in <m>L^{p}[a, b]</m></title>
 		<statement>
 	<p> A function <m>\phi (x)</m> defined <m>a.e.</m> on <m>[a,  b]</m>
-	 is said to be a realization of <m>\phi \in L^{p}[a, b]</m> if there exists a Cauchy sequence <m>\{c_{k}\}</m>
+	 is said to be a realization of <m>\phi \in L^{p}[a, b]</m> if there exists a Cauchy sequence <m>\{c_{k}(x)\}</m>
 	  of continuous functions in <m>[a, b]</m> in the equivalence class of <m>\phi</m> which converges a.e to 
 	  <m>\phi (x)</m>:
 	  <me>
@@ -975,12 +978,12 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	  <proposition xml:id="lprealization"><title> Realization of Elements of <m>L^{p}[a, b]</m></title>
 	  <statement> <p>
 	  <ol marker="(i)">
-	  <li> Any Cauchy sequence <m>\{ c_{k}\}</m> in <m>C[a, b]</m> 
+	  <li> Any Cauchy sequence <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm has a subsequence which converges pointwise <m>a.e.</m> on 
 	<m>[a, b]</m>. Furthermore, for any <m>\epsilon &gt; 0</m>, there exists 
-	an open set <m>G</m> with <m>|G| &lt; \epsilon</m> such that  <m>\{ c_{k}\}</m>
+	an open set <m>G</m> with <m>|G| &lt; \epsilon</m> such that  <m>\{ c_{k}(x)\}</m>
 	converges uniformly over <m>G^{c}</m>.</li>
-	<li> <p>If <m>\{ c_{k}\}</m> and <m>\{ \tilde c_{k}\}</m> are two equivalent 
+	<li> <p>If <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are two equivalent 
 	Cauchy sequences  in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm such that both <m>\lim_{k\to \infty} c_{k}(x)</m> and
 	<m>\lim_{k\to \infty} \tilde c_{k}(x)</m> exist <m>a.e.</m>, then 
@@ -995,11 +998,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	then <m>\phi(x)=0</m> <m>a.e.</m> on <m>[a, b]</m>.
 	</p>
 		</li>
-		<li> If <m>\{ c_{k}\}</m> and <m>\{ \tilde c_{k}\}</m> are two 
+		<li> If <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are two 
 	Cauchy sequences  in <m>C[a, b]</m> 
 	under the <m>L^{p}[a,  b]</m>-norm such that
 	<m>\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)</m> <m>a.e.</m>,
-	then <m>\{ c_{k}\}</m> and <m>\{ \tilde c_{k}\}</m> are equivalent Cauchy sequences in 
+	then <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are equivalent Cauchy sequences in 
 	<m>L^{p}[a,  b]</m>.
 	</li>
 		</ol>
@@ -1009,7 +1012,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	under the <m>L^{p}[a,  b]</m>-norm has a subsequence, still denoted as 
 	 <m>\{ c_{k}(x) \}</m>, such that
 	 <me>
-	 \Vert c_{k} -c_{k+1}\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
+	 \Vert c_{k}(x) -c_{k+1}(x)\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
 	 </me>
 	 where <m>\epsilon_{k} &gt; 0</m> are such that <m>\sum_{k} \epsilon_{k}</m> converges.
 	 </p>
@@ -1047,7 +1050,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 </p>
 	 <p> For (ii), we can use the equivalent Cauchy sequences <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> 
 	 to construct a new Cauchy sequence, say, with <m> c_{k}(x)</m> as the <m>(2k-1)</m>-th term and
-	  <m>\{ \tilde c_{k}\}</m> as the <m>(2k)</m>-th term, then appeal to the proof of (i), making sure that
+	  <m>\{ \tilde c_{k}(x)\}</m> as the <m>(2k)</m>-th term, then appeal to the proof of (i), making sure that
 	  in selecting the subsequence, infinitely many terms from both sequences are selected. This 
 	  subsequence, selected from two <m>a.e.</m> convergent  sequences, converges <m>a.e.</m>, which
 	  shows that <m>\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)</m> <m>a.e. </m>.
@@ -1107,7 +1110,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	such that the <em>restriction</em> of <m>\phi(x)</m> on <m>F</m> is continuous. Note that
 	this is not saying that <m>\phi(x)</m> is continuous at every point of <m>F</m> as a function
 	on <m>[a, b]</m>. Furthermore, for any <m>\phi \in L^{p}[a, b]</m> and any <m>\epsilon,
-	\epsilon' &gt; 0</m>, one can find a continuous approximation <m>c\in C[a, b]</m> 
+	\epsilon' &gt; 0</m>, one can find a continuous approximation <m>c(x) \in C[a, b]</m> 
 	in the sense that exists an open set <m>G</m> with <m>|G| &lt; \epsilon'</m> such that
 	<me>
 	\Vert \phi - c \Vert_{L^{p}[a, b]} &lt; \epsilon, \quad\text{ and } \vert \phi (x) - c(x) \vert &lt; \epsilon \text{ for all } x\in G^{c}.
@@ -1132,10 +1135,10 @@ of the basic notions involved: curl and divergence of vector fields and differen
 
 	<corollary><title><m>L^{p}[a, b]</m> is closed under taking absolute values and maximums</title>
 	<statement>
-	<p> If <m>\{ c_{k} \}</m> in <m>C[a, b]</m> is a Cauchy sequence in <m>L^{p}[a, b]</m>-norm, 
+	<p> If <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> is a Cauchy sequence in <m>L^{p}[a, b]</m>-norm, 
 	representing 
 	<m>\phi</m> in <m>L^{p}[a, b]</m>,
-	then  <m>\{ |c_{k}| \}</m> in <m>C[a, b]</m> is a Cauchy sequence in <m>L^{p}[a, b]</m>-norm
+	then  <m>\{ |c_{k}(x)| \}</m> in <m>C[a, b]</m> is a Cauchy sequence in <m>L^{p}[a, b]</m>-norm
 	whose realization is given by <m>|\phi (x)|</m>.
 	</p>
 	<p> If <m>\phi, \psi\in L^{p}[a, b]</m>, then <m>\max\{\phi, \psi\} :=(\phi + \psi + |\phi - \psi||)/2 
@@ -1157,24 +1160,24 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	and <m> \phi_{k} (x) \to \phi (x)</m> <m>\ a.e.</m> as <m>k\to \infty</m>.
 	</p>
 	</statement>
-	<proof> <p> For each <m>\phi_{k}</m> there exists some <m>c_{k} \in C[a,  b]</m> 
+	<proof> <p> For each <m>\phi_{k}</m> there exists some <m>c_{k}(x)\in C[a,  b]</m> 
 	and an open set  <m>G_{k}</m> with <m> |G_{k}| &lt; \epsilon_{k}</m> such that
 	<me>
-	\Vert \phi_{k} - c_{k} \Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}, \text{ and } 
+	\Vert \phi_{k} (x) - c_{k}(x)\Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}, \text{ and } 
 	 \vert \phi_{k} (x) - c_{k}(x) \vert &lt; \epsilon_{k} \text{ for all } x\in G_{k}^{c}.
 	</me>
 Then the set <m>E=\cap_{l=1}^{\infty}\cup_{k=l}^{\infty} G_{k}</m> is negligible, as
 <m>|\cup_{k=l}^{\infty} G_{k}|\le \sum_{k=l}^{\infty}|G_{k}| \to 0</m> as <m>l\to \infty</m>,
 and for any <m>x\in E^{c}</m>, there exists some <m>l_{x}</m> such that
-<m>x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}</m>. This implies that <m>\{ c_{k}\}</m> satisfies
+<m>x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}</m>. This implies that <m>\{ c_{k}(x)\}</m> satisfies
 <me> 
-\Vert c_{k} - c_{k+1} \Vert_{L^{p}[a, b]} &lt; 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
+\Vert c_{k}(x)- c_{k+1}(x) \Vert_{L^{p}[a, b]} &lt; 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
 \text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert&lt; \epsilon_{k} \text{ for } k\ge l_{x}
 </me>.
-Then <xref ref="lprealization"/> applied to  <m>\{ c_{k}\}</m> implies that
+Then <xref ref="lprealization"/> applied to  <m>\{ c_{k}(x)\}</m> implies that
 there exists a unique
 	<m>\phi \in L^{p}[a, b]</m> such that
-<me>\Vert c_{k} - \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
+<me>\Vert c_{k}(x)- \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
 </me>
 We can then conclude our proof by appealing to the triangle inequalities.
 </p>
@@ -1193,27 +1196,27 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<proposition xml:id="poselem"><title>Characterization of Nonnegative Elements of <m>L^{p}[a, b]</m></title>
 	<statement>
 	<p> An element <m>\phi \in L^{p}[a, b]</m> is non-negative
-	iff there exists a Cauchy sequence <m>\{ c_{k}\}</m> representing <m>\phi</m> such that
-	<m> c_{k}^{-}:=\min\{ c_{k}(x), 0\}</m> satisfies <m> \Vert c_{k}^{-} \Vert_{L^{p}}\to 0</m>
+	iff there exists a Cauchy sequence <m>\{ c_{k}(x)\}</m> representing <m>\phi</m> such that
+	<m> c_{k}^{-}(x):=\min\{ c_{k}(x), 0\}</m> satisfies <m> \Vert c_{k}^{-} \Vert_{L^{p}}\to 0</m>
 	as <m>k\to \infty</m>.
 	</p>
 	<p> As a consequence, if <m>\phi \in L^{p}[a, b]</m> is non-negative, then 
-	there exists a Cauchy sequence <m>\{ c_{k}\}</m> in <m>C[a, b]</m> representing <m>\phi</m>
+	there exists a Cauchy sequence <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> representing <m>\phi</m>
 	such that <m> \Vert c_{k}^{+} -\phi\Vert_{L^{p}}\to 0</m> as <m>k\to \infty</m> and 
-	<m>\int_{[a, b]} \phi = \lim_{k\to\infty} \int_{[a, b]} c_{k}^{+}\, dx \ge 0</m>.<fn> Since <m>\int_{[a, b]} \phi </m> is defined through a limiting process via 
+	<m>\int_{[a, b]} \phi = \lim_{k\to\infty} \int_{[a, b]} c_{k}^{+}(x)\, dx \ge 0</m>.<fn> Since <m>\int_{[a, b]} \phi </m> is defined through a limiting process via 
 	an approximate sequence not via a Riemann sum using <m>\phi(x)</m>, the sign
 	of <m>\int_{[a, b]} \phi </m> does not automatically follow from <m>\phi (x)\ge 0</m> <m>\ a.e.</m>.
 	</fn>
 	</p>
 	</statement>
 	
-	<proof><p> Suppose that <m>\{ c_{k}\}</m> is a sequence in <m>C[a, b]</m>, 
+	<proof><p> Suppose that <m>\{ c_{k}(x)\}</m> is a sequence in <m>C[a, b]</m>, 
 	Cauchy in <m>L^{p}[a, b]</m>-norm,
 	 representing <m>\phi</m> such that <m> \Vert c_{k}^{-} \Vert_{L^{p}}\to 0</m>
-	as <m>k\to \infty</m>. Define <m>c_{k}^{+}=c_{k}- c_{k}^{-}</m>, which is identified as
+	as <m>k\to \infty</m>. Define <m>c_{k}^{+}(x)=c_{k}(x)- c_{k}^{-}(x)</m>, which is identified as
 	<m>\max\{ c_{k}(x), 0\}</m>. 
-	Then <m>\{ c_{k}^{+}\}</m> is a sequence in <m>C[a, b]</m>, Cauchy in <m>L^{p}[a, b]</m>-norm. 
-	<xref ref="lprealization"/> applied to both <m>\{ c_{k}^{+}\}</m> and <m>\{ c_{k}^{-}\}</m>
+	Then <m>\{ c_{k}^{+}(x)\}</m> is a sequence in <m>C[a, b]</m>, Cauchy in <m>L^{p}[a, b]</m>-norm. 
+	<xref ref="lprealization"/> applied to both <m>\{ c_{k}^{+}(x)\}</m> and <m>\{ c_{k}^{-}(x)\}</m>
 	implies that there exists a subsequence, still indexed by <m>k</m> to avoid extra indices, such
 	that <m>\lim_{k\to \infty} c_{k}^{+}(x)</m> exists <m>a.e.</m>, 
 	which is evidently <m>\ge 0</m> <m>a.e.</m>,
@@ -1224,19 +1227,19 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	</me>
 	</p>
 	<p>
-	Conversely, suppose that <m>\phi (x)\ge 0</m> <m>a.e.</m> and <m>\{c_{k}\}</m>
+	Conversely, suppose that <m>\phi (x)\ge 0</m> <m>a.e.</m> and <m>\{c_{k}(x)\}</m>
 	is a  sequence in <m>C[a, b]</m>, Cauchy under the <m>L^{p}[a, b]</m> norm representing
 	<m>\phi</m> and <m>c_{k}(x)\to \phi(x)</m> <m>a.e.</m>.  Then we must have
 	<m> \lim_{k\to \infty} c_{k}^{-}(x)\to 0</m> <m>a.e.</m>. Noting that
 	<me>
 	\vert c_{k}^{-}(x) - c_{l}^{-}(x)\vert \le \vert c_{k}(x) - c_{l}(x)\vert
 	</me>
-	we see that <m>\{ c_{k}^{-}\}</m> is also a 
+	we see that <m>\{ c_{k}^{-}(x)\}</m> is also a 
 	 sequence in <m>C[a, b]</m>, Cauchy under the <m>L^{p}[a, b]</m> norm.
 	Then the proof of of <xref ref="lprealization"/> shows that
-	<m>c_{k}^{-}\to 0</m> in <m>L^{p}[a, b]</m> norm, and
-	<m>\Vert c_{k}^{+}-\phi\Vert_{L^{p}[a, b]}\le \Vert c_{k}-\phi\Vert_{L^{p}[a, b]} + 
-	\Vert c_{k}^{-}\Vert_{L^{p}[a, b]} \to 0</m> as <m>k\to \infty</m>.
+	<m>c_{k}^{-}(x)\to 0</m> in <m>L^{p}[a, b]</m> norm, and
+	<me>\Vert c_{k}^{+}(x)-\phi(x)\Vert_{L^{p}[a, b]}\le \Vert c_{k}(x)-\phi(x)\Vert_{L^{p}[a, b]} + 
+	\Vert c_{k}^{-}(x)\Vert_{L^{p}[a, b]} \to 0</me> as <m>k\to \infty</m>.
 	</p>
 	</proof>
 	</proposition>
@@ -1262,36 +1265,36 @@ We can then conclude our proof by appealing to the triangle inequalities.
 		</ol>
 	</p>
 	</statement>
-	<proof><p> For (a), take <m>\{b_{k}\}\subset \in C[a, b]</m> such that
-	<m>b_{k}\to f</m> in <m>L^{p}[a, b]</m> and
-	<m>\{c_{k}\} \subset \in C[a, b]</m> such that <m>c_{k}\to g</m> in <m>L^{p'}[a, b]</m>.
-	We show that <m>\{b_{k}c_{k}\}</m> is Cauchy in <m>L[a, b]</m> and that
+	<proof><p> For (a), take <m>\{b_{k}(x)\}\subset \in C[a, b]</m> such that
+	<m>b_{k}(x)\to f(x)</m> in <m>L^{p}[a, b]</m> and
+	<m>\{c_{k}(x)\} \subset \in C[a, b]</m> such that <m>c_{k}(x)\to g(x)</m> in <m>L^{p'}[a, b]</m>.
+	We show that <m>\{b_{k}(x)c_{k}(x)\}</m> is Cauchy in <m>L[a, b]</m> and that
 	<m>f(x)g(x)</m> is a realization of this sequence. </p>
 	<p> Note that there exists some <m>M &gt; 0</m> such that for all <m>k, l</m>
 	<me>
-	\Vert b_{l} \Vert_{L^{p}[a,b]}, \Vert c_{k}\Vert_{L^{p'}[a,b]}\le M.
+	\Vert b_{l}(x) \Vert_{L^{p}[a,b]}, \Vert c_{k}(x)\Vert_{L^{p'}[a,b]}\le M.
 	</me>
 	Then
 	<md> 
 	<mrow>
-	\amp \Vert b_{k}c_{k}-b_{l}c_{l}\Vert_{L[a,b]} 
+	\amp \Vert b_{k}(x)c_{k}(x)-b_{l}(x)c_{l}(x)\Vert_{L[a,b]} 
 	</mrow>
 	<mrow>
-	\le \amp \Vert \left(b_{k}-b_{l}\right)c_{k}\Vert_{L[a,b]} +
-	\Vert b_{l}\left( c_{k}-c_{l} \right)\Vert_{L[a,b]}
+	\le \amp \Vert \left(b_{k}(x)-b_{l}(x)\right)c_{k}(x)\Vert_{L[a,b]} +
+	\Vert b_{l}(x)\left( c_{k}(x)-c_{l}(x) \right)\Vert_{L[a,b]}
 	</mrow>
 	<mrow>
-	\le \amp \Vert \left(b_{k}-b_{l}\right)\Vert_{L^{p}[a,b]} \Vert c_{k}\Vert_{L^{p'}[a,b]}
-	+ \Vert b_{l} \Vert_{L^{p}[a,b]} \Vert \left( c_{k}-c_{l} \right)\Vert_{L^{p'}[a,b]}
+	\le \amp \Vert \left(b_{k}(x)-b_{l}(x)\right)\Vert_{L^{p}[a,b]} \Vert c_{k}(x)\Vert_{L^{p'}[a,b]}
+	+ \Vert b_{l}(x) \Vert_{L^{p}[a,b]} \Vert \left( c_{k}(x)-c_{l}(x) \right)\Vert_{L^{p'}[a,b]}
 	</mrow>
 	</md>
-	Since <m> \Vert \left(b_{k}-b_{l}\right)\Vert_{L^{p}[a,b]} \to 0</m> and
-	<m> \Vert \left( c_{k}-c_{l} \right)\Vert_{L^{p'}[a,b]}\to 0</m> as <m>k, l\to \infty</m>,
-	we can conclude that <m> \Vert b_{k}c_{k}-b_{l}c_{l}\Vert_{L[a,b]} \to 0</m>
+	Since <m> \Vert \left(b_{k}(x)-b_{l}(x)\right)\Vert_{L^{p}[a,b]} \to 0</m> and
+	<m> \Vert \left( c_{k}(x)-c_{l}(x) \right)\Vert_{L^{p'}[a,b]}\to 0</m> as <m>k, l\to \infty</m>,
+	we can conclude that <m> \Vert b_{k}(x)c_{k}(x)-b_{l}(x)c_{l}(x)\Vert_{L[a,b]} \to 0</m>
 	as <m>k, l\to \infty</m>.  Since <m>b_{k}(x)\to f(x)</m> <m>a.e.</m> and
 	<m>c_{k}(x)\to g(x)</m> <m>a.e.</m>, it follows that
 	<m>b_{k}(x)c_{k}(x)\to f(x)g(x)</m> <m>a.e.</m>, making
-	<m>f(x)g(x)</m> as a realization of the Cauchy sequence <m>\{b_{k}c_{k}\}</m>.
+	<m>f(x)g(x)</m> as a realization of the Cauchy sequence <m>\{b_{k}(x)c_{k}(x)\}</m>.
 	</p>
 	<p>Finally, using
 	<me>
@@ -1316,7 +1319,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<p>For (b),
 	the key is how the assumption <m>|g(x)|\le M</m> <m>a.e.</m> can be
 	reflected in a Cauchy sequence from <m>C[a, b]</m> approximating <m>g</m> in <m>L[a, b]</m>.
-	Let <m>\{c_{k}\}\subset C[a, b]</m> be a Cauchy sequence for <m>g\in L[a, b]</m>. 
+	Let <m>\{c_{k}(x)\}\subset C[a, b]</m> be a Cauchy sequence for <m>g\in L[a, b]</m>. 
 	Define
 	<me>
 	c^{M}_{k}(x)=\begin{cases} M \amp \text{ if } c_{k}(x) &gt; M\\
@@ -1324,8 +1327,8 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	-M \amp \text{ if } c_{k}(x) &lt; -M\\
 	\end{cases}
 	</me>
-	We claim that <m>\{ c^{M}_{k}\}\subset C[a, b]</m> is a Cauchy sequence equivalent to
-	<m>\{c_{k}\}</m>. </p>
+	We claim that <m>\{ c^{M}_{k}(x)\}\subset C[a, b]</m> is a Cauchy sequence equivalent to
+	<m>\{c_{k}(x)\}</m>. </p>
 	<p>First, observing that 
 	<me>
 	|c^{M}_{k}(x)-c^{M}_{l}(x)|\le |c_{k}(x)-c_{l}(x)|
@@ -1338,9 +1341,9 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	and that <m>(c_{k}(x)-M)_{+}=-(M-c_{k}(x))_{-}\to 0</m> in <m>L^{p}[a, b]</m>,
 	as <m>M-g(x)\ge 0</m> and <m>M-c_{k}(x) \to M-g(x)</m>  in <m>L^{p}[a, b]</m>;
 	similarly, <m> (c_{k}(x)+M)_{-} \to 0</m> in <m>L^{p}[a, b]</m>. This shows that
-	<m>\{ c^{M}_{k}\}</m> is equivalent to <m>\{c_{k}(x)\}</m>.
+	<m>\{ c^{M}_{k}(x)\}</m> is equivalent to <m>\{c_{k}(x)\}</m>.
 	</p>
-	<p> Now if <m>\{b_{k}\}\subset C[a, b]</m> is a Cauchy sequence for <m>f</m> in 
+	<p> Now if <m>\{b_{k}(x)\}\subset C[a, b]</m> is a Cauchy sequence for <m>f</m> in 
 	<m>L[a,  b]</m>, then we claim that
 	<m>\{b_{k}(x) c_{k}^{M}(x)\} </m> is a Cauchy sequence for <m>f(x)g(x)</m>
 	in <m>L[a, b]</m>. This is because
@@ -1540,11 +1543,15 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	Therefore by <xref ref="MCT"/> <m>\phi \in L^{1}[a, b]</m>.</p>
 	<p> We can now apply Fatou Theorem to the sequence of non-negative
 	functions <m>2 g - |\phi_{k}-\phi| \in L^{1}[a, b]</m> to imply
-	<me>
+	<md>
+		<mrow>
 	\int_{a}^{b} \liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)
-	\le \liminf_{k\to\infty} \int_{a}^{b} \left( 2 g - |\phi_{k}-\phi|\right)
-	= \int_{a}^{b} 2g - \limsup_{k\to\infty} \int_{a}^{b} |\phi_{k}-\phi|.
-	</me>
+	\amp \le \liminf_{k\to\infty} \int_{a}^{b} \left( 2 g - |\phi_{k}-\phi|\right)
+		</mrow>
+	<mrow>
+	\amp = \int_{a}^{b} 2g - \limsup_{k\to\infty} \int_{a}^{b} |\phi_{k}-\phi|.
+		</mrow>
+	</md>
 	Since <m> \liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)=2g</m>, it follows that
 	<m> \limsup_{k\to\infty}  \int_{a}^{b }|\phi_{k}-\phi|=0</m>.
 	</p>
@@ -1810,12 +1817,12 @@ We can then conclude our proof by appealing to the triangle inequalities.
 						</proof>
 					</theorem>
 					<corollary><title>Approximation Property of Functions in <m>\cR[a, b]</m></title>
-					<statement><p>  Any Riemann integrable function <m>f\in \cR[a, b]</m> lies in
+					<statement><p>  Any Riemann integrable function <m>f(x) \in \cR[a, b]</m> lies in
 					<m>L^{p}[a, b]</m> for any <m>1\le p &lt; \infty</m>, and for any
 					<m>\epsilon &gt; 0</m> there exists a continuous function 
-					<m>c\in C[a, b]</m> and an open set <m>G</m> in <m>[a, b]</m>
+					<m>c(x) \in C[a, b]</m> and an open set <m>G</m> in <m>[a, b]</m>
 					such that <m>|G| &lt; \epsilon</m>, <m>f=c</m> on <m>G^{c}</m>,
-					and <m>\max_{[a, b]}|c| \le \max_{[a,b]}|f|</m>.
+					and <m>\max_{[a, b]}|c(x)| \le \max_{[a,b]}|f(x)|</m>.
 					</p>
 					</statement>
 					<proof><p> Since the set <m>D</m> of discontinuity of <m>f</m> is negligible, 
@@ -1824,7 +1831,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 					every point <m>x</m> in the closed set
 					<m>[a, b]\setminus G</m>, <m>\osc(f)(x)=0</m>, so <m>f</m> is a continuous
 					function on this closed set.   It can be extended to a continuous function 
-					<m>c</m> on <m>[a, b]</m> such that <m>\max_{[a, b]}|c| \le \max_{[a,b]}|f|</m>.
+					<m>c(x)</m> on <m>[a, b]</m> such that <m>\max_{[a, b]}|c(x)| \le \max_{[a,b]}|f(x)|</m>.
 					Then this <m>c</m> satisfies our requirements. 
 					</p>
 					</proof>
@@ -1924,7 +1931,7 @@ differentiable <m>a.e.</m> on <m>[a, b]</m> with its derivative a function in
 <proof> <p>According to our discussion above, 
 <m>f(x) :=\int_{a}^{x} g(t)\, dt</m> is differentiable <m>a.e.</m> on <m>[a, b]</m> and
 <m> f'(x)\in L^{1}[a, b]</m>. This implies that
-<m>g_{h}(x) := h^{-1}\int_{x}^{x+h} g(t)\, dt =h^{-1}(f(x+h)-f(x)) \to f'(x)</m>  
+<me>g_{h}(x) := h^{-1}\int_{x}^{x+h} g(t)\, dt =h^{-1}(f(x+h)-f(x)) \to f'(x)</me>  
 <m>a.e.</m> on <m>[a, b]</m> as <m>|h|\to 0</m>. 
 </p>
 <p>
@@ -1968,10 +1975,14 @@ its derivative, <m>f'(x)</m>, is the realization of a function in <m>L^{1}[a, b]
 <m>a.e.</m> on <m>[a, b]</m>. For each <m>h &gt; 0</m>, 
 <m> h^{-1}(f(x+h)-f(x)) </m> is a non-negative function in <m>\cR[a, b]</m> (extend <m>f(x)=f(b)</m>
 for <m>x &gt; b</m>), and
-<me>
-\int_{a}^{b} h^{-1}(f(x+h)-f(x)) \, dx =h^{-1}\left( \int_{b}^{b+h} f(x)\,dx - \int_{a}^{a+h} f(x)\, dx\right)
-\le f(b)- f(a),
-</me>
+<md>
+	<mrow> 
+\int_{a}^{b} h^{-1}(f(x+h)-f(x)) \, dx \amp =h^{-1}\left( \int_{b}^{b+h} f(x)\,dx - \int_{a}^{a+h} f(x)\, dx\right)
+</mrow>
+<mrow>
+\amp \le f(b)- f(a),
+</mrow>
+</md>
 using <m>\int_{a}^{a+h} f(x)\, dx\ge f(a) h</m>. Thus by Fatou Theorem,
 <md>
 <mrow>
