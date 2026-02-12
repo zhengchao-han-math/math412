@@ -547,7 +547,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 			</me>
 			Using the uniform continuity of <m>f</m> on <m>[a, b]\setminus \cup_{i=1}^{k} (l_{i}, r_{i})</m>,
 			we can find a partition <m>\cP</m> on this finite union of closed intervals such that
-			<me> \sum_{j} \left(M_{j}(f)-m_{j}(f)\right) (\alpha(x_{j})-\alpha(x_{j}) &lt; \epsilon/2.
+			<me> \sum_{j} \left(M_{j}(f)-m_{j}(f)\right) (\alpha(x_{j})-\alpha(x_{j-1})) &lt; \epsilon/2.
 			</me>
 			Adjoining <m>\cP</m> with <m> \cup_{i=1}^{k} [l_{i}, r_{i}]</m> forms a partition of <m>[a, b]</m>
 			for which <xref ref="RS-IntC"/> holds.</p>
@@ -751,8 +751,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		</subsection> 
 	</section>
 	<section xml:id="chp-int"><title> The Completion of the Space of Continuous Functions under Integral Norms</title>
-		<p> The space <m>C[a, b]</m> of continuous  functions on a closed interval <m>[a, b]</m> is a closed metric space under the uniform norm <m>\Vert f \Vert_{C^0} :=\max_{x\in [a, b]} |f(x)|</m>. However, it is not complete under the integral norms <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m> for any <m>1\le p &lt; \infty</m>. 
-			The completion of <m>C[a, b]</m> under these integral norms leads to the important class of functions called <term>integrable functions</term>, which are more general than continuous functions but still have well-defined integrals.	Such functions play important roles in analysis and its applications.
+		<p> The space <m>C[a, b]</m> of continuous  functions on a closed interval <m>[a, b]</m> is a closed metric space in theuniform norm <m>\Vert f \Vert_{C^0} :=\max_{x\in [a, b]} |f(x)|</m>. However, it is not complete in theintegral norms <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m> for any <m>1\le p &lt; \infty</m>. 
+			The completion of <m>C[a, b]</m> under these integral norms leads to the important classes of functions called <m>L^p</m>-<term>integrable functions</term>, which are more general than continuous functions but still have well-defined integrals.	Such functions play important roles in analysis and its applications.
 		</p>
 	<p> We sketch below some main properties of  the completion of the space of continuous functions under integral norms. The main line of approach is adapted from the following article by P. Lax,
 	<em>Rethinking the Lebesgue Integral</em>, The American Mathematical Monthly, Dec., 2009, Vol. 116, No. 10 (Dec., 2009), pp. 863-881. Although the discussion can be done with respect to the
@@ -768,18 +768,18 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	sense, it gives information about the limit of the corresponding	sets.
 	</p>
 	<p> For any <m>1\le p &lt; \infty</m>, let <m>L^{p}[a,  b]</m> denote the completion of <m>C[a, b]</m>
-	under the norm <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m>. 
+	in thenorm <m>\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}</m>. 
 	From the abstract completion process, each element <m>\phi\in L^{p}[a,  b]</m>
 	is an equivalence class of  sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> which is Cauchy
-	under the <m>L^{p}[a,  b]</m>-norm. We would like to address the following questions
+	in the<m>L^{p}[a,  b]</m>-norm. We would like to address the following questions
 	</p>
 	<p>
 	<ol marker="a.">
 	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm associate to a pointwise-defined function on <m>[a, b]</m>?
+	in the<m>L^{p}[a,  b]</m>-norm associate to a pointwise-defined function on <m>[a, b]</m>?
 	</li>
 	<li> Does each equivalence class of Cauchy sequences <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm associate to a well-defined integral? What usual properties 
+	in the<m>L^{p}[a,  b]</m>-norm associate to a well-defined integral? What usual properties 
 	of integrals are preserved?
 	</li>
 	<li> Establish criteria for other limiting process of functions in <m>C[a, b]</m> or
@@ -787,10 +787,11 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</li>
 	</ol>
 	</p>
-	
+	<p> It turns out that <m>L^{p}[a,  b]</m> are different spaces for different values of <m>p</m>,  even though they are defined through a completion process starting from the same space <m>C[a, b]</m>. Their differences lie in the different norms used.
+	</p>
 	<paragraphs><title>An elementary observation</title> <p>Suppose that
 	<m>\{ c_{k}(x)\}</m> is a Cauchy sequence in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm. Then for <m>[a', b']\subset [a, b]</m>,
+	in the <m>L^{p}[a,  b]</m>-norm. Then for <m>[a', b']\subset [a, b]</m>,
 	<m>\int_{a'}^{b'} c_{k}(x)\, dx</m> is a Cauchy sequence in <m>\bbR</m>; and for any <m>1\le q \le p</m>,
 	<m> 
 	\Vert c_{k}(x)\Vert_{L^{q}[c,d]}</m>  is a Cauchy sequence in <m>\bbR</m>.
@@ -864,7 +865,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	 a  Sequence in <m>C[a, b]</m> which is Cauchy in the <m>L^{p}[a, b]</m> norm</title>
 	 <statement><p>
 	The <m>L^{p}</m>-integrals of any  Cauchy sequence  <m>\{ c_{k}(x) \}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.</p>
+	in the<m>L^{p}[a,  b]</m>-norm are uniformly absolutely continuous on <m>[a, b]</m>.</p>
 	</statement>
 	<proof> <p>For the given <m>\epsilon &gt; 0</m>, there exists some <m>N</m> such that 
 	for all <m>k, l \ge N</m>, <m>\Vert c_{k}(x) -c_{l}(x)\Vert_{L^{p}[a,b]} &lt; \epsilon^{1/p}/2</m>.
@@ -979,20 +980,20 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	  <statement> <p>
 	  <ol marker="(i)">
 	  <li> Any Cauchy sequence <m>\{ c_{k}(x)\}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm has a subsequence which converges pointwise <m>a.e.</m> on 
+	in the<m>L^{p}[a,  b]</m>-norm has a subsequence which converges pointwise <m>a.e.</m> on 
 	<m>[a, b]</m>. Furthermore, for any <m>\epsilon &gt; 0</m>, there exists 
 	an open set <m>G</m> with <m>|G| &lt; \epsilon</m> such that  <m>\{ c_{k}(x)\}</m>
 	converges uniformly over <m>G^{c}</m>.</li>
 	<li> <p>If <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are two equivalent 
 	Cauchy sequences  in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm such that both <m>\lim_{k\to \infty} c_{k}(x)</m> and
+	in the<m>L^{p}[a,  b]</m>-norm such that both <m>\lim_{k\to \infty} c_{k}(x)</m> and
 	<m>\lim_{k\to \infty} \tilde c_{k}(x)</m> exist <m>a.e.</m>, then 
 	<m>\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)</m> <m>a.e. </m>.
 </p>
 	<p> As a result, 
   any <m>\phi</m> in <m>L^{p}[a, b]</m>, namely, an 
 	  equivalence class of Cauchy sequences in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm,  has an <m>a.e.</m>  pointwise defined realization defined on 
+	in the<m>L^{p}[a,  b]</m>-norm,  has an <m>a.e.</m>  pointwise defined realization defined on 
 	<m>[a, b]</m>. We will denote such a realization by <m>\phi (x)</m>.
 	In particular, if <m>\phi</m> in <m>L^{p}[a, b]</m> is such that <m>\Vert \phi \Vert_{L^{p}[a, b]}=0</m>,
 	then <m>\phi(x)=0</m> <m>a.e.</m> on <m>[a, b]</m>.
@@ -1000,7 +1001,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		</li>
 		<li> If <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are two 
 	Cauchy sequences  in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm such that
+	in the<m>L^{p}[a,  b]</m>-norm such that
 	<m>\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)</m> <m>a.e.</m>,
 	then <m>\{ c_{k}(x)\}</m> and <m>\{ \tilde c_{k}(x)\}</m> are equivalent Cauchy sequences in 
 	<m>L^{p}[a,  b]</m>.
@@ -1009,7 +1010,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	</p>
 	</statement>
 	<proof><p> Any Cauchy sequence <m>\{ c_{k}(x) \}</m> in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm has a subsequence, still denoted as 
+	in the<m>L^{p}[a,  b]</m>-norm has a subsequence, still denoted as 
 	 <m>\{ c_{k}(x) \}</m>, such that
 	 <me>
 	 \Vert c_{k}(x) -c_{k+1}(x)\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
@@ -1057,7 +1058,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	  </p>
 	  <p> For (iii), define <m>f_{k}(x)=c_{k}(x)-\tilde c_{k}(x)</m>, then <m>\{f_{k}(x)\}</m> is
 	  a Cauchy sequence  in <m>C[a, b]</m> 
-	under the <m>L^{p}[a,  b]</m>-norm such that <m>\lim_{k\to\infty} f_{k}(x)=0</m> <m>a.e.</m>.
+	in the<m>L^{p}[a,  b]</m>-norm such that <m>\lim_{k\to\infty} f_{k}(x)=0</m> <m>a.e.</m>.
 	We now show that <m>\{f_{k}(x)\}\to 0</m> in <m>L^{p}[a, b]</m>. We argue by contradiction:
 	suppose not, then there exists some <m>\sigma &gt; 0</m> and 
 	a subsequence of <m>\{f_{k}(x)\}</m>, still denoted as <m>\{f_{k}(x)\}</m>, 
@@ -1228,14 +1229,14 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	</p>
 	<p>
 	Conversely, suppose that <m>\phi (x)\ge 0</m> <m>a.e.</m> and <m>\{c_{k}(x)\}</m>
-	is a  sequence in <m>C[a, b]</m>, Cauchy under the <m>L^{p}[a, b]</m> norm representing
+	is a  sequence in <m>C[a, b]</m>, Cauchy in the<m>L^{p}[a, b]</m> norm representing
 	<m>\phi</m> and <m>c_{k}(x)\to \phi(x)</m> <m>a.e.</m>.  Then we must have
 	<m> \lim_{k\to \infty} c_{k}^{-}(x)\to 0</m> <m>a.e.</m>. Noting that
 	<me>
 	\vert c_{k}^{-}(x) - c_{l}^{-}(x)\vert \le \vert c_{k}(x) - c_{l}(x)\vert
 	</me>
 	we see that <m>\{ c_{k}^{-}(x)\}</m> is also a 
-	 sequence in <m>C[a, b]</m>, Cauchy under the <m>L^{p}[a, b]</m> norm.
+	 sequence in <m>C[a, b]</m>, Cauchy in the<m>L^{p}[a, b]</m> norm.
 	Then the proof of of <xref ref="lprealization"/> shows that
 	<m>c_{k}^{-}(x)\to 0</m> in <m>L^{p}[a, b]</m> norm, and
 	<me>\Vert c_{k}^{+}(x)-\phi(x)\Vert_{L^{p}[a, b]}\le \Vert c_{k}(x)-\phi(x)\Vert_{L^{p}[a, b]} + 
