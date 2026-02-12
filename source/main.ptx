@@ -2517,30 +2517,40 @@ Since this series is <m>2\pi</m> periodic, so the result on
 		<m>\epsilon \gt 0</m>, we first use the uniform convergence  of <m>\{f_n(x)\}</m>
 		to <m>f(x)</m> on <m>(a, b)</m> to find some <m>N</m> such that for all <m>n\ge N</m>
 		and all <m>x\in (a, b)</m>,
-		<m>\vert f_n(x)-f(x)\vert \lt \epsilon/L</m>. Then for any <m>n\ge N</m>,
+		<m>\vert f_n(x)-f(x)\vert \lt \epsilon/L</m>. So for any partition <m>\cP</m> of <m>[a, b]</m> and any interval <m>I\in \cP</m>, we have
+		<me>f_n(x) \le \vert f_n(x)-f(x)\vert +f(x) \lt \epsilon/L +M_f(I)</me> 
+		for all <m>x\in I</m>, from which it follows that <me>U(f_n, \cP, \alpha)\le U(f, \cP, \alpha)+\epsilon.</me>
+		 Similarly, we have <m>U(f, \cP, \alpha)\le U(f_n, \cP, \alpha)+\epsilon</m>, so
+			<me> \vert U(f, \cP, \alpha)- U(f_n, \cP, \alpha)\vert \le \epsilon \quad \forall n\ge N</me> 
+and 
+		<me>\vert L(f, \cP, \alpha)- L(f_n, \cP, \alpha)\vert \le \epsilon \quad \forall n\ge N.</me>
+		</p>
+		
+		<p> 
+		Next, for any <m>n\ge N</m>,
 		  we find a partition
-		<m>\cP</m> of <m>[a, b]</m> such that
+		<m>\cP_n</m> of <m>[a, b]</m> such that
 		<me>
-		\int_a^b f_n(x)\, d\alpha(x)-\epsilon \le L(f_n, \cP, \alpha) 
-		\le U(f_n, \cP, \alpha)\le 
+		\int_a^b f_n(x)\, d\alpha(x)-\epsilon \le L(f_n, \cP_n, \alpha) 
+		\le U(f_n, \cP_n, \alpha)\le 
 		\int_a^b f_n(x)\, d\alpha(x) +\epsilon.
 		</me>
 		Now we find
 		<me>
-		L(f_n, \cP, \alpha)-\epsilon \le L(f, \cP, \alpha)\le U(f, \cP, \alpha)\le U(f_n, \cP, \alpha)+\epsilon,
+		L(f_n, \cP_n, \alpha)-\epsilon \le L(f, \cP_n, \alpha)\le U(f, \cP_n, \alpha)\le U(f_n, \cP_n, \alpha)+\epsilon,
 		</me>
 		which, when combined with the above estimates, gives
 		<me>
-		\int_a^b f_n(x)\, d\alpha(x)-2\epsilon  \le L(f, \cP, \alpha)\le U(f, \cP, \alpha)\le
+		\int_a^b f_n(x)\, d\alpha(x)-2\epsilon  \le L(f, \cP_n, \alpha)\le U(f, \cP_n, \alpha)\le
 		\int_a^b f_n(x)\, d\alpha(x) +2\epsilon.
 		</me>
 		This shows that
 		<me> 
-		U(f, \cP, \alpha)-U(f, \cP, \alpha) \lt 4\epsilon \text{ so  $\int_a^b f(x)\, d\alpha(x)$ exists;}
-		</me>
-		and that
+		U(f, \cP_n, \alpha)-L(f, \cP_n, \alpha) \lt 4\epsilon \text{ so  $\int_a^b f(x)\, d\alpha(x)$ exists;}
+		</me>  
+		and since <m> L(f, \cP_n, \alpha) \le \int_a^b f(x)\, d\alpha(x) \le U(f, \cP_n, \alpha)</m>, we have	
 		<me>
-		\vert \int_a^b f(x)\, d\alpha(x) - \int_a^b f_n(x)\, d\alpha(x)\vert \lt 2\epsilon.
+		\vert \int_a^b f(x)\, d\alpha(x) - \int_a^b f_n(x)\, d\alpha(x)\vert \lt 2\epsilon \quad \forall n\ge N.
 		</me>
 		This shows that <xref ref="limitint"/>.
 		</p>
@@ -5029,11 +5039,11 @@ Fourier series expansion of <m>g'(x)</m> on <m> [-\pi, \pi]</m> can be obtained 
 term-wise differentiation of the Fourier series expansion of <m>g(x)</m> on <m> [-\pi, \pi]</m>.
 </p> 
 </statement>
-<proof> <p> Note that, for $n=0$,
+<proof> <p> Note that, for <m>n=0</m>,
 <me>
 2\pi a_{0}'=\int_{-\pi}^{\pi} g'(x)\, dx=g(\pi)-g(-\pi)=0,
 </me>
-and for $n\ge 1$, integration by parts gives
+and for <m>n\ge 1</m>, integration by parts gives
 <md>
 <mrow> \pi a_{n}' =  \amp \int_{-\pi}^{\pi } g'(x) \cos (nx) \, dx </mrow>
 <mrow> = \amp g(x) \cos (nx) \Big|_{x=-\pi}^{x=\pi}+ n
