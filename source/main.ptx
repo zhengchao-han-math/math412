@@ -4845,20 +4845,54 @@ extended function is <m>g(\pi)</m> and the right limit  of the
 extended function is <m>g(-\pi)</m>. Thus <m>S_N[g]( \pi)\to \frac{g(\pi)+g(-\pi)}{2}</m> as <m>N\to \infty</m>.
 Since the Fourier series expansion here is <m>2\pi</m> periodic, the proper interpretation of the
 expansion is that the series equals the <m>2\pi</m> periodic extension of the given function on 
-<m>(-\pi, \pi]</m> in the above sense.
+<m>(-\pi, \pi]</m> in the above sense. 
 </p>
+<p>
+	In applying Fourier expansions, it is important to have a keen awareness of the system of orthogoal functions we are working with. For example, if we are working with the set of orthogonal functions
+<m>\{ \sin (nx): n\in \mathbb N\}</m> on <m>[0, \pi]</m>, then the Fourier series expansion of a function <m>f\in \cR[0, \pi]</m> with respect to this set of orthogonal functions is <m>\sum_{n=1}^{\infty} b_{n} \sin (nx)</m>, 
+where <m>b_{n}=\frac{2}{\pi} \int_{0}^{\pi} f(x) \sin (nx)\, dx</m>. The proper interpretation of this expansion is that the series equals the odd extension of the given function on <m>(-\pi, \pi)</m> in the above sense. 
+In particular, if <m>f\in C[0, \pi]</m> and <m>f(0)\ne 0</m> or <m>f(\pi)\ne 0</m>, then the odd extension of <m>f</m> is not continuous at <m>0</m> or at <m> \pi</m>, so the Fourier series expansion of <m>f</m> with respect to the set of orthogonal functions
+<m>\{ \sin (nx): n\in \mathbb N\}</m> at <m>0</m> or at <m>\pi</m> does not converge to <m>f(0)</m> or to <m>f(\pi)</m>, but converges to <m>0</m> instead. A similar phenomenon occurs if we are working with the set of orthogonal functions
+<m>\{ \cos (nx): n\in \mathbb N\cup \{0\}\}</m> on <m>[0, \pi]</m>, then the Fourier series expansion of a function <m>f\in \cR[0, \pi]</m> with respect to this set of orthogonal functions is <m>\frac{a_0}{2}+\sum_{n=1}^{\infty} a_{n} \cos (nx)</m>, where <m>a_{n}=\frac{2}{\pi} \int_{0}^{\pi} f(x) \cos (nx)\, dx</m>. 
+The proper interpretation of this expansion is that the series equals the even extension of the given function on <m>(-\pi, \pi)</m> in the above sense.   
+</p>
+	
+<p>
+Often, a function <m>g</m> is given by some analytic expression, but that expression outside of the relevant interval has no direct bearing on the Fourier series expansion of <m>g</m> with respect to a given set of orthogonal functions.  
+The following figures illustrate the above phenomenon of different extensions of a given function on <m>[0, \pi]</m> or on <m>[-\pi, \pi]</m> and the resulting different Fourier series expansions with respect to the sets of orthogonal functions.
+</p>
+<figure xml:id="fig-FS">
+	<caption>Different Fourier Expansions of <m>f(x)=x</m></caption>
+	<sidebyside widths="30% 30% 30%">
+		<figure xml:id="fig-FS-0TPP">
+			<caption>The graph  of <m>f(x)=x</m> and its Fourier serires on <m>[0, 2\pi]</m> together with the graphs of their <m>2\pi</m> periodic extensions</caption>
+			<image    source="images/FS-0TPP.png"/>
+		</figure>
+		<figure xml:id="fig-Cos-Sin">
+			<caption>The graph  of <m>f(x)=x</m> and its Fourier cosine and sine serires on <m>[0, \pi]</m> together with the graphs of their <m>2\pi</m> periodic extensions</caption>
+			<image    source="images/FS-Cos-Sin.png"/>
+		</figure> 
+		<figure xml:id="fig-FS-TTPP">
+						<caption>The graph  of <m>f(x)=x</m> and its Fourier serires on <m>[-\pi, \pi]</m> together with the graphs of their <m>2\pi</m> periodic extensions</caption>
+						<image    source="images/FS-TTPP.png" />
+					</figure>
+		</sidebyside>
+	</figure>
+
+
+					
 <remark>
 <p>For any <m>x\in (-\pi, \pi)</m>, there exist continuous functions <m>f</m> such that 
 <m>S_N[f](x)</m> does not converge, so continuity of <m>f</m> at <m>x</m> alone may not
 guarantee that <m>S_N[f]( x)</m> converges as <m>N\to\infty</m>.</p>
-<p>However, a modified trigonometric series, the <term>Fejr</term> series, defined as
+<p>However, a modified trigonometric series, the <term>Fejér</term> series, defined as
 the arithmetic average of <m>S_{n}[f] (x)</m>'s:
 <me>
 \sigma_{N}[f](x)=\frac{S_{0}[f](x)+S_{1}[f](x)+\cdots+S_N[f]( x)}{N+1}
 </me>
 does converge to <m>f(x)</m> for any <m>f</m> which is continuous at <m>x</m>.</p>
 </remark>
-<theorem><title>Fejr Theorem</title>
+<theorem><title>Fejér Theorem</title>
 <statement><p> Suppose that the Riemann integrable function <m>f</m> on <m>(-\pi, \pi)</m> is
 continuous at <m>x\in (-\pi, \pi)</m>, then <m>\sigma_{N}[f](x)\to f(x)</m> as <m>N\to \infty</m>.
 If <m>f</m> is continuous on <m>[-\pi, \pi]</m> and is <m>2\pi</m> periodic, then
@@ -4926,7 +4960,7 @@ to carry out a similar convergence argument.
 </p>
 </proof>
 </theorem>
-<p>Fejr's theorem implies  that the span of <m>\{ e^{i nx}\}</m> (equivalently <m>\{\cos(nx), \sin(nx)\}</m>)
+<p>Fejér's theorem implies  that the span of <m>\{ e^{i nx}\}</m> (equivalently <m>\{\cos(nx), \sin(nx)\}</m>)
 is  dense in both <m>C[-\pi, \pi]</m> and <m>\cR[-\pi ,\pi]</m> in the mean square sense, for, given
 any <m>g\in \cR[-\pi ,\pi]</m> and <m>\epsilon \gt 0</m>, first find a <m>2\pi</m> periodic and continuous
 function <m>f</m> such that <m>\Vert f-g\Vert :=\left(\int_{-\pi}^{\pi}|f(t)-g(t)|^{2}\, dt\right)^{1/2}\lt \epsilon</m>.
@@ -4948,7 +4982,7 @@ when <m>N' \le N</m>, the Best Approximation Theorem implies that
 <me>
 \Vert S_{N}(g)-g\Vert\le \Vert S_{N'}(g)-g\Vert \text{ when $N' \le N$.}
 </me>
-For any <m>\epsilon \gt 0</m>, Fejr's theorem gives some trigonometric polynomial 
+For any <m>\epsilon \gt 0</m>, Fejér's theorem gives some trigonometric polynomial 
 <m>p</m> of degree <m>N'</m> such that <m>\Vert g- p\Vert \lt \epsilon</m>. Then the
 Best Approximation Theorem implies that <m>\Vert S_{N'}(g)-g\Vert \lt \epsilon</m>. Then for all
 <m>N\ge N'</m>, we have <m>\Vert S_{N}(g)-g\Vert\le \epsilon</m>. The Parseval equality follows
@@ -4999,18 +5033,18 @@ is the Fourier series of <m>g\in \cR[-\pi, \pi]</m>. Then for any <m>a, b \in (-
 </statement>
 <proof><p> The assertion is equivalent	 to 
 <men xml:id="termwiseint">
-\int_{a}^{b} \left[ g(x)-S_{N}(g; x)\right]\, dx \to 0 \text{ as $N\to \infty$.}
+\int_{a}^{b} \left[ g(x)-S_{N}[g](x)\right]\, dx \to 0 \text{ as $N\to \infty$.}
 </men>
 But
 <md>
 <mrow>
-\vert \int_{a}^{b} \left[ g(x)-S_{N}(g; x)\right]\, dx\vert 
-\amp \le \int_{a}^{b} \vert g(x)-S_{N}(g; x)\vert \, dx
+\vert \int_{a}^{b} \left[ g(x)-S_{N}[g](x)\right]\, dx\vert 
+\amp \le \int_{a}^{b} \vert g(x)-S_{N}[g](x)\vert \, dx
 </mrow>
-<mrow> \amp \le \left(2\pi\right)^{1/2}\left( \int_{-\pi}^{\pi} \vert g(x)-S_{N}(g; x)\vert^{2} \, dx\right)^{1/2},
+<mrow> \amp \le \left(2\pi\right)^{1/2}\left( \int_{-\pi}^{\pi} \vert g(x)-S_{N}[g](x)\vert^{2} \, dx\right)^{1/2},
 </mrow>
 </md>
-and using <m> \int_{-\pi}^{\pi} \vert g(x)-S_{N}(g; x)\vert^{2} \, dx\to 0</m>, we conclude
+and using <m> \int_{-\pi}^{\pi} \vert g(x)-S_{N}[g](x)\vert^{2} \, dx\to 0</m>, we conclude
 <xref ref="termwiseint"/>.
 </p>
 </proof>
@@ -5349,7 +5383,7 @@ much of this discussion is a review of some relevant concepts and properties fro
   </p>
   <p> Both <xref ref="linear-basis"/> and <xref ref="linear-coeff"/> can be represented more cleanly using
   matrix notation:
-  using
+  with
   <md>
   <mrow>
   {\mathbf x} \amp = \begin{bmatrix} {\mathbf x}_{1}\amp \ldots \amp {\mathbf x}_{n}\end{bmatrix}
@@ -5373,7 +5407,7 @@ much of this discussion is a review of some relevant concepts and properties fro
    <mrow>
    \amp =\begin{bmatrix} {\mathbf y}_{1}\amp \ldots\amp {\mathbf y}_{m}\end{bmatrix}
   \begin{bmatrix} a_{11} \amp a_{12}\amp \ldots \amp a_{1n}  \\
-  a_{21}\amp a_{22}\amp \ldots \amp a_{2n} \\
+  a_{21}\amp  a_{22} \amp \ldots \amp a_{2n} \\
   \vdots \amp \vdots \amp \vdots \amp \vdots \\
   a_{m1}\amp a_{m2}\amp \ldots \amp a_{mn}\end{bmatrix} 
   \begin{bmatrix} c_{1}\\ \vdots \\ c_{n}\end{bmatrix}
@@ -5388,7 +5422,7 @@ much of this discussion is a review of some relevant concepts and properties fro
   <mrow>
   \begin{bmatrix} d_{1} \\ \vdots \\ d_{m} \end{bmatrix} \amp = 
   \begin{bmatrix} a_{11} \amp a_{12}\amp \ldots \amp a_{1n}  \\
-  a_{21}\amp a_{22}\amp \ldots \amp a_{2n} \\
+  a_{21}\amp  a_{22} \amp \ldots \amp a_{2n} \\
   \vdots \amp \vdots \amp \vdots \amp \vdots \\
   a_{m1}\amp a_{m2}\amp \ldots \amp a_{mn}\end{bmatrix} \begin{bmatrix} c_{1}\\ \vdots \\ c_{n}\end{bmatrix}.
   </mrow>
