@@ -4330,6 +4330,7 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
 </p>
   </statement>
   </exercise>
+
   <remark><p>Two modifications are made in  the defining properties of a Hermitian inner product: (i). allowing
   <m>(x, y)</m> to take complex values, and (ii). replacing the symmetry property by the complex
   conjugate symmetry property <m> (x, y)=\overline{(y, x)}</m>. </p>
@@ -4399,6 +4400,17 @@ then the orthogonality relations above would lead to <xref ref="Fsinecoef"/>.
   <p>In the following we will not distinguish between a Hermitian inner product and a Euclidean inner product,
   and will let the context to imply the appropriate one. 
   </p>
+  <remark><p>
+	Orthogonal systems of functions often arise as eigenfunctions of a <q>self-adjoint</q> differential operator,
+which is the analogue of real symmetric matrices or Hermitian matrices whose eigenvectors associated to distinct eigenvalues are automatically orthogonal to each other. For example, each function <m>X_{n}(x)=\frac{e^{inx}}{\sqrt{2\pi} }</m> in
+<m>\{\frac{e^{inx}}{\sqrt{2\pi} }\}_{n=-\infty}^{\infty}</m> is an eigenfunction of the following problem: <m>X_{n}''(x)=- n^{2} X_{n}(x)</m>
+for <m>x\in (-\pi, \pi)</m> and <m>X_{n}(-\pi)=X_{n}(\pi)</m>, <m>X_{n}'(-\pi)=X_{n}'(\pi)</m>; 
+each <m>Y_{n}(x)=\frac{\sin (nx)}{\sqrt \pi}</m> in the family <m>\{  \frac{\sin (nx)}{\sqrt \pi}, n=1,2,\ldots\}</m> is an eigenfunction of the following problem: <m>Y_{n}''(x)= - n^{2} Y_{n}(x)</m> for
+<m>x\in (0, \pi)</m> and <m>Y_{n}(0)=Y_{n}(\pi)=0</m>. 
+In each case, the operator is self-adjoint in the sense that the inner product of <m>f''</m> with <m>g</m> equals the inner product of <m>f</m> with <m>g''</m> (the boundary conditions play an essential role here), 
+and this leads to the orthogonality of eigenfunctions associated to distinct eigenvalues.
+  </p>
+  </remark>
   <definition><title>Orthonormal Vectors</title>
 	<statement>
 		<p>
