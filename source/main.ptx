@@ -4813,7 +4813,7 @@ Then <m>S_N[g]( x)-g(x)\to 0</m> as <m>N\to\infty</m>.
 
 <remark>
 <p>
- Condition <xref ref="locLip"/> implies that <m>g(t)</m> is continuous at <m>x</m>.  Note that
+ Condition <xref ref="locLip"/> implies that <m>g</m> is continuous at <m>x</m>.  Note that
  if <m>g'(x)</m> exists, then <xref ref="locLip"/> is satisfied at <m>x</m>. In fact, 
  <xref ref="locLip"/> is satisfied at <m>x</m> if both the left derivative <m>g'(x-)</m> and the right
  derivative <m>g'(x+)</m> exist.
@@ -4934,7 +4934,7 @@ where
 </li>
 <li>
 <me>
- \quad \text{for any } 0 &lt; \delta &lt;\pi, \int_{\delta \le |x|\le \pi} K_{N}(t)\, dt \to 0 \text{ as } N\to \infty.
+ \quad \text{for any } 0 &lt; \delta &lt;\pi, \int_{\delta \le |t|\le \pi} K_{N}(t)\, dt \to 0 \text{ as } N\to \infty.
 </me>
 </li>
 </ol>
