@@ -4920,7 +4920,7 @@ has both a right limit <m>f(x+)</m> and a left limit <m>f(x-)</m> at <m>x</m>,  
 \sigma_{N}[f](x)= \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x-t) K_{N}(t)\, dt
 </me>
 where
-<ol marker="(a)">
+<ol marker="(a)">Next, we apply the fundamental  theorem of calculus to <m> f(x,t+h)-f(x,t)</m> to get
 <li>
 <me>
  \quad K_{N}(t):=\frac{D_{0}(t)+D_{1}(t)+\cdots+D_{N}(t)}{N+1}
@@ -4957,7 +4957,8 @@ continuous on <m>[-\pi, \pi]</m> and is <m>2\pi</m> periodic, then <m>\delta</m>
 chosen independent of <m>x\in [-\pi, \pi]</m>, which shows that the convergence is uniform over
 <m>[-\pi, \pi]</m>.
 </p>
-<p>If <m>f</m> has both left and right limits at <m>x</m>, one 
+<p>
+	Next, we apply the fundamental  theorem of calculus to <m> f(x,t+h)-f(x,t)</m> to get>If <m>f</m> has both left and right limits at <m>x</m>, one 
 could use the evenness of <m>K_{N}(t)</m> or <m>D_{N}(t)</m> to rewrite the integral
 <m>\int_{-\pi}^{\pi}</m> as two separate integrals. For example,
 <md>
@@ -10547,7 +10548,7 @@ even in the case of the round cylinder, the least upper bound of area
 of the inscribed triangulated  surfaces is <m>\infty</m>. This is explained in 
 Rad's <em>Length and Area</em>, AMS Colloquium Lectures, 1948. 
 </p> 
- <figure><caption>Rad's description of H. A. Schwarz's discovery that 
+ <figure><caption>Radó's description of H. A. Schwarz's discovery that 
  the least upper bound of area 
 of the inscribed triangulated  surfaces of a section of the round cylinder is infinity.</caption>
   <sidebyside widths="40% 40%" margins="auto">
