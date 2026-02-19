@@ -4920,7 +4920,7 @@ has both a right limit <m>f(x+)</m> and a left limit <m>f(x-)</m> at <m>x</m>,  
 \sigma_{N}[f](x)= \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x-t) K_{N}(t)\, dt
 </me>
 where
-<ol marker="(a)">Next, we apply the fundamental  theorem of calculus to <m> f(x,t+h)-f(x,t)</m> to get
+<ol marker="(a)">
 <li>
 <me>
  \quad K_{N}(t):=\frac{D_{0}(t)+D_{1}(t)+\cdots+D_{N}(t)}{N+1}
