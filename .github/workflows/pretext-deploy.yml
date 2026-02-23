@@ -64,7 +64,7 @@ on:
   # schedule:
   #     - cron: '0 0 * * *'
 
-  # Runs on demand
+  Runs on demand
   workflow_dispatch:
 
 permissions:
