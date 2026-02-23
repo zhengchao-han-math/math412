@@ -2,73 +2,15 @@ name: PreTeXt Build & Deploy
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Upgrade pip
-        run: python -m pip install --upgrade pip
-
-      - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          fi
-
-      - name: Build PreTeXt web
-        run: pretext build web
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: output/web
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
-# This file was automatically generated with PreTeXt 2.33.2.
-# If you modify this file, PreTeXt will no longer automatically update it.
-#
-
-name: Build and Deploy
-on:
-  # Currently, this workflow only runs when manually selected (the `workflow_dispatch` event).
-  # If you would like it to run on other events, uncomment some of the lines below.
-
-  # # Runs on pull requests
-   pull_request:
-       branches: ["*"]
-
-  # # Runs on pushes to main
-   push:
-       branches: ["main"]
-
-  # # Runs every day at 00:00 UTC
-  # schedule:
-  #     - cron: '0 0 * * *'
-
-  Runs on demand
+    branches: [main]
+  pull_request:
+    branches: ["*"]
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -79,35 +21,35 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: set up node
+      - name: Set up node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: add gh-cli
+      - name: Add gh-cli
         run: |
           apt-get update
           apt-get install gh jq -y
 
-      - name: setup git config
+      - name: Setup git config
         run: |
           git config --global --add safe.directory $(pwd)
           git config user.name "${{ github.actor }} via GitHub Actions"
           git config user.email "${{ github.actor }}@github_actions.no_reply"
 
-      - name: install deps
-        run: pip install -r requirements.txt --break-system-packages
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt --break-system-packages
+          fi
 
-      - name: install local ptx files
-        run: pretext --version
-
-      - name: build deploy targets
+      - name: Build deploy targets
         run: pretext build --deploys
 
-      - name: run deploy
+      - name: Run deploy
         run: pretext deploy --no-push
 
-      - name: push gh-pages branch
+      - name: Push gh-pages branch
         run: git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
