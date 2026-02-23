@@ -8,12 +8,12 @@ on:
   # If you would like it to run on other events, uncomment some of the lines below.
 
   # # Runs on pull requests
-  # pull_request:
-  #     branches: ["*"]
+   pull_request:
+       branches: ["*"]
 
   # # Runs on pushes to main
-  # push:
-  #     branches: ["main"]
+   push:
+       branches: ["main"]
 
   # # Runs every day at 00:00 UTC
   # schedule:

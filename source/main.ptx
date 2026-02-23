@@ -4958,7 +4958,7 @@ chosen independent of <m>x\in [-\pi, \pi]</m>, which shows that the convergence 
 <m>[-\pi, \pi]</m>.
 </p>
 <p>
-	Next, we apply the fundamental  theorem of calculus to <m> f(x,t+h)-f(x,t)</m> to get>If <m>f</m> has both left and right limits at <m>x</m>, one 
+	If <m>f</m> has both left and right limits at <m>x</m>, one 
 could use the evenness of <m>K_{N}(t)</m> or <m>D_{N}(t)</m> to rewrite the integral
 <m>\int_{-\pi}^{\pi}</m> as two separate integrals. For example,
 <md>
