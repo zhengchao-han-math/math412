@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>For each <span class="process-math">\(\phi_{k}\)</span> there exists some <span class="process-math">\(c_{k} \in C[a,  b]\)</span> and an open set  <span class="process-math">\(G_{k}\)</span> with <span class="process-math">\(|G_{k}| &lt; \epsilon_{k}\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="./knowl/lprealization.html">
+\begin{equation*}
+\Vert \phi_{k} - c_{k} \Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}, \text{ and } 
+\vert \phi_{k} (x) - c_{k}(x) \vert &lt; \epsilon_{k}^{2} \text{ for all } x\in G_{k}^{c}.
+\end{equation*}
+</div>Then the set <span class="process-math">\(E=\cap_{l=1}^{\infty}\cup_{k=l}^{\infty} G_{k}\)</span> is negligible, as <span class="process-math">\(|\cup_{k=l}^{\infty} G_{k}|\le \sum_{k=l}^{\infty}|G_{k}| \to 0\)</span> as <span class="process-math">\(l\to \infty\text{,}\)</span> and for any <span class="process-math">\(x\in E^{c}\text{,}\)</span> there exists some <span class="process-math">\(l_{x}\)</span> such that <span class="process-math">\(x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}\text{.}\)</span> This implies that <span class="process-math">\(\{ c_{k}\}\)</span> satisfies<div class="displaymath process-math" data-contains-math-knowls="./knowl/lprealization.html">
+\begin{equation*}
+\Vert c_{k} - c_{k+1} \Vert_{L^{p}[a, b]} &lt; 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
+\text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert&lt; \epsilon_{k}^{2} \text{ for } k\ge l_{x}\text{.}
+\end{equation*}
+</div>Then <a href="" class="xref" data-knowl="./knowl/lprealization.html" title="Proposition 2.8: Realization of elements of L^{p}[a, b]">Proposition 2.8</a> applied to  <span class="process-math">\(\{ c_{k}\}\)</span> implies that there exists a unique <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="./knowl/lprealization.html">
+\begin{equation*}
+\Vert c_{k} - \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
+\end{equation*}
+</div>We can then conclude our proof by appealing to the triangle inequalities.</article><span class="incontext"><a href="chp-int.html#proof-4" class="internal">in-context</a></span>
+</body>
+</html>

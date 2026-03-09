@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"> <div class="para logical">
+<div class="para">It arises from the geometric series replacing <span class="process-math">\(x\)</span> by <span class="process-math">\(-x^{2}\)</span> when <span class="process-math">\(|x|\lt 1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Abel.html">
+\begin{equation*}
+\frac{1}{1+x^2}=\sum_{n=0}^{\infty} (-x^2)^n = \sum_{n=0}^{\infty} (-1)^n x^{2n}= 1-x^2+x^4-x^6+\cdots
+\end{equation*}
+</div>
+<div class="para">Its radius of convergence is <span class="process-math">\(1\text{.}\)</span> Thus for any <span class="process-math">\(t, |t| &lt; 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Abel.html">
+\begin{equation*}
+\int_{0}^{t} \frac{1}{1+x^2}\, dx = \sum_{n=0}^{\infty} \int_{0}^{t} (-1)^n x^{2n}\, dx
+=  \sum_{n=0}^{\infty}\frac{(-1)^n t^{2n+1}}{2n+1}.
+\end{equation*}
+</div>
+<div class="para">Using calculus knowledge that <span class="process-math">\(\int_{0}^{t} \frac{1}{1+x^2}\, dx=\arctan t\text{,}\)</span> and the series on the right converges at <span class="process-math">\(t=1\text{,}\)</span>  <a href="" class="xref" data-knowl="./knowl/thm-Abel.html" title="Theorem 2.2.1: Abel Theorem for a Power Series">Theorem 2.2.1</a> implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Abel.html">
+\begin{equation*}
+\frac{\pi}{4}=\lim_{t\to 1-0} \arctan t= \sum_{n=0}^{\infty}\lim_{t\to 1-0} \frac{(-1)^n t^{2n+1}}{2n+1}
+=\sum_{n=0}^{\infty} \frac{(-1)^n }{2n+1}.
+\end{equation*}
+</div>
+</div></article></body>
+</html>

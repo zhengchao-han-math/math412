@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">The formulation here allows either <span class="process-math">\(a\)</span> or <span class="process-math">\(b\)</span> to be infinite, as long as there is a finite variation <span class="process-math">\(\alpha(b)-\alpha(a)\)</span> over <span class="process-math">\((a, b)\text{.}\)</span>  For instance, for <span class="process-math">\(a\gt 0\text{,}\)</span> the integral <span class="process-math">\(\int_a^{\infty}f_n(x)\, dx\)</span> could be formulated as <span class="process-math">\(\int_a^{\infty}f_n(x)x^p\, d\alpha(x)\text{,}\)</span> with <span class="process-math">\(\alpha(x)=(1-p)^{-1}x^{1-p}\text{.}\)</span> If  for some <span class="process-math">\(p\gt 1\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation}
+f_n(x)x^p\to f(x)x^p \text{ uniformly over $(a, \infty)$}\text{,}\tag{1.2.2}
+\end{equation}
+</div>
+<div class="para">we can conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^{\infty}f_n(x)\, dx= \int_a^{\infty}f_n(x)x^p\, d\alpha(x)\to
+\int_a^{\infty}f(x)x^p\, d\alpha(x)=\int_a^{\infty}f(x)\, dx.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Often one needs some modification to <a href="" class="xref" data-knowl="./knowl/wuc.html" title="Equation 1.2.2">(1.2.2)</a>. Suppose that for any finite <span class="process-math">\(b \gt a\text{,}\)</span> <span class="process-math">\(f_n(x)\to f(x)\)</span> uniformly over <span class="process-math">\([a, b]\text{,}\)</span> and that for some <span class="process-math">\(C\gt 0, q\gt 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/wuc.html ./knowl/wuc.html">
+\begin{equation*}
+\vert f_n(x)\vert \le C x^{-q} \text{ for all $x\in (a, \infty)$ and all $n$.}
+\end{equation*}
+</div>
+<div class="para">Then, it follows that <span class="process-math">\(\vert f(x)\vert \le C x^{-q}\)</span> for all <span class="process-math">\(x\in (a, \infty)\text{,}\)</span> and that for some fixed <span class="process-math">\(p, q\gt p \gt 1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/wuc.html ./knowl/wuc.html">
+\begin{equation*}
+\vert f_n(x)-f(x)\vert  x^p\le 2C x^{p-q}
+\end{equation*}
+</div>
+<div class="para">So for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we can find some <span class="process-math">\(b'\gt a\)</span> depending on <span class="process-math">\(\epsilon\)</span> such that <span class="process-math">\(\vert f_n(x)-f(x)\vert x^p \le \epsilon\)</span> for all <span class="process-math">\(x\ge b'\)</span> and all <span class="process-math">\(n\text{.}\)</span> But this is not quite the same as <a href="" class="xref" data-knowl="./knowl/wuc.html" title="Equation 1.2.2">(1.2.2)</a>. We next discussion an extension to address such scenarios.</div>
+</div></article><span class="incontext"><a href="uniformconvprop.html#remark-4" class="internal">in-context</a></span>
+</body>
+</html>

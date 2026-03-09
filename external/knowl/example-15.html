@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiation of a Poisson Integral.</span>
+</h3> <div class="para logical">
+<div class="para">Consider the Poisson integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u(s,t)=\int_{\mathbb R} \frac {t \, u(x,0)}{(x-s)^2 + t^2} dx
+\end{equation*}
+</div>
+<div class="para">on  the upper half plane <span class="process-math">\(\left\{(s,t): t&gt;0\right\}\text{,}\)</span> where <span class="process-math">\(u(x,0)\)</span> is a given bounded function.</div>
+</div> <div class="para">To consider the differentiability of <span class="process-math">\(u(s, t)\)</span> for <span class="process-math">\((s,t)\)</span> near <span class="process-math">\((s_0,t_0)\)</span> with <span class="process-math">\(t_0&gt;0\text{,}\)</span> note that the integrand <span class="process-math">\(f(x,s,t)=  \frac {t \, u(x,0)}{(x-s)^2 + t^2}\)</span> is continuous for <span class="process-math">\((x,s,t) \in \mathbb R \times D_{r}(s_0,t_0)\text{,}\)</span> where <span class="process-math">\(D_{r}(s_0,t_0)\)</span> is the disk of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\((s_0,t_0)\)</span> with <span class="process-math">\(0 &lt; r &lt; t_0/2\text{,}\)</span> so that when <span class="process-math">\((s,t)\in D_{r}(s_0,t_0)\text{,}\)</span> we have <span class="process-math">\(t&gt;t_0/2\text{;}\)</span> <span class="process-math">\(f(x,s,t)\)</span> is also differentiable in <span class="process-math">\((s,t)\)</span> for <span class="process-math">\((s,t)\in D_{r}(s_0,t_0)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">To verify the uniform convergence of the improper integral <span class="process-math">\(\int_{\mathbb R} f_s(x,s,t) \, dx\text{,}\)</span> we need to start with <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> and look for <span class="process-math">\(L&gt;0\)</span> such that for any <span class="process-math">\(N&gt;M&gt;L\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left| \int_{N&gt;|x|&gt;M} f_s(x,s,t) \, dx \right| &lt; \epsilon\quad \text{for all  } (s,t)\in D_{r}(s_0,t_0).
+\end{equation*}
+</div>
+<div class="para">In fact, to verify differentiability in <span class="process-math">\(s\)</span> at <span class="process-math">\((s_0,t_0)\text{,}\)</span> it suffices to check the above inequality for <span class="process-math">\(s\)</span> near <span class="process-math">\(s_0\)</span> and <span class="process-math">\(t=t_0\text{.}\)</span> The main focus will be to make sure that <span class="process-math">\(f_s(x,s,t_0)\)</span> tends to <span class="process-math">\(0\)</span> at a sufficiently fast rate in <span class="process-math">\(x\)</span> as <span class="process-math">\(x\to \infty\text{,}\)</span>  with uniform control on the coefficients for <span class="process-math">\(s\)</span> near <span class="process-math">\(s_0\text{,}\)</span> such that the above estimate holds; so we will watch out for how <span class="process-math">\(f_s(x,s,t_0)\)</span> depends on <span class="process-math">\(x\)</span> and <span class="process-math">\(s\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_s(x,s,t_0) | \le \frac{ 2 t_0 |s-x| |u(x,0)|}{[ (s-x)^2 +t_0^2]^2} \le \frac{ 2 t_0 U |s-x| }{[ (s-x)^2 +t_0^2]^2},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(U&gt;| u(x,0)|\)</span> for all <span class="process-math">\(x\in \mathbb R\text{.}\)</span> We argue that when <span class="process-math">\(s\)</span> is near <span class="process-math">\(s_0\text{,}\)</span> and <span class="process-math">\(|x|&gt;M\text{,}\)</span> <span class="process-math">\(|s-x|\)</span> will be large; more precisely, for <span class="process-math">\(s\)</span> is sufficiently near <span class="process-math">\(s_0\text{,}\)</span> we have <span class="process-math">\(|s|\le 2 |s_0|\text{,}\)</span> and <span class="process-math">\(|s-x| \ge |x| -|s| \ge M-2|s_0|\ge M/2\text{,}\)</span> if <span class="process-math">\(M\)</span> is chosen so that <span class="process-math">\(M&gt; 4|s_0|\text{,}\)</span>  then</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left| \int_{N&gt;|x|&gt;M} f_s(x,s,t) \, dx \right| \amp \le 
+\int_{|x-s| \ge M/2} \frac{ 2 t_0 U |s-x| }{[ (s-x)^2 +t_0^2]^2} dx \\
+\amp \le \int_{M/2}^{\infty} \frac{4t_0U z }{[z^2 +t_0^2]^2} dz
+\end{align*}
+</div>
+<div class="para">which can be made smaller than <span class="process-math">\(\epsilon\)</span> when <span class="process-math">\(M\)</span> is sufficiently large, as the integral <span class="process-math">\(\int_{M/2}^{\infty} \frac{z }{[z^2 +t_0^2]^2} dz\)</span> is convergent.</div>
+</div> <div class="para">Note that <span class="process-math">\(t_0\)</span> is considered fixed in this argument; there will be difficulty to verify the uniform integrability if we allow <span class="process-math">\(t\to 0\text{.}\)</span>
+</div></article><span class="incontext"><a href="section-21.html#example-15" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">If we assume, in addition, that <span class="process-math">\(\bff'(x)\)</span> is continuous on <span class="process-math">\((a,  b)\text{,}\)</span> then we have an easy proof using <span class="process-math">\(\bff(b)-\bff(a)=\int_{a}^{b}\bff'(x)\, dx\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For the general case, it suffices to prove that for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html">
+\begin{equation}
+\Vert\bff(c)-\bff(a)\Vert\le (M+\epsilon)(c-a) +\epsilon \text{ for all $c\in [a, b]$.}\tag{4.3.2}
+\end{equation}
+</div>
+<div class="para">Fix any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> if <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> does not hold for some <span class="process-math">\(c\text{,}\)</span> let <span class="process-math">\(c^{*}\)</span> be the infimum of the values <span class="process-math">\(c\in [a, b]\)</span> for which <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> fails. First we show that <span class="process-math">\(c^{*}&gt;a\text{.}\)</span> This follows from the continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(a\text{,}\)</span> as it shows that for some <span class="process-math">\(\delta &gt;0\)</span>  <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> holds for <span class="process-math">\(c\in [a, a+\delta]\text{.}\)</span> By definition of <span class="process-math">\(c^{*}\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> holds for any <span class="process-math">\(c \lt c^{*}\text{.}\)</span> By continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(c^{*}\)</span> <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> continues to hold at <span class="process-math">\(c^{*}\text{.}\)</span> Thus <span class="process-math">\(c^{*}\lt b\)</span> under our assumption. Then using <span class="process-math">\(\Vert\bff'(c^{*})\Vert\le M\text{,}\)</span> there exists some <span class="process-math">\(\delta^{*}&gt;0\)</span> such that <span class="process-math">\(\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})\)</span> for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> it then follows that, for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html ./knowl/meanbd.html">
+\begin{equation*}
+\Vert\bff(c)-\bff(a)\Vert\le \Vert\bff(c)- \bff(c^{*})\Vert + \Vert\bff(c^{*})-\bff(a)\Vert\le (M+\epsilon)(c-c^{*}) + (M+\epsilon)(c^{*}-a) +\epsilon
+\end{equation*}
+</div>
+<div class="para">showing that <a href="" class="xref" data-knowl="./knowl/meanbd.html" title="Equation 4.3.2">(4.3.2)</a> continues to hold for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> contradicting the definition of <span class="process-math">\(c^{*}\text{.}\)</span>
+</div>
+</div></article></body>
+</html>

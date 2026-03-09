@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>General Orthogonal Expansion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.18';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1d92cd109bc12c4d.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-Fseries.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Fseries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-FSConv.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-30" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-9" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-17" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-orthogonal"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">General Orthogonal Expansion</span>
+</h2>
+<div class="para" id="sec-orthogonal-2">The notion of mean square convergence makes senes in a general inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-orthogonal-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner Product Space.</span>
+</h3>
+<div class="para" id="sec-orthogonal-3-2-1">A vector space <span class="process-math">\(V\)</span> over the reals <span class="process-math">\(\bbR\)</span> is called an inner product space if there is a function <span class="process-math">\((x, y)\in V\times V\mapsto (x, y)\in \bbR\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-orthogonal-3-2-2">
+<ol class="decimal" id="sec-orthogonal-3-2-2-1">
+<li id="sec-orthogonal-3-2-2-1-1">
+<div class="para" id="p-derived-sec-orthogonal-3-2-2-1-1">
+<span class="process-math">\((a_{1}x_{1}+a_{2}x_{2},y)=a_{1}(x_{1},y)+a_{2}(x_{2}, y)\)</span> for any <span class="process-math">\(x_{1}, x_{2}, y\in V\)</span> and any <span class="process-math">\(a_{1}, a_{2}\in \bbR\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-orthogonal-3-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-orthogonal-3-2-2-1-2">
+<div class="para" id="p-derived-sec-orthogonal-3-2-2-1-2">
+<span class="process-math">\((x, y)=(y, x)\)</span> for any <span class="process-math">\(x, y\in V\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-orthogonal-3-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-orthogonal-3-2-2-1-3">
+<div class="para" id="p-derived-sec-orthogonal-3-2-2-1-3">
+<span class="process-math">\((x, x) \ge 0\)</span> for any <span class="process-math">\(x\in V\)</span> and equals <span class="process-math">\(0\)</span> iff <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-orthogonal-3-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.1: Inner Product Space"><a href="#sec-orthogonal-3" title="Copy heading and permalink for Definition 4.1.1: Inner Product Space" aria-label="Copy heading and permalink for Definition 4.1.1: Inner Product Space">🔗</a></div></article><div class="para logical" id="sec-orthogonal-4">
+<div class="para">Note that the first two properties imply</div>
+<div class="displaymath process-math" id="sec-orthogonal-4-1">
+\begin{equation*}
+(x, a_{1}y_{1}+a_{2}y_{2})= a_{1}(x, y_{1})+a_{2}(x, y_{2}) \text{ for  any $x, y_{1}, y_{2}\in V$.}
+\end{equation*}
+</div>
+<div class="para">Due to this and the first property, we say an inner product on a vector over the reals is <dfn class="terminology">bilinear</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-5">The space of real  valued continuous function on a finite interval <span class="process-math">\([a, b]\text{,}\)</span> <span class="process-math">\(\cC[a, b]\text{,}\)</span> has a natural inner product: <span class="process-math">\((f, g) :=\int_{a}^{b} f(x)g(x)\, dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-orthogonal-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal Relation.</span>
+</h3>
+<div class="para" id="sec-orthogonal-6-2-1">Two vectors <span class="process-math">\(x, y\)</span> in an inner product space <span class="process-math">\(V\)</span> are said to be orthogonal to each other if <span class="process-math">\((x, y)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.2: Orthogonal Relation"><a href="#sec-orthogonal-6" title="Copy heading and permalink for Definition 4.1.2: Orthogonal Relation" aria-label="Copy heading and permalink for Definition 4.1.2: Orthogonal Relation">🔗</a></div></article><div class="para" id="sec-orthogonal-7">Note that, since <span class="process-math">\((y, x)=(x, y)\text{,}\)</span> it follows that if <span class="process-math">\((x, y)=0\text{,}\)</span> then <span class="process-math">\((y, x)=0\text{.}\)</span> So the orthogonal relation is symmetric in <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-8">In the context of <span class="process-math">\(\cC[a, b]\text{,}\)</span> two functions <span class="process-math">\(f, g\in \cC[a, b]\)</span> are orthogonal in <span class="process-math">\(\cC[a, b]\)</span> if <span class="process-math">\(\int_{a}^{b} f(x)g(x)\, dx=0\text{.}\)</span> Note that it is important to specify the interval of integration. The orthogonality relation  stated earlier says that, when <span class="process-math">\(n\ne m\text{,}\)</span> the functions <span class="process-math">\(\sin \left(\frac{n \pi x}{l}\right), \sin \left(\frac{m \pi x}{l}\right)\)</span> are orthogonal on <span class="process-math">\([0, l]\text{.}\)</span>  But these two functions may not be orthogonal on a different interval such as <span class="process-math">\([0, l/2]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="sec-orthogonal-9"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Properties of an Inner Product Space.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-9-2-1">
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is an inner product space over the reals <span class="process-math">\(\bbR\text{.}\)</span> Then the <dfn class="terminology">Cauchy-Schwarz inequality</dfn> holds:</div>
+<div class="displaymath process-math" id="sec-orthogonal-9-2-1-4">
+\begin{equation*}
+|(x, y)|\le \sqrt{(x, x)} \sqrt{(y, y)} \text{ for  all $x, y\in V$.}
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\Vert x \Vert :=\sqrt{(x, x)}\)</span> defines a norm on <span class="process-math">\(V\text{:}\)</span>
+</div>
+<ol class="decimal" id="sec-orthogonal-9-2-1-7">
+<li id="sec-orthogonal-9-2-1-7-1">
+<div class="para" id="p-derived-sec-orthogonal-9-2-1-7-1">
+<span class="process-math">\(\Vert x \Vert \ge 0\)</span> for all <span class="process-math">\(x\in V\)</span> and equals <span class="process-math">\(0\)</span> iff <span class="process-math">\(x=0\)</span> in <span class="process-math">\(V\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-orthogonal-9-2-1-7-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-orthogonal-9-2-1-7-2">
+<div class="para" id="p-derived-sec-orthogonal-9-2-1-7-2">
+<span class="process-math">\(\Vert a x \Vert = |a| \Vert x \Vert\)</span> for all <span class="process-math">\(x\in V\)</span> and real <span class="process-math">\(a\in \bbR\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-orthogonal-9-2-1-7-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-orthogonal-9-2-1-7-3">
+<div class="para" id="p-derived-sec-orthogonal-9-2-1-7-3">
+<span class="process-math">\(\Vert  x +y  \Vert\le  \Vert  x \Vert + \Vert y \Vert \)</span> for all <span class="process-math">\(x, y\in V\)</span> (Triangle Inequality).</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-orthogonal-9-2-1-7-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">When <span class="process-math">\((x, y)=0\text{,}\)</span> namely, when <span class="process-math">\(x\)</span> is orthogonal to <span class="process-math">\(y\)</span> in <span class="process-math">\(V\text{,}\)</span> we also have  the Pythagorean relation:</div>
+<div class="displaymath process-math" id="sec-orthogonal-9-2-1-12">
+\begin{equation*}
+\Vert x+y\Vert^{2} =\Vert x\Vert^{2} + \Vert y\Vert^{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.1.3: Basic Properties of an Inner Product Space"><a href="#sec-orthogonal-9" title="Copy heading and permalink for Proposition 4.1.3: Basic Properties of an Inner Product Space" aria-label="Copy heading and permalink for Proposition 4.1.3: Basic Properties of an Inner Product Space">🔗</a></div></article><details id="sec-orthogonal-9-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-orthogonal-9-3-1">
+<div class="para">For any <span class="process-math">\(x, y\in V\text{,}\)</span> the function <span class="process-math">\(t\mapsto (x+t y, x+t y)\)</span> in <span class="process-math">\(t\)</span> is a quadratic function in <span class="process-math">\(t\)</span> when <span class="process-math">\(y\ne 0\)</span> due to  the bilinear property of the inner product, and is nonnegative. Its minimum is attained at <span class="process-math">\(t=- (x, y)/(y, y)\text{.}\)</span> Evaluating <span class="process-math">\((x+t y, x+t y)\)</span> at this <span class="process-math">\(t=- (x, y)/(y, y)\)</span> gives</div>
+<div class="displaymath process-math" id="sec-orthogonal-9-3-1-9">
+\begin{equation*}
+- \frac{(x, y)^{2}}{(y, y)}+ (x, x), \text{ which is $\ge 0$.}
+\end{equation*}
+</div>
+<div class="para">This proves the Cauchy-Schwarz inequality when <span class="process-math">\(y\ne 0\text{.}\)</span> But the case of <span class="process-math">\(y=0\)</span> is trivial.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-9-3-2">
+<div class="para">The triangle inequality follows from the Cauchy-Schwarz inequality by</div>
+<div class="displaymath process-math" id="sec-orthogonal-9-3-2-1">
+\begin{align*}
+\Vert  x +y  \Vert^{2} \amp =(x+y, x+y)=(x, x)+2(x, y)+(y, y) \\
+\amp \le (x, x)+2\Vert x \Vert  \Vert y \Vert  +(y, y)
+=\left(\Vert x \Vert + \Vert y \Vert \right)^{2}. 
+\end{align*}
+</div>
+<div class="para">The Pythagorean relation clearly follows from the above line of proof when <span class="process-math">\((x, y)=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-9-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.3.1"><a href="#sec-orthogonal-9-3" title="Copy heading and permalink for Proof 4.1.3.1" aria-label="Copy heading and permalink for Proof 4.1.3.1">🔗</a></div></article></details><div class="para logical" id="sec-orthogonal-10">
+<div class="para">In the context of <span class="process-math">\(\cC[a, b]\text{,}\)</span> the Cauchy-Schwarz inequality takes the form of</div>
+<div class="displaymath process-math" id="sec-orthogonal-10-2">
+\begin{equation*}
+\vert \int_{a}^{b} f(x) g(x)\, dx \vert \le \sqrt{ \int_{a}^{b} |f(x)|^{2}\, dx} \sqrt{ \int_{a}^{b} |g(x)|^{2}\, dx}
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(f, g\in \cC[a, b]\text{,}\)</span> and the triangle inequality takes the form of</div>
+<div class="displaymath process-math" id="sec-orthogonal-10-4">
+\begin{equation*}
+\sqrt{ \int_{a}^{b} |f(x)+g(x)|^{2}\, dx} \le \sqrt{ \int_{a}^{b} |f(x)|^{2}\, dx} + \sqrt{ \int_{a}^{b} |g(x)|^{2}\, dx}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-orthogonal-11" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Set of Functions Orthogonal on <span class="process-math">\([0, l]\)</span>.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-orthogonal-11-2-1">
+<div class="para">Verify that the set of functions <span class="process-math">\(\left\{  \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}\)</span> are mutually orthogonal to each other on <span class="process-math">\([0, l]\)</span> and that</div>
+<div class="displaymath process-math" id="sec-orthogonal-11-2-1-3">
+\begin{equation*}
+\Vert \sin \left(\frac{n \pi x}{l}\right)\Vert = \sqrt{\frac l2} \text{ for 
+$n\in\mathbb N$.}
+\end{equation*}
+</div>
+<div class="para">Then show that</div>
+<div class="displaymath process-math" id="sec-orthogonal-11-2-1-4">
+\begin{equation*}
+\int_{0}^{l} \vert \sum_{n=1}^{N}b_{n} \sin \left(\frac{n \pi x}{l}\right)\vert^{2} \, dx 
+=  \frac l2 \left( \sum_{n=1}^{N} |b_{n}|^{2} \right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-orthogonal-11-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="sec-orthogonal-11-3-1">Use the relation <span class="process-math">\(2\sin A \sin B=\cos(A-B)-\cos(A+B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.1.4.1"><a href="#sec-orthogonal-11-3" title="Copy heading and permalink for Hint 4.1.4.1" aria-label="Copy heading and permalink for Hint 4.1.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4.1.4: A Set of Functions Orthogonal on [0, l]"><a href="#sec-orthogonal-11" title="Copy heading and permalink for Exercise 4.1.4: A Set of Functions Orthogonal on [0, l]" aria-label="Copy heading and permalink for Exercise 4.1.4: A Set of Functions Orthogonal on [0, l]">🔗</a></div></article></details><details id="sec-orthogonal-12" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Set of Functions Orthogonal on <span class="process-math">\([-l, l]\)</span>.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-orthogonal-12-2-1">
+<div class="para">Verify that the set of functions <span class="process-math">\(\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}\)</span> are mutually orthogonal to each other on <span class="process-math">\([-l, l]\)</span> and that</div>
+<div class="displaymath process-math" id="sec-orthogonal-12-2-1-3">
+\begin{equation*}
+\Vert 1 \Vert =\sqrt{2l}, \Vert \cos \left(\frac{n \pi x}{l}\right) \Vert =\Vert \sin \left(\frac{n \pi x}{l}\right)\Vert = \sqrt{l} \text{ for 
+$n\in\mathbb N$.}
+\end{equation*}
+</div>
+<div class="para">Then show that</div>
+<div class="displaymath process-math" id="sec-orthogonal-12-2-1-4">
+\begin{align*}
+\amp \int_{0}^{2l} \vert a_{0}+\sum_{n=1}^{N}\left(a_{n} \cos \left(\frac{n \pi x}{l}\right) + b_{n} \sin \left(\frac{n \pi x}{l}\right)\right) \vert^{2} \, dx\\
+= \amp l\left( 2 |a_{0}|^{2} + \sum_{n=1}^{N}\left(|a_{n}|^{2} + |b_{n}|^{2}\right) \right).
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-orthogonal-12-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="sec-orthogonal-12-3-1">Use the relations <span class="process-math">\(2\sin A \sin B=\cos(A-B)-\cos(A+B), 2 \cos A \cos B= \cos(A-B)+\cos(A+B),
+2\sin A \cos B=\sin(A+B)-\sin(A-B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.1.5.1"><a href="#sec-orthogonal-12-3" title="Copy heading and permalink for Hint 4.1.5.1" aria-label="Copy heading and permalink for Hint 4.1.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4.1.5: A Set of Functions Orthogonal on  [-l, l]"><a href="#sec-orthogonal-12" title="Copy heading and permalink for Exercise 4.1.5: A Set of Functions Orthogonal on  [-l, l]" aria-label="Copy heading and permalink for Exercise 4.1.5: A Set of Functions Orthogonal on  [-l, l]">🔗</a></div></article></details><div class="para" id="sec-orthogonal-13">It is often necessary and productive to work with spaces of complex valued functions, which should be regarded as vector spaces over <span class="process-math">\(\bbC\text{.}\)</span> The notion of an inner product can be extended to a vector space over <span class="process-math">\(\bbC\text{,}\)</span> with some modification.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-orthogonal-14"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hermitian Inner Product Space.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-14-2-1">
+<div class="para">A vector space <span class="process-math">\(V\)</span> over  <span class="process-math">\(\bbC\)</span> is called a Hermitian inner product space if there is a function <span class="process-math">\((x, y)\in V\times V\mapsto (x, y)\in \bbC\)</span> such that</div>
+<ol class="decimal" id="sec-orthogonal-14-2-1-4">
+<li id="sec-orthogonal-14-2-1-4-1">
+<div class="para" id="p-derived-sec-orthogonal-14-2-1-4-1">
+<span class="process-math">\((a_{1}x_{1}+a_{2}x_{2},y)=a_{1}(x_{1},y)+a_{2}(x_{2}, y)\)</span> for any <span class="process-math">\(x_{1}, x_{2}, y\in V\)</span> and any <span class="process-math">\(a_{1}, a_{2}\in \bbC\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-orthogonal-14-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-orthogonal-14-2-1-4-2">
+<div class="para" id="p-derived-sec-orthogonal-14-2-1-4-2">
+<span class="process-math">\((x, y)=\overline{(y, x)}\)</span> for any <span class="process-math">\(x, y\in V\text{;}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-orthogonal-14-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-orthogonal-14-2-1-4-3">
+<div class="para" id="p-derived-sec-orthogonal-14-2-1-4-3">
+<span class="process-math">\((x, x) \)</span> is a nonnegative real number for any <span class="process-math">\(x\in V\)</span> and equals <span class="process-math">\(0\)</span> iff <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-orthogonal-14-2-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-orthogonal-14-2-2">Two vectors <span class="process-math">\(x, y\in V\)</span> are (Hermitian) orthogonal if <span class="process-math">\((x, y)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.6: Hermitian Inner Product Space"><a href="#sec-orthogonal-14" title="Copy heading and permalink for Definition 4.1.6: Hermitian Inner Product Space" aria-label="Copy heading and permalink for Definition 4.1.6: Hermitian Inner Product Space">🔗</a></div></article><div class="para logical" id="sec-orthogonal-15">
+<div class="para">Note that the first two properties imply</div>
+<div class="displaymath process-math" id="sec-orthogonal-15-1">
+\begin{equation*}
+(x, a_{1}y_{1}+a_{2}y_{2})=\overline{(a_{1}y_{1}+a_{2}y_{2}, x)}= \overline{a_{1}}(x, y_{1})+\overline{a_{2}}(x, y_{2}) \text{ for  any $x, y_{1}, y_{2}\in V$.}
+\end{equation*}
+</div>
+<div class="para">Note that  a Hermitian inner product on a vector space  is not bilinear in both variables; it is linear in the first  variable, but complex conjugate linear in the second variable.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-16">The Cauchy-Schwarz and triangle inequalities and the notion of norm induced by the inner product extend readily to a Hermitian inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-17">To distinguish between a Hermitian inner product and an inner product introduced earlier on a vector space over the reals, we will refer to the latter as a Euclidean inner product.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-18">For complex valued functions <span class="process-math">\(f,  g\)</span> in <span class="process-math">\(\cC[a, b]\text{,}\)</span> a natural Hermitian inner product is <span class="process-math">\((f, g)=\int_{a}^{b} f(x)\overline{g(x)}\,dx\text{.}\)</span> This is consistent with the inner product introduced earlier  on <span class="process-math">\(\cC[a, b]\)</span> when <span class="process-math">\(f,  g\)</span> are real valued.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-orthogonal-19" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Orthogonal Family <span class="process-math">\(\{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\}\)</span> on <span class="process-math">\([-l, l]\)</span>.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-orthogonal-19-2-1">
+<div class="para">Verify that the set of functions <span class="process-math">\(\{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\}\)</span> are orthogonal on <span class="process-math">\([-l, l]\)</span> and that</div>
+<div class="displaymath process-math" id="sec-orthogonal-19-2-1-3">
+\begin{equation*}
+\Vert e^{i\frac{n\pi x}{l}} \Vert= \sqrt{2l} \text{ for all $n\in \bbZ$.}
+\end{equation*}
+</div>
+<div class="para">Then show that</div>
+<div class="displaymath process-math" id="sec-orthogonal-19-2-1-4">
+\begin{equation*}
+\int_{-l}^{l}  \vert \sum_{-N}^{N}c_{n} e^{i\frac{n\pi x}{l}}\vert^{2}\, dx
+= 2l\left( \sum_{-N}^{N} |c_{n}|^{2}\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.1.7: The Orthogonal Family \{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\} on [-l, l]"><a href="#sec-orthogonal-19" title="Copy heading and permalink for Exercise 4.1.7: The Orthogonal Family \{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\} on [-l, l]" aria-label="Copy heading and permalink for Exercise 4.1.7: The Orthogonal Family \{ e^{i\frac{n\pi x}{l}}: n\in \bbZ\} on [-l, l]">🔗</a></div></article></details><article class="remark remark-like" id="sec-orthogonal-20"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-orthogonal-20-1">Two modifications are made in  the defining properties of a Hermitian inner product: (i). allowing <span class="process-math">\((x, y)\)</span> to take complex values, and (ii). replacing the symmetry property by the complex conjugate symmetry property <span class="process-math">\((x, y)=\overline{(y, x)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-20-2">These are based on the following considerations. (a). It is preferable to keep some complex linearity for an inner product on a vector space over <span class="process-math">\(\bbC\)</span> such as given in the first property of an inner product, and this makes it necessary to allow <span class="process-math">\((x, y)\)</span> to take complex values. (b). We still would like to use <span class="process-math">\(\sqrt{(x, x)}\)</span> as a norm for a vector, thus we need <span class="process-math">\((x, x) \)</span> to be a nonnegative real number for any <span class="process-math">\(x\in V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-20-3">
+<div class="para">Let <span class="process-math">\(H(x, y), S(x, y)\)</span> denote, respectively, the real and imaginary parts of <span class="process-math">\((x, y)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-orthogonal-20-3-3">
+\begin{equation*}
+(x, y) =G(x, y)+ i S(x, y), x, y \in V.
+\end{equation*}
+</div>
+<div class="para">Then we need <span class="process-math">\(S(x, x)=0\)</span> for all <span class="process-math">\(x\in V\text{.}\)</span> This property, coupled with linearity over <span class="process-math">\(\bbR\text{,}\)</span> implies that <span class="process-math">\(S(x, y)\)</span> must be antisymmetric in <span class="process-math">\(x, y\text{.}\)</span>  In fact, it makes sense to require <span class="process-math">\(G(x, y)\)</span> to be an inner product on <span class="process-math">\(V\)</span> treating <span class="process-math">\(V\)</span> as a vector space over <span class="process-math">\(\bbR\text{.}\)</span> Thus we want <span class="process-math">\(G(x, y)\)</span> to be symmetric in <span class="process-math">\(x, y\text{.}\)</span>  An additional desired property is that multiplication by <span class="process-math">\(i\)</span> on both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> should preserve the inner product:</div>
+<div class="displaymath process-math" id="sec-orthogonal-20-3-18">
+\begin{equation*}
+(ix, iy)=(x, y) \text{ for all $x, y\in V$.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-20-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-20-4">It turns out that these desired properties are encoded in, in fact, equivalent to the defining properties for a Hermitian inner product.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-20-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.8"><a href="#sec-orthogonal-20" title="Copy heading and permalink for Remark 4.1.8" aria-label="Copy heading and permalink for Remark 4.1.8">🔗</a></div></article><details id="sec-orthogonal-21" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hermitian and Euclidean Inner Product.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-orthogonal-21-2-1">
+<div class="para">Use the set up of <span class="process-math">\(G(x, y)+iS(x, y)=(x, y)\)</span> for a Hermitian inner product. Verify that</div>
+<ol class="decimal" id="sec-orthogonal-21-2-1-2">
+<li id="sec-orthogonal-21-2-1-2-1">
+<div class="para" id="p-derived-sec-orthogonal-21-2-1-2-1">
+<span class="process-math">\(G(x, y)=G(y, x), S(x,y)=-S(y,x )\)</span> for all <span class="process-math">\(x, y\in V\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4.1.9.1"><a href="#sec-orthogonal-21-2-1-2-1" title="Copy heading and permalink for Item 4.1.9.1" aria-label="Copy heading and permalink for Item 4.1.9.1">🔗</a></div>
+</li>
+<li id="sec-orthogonal-21-2-1-2-2">
+<div class="para" id="p-derived-sec-orthogonal-21-2-1-2-2">
+<span class="process-math">\(G(i x, i y)=G(x, y), S(i x, i y)=S(x, y)\)</span> for all <span class="process-math">\(x, y\in V\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4.1.9.2"><a href="#sec-orthogonal-21-2-1-2-2" title="Copy heading and permalink for Item 4.1.9.2" aria-label="Copy heading and permalink for Item 4.1.9.2">🔗</a></div>
+</li>
+<li id="sec-orthogonal-21-2-1-2-3">
+<div class="para" id="p-derived-sec-orthogonal-21-2-1-2-3">
+<span class="process-math">\(S(x, y)=G(x, i y)\)</span> for all <span class="process-math">\(x, y\in V\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4.1.9.3"><a href="#sec-orthogonal-21-2-1-2-3" title="Copy heading and permalink for Item 4.1.9.3" aria-label="Copy heading and permalink for Item 4.1.9.3">🔗</a></div>
+</li>
+<li id="sec-orthogonal-21-2-1-2-4">
+<div class="para" id="p-derived-sec-orthogonal-21-2-1-2-4">
+<span class="process-math">\(G(x, ix)=0\)</span> for all <span class="process-math">\(x\in V\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4.1.9.4"><a href="#sec-orthogonal-21-2-1-2-4" title="Copy heading and permalink for Item 4.1.9.4" aria-label="Copy heading and permalink for Item 4.1.9.4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-orthogonal-21-2-2">Conversely, if <span class="process-math">\(G(x, y)\)</span> is an inner product on <span class="process-math">\(V\)</span> as a vector space over the reals, and satisfies <span class="process-math">\(G(i x, i y)=G(x, y)\)</span> for all <span class="process-math">\(x, y\in V\text{.}\)</span> Then define <span class="process-math">\(S(x, y)= G(x, i y)\)</span> and <span class="process-math">\((x, y)=G(x, y)+ i S(x, y)\)</span> for all <span class="process-math">\(x, y\in V\text{.}\)</span> Verify that this <span class="process-math">\((x, y)\)</span> is a Hermitian inner product on <span class="process-math">\(V\text{.}\)</span> In other words, a Hermitian inner product is always associated with a Euclidean inner product which is preserved by multiplication by <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-21-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.1.9: Hermitian and Euclidean Inner Product"><a href="#sec-orthogonal-21" title="Copy heading and permalink for Exercise 4.1.9: Hermitian and Euclidean Inner Product" aria-label="Copy heading and permalink for Exercise 4.1.9: Hermitian and Euclidean Inner Product">🔗</a></div></article></details><article class="remark remark-like" id="sec-orthogonal-22"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-orthogonal-22-1">When two vectors <span class="process-math">\(x, y\)</span> are orthogonal in a complex vector space <span class="process-math">\(V\)</span> with a Hermitian inner product, the Pythagorean relation holds in the same way as for case in a vector space with a Euclidean inner product.  In this sense it is a proper generalization of the orthogonal relation in Euclidean geometry. On the other hand, there is a subtle difference: suppose <span class="process-math">\(\{\bv_{1},\cdots, \bv_{m}\}\)</span> is an orthonormal basis of a complex vector space <span class="process-math">\(V\)</span> with a Hermitian inner product, then <span class="process-math">\(\bv_{j}\)</span> and <span class="process-math">\(i \bv_{j}\)</span> are not orthogonal in  this Hermitian inner product; on the other hand, if we endow <span class="process-math">\(V\)</span> with the indued Euclidean inner product <span class="process-math">\(G(x, y)\)</span> as discussed above, then <span class="process-math">\(\bv_{j}\)</span> and <span class="process-math">\(i \bv_{j}\)</span> are  orthogonal in <span class="process-math">\(G(x, y)\text{;}\)</span> in fact, <span class="process-math">\(\{ \bv_{1},\cdots, \bv_{m}; i \bv_{1},\cdots, i \bv_{m}\}\)</span> becomes an orthonormal basis for this inner product <span class="process-math">\(G(x, y)\text{.}\)</span> This is the case for the canonical Hermitian metric on <span class="process-math">\(\bbC\text{,}\)</span> where <span class="process-math">\((z, w)=z \bar w\text{,}\)</span> so <span class="process-math">\((1, i)=-i \ne 0\text{,}\)</span> while in the geometric representation of complex numbers, <span class="process-math">\(1, i\)</span> are orthogonal---they are orthogonal in the induced <span class="process-math">\(G\)</span> inner product, which is the standard Euclidean inner product.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.10"><a href="#sec-orthogonal-22" title="Copy heading and permalink for Remark 4.1.10" aria-label="Copy heading and permalink for Remark 4.1.10">🔗</a></div></article><div class="para" id="sec-orthogonal-23">In the following we will not distinguish between a Hermitian inner product and a Euclidean inner product, and will let the context to imply the appropriate one.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec-orthogonal-24"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-orthogonal-24-1">Orthogonal systems of functions often arise as eigenfunctions of a “self-adjoint” differential operator, which is the analogue of real symmetric matrices or Hermitian matrices whose eigenvectors associated to distinct eigenvalues are automatically orthogonal to each other. For example, each function <span class="process-math">\(X_{n}(x)=\frac{e^{inx}}{\sqrt{2\pi} }\)</span> in <span class="process-math">\(\{\frac{e^{inx}}{\sqrt{2\pi} }\}_{n=-\infty}^{\infty}\)</span> is an eigenfunction of the following problem: <span class="process-math">\(X_{n}''(x)=- n^{2} X_{n}(x)\)</span> for <span class="process-math">\(x\in (-\pi, \pi)\)</span> and <span class="process-math">\(X_{n}(-\pi)=X_{n}(\pi)\text{,}\)</span> <span class="process-math">\(X_{n}'(-\pi)=X_{n}'(\pi)\text{;}\)</span> each <span class="process-math">\(Y_{n}(x)=\frac{\sin (nx)}{\sqrt \pi}\)</span> in the family <span class="process-math">\(\{  \frac{\sin (nx)}{\sqrt \pi}, n=1,2,\ldots\}\)</span> is an eigenfunction of the following problem: <span class="process-math">\(Y_{n}''(x)= - n^{2} Y_{n}(x)\)</span> for <span class="process-math">\(x\in (0, \pi)\)</span> and <span class="process-math">\(Y_{n}(0)=Y_{n}(\pi)=0\text{.}\)</span> In each case, the operator is self-adjoint in the sense that the inner product of <span class="process-math">\(f''\)</span> with <span class="process-math">\(g\)</span> equals the inner product of <span class="process-math">\(f\)</span> with <span class="process-math">\(g''\)</span> (the boundary conditions play an essential role here), and this leads to the orthogonality of eigenfunctions associated to distinct eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.11"><a href="#sec-orthogonal-24" title="Copy heading and permalink for Remark 4.1.11" aria-label="Copy heading and permalink for Remark 4.1.11">🔗</a></div></article><article class="definition definition-like" id="sec-orthogonal-25"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthonormal Vectors.</span>
+</h3>
+<div class="para" id="sec-orthogonal-25-2-1">A set of vectors <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots \}\)</span> (finite or infinite) in an inner product space <span class="process-math">\(V\)</span> is called an orthonormal set, if any two distinct vectors in this set are orthogonal to each other and each one is a unit vector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-25-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.12: Orthonormal Vectors"><a href="#sec-orthogonal-25" title="Copy heading and permalink for Definition 4.1.12: Orthonormal Vectors" aria-label="Copy heading and permalink for Definition 4.1.12: Orthonormal Vectors">🔗</a></div></article><article class="definition definition-like" id="sec-orthogonal-26"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Coefficients and Fourier Series.</span>
+</h3>
+<div class="para" id="sec-orthogonal-26-2-1">Let <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots \}\)</span> be a set of orthonormal vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\bv\in V\text{,}\)</span> define <span class="process-math">\(c_{k}=(\bv, \bv_{k})\text{.}\)</span> Then <span class="process-math">\(\{c_{k}\}\)</span> are called the Fourier coefficients of <span class="process-math">\(\bv\)</span> with respect to this set of orthonormal vectors, and the series <span class="process-math">\(\sum_{k} c_{k} \bv_{k}\)</span> is called the Fourier series of <span class="process-math">\(\bv\)</span> with respect to this set of orthonormal vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.13: Fourier Coefficients and Fourier Series"><a href="#sec-orthogonal-26" title="Copy heading and permalink for Definition 4.1.13: Fourier Coefficients and Fourier Series" aria-label="Copy heading and permalink for Definition 4.1.13: Fourier Coefficients and Fourier Series">🔗</a></div></article><div class="para" id="sec-orthogonal-27">In the above definition the convergence of <span class="process-math">\(\sum_{k} c_{k} \bv_{k}\)</span> in the case of an infinite set of orthonormal vectors is not directly addressed; one either needs to show that the series converges or simply assumes it as a formal series at this point. As will be seen soon, it is also appropriate to call this sum the orthogonal projection of <span class="process-math">\(\bv\)</span> in the span of  this set of orthonormal vectors. Note that in a setting of a set of  infinite vectors, we take  the span of such a set  to mean the <dfn class="terminology">completion</dfn> of the space of <em class="emphasis">finite</em> linear combination of vectors from this set, which allows us to make sense of an infinite series of such vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec-orthogonal-28"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-28-1">
+<div class="para">Sometimes we work with a set of orthogonal vectors which are not necessarily unit vectors. This is the case with <span class="process-math">\(\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right) : n\in\mathbb N\right\}\)</span> on <span class="process-math">\([-l, l]\text{.}\)</span>  Here we modify the definition of the Fourier coefficients of <span class="process-math">\(g\in \cR[-l, l]\)</span> by defining</div>
+<div class="displaymath process-math" id="sec-orthogonal-28-1-4">
+\begin{align*}
+a_{0} \amp = \frac{(g, 1)}{(1, 1)}=\frac {1}{2l}  \int_{-l}^{l} g(x) \, dx,\\
+a_{n}\amp = \frac{(g,  \cos \left(\frac{n \pi x}{l}\right))}{(\cos \left(\frac{n \pi x}{l}\right),\cos \left(\frac{n \pi x}{l}\right))}
+= \frac 1l
+\int_{-l}^{l} g(x) \cos \left(\frac{n \pi x}{l}\right) \, dx \text{ for } n\ge 1,\\
+b_{n} \amp =\frac{(g,  \sin \left(\frac{n \pi x}{l}\right))}{(\sin \left(\frac{n \pi x}{l}\right),\sin \left(\frac{n \pi x}{l}\right))}
+= \frac{1}{l} \int_{-l}^{l} g(x) \sin \left(\frac{n \pi x}{l}\right) \, dx \text{ for } n\ge 1,
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="sec-orthogonal-28-1-5">
+\begin{equation*}
+S_{N}[g](x):=a_0 +\sum_{n=1}^{N}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right]
+\end{equation*}
+</div>
+<div class="para">as the partial sums of the Fourier series of <span class="process-math">\(g(x)\)</span> on  <span class="process-math">\([-l, l]\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-orthogonal-28-1-8">
+\begin{equation*}
+g(x)\sim a_0 +\sum_{n=1}^{\infty}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-28-2">
+<div class="para">When we work with the set of orthogonal functions <span class="process-math">\(\left\{\sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}\)</span> on <span class="process-math">\([0, l]\text{,}\)</span> the Fourier coefficients of <span class="process-math">\(g\in \cR[0,l]\)</span> with respect to this set of orthogonal functions on <span class="process-math">\([0, l]\)</span> are defined by</div>
+<div class="displaymath process-math" id="sec-orthogonal-28-2-5">
+\begin{equation*}
+b_{n}=\frac{(g, \sin \left(\frac{n \pi x}{l}\right))}{(\sin \left(\frac{n \pi x}{l}\right),\sin \left(\frac{n \pi x}{l}\right))}
+=\frac 2l \int_{0}^{l} g(x) \sin \left(\frac{n \pi x}{l}\right)\, dx.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-28-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.14"><a href="#sec-orthogonal-28" title="Copy heading and permalink for Remark 4.1.14" aria-label="Copy heading and permalink for Remark 4.1.14">🔗</a></div></article><details id="sec-orthogonal-29" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find Fourier Coefficients.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-orthogonal-29-2-1">Find the Fourier coefficients of the functions <span class="process-math">\(f(x)=1\)</span> and <span class="process-math">\(g(x)=\cos x\)</span>  with respect to the set of orthogonal functions <span class="process-math">\(\left\{ \sin (nx): n\in\mathbb N\right\}\)</span> on <span class="process-math">\([0, \pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-29-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.1.15: Find Fourier Coefficients"><a href="#sec-orthogonal-29" title="Copy heading and permalink for Exercise 4.1.15: Find Fourier Coefficients" aria-label="Copy heading and permalink for Exercise 4.1.15: Find Fourier Coefficients">🔗</a></div></article></details><details id="sec-orthogonal-30" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integral Representation of Fourier Partial Sums.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-orthogonal-30-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-2-1-1">
+\begin{equation*}
+S_{N}[g](x):=a_0 +\sum_{n=1}^{N}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right]
+\end{equation*}
+</div>
+<div class="para">denote the partial sums of the Fourier series of <span class="process-math">\(g(x)\)</span> with respect to the  set of orthogonal functions <span class="process-math">\(\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right) : n\in\mathbb N\right\}\)</span> on <span class="process-math">\([-l, l]\text{,}\)</span> and let</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-2-1-5">
+\begin{equation*}
+c_{n}=\frac{1}{2l} \int_{-l}^{l} g(x) e^{-\frac{i n\pi x}{l}}\, dx
+\end{equation*}
+</div>
+<div class="para">denote the Fourier coefficients of <span class="process-math">\(g(x)\)</span> with respect to the set of orthogonal functions <span class="process-math">\(\left\{ e^{\frac{i n\pi x}{l}}\right\}_{n=-N}^{N}\text{.}\)</span> Verify that</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-2-1-8">
+\begin{equation*}
+S_{N}[g](x)=\sum_{n=-N}^{N} c_{n} e^{\frac{i n\pi x}{l}}=
+\frac{1}{2l} \int_{-l}^{l}g(t) D_{N}(x-t)\, dt
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-2-1-9">
+\begin{equation*}
+D_{N}(t)= \sum_{-N}^{N} e^{-\frac{i n\pi t}{l}}=\frac{\sin \frac{(N+\frac 12)\pi t}{l}}{\sin\frac {\pi t}{2l}}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-30-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-orthogonal-30-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="sec-orthogonal-30-3-1">
+<div class="para">First need to work out</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-3-1-1">
+\begin{align*}
+S_{N}[g](x)\amp =\frac{1}{2l} \int_{-l}^{l}g(t) \left(1 + \sum_{n=1}^{N} 2 \cos\left(\frac{n\pi (x-t)}{l}\right)\right)\, dt\\
+\amp = \frac{1}{2l} \int_{-l}^{l}g(t) \left( \sum_{n=-N}^{N} e^{\frac{i n\pi (x-t)}{l}} \right)\, dt\text{,}
+\end{align*}
+</div>
+<div class="para">then establish</div>
+<div class="displaymath process-math" id="sec-orthogonal-30-3-1-2">
+\begin{equation*}
+1 + \sum_{n=1}^{N} 2 \cos\left(\frac{n\pi s}{l} \right)= \sum_{n=-N}^{N} e^{\frac{i n\pi s}{l}}
+=\frac{\sin \frac{(N+\frac 12)\pi s}{l}}{\sin\frac {\pi s}{2l}}
+\end{equation*}
+</div>
+<div class="para">using either the relation <span class="process-math">\(2\sin \frac{\pi s}{2l} \cos  \frac{(N+\frac 12)\pi s}{l} =\sin(\frac{(N+1)\pi s}{l})-\sin(\frac{N\pi s}{l})\)</span> or <span class="process-math">\(\cos \left(\frac{n\pi s}{l} \right)= \text{Re}(e^{\frac{i n\pi s}{l} })\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-30-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.1.16.1"><a href="#sec-orthogonal-30-3" title="Copy heading and permalink for Hint 4.1.16.1" aria-label="Copy heading and permalink for Hint 4.1.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4.1.16: Integral Representation of Fourier Partial Sums"><a href="#sec-orthogonal-30" title="Copy heading and permalink for Exercise 4.1.16: Integral Representation of Fourier Partial Sums" aria-label="Copy heading and permalink for Exercise 4.1.16: Integral Representation of Fourier Partial Sums">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-orthogonal-31"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Best Approximation Property of Fourier Series.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-31-2-1">
+<div class="para">Let <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots, \bv_{N} \}\)</span> be a finite set of orthonormal vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\bv\in V\text{,}\)</span> let <span class="process-math">\(\sum_{k=1}^{N} c_{k} \bv_{k}\)</span> be the Fourier series of <span class="process-math">\(\bv\)</span> with respect to this set of orthonormal vectors. Then</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-2-1-6">
+\begin{equation*}
+( \bv - \sum_{k=1}^{N} c_{k} \bv_{k}, \bv_{j})=0 \text{ for all $j=1, \cdots, N$}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\bv - \sum_{k=1}^{N} c_{k} \bv_{k}\)</span> is orthogonal to every vector in the span of this set of orthonormal vectors. Furthermore,</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-2-1-8">
+\begin{equation*}
+\Vert \bv \Vert^{2}=\Vert \bv - \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}+ \Vert \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2},
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-2-1-9">
+\begin{equation*}
+\Vert \bv - \sum_{k=1}^{N} c_{k} \bv_{k}\Vert \le \Vert \bv - \sum_{k=1}^{N} a_{k} \bv_{k}\Vert 
+\text{ for any coefficients $\{a_{k}\}$,}
+\end{equation*}
+</div>
+<div class="para">namely, <span class="process-math">\(\sum_{k=1}^{N} c_{k} \bv_{k}\)</span> is closest to <span class="process-math">\(\bv\)</span> among all vectors in the span of this set of orthonormal vectors.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-31-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.17: Best Approximation Property of Fourier Series"><a href="#sec-orthogonal-31" title="Copy heading and permalink for Theorem 4.1.17: Best Approximation Property of Fourier Series" aria-label="Copy heading and permalink for Theorem 4.1.17: Best Approximation Property of Fourier Series">🔗</a></div></article><details id="sec-orthogonal-31-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-orthogonal-31-3-1">
+<div class="para">The first assertion follows directly from</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-3-1-1">
+\begin{equation*}
+( \bv - \sum_{k=1}^{N} c_{k} \bv_{k}, \bv_{j})=(\bv, \bv_{j})- \sum_{k=1}^{N} c_{k} (\bv_{k}, \bv_{j})=c_{j}-c_{j}=0
+\end{equation*}
+</div>
+<div class="para">using the orthonormal condition <span class="process-math">\((\bv_{k}, \bv_{j})=\delta_{kj}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-31-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-31-3-2">
+<div class="para">The second assertion follows by using  the orthogonality relations above</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-3-2-1">
+\begin{align*}
+\Vert \bv \Vert^{2}  = \amp  \left( (\bv - \sum_{k=1}^{N} c_{k} \bv_{k})+  \sum_{k=1}^{N} c_{k} \bv_{k},
+(\bv - \sum_{k=1}^{N} c_{k} \bv_{k})+  \sum_{k=1}^{N} c_{k} \bv_{k} \right)\\
+= \amp (  \bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \bv - \sum_{k=1}^{N} c_{k} \bv_{k})+
+2(\bv - \sum_{k=1}^{N} c_{k} \bv_{k},  \sum_{k=1}^{N} c_{k} \bv_{k})\\
+\amp + (\sum_{k=1}^{N} c_{k} \bv_{k},\sum_{k=1}^{N} c_{k} \bv_{k})\\
+= \amp \Vert \bv - \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}+ \Vert \sum_{k=1}^{N} c_{k} \bv_{k}\Vert^{2}
+\end{align*}
+</div>
+<div class="para">using <span class="process-math">\((\bv - \sum_{k=1}^{N} c_{k} \bv_{k}, \bv_{k})=0\)</span> for any <span class="process-math">\(k\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-31-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-31-3-3">
+<div class="para">Set <span class="process-math">\(\bw = \sum_{k=1}^{N} c_{k} \bv_{k}\text{.}\)</span> Then <span class="process-math">\((\bv-\bw, \sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k})=0\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="sec-orthogonal-31-3-3-3">
+\begin{align*}
+\Vert \bv - \sum_{k=1}^{N} a_{k} \bv_{k}\Vert^{2} \amp =   \left(\bv-\bw +( \sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k}),
+\bv-\bw +( \sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k})\right)\\
+\amp = \left(\bv-\bw, \bv-\bw\right)+ \left(\sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k},\sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k}\right)\\
+\amp = \Vert \bv-\bw\Vert^{2}+\Vert \sum_{k=1}^{N} (c_{k}-a_{k}) \bv_{k}\Vert^{2}\\
+\amp \ge \Vert \bv-\bw\Vert^{2},
+\end{align*}
+</div>
+<div class="para">with equality iff <span class="process-math">\(c_{k}-a_{k}=0\)</span> for all <span class="process-math">\(k, 1\le k \le N\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-31-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.17.1"><a href="#sec-orthogonal-31-3" title="Copy heading and permalink for Proof 4.1.17.1" aria-label="Copy heading and permalink for Proof 4.1.17.1">🔗</a></div></article></details><article class="definition definition-like" id="sec-orthogonal-32"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal Projection.</span>
+</h3>
+<div class="para" id="sec-orthogonal-32-2-1">Let <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots, \bv_{N} \}\)</span> be a finite set of orthonormal vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\bv\in V\text{,}\)</span> let <span class="process-math">\(\sum_{k=1}^{N} c_{k} \bv_{k}\)</span> be the Fourier series of <span class="process-math">\(\bv\)</span> with respect to this set of orthonormal vectors. Then <span class="process-math">\(\sum_{k=1}^{N} c_{k} \bv_{k}\)</span> is also called the orthogonal projection of <span class="process-math">\(\bv\)</span> in the span of this set of orthonormal vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.18: Orthogonal Projection"><a href="#sec-orthogonal-32" title="Copy heading and permalink for Definition 4.1.18: Orthogonal Projection" aria-label="Copy heading and permalink for Definition 4.1.18: Orthogonal Projection">🔗</a></div></article><details id="sec-orthogonal-33" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find Orthogonal Projections.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-orthogonal-33-2-1">Find the orthogonal projections of the functions <span class="process-math">\(f(x)=1\)</span> and <span class="process-math">\(g(x)=\cos x\)</span>  in the span of  the set of orthogonal functions <span class="process-math">\(\left\{ \sin (nx): 1\le n \le  N\right\}\)</span> on <span class="process-math">\([0, \pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-33-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.1.19: Find Orthogonal Projections"><a href="#sec-orthogonal-33" title="Copy heading and permalink for Exercise 4.1.19: Find Orthogonal Projections" aria-label="Copy heading and permalink for Exercise 4.1.19: Find Orthogonal Projections">🔗</a></div></article></details><details id="sec-orthogonal-34" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-orthogonal-34-1-1">Find the orthogonal projection of the function <span class="process-math">\(f(x)=x\)</span> in the span of  the set of orthogonal functions <span class="process-math">\(\left\{1, \cos (nx),  \sin (nx): 1\le n \le  N\right\}\)</span> on <span class="process-math">\([-\pi, \pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-34-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.1.20"><a href="#sec-orthogonal-34" title="Copy heading and permalink for Exercise 4.1.20" aria-label="Copy heading and permalink for Exercise 4.1.20">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-orthogonal-35"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bessel’s Inequality.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-35-2-1">
+<div class="para">Let <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots \}\)</span> be a set of orthonormal vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\bv\in V\text{,}\)</span> let <span class="process-math">\(\sum_{k} c_{k} \bv_{k}\)</span> be the Fourier series of <span class="process-math">\(\bv\)</span> with respect to this set of orthonormal vectors. Then</div>
+<div class="displaymath process-math" id="sec-orthogonal-35-2-1-6">
+\begin{equation*}
+\sum_{k} |c_{k}|^{2}\le \Vert \bv\Vert^{2} \quad\text{ (Bessel's inequality)}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-35-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.21: Bessel’s Inequality"><a href="#sec-orthogonal-35" title="Copy heading and permalink for Theorem 4.1.21: Bessel’s Inequality" aria-label="Copy heading and permalink for Theorem 4.1.21: Bessel’s Inequality">🔗</a></div></article><details id="sec-orthogonal-35-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-orthogonal-35-3-1">
+<div class="para">Take any finite subset <span class="process-math">\(\{\bv_{1}, \bv_{2},\cdots, \bv_{N}\}\text{.}\)</span> Then we have already proved that</div>
+<div class="displaymath process-math" id="sec-orthogonal-35-3-1-2">
+\begin{equation*}
+\Vert \bv\Vert^{2}\ge \Vert \sum_{k=1}^{N }  c_{k }\bv_{k}\Vert^{2}=  \sum_{k=1}^{N} |c_{k}|^{2}.
+\end{equation*}
+</div>
+<div class="para">Since this holds for any finite <span class="process-math">\(N\text{,}\)</span> Bessel’s inequality follows immediately.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-35-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.21.1"><a href="#sec-orthogonal-35-3" title="Copy heading and permalink for Proof 4.1.21.1" aria-label="Copy heading and permalink for Proof 4.1.21.1">🔗</a></div></article></details><article class="corollary theorem-like" id="sec-orthogonal-36"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bessel’s inequality for trigonometric Fourier series.</span>
+</h3>
+<div class="para logical" id="sec-orthogonal-36-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="sec-orthogonal-36-2-1-1">
+\begin{equation*}
+g(x)\sim a_0 +\sum_{n=1}^{\infty}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right].
+\end{equation*}
+</div>
+<div class="para">be the Fourier series of <span class="process-math">\(g\in \cR[-l, l]\)</span> with respect to the set of orthogonal functions <span class="process-math">\(\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right) : n\in\mathbb N\right\}\)</span> on <span class="process-math">\([-l, l]\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-orthogonal-36-2-1-5">
+\begin{align}
+\amp \int_{-l}^{l} |g(x)|^{2}\, dx\tag{4.1.1}\\
+= \amp \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+\int_{-l}^{l} |S_{N}[g](x)|^{2}\, dx \tag{4.1.2}\\
+= \amp \int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx+ 2l |a_{0}|^{2}+l \sum_{n=1}^{N} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right].\tag{4.1.3}
+\end{align}
+</div>
+<div class="para">As a consequence the following Bessel’s inequality holds</div>
+<div class="displaymath process-math" id="sec-orthogonal-36-2-1-6">
+\begin{equation*}
+\int_{-l}^{l} |g(x)|^{2}\, dx \ge 2l |a_{0}|^{2}+l \sum_{n=1}^{\infty} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-36-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 4.1.22: Bessel’s inequality for trigonometric Fourier series"><a href="#sec-orthogonal-36" title="Copy heading and permalink for Corollary 4.1.22: Bessel’s inequality for trigonometric Fourier series" aria-label="Copy heading and permalink for Corollary 4.1.22: Bessel’s inequality for trigonometric Fourier series">🔗</a></div></article><article class="remark remark-like" id="sec-orthogonal-37"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-orthogonal-37-1">So far we have not addressed the issue whether <span class="process-math">\(S_{N}[g](x)\)</span> converges to <span class="process-math">\(g(x)\)</span> in the mean square sense, namely whether <span class="process-math">\(\int_{-l}^{l} |g(x)-S_{N}[g](x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> From the above we see that the answer depends	on whether equality holds in the Bessel’s inequality. Another possible approach is to show  that there exists a sequence <span class="process-math">\(p_{N}(x)=\sum_{n=-N}^{N}c_{n }' e^{\frac{i nx}{l}}\)</span> such that <span class="process-math">\(\int_{-l}^{l} |g(x)-p_{N}(x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\)</span> and appeal to the Best Approximation Property of the Fourier series. This would be the case if the set of finite linear combination of functions from <span class="process-math">\(\{ e^{\frac{i nx}{l}}\}\)</span> is dense in the mean square norm  in the set of function spaces, such as <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\text{,}\)</span> in which we are interested in making such a Fourier series expansion.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-37-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-37-2">
+<div class="para">Given any <span class="process-math">\(g\)</span> in <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\text{,}\)</span> using the orthogonality relations we have</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-2-4">
+\begin{equation*}
+\int_{-l}^{l} |S_{N'}[g](x)-S_{N}[g](x)|^{2}\, dx =l \sum_{n=N}^{N'} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right]
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(N' \gt N\text{.}\)</span> The Bessel’s inequality implies then that the sequence <span class="process-math">\(\{ S_{N}[g](x) \}\)</span> is a Cauchy sequence in the mean square norm.  At this point we need the property of completeness of the function space on which we are working. Unfortunately, neither <span class="process-math">\(\cR[-l, l]\)</span> nor <span class="process-math">\(C[-l, l]\)</span> is complete with respect to the mean square norm. The completion of either <span class="process-math">\(\cR[-l, l]\)</span> or <span class="process-math">\(C[-l, l]\)</span> turns out to the space of  Lebesgue square integrable functions <span class="process-math">\(L^{2}[-l, l]\text{.}\)</span>  So a more proper discussion on the issue of mean square convergence should be on the complete space <span class="process-math">\(L^{2}[-l, l]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-37-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonal-37-3">
+<div class="para">Without discussing details of Lebesgue integrable functions, we may assume that there exists some <span class="process-math">\(\hat g\in L^{2}[-l, l]\)</span> such that <span class="process-math">\(\int_{-l}^{l} |\hat g-S_{N}[g](x)|^{2}\, dx\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> We claim the following property:</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-3-4">
+\begin{equation*}
+(g-\hat g, e^{\frac{i m\pi x}{l}})=0 \quad \text{for any $m\in \bbZ$.}
+\end{equation*}
+</div>
+<div class="para">This follows by noting that for any <span class="process-math">\(N\gt m\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-3-6">
+\begin{align*}
+(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}}) \amp =(g, e^{\frac{i m\pi x}{l}})-(S_{N}[g](x), e^{\frac{i m\pi x}{l}})\\
+\amp = 2l\left(c_{m}-c_{m}\right)=0,
+\end{align*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-3-7">
+\begin{align*}
+(g-\hat g, e^{\frac{i m\pi x}{l}}) \amp =(g-S_{N}[g](x), e^{\frac{i m\pi x}{l}})+(S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}})\\
+\amp		= (S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}}),
+\end{align*}
+</div>
+<div class="para">while by the Cauchy-Schwarz inequality</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-3-8">
+\begin{equation*}
+\vert (S_{N}[g](x)-\hat g, e^{\frac{i m\pi x}{l}}) \vert \le \Vert S_{N}[g](x)-\hat g\Vert \Vert e^{\frac{i m\pi x}{l}}\Vert \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(N\to \infty\text{,}\)</span> which shows that</div>
+<div class="displaymath process-math" id="sec-orthogonal-37-3-10">
+\begin{equation*}
+(g-\hat g, e^{\frac{i m\pi x}{l}})= 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-37-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonal-37-4">So a key to our question is whether the only function which is orthogonal to all <span class="process-math">\(e^{\frac{i m\pi x}{l}}\)</span> is the <span class="process-math">\(0\)</span> function. This discussion makes sense on a general inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-37-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.23"><a href="#sec-orthogonal-37" title="Copy heading and permalink for Remark 4.1.23" aria-label="Copy heading and permalink for Remark 4.1.23">🔗</a></div></article><article class="definition definition-like" id="sec-orthogonal-38"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Complete (or Maximal) Orthonormal Set.</span>
+</h3>
+<div class="para" id="sec-orthogonal-38-2-1">A set of orthonormal vectors in an inner product space is called complete (or maximal) if the only vector orthogonal to each of these vectors is the zero vector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonal-38-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.24: A Complete (or Maximal) Orthonormal Set"><a href="#sec-orthogonal-38" title="Copy heading and permalink for Definition 4.1.24: A Complete (or Maximal) Orthonormal Set" aria-label="Copy heading and permalink for Definition 4.1.24: A Complete (or Maximal) Orthonormal Set">🔗</a></div></article><div class="autopermalink" data-description="Section 4.1: General Orthogonal Expansion"><a href="#sec-orthogonal" title="Copy heading and permalink for Section 4.1: General Orthogonal Expansion" aria-label="Copy heading and permalink for Section 4.1: General Orthogonal Expansion">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-Fseries.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-FSConv.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

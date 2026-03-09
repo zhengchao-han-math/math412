@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>Note that integration by parts gives<div class="displaymath process-math">
+\begin{align*}
+\pi a_{n}' =  \amp \int_{-\pi}^{\pi } g'(x) \cos (nx) \, dx \\
+= \amp g(x) \cos (nx) \Big|_{x=-\pi}^{x=\pi}+ n
+\int_{-\pi}^{\pi} g(x) \sin (nx) \, dx \text{ (using $g \in C[-\pi, \pi] $)}\\
+= \amp n
+\int_{-\pi}^{\pi} g(x) \sin (nx) \, dx \text{ (using $ g(-\pi)=g(\pi)$) }\\
+= \amp \pi n b_{n};\\
+\pi b_{n}'= \amp \int_{-\pi}^{\pi} g'(x) \sin (nx) \, dx \\
+=  \amp g(x) \sin (nx) \Big|_{x=-\pi}^{x=\pi}- n
+\int_{-\pi}^{\pi} g(x) \cos (nx) \, dx \text{ (using $ g \in C[-\pi, \pi]$)} \\
+= \amp - n \int_{-\pi}^{\pi} g(x) \cos (nx) \, dx \\
+= \amp -\pi n a_{n}. 
+\end{align*}
+</div></article><span class="incontext"><a href="int-diff.html#proof-23" class="internal">in-context</a></span>
+</body>
+</html>

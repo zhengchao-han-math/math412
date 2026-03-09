@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">The operator norm depends on the norms on <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> When <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are Cartesian vector spaces such as <span class="process-math">\(\mathbb R^{n}\text{,}\)</span> the most commonly used norm is the Euclidean norm</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||(x_{1}, \ldots, x_{n})||=\sqrt{\sum_{i=1}^{n}|x_{i}|^{2}}.
+\end{equation*}
+</div>
+<div class="para">But other norms may also be used, such as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||(x_{1}, \ldots, x_{n})||_{1} := \sum_{i=1}^{n}|x_{i}|,
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||(x_{1}, \ldots, x_{n})||_{\infty} :=\max_{1\le i\le n}|x_{i}|.
+\end{equation*}
+</div>
+</div> <div class="para">It is usually not easy to get the precise value of the operator norm. Often one tries to give an estimate for this norm. When a linear map <span class="process-math">\(T\)</span> is represented by a matrix <span class="process-math">\(A\text{,}\)</span> it would make sense to estimate <span class="process-math">\(||T||\)</span> in terms of the matrix <span class="process-math">\(A\text{;}\)</span> but one needs to be aware that  <span class="process-math">\(T\)</span> has different matrix representations depending on the choice of bases used, and any estimate of   <span class="process-math">\(||T||\)</span> in terms of the matrix <span class="process-math">\(A\)</span> has to take into account of this freedom.</div> <div class="para logical">
+<div class="para">When <span class="process-math">\(X=\mathbb R^{n}\)</span> and <span class="process-math">\(Y=\mathbb R^{m}\)</span> are equipped with the standard Euclidean norm, and their standard bases are used, recall that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(x_{1}, \ldots, x_{n})=A\begin{bmatrix} x_{1} \\ \vdots \\ x_{n} \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||T(x_{1}, \ldots, x_{n})||^{2}= \begin{bmatrix} x_{1} \amp \ldots \amp x_{n} \end{bmatrix}A^{\rm t}A
+\begin{bmatrix} x_{1} \\ \vdots \\ x_{n} \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(||T||\)</span> in this setting is identified as the square root of the largest eigenvalue of <span class="process-math">\(A^{\rm t}A\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Using the Cauchy-Schwarz inequality, one can easily get an estimate of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+||T||\le \sqrt{\sum_{1\le i \le m, 1\le j \le n} |a_{ij}|^{2}}.
+\end{equation*}
+</div>
+<div class="para">The latter is actually the square mean norm on the space of matrices denoted as <span class="process-math">\(\Vert T\Vert_2\text{.}\)</span>
+</div>
+</div> <div class="para">When <span class="process-math">\(m=n\)</span> and <span class="process-math">\(A\)</span> is an orthogonal matrix, this estimate would give <span class="process-math">\(||T||\le \sqrt{n}\)</span> as <span class="process-math">\(\sum_{1\le j \le n} |a_{ij}|^{2}=1\)</span> for each <span class="process-math">\(1\le i \le n\text{,}\)</span> while the above characterization, or the defining property of an orthogonal map gives <span class="process-math">\(||T||=1\text{.}\)</span>
+</div></article><span class="incontext"><a href="section-linearmaps.html#remark-33" class="internal">in-context</a></span>
+</body>
+</html>

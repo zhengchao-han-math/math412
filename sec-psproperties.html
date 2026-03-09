@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Properties of a Convergent Power Series</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.18';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1d92cd109bc12c4d.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec_psradius.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-powerseries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-exponential.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-30" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-9" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-17" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-psproperties"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of a Convergent Power Series</span>
+</h2>
+<article class="theorem theorem-like" id="thm-Abel"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Abel Theorem for a Power Series.</span>
+</h3>
+<div class="para logical" id="thm-Abel-2-1">
+<div class="para">Suppose that the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> converges at <span class="process-math">\(x=y\ne x_{0}\text{.}\)</span> Then it converges uniformly	over the closed interval from <span class="process-math">\(x_{0}\)</span> to <span class="process-math">\(y\text{.}\)</span> As a consequence</div>
+<div class="displaymath process-math" id="thm-Abel-2-1-5">
+\begin{equation*}
+\lim_{x\to y, |x-x_{0}|\lt |y-x_{0}|} \sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}
+=\sum_{n=0}^{\infty} a_{n}(y-x_{0})^{n}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Abel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.1: Abel Theorem for a Power Series"><a href="#thm-Abel" title="Copy heading and permalink for Theorem 3.2.1: Abel Theorem for a Power Series" aria-label="Copy heading and permalink for Theorem 3.2.1: Abel Theorem for a Power Series">🔗</a></div></article><details id="thm-Abel-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-Abel-3-1">Set <span class="process-math">\(c_{n}=  a_{n}(y-x_{0})^{n}\)</span> and consider the power series <span class="process-math">\(\sum_{n=0}^{\infty} c_{n}t^{n}\)</span> in <span class="process-math">\(t\text{.}\)</span> Then it equals the given power series at <span class="process-math">\(x\)</span> with <span class="process-math">\(x-x_{0}=t(y-x_{0})\)</span> and converges at <span class="process-math">\(t=1\text{.}\)</span> It suffices to prove that <span class="process-math">\(\sum_{n=0}^{\infty} c_{n}t^{n}\)</span> converges uniformly over <span class="process-math">\(0\le t \le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Abel-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-Abel-3-2">
+<div class="para">Set <span class="process-math">\(s_{N}= \sum_{n=0}^{N}c_{n}\)</span> for <span class="process-math">\(n\ge 0\)</span> and <span class="process-math">\(s_{-1}=0\text{.}\)</span> Then under our assumption <span class="process-math">\(s_{N} \to s:= \sum_{n=0}^{\infty} c_{n}= \sum_{n=0}^{\infty} a_{n}(y-x_{0})^{n}\)</span> as <span class="process-math">\(N\to\infty\text{.}\)</span> For <span class="process-math">\(0\le t\lt 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="thm-Abel-3-2-7">
+\begin{equation*}
+\sum_{n=0}^{N}c_{n} t^{n}= \sum_{n=0}^{N}\left( s_{n}-s_{n-1}\right) t^{n}=(1-t)\sum_{n=0}^{N-1} s_{n} t^{n}+s_{N}t^{N}.
+\end{equation*}
+</div>
+<div class="para">Sending <span class="process-math">\(N\to \infty\)</span> and using <span class="process-math">\((1-t)\sum_{n=0}^{\infty} t^{n}=1\)</span> gives us</div>
+<div class="displaymath process-math" id="thm-Abel-3-2-10">
+\begin{equation*}
+\sum_{n=0}^{\infty} c_{n}t^{n}= (1-t)\sum_{n=0}^{\infty} s_{n} t^{n}= (1-t)\sum_{n=0}^{\infty} \left(s_{n}-s\right) t^{n}+s.
+\end{equation*}
+</div>
+<div class="para">For any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> let <span class="process-math">\(N\)</span> be such that for <span class="process-math">\(n\gt N\text{,}\)</span> we have <span class="process-math">\(\vert s_{n}-s \vert \lt \epsilon\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm-Abel-3-2-15">
+\begin{align*}
+\vert \sum_{n=0}^{\infty} c_{n}t^{n} -s \vert \amp \le |1-t| \sum_{n=0}^{\infty} \vert s_{n}-s \vert |t|^{n} \\
+\amp = |1-t|\left( \sum_{n=0}^{N} \vert s_{n}-s \vert |t|^{n} + \sum_{n=N+1}^{\infty} \vert s_{n}-s \vert |t|^{n}\right)\\
+\amp \le |1-t|\left( \sum_{n=0}^{N} \vert s_{n}-s \vert |t|^{n} + \epsilon \sum_{n=N+1}^{\infty} |t|^{n}\right)\\
+\amp \le |1-t|\left( \sum_{n=0}^{N} \vert s_{n}-s \vert |t|^{n} \right) + \epsilon \frac{ |t|^{N+1} |1-t|}{1-|t|}.
+\end{align*}
+</div>
+<div class="para">If we take real <span class="process-math">\(t\)</span> such that <span class="process-math">\(0\le t \lt 1\text{,}\)</span> then <span class="process-math">\(\frac{ |t|^{N+1} |1-t|}{1-|t|} \le 1\text{,}\)</span> and we can find some <span class="process-math">\(\delta \gt 0\)</span> such that when <span class="process-math">\(|1-t|\lt \delta\text{,}\)</span> we have <span class="process-math">\(|1-t|\left( \sum_{n=0}^{N} \vert s_{n}-s \vert |t|^{n} \right) \lt \epsilon\text{.}\)</span> This shows that <span class="process-math">\(\sum_{n=0}^{\infty} c_{n}t^{n} \to s\)</span> as <span class="process-math">\(t\to 1-\text{.}\)</span> Note that the above argument works even for complex <span class="process-math">\(t\)</span> as long as we restrict <span class="process-math">\(t\)</span> to satisfy <span class="process-math">\(\frac{  |1-t|}{1-|t|} \le C\)</span> for some <span class="process-math">\(C\gt 0\text{.}\)</span> This is the case as long as <span class="process-math">\(t\to 1\)</span> from within the unit disc in a <em class="emphasis">non-tangential</em> way.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Abel-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.1.1"><a href="#thm-Abel-3" title="Copy heading and permalink for Proof 3.2.1.1" aria-label="Copy heading and permalink for Proof 3.2.1.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-psproperties-3"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-psproperties-3-1">
+<div class="para">Abel’s Theorem is a form of interchange of limits. Suppose that the series <span class="process-math">\(\sum_{n=0}^{\infty} x^{n}\)</span> converges at one end, say at <span class="process-math">\(x=R\text{,}\)</span> then the Theorem implies that for <span class="process-math">\(0\le x \le R\)</span>
+</div>
+<div class="displaymath process-math" id="sec-psproperties-3-1-4">
+\begin{equation*}
+\sum_{n=1}^{\infty} a_n x^n =\lim_{N\to \infty} s_N(x)
+\end{equation*}
+</div>
+<div class="para">is a continuous function of <span class="process-math">\(x\in [0,R]\text{.}\)</span> As a consequence,</div>
+<div class="displaymath process-math" id="sec-psproperties-3-1-6">
+\begin{equation*}
+\sum_{n=1}^{\infty} a_n R^n= \lim_{x\to R-} \sum_{n=1}^{\infty} a_n x^n\text{.}
+\end{equation*}
+</div>
+<div class="para">This can also be written as</div>
+<div class="displaymath process-math" id="sec-psproperties-3-1-7">
+\begin{equation*}
+\lim_{N\to \infty} s_N(R)= \lim_{N\to \infty} \lim_{x\to R-} s_N(x) = \lim_{x\to R-} \lim_{N\to \infty} s_N(x) = \lim_{x\to R-} \sum_{n=1}^{\infty} a_n x^n.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.2"><a href="#sec-psproperties-3" title="Copy heading and permalink for Remark 3.2.2" aria-label="Copy heading and permalink for Remark 3.2.2">🔗</a></div></article><article class="theorem theorem-like" id="thm-psintegrate"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Term-wise Integration of a Convergent Power Series.</span>
+</h3>
+<div class="para logical" id="thm-psintegrate-2-1">
+<div class="para">Suppose that the radius <span class="process-math">\(R\)</span> of convergence of the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> is non zero. Then for any <span class="process-math">\(0\lt t \lt R\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-psintegrate-2-1-4">
+\begin{equation*}
+\int_{x_{0}}^{x_{0}+t} \left( \sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n} \right)\, dx =
+\sum_{n=0}^{\infty}\int_{x_{0}}^{x_{0}+t} a_{n} (x-x_{0})^{n}\, dx =\sum_{n=0}^{\infty} \frac{a_{n}t^{n+1}}{n+1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-psintegrate-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.3: Term-wise Integration of a Convergent Power Series"><a href="#thm-psintegrate" title="Copy heading and permalink for Theorem 3.2.3: Term-wise Integration of a Convergent Power Series" aria-label="Copy heading and permalink for Theorem 3.2.3: Term-wise Integration of a Convergent Power Series">🔗</a></div></article><details id="thm-psintegrate-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-psintegrate-3-1">This follows simply using the knowledge that the power series converges uniformly for <span class="process-math">\(x\)</span> such that <span class="process-math">\(x_{0} \le x \le x_{0}+t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-psintegrate-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.3.1"><a href="#thm-psintegrate-3" title="Copy heading and permalink for Proof 3.2.3.1" aria-label="Copy heading and permalink for Proof 3.2.3.1">🔗</a></div></article></details><details id="sec-psproperties-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The series <span class="process-math">\(\sum_{n=0}^{\infty} (-x^2)^n \)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-psproperties-5-2">
+<div class="para">It arises from the geometric series replacing <span class="process-math">\(x\)</span> by <span class="process-math">\(-x^{2}\)</span> when <span class="process-math">\(|x|\lt 1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Abel.html" id="sec-psproperties-5-2-4">
+\begin{equation*}
+\frac{1}{1+x^2}=\sum_{n=0}^{\infty} (-x^2)^n = \sum_{n=0}^{\infty} (-1)^n x^{2n}= 1-x^2+x^4-x^6+\cdots
+\end{equation*}
+</div>
+<div class="para">Its radius of convergence is <span class="process-math">\(1\text{.}\)</span> Thus for any <span class="process-math">\(t, |t| &lt; 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Abel.html" id="sec-psproperties-5-2-7">
+\begin{equation*}
+\int_{0}^{t} \frac{1}{1+x^2}\, dx = \sum_{n=0}^{\infty} \int_{0}^{t} (-1)^n x^{2n}\, dx
+=  \sum_{n=0}^{\infty}\frac{(-1)^n t^{2n+1}}{2n+1}.
+\end{equation*}
+</div>
+<div class="para">Using calculus knowledge that <span class="process-math">\(\int_{0}^{t} \frac{1}{1+x^2}\, dx=\arctan t\text{,}\)</span> and the series on the right converges at <span class="process-math">\(t=1\text{,}\)</span>  <a href="sec-psproperties.html#thm-Abel" class="xref" data-knowl="./knowl/xref/thm-Abel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Abel Theorem for a Power Series">Theorem 3.2.1</a> implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Abel.html" id="sec-psproperties-5-2-11">
+\begin{equation*}
+\frac{\pi}{4}=\lim_{t\to 1-0} \arctan t= \sum_{n=0}^{\infty}\lim_{t\to 1-0} \frac{(-1)^n t^{2n+1}}{2n+1}
+=\sum_{n=0}^{\infty} \frac{(-1)^n }{2n+1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.4: The series \sum_{n=0}^{\infty} (-x^2)^n "><a href="#sec-psproperties-5" title="Copy heading and permalink for Example 3.2.4: The series \sum_{n=0}^{\infty} (-x^2)^n " aria-label="Copy heading and permalink for Example 3.2.4: The series \sum_{n=0}^{\infty} (-x^2)^n ">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-psproperties-6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Infinite Differentiability of a Convergent Power Series.</span>
+</h3>
+<div class="para logical" id="sec-psproperties-6-2-1">
+<div class="para">Suppose  that the radius <span class="process-math">\(R\)</span> of convergence of the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> is non zero. Then the power series defines an infinitely many times differentiable function <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(x\)</span> for <span class="process-math">\(|x-x_{0}| \lt R\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="eq-psderivative">
+\begin{equation}
+f'(x)=\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1} \quad \text{for $|x-x_{0}| \lt R$,}\tag{3.2.1}
+\end{equation}
+</div>
+<div class="para">and for all <span class="process-math">\(k\ge 1\)</span>
+</div>
+<div class="displaymath process-math" id="sec-psproperties-6-2-1-8">
+\begin{equation*}
+f^{(k)}(x)=\sum_{n=k}^{\infty} n(n-1)\cdots (n-k+1) a_{n}(x-x_{0})^{n-k} \quad \text{for $|x-x_{0}| \lt R$,}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="sec-psproperties-6-2-1-9">
+\begin{equation*}
+f^{(k)}(x_{0})=k! a_{k}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.5: Infinite Differentiability of a Convergent Power Series"><a href="#sec-psproperties-6" title="Copy heading and permalink for Theorem 3.2.5: Infinite Differentiability of a Convergent Power Series" aria-label="Copy heading and permalink for Theorem 3.2.5: Infinite Differentiability of a Convergent Power Series">🔗</a></div></article><details id="sec-psproperties-6-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-psproperties-6-3-1">
+<div class="para">One simply notes that the series <span class="process-math">\(\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1}\)</span> converges iff the series <span class="process-math">\(\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n}\)</span> converges, so these two series have the same radii of convergence. But the radius of convergence of  the latter is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-psderivative.html ./knowl/xref/eq-psderivative.html" id="sec-psproperties-6-3-1-3">
+\begin{equation*}
+\limsup_{n\to\infty} \vert n a_{n} \vert^{1/n}=
+\limsup_{n\to\infty} n^{1/n} \vert a_{n}\vert^{1/n}=   \limsup_{n\to\infty}
+\vert  a_{n}\vert^{1/n}
+\end{equation*}
+</div>
+<div class="para">using <span class="process-math">\(\lim_{n\to \infty}  n^{1/n}=1\text{.}\)</span> As a result, for any <span class="process-math">\(0\lt r \lt R\text{,}\)</span> the series <span class="process-math">\(\sum_{n=1}^{\infty} n a_{n}(x-x_{0})^{n-1}\)</span>  converges uniformly over <span class="process-math">\(x\)</span> such that <span class="process-math">\(\vert x-x_{0}\vert \le r\text{,}\)</span> and we can can apply the theorem on a sequence of functions whose derivative sequence converges uniformly to conclude that <a href="sec-psproperties.html#eq-psderivative" class="xref" data-knowl="./knowl/xref/eq-psderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2.1">(3.2.1)</a> holds for <span class="process-math">\(\vert x-x_{0}\vert \le r\text{.}\)</span> Since this holds for any  <span class="process-math">\(0\lt r \lt R\text{,}\)</span> we conclude that <a href="sec-psproperties.html#eq-psderivative" class="xref" data-knowl="./knowl/xref/eq-psderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2.1">(3.2.1)</a> holds for <span class="process-math">\(\vert x-x_{0}\vert \lt R\text{.}\)</span> The rest cases for <span class="process-math">\(k\gt 1\)</span> follow by repeating this procedure.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.5.1"><a href="#sec-psproperties-6-3" title="Copy heading and permalink for Proof 3.2.5.1" aria-label="Copy heading and permalink for Proof 3.2.5.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-psproperties-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-psproperties-7-1">The previous Theorem reveals that a convergent power series in <span class="process-math">\(x-x_{0}\)</span> is the Taylor series of the power series at <span class="process-math">\(x_{0}\text{.}\)</span> This raises the question: whether any infinitely differentiable function can be represented near any point <span class="process-math">\(x_{0}\)</span> in its domain as a convergent power series in <span class="process-math">\(x-x_{0}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-psproperties-7-2">If this holds true for such a function <span class="process-math">\(f(x)\text{,}\)</span> the power series must be the Taylor series of <span class="process-math">\(f\)</span> at <span class="process-math">\(x_{0}\text{.}\)</span> This raises a related question: does the Taylor series at any <span class="process-math">\(x_{0}\)</span> in its domain of an infinitely differentiable function always converge? It turns out that, even if this Taylor series converges, the convergent power series may not be equal to <span class="process-math">\(f\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-psproperties-7-3">
+<div class="para">If <span class="process-math">\(f(x)\)</span> is infinitely differentiable near <span class="process-math">\(x_{0}\text{,}\)</span> then the Taylor expansion with remainder term gives us, for any <span class="process-math">\(N\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-psproperties-7-3-4">
+\begin{equation*}
+f(x)=\sum_{n=0}^{N} \frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n} +\frac{f^{(N+1)}(c)}{(n+1)!}(x-x_{0})^{N+1}
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(c\)</span> between <span class="process-math">\(x_{0}\)</span> and <span class="process-math">\(x\text{.}\)</span> So our questions above boil down to whether <span class="process-math">\(\frac{f^{(N+1)}(c)}{(n+1)!}(x-x_{0})^{N+1}\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> This clearly requires some control on <span class="process-math">\(\vert f^{(N+1)}(c)\vert\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.6"><a href="#sec-psproperties-7" title="Copy heading and permalink for Remark 3.2.6" aria-label="Copy heading and permalink for Remark 3.2.6">🔗</a></div></article><details id="sec-psproperties-8" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An infinitely differentiable function which does not equal its Taylor series at some point.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="sec-psproperties-8-2">
+<div class="para">Consider</div>
+<div class="displaymath process-math" id="sec-psproperties-8-2-1">
+\begin{equation*}
+f(x)=\begin{cases} e^{-\frac{1}{x^{2}}} \amp\quad\text{if $x\ne 0$};\\
+0\amp\quad\text{if $x=0$}.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Verify that this <span class="process-math">\(f(x)\)</span> is infinitely differentiable and <span class="process-math">\(f^{(k)}(0)=0\)</span> for all <span class="process-math">\(k\text{.}\)</span> Note that its Taylor series at <span class="process-math">\(0\)</span> is identically <span class="process-math">\(0\)</span> so can’t equal <span class="process-math">\(f(x)\)</span> for <span class="process-math">\(x\ne 0\text{.}\)</span>  We remark that if we choose any <span class="process-math">\(x_{0}\ne 0\text{,}\)</span> then it turns out that <span class="process-math">\(f(x)\)</span> equals its Taylor series at <span class="process-math">\(x_{0}\)</span> in a neighborhood of <span class="process-math">\(x_{0}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.2.7: An infinitely differentiable function which does not equal its Taylor series at some point"><a href="#sec-psproperties-8" title="Copy heading and permalink for Exercise 3.2.7: An infinitely differentiable function which does not equal its Taylor series at some point" aria-label="Copy heading and permalink for Exercise 3.2.7: An infinitely differentiable function which does not equal its Taylor series at some point">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-psproperties-9"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Convergent Power Series’ Expansion at a Different Center.</span>
+</h3>
+<div class="para logical" id="sec-psproperties-9-2-1">
+<div class="para">Suppose that the radius <span class="process-math">\(R\)</span> of convergence of the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> is non zero and <span class="process-math">\(x_{1}\)</span> satisfies <span class="process-math">\(|x_{1}-x_{0}| \lt R\text{.}\)</span> Let <span class="process-math">\(r=R- |x_{1}-x_{0}| \text{.}\)</span> Then the following holds</div>
+<div class="displaymath process-math" id="sec-psproperties-9-2-1-6">
+\begin{equation*}
+\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}=\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}
+\end{equation*}
+</div>
+<div class="para">at least for all <span class="process-math">\(x\)</span> such that <span class="process-math">\(|x-x_{1}| \lt r=R- |x_{1}-x_{0}| \text{,}\)</span> where</div>
+<div class="displaymath process-math" id="sec-psproperties-9-2-1-9">
+\begin{equation*}
+b_{k}=\sum_{n=k}^{\infty} \binom{n}{k} a_{n}(x_{1}-x_{0})^{n-k}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.8: A Convergent Power Series’ Expansion at a Different Center"><a href="#sec-psproperties-9" title="Copy heading and permalink for Theorem 3.2.8: A Convergent Power Series’ Expansion at a Different Center" aria-label="Copy heading and permalink for Theorem 3.2.8: A Convergent Power Series’ Expansion at a Different Center">🔗</a></div></article><details id="sec-psproperties-9-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-psproperties-9-3-1">
+<div class="para">We use the binomial expansion</div>
+<div class="displaymath process-math" id="sec-psproperties-9-3-1-1">
+\begin{equation*}
+(x-x_{0})^{n}=(x-x_{1}+x_{1}-x_{0})^{n}=\sum_{k=0}^{n}\binom{n}{k} (x-x_{1})^{k}  (x_{1}-x_{0})^{n-k}
+\end{equation*}
+</div>
+<div class="para">to write the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> as a doubly indexed series. We show that this doubly indexed series converges absolutely for any <span class="process-math">\(x\)</span> such that  <span class="process-math">\(|x-x_{1}| \lt r=R- |x_{1}-x_{0}| \text{.}\)</span> As a result, we can exchange the order of summation to obtain</div>
+<div class="displaymath process-math" id="sec-psproperties-9-3-1-5">
+\begin{align*}
+\amp \sum_{n=0}^{\infty}  \sum_{k=0}^{n}a_{n} \binom{n}{k} (x-x_{1})^{k}  (x_{1}-x_{0})^{n-k}\\
+= \amp \sum_{k=0}^{\infty}  \sum_{n=k}^{\infty} a_{n} \binom{n}{k} (x_{1}-x_{0})^{n-k} (x-x_{1})^{k},
+\end{align*}
+</div>
+<div class="para">which is the desired <span class="process-math">\(\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-psproperties-9-3-2">
+<div class="para">The absolute convergence of the  doubly indexed series is seen by noting that</div>
+<div class="displaymath process-math" id="sec-psproperties-9-3-2-1">
+\begin{equation*}
+\sum_{n=0}^{\infty}  \sum_{k=0}^{n}|a_{n}| \binom{n}{k} |x-x_{1}|^{k}  |x_{1}-x_{0}|^{n-k}
+=\sum_{n=0}^{\infty}|a_{n}| (|x-x_{1}| + |x_{1}-x_{0}|)^{n}
+\end{equation*}
+</div>
+<div class="para">and that <span class="process-math">\(|x-x_{1}| + |x_{1}-x_{0}| \lt R\)</span> under our assumption <span class="process-math">\(|x-x_{1}| \lt r=R- |x_{1}-x_{0}| \text{,}\)</span> and the knowledge that the series <span class="process-math">\(\sum_{n=0}^{\infty}|a_{n}| s^{n}\)</span> converges for any <span class="process-math">\(s\lt R\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-9-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.8.1"><a href="#sec-psproperties-9-3" title="Copy heading and permalink for Proof 3.2.8.1" aria-label="Copy heading and permalink for Proof 3.2.8.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-psproperties-10"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-psproperties-10-1">
+<div class="para">It is possible for the radius of convergence of the power series <span class="process-math">\(\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}\)</span> to be greater than <span class="process-math">\(R-|x_{1}-x_{0}| \text{,}\)</span> as seen in the case of <span class="process-math">\(\sum_{n=0}^{\infty} x^{n}\)</span> and <span class="process-math">\(x_{1}=-\frac 12\text{,}\)</span> where, instead of computing the Taylor series of <span class="process-math">\((1-x)^{-1}\)</span> centered at <span class="process-math">\(x_{1}=-\frac 12\text{,}\)</span>  we can use a geometric series to expand <span class="process-math">\(\sum_{n=0}^{\infty} x^{n}=(1-x)^{-1}\)</span> as</div>
+<div class="displaymath process-math" id="sec-psproperties-10-1-8">
+\begin{equation*}
+(1-x)^{-1}=\frac{1}{\frac 32 -(x+\frac{1}{2})}= \frac 23 \frac{1}{1- \frac{x+\frac{1}{2}}{\frac{3}{2}}}
+=\frac 23 \left(\sum_{n=0}^{\infty}\left(\frac{x+\frac{1}{2}}{\frac{3}{2}} \right)^{n}\right),
+\end{equation*}
+</div>
+<div class="para">which converges as long as <span class="process-math">\(|x+\frac{1}{2}| \lt \frac{3}{2}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.9"><a href="#sec-psproperties-10" title="Copy heading and permalink for Remark 3.2.9" aria-label="Copy heading and permalink for Remark 3.2.9">🔗</a></div></article><article class="theorem theorem-like" id="sec-psproperties-11"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Non-zero Convergent Power Series Has Isolated Zeroes.</span>
+</h3>
+<div class="para" id="sec-psproperties-11-2-1">Suppose that the radius <span class="process-math">\(R\)</span> of convergence of the power series <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> is non zero, and that it has a sequence of distinct zeroes approaching some <span class="process-math">\(x_{1}\)</span> with <span class="process-math">\(|x_{1}-x_{0}|\lt R\text{,}\)</span> then it must be identically <span class="process-math">\(0\)</span> for all <span class="process-math">\(x\)</span> with <span class="process-math">\(|x-x_{0}|\lt R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.10: A Non-zero Convergent Power Series Has Isolated Zeroes"><a href="#sec-psproperties-11" title="Copy heading and permalink for Theorem 3.2.10: A Non-zero Convergent Power Series Has Isolated Zeroes" aria-label="Copy heading and permalink for Theorem 3.2.10: A Non-zero Convergent Power Series Has Isolated Zeroes">🔗</a></div></article><details id="sec-psproperties-11-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-psproperties-11-3-1">
+<div class="para">We first represent the series as a power series in <span class="process-math">\(x-x_{1}\)</span> for <span class="process-math">\(|x-x_{1}|\lt R-|x_{1}-x_{0}|\)</span> by <span class="process-math">\(\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}\text{.}\)</span> We argue by contradiction. Suppose that the series is not identically <span class="process-math">\(0\text{,}\)</span> then there is a smallest integer  <span class="process-math">\(k=m\)</span> such that  <span class="process-math">\(b_{k}\ne 0\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" id="sec-psproperties-11-3-1-7">
+\begin{equation*}
+\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}=\sum_{k=m}^{\infty} b_{k}(x-x_{1})^{k}
+= (x-x_{1})^{m} \sum_{k=m}^{\infty} b_{k}(x-x_{1})^{k-m}.
+\end{equation*}
+</div>
+<div class="para">The series <span class="process-math">\(\sum_{k=m}^{\infty}b_{k}(x-x_{1})^{k-m}\)</span> has the same non-zero radius of convergence, <span class="process-math">\(R-|x_{1}-x_{0}|\text{,}\)</span> as that for <span class="process-math">\(\sum_{k=0}^{\infty} b_{k}(x-x_{1})^{k}\text{,}\)</span> so defines a continuous function <span class="process-math">\(g(x)\)</span> in a neighborhood of <span class="process-math">\(x_{1}\text{.}\)</span> Since <span class="process-math">\(g(x_{1})=b_{m}\ne 0\text{,}\)</span> we conclude that <span class="process-math">\(g(x)\ne 0\)</span> in a neighborhood of <span class="process-math">\(x_{1}\text{.}\)</span> But this would mean that <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}=(x-x_{1})^{m}g(x)\)</span> has no zero beside <span class="process-math">\(x_{1}\)</span> in this neighborhood, contradicting our assumption that a sequence of zeroes of <span class="process-math">\(\sum_{n=0}^{\infty} a_{n}(x-x_{0})^{n}\)</span> approach <span class="process-math">\(x_{1}\text{.}\)</span> This shows that under our assumption the power series must have all its <span class="process-math">\(b_{k}=0\text{,}\)</span> and that it equals <span class="process-math">\(0\)</span> for all <span class="process-math">\(x\)</span> such that <span class="process-math">\(|x-x_{1}|\lt R-|x_{1}-x_{0}|\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-psproperties-11-3-2">The above argument applies to any <span class="process-math">\(z\)</span> with <span class="process-math">\(|z-x_{0}|\lt R\)</span> when <span class="process-math">\(z\)</span> is a limit point of the set of zeroes of the power series. Let <span class="process-math">\(Z\)</span> be the set of such points in <span class="process-math">\(|z-x_{0}|\lt R\text{.}\)</span> Then <span class="process-math">\(Z\)</span> is a non-empty closed subset of the disc <span class="process-math">\(|x-x_{0}|\lt R\text{.}\)</span> But the above argument shows that <span class="process-math">\(Z\)</span> is also open. This then implies that <span class="process-math">\(Z\)</span> must consists of all points of the disc <span class="process-math">\(|x-x_{0}|\lt R\text{,}\)</span> therefore, the power series equals <span class="process-math">\(0\)</span> in this entire disc.<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-11-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.10.1"><a href="#sec-psproperties-11-3" title="Copy heading and permalink for Proof 3.2.10.1" aria-label="Copy heading and permalink for Proof 3.2.10.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-psproperties-12"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-psproperties-12-1">In the above theorem, it is important that the limit point referred to is in the disc of convergence of the power series. The function <span class="process-math">\(f(x)=(x+1)\sin\frac{1}{x+1}\)</span> has a convergent power series expansion at <span class="process-math">\(x=0\)</span> with radius of convergence equal to <span class="process-math">\(1\text{,}\)</span> and <span class="process-math">\(f(x_{n})=0\)</span> for <span class="process-math">\(x_{n}=-1+\frac{1}{n\pi}\to -1\text{,}\)</span> yet <span class="process-math">\(f(x)\not\equiv 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.11"><a href="#sec-psproperties-12" title="Copy heading and permalink for Remark 3.2.11" aria-label="Copy heading and permalink for Remark 3.2.11">🔗</a></div></article><article class="theorem theorem-like" id="sec-psproperties-13"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Product of  Two Power Series.</span>
+</h3>
+<div class="para" id="sec-psproperties-13-2-1">Suppose that <span class="process-math">\(f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}\)</span> and <span class="process-math">\(g(x)=\sum_{n=0}^{\infty} b_{n} x^{n}\)</span> are two power series converging for <span class="process-math">\(|x|\lt R\text{.}\)</span> Then <span class="process-math">\(f(x)g(x)\)</span> has a power series expansion  <span class="process-math">\(\sum_{n=0}^{\infty} c_{n} x^{n}\)</span> in <span class="process-math">\(x\)</span> converging for <span class="process-math">\(|x|\lt R\text{,}\)</span> and <span class="process-math">\(c_{n}=a_{0}b_{n} + a_{1}b_{n-1}+\cdots+a_{n}b_{0}\)</span> is the <dfn class="terminology">Cauchy product</dfn> of the sequence <span class="process-math">\(\{a_{n}\}\)</span> and <span class="process-math">\(\{b_{n}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.2.12: Product of  Two Power Series"><a href="#sec-psproperties-13" title="Copy heading and permalink for Theorem 3.2.12: Product of  Two Power Series" aria-label="Copy heading and permalink for Theorem 3.2.12: Product of  Two Power Series">🔗</a></div></article><details id="sec-psproperties-13-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-psproperties-13-3-1">
+<div class="para">For any <span class="process-math">\(x\)</span> with <span class="process-math">\(|x|\lt R\text{,}\)</span> we know that both <span class="process-math">\(f(x)=\sum_{n=1}^{\infty} a_{n} x^{n}\)</span> and <span class="process-math">\(g(x)=\sum_{n=1}^{\infty} b_{n} x^{n}\)</span> converge absolutely, so <span class="process-math">\(f(x)g(x)\)</span> equals the Cauchy product given as</div>
+<div class="displaymath process-math" id="sec-psproperties-13-3-1-6">
+\begin{equation*}
+\sum_{n=0}^{\infty} \left( \sum_{m=0}^{n} a_{m}b_{n-m}\right) x^{n}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-13-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.12.1"><a href="#sec-psproperties-13-3" title="Copy heading and permalink for Proof 3.2.12.1" aria-label="Copy heading and permalink for Proof 3.2.12.1">🔗</a></div></article></details><div class="para" id="sec-psproperties-14">Combining this Theorem and Abel’s Theorem gives us<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="sec-psproperties-15"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-psproperties-15-1-1">
+<div class="para">Suppose that <span class="process-math">\(\sum_{n=0}^{\infty} a_{n} \text{,}\)</span> <span class="process-math">\(\sum_{n=0}^{\infty} b_{n} \text{,}\)</span> and <span class="process-math">\(\sum_{n=0}^{\infty} b_{n} \)</span> all converge, where <span class="process-math">\(c_{n} =\sum_{m=0}^{n} a_{m}b_{n-m}\)</span> is  the Cauchy product of sequence <span class="process-math">\(\{a_{n}\}\)</span> and <span class="process-math">\(\{b_{n}\}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-psproperties-15-1-1-7">
+\begin{equation*}
+\left(\sum_{n=0}^{\infty} a_{n} \right)\left( \sum_{n=0}^{\infty} b_{n} \right)=\sum_{n=0}^{\infty} c_{n}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 3.2.13"><a href="#sec-psproperties-15" title="Copy heading and permalink for Corollary 3.2.13" aria-label="Copy heading and permalink for Corollary 3.2.13">🔗</a></div></article><details id="sec-psproperties-15-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-psproperties-15-2-1">
+<div class="para">Set <span class="process-math">\(f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}\)</span> and <span class="process-math">\(g(x)=\sum_{n=0}^{\infty} b_{n} x^{n}\text{.}\)</span> Then the two power series converge at <span class="process-math">\(x=1\text{.}\)</span> Thus <span class="process-math">\(f(x)g(x)= \sum_{n=0}^{\infty} c_{n} x^{n}\)</span> for all <span class="process-math">\(x\)</span> with <span class="process-math">\(|x|\lt 1\text{.}\)</span> Abel Theorem is applicable to all three power series here for <span class="process-math">\(x=1\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="sec-psproperties-15-2-1-8">
+\begin{align*}
+\left(\sum_{n=0}^{\infty} a_{n} \right)\left( \sum_{n=0}^{\infty} b_{n} \right)
+\amp =\lim_{x\to 1-} \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left( \sum_{n=0}^{\infty} b_{n} x^{n}\right)\\
+\amp =\lim_{x\to 1-} \sum_{n=0}^{\infty} c_{n} x^{n}= \sum_{n=0}^{\infty} c_{n}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.13.1"><a href="#sec-psproperties-15-2" title="Copy heading and permalink for Proof 3.2.13.1" aria-label="Copy heading and permalink for Proof 3.2.13.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-psproperties-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-psproperties-16-1">The condition that all three series converge can’t be  dropped. For the case that <span class="process-math">\(a_{n}=b_{n}=\frac{(-1)^{n}}{n+1}\text{,}\)</span> it turns out that the series of the Cauchy product <span class="process-math">\(\sum_{n=0}^{\infty} c_{n}\)</span> does not converge.<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.14"><a href="#sec-psproperties-16" title="Copy heading and permalink for Remark 3.2.14" aria-label="Copy heading and permalink for Remark 3.2.14">🔗</a></div></article><article class="remark remark-like" id="sec-psproperties-17"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-psproperties-17-1">It can be proved that the quotient of two convergent power series centered at some <span class="process-math">\(x_{0}\)</span> has a convergent power series expansion centered at <span class="process-math">\(x_{0}\)</span> in some neighborhood of <span class="process-math">\(x_{0}\text{,}\)</span> provided that the denominator does not vanish at <span class="process-math">\(x_{0}\text{.}\)</span> Similarly it can be proved that if <span class="process-math">\(f(x)\)</span> has a convergent power series expansion centered at <span class="process-math">\(x_{0}\)</span> with <span class="process-math">\(y_{0}=f(x_{0})\text{,}\)</span> and <span class="process-math">\(g(y)\)</span> has a convergent power series expansion centered at <span class="process-math">\(y_{0}\text{,}\)</span> then the composition <span class="process-math">\(g\circ f (x)\)</span> has a convergent power series expansion centered at <span class="process-math">\(x_{0}\)</span> .<div class="autopermalink" data-description="Paragraph"><a href="#sec-psproperties-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.15"><a href="#sec-psproperties-17" title="Copy heading and permalink for Remark 3.2.15" aria-label="Copy heading and permalink for Remark 3.2.15">🔗</a></div></article><div class="autopermalink" data-description="Section 3.2: Properties of a Convergent Power Series"><a href="#sec-psproperties" title="Copy heading and permalink for Section 3.2: Properties of a Convergent Power Series" aria-label="Copy heading and permalink for Section 3.2: Properties of a Convergent Power Series">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec_psradius.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-exponential.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

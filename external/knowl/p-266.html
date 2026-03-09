@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Next we prove the continuity of <span class="process-math">\(\bff^{-1}(\by)\)</span> for <span class="process-math">\(\by \in B({\mathbf y}_{0}, r)\text{.}\)</span> Set <span class="process-math">\({\mathbf x}_{1}=  {\mathbf f}^{-1} ({\mathbf y}_{1}),
+{\mathbf x}_{2}=  {\mathbf f}^{-1} ({\mathbf y}_{2})\)</span> for <span class="process-math">\({\mathbf y}_{1}, {\mathbf y}_{2}\in
+B({\mathbf y}_{0}, r)\text{,}\)</span> we examine</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{align}
+{\mathbf y}_{2}- {\mathbf y}_{1}= \amp {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1)
+=\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \notag\\
+\amp + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),\tag{4.5.4}
+\end{align}
+</div>
+<div class="para">where we use <span class="process-math">\({\mathbf f}({\mathbf x})- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}\)</span> in place of <span class="process-math">\({\mathbf f}({\mathbf x})\)</span> as its  derivative in <span class="process-math">\({\mathbf x}\)</span> is <span class="process-math">\(D{\mathbf f}({\mathbf x})- D{\mathbf f}({\mathbf x}_{0})\text{,}\)</span> which satisfies <a href="" class="xref" data-knowl="./knowl/der1-2.html" title="Equation 4.5.2">(4.5.2)</a> when <span class="process-math">\({\mathbf x}\in B({\mathbf x}_{0}, \delta)\)</span> due to the continuity of <span class="process-math">\(D{\mathbf f}({\mathbf x})\)</span> at <span class="process-math">\({\mathbf x}_{0}\text{.}\)</span>  Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{equation*}
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
+\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert \le
+\frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we get from <a href="" class="xref" data-knowl="./knowl/invcon.html" title="Equation 4.5.4">(4.5.4)</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{align*}
+\Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert 
+\le  \amp \Vert  \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left(
+{\mathbf y}_{2}- {\mathbf y}_{1}\right)\Vert\\
+\amp + 
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
+\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert\\
+\le \amp \Vert  \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert \Vert
+{\mathbf y}_{2}- {\mathbf y}_{1}\Vert+ \frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert.
+\end{align*}
+</div>
+<div class="para">This then implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{equation}
+\Vert {\mathbf x}_{1}-{\mathbf x}_{2}\Vert \le 2 
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert
+\Vert {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1) \Vert,\tag{4.5.5}
+\end{equation}
+</div>
+<div class="para">which shows the (Lipschitz) continuity of <span class="process-math">\({\mathbf f}^{-1}\)</span> on <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="section-19.html#p-266" class="internal">in-context</a></span>
+</body>
+</html>

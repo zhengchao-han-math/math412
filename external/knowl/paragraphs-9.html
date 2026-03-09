@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h3 class="heading"><span class="title">How was the solution <span class="process-math">\(c_{0}e^{rx}\)</span> introduced in calculus? And how does this power series solution relate to <span class="process-math">\(c_{0}e^{rx}\text{?}\)</span> Is this the only solution with <span class="process-math">\(y(0)=c_{0}\text{?}\)</span></span></h3> <div class="para logical">
+<div class="para">The answer lies in developing properties of this solution. Denoting <span class="process-math">\(E(x)=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}\text{.}\)</span> The key properties are</div>
+<div class="displaymath process-math">
+\begin{align*}
+E'(x) \amp = E(x), \; \forall x,\\
+E(x+y) \amp=E(x) E(y),\;  \forall x, y,\\
+E(0)\amp=1.
+\end{align*}
+</div>
+</div> <div class="para">It then follows that <span class="process-math">\(E(-x)E(x)=E(0)=1\)</span> for any <span class="process-math">\(x\text{,}\)</span> so <span class="process-math">\(E(x)\ne 0\)</span> for any <span class="process-math">\(x\)</span> (even complex valued). When <span class="process-math">\(x\)</span> takes real values, <span class="process-math">\(E(x)\)</span>  also takes real values by construction. For <span class="process-math">\(x\gt 0\text{,}\)</span> the power series for <span class="process-math">\(E(x)\)</span> shows that <span class="process-math">\(E(x)\gt 0\text{.}\)</span> One then shows using  <span class="process-math">\(E(-x)E(x)=E(0)=1\)</span> that <span class="process-math">\(E(x)&gt;0\)</span> for all real <span class="process-math">\(x \lt 0\text{.}\)</span> Then the property <span class="process-math">\(E'(x)=E(x)&gt;0\)</span> shows that <span class="process-math">\(E(x)\)</span> is monotone increasing for real valued <span class="process-math">\(x\text{.}\)</span>
+</div> <div class="para">At this point, there is a well defined inverse function of <span class="process-math">\(E(x)\)</span> for <span class="process-math">\(x\in \mathbb R\text{.}\)</span> Call it <span class="process-math">\(\ln y\)</span> for <span class="process-math">\(y &gt; 0\text{.}\)</span> Then <span class="process-math">\(E(\ln y)=y\)</span> and <span class="process-math">\(\ln E(x) =x\text{.}\)</span> It remains to establish that <span class="process-math">\(\ln y\)</span> is defined for all <span class="process-math">\(y&gt;0\text{.}\)</span> As a consequence of <span class="process-math">\(E(x+y) =E(x) E(y)\text{,}\)</span> we will have <span class="process-math">\(\ln (u v)=\ln u + \ln v\)</span> for <span class="process-math">\(u, v&gt;0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Based on the properties of <span class="process-math">\(E(x)\text{,}\)</span> one establishes that for any rational <span class="process-math">\(x=\frac pq\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E(x)=[E(\frac 1q)]^{p}=[E(1)]^{\frac pq}=[E(1)]^{x}.
+\end{equation*}
+</div>
+<div class="para">If one can establish that the function <span class="process-math">\(a^{x}\)</span> is well defined for any real <span class="process-math">\(a &gt; 0\)</span> and any real <span class="process-math">\(x\)</span> and that it is a continuous function for <span class="process-math">\(x\in \bbR\text{,}\)</span> then one can use the continuity to show that the above equality holds for all <span class="process-math">\(x\text{.}\)</span> However it is not a trivial task to define <span class="process-math">\(a^{x}\)</span> for any real <span class="process-math">\(a &gt; 0\)</span> and any real <span class="process-math">\(x\)</span> and prove that it is a continuous function of <span class="process-math">\(x\text{.}\)</span>
+</div>
+</div> <div class="para">Recall that there is an arithmetic procedure for computing <span class="process-math">\(a b\)</span> and <span class="process-math">\(a^{m}\)</span> only when <span class="process-math">\(a, b\)</span> are rational numbers and <span class="process-math">\(m\)</span> is an integer, that the definition of <span class="process-math">\(a^{1/n}\)</span> for any positive real (even a rational number) <span class="process-math">\(a\)</span> and positive integer <span class="process-math">\(n\)</span> requires a limiting process and completeness of <span class="process-math">\(\bbR\text{.}\)</span> Once this is defined,  one can use the continuity and monotonicity of the power function <span class="process-math">\(x\mapsto x^{k}\)</span> for any positive integer <span class="process-math">\(k\)</span> and positive real <span class="process-math">\(x\)</span> to define <span class="process-math">\(a^{m/n}\)</span> for any positive real <span class="process-math">\(a\)</span> and positive integers <span class="process-math">\(m, n\text{,}\)</span> namely, <span class="process-math">\(a^{r}\)</span> for any positive real <span class="process-math">\(a\)</span> and positive rational <span class="process-math">\(r\text{.}\)</span>  Additional work is needed to define <span class="process-math">\(a^{x}\)</span> for any positive real <span class="process-math">\(a\)</span> and any real <span class="process-math">\(x\text{,}\)</span> as was done in Exercise 6 of Chapter 1 of Rudin's text for the case of <span class="process-math">\(a &gt; 1\text{.}\)</span>
+</div> <div class="para">Using properties of power series, the definition and properties of <span class="process-math">\(E(x)\)</span> can be developed in a routine way, which is how Rudin develops this material. Rudin also sketches an argument to show that the treatment following Exercise 6 of Chapter 1 produces the same function as that using <span class="process-math">\(E(x)\text{.}\)</span>
+</div></section><span class="incontext"><a href="sec-exponential.html#paragraphs-9" class="internal">in-context</a></span>
+</body>
+</html>

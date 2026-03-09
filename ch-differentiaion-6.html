@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Differentiation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.18';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1d92cd109bc12c4d.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="section-linearmaps.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-differentiaion.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-contraction.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-30" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-9" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-17" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="ch-differentiaion-6"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiation</span>
+</h2>
+<section class="introduction" id="ch-differentiaion-6-2"><div class="para" id="ch-differentiaion-6-2-1">Differentiability of a function of several variables is defined in terms of a linear approximation. The notion of directional derivative and partial derivative arise when the differentiability of a function of several variables is studied along a one-dimensional line.<div class="autopermalink" data-description="Paragraph"><a href="#ch-differentiaion-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsection-differentiation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability, Directional Derivative, and Partial Derivative</span>
+</h3>
+<article class="definition definition-like" id="subsection-differentiation-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability and Jacobian Matrix.</span>
+</h4>
+<div class="para logical" id="subsection-differentiation-2-2-1">
+<div class="para">Suppose that <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are normed  vector spaces, that <span class="process-math">\(E\subset X\)</span> and <span class="process-math">\(\bx\)</span> is an interior point of <span class="process-math">\(E\text{.}\)</span> <span class="process-math">\({\mathbf f}:E\mapsto Y\)</span> is said to be differentiable at <span class="process-math">\(\mathbf x\)</span> if there exists a linear map <span class="process-math">\(A: X\mapsto Y\)</span> with finite operator norm such that</div>
+<div class="displaymath process-math" id="eq-diff">
+\begin{equation}
+\lim_{{\mathbf h}\to {\mathbf 0}}
+\frac{\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h} \Vert_{Y}}{\Vert {\mathbf h} \Vert_{X}}=0.\tag{5.3.1}
+\end{equation}
+</div>
+<div class="para">In other words, for any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists some <span class="process-math">\(\delta&gt;0\)</span> such that</div>
+<div class="displaymath process-math" id="subsection-differentiation-2-2-1-12">
+\begin{equation*}
+\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert_{Y}
+\le \epsilon \Vert {\mathbf h} \Vert_{X}
+\text{ for all } {\mathbf h} \text { with } \Vert {\mathbf h} \Vert &lt; \delta.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsection-differentiation-2-2-2">When <span class="process-math">\(X=\bbR^{n}, Y=\bbR^{m}\)</span> and <span class="process-math">\(\bff\)</span> is differentiable at <span class="process-math">\(\bx\text{,}\)</span> the linear map <span class="process-math">\(A\bh\)</span> can be represented as a matrix multiplication on <span class="process-math">\(\bh\)</span> in the usual rectangular coordinates. We will denote this matrix also by <span class="process-math">\(A\)</span> and call it the Jacobian matrix (also called Jacobian derivative or total derivative) of <span class="process-math">\(f\)</span> at <span class="process-math">\(\bx\)</span> and also denote it as <span class="process-math">\([D\mathbf f (\bx)]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.3.1: Differentiability and Jacobian Matrix"><a href="#subsection-differentiation-2" title="Copy heading and permalink for Definition 5.3.1: Differentiability and Jacobian Matrix" aria-label="Copy heading and permalink for Definition 5.3.1: Differentiability and Jacobian Matrix">🔗</a></div></article><div class="para logical" id="subsection-differentiation-3">
+<div class="para">The key here is that</div>
+<ul class="disc" id="subsection-differentiation-3-1">
+<li id="subsection-differentiation-3-1-1">
+<div class="para" id="p-derived-subsection-differentiation-3-1-1">The linear approximation part, <span class="process-math">\(A {\mathbf h}\text{,}\)</span> depends on <span class="process-math">\({\mathbf h}\)</span> in a linear fashion with a finite operator norm: <span class="process-math">\(||A {\mathbf h}||_{Y}\le ||A|| ||{\mathbf h}||_{X}\)</span> for all <span class="process-math">\({\mathbf h}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsection-differentiation-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsection-differentiation-3-1-2">
+<div class="para" id="p-derived-subsection-differentiation-3-1-2">The <span class="process-math">\(\delta\)</span> works for all <span class="process-math">\({\mathbf h}\)</span> with <span class="process-math">\(\Vert {\mathbf h} \Vert &lt; \delta\)</span> regardless its direction.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsection-differentiation-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsection-differentiation-3-1-3">
+<div class="para" id="p-derived-subsection-differentiation-3-1-3">If we set<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-diff.html" id="subsection-differentiation-3-1-3-1">
+\begin{equation*}
+R_{\bff}(\bx; \bh)= {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\text{,}
+\end{equation*}
+</div>it is the remainder term when <span class="process-math">\({\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})\)</span> is approximated by <span class="process-math">\(A{\mathbf h}\text{,}\)</span> and <a href="ch-differentiaion-6.html#eq-diff" class="xref" data-knowl="./knowl/xref/eq-diff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.1">(5.3.1)</a> is equivalent to<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-diff.html" id="subsection-differentiation-3-1-3-5">
+\begin{equation*}
+\Vert R_{\bff}(\bx; \bh) \Vert_{Y}/\Vert \bh \Vert_{X}\to 0 \text{ as $\bh\to \mathbf 0$.}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsection-differentiation-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">One should check that when <span class="process-math">\(\bff\)</span> is differentiable, then only one linear map <span class="process-math">\(A\)</span> can satisfy the condition in the definition.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="subsection-differentiation-4"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Directional Derivative.</span>
+</h4>
+<div class="para" id="subsection-differentiation-4-2-1">Suppose <span class="process-math">\(D\subset X\text{,}\)</span> <span class="process-math">\(\bx\)</span> is an interior point of <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\({\mathbf u}\)</span> is any non-zero vector.  <span class="process-math">\({\mathbf f}\)</span> is said to have directional derivative  at <span class="process-math">\({\mathbf x}\)</span> in the direction <span class="process-math">\({\mathbf u}\text{,}\)</span> if  the one variable function <span class="process-math">\(t\mapsto  {\mathbf f}({\mathbf x}+t{\mathbf u})\)</span> is differentiable at <span class="process-math">\(t=0\text{.}\)</span> In such a case the derivative of this one variable function at <span class="process-math">\(t=0\)</span> is called the directional derivative  <span class="process-math">\(f\)</span> at <span class="process-math">\({\mathbf x}\)</span> in the direction <span class="process-math">\({\mathbf u}\text{,}\)</span> and is denoted as <span class="process-math">\(D_{{\mathbf u}} {\mathbf f}({\mathbf x})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.3.2: Directional Derivative"><a href="#subsection-differentiation-4" title="Copy heading and permalink for Definition 5.3.2: Directional Derivative" aria-label="Copy heading and permalink for Definition 5.3.2: Directional Derivative">🔗</a></div></article><div class="para logical" id="subsection-differentiation-5">
+<div class="para">Note that the existence of the directional derivative of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(\bx\)</span> in the direction  of <span class="process-math">\({\mathbf u}\)</span> is defined as</div>
+<div class="displaymath process-math" id="subsection-differentiation-5-4">
+\begin{equation*}
+\lim_{t\to 0}
+\frac{ {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})}{t}={\mathbf v}
+\end{equation*}
+</div>
+<div class="para">for some vector <span class="process-math">\({\mathbf v}\text{.}\)</span> This can also be formulated as</div>
+<div class="displaymath process-math" id="subsection-differentiation-5-6">
+\begin{equation*}
+\lim_{t\to 0}
+\Vert \frac{ {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t {\mathbf v} }{t} \Vert_{Y}=0,
+\end{equation*}
+</div>
+<div class="para">or equivalently, for any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists some <span class="process-math">\(\delta&gt;0\)</span> such that</div>
+<div class="displaymath process-math" id="subsection-differentiation-5-9">
+\begin{equation*}
+\Vert  {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t {\mathbf v} \Vert_{Y}
+&lt; \epsilon |t| \text{ for all } t \text{ with } |t|&lt; \delta.
+\end{equation*}
+</div>
+<div class="para">But in this formulation there is no condition on how <span class="process-math">\({\mathbf v}\)</span> may depend on <span class="process-math">\({\mathbf u}\)</span> and the <span class="process-math">\(\delta\)</span> here may also depend on <span class="process-math">\({\mathbf u}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="subsection-differentiation-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsection-differentiation-6-1">The definition of differentiability involves the norm on <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> But due to <a href="section-linearmaps.html#lem-norms" class="xref" data-knowl="./knowl/xref/lem-norms.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.2.13">Lemma 5.2.13</a>, when <span class="process-math">\(X\)</span> is finite dimensional, it does not matter what norm to use on <span class="process-math">\(X\text{.}\)</span> Similarly, when <span class="process-math">\(Y\)</span> is finite dimensional, it does not matter what norm to use on <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 5.3.3"><a href="#subsection-differentiation-6" title="Copy heading and permalink for Remark 5.3.3" aria-label="Copy heading and permalink for Remark 5.3.3">🔗</a></div></article><div class="para" id="subsection-differentiation-7">From now on we will restrict to the case of maps between finite dimensional vector spaces, and usually take <span class="process-math">\(D=\bbR^{n}\text{.}\)</span> When <span class="process-math">\(D_{{\mathbf u}} {\mathbf f}({\mathbf x})\)</span> exists with <span class="process-math">\(\bu\)</span> equal to the the standard unit vector <span class="process-math">\(\be_{j}\)</span> along the <span class="process-math">\(x_{j}\)</span> coordinate, we say that <span class="process-math">\(\bff\)</span> has <dfn class="terminology">partial derivative</dfn> at <span class="process-math">\(\bx\)</span> in the <span class="process-math">\(x_{j}\)</span> variable, and denote this partial derivative as <span class="process-math">\(\frac{\partial \bff }{\partial x_{j}}(\bx)\text{.}\)</span> Thus <span class="process-math">\(\frac{\partial \bff (\bx)}{\partial x_{j}}= D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})\text{.}\)</span> Another commonly used notation for <span class="process-math">\(D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})\)</span> is <span class="process-math">\(D_{j}{\mathbf f}({\mathbf x})\text{,}\)</span> or <span class="process-math">\(\partial_{j}{\mathbf f}({\mathbf x})\text{,}\)</span> or the subscript notation <span class="process-math">\(f_{x_j}(\bx)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsection-differentiation-8">
+<div class="para">When <span class="process-math">\(\bff\)</span> is differentiable at <span class="process-math">\(\bx\text{,}\)</span> then if we take any non-zero vector <span class="process-math">\(\bu\)</span> and <span class="process-math">\({\mathbf h} =t {\mathbf u}\text{,}\)</span> we get</div>
+<div class="displaymath process-math" id="subsection-differentiation-8-5">
+\begin{align}
+\amp \lim_{{\mathbf h}\to {\mathbf 0}}
+\frac{\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-[D\mathbf f (\bx)]{\mathbf h} \Vert}{\Vert {\mathbf h} \Vert}\tag{5.3.2}\\
+= \amp \lim_{t\to 0}
+\Vert \frac{ {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t [D\mathbf f (\bx)]{\mathbf u} }{t} \Vert=0,\tag{5.3.3}
+\end{align}
+</div>
+<div class="para">This  means that the directional derivative of <span class="process-math">\({\mathbf f}\)</span> at <span class="process-math">\({\mathbf x}\)</span> in the direction <span class="process-math">\({\mathbf u}\)</span> exists, and  <span class="process-math">\(D_{{\mathbf u}} {\mathbf f}({\mathbf x})=[D\mathbf f (\bx)]\bu\text{.}\)</span>  In particular, if we take <span class="process-math">\({\mathbf u}={\mathbf e}_{j}\text{,}\)</span> the standard unit vector along the <span class="process-math">\(x_{j}\)</span> coordinate, we get the <dfn class="terminology">partial derivative</dfn> of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(\bx\)</span> <span class="process-math">\(D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})=[D\mathbf f (\bx)]{\mathbf e}_{j}\text{,}\)</span> which is the <span class="process-math">\(j\)</span>th column of <span class="process-math">\([D\mathbf f (\bx)]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="subsection-differentiation-9"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsection-differentiation-9-1-1">Suppose that <span class="process-math">\(\bff\)</span> is differentiable at <span class="process-math">\(\bx\text{,}\)</span> with <span class="process-math">\([D\mathbf f (\bx)]\)</span> denoting its Jacobian matrix at <span class="process-math">\(\bx\text{,}\)</span> then it is continuous at <span class="process-math">\(\bx\text{.}\)</span> Furthermore, it has directional derivative in any direction at <span class="process-math">\(\bx\)</span> and the directional derivative <span class="process-math">\(D_{{\mathbf u}} {\mathbf f}({\mathbf x})\)</span> of <span class="process-math">\({\mathbf f}\)</span> at <span class="process-math">\({\mathbf x}\)</span> in the direction <span class="process-math">\({\mathbf u}\)</span>   equals <span class="process-math">\([D\mathbf f (\bx)]\bu\text{.}\)</span> As a consequence, the <span class="process-math">\((i, j)\)</span> entry of <span class="process-math">\([D\mathbf f (\bx)]\)</span> is <span class="process-math">\(\displaystyle{\frac{\partial f_i}{\partial x_j}(\bx)}\text{,}\)</span> where <span class="process-math">\(\bff(\bx) =(f_1(\bx), \cdots, f_m(\bx))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 5.3.4"><a href="#subsection-differentiation-9" title="Copy heading and permalink for Proposition 5.3.4" aria-label="Copy heading and permalink for Proposition 5.3.4">🔗</a></div></article><details id="subsection-differentiation-9-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsection-differentiation-9-2-1">
+<div class="para">The only part that we have not provided detail is to prove the continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(\bx\text{.}\)</span> For any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists some <span class="process-math">\(\delta&gt;0\)</span> such that</div>
+<div class="displaymath process-math" id="subsection-differentiation-9-2-1-5">
+\begin{equation*}
+\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert\le \epsilon \Vert {\mathbf h} \Vert
+\text{ for all } {\mathbf h} \text { with } \Vert {\mathbf h} \Vert &lt; \delta.
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="subsection-differentiation-9-2-1-6">
+\begin{equation*}
+\Vert {\mathbf f}({\mathbf x}+{\mathbf h}) - {\mathbf f}({\mathbf x})\Vert \le 
+\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert +   \Vert A{\mathbf h}\Vert
+\le  \epsilon \Vert {\mathbf h} \Vert + \Vert A{\mathbf h}\Vert.
+\end{equation*}
+</div>
+<div class="para">Using <span class="process-math">\(\Vert A{\mathbf h}\Vert \le  \Vert A\Vert \Vert {\mathbf h}\Vert\)</span> we can certainly adjust <span class="process-math">\(0\lt \delta \lt 1\)</span> to make sure that when <span class="process-math">\(\Vert {\mathbf h} \Vert &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\Vert A{\mathbf h}\Vert \lt \epsilon\text{,}\)</span> which would guarantee that <span class="process-math">\(\Vert {\mathbf f}({\mathbf x}+{\mathbf h}) - {\mathbf f}({\mathbf x})\Vert \le 
+2 \epsilon\text{,}\)</span> proving the continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(\bx\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.3.4.1"><a href="#subsection-differentiation-9-2" title="Copy heading and permalink for Proof 5.3.4.1" aria-label="Copy heading and permalink for Proof 5.3.4.1">🔗</a></div></article></details><section class="paragraphs" id="subsection-differentiation-10"><h4 class="heading"><span class="title">Question.</span></h4>
+<div class="para" id="subsection-differentiation-10-2">Here are  a few basic questions related to the concept of a function differentiable at a point and having partial derivatives or directional derivatives there.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsection-differentiation-10-3">
+<ul class="disc" id="subsection-differentiation-10-3-1">
+<li id="subsection-differentiation-10-3-1-1">
+<div class="para" id="p-derived-subsection-differentiation-10-3-1-1">Suppose a function has partial derivatives at a point in all its coordinate directions. Does it imply that the function has directional derivatives at that point in any direction? Does it imply that the function is differentiable at that point? Does it imply that the function is continuous there?</div>
+<div class="autopermalink" data-description="Item"><a href="#subsection-differentiation-10-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsection-differentiation-10-3-1-2">
+<div class="para" id="p-derived-subsection-differentiation-10-3-1-2">Suppose a function has directional derivatives at a point in any direction. Does it imply that the function is differentiable at that point? Does it imply that the function is continuous at that point?</div>
+<div class="autopermalink" data-description="Item"><a href="#subsection-differentiation-10-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-10-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Paragraphs: Question"><a href="#subsection-differentiation-10" title="Copy heading and permalink for Paragraphs: Question" aria-label="Copy heading and permalink for Paragraphs: Question">🔗</a></div></section><details id="subsection-differentiation-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="introduction" id="subsection-differentiation-11-1"><div class="para" id="subsection-differentiation-11-1-1">We discuss below two examples showing that the answers to all the above questions are negative.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="task-part-a"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-part-a-1-1">A function may have partial derivative at some <span class="process-math">\({\mathbf x}\)</span>  in each <span class="process-math">\(x_{j}\)</span> direction, yet can  fail to be continuous there, and does not have directional derivative in any direction except for the coordinate directions.<div class="autopermalink" data-description="Paragraph"><a href="#task-part-a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="task-part-a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="task-part-a-2-1">
+<div class="para">Here is a simple example for <a href="ch-differentiaion-6.html#task-part-a" class="xref" data-knowl="./knowl/xref/task-part-a.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 5.3.5.a">Task 5.3.5.a</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-a.html" id="task-part-a-2-1-2">
+\begin{equation*}
+f(x, y)=\begin{cases} \frac{x y}{x^{2}+y^{2}} \amp\text{ if } (x, y)\ne (0, 0),\\
+0 \amp\text{ if } (x, y)= (0, 0).\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Its restriction to either the <span class="process-math">\(x\)</span> or <span class="process-math">\(y\)</span> coordinate is identically zero, so its partial derivatives <span class="process-math">\(\frac{\partial f}{\partial x}(0,0)=\frac{\partial f}{\partial y}(0,0)=0\text{.}\)</span> Yet for any direction <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-a.html" id="task-part-a-2-1-7">
+\begin{equation*}
+f(t\cos\theta, t\sin\theta)= \begin{cases} \cos\theta \sin\theta\amp\text{ if } (x, y)\ne (0, 0),\\
+0 \amp\text{ if } (x, y)= (0, 0).\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">which is not continuous at <span class="process-math">\(t=0\text{,}\)</span> unless <span class="process-math">\(\cos\theta\sin\theta =0\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\((0, 0)\)</span> and <span class="process-math">\(D_{(\cos\theta, \sin\theta)}f(0,0)\)</span> does not exist unless <span class="process-math">\(\theta\)</span> points along either the <span class="process-math">\(x\)</span> or <span class="process-math">\(y\)</span> coordinate axis.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-part-a-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.3.5.a.1"><a href="#task-part-a-2" title="Copy heading and permalink for Solution 5.3.5.a.1" aria-label="Copy heading and permalink for Solution 5.3.5.a.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 5.3.5.a"><a href="#task-part-a" title="Copy heading and permalink for Task 5.3.5.a" aria-label="Copy heading and permalink for Task 5.3.5.a">🔗</a></div></article><article class="task exercise-like" id="task-part-b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-part-b-1-1">A function may have directional derivative at some <span class="process-math">\({\mathbf x}\)</span>  in each direction, yet can still fail to be differentiable there.<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="task-part-b-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="task-part-b-2-1">
+<div class="para">Here is a simple example for <a href="ch-differentiaion-6.html#task-part-b" class="xref" data-knowl="./knowl/xref/task-part-b.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 5.3.5.b">Task 5.3.5.b</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-b.html" id="task-part-b-2-1-2">
+\begin{equation*}
+f(x, y)=\begin{cases} \frac{x^{2}y}{x^{2}+y^{2}} \amp\text{ if } (x, y)\ne (0, 0),\\
+0 \amp\text{ if } (x, y)= (0, 0).\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">For any direction <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\text{,}\)</span> <span class="process-math">\(f(t\cos\theta, t\sin\theta)=t \cos^{2}\theta \sin\theta\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-b.html" id="task-part-b-2-1-5">
+\begin{equation*}
+D_{(\cos\theta, \sin\theta)}f(0,0)= \cos^{2}\theta \sin\theta\text{.}
+\end{equation*}
+</div>
+<div class="para">But it does not depend on <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\)</span> in a linear fashion, so <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\((0, 0)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="task-part-b-2-2">
+<div class="para">A formal way of proving that this <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\((0, 0)\)</span> is to argue by contradiction. If it were differentiable at <span class="process-math">\((0, 0)\text{,}\)</span> then the linear approximation must be given by <span class="process-math">\(f(0,0)+(f_{x}(0, 0), f_{y}(0, 0))\cdot (x, y)\text{.}\)</span> But it is easy to see by definition that <span class="process-math">\(f_{x}(0, 0)= f_{y}(0, 0)=0\text{.}\)</span> Thus we would have</div>
+<div class="displaymath process-math" id="task-part-b-2-2-6">
+\begin{equation*}
+\frac{|f(x, y)-f(0, 0) -0|}{\sqrt{x^{2}+y^{2}}} =\frac{|x^{2}y|}{(x^{2}+y^{2})^{3/2}}\to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(\sqrt{x^{2}+y^{2}}\to 0\text{.}\)</span> But that is not the case, as when <span class="process-math">\((x, y)=t(\cos\theta, \sin\theta)\text{,}\)</span> this quotient is <span class="process-math">\(|\cos^{2}\theta \sin\theta|\text{,}\)</span> which does not tend to <span class="process-math">\(0\)</span> as <span class="process-math">\(\sqrt{x^{2}+y^{2}}\to 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.3.5.b.1"><a href="#task-part-b-2" title="Copy heading and permalink for Solution 5.3.5.b.1" aria-label="Copy heading and permalink for Solution 5.3.5.b.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 5.3.5.b"><a href="#task-part-b" title="Copy heading and permalink for Task 5.3.5.b" aria-label="Copy heading and permalink for Task 5.3.5.b">🔗</a></div></article><div class="autopermalink" data-description="Example 5.3.5"><a href="#subsection-differentiation-11" title="Copy heading and permalink for Example 5.3.5" aria-label="Copy heading and permalink for Example 5.3.5">🔗</a></div></article></details><details id="subsection-differentiation-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsection-differentiation-12-1">A function may have directional derivative at some <span class="process-math">\({\mathbf x}\)</span>  in each direction, yet can even fail to be continuous there. Here is a simple example<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsection-differentiation-12-2">
+<div class="displaymath process-math" id="subsection-differentiation-12-2-1">
+\begin{equation*}
+f(x, y)=\begin{cases} \frac{x^{3}y}{x^{6}+y^{2}} \amp\text{ if } (x, y)\ne (0, 0),\\
+0 \amp\text{ if } (x, y)= (0, 0).\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">For any direction <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="subsection-differentiation-12-2-3">
+\begin{equation*}
+f(t\cos\theta, t\sin\theta)=t^{2} \frac{\cos^{3}\theta \sin\theta}{t^{4} \cos^{6}\theta+ \sin^{2}\theta}
+\end{equation*}
+</div>
+<div class="para">has its derivative equal <span class="process-math">\(0\)</span> at <span class="process-math">\(t=0\text{.}\)</span> However, as <span class="process-math">\(t\to 0\text{,}\)</span> if we choose <span class="process-math">\(\theta\)</span> to satisfy <span class="process-math">\(t^{2}\cos^{3}\theta =\sin\theta\text{,}\)</span> we would get <span class="process-math">\(f(t\cos\theta, t\sin\theta)
+=\frac 12\text{,}\)</span> which is not <span class="process-math">\(\to 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.3.6"><a href="#subsection-differentiation-12" title="Copy heading and permalink for Example 5.3.6" aria-label="Copy heading and permalink for Example 5.3.6">🔗</a></div></article></details><details id="subsection-differentiation-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsection-differentiation-13-1">A function may be differentiable at a point but may not have partial derivatives at nearby points. <span class="process-math">\(f(x, y)=|xy|\)</span> near <span class="process-math">\((0, 0)\)</span> is such an example.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.3.7"><a href="#subsection-differentiation-13" title="Copy heading and permalink for Example 5.3.7" aria-label="Copy heading and permalink for Example 5.3.7">🔗</a></div></article></details><div class="para" id="subsection-differentiation-14">In addition to the possible difference of behavior as illustrated above when the domain is more than one dimension, there may also be some differences when the function is vector-valued. If <span class="process-math">\(f(x)\)</span> is a real-valued function, differentiable on <span class="process-math">\((a, b)\)</span> and continuous on <span class="process-math">\([a, b]\text{,}\)</span> then the mean value theorem implies that <span class="process-math">\(f(b)-f(a)=f'(c)(b-a)\)</span> for some <span class="process-math">\(c\)</span> between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> Does this property hold for vector-valued (e.g. complex-valued) functions under similar assumptions?<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsection-differentiation-15" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mean Value Theorem.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsection-differentiation-15-2-1">Examine whether the mean value theorem holds for <span class="process-math">\(\bff (t)=(\cos t, \sin t)\)</span> for <span class="process-math">\(t\in \bbR\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.3.8: Mean Value Theorem"><a href="#subsection-differentiation-15" title="Copy heading and permalink for Exercise 5.3.8: Mean Value Theorem" aria-label="Copy heading and permalink for Exercise 5.3.8: Mean Value Theorem">🔗</a></div></article></details><article class="theorem theorem-like" id="vecmeanvalue"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="vecmeanvalue-1-1">Suppose that <span class="process-math">\(\bff(x)\)</span> is a vector-valued function, differentiable on <span class="process-math">\((a, b)\)</span> and continuous on <span class="process-math">\([a, b]\text{,}\)</span> and that there exists some <span class="process-math">\(M\gt 0\)</span> such that <span class="process-math">\(\Vert \bff'(x)\Vert \le M\)</span> for all <span class="process-math">\(x\in (a, b)\text{.}\)</span> Then <span class="process-math">\(\Vert \bff(b)-\bff(a)\Vert \le M(b-a)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.3.9"><a href="#vecmeanvalue" title="Copy heading and permalink for Theorem 5.3.9" aria-label="Copy heading and permalink for Theorem 5.3.9">🔗</a></div></article><details id="vecmeanvalue-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="vecmeanvalue-2-1">If we assume, in addition, that <span class="process-math">\(\bff'(x)\)</span> is continuous on <span class="process-math">\((a,  b)\text{,}\)</span> then we have an easy proof using <span class="process-math">\(\bff(b)-\bff(a)=\int_{a}^{b}\bff'(x)\, dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="vecmeanvalue-2-2">
+<div class="para">For the general case, it suffices to prove that for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html" id="meanbd">
+\begin{equation}
+\Vert\bff(c)-\bff(a)\Vert\le (M+\epsilon)(c-a) +\epsilon \text{ for all $c\in [a, b]$.}\tag{5.3.4}
+\end{equation}
+</div>
+<div class="para">Fix any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> if <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> does not hold for some <span class="process-math">\(c\text{,}\)</span> let <span class="process-math">\(c^{*}\)</span> be the infimum of the values <span class="process-math">\(c\in [a, b]\)</span> for which <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> fails. First we show that <span class="process-math">\(c^{*}&gt;a\text{.}\)</span> This follows from the continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(a\text{,}\)</span> as it shows that for some <span class="process-math">\(\delta &gt;0\)</span>  <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> holds for <span class="process-math">\(c\in [a, a+\delta]\text{.}\)</span> By definition of <span class="process-math">\(c^{*}\text{,}\)</span> <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> holds for any <span class="process-math">\(c \lt c^{*}\text{.}\)</span> By continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(c^{*}\)</span> <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> continues to hold at <span class="process-math">\(c^{*}\text{.}\)</span> Thus <span class="process-math">\(c^{*}\lt b\)</span> under our assumption. Then using <span class="process-math">\(\Vert\bff'(c^{*})\Vert\le M\text{,}\)</span> there exists some <span class="process-math">\(\delta^{*}&gt;0\)</span> such that <span class="process-math">\(\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})\)</span> for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> it then follows that, for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html" id="vecmeanvalue-2-2-28">
+\begin{align*}
+\Vert\bff(c)-\bff(a)\Vert\le \amp \Vert\bff(c)- \bff(c^{*})\Vert + \Vert\bff(c^{*})-\bff(a)\Vert\\
+\le \amp (M+\epsilon)(c-c^{*}) + (M+\epsilon)(c^{*}-a) +\epsilon
+\end{align*}
+</div>
+<div class="para">showing that <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> continues to hold for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> contradicting the definition of <span class="process-math">\(c^{*}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.3.9.1"><a href="#vecmeanvalue-2" title="Copy heading and permalink for Proof 5.3.9.1" aria-label="Copy heading and permalink for Proof 5.3.9.1">🔗</a></div></article></details><article class="remark remark-like" id="subsection-differentiation-17"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="subsection-differentiation-17-1">
+<div class="para">For a function of several variables, in general it does not make sense to define differentiability in terms of the limit of the difference quotient</div>
+<div class="displaymath process-math" id="subsection-differentiation-17-1-1">
+\begin{equation*}
+\frac{ {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})}{{\mathbf h}}
+\end{equation*}
+</div>
+<div class="para">as there is no meaningful quotient operation between vectors in a general context. There are some exceptions. When <span class="process-math">\(n=m=2\text{,}\)</span> there is a well defined multiplication and quotient between vectors in <span class="process-math">\({\mathbb R}^{2}\)</span> when we represent them as complex numbers. When a complex valued function <span class="process-math">\(\bff\)</span> satisfies</div>
+<div class="displaymath process-math" id="subsection-differentiation-17-1-5">
+\begin{equation*}
+\lim_{{\mathbf h} \to {\mathbf 0}}\frac{ {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})}{{\mathbf h}}={\mathbf v} \text{ exists and is independent of how } {\mathbf h} \to {\mathbf 0},
+\end{equation*}
+</div>
+<div class="para">it is said to have a <dfn class="terminology">complex derivative</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsection-differentiation-17-2">This is a stronger condition than the differentiability in the linear approximation sense over vectors in <span class="process-math">\(\bbR^{2}\)</span> as introduced above, as that would give a function <span class="process-math">\(A\bh\)</span> which is linear in <span class="process-math">\(\bh\)</span> over the reals, while this condition of having a complex derivative would imply <span class="process-math">\(A(i \bh)=i A(\bh)\)</span> and as a result <span class="process-math">\(A(e^{i\theta} \bh)=e^{i\theta} A(\bh)\)</span> so <span class="process-math">\(D_{e^{i\theta} {\mathbf u}}f(z)=e^{i\theta }D_{{\mathbf u}}f(z).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsection-differentiation-17-3">
+<div class="para">In terms of vector operations in <span class="process-math">\({\mathbb R}^{2}\cong \mathbb C\text{,}\)</span> <span class="process-math">\(e^{i\theta} {\mathbf u}\)</span> corresponds to <span class="process-math">\(R_{\theta} {\mathbf u}\text{,}\)</span> where <span class="process-math">\(R_{\theta} \)</span> represents rotation with respect to the origin in <span class="process-math">\({\mathbb R}^{2}\)</span> of angle <span class="process-math">\(\theta\text{.}\)</span>  If <span class="process-math">\(\bff\)</span> is merely differentiable in the linear approximation sense, then</div>
+<div class="displaymath process-math" id="subsection-differentiation-17-3-8">
+\begin{equation*}
+A R_{\theta} {\mathbf u} \text{ may not equal } R_{\theta}A {\mathbf u}.
+\end{equation*}
+</div>
+<div class="para">In fact, a complex valued function <span class="process-math">\(f\)</span> has a complex derivative at some <span class="process-math">\(z\)</span> if it is differentiable in the linear approximation sense, and the linear approximation <span class="process-math">\(A {\mathbf u}\)</span> further satisfies</div>
+<div class="displaymath process-math" id="cpxcmm">
+\begin{equation}
+A R_{\theta}= R_{\theta}A \text{ for any rotation matrix } R_{\theta}.\tag{5.3.5}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 5.3.10"><a href="#subsection-differentiation-17" title="Copy heading and permalink for Remark 5.3.10" aria-label="Copy heading and permalink for Remark 5.3.10">🔗</a></div></article><div class="para" id="subsection-differentiation-18">It is easy to see that if <span class="process-math">\({\mathbf f}\)</span> is differentiable at <span class="process-math">\({\mathbf x}\)</span> in the linear approximation sense, then the linear approximation part <span class="process-math">\(A {\mathbf h}\)</span> is uniquely determined. It will be denoted as <span class="process-math">\({\mathbf f}'({\mathbf x}){\mathbf h} \text{.}\)</span> It is easier to interpret this in the matrix-vector multiplication sense, with the entry in <span class="process-math">\((i, j)\)</span> position of <span class="process-math">\({\mathbf f}'({\mathbf x})\)</span> given by the partial derivative <span class="process-math">\(D_{j}f_{i}({\mathbf x}):=\frac{\partial f_{i} }{\partial x_{j}}({\mathbf x})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsection-differentiation-19" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix Commuting with Rotation Matrix.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsection-differentiation-19-2-1">Let <span class="process-math">\(\displaystyle{A=\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}}\text{.}\)</span> Verify that <span class="process-math">\(A\)</span> satisfies <a href="ch-differentiaion-6.html#cpxcmm" class="xref" data-knowl="./knowl/xref/cpxcmm.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.5">(5.3.5)</a> iff there exist some real <span class="process-math">\(r, \varphi\)</span> such that <span class="process-math">\(\displaystyle{A=\begin{bmatrix} r\cos\varphi \amp -r \sin\varphi \\ r \sin\varphi \amp r \cos\varphi \end{bmatrix}}\text{.}\)</span> In fact, the same conclusion holds if we only require <span class="process-math">\(A R_{\theta}= R_{\theta}A\)</span> for some <span class="process-math">\(\theta\in (0, 2\pi)\setminus \{\pi\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.3.11: Matrix Commuting with Rotation Matrix"><a href="#subsection-differentiation-19" title="Copy heading and permalink for Exercise 5.3.11: Matrix Commuting with Rotation Matrix" aria-label="Copy heading and permalink for Exercise 5.3.11: Matrix Commuting with Rotation Matrix">🔗</a></div></article></details><div class="para" id="subsection-differentiation-20">The most important	properties regarding differentiability are the chain rule and differentiability of functions with continuous partial derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#subsection-differentiation-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 5.3.1: Differentiability, Directional Derivative, and Partial Derivative"><a href="#subsection-differentiation" title="Copy heading and permalink for Subsection 5.3.1: Differentiability, Directional Derivative, and Partial Derivative" aria-label="Copy heading and permalink for Subsection 5.3.1: Differentiability, Directional Derivative, and Partial Derivative">🔗</a></div></section><section class="subsection" id="subsec-chainrule"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chain Rule</span>
+</h3>
+<article class="theorem theorem-like" id="thm-chainrule"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-chainrule-2-1">Suppose that <span class="process-math">\(\mathbf f:D\subset \bbR^n\mapsto E\subset \bbR^m\)</span> is differentiable at <span class="process-math">\(\bx_0\text{,}\)</span> with <span class="process-math">\(\by_0=\mathbf f(\bx_0) \in E\text{,}\)</span> and <span class="process-math">\(\mathbf g:E \mapsto \bbR^l\)</span> is differentiable at <span class="process-math">\(\by_0\text{,}\)</span> then <span class="process-math">\(\mathbf g\circ \mathbf f\)</span> is differentiable at <span class="process-math">\(\bx_0\text{,}\)</span> with its Jacobian derivative <span class="process-math">\([D(\mathbf g\circ \mathbf f) (\bx_0)]\)</span> given by the matrix product <span class="process-math">\([D\mathbf g (\by_0)][D\mathbf f(\bx_0)]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-chainrule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="thm-chainrule-2-2">
+<div class="para">In component notation, this is</div>
+<div class="displaymath process-math" id="thm-chainrule-2-2-1">
+\begin{equation*}
+D_{i}(g_{k}\circ f)(\bx_{0})=\sum_{j=1}^{m}D_{j}g_{k} \circ f (\bx_{0}) D_{i}f_{j}(\bx_{0})=
+\sum_{j=1}^{m} D_{j}g_{k} ( f (\bx_{0})) D_{i}f_{j}(\bx_{0}),
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" id="thm-chainrule-2-2-2">
+\begin{equation*}
+\frac{\partial (g_{k}\circ f)}{\partial x_{i}}(\bx_{0})=\sum_{j=1}^{m} \frac{\partial g_{k}}{\partial y_{j}}( f (\bx_{0})) 
+\frac{\partial f_{j}}{\partial x_{i}}(\bx_{0}).
+\end{equation*}
+</div>
+<div class="para">If we write <span class="process-math">\(\mathbf y=\mathbf f(\mathbf x)\)</span> and <span class="process-math">\(\mathbf z=\mathbf g(\mathbf y)\text{,}\)</span> then the above can be written as</div>
+<div class="displaymath process-math" id="thm-chainrule-2-2-5">
+\begin{equation*}
+\frac{\partial z_k}{\partial x_{i}}= \sum_{j=1}^{m} \frac{\partial z_k}{\partial y_j} \frac{\partial y_j}{\partial x_i}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-chainrule-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-chain-rule-diagrams"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:42.1052631578947% 52.6315789473684%;column-gap:5%;">
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fig-chain-rule-maps"><img src="generated/latex-image/img-chain-rule-maps.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Function Maps<div class="autopermalink" data-description="Figure 5.3.13.(a)"><a href="#fig-chain-rule-maps" title="Copy heading and permalink for Figure 5.3.13.(a)" aria-label="Copy heading and permalink for Figure 5.3.13.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fig-chain-rule-derivatives"><img src="generated/latex-image/img-chain-rule-derivatives.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Jacobian Derivatives<div class="autopermalink" data-description="Figure 5.3.13.(b)"><a href="#fig-chain-rule-derivatives" title="Copy heading and permalink for Figure 5.3.13.(b)" aria-label="Copy heading and permalink for Figure 5.3.13.(b)">🔗</a></div></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Commutative diagrams for the Chain Rule<div class="autopermalink" data-description="Figure 5.3.13"><a href="#fig-chain-rule-diagrams" title="Copy heading and permalink for Figure 5.3.13" aria-label="Copy heading and permalink for Figure 5.3.13">🔗</a></div></figcaption></figure><div class="para logical" id="thm-chainrule-4">
+<div class="para">Note that we use a parenthesis as a delimiter to delineate the order of operations between composition and differentiation. Similar usage appears often such as in</div>
+<div class="displaymath process-math" id="thm-chainrule-4-1">
+\begin{equation*}
+\frac{\partial \left[ f(x^{2}, y)\right]}{\partial x}= 2x \frac{\partial f}{\partial x}(x^{2}, y),
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" id="thm-chainrule-4-2">
+\begin{equation*}
+D_x \left[ f(x^{2}, y)\right]= 2x D_x f(x^{2}, y)= 2x D_1 f(x^{2}, y).
+\end{equation*}
+</div>
+<div class="para">Here <span class="process-math">\(D_x f=  D_1 f=\frac{\partial f}{\partial x}\)</span> is treated as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> after applying the partial differentiation operator <span class="process-math">\(D_x\)</span> to <span class="process-math">\(f\text{,}\)</span> and the parenthesis on the right hand side is used to indicate that we first take the partial derivative with respect to <span class="process-math">\(x\)</span> to <span class="process-math">\(f\)</span> and then evaluate it at <span class="process-math">\((x^{2}, y)\text{,}\)</span> while <span class="process-math">\(D_x \left[ f(x^{2}, y)\right]\)</span> is treated as applying the partial differentiation operator <span class="process-math">\(D_x\)</span> to the function <span class="process-math">\(f(x^{2}, y)\text{,}\)</span> which is a composition of <span class="process-math">\(f\)</span> with the function <span class="process-math">\(h: (x, y)\mapsto (h_1(x,y), h_2(x, y):=(x^{2}, y)\text{.}\)</span> All of these notations run some risk of creating some confusion; it would have been better to use a more explicit notation, such as naming <span class="process-math">\(f\circ h\)</span> as <span class="process-math">\(F\text{,}\)</span> then <span class="process-math">\(D_x F= D_x (f\circ h)= D_1 f D_x h_1 + D_2 f D_x h_2\)</span> would have no ambiguity, but these notations are widely used and we will also use them.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-chainrule-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.3.12"><a href="#thm-chainrule" title="Copy heading and permalink for Theorem 5.3.12" aria-label="Copy heading and permalink for Theorem 5.3.12">🔗</a></div></article><details id="thm-chainrule-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-chainrule-5-1">
+<div class="para">We first work out <span class="process-math">\(\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0)\)</span> by using the differentiability of <span class="process-math">\(\mathbf f\)</span> at <span class="process-math">\(\bx_0\)</span> and of <span class="process-math">\(\mathbf g\)</span> at <span class="process-math">\(\by_0=\mathbf f(\bx_0)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-chainrule-5-1-6">
+\begin{align*}
+\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0) \amp
+= \mathbf g (\mathbf f(\bx)) - \mathbf g ( \mathbf f(\bx_0)) \\
+\amp = [D\mathbf g(\mathbf f(\bx_0))] \left[ \mathbf f(\bx)- \mathbf f(\bx_0)\right] +\bz(\mathbf f(\bx), \mathbf f(\bx_0))
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\Vert \bz(\by, \by_0)\Vert/\Vert \by -\by_0\Vert \to 0\)</span> as <span class="process-math">\(\by \to \by_0\text{;}\)</span> and</div>
+<div class="displaymath process-math" id="thm-chainrule-5-1-9">
+\begin{equation*}
+\mathbf f(\bx) - \mathbf f(\bx_0)=[D\mathbf f(\bx_0)](\bx -\bx_0) +\bw (\bx, \bx_0),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\Vert \bw(\bx, \bx_0)\Vert/\Vert \bx -\bx_0\Vert \to 0\)</span> as <span class="process-math">\(\bx \to \bx_0\text{,}\)</span> so we have</div>
+<div class="displaymath process-math" id="thm-chainrule-5-1-12">
+\begin{align*}
+\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0)
+=\amp [D\mathbf g (\mathbf f(\bx_0))][D\mathbf f(\bx_0)](\bx -\bx_0)\\
+\amp + [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) 
++ \bz(\mathbf f(\bx), \mathbf f(\bx_0)).
+\end{align*}
+</div>
+<div class="para">The differentiability of <span class="process-math">\(\mathbf g \circ \mathbf f(\bx)\)</span> at <span class="process-math">\(\bx_0\)</span> is equivalent to</div>
+<div class="displaymath process-math" id="thm-chainrule-5-1-15">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) 
++ \bz(\mathbf f(\bx), \mathbf f(\bx_0)) \Vert/\Vert \bx -\bx_0\Vert \to 0  \text{ as } \bx \to \bx_0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-chainrule-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-chainrule-5-2">
+<div class="para">Using the property of matrix norm on <span class="process-math">\(\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-2">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert \le
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\Vert_{\cF} \Vert\bw(\bx, \bx_0) \Vert,
+\end{equation*}
+</div>
+<div class="para">therefore</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-3">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert/\Vert \bx -\bx_0\Vert \to 0  \text{ as } \bx \to \bx_0.
+\end{equation*}
+</div>
+<div class="para">For  <span class="process-math">\(\bz(\mathbf f(\bx), \mathbf f(\bx_0))\text{,}\)</span> informally</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-5">
+\begin{equation*}
+\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \bx -\bx_0 \Vert}
+=\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \by -\by_0\Vert} \frac{\Vert \by -\by_0\Vert}{\Vert \bx -\bx_0 \Vert},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\by =\mathbf f (\bx)\)</span> and <span class="process-math">\(\by_0=\mathbf f (\bx_0)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-8">
+\begin{equation*}
+\frac{\Vert \by -\by_0\Vert}{\Vert \bx -\bx_0 \Vert} \text{ remains bounded
+as $\bx \to \bx_0$ and 
+$\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \by -\by_0\Vert} \to 0$   as  $\by \to \by_0$.}
+\end{equation*}
+</div>
+<div class="para">But this argument has a minor flaw, for  <span class="process-math">\(\Vert \by -\by_0\Vert\)</span> could be <span class="process-math">\(0\text{.}\)</span> To fix this issue, for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> there exists some <span class="process-math">\(\delta \gt 0\)</span> such that <span class="process-math">\(\Vert \bz (\by, \by_0) \Vert \le \epsilon \Vert \by -\by_0\Vert\)</span> whenever <span class="process-math">\(\Vert \by -\by_0\Vert \lt \delta\text{.}\)</span>  Then using</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-15">
+\begin{align*}
+\Vert \by -\by_0 \Vert \le \amp  \Vert \bw (\bx, \bx_0)  + [D\mathbf f(\bx_0)](\bx -\bx_0)\Vert\\
+\le \amp \Vert \bw (\bx, \bx_0) \Vert  + \Vert [D\mathbf f(\bx_0)](\bx -\bx_0)\Vert \\
+\le \amp \Vert \bw (\bx, \bx_0) \Vert  + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert 
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(\frac{\Vert \bw (\bx, \bx_0) \Vert}{\Vert \bx -\bx_0 \Vert}\to 0\)</span> as <span class="process-math">\(\bx\to \bx_0\text{,}\)</span> we can find some <span class="process-math">\(\sigma \gt 0\)</span> such that when <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \sigma\text{,}\)</span> <span class="process-math">\(\Vert \bw (\bx, \bx_0) \Vert \lt \epsilon \Vert \bx -\bx_0\Vert\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-21">
+\begin{align*}
+\Vert \by-\by_0 \Vert\le \amp \epsilon \Vert \bx -\bx_0\Vert + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert\\
+\le \amp \left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert \lt \delta.
+\end{align*}
+</div>
+<div class="para">Putting these together, when <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \sigma\)</span>  we have</div>
+<div class="displaymath process-math" id="thm-chainrule-5-2-23">
+\begin{equation*}
+\Vert \bz (\by, \by_0) \Vert \le \epsilon \Vert \by-\by_0 \Vert\le  \epsilon 
+\left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert,
+\end{equation*}
+</div>
+<div class="para">which shows the differentiability of <span class="process-math">\(\bg \circ \bff \)</span> at <span class="process-math">\(\bx_0\text{.}\)</span> </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-chainrule-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.3.12.1"><a href="#thm-chainrule-5" title="Copy heading and permalink for Proof 5.3.12.1" aria-label="Copy heading and permalink for Proof 5.3.12.1">🔗</a></div></article></details><details id="subsec-chainrule-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-chainrule-3-1">
+<div class="para">Suppose that <span class="process-math">\(\mathbf f:D\subset \bbR^n\mapsto E\subset \bbR^m\)</span> and <span class="process-math">\(\mathbf g:E \mapsto D\)</span> are inverse of each other:</div>
+<div class="displaymath process-math" id="subsec-chainrule-3-1-3">
+\begin{equation*}
+{\mathbf g}\circ {\mathbf f}(\bx)=\bx \text{ for all $\bx\in D$ and ${\mathbf f}\circ {\mathbf g}(\by)=\by$
+for all $\by \in E$.}
+\end{equation*}
+</div>
+<div class="para">Suppose further that <span class="process-math">\(\mathbf f\)</span> 	 is differentiable at <span class="process-math">\(\bx_0\text{,}\)</span> with <span class="process-math">\(\by_0=\mathbf f(\bx_0) \in E\text{,}\)</span> and <span class="process-math">\(\mathbf g\)</span> is differentiable at <span class="process-math">\(\by_0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-chainrule-3-1-9">
+\begin{equation*}
+[D \mathbf g(\by_{0})] [D\mathbf f(\bx_{0})] =I_{n\times n}, \quad
+[D \mathbf f(\bx_{0})] [D \mathbf g(\by_{0})]=I_{m\times m}.
+\end{equation*}
+</div>
+<div class="para">As a result  both <span class="process-math">\([D \mathbf f(\bx_{0})]\)</span> and <span class="process-math">\([D \mathbf g(\by_{0})]\)</span> are inverse matrices of each other  and <span class="process-math">\(n=m\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.3.14"><a href="#subsec-chainrule-3" title="Copy heading and permalink for Example 5.3.14" aria-label="Copy heading and permalink for Example 5.3.14">🔗</a></div></article></details><details id="subsec-chainrule-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Jacobian Matrix of Composite Function.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsec-chainrule-4-2-1">Define <span class="process-math">\(S(x, y)=(x^{2}-y^{2}, 2 x y)\)</span> and <span class="process-math">\(f(x, y)=(e^{x}\cos y, e^{x}\sin y)\text{.}\)</span> Compute the Jacobian matrix of <span class="process-math">\(S, f\text{,}\)</span> <span class="process-math">\(f\circ S\text{,}\)</span> and <span class="process-math">\(S\circ f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.3.15: Jacobian Matrix of Composite Function"><a href="#subsec-chainrule-4" title="Copy heading and permalink for Exercise 5.3.15: Jacobian Matrix of Composite Function" aria-label="Copy heading and permalink for Exercise 5.3.15: Jacobian Matrix of Composite Function">🔗</a></div></article></details><details id="subsec-chainrule-5" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chain Rule Involving Polar Coordinates.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsec-chainrule-5-2-1">Suppose that <span class="process-math">\(f(x, y)\)</span> is differentiable for <span class="process-math">\((x, y)\in \bbR^2\text{.}\)</span> Let <span class="process-math">\((r, \theta)\)</span> be the polar coordinates of <span class="process-math">\((x, y)\text{,}\)</span> namely <span class="process-math">\((x, y)=P(r,\theta)=(r\cos\theta, r\sin\theta)\text{.}\)</span> Compute the Jacobian matrix of <span class="process-math">\(P\)</span> and verify that<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-chainrule-5-2-2">
+<div class="displaymath process-math" id="subsec-chainrule-5-2-2-1">
+\begin{equation*}
+\left\{
+\begin{aligned}
+\frac{\partial f}{\partial r} &amp;= \cos \theta \frac{\partial f}{\partial x} +\sin \theta \frac{\partial f}{\partial y}\\
+\frac{\partial f}{\partial \theta} &amp;= - r\sin \theta \frac{\partial f}{\partial x} +r \cos \theta \frac{\partial f}{\partial y}
+\end{aligned}
+\right.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-chainrule-5-2-3">In Matrix form, this is written as<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-chainrule-5-2-4">
+<div class="displaymath process-math" id="subsec-chainrule-5-2-4-1">
+\begin{equation*}
+\begin{bmatrix} 
+\frac{\partial f}{\partial r} &amp; \frac{\partial f}{\partial \theta} 
+\end{bmatrix} = \begin{bmatrix} 
+\frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y} 
+\end{bmatrix}  \begin{bmatrix} \cos \theta  &amp; -r \sin\theta \\ \sin\theta &amp; r\cos\theta
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-chainrule-5-2-5">Note that we have abused the notation on the left hand side, as the function on the left hand side really represents the composition <span class="process-math">\(f\circ P\)</span> of <span class="process-math">\(f\)</span> with <span class="process-math">\(P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-chainrule-5-2-6">Note also that if we use <span class="process-math">\(r^{-1}\frac{\partial f }{\partial \theta}\)</span>  instead of <span class="process-math">\(\frac{\partial f}{\partial \theta}\)</span> in the relation above we would get a simpler relation using an orthogonal matrix:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-chainrule-5-2-7">
+<div class="displaymath process-math" id="subsec-chainrule-5-2-7-1">
+\begin{equation*}
+\begin{bmatrix} 
+\frac{\partial f}{\partial r} &amp; r^{-1} \frac{\partial f}{\partial \theta} 
+\end{bmatrix} = \begin{bmatrix} 
+\frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y} 
+\end{bmatrix}  \begin{bmatrix} \cos \theta  &amp; - \sin\theta \\ \sin\theta &amp; \cos\theta
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chainrule-5-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.3.16: Chain Rule Involving Polar Coordinates"><a href="#subsec-chainrule-5" title="Copy heading and permalink for Exercise 5.3.16: Chain Rule Involving Polar Coordinates" aria-label="Copy heading and permalink for Exercise 5.3.16: Chain Rule Involving Polar Coordinates">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.3.2: Chain Rule"><a href="#subsec-chainrule" title="Copy heading and permalink for Subsection 5.3.2: Chain Rule" aria-label="Copy heading and permalink for Subsection 5.3.2: Chain Rule">🔗</a></div></section><section class="subsection" id="subsec-diffCrit"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Differentiability Criterion</span>
+</h3>
+<article class="theorem theorem-like" id="thm-diffcrit"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-diffcrit-1-1">Suppose that <span class="process-math">\(\mathbf f:D\subset \bbR^n\mapsto  \bbR^m\)</span> has partial derivatives in a neighborhood of <span class="process-math">\(\bx_0\)</span> and these partial derivatives are continuous at <span class="process-math">\(\bx_{0}\text{.}\)</span> Then <span class="process-math">\(\bff\)</span> is differentiable at <span class="process-math">\(\bx_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diffcrit-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.3.17"><a href="#thm-diffcrit" title="Copy heading and permalink for Theorem 5.3.17" aria-label="Copy heading and permalink for Theorem 5.3.17">🔗</a></div></article><details id="thm-diffcrit-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-diffcrit-2-1">Suppose that <span class="process-math">\(\bff (\bx)=(f_1(\bx),\cdots, f_m(\bx))\text{.}\)</span> It suffices to prove that each component function <span class="process-math">\(f_i(\bx)\)</span> is differentiable at <span class="process-math">\(\bx_0\text{.}\)</span> For simplicity, we first write up a proof for the case of <span class="process-math">\(n=2\)</span> and set <span class="process-math">\(\bx_0=(0, 0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diffcrit-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-diffcrit-2-2">
+<div class="para">For <span class="process-math">\(\bx=(x_1, x_2)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="thm-diffcrit-2-2-2">
+\begin{align*}
+f_i(\bx)-f_i(\bx_0)=\amp f_i(x_1, x_2)-f_i(x_1, 0)+f_i(x_1, 0)-f_i(0, 0)\\
+= \amp \frac{\partial f_i}{\partial x_2}(x_1, b)x_2+ \frac{\partial f_i}{\partial x_1}(a, 0)x_1\\
+= \amp \frac{\partial f_i}{\partial x_1}(0, 0) x_1 + \frac{\partial f_i}{\partial x_2}(0, 0)x_2
++ \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1 \\
+\amp +
+\left[ \frac{\partial f_i}{\partial x_2}(x_1, b)- \frac{\partial f_i}{\partial x_2}(0, 0)\right] x_2
+\end{align*}
+</div>
+<div class="para">for some <span class="process-math">\(a\)</span> between <span class="process-math">\(x_1\)</span> and <span class="process-math">\(0\)</span> and some <span class="process-math">\(b\)</span> between <span class="process-math">\(x_2\)</span> and <span class="process-math">\(0\text{.}\)</span> Using the continuity at <span class="process-math">\(\bx_0=(0, 0)\)</span> of the partial derivatives, for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we can find some <span class="process-math">\(\delta \gt 0\)</span> such that whenever <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \delta\text{,}\)</span> we have <span class="process-math">\(\vert \frac{\partial f_i}{\partial x_j}(\bx)- \frac{\partial f_i}{\partial x_j}(\bx_0)\vert \lt \epsilon\text{.}\)</span> This implies that</div>
+<div class="displaymath process-math" id="thm-diffcrit-2-2-14">
+\begin{align*}
+\amp \vert \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1+
+\left[ \frac{\partial f_i}{\partial x_2}(x_1, b)- \frac{\partial f_i}{\partial x_2}(0, 0)\right] x_2\vert \\
+\le \amp \epsilon \left(|x_1|+|x_2|\right)\le \sqrt 2 \epsilon \Vert \bx-\bx_0\Vert,
+\end{align*}
+</div>
+<div class="para">which shows the differentiability of <span class="process-math">\(f_i(\bx)\)</span> at <span class="process-math">\(\bx_0=(0, 0)\text{.}\)</span> The general case can be worked out in a similar way.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-diffcrit-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.3.17.1"><a href="#thm-diffcrit-2" title="Copy heading and permalink for Proof 5.3.17.1" aria-label="Copy heading and permalink for Proof 5.3.17.1">🔗</a></div></article></details><article class="remark remark-like" id="subsec-diffCrit-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="subsec-diffCrit-3-1">
+<div class="para">The converse of the above theorem does not hold, even in one dimension. Here is a simple example:</div>
+<div class="displaymath process-math" id="subsec-diffCrit-3-1-1">
+\begin{equation*}
+f(x)=\begin{cases} x^{2}\sin\frac 1x \amp\text{ if } x\ne 0, \\
+0 \amp\text{ if } x=0.\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">By definition, <span class="process-math">\(f'(0)=0\text{,}\)</span> and <span class="process-math">\(\frac{f(x)-f(0)-f'(0)x}{x}=x\sin\frac 1x \to 0\)</span> as  <span class="process-math">\(x\to 0 \text{,}\)</span> so it is differentiable at <span class="process-math">\(x=0\text{.}\)</span> Yet</div>
+<div class="displaymath process-math" id="subsec-diffCrit-3-1-6">
+\begin{equation*}
+f'(x)=\begin{cases}2 x \sin\frac 1x- \cos \frac 1x \amp\text{ if } x\ne 0, \\
+0 \amp\text{ if } x=0,\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and it’s clear that <span class="process-math">\(f'(x)\)</span> is not continuous near <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diffCrit-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 5.3.18"><a href="#subsec-diffCrit-3" title="Copy heading and permalink for Remark 5.3.18" aria-label="Copy heading and permalink for Remark 5.3.18">🔗</a></div></article><details id="subsec-diffCrit-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability of a norm function on <span class="process-math">\(\bbR^{n}\)</span>.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsec-diffCrit-4-2-1">Consider the norm <span class="process-math">\(||(x_{1}, \ldots, x_{n})||_{p}:= \left( \sum_{i=1}^{n}|x_{i}|^{p}\right)^{1/p}\)</span> for some <span class="process-math">\(1 \le p \lt 
+\infty\)</span> as a function on <span class="process-math">\(\bbR^{n}\text{.}\)</span> Identify the set of points at which this function is differentiable. Repeat the exercise when the norm is <span class="process-math">\(||(x_{1}, \ldots, x_{n})||_{\infty}:=\max_{1\le i \le n} |x_{i}|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-diffCrit-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.3.19: Differentiability of a norm function on \bbR^{n}"><a href="#subsec-diffCrit-4" title="Copy heading and permalink for Exercise 5.3.19: Differentiability of a norm function on \bbR^{n}" aria-label="Copy heading and permalink for Exercise 5.3.19: Differentiability of a norm function on \bbR^{n}">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.3.3: A Differentiability Criterion"><a href="#subsec-diffCrit" title="Copy heading and permalink for Subsection 5.3.3: A Differentiability Criterion" aria-label="Copy heading and permalink for Subsection 5.3.3: A Differentiability Criterion">🔗</a></div></section><div class="autopermalink" data-description="Section 5.3: Differentiation"><a href="#ch-differentiaion-6" title="Copy heading and permalink for Section 5.3: Differentiation" aria-label="Copy heading and permalink for Section 5.3: Differentiation">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="section-linearmaps.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-contraction.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

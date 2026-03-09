@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">On the notion of equicontinuous family of functions.</span>
+</h3> <div class="para">A fundamental property of the set of real numbers <span class="process-math">\(\mathbb R\)</span> is the Bolzano-Weierstrass Theorem: <em class="emphasis">any bounded sequence in <span class="process-math">\(\mathbb R\)</span> has a convergent subsequence.</em> One would like to find an appropriate	 extension of this property on function spaces such as the set <span class="process-math">\(C(E)\)</span> of continuous functions on a metric space <span class="process-math">\(E\text{.}\)</span> Unfortunately, the direct extension does not hold, as demonstrated by the sequence of functions <span class="process-math">\(\left\{f_{n}(x)=\sin n x\right\}\)</span> in <span class="process-math">\(C([0,2\pi])\text{.}\)</span>
+</div> <div class="para">Using <span class="process-math">\(\int_{0}^{2\pi} |\sin nx -\sin m x|^{2}\, dx =2\pi\)</span> when <span class="process-math">\(n\ne m\text{,}\)</span> it's clear that <span class="process-math">\(\left\{\sin n x\right\}\)</span> can't have a subsequence converging uniformly on <span class="process-math">\([0, 2\pi]\text{.}\)</span> Rudin gives an argument to show that it can't have a subsequence converging point-wise  on  <span class="process-math">\([0, 2\pi]\text{.}\)</span>
+</div> <div class="para">In the situation of the example, what one can directly extend is the following property: <em class="emphasis">there exists a countable dense subset <span class="process-math">\(E\)</span> of <span class="process-math">\([0,2\pi]\)</span> and a subsequence <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> such that it converges at every <span class="process-math">\(x\in E\text{.}\)</span></em> To be able to say that one can choose a subsequence <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> such that it converges at every <span class="process-math">\(x\in [0,2\pi]\text{,}\)</span> one needs to control the behavior of <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> for <span class="process-math">\(x\in [0,2\pi]\setminus E\text{.}\)</span> The condition of being equicontinuous is the one what would give us the desired property.</div> <div class="para logical">
+<div class="para">Heuristically, the equicontinuous condition controls the oscillation of <span class="process-math">\(f_{n}(x)\)</span> to be small, over a common neighborhood <span class="process-math">\(V\)</span>  of a point <span class="process-math">\(p\)</span> uniformly in <span class="process-math">\(n\text{.}\)</span> This allows us to propagate the property</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{n_{i}}(p)-f_{n_{j}}(p)| &lt; \epsilon \text{ for } p \in E
+\end{equation*}
+</div>
+<div class="para">to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{n_{i}}(x)-f_{n_{j}}(x)| &lt; 3\epsilon \text{ for } x \in V.
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="equicontinuity.html#remark-9" class="internal">in-context</a></span>
+</body>
+</html>

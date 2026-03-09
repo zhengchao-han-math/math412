@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(f\in C^{k}(D)\)</span> and <span class="process-math">\(\bx \in D\text{.}\)</span> Take any vector <span class="process-math">\(\bv \in \bbR^{n}\)</span> and consider <span class="process-math">\(f(\bx+ t\bv)\)</span> as a one variable function <span class="process-math">\(g(t)\)</span> of <span class="process-math">\(t\)</span> for <span class="process-math">\(t\)</span> near <span class="process-math">\(0\text{.}\)</span> Then by the chain rule</div>
+<div class="displaymath process-math">
+\begin{align*}
+g'(t)\amp =\sum_{j=1}^{n} v_{j}\frac{\partial f}{\partial x_{j}}(\bx+ t\bv)\\
+g''(t)\amp =\sum_{j,k=1}^{n} v_{j}v_{i}\frac{\partial^{2} f}{\partial x_{i}\partial x_{j}}(\bx+ t\bv)\\
+g^{(k)}(t)\amp =\sum_{j_{1},\ldots,j_{k}=1}^{n} v_{j_{1}}\cdots v_{j_{k}}\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx+ t\bv)
+\end{align*}
+</div>
+<div class="para">Then the one variable Taylor expansion</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t)=g(0)+g'(0)t+\frac{g''(0)}{2!}t^{2}+\cdots+ \frac{g^{(k)(0)}}{k!}
+t^{k} +R_{k+1}(t)
+\end{equation*}
+</div>
+<div class="para">gives rise to</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(\bx+ t\bv)= \amp f(\bx)+	\sum_{j=1}^{n} t v_{j}\frac{\partial f}{\partial x_{j}}(\bx)+
+\frac{t^{2}}{2!} \sum_{i, j=1}^{n} v_{j}v_{i}\frac{\partial^{2} f}{\partial x_{i}\partial x_{j}}(\bx)\\
+\amp +\cdots +  \frac{t^{k}}{k!}\sum_{j_{1},\ldots,j_{k}=1}^{n} v_{j_{1}}\cdots v_{j_{k}}\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)+R_{k+1}(t).
+\end{align*}
+</div>
+<div class="para">The remainder has the property that <span class="process-math">\(\Vert R_{k+1}\Vert/\Vert \bv \Vert \to 0\)</span> as <span class="process-math">\(\Vert \bv \Vert^{k}\to 0\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="section-higherderiv.html#p-317" class="internal">in-context</a></span>
+</body>
+</html>

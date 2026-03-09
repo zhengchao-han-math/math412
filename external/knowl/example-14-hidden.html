@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"> <div class="para">The integrand <span class="process-math">\(f(x, t)=\frac{t^{2}x}{(t+x)^{3}}\)</span> is continuously differentiable in the first quadrant. For any <span class="process-math">\(0 &lt; x \le 1\text{,}\)</span> <span class="process-math">\(f(x, t)\to 0\)</span> as <span class="process-math">\(t\to 0+\text{,}\)</span> so we may extend <span class="process-math">\(f(x, 0)=0\)</span> to make the resulting function  continuous for <span class="process-math">\(x&gt;0, t\ge 0\)</span> (is it continuous at <span class="process-math">\((x ,t)=(0, 0)\text{?}\)</span>). We can consider either <span class="process-math">\(\frac{f(x, t)-f(x, 0)}{t}\)</span> as <span class="process-math">\(t\to 0+\text{,}\)</span> or the limit of <span class="process-math">\(D_{t}f(x, t)=\frac{2tx (t+x)-3t^{2}x}{(t+x)^{4}}\)</span> as <span class="process-math">\(t\to 0+\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">In the particular example here,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{0}^{1} \frac{f(x, t)-f(x, 0)}{t} \, dx = \int_{0}^{1} \frac{t x}{(t+x)^{3}}\, dx
+=\int_{0}^{1/t}\frac{y}{(1+y)^{3}}\, dy
+\end{equation*}
+</div>
+<div class="para">which tends to <span class="process-math">\(\int_{0}^{\infty}\frac{y}{(1+y)^{3}}\, dy&gt;0\)</span> as <span class="process-math">\(t\to 0+\text{.}\)</span> On the other hand, <span class="process-math">\(\frac{f(x, t)-f(x, 0)}{t} \to 0\)</span> for every <span class="process-math">\(0 &lt; x \le 1\)</span> as <span class="process-math">\(t\to 0+\text{.}\)</span> It is instructive to examine how the uniform integrability has failed here.</div>
+</div> <div class="para logical">
+<div class="para">This example is constructed based on an earlier example when examining</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to \infty} \int_{0}^{1}\frac{n^{2} x}{(1+nx)^{3}}\, dx=
+\lim_{n\to \infty} \int_{0}^{1}\frac{\frac 1n x}{(\frac 1n + x)^{2}}\, dx.
+\end{equation*}
+</div>
+<div class="para">We simply replace <span class="process-math">\(\frac 1n\)</span> by <span class="process-math">\(t&gt;0\)</span> to get this example.</div>
+</div></article></body>
+</html>

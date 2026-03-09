@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.5.b</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h5>
+<div class="para">A function may have directional derivative at some <span class="process-math">\({\mathbf x}\)</span>  in each direction, yet can still fail to be differentiable there.<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Here is a simple example for <a href="ch-differentiaion-6.html#task-part-b" class="xref" data-knowl="./knowl/xref/task-part-b.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 5.3.5.b">Task 5.3.5.b</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-b.html">
+\begin{equation*}
+f(x, y)=\begin{cases} \frac{x^{2}y}{x^{2}+y^{2}} \amp\text{ if } (x, y)\ne (0, 0),\\
+0 \amp\text{ if } (x, y)= (0, 0).\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">For any direction <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\text{,}\)</span> <span class="process-math">\(f(t\cos\theta, t\sin\theta)=t \cos^{2}\theta \sin\theta\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/task-part-b.html">
+\begin{equation*}
+D_{(\cos\theta, \sin\theta)}f(0,0)= \cos^{2}\theta \sin\theta\text{.}
+\end{equation*}
+</div>
+<div class="para">But it does not depend on <span class="process-math">\({\mathbf u}=(\cos\theta, \sin\theta)\)</span> in a linear fashion, so <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\((0, 0)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">A formal way of proving that this <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\((0, 0)\)</span> is to argue by contradiction. If it were differentiable at <span class="process-math">\((0, 0)\text{,}\)</span> then the linear approximation must be given by <span class="process-math">\(f(0,0)+(f_{x}(0, 0), f_{y}(0, 0))\cdot (x, y)\text{.}\)</span> But it is easy to see by definition that <span class="process-math">\(f_{x}(0, 0)= f_{y}(0, 0)=0\text{.}\)</span> Thus we would have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{|f(x, y)-f(0, 0) -0|}{\sqrt{x^{2}+y^{2}}} =\frac{|x^{2}y|}{(x^{2}+y^{2})^{3/2}}\to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(\sqrt{x^{2}+y^{2}}\to 0\text{.}\)</span> But that is not the case, as when <span class="process-math">\((x, y)=t(\cos\theta, \sin\theta)\text{,}\)</span> this quotient is <span class="process-math">\(|\cos^{2}\theta \sin\theta|\text{,}\)</span> which does not tend to <span class="process-math">\(0\)</span> as <span class="process-math">\(\sqrt{x^{2}+y^{2}}\to 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-part-b-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.3.5.b.1"><a href="#task-part-b-2" title="Copy heading and permalink for Solution 5.3.5.b.1" aria-label="Copy heading and permalink for Solution 5.3.5.b.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 5.3.5.b"><a href="#task-part-b" title="Copy heading and permalink for Task 5.3.5.b" aria-label="Copy heading and permalink for Task 5.3.5.b">🔗</a></div></article><span class="incontext"><a class="internal" href="ch-differentiaion-6.html#task-part-b">in-context</a></span>
+</body>
+</html>

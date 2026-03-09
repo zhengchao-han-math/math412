@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Concept of Uniform Convergence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.18';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1d92cd109bc12c4d.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-SSFunctions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-SSFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="uniformconvprop.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-30" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-9" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-17" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="uniformconv"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Concept of Uniform Convergence</span>
+</h2>
+<div class="para" id="uniformconv-2">Simple examples illustrate  that <em class="emphasis">pointwise limit</em> of a sequence of continuous functions can fail to be continuous, and that even pointwise limit of a sequence of continuously differentiable functions can also fail to be continuous. The key cause is that the convergence may not be <em class="emphasis">uniform</em>, namely, for each <span class="process-math">\(\epsilon &gt;0\)</span> and each <span class="process-math">\(x\in E\text{,}\)</span> there exists <span class="process-math">\(N\)</span> which may depend on <span class="process-math">\(\epsilon\)</span> as well as on <span class="process-math">\(x\)</span> such that when <span class="process-math">\(n\ge N\text{,}\)</span> we have <span class="process-math">\(|f_n(x)-f(x)| &lt; \epsilon\text{;}\)</span> but the minimum <span class="process-math">\(N\)</span> needed for <span class="process-math">\(x\in E\)</span> may not be uniform over <span class="process-math">\(x\in E\text{.}\)</span> The following definition defines the notion of uniform convergence.<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="uniformconv-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniform Convergence.</span>
+</h3>
+<div class="para" id="uniformconv-3-2-1">Let <span class="process-math">\(\{ f_n(x)\}\)</span> be a sequence of functions defined on a set <span class="process-math">\(E\text{.}\)</span> Then <span class="process-math">\(\{ f_n(x)\}\)</span> converges uniformly on <span class="process-math">\(E\)</span> to a limit function <span class="process-math">\(f(x)\)</span> on <span class="process-math">\(E\)</span> if, for every <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists <span class="process-math">\(N\in \mathbb N\)</span> such that <span class="process-math">\(|f_n(x)-f(x)| &lt; \epsilon\)</span> for all <span class="process-math">\(n\ge N\)</span> and for <em class="emphasis">all</em>   <span class="process-math">\(\; x\in E\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.1: Uniform Convergence"><a href="#uniformconv-3" title="Copy heading and permalink for Definition 2.1.1: Uniform Convergence" aria-label="Copy heading and permalink for Definition 2.1.1: Uniform Convergence">🔗</a></div></article><article class="remark remark-like" id="uniformconv-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="uniformconv-4-1">Note that one needs to specify the set <span class="process-math">\(E\)</span> when discussing the notion of uniform convergence. For example, the sequence of functions <span class="process-math">\(f_{n}(x)=x^{n}\)</span> is converging pointwise to <span class="process-math">\(f(x):=0\)</span> on <span class="process-math">\([0,1)\text{,}\)</span> but not uniformly on <span class="process-math">\([0,1)\text{.}\)</span> However, for any <em class="emphasis">fixed</em> <span class="process-math">\(\; 0 &lt; \delta &lt; 1\text{,}\)</span> <span class="process-math">\(f_{n}(x) \to 0\)</span> uniformly over <span class="process-math">\([0,\delta]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.2"><a href="#uniformconv-4" title="Copy heading and permalink for Remark 2.1.2" aria-label="Copy heading and permalink for Remark 2.1.2">🔗</a></div></article><details id="uniformconv-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Examine the notion of pointwise and uniform convergence.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="uniformconv-5-2-1">
+<ol class="decimal" id="uniformconv-5-2-1-1">
+<li id="uniformconv-5-2-1-1-1">
+<div class="para logical" id="uniformconv-5-2-1-1-1-1">
+<div class="para">We continue to work with <span class="process-math">\(f_{n}(x)=x^{n}\)</span> and consider it on <span class="process-math">\([0, 1]\text{.}\)</span> It still converges pointwise, but the limiting function</div>
+<div class="displaymath process-math" id="uniformconv-5-2-1-1-1-1-3">
+\begin{equation*}
+f(x)=\begin{cases} 0 \amp 0\le x \lt 1 \\
+1 \amp x=1\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">fails to be continuous at <span class="process-math">\(x=1\text{.}\)</span> This is due to the failure of uniform convergence on <span class="process-math">\([0, 1]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-5-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="uniformconv-5-2-1-1-1-2">
+<div class="para">Here we still have</div>
+<div class="displaymath process-math" id="uniformconv-5-2-1-1-1-2-1">
+\begin{equation*}
+\lim_{n\to \infty} \int_{0}^{1}x^{n}\, dx = \int_{0}^{1} f(x)\, dx\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-5-2-1-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#uniformconv-5-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="uniformconv-5-2-1-1-2">
+<div class="para" id="p-derived-uniformconv-5-2-1-1-2">If we modify <span class="process-math">\(f_{n}(x)\)</span> into<div class="displaymath process-math" id="uniformconv-5-2-1-1-2-2">
+\begin{equation*}
+g_{n}(x)=(n+1) x^{n}(1-x)\text{.}
+\end{equation*}
+</div>Then <span class="process-math">\(g_{n}(x)\to g(x):=0\)</span> pointwise on <span class="process-math">\([0, 1]\text{,}\)</span> although the convergence is still not uniform, as <span class="process-math">\(\max_{[0,1]}g_{n}(x)=\left(\frac{n}{n+1}\right)^{n}\to e^{-1}\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span>  When we examine <span class="process-math">\(\int_{0}^{1}g_{n}(x)\, dx\text{,}\)</span> we find it equal to <span class="process-math">\((n+2)^{-1}\to 0\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#uniformconv-5-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="uniformconv-5-2-1-1-3">
+<div class="para" id="p-derived-uniformconv-5-2-1-1-3">However, if we modify <span class="process-math">\(g_{n}(x)\)</span> into <span class="process-math">\(h_{n}(x) :=(n+2)g_{n}(x)\text{,}\)</span> we continue to have <span class="process-math">\(h_{n}(x) \to 0\)</span> pointwise on <span class="process-math">\([0, 1]\text{.}\)</span> The convergence is still not uniform, as <span class="process-math">\(\max_{[0,1]}h_{n}(x)= (n+2)\left(\frac{n}{n+1}\right)^{n} \to \infty\text{.}\)</span> And we find that<div class="displaymath process-math" id="uniformconv-5-2-1-1-3-6">
+\begin{equation*}
+\int_{0}^{1}h_{n}(x) = 1 \not \to \int_{0}^{1} 0\, dx\text{!}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#uniformconv-5-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="uniformconv-5-2-2">
+<div class="para">Note that in all the cases above, once we fix some <span class="process-math">\(0 &lt; \delta &lt; 1\text{,}\)</span> the relevant sequences of functions converge to <span class="process-math">\(0\)</span> uniformly over <span class="process-math">\([0,\delta]\text{,}\)</span> so they fail to converge uniformly only over a neighborhood of <span class="process-math">\(x=1\text{.}\)</span> To examine question (b) raised earlier, we just need to answer whether the following holds:</div>
+<div class="displaymath process-math" id="uniformconv-5-2-2-5">
+\begin{gather*}
+\forall \; \epsilon&gt;0, \exists \; 0 &lt; \delta &lt; 1 \text{ and } N \text{ such that for all }  n\ge N,\\
+\left| \int_{\delta}^{1} k_{n}(x)\, dx \right| &lt; \epsilon,
+\end{gather*}
+</div>
+<div class="para">where <span class="process-math">\((k_{n}(x))\)</span> stands for one of the sequences  <span class="process-math">\(\{ f_{n}(x)\}, \{g_{n}(x)\}, \{h_{n}(x)\}\)</span> above. Through direct examination we find that this holds for  <span class="process-math">\(\{f_{n}(x)\}, \{g_{n}(x)\}\text{,}\)</span> but fails for <span class="process-math">\(\{h_{n}(x)\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.3: Examine the notion of pointwise and uniform convergence"><a href="#uniformconv-5" title="Copy heading and permalink for Example 2.1.3: Examine the notion of pointwise and uniform convergence" aria-label="Copy heading and permalink for Example 2.1.3: Examine the notion of pointwise and uniform convergence">🔗</a></div></article></details><article class="remark remark-like" id="uniformconv-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="uniformconv-6-1">In most contexts we confine to <span class="process-math">\(\mathbb R\)</span> or <span class="process-math">\(\mathbb C\)</span>-valued functions defined on a set <span class="process-math">\(E\text{.}\)</span> The notion of uniform convergence can be defined as along as there is a quantitative way to describe how close <span class="process-math">\(f_{n}(x)\)</span> is to <span class="process-math">\(f(x)\text{.}\)</span> If <span class="process-math">\(Y\)</span> is a metric space with <span class="process-math">\(d\)</span> as the metric, and <span class="process-math">\(f_{n}, f: E \mapsto Y\text{,}\)</span> then the notion of uniform convergence of <span class="process-math">\(f_{n}\)</span> makes sense. More specifically, <span class="process-math">\(f_{n}\to f\)</span> uniformly over <span class="process-math">\(E\text{,}\)</span> if for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(n\ge N\text{,}\)</span> <span class="process-math">\(\sup_{x\in E}d(f_{n}(x), f(x)) &lt; \epsilon\text{.}\)</span> This notion does not require <span class="process-math">\(E\)</span> to be a metric space.<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="uniformconv-6-2">On the other hand, the notion of <em class="emphasis">uniform continuity</em> also requires	a mechanism of quantitatively describing how close <span class="process-math">\(x, y\)</span> are in <span class="process-math">\(E\text{,}\)</span> and it would make sense if both <span class="process-math">\(E\)</span> and <span class="process-math">\(Y\)</span> are  metric spaces.<div class="autopermalink" data-description="Paragraph"><a href="#uniformconv-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.4"><a href="#uniformconv-6" title="Copy heading and permalink for Remark 2.1.4" aria-label="Copy heading and permalink for Remark 2.1.4">🔗</a></div></article><div class="autopermalink" data-description="Section 2.1: Concept of Uniform Convergence"><a href="#uniformconv" title="Copy heading and permalink for Section 2.1: Concept of Uniform Convergence" aria-label="Copy heading and permalink for Section 2.1: Concept of Uniform Convergence">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-SSFunctions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="uniformconvprop.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

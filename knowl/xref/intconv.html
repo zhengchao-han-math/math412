@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Extension of Theorem 2.2.7.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose that, for any <span class="process-math">\(c, a &lt; c &lt; b\text{,}\)</span>  <span class="process-math">\(f_{n}\to f\)</span> uniformly on <span class="process-math">\([a,c]\text{,}\)</span> and that each <span class="process-math">\(f_{n}\)</span> has a convergent integral <span class="process-math">\(\int_{a}^{b} f_{n}(x)\, d\alpha\)</span> (if it is improper at <span class="process-math">\(x=b\)</span>). Furthermore, assume the following uniform integrability of the family <span class="process-math">\(\left\{f_{n}\right\}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{gather}
+\forall \; \epsilon&gt;0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, \notag\tag{2.3.1}\\
+\left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon.\tag{2.3.2}
+\end{gather}
+</div>
+<div class="para">Then <span class="process-math">\(f\)</span> has a convergent integral <span class="process-math">\(\int_{a}^{b} f(x)\, d\alpha\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{a}^{b} f(x)\, d\alpha=\lim_{n\to \infty}\int_{a}^{b} f_{n}(x)\, d\alpha.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#intconv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.3.2: An Extension of Theorem 2.2.7"><a href="#intconv" title="Copy heading and permalink for Theorem 2.3.2: An Extension of Theorem 2.2.7" aria-label="Copy heading and permalink for Theorem 2.3.2: An Extension of Theorem 2.2.7">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">First, for any <span class="process-math">\(a' &lt; b', a \le a' &lt; b' &lt; b\text{,}\)</span> we can apply <a href="uniformconvprop.html#thm-uniformconvint" class="xref" data-knowl="./knowl/xref/thm-uniformconvint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.7: Interchange of Limits and Integration">Theorem 2.2.7</a> on <span class="process-math">\([a', b']\)</span> to conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{equation*}
+\int_{a'}^{b'} f(x)\, d\alpha=\lim_{n\to \infty}\int_{a'}^{b'} f_{n}(x)\, d\alpha.
+\end{equation*}
+</div>
+<div class="para">Next, let <span class="process-math">\(c\)</span> be chosen according to the uniform integrability of the family <span class="process-math">\(\left\{f_{n}\right\}\)</span> in <a href="termwiseintex.html#intconv-2-1-8" class="xref" data-knowl="./knowl/xref/unifib.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a> for a given <span class="process-math">\(\epsilon&gt;0\text{.}\)</span> If we set <span class="process-math">\(a'=c\text{,}\)</span> then for any <span class="process-math">\(c', c &lt; c' &lt; b\text{,}\)</span> we would get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{equation*}
+\left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon \text{ for all } n.
+\end{equation*}
+</div>
+<div class="para">This then implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{equation*}
+\left|\int_{c}^{c'} f(x)\, d\alpha \right| =\lim_{n\to \infty }  \left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| 
+\le \epsilon,
+\end{equation*}
+</div>
+<div class="para">which implies that the integral <span class="process-math">\(\int_{a}^{b} f(x)\, d\alpha\)</span> is convergent at <span class="process-math">\(x=b\text{,}\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{equation*}
+\left|\int_{c}^{b} f(x)\, d\alpha  \right| \le  \epsilon.
+\end{equation*}
+</div>
+<div class="para">Finally, using</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{align*}
+\amp \left| \int_{a}^{b} f(x)\, d\alpha - \int_{a}^{b} f_{n}(x)\, d\alpha \right| \\
+\le \amp \left|\int_{c}^{b} f(x)\, d\alpha - \int_{c}^{b} f_{n}(x)\, d\alpha \right|
++ \left| \int_{a}^{c} f(x)\, d\alpha - \int_{a}^{c} f_{n}(x)\, d\alpha \right|\\
+\le \amp 2\epsilon + \left| \int_{a}^{c} f(x)\, d\alpha - \int_{a}^{c} f_{n}(x)\, d\alpha \right|
+\end{align*}
+</div>
+<div class="para">and applying <a href="uniformconvprop.html#thm-uniformconvint" class="xref" data-knowl="./knowl/xref/thm-uniformconvint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.7: Interchange of Limits and Integration">Theorem 2.2.7</a> on <span class="process-math">\([a, c]\text{,}\)</span> we find some <span class="process-math">\(N\)</span> such that <span class="process-math">\(\left| \int_{a}^{c} f(x)\, d\alpha - \int_{a}^{c} f_{n}(x)\, d\alpha \right| &lt; \epsilon\)</span> for all <span class="process-math">\(n\ge N\text{,}\)</span> which implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-uniformconvint.html ./knowl/xref/unifib.html ./knowl/xref/thm-uniformconvint.html">
+\begin{equation*}
+\left| \int_{a}^{b} f(x)\, d\alpha - \int_{a}^{b} f_{n}(x)\, d\alpha \right| &lt; 3\epsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\ge N\text{,}\)</span> therefore proving the claimed conclusion.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#intconv-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.3.2.1"><a href="#intconv-3" title="Copy heading and permalink for Proof 2.3.2.1" aria-label="Copy heading and permalink for Proof 2.3.2.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="termwiseintex.html#intconv">in-context</a></span>
+</body>
+</html>

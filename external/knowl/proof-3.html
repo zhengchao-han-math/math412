@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">Any Cauchy sequence <span class="process-math">\(\{ c_{k}\}\)</span> in <span class="process-math">\(C[a, b]\)</span> under the <span class="process-math">\(L^{p}[a,  b]\)</span>-norm has a subsequence, still denoted as <span class="process-math">\(\{ c_{k}\}\text{,}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert c_{k} -c_{k+1}\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\epsilon_{k} &gt; 0\)</span> are such that <span class="process-math">\(\sum_{k} \epsilon_{k}\)</span> converges.</div>
+</div> <div class="para logical">
+<div class="para">Define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{k} =\{x\in [a, b]: \vert c_{k}(x) -c_{k+1}(x)\vert &gt; \epsilon_{k}\}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(D_{k}\)</span> is open and it follows from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\epsilon_{k}^{p} |D_{k}| \le \int_{[a,b]} \vert c_{k}(x) -c_{k+1}(x)\vert^{p}\, dx \le \epsilon_{k}^{2p}
+\end{equation*}
+</div>
+<div class="para">that <span class="process-math">\(|D_{k}|\le  \epsilon_{k}^{p}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Note that <span class="process-math">\(\cup_{k=N}^{\infty}D_{k}\)</span> is open and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\cup_{k=N}^{\infty}D_{k}|\le 
+\sum_{k=N}^{\infty}|D_{k}| \le \sum_{k=N}^{\infty}\epsilon_{k}^{p}\to 0\text{,}
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(N\to\infty\text{.}\)</span> Therefore, the set <span class="process-math">\(E\)</span><a href="" class="fn-knowl original" data-knowl="./knowl/fn-1-hidden.html" title="Footnote 2.1"><sup> 1 </sup></a> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E=\cap_{N=1}^{\infty}  \cup_{k=N}^{\infty}D_{k}
+\end{equation*}
+</div>
+<div class="para">is negligible, and for any <span class="process-math">\(x\in E^{c}\text{,}\)</span> there exists some <span class="process-math">\(N_{x}\)</span> such that <span class="process-math">\(x\in \cap_{k=N}^{\infty}D_{k}^{c}\text{,}\)</span> which makes <span class="process-math">\(\{c_{k}(x)\}\)</span> a Cauchy sequence in <span class="process-math">\(\bbR\text{,}\)</span> therefore <span class="process-math">\(\lim_{k\to\infty} c_{k}(x)\)</span> exists. Furthermore, for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists some <span class="process-math">\(N_{\epsilon}\)</span> such that <span class="process-math">\(|\cup_{k=N}^{\infty}D_{k}| &lt; \epsilon\text{.}\)</span> On the complement of <span class="process-math">\(\cup_{k=N}^{\infty}D_{k}\text{,}\)</span> <span class="process-math">\(\vert c_{k}(x) -c_{k+1}(x)\vert \le \epsilon_{k}\)</span> for all <span class="process-math">\(k\ge N\text{,}\)</span> implying that <span class="process-math">\(\{c_{k}(x)\}\)</span> converges uniformly on this set.</div>
+</div> <div class="para">For (ii), we can use the equivalent Cauchy sequences <span class="process-math">\(\{ c_{k}\}\)</span> and <span class="process-math">\(\{ \tilde c_{k}\}\)</span> to construct a new Cauchy sequence, say, with <span class="process-math">\(c_{k}\)</span> as the <span class="process-math">\((2k-1)\)</span>-th term and <span class="process-math">\(\{ \tilde c_{k}\}\)</span> as the <span class="process-math">\((2k)\)</span>-th term, then appeal to the proof of (i), making sure that in selecting the subsequence, infinitely many terms from both sequences are selected. This subsequence, selected from two <span class="process-math">\(a.e.\)</span> convergent  sequences, converges <span class="process-math">\(a.e.\text{,}\)</span> which shows that <span class="process-math">\(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\)</span> <span class="process-math">\(a.e. \text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For (iii), define <span class="process-math">\(f_{k}(x)=c_{k}(x)-\tilde c_{k}(x)\text{,}\)</span> then <span class="process-math">\(\{f_{k}(x)\}\)</span> is a Cauchy sequence  in <span class="process-math">\(C[a, b]\)</span> under the <span class="process-math">\(L^{p}[a,  b]\)</span>-norm such that <span class="process-math">\(\lim_{k\to\infty} f_{k}(x)=0\)</span> <span class="process-math">\(a.e.\text{.}\)</span> We now show that <span class="process-math">\(\{f_{k}(x)\}\to 0\)</span> in <span class="process-math">\(L^{p}[a, b]\text{.}\)</span> For any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> first apply <a href="" class="xref" data-knowl="./knowl/uniform-abs-contin.html" title="Proposition 2.2: Uniform Absolute Continuity of the Integrals of A Cauchy Sequence in C[a, b]">Proposition 2.2</a> to <span class="process-math">\(\{f_{k}(x)\}\)</span> to find <span class="process-math">\(\delta &gt; 0\)</span> such that for any open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|G| &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\int_{G} |f_{k}(x)|^{p}\, dx &lt; \epsilon\text{.}\)</span> Then apply the proof for (i) to <span class="process-math">\(\{f_{k}(x)\}\)</span> to find an open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|G| &lt; \delta\)</span> such that <span class="process-math">\(f_{k} \to 0\)</span> uniformly in <span class="process-math">\(G^{c}\text{.}\)</span> Thus there exists <span class="process-math">\(N\)</span> such that <span class="process-math">\(|f_{k}(x)|^{p} \le \epsilon \)</span> for all <span class="process-math">\(x\in G^{c}\)</span> and <span class="process-math">\(k\ge N\text{.}\)</span> We would like to estimate <span class="process-math">\(\int_{[a, b]} |f_{k}(x)|^{p}\, dx\)</span> by <span class="process-math">\(\int_{G} |f_{k}(x)|^{p}\, dx + \int_{G^{c}} |f_{k}(x)|^{p}\, dx\text{.}\)</span> But in the Riemann integral setting, integration over an arbitrary closed set is not defined.  We complete the argument in the following way. Since <span class="process-math">\(|f_{k}(x)|^{p} \in \mathcal R[a, b]\text{,}\)</span> we can find a partition <span class="process-math">\(a=a_{0} &lt; a_{1} &lt; \cdots &lt; a_{N_{k}}=b\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/uniform-abs-contin.html">
+\begin{equation*}
+\left| \int_{a}^{b} |f_{k}(x)|^{p}\, dx -\sum_{i=1}^{N_{k}} m_{i}(|f_{k}|^{p})(a_{i}-a_{i-1})\right| &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">For any interval <span class="process-math">\([a_{i-1}, a_{i}]\)</span> that has non-empty intersection with <span class="process-math">\(G^{c}\text{,}\)</span> we see that <span class="process-math">\(m_{i}(|f_{k}|^{p})=\inf_{[a_{i-1}, a_{i}]}|f_{k}|^{p} \le \epsilon\text{;}\)</span> the remaining subintervals <span class="process-math">\([a_{i-1}, a_{i}]\)</span> are contained in <span class="process-math">\(G\text{,}\)</span> and the lower Riemann sum over such intervals <span class="process-math">\(\le \int_{G} |f_{k}(x)|^{p}\, dx \le \epsilon\)</span> for any <span class="process-math">\(k\ge N\text{.}\)</span> It then follows that for any <span class="process-math">\(k\ge N\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/uniform-abs-contin.html">
+\begin{equation*}
+\int_{a}^{b} |f_{k}(x)|^{p}\, dx\le (b-a)\epsilon + 2\epsilon.
+\end{equation*}
+</div>
+<div class="para">proving that <span class="process-math">\(\int_{a}^{b} |f_{k}(x)|^{p}\, dx\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="chp-int.html#proof-3" class="internal">in-context</a></span>
+</body>
+</html>

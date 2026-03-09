@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">Consider</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x, y)=\begin{cases} xy \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\quad \amp (x, y)\ne (0, 0)\\
+0 \quad \amp (x, y)= (0, 0)\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Then at <span class="process-math">\((x, y)\ne (0, 0)\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{\partial f}{\partial x}(x, y) \amp= \frac{y \left(4 x^2 y^2+x^4-y^4\right)}{\left(x^2+y^2\right)^2},\\
+\frac{\partial f}{\partial y}(x, y) \amp=\frac{-4 x^3 y^2+x^5-x y^4}{\left(x^2+y^2\right)^2},\\
+\frac{\partial^{2} f}{\partial y \partial x}(x, y) \amp=\frac{\left(x^2-y^2\right) \left(10 x^2 y^2+x^4+y^4\right)}{\left(x^2+y^2\right)^3},\\
+\frac{\partial^{2} f}{\partial x \partial y}(x, y) \amp=\frac{\left(x^2-y^2\right) \left(10 x^2 y^2+x^4+y^4\right)}{\left(x^2+y^2\right)^3},
+\end{align*}
+</div>
+<div class="para">so we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial^{2} f}{\partial y \partial x}(x, y)= \frac{\partial^{2} f}{\partial x \partial y}(x, y)  \quad \text{ when }
+(x, y)\ne (0, 0).
+\end{equation*}
+</div>
+<div class="para">We can also verify directly by definition that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial f}{\partial x}(0, 0)=0, \quad \frac{\partial f}{\partial y}(0, 0)=0,
+\end{equation*}
+</div>
+<div class="para">and to compute <span class="process-math">\(\frac{\partial^{2} f}{\partial y \partial x}(0, 0)\text{,}\)</span> we only need to examine the derivative with respect to <span class="process-math">\(y\)</span> of <span class="process-math">\(\frac{\partial f}{\partial x}(0, y)= -y\text{,}\)</span> which gives <span class="process-math">\(-1\text{;}\)</span> while to compute <span class="process-math">\(\frac{\partial^{2} f}{\partial x \partial y}(0, 0)\text{,}\)</span> we only need to examine the derivative with respect to <span class="process-math">\(x\)</span> of <span class="process-math">\(\frac{\partial f}{\partial y}(x, 0)=x\text{,}\)</span> which gives <span class="process-math">\(1\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial^{2} f}{\partial y \partial x}(0, 0)=-1\ne 1= \frac{\partial^{2} f}{\partial x \partial y}(0, 0).
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="section-higherderiv.html#p-313" class="internal">in-context</a></span>
+</body>
+</html>

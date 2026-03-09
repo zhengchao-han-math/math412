@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">In an earlier exercise it is established that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{N}[g](x)=\sum_{n=-N}^{N} c_{n} e^{i nx}=
+\frac{1}{2\pi} \int_{-\pi}^{\pi}g(t) D_{N}(x-t)\, dt
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{N}(t)= \sum_{-N}^{N} e^{-i n t}=\frac{\sin (N+\frac 12)t }{\sin\frac { t}{2}}.
+\end{equation*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2\pi} \int_{-\pi}^{\pi} D_{N}(t)\, dt=1.
+\end{equation*}
+</div>
+<div class="para">Using this property and extending <span class="process-math">\(g(x)\)</span> as a <span class="process-math">\(2\pi\)</span> periodic function on <span class="process-math">\(\bbR\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_N[g]( x)= \frac{1}{2\pi} \int_{-\pi}^{\pi} g(x-t) D_{N}(t)\, dt
+\end{equation*}
+</div>
+<div class="para">by a change of variable <span class="process-math">\(t \mapsto x-t\)</span> in <span class="process-math">\(\int_{-\pi}^{\pi} g(t)D_{N}(x-t)\, dt\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_N[g]( x)-g(x)\amp = \frac{1}{2\pi} \int_{-\pi}^{\pi}[g(x-t) -g(x)] D_{N}(t)\, dt\\
+\amp=\frac{1}{2\pi} \int_{-\pi}^{\pi}
+h(x; t) \sin (N+\frac 12)t\; dt,
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(h(x; t)=\frac{g(x-t) -g(x)}{\sin \frac t2}\text{.}\)</span> The following Riemann-Lebesgue Lemma plays an important role.</div>
+</div>
+<span class="incontext"><a href="sec-FSConv.html#p-150" class="internal">in-context</a></span>
+</body>
+</html>

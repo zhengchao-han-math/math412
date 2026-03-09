@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">We will assume that the origin is in the interior of the domain of <span class="process-math">\(f\text{;}\)</span> in fact, we will assume the domain of <span class="process-math">\(f\)</span> includes the unit ball centered at the origin,  and describe ideas to prove the continuity of <span class="process-math">\(f\)</span> at the origin.</div> <div class="para logical">
+<div class="para">On key idea is that <em class="emphasis">there exist a finite number of points on the unit sphere</em>, in fact <span class="process-math">\(2n\)</span> points, such that any <span class="process-math">\(\bx\)</span> with sufficiently small <span class="process-math">\(\Vert \bx\Vert\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html">
+\begin{align}
+\bx\amp =s\bar \bx \text{ for some
+$s, 0 \le s \le 1$ and}\tag{4.8.1}\\
+\bar\bx\amp = t_{1}\mathbf a_{1}+\cdots+ t_{n}\mathbf a_{n} \text{ 
+for some $t_{i}\ge 0, t_{1}+\cdots+ t_{n}=1$}\text{,}\tag{4.8.2}
+\end{align}
+</div>
+<div class="para">where  <span class="process-math">\(\{\mathbf a_{1}, \ldots, \mathbf a_{n}\}\)</span> are among the <span class="process-math">\(2n\)</span> points on the unit sphere. Technically</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html">
+\begin{equation*}
+(x_{1},x_{2},\ldots, x_{n})=|x_{1}|\tilde \be_{1}+|x_{2}|\tilde\be_{2}+\ldots+|x_{n}|\tilde\be_{n},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\tilde\be_{i}=\text{sgn} (x_{i}) \be_{i}\text{.}\)</span> If we set <span class="process-math">\(s=|x_{1}|+|x_{2}|+\ldots+|x_{n}|\text{,}\)</span> and when <span class="process-math">\((x_{1},x_{2},\ldots, x_{n})\ne (0, 0,\ldots, 0)\text{,}\)</span> <span class="process-math">\(t_{i}=|x_{i}|/s\text{,}\)</span> and <span class="process-math">\(\mathbf a_{i}= \tilde\be_{i}\text{,}\)</span> <span class="process-math">\(\bar\bx=t_{1} \tilde\be_{1}+ t_{2}\tilde\be_{2}+\ldots+ t_{n}
+\tilde\be_{n}\text{,}\)</span> then   we get <a href="" class="xref" data-knowl="./knowl/convexline.html" title="Equation 4.8.1">(4.8.1)</a>, <a href="" class="xref" data-knowl="./knowl/convexcomb.html" title="Equation 4.8.2">(4.8.2)</a>. The condition   <span class="process-math">\(s\le 1\)</span> is satisfied when <span class="process-math">\(\Vert \mathbf x \Vert \le \frac{1}{\sqrt n},\)</span> for, by the Cauchy-Schwarz inequality</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/convexcomb.html">
+\begin{equation*}
+s=|x_{1}|+\cdots+|x_{n}|\le \sqrt n \sqrt{ x_{1}^{2}+\cdots+x_{n}^{2}}\le 1.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">It then follows that</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(\mathbf x) \le \amp [1-s] f(\mathbf 0)+ s f(\bar\bx)\\
+\le \amp [1-s] f(\mathbf 0)+ s\left[ t_{1}f(\mathbf a_{1})+\cdots+ 
+t_{n}f(\mathbf a_{n}) \right]\\
+\le \amp f(\mathbf 0) +s\left[M-f(\mathbf 0)\right].
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(M\)</span> is chosen so that <span class="process-math">\(f( \tilde \be_{i})\le M\)</span> for all <span class="process-math">\(i\text{.}\)</span> This implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x)-f(\mathbf 0)\le (M -f(\mathbf 0)) (  |x_{1}|+\cdots+|x_{n}|)\to 0 \text{ as }
+\mathbf x \to 0.
+\end{equation*}
+</div>
+<div class="para">We can certainly cover <span class="process-math">\(\mathbb S^{n-1}\)</span> by a finite number of similarly constructed sets, and carry out this argument, which would allow us to prove that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limsup_{\mathbf x\to \mathbf 0 }f(\mathbf x)\le f(0).
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">To prove <span class="process-math">\(\liminf_{\mathbf x\to \mathbf 0}f(\mathbf x)\ge f(0)\text{,}\)</span> we use the property of the secant lines as done in the one-dimensional case. For any <span class="process-math">\(\mathbf x\)</span> such that <span class="process-math">\(\Vert \mathbf x \Vert \le \frac{1}{\sqrt n}\text{.}\)</span> We bound <span class="process-math">\(f(\mathbf x)\)</span> from below by the secant line through <span class="process-math">\((-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n}, f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})),
+(\mathbf 0, f(\mathbf 0))\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(\mathbf x)-f(\mathbf 0) 
+\ge \frac{f(\mathbf 0)-f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})}{(\sqrt n)^{-1}}
+\Vert \mathbf x \Vert.
+\end{equation*}
+</div>
+<div class="para">Since the slope <span class="process-math">\(\frac{f(\mathbf 0)-f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})}{(\sqrt n)^{-1}}\)</span> has a lower bound due to the upper bound of <span class="process-math">\(f(-\frac{\mathbf x}{\Vert \mathbf x \Vert \sqrt n})\text{,}\)</span> this allows us to conclude that <span class="process-math">\(\liminf_{\mathbf x\to \mathbf 0}f(\mathbf x)\ge f(0)\text{.}\)</span>
+</div>
+</div>
+</div></body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">The heuristic idea is to use the differentiability of <span class="process-math">\({\mathbf f}\)</span> to approximate <span class="process-math">\({\mathbf f}({\mathbf x}) \text{,}\)</span> when <span class="process-math">\(\bx\)</span> is near <span class="process-math">\(\bx_{0}\text{,}\)</span> by the mapping <span class="process-math">\({\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})\text{.}\)</span> If there were no remainder term, then solving <span class="process-math">\({\mathbf f}({\mathbf x})= {\mathbf y}\)</span> would be equivalent to solving</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})=
+{\mathbf y}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is straightforward under the assumption that <span class="process-math">\(D{\mathbf f}({\mathbf x}_{0})\)</span> is bijective. In the presence of the remainder</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0}) := {\mathbf f}({\mathbf x})
+-\left\{ {\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0}) \right\}
+\end{equation*}
+</div>
+<div class="para">we would need to solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0})+ {\mathbf f}({\mathbf x}_{0}) +
+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})= {\mathbf y} .\tag{4.5.1}
+\end{equation}
+</div>
+<div class="para">Using <span class="process-math">\({\mathbf y}_{0}={\mathbf f}({\mathbf x}_{0})\)</span> and the invertibility assumption on <span class="process-math">\(D{\mathbf f}({\mathbf x}_{0})\text{,}\)</span> the above is equivalent to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf x}-{\mathbf x}_{0}= 
+\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}-
+{\mathbf y}_{0}-{\mathbf r}({\mathbf x}; {\mathbf x}_{0})\right\}.
+\end{equation*}
+</div>
+<div class="para">In other words, we look for a fixed point <span class="process-math">\({\mathbf x}\)</span> near <span class="process-math">\({\mathbf x}_{0}\)</span> of the mapping</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{align*}
+\phi ({\mathbf x}) := \amp {\mathbf x}_{0} + \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}-
+{\mathbf y}_{0}-{\mathbf r}({\mathbf x}; {\mathbf x}_{0})\right\}\\
+=\amp {\mathbf x}_{0} + \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}- 
+{\mathbf f}({\mathbf x}) + D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0}) \right\}\\
+=\amp {\mathbf x}+ \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}- {\mathbf f}({\mathbf x}) \right\}.
+\end{align*}
+</div>
+<div class="para">
+<span class="process-math">\(\phi ({\mathbf x})\)</span> is differentiable whenever <span class="process-math">\({\mathbf f}({\mathbf x})\)</span> is and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+D\phi ({\mathbf x})= I - \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}D {\mathbf f}({\mathbf x})
+=\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right].
+\end{equation*}
+</div>
+<div class="para">The continuity assumption of <span class="process-math">\(D {\mathbf f}({\mathbf x})\)</span> at <span class="process-math">\({\mathbf x}_{0}\)</span> implies the existence of some <span class="process-math">\(\delta &gt;0\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right]
+\Vert \le \frac 12 \text{ for all } {\mathbf x} \text{ such that }
+\Vert {\mathbf x}-{\mathbf x}_{0}\Vert \le \delta.\tag{4.5.2}
+\end{equation}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/vecmeanvalue.html" title="Theorem 4.3.9">Theorem 4.3.9</a>  it follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+\Vert \phi ({\mathbf x}_{1})-\phi ({\mathbf x}_{2})\Vert \le \frac 12 ||{\mathbf x}_{1}-{\mathbf x}_{2}\Vert\tag{4.5.3}
+\end{equation}
+</div>
+<div class="para">for <span class="process-math">\({\mathbf x}_{1}, {\mathbf x}_{2}\in \overline{B({\mathbf x}_{0}, \delta)}\text{.}\)</span> It remains to show that one can choose an open set <span class="process-math">\(V\)</span> containing <span class="process-math">\({\mathbf y}_{0}\)</span> such that <span class="process-math">\(\phi ({\mathbf x})\in \overline{B({\mathbf x}_{0}, \delta)}\)</span> when <span class="process-math">\({\mathbf x}\in \overline{B({\mathbf x}_{0}, \delta)}\)</span> and <span class="process-math">\({\mathbf y}\in V\text{.}\)</span>
+</div>
+</div>  <div class="para logical">
+<div class="para">Using</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/contraction.html">
+\begin{equation*}
+\Vert \phi ({\mathbf x}_{0})- {\mathbf x}_{0}\Vert \le
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert
+\Vert {\mathbf y}-{\mathbf y}_{0}\Vert &lt; \frac{\delta}{2},
+\end{equation*}
+</div>
+<div class="para">if <span class="process-math">\({\mathbf y}\)</span> satisfies <span class="process-math">\(\Vert {\mathbf y}-{\mathbf y}_{0}\Vert &lt; r\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/contraction.html">
+\begin{equation*}
+r \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert = \frac{\delta}{2}.
+\end{equation*}
+</div>
+<div class="para">Then, with <a href="" class="xref" data-knowl="./knowl/contraction.html" title="Equation 4.5.3">(4.5.3)</a>, for any <span class="process-math">\({\mathbf x} \in \overline{ B({\mathbf x}_{0}, \delta)}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/contraction.html">
+\begin{equation*}
+\Vert \phi ({\mathbf x})- {\mathbf x}_{0}\Vert \le 
+\Vert \phi ({\mathbf x})-\phi ( {\mathbf x}_{0})\Vert +  \Vert \phi ({\mathbf x}_{0})- {\mathbf x}_{0}\Vert
+&lt; \frac 12 \Vert {\mathbf x}-{\mathbf x}_{0} \Vert + \frac{\delta}{2} \le \delta.
+\end{equation*}
+</div>
+<div class="para">So if we now take <span class="process-math">\(V=B({\mathbf y}_{0}, r)\text{,}\)</span> then <span class="process-math">\(\phi ({\mathbf x})\)</span> would be a contraction on <span class="process-math">\(\overline{B({\mathbf x}_{0}, \delta)}\text{,}\)</span> thus has a unique fixed point <span class="process-math">\({\mathbf x}\)</span> in it. In fact any fixed point <span class="process-math">\({\mathbf x}\)</span> satisfies <span class="process-math">\(\Vert {\mathbf x}- {\mathbf x}_{0}\Vert &lt; \delta\text{.}\)</span> This gives a well defined inverse of <span class="process-math">\({\mathbf f}\)</span> on <span class="process-math">\(V=B({\mathbf y}_{0}, r)\)</span> with <span class="process-math">\({\mathbf f}^{-1}: V\mapsto U:={\mathbf f}^{-1}(V)\cap B({\mathbf x}_{0}, \delta)\text{,}\)</span> where <span class="process-math">\(U\)</span> is open and non-empty.</div>
+</div> <div class="para logical">
+<div class="para">Next we prove the continuity of <span class="process-math">\(\bff^{-1}(\by)\)</span> for <span class="process-math">\(\by \in B({\mathbf y}_{0}, r)\text{.}\)</span> Set <span class="process-math">\({\mathbf x}_{1}=  {\mathbf f}^{-1} ({\mathbf y}_{1}),
+{\mathbf x}_{2}=  {\mathbf f}^{-1} ({\mathbf y}_{2})\)</span> for <span class="process-math">\({\mathbf y}_{1}, {\mathbf y}_{2}\in
+B({\mathbf y}_{0}, r)\text{,}\)</span> we examine</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{align}
+{\mathbf y}_{2}- {\mathbf y}_{1}= \amp {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1)
+=\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \notag\\
+\amp + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),\tag{4.5.4}
+\end{align}
+</div>
+<div class="para">where we use <span class="process-math">\({\mathbf f}({\mathbf x})- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}\)</span> in place of <span class="process-math">\({\mathbf f}({\mathbf x})\)</span> as its  derivative in <span class="process-math">\({\mathbf x}\)</span> is <span class="process-math">\(D{\mathbf f}({\mathbf x})- D{\mathbf f}({\mathbf x}_{0})\text{,}\)</span> which satisfies <a href="" class="xref" data-knowl="./knowl/der1-2.html" title="Equation 4.5.2">(4.5.2)</a> when <span class="process-math">\({\mathbf x}\in B({\mathbf x}_{0}, \delta)\)</span> due to the continuity of <span class="process-math">\(D{\mathbf f}({\mathbf x})\)</span> at <span class="process-math">\({\mathbf x}_{0}\text{.}\)</span>  Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{equation*}
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
+\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert \le
+\frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we get from <a href="" class="xref" data-knowl="./knowl/invcon.html" title="Equation 4.5.4">(4.5.4)</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{align*}
+\Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert 
+\le  \amp \Vert  \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left(
+{\mathbf y}_{2}- {\mathbf y}_{1}\right)\Vert\\
+\amp + 
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
+\left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert\\
+\le \amp \Vert  \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert \Vert
+{\mathbf y}_{2}- {\mathbf y}_{1}\Vert+ \frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert.
+\end{align*}
+</div>
+<div class="para">This then implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/der1-2.html ./knowl/invcon.html">
+\begin{equation}
+\Vert {\mathbf x}_{1}-{\mathbf x}_{2}\Vert \le 2 
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert
+\Vert {\mathbf f}({\mathbf x}_2)- {\mathbf f}({\mathbf x}_1) \Vert,\tag{4.5.5}
+\end{equation}
+</div>
+<div class="para">which shows the (Lipschitz) continuity of <span class="process-math">\({\mathbf f}^{-1}\)</span> on <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/invcon.html" title="Equation 4.5.4">(4.5.4)</a> can also rewritten as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/invcon.html ./knowl/contraction.html ./knowl/inverse3.html">
+\begin{equation*}
+\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[{\mathbf y}_{2}- {\mathbf y}_{1}\right]=
+{\mathbf x}_2 - {\mathbf x}_1- \left[\phi({\mathbf x}_2)-\phi({\mathbf x}_1)\right],
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\phi\)</span> is defined with respect to either <span class="process-math">\({\mathbf y}_{1}\)</span> or <span class="process-math">\({\mathbf y}_{2}\)</span> and satisfies  <a href="" class="xref" data-knowl="./knowl/contraction.html" title="Equation 4.5.3">(4.5.3)</a>.  This would lead to the same conclusion as <a href="" class="xref" data-knowl="./knowl/inverse3.html" title="Equation 4.5.5">(4.5.5)</a>.</div>
+</div> <div class="para logical">
+<div class="para">Finally,  the relation <a href="" class="xref" data-knowl="./knowl/remain.html" title="Equation 4.5.1">(4.5.1)</a>  gives rise to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remain.html ./knowl/inverse3.html">
+\begin{equation*}
+{\mathbf x}- {\mathbf x}_{0}=\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1} ({\mathbf y}- {\mathbf y}_{0}) -
+\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1} {\mathbf r}({\mathbf x}; {\mathbf x}_{0}).
+\end{equation*}
+</div>
+<div class="para">Applying <a href="" class="xref" data-knowl="./knowl/inverse3.html" title="Equation 4.5.5">(4.5.5)</a> with <span class="process-math">\({\mathbf x}, {\mathbf x}_{0}\)</span> we see that, as <span class="process-math">\(\Vert {\mathbf y}- {\mathbf y}_{0}\Vert \to 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remain.html ./knowl/inverse3.html">
+\begin{equation*}
+\frac{\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1} {\mathbf r}({\mathbf x}; {\mathbf x}_{0}) \Vert}
+{\Vert {\mathbf y}- {\mathbf y}_{0}\Vert }
+\le \frac{2\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert^{2} 
+\Vert {\mathbf r}({\mathbf x}; {\mathbf x}_{0}) \Vert}{
+\Vert  {\mathbf x}- {\mathbf x}_{0} \Vert } \to 0\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows the differentiability of <span class="process-math">\({\mathbf f}^{-1}\)</span> at <span class="process-math">\({\mathbf y}_{0}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remain.html ./knowl/inverse3.html">
+\begin{equation*}
+D{\mathbf f}^{-1} ({\mathbf y_{0}}) = \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}.
+\end{equation*}
+</div>
+</div></article></body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fubini’s Theorem for  Riemann Integrable Functions.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(R_{1}\subset \bbR^{n}\)</span> and <span class="process-math">\(R_{2}\subset \bbR^{m}\)</span> are two rectangles in <span class="process-math">\(\bbR^{n}\)</span> and <span class="process-math">\(\bbR^{m}\)</span> respectively, and <span class="process-math">\(f(\bx, \by)\)</span> is a Riemann integrable function on <span class="process-math">\(R:=R_{1}\times R_{2}\text{.}\)</span>  Then both <span class="process-math">\(\upint_{R_{2}} f(\bx, \by)\, d\by\)</span>  and <span class="process-math">\(\lowint_{\;R_{2}} f(\bx, \by)\, d\by\)</span> are Riemann integrable  of <span class="process-math">\(\bx \in R_{1}\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{align}
+\int_{R} f(\bx, \by)\; dA \amp = \int_{R_{1}} \left( \upint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx\notag\\
+\amp
+= \int_{R_{1}} \left( \lowint_{\;R_{2}} f(\bx, \by)\, d\by \right)\, d\bx.\tag{6.3.4}
+\end{align}
+</div>
+<div class="para">Likewise, both <span class="process-math">\(\upint_{R_{1}} f(\bx, \by)\, d\bx\)</span>  and <span class="process-math">\(\lowint_{\;R_{1}} f(\bx, \by)\, d\bx\)</span> are Riemann integrable  of <span class="process-math">\(\by \in R_{2}\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{R} f(\bx, \by)\; dA = \int_{R_{2}} \left( \upint_{R_{1}} f(\bx, \by)\, d\bx \right)\, d\by
+= \int_{R_{2}} \left( \lowint_{\;R_{1}} f(\bx, \by)\, d\bx \right)\, d\by.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Fubini-gen-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.3.7: Fubini’s Theorem for  Riemann Integrable Functions"><a href="#Fubini-gen" title="Copy heading and permalink for Theorem 6.3.7: Fubini’s Theorem for  Riemann Integrable Functions" aria-label="Copy heading and permalink for Theorem 6.3.7: Fubini’s Theorem for  Riemann Integrable Functions">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We will focus on the first equality in <a href="ch-integration-5.html#Fubini-gen-2-1-10" class="xref" data-knowl="./knowl/xref/eq-fubini-ul.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.4">(6.3.4)</a>. It relies on the observation that the lower and upper sums of <span class="process-math">\(\upint_{R_{2}} f(\bx, \by)\, d\by\)</span> for any partition <span class="process-math">\(\cP_{1}\)</span> of <span class="process-math">\(R_{1}\)</span> and <span class="process-math">\(\cP_{2}\)</span> of <span class="process-math">\(R_{2}\)</span> are sandwiched between the lower sum <span class="process-math">\(L(f(\bx, \by), \cP_{1}\times \cP_{2})\)</span> and the upper sum <span class="process-math">\(U(f(\bx, \by), \cP_{1}\times \cP_{2})\text{,}\)</span> and these two sums approach <span class="process-math">\(\int_{R} f(\bx, \by)\; dA\)</span> when the partition size goes to zero.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{align*}
+\amp L(f(\bx, \by), \cP_{1}\times \cP_{2})\le L(\upint_{R_{2}} f(\bx, \by)\, d\by, \cP_{1}) \le
+U( \upint_{R_{2}} f(\bx, \by)\, d\by, \cP_{1}) \\
+\le \amp U(f(\bx, \by), \cP_{1}\times \cP_{2}).
+\end{align*}
+</div>
+<div class="para">This follows by noting that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{equation*}
+\sum_{S_{2,\beta}\in \cP_{2}} m_{S_{2,\beta}}(f(\bx, \by)) |S_{2,\beta}|
+\le \lowint_{\;R_{2}} f(\bx, \by)\, d\by
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{equation*}
+\upint_{R_{2}} f(\bx, \by)\, d\by \le
+\sum_{S_{2,\beta}\in \cP_{2}} M_{S_{2,\beta}}(f(\bx, \by)) |S_{2,\beta}|
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{align*}
+L(f(\bx, \by), \cP_{1}\times \cP_{2})=\amp \sum_{S_{1,\alpha}\in \cP_{1}}\sum_{S_{2,\beta}\in \cP_{2}}
+m_{S_{1,\alpha}\times S_{2,\beta}}(f(\bx, \by)) |S_{1,\alpha}| |S_{2,\beta}| \\
+\le \amp 
+\sum_{S_{1,\alpha}\in \cP_{1}}\sum_{S_{2,\beta}\in \cP_{2}} m_{S_{1,\alpha}}(m_{S_{2,\beta}}(f(\bx, \by))
+|S_{1,\alpha}| |S_{2,\beta}| \\
+\le \amp 
+\sum_{S_{1,\alpha}\in \cP_{1}} m_{S_{1,\alpha}} ( \lowint_{\;R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|\\
+\le \amp 
+\sum_{S_{1,\alpha}\in \cP_{1}} m_{S_{1,\alpha}} ( \upint_{R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|\\
+\le \amp 
+\sum_{S_{1,\alpha}\in \cP_{1}} M_{S_{1,\alpha}} ( \upint_{R_{2}} f(\bx, \by)\, d\by) |S_{1,\alpha}|\\
+\le \amp 
+\sum_{S_{1,\alpha}\in \cP_{1}} \sum_{S_{2,\beta}\in \cP_{2}}
+M_{S_{1,\alpha}} ( M_{S_{2,\beta}}(f(\bx, \by))  |S_{1,\alpha}| |S_{2,\beta}|\\
+\le \amp U(f(\bx, \by), \cP_{1}\times \cP_{2}).
+\end{align*}
+</div>
+<div class="para">Since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{equation*}
+\sup_{\cP_{1}\times \cP_{2} }L(f(\bx, \by), \cP_{1}\times \cP_{2})
+=\inf_{\cP_{1}\times \cP_{2} }U(f(\bx, \by), \cP_{1}\times \cP_{2})
+= \int_{R} f(\bx, \by)\; dA
+\end{equation*}
+</div>
+<div class="para">it follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{equation*}
+\sup_{\cP_{1}} L(\upint_{R_{2}} f(\bx, \by)\, d\by, \cP_{1}) =
+\inf_{\cP_{1}} U( \upint_{R_{2}} f(\bx, \by)\, d\by, \cP_{1})
+\end{equation*}
+</div>
+<div class="para">proving that <span class="process-math">\(\upint_{R_{2}} f(\bx, \by)\, d\by\)</span> is Riemann integrable over <span class="process-math">\(\bx \in R_{1}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fubini-ul.html">
+\begin{equation*}
+\int_{R_{1}} \left(\upint_{R_{2}} f(\bx, \by)\, d\by \right)\, d\bx
+= \int_{R} f(\bx, \by)\; dA.
+\end{equation*}
+</div>
+<div class="para">The rest of the equalities can be proved in a similar way.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Fubini-gen-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.3.7.1"><a href="#Fubini-gen-3" title="Copy heading and permalink for Proof 6.3.7.1" aria-label="Copy heading and permalink for Proof 6.3.7.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="ch-integration-5.html#Fubini-gen">in-context</a></span>
+</body>
+</html>
