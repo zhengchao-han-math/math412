@@ -26,6 +26,13 @@
 <math-package latex-name="euscript" latex-options="mathscr"/>
 <math-package latex-name="eufrak"/>
 
+
+    <latex-image-preamble>
+        \usepackage{tikz-cd}
+        \usepackage{amsmath, amssymb}
+    </latex-image-preamble>
+
+
 <macros>
 \newcommand{\bC}{\mathbf{C}}
 \newcommand{\bR}{\mathbf{R}}
@@ -5895,7 +5902,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    <definition><title>Directional Derivative </title>
    <statement> <p> Suppose <m>D\subset X</m>, <m>\bx</m> is an interior point of <m> D</m>, 
      <m>{\mathbf u}</m>
-   is any non-zero vector (often taken as a unit vector).  <m>{\mathbf f}</m> is said to have
+   is any non-zero vector.  <m>{\mathbf f}</m> is said to have
     directional derivative  at <m>{\mathbf x}</m>
    in the direction <m>{\mathbf u}</m>, if  the one variable function
    <m>t\mapsto  {\mathbf f}({\mathbf x}+t{\mathbf u})</m> is differentiable at <m>t=0</m>. 
@@ -5944,11 +5951,11 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    <m>x_{j}</m> variable, and denote this partial derivative as <m>\frac{\partial \bff }{\partial x_{j}}(\bx)</m>.
    Thus <m>\frac{\partial \bff (\bx)}{\partial x_{j}}= D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})</m>.
    Another commonly used notation for <m>D_{{\mathbf e}_{j}}{\mathbf f}({\mathbf x})</m>
-    is <m>D_{j}{\mathbf f}({\mathbf x})</m>, or <m>\partial_{j}{\mathbf f}({\mathbf x})</m>.
+    is <m>D_{j}{\mathbf f}({\mathbf x})</m>, or <m>\partial_{j}{\mathbf f}({\mathbf x})</m>, or the subscript notation <m>f_{x_j}(\bx)</m>.
    </p>
    
    <p>When <m>\bff</m> is differentiable at <m>\bx</m>, then
-    if we take any unit vector <m>\bu</m> and <m>{\mathbf h} =t {\mathbf u}</m>, we get
+    if we take any non-zero vector <m>\bu</m> and <m>{\mathbf h} =t {\mathbf u}</m>, we get
    <mdn>
 	<mrow> 
    \amp \lim_{{\mathbf h}\to {\mathbf 0}}
@@ -6212,7 +6219,8 @@ contradicting the definition of <m>c^{*}</m>.
    <statement> <p> Let <m>\displaystyle{A=\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}}</m>.
    Verify that <m>A</m> satisfies <xref ref="cpxcmm"/> iff there exist some real
    <m>r, \varphi</m> such that 
-   <m>\displaystyle{A=\begin{bmatrix} r\cos\varphi \amp -r \sin\varphi \\ r \sin\varphi \amp r \cos\varphi \end{bmatrix}}</m>.
+   <m>\displaystyle{A=\begin{bmatrix} r\cos\varphi \amp -r \sin\varphi \\ r \sin\varphi \amp r \cos\varphi \end{bmatrix}}</m>. In fact,
+   the same conclusion holds if we only require <m>A R_{\theta}= R_{\theta}A</m> for some <m>\theta\in (0, 2\pi)\setminus \{\pi\}</m>.
    </p> </statement>
    </exercise>
    <p>The most important	properties regarding differentiability are the chain rule 
@@ -6242,15 +6250,73 @@ or
 \frac{\partial (g_{k}\circ f)}{\partial x_{i}}(\bx_{0})=\sum_{j=1}^{m} \frac{\partial g_{k}}{\partial y_{j}}( f (\bx_{0})) 
 \frac{\partial f_{j}}{\partial x_{i}}(\bx_{0}).
 </me>
+If we write <m>\mathbf y=\mathbf f(\mathbf x)</m> and <m>\mathbf z=\mathbf g(\mathbf y)</m>, then the above can be written as
+<md>
+	\frac{\partial z_k}{\partial x_{i}}= \sum_{j=1}^{m} \frac{\partial z_k}{\partial y_j} \frac{\partial y_j}{\partial x_i}.
+</md>
+
 </p>
-   
-	<p> Note that we use a parenthesis as a delimiter to delineate the order of operations between composition
+   </statement>
+
+<figure xml:id="fig-chain-rule-diagrams">
+    <caption>Commutative diagrams for the Chain Rule</caption>
+    <sidebyside widths="40% 50%">
+        
+        <figure xml:id="fig-chain-rule-maps">
+            <caption>Function Maps</caption>
+            <image xml:id="img-chain-rule-maps">
+                <latex-image>
+                    <![CDATA[
+                    \begin{tikzcd}[row sep=huge, column sep=huge, ampersand replacement=\&]
+                        D \subset \mathbb{R}^n 
+                            \arrow[r, "\mathbf{f}"] 
+                            \arrow[dr, "\mathbf{g} \circ \mathbf{f}"' description] 
+                        \& E \subset \mathbb{R}^m 
+                            \arrow[d, "\mathbf{g}"] \\
+                        \& \mathbb{R}^l
+                    \end{tikzcd}
+                    ]]>
+                </latex-image>
+            </image>
+        </figure>
+
+        <figure xml:id="fig-chain-rule-derivatives">
+            <caption>Jacobian Derivatives</caption>
+            <image xml:id="img-chain-rule-derivatives">
+                <latex-image>
+                    <![CDATA[
+                    \begin{tikzcd}[row sep=huge, column sep=3.5cm, ampersand replacement=\&]
+                        \mathbb{R}^n 
+                            \arrow[r, "D\mathbf{f}(\mathbf{x}_0)"] 
+                            \arrow[dr, "\scriptscriptstyle{ D(\mathbf{g} \circ \mathbf{f})(\mathbf{x}_0) = D\mathbf{g}(\mathbf{y}_0) D\mathbf{f}(\mathbf{x}_0)}"' description] 
+                        \& \mathbb{R}^m 
+                            \arrow[d, "\scriptscriptstyle{ D\mathbf{g}(\mathbf{y}_0)}"] \\
+                        \& \mathbb{R}^l
+                    \end{tikzcd}
+                    ]]>
+                </latex-image>
+            </image>
+        </figure>
+
+    </sidebyside>
+</figure>
+
+<p> Note that we use a parenthesis as a delimiter to delineate the order of operations between composition
 	and differentiation. Similar usage appears often such as in
 	<me>
-	\frac{\partial \left[ f(x^{2}, y)\right]}{\partial x}= 2x \frac{\partial f}{\partial x}(x^{2}, y).
+	\frac{\partial \left[ f(x^{2}, y)\right]}{\partial x}= 2x \frac{\partial f}{\partial x}(x^{2}, y),
 	</me>
-	</p>
-		</statement>
+	 or 
+	 <me>
+	 D_x \left[ f(x^{2}, y)\right]= 2x D_x f(x^{2}, y)= 2x D_1 f(x^{2}, y).
+	</me>
+	Here <m> D_x f=  D_1 f=\frac{\partial f}{\partial x}</m> is treated as a function of <m>x</m> and <m>y</m> after applying the partial differentiation operator <m>D_x</m> to <m>f</m>, and the parenthesis on the right hand side 
+	is used to indicate that we first take the partial derivative with respect to <m>x</m> to <m>f</m> and then evaluate it at <m>(x^{2}, y)</m>, while
+	<m>D_x \left[ f(x^{2}, y)\right]</m> is treated as applying the partial differentiation operator <m>D_x</m> to the function <m>f(x^{2}, y)</m>, which is a composition of <m>f</m> with the function <m>h: (x, y)\mapsto (h_1(x,y), h_2(x, y):=(x^{2}, y)</m>.
+	All of these notations run some risk of creating some confusion; it would have been better to use a more explicit notation, such as naming <m>f\circ h</m> as <m>F</m>, 
+	then <m>D_x F= D_x (f\circ h)= D_1 f D_x h_1 + D_2 f D_x h_2</m> would have no ambiguity, but these notations are widely used and we will also use them.
+</p>
+
    	<proof>
    		<p>We first work out <m>\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0)</m>
 		 by using the differentiability of <m>\mathbf f</m> at <m>\bx_0</m> and of <m>\mathbf g</m>
@@ -7517,7 +7583,12 @@ on the eigenspace be dropped entirely to have the same conclusions?</p>
   </me>.
   These quantities <m>D_{x_{k}}\left( \frac{\partial f_{i}}{\partial x_{j}}\right) (\bx)
   = \frac{\partial^{2} f_{i}}{\partial x_{k}\partial x_{j}} (\bx)</m> are called the 
-  <term>second derivatives</term> of <m>f_{i}(\bx)</m>.
+  <term>second derivatives</term> of <m>f_{i}(\bx)</m>. Other commonly used notations for the second derivatives of a function <m>f(\bx)</m> include <m>\partial^{2}_{kj} f(\bx)</m> 
+  or <m>D^{2}_{kj} f(\bx)</m> , or <m>f_{x_j x_k}(\bx)</m>; sometimes the superscript that indicates the order of the derivative is omitted.  Note that the order of the subscripts in 
+  <m>f_{x_j x_k}(\bx)</m> is in reverse order from <m>D^{2}_{kj} f(\bx)</m>, as the former intends to
+  indicate applying the partial differnetiation to  the right of <m>f</m>, first in <m>x_j</m> then in <m>x_k</m>,
+	while the latter means the same, but the operator <m>D_j</m> is applied first on the left of <m>f</m>, then the operator <m>D_k</m>. 
+	Fortunately, by Clairaut's theorem to be discussed below, under reasonable conditions, the order of the subscripts in the notation is not important, as long as we understand that they are both second derivatives.
   </p>
   <p>We will not spend energy on the more abstract concept of higher order differentials,  but
    focus on the higher order (partial) derivatives of a scalar-valued function, where
