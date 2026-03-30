@@ -32,6 +32,11 @@
         \usepackage{amsmath, amssymb}
     </latex-image-preamble>
 
+<latex-preamble>
+    <late>
+      \raggedbottom
+    </late>
+  </latex-preamble>
 
 <macros>
 \newcommand{\bC}{\mathbf{C}}
@@ -293,8 +298,8 @@ of the basic notions involved: curl and divergence of vector fields and differen
 	terminology increasing function interchangeably. The probability that the variable falls into <m>(a, b]</m> is given by <m>\cP((a,b])=F(b)-F(a)</m>, 
 	and the probability that the variable falls into <m>\{a\}</m> is <m>\cP(\{a\})=F(a)-F(a-0)</m>, where <m>F(a-0)</m> is the left-hand limit of <m>F</m> at <m>a</m>. The Riemann-Stieltjes integral with respect to
 	such an increasing function is a step in describing the probability of a general random variable in terms of
-	a general integral. For example, we can use <term>finite additivity</term> to define <me> \cP([a, b])=\cP((a,b])+\cP({a})=F(b)-F(a-0)</me>.
-	Since <m>(a,b)=\cup_{n=1}^{\infty} (a,b-\frac1n]</m>, we use a limit process to define <me>\cP((a,b))=\lim_{n\to\infty} \cP((a,b-\frac1n])=F(b-0)-F(a)</me>.
+	a general integral. For example, we can use <term>finite additivity</term> to define <me> \cP([a, b])=\cP((a,b])+\cP({a})=F(b)-F(a-0).</me>
+	Since <m>(a,b)=\cup_{n=1}^{\infty} (a,b-\frac1n]</m>, we use a limit process to define <me>\cP((a,b))=\lim_{n\to\infty} \cP((a,b-\frac1n])=F(b-0)-F(a).</me>
 	This allows us to define <m>\cP(I)</m>  for any interval <m>I</m>. The key property of such a <term>probability measure</term> <m>\cP</m> 
 	is that it is <term>countably additive</term>, meaning that if <m>\{I_{i}\}</m> is a countable collection of disjoint intervals, then
 	<md>
@@ -409,7 +414,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		</p>
 		<!-- % below is only for usual Riemann integral
 		<p>
-		For any <m>\epsilon>0</m>, first find a partition <m>\cP_{2}</m> of <m>[a, b]</m> such that
+		For any <m>\epsilon&gt; 0</m>, first find a partition <m>\cP_{2}</m> of <m>[a, b]</m> such that
 		<me>
 		\upint_a^b \,f\, d \alpha \le U(f, \cP_{2}, d \alpha) \le \upint_a^b \,f\, d \alpha + \epsilon.
 		</me>
@@ -441,7 +446,7 @@ of the basic notions involved: curl and divergence of vector fields and differen
 		 <me>
 		 \vert U(f,\cP, d \alpha)- U(f, \cP^{*}, d \alpha)\vert \le 2 N  \max_{R}|f| (\lambda(\cP))^{n}.
 		 </me>
-		 It now follows that there exists some <m>\delta >0</m> such that whenever
+		 It now follows that there exists some <m>\delta &gt; 0</m> such that whenever
 		 <m>\lambda(\cP) &lt; \delta</m> we have
 		 <me>
 		 \vert U(f,\cP, d \alpha)- U(f, \cP^{*}, d\alpha)\vert &lt; \epsilon  \text{ so }  U(f,\cP, d \alpha) &lt; \upint_a^b \,f\, d \alpha) + 2\epsilon,
@@ -1180,8 +1185,8 @@ and for any <m>x\in E^{c}</m>, there exists some <m>l_{x}</m> such that
 <m>x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}</m>. This implies that <m>\{ c_{k}(x)\}</m> satisfies
 <me> 
 \Vert c_{k}(x)- c_{k+1}(x) \Vert_{L^{p}[a, b]} &lt; 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
-\text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert&lt; \epsilon_{k} \text{ for } k\ge l_{x}
-</me>.
+\text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert&lt; \epsilon_{k} \text{ for } k\ge l_{x}.
+</me>
 Then <xref ref="lprealization"/> applied to  <m>\{ c_{k}(x)\}</m> implies that
 there exists a unique
 	<m>\phi \in L^{p}[a, b]</m> such that
@@ -1268,7 +1273,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<li> Suppose that <m>f(x), g(x)\in L[a, b]</m> and that  there exists some <m>M &gt; 0</m>
 	such that <m>|g(x)|\le M</m> <m>a.e.</m>. Then <m>f(x)g(x)\in L[a, b]</m> and
 	<me>
-	\int_{a}^{b}|f(x)g(x)|\, dx\le M \int_{a}^{b} |f(x)|\, dx</me>.
+	\int_{a}^{b}|f(x)g(x)|\, dx\le M \int_{a}^{b} |f(x)|\, dx.</me>
 	</li>
 		</ol>
 	</p>
@@ -1392,8 +1397,8 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	</me>
 	This leads to
 	<me>
-	\int_{a}^{b}|b_{k}(x)c_{k}^{M}(x)-b_{l}(x)c_{l}^{M}(x)|\, dx  &lt; 3\epsilon
-	</me>.
+	\int_{a}^{b}|b_{k}(x)c_{k}^{M}(x)-b_{l}(x)c_{l}^{M}(x)|\, dx  &lt; 3\epsilon.
+	</me>
 	</p>
 	</proof>
 	</proposition>
@@ -1476,7 +1481,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	Prove that <m>\lim_{l\to\infty} \sum_{k=1 }^{l}\phi_{k}(x)</m> is the realization of some of element in
 	<m>L^{1}[a, b]</m>. Denoting it as <m>\sum_{k=1 }^{\infty}\phi_{k}</m>,
 	prove that <me> \int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
-	 \sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right)</me>.
+	 \sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right).</me>
 	 </p></exercise>
 
 	<theorem xml:id="fatou"><title>Fatou Theorem</title>
@@ -1517,8 +1522,8 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	<exercise> <p>Construct a sequence <m>\{\phi_{k}\}</m> in <m>L^{1}[a, b]</m> such that
 	<m>\phi_{k}(x)\ge 0</m> <m>\ a.e.</m> for all <m>k</m>, and
 	<me>
-	\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) &lt; \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)
-	</me>.
+	\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) &lt; \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x).
+	</me>
 	</p>
 	</exercise>
 	
@@ -1616,7 +1621,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 	Prove that  <m>\lim_{l\to\infty} \sum_{k=1 }^{l} \phi_{k}(x)</m> is the realization of some of element in
 	<m>L^{1}[a, b]</m>. Denoting it as <m>\sum_{k=1 }^{\infty}\phi_{k}</m>,
 	prove that <me> \int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
-	 \sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right)</me>.
+	 \sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right).</me>
 	 </p></exercise>
 
 	</section>
@@ -1661,7 +1666,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 				</p></statement>
 				<proof>
 				<p> For any real number <m>a</m>, if <m>x_{0}\in \{x: 	\osc(f)(x) &lt; a\}</m>,
-				then there exists some <m>r>0</m> such that
+				then there exists some <m>r&gt; 0</m> such that
 				<m> \osc(f, I(x_{0}, r)) &lt; a</m>. For any <m>x \in I(x_{0}, r)</m>,
 				we observe that <m>\osc(f)(x)\le \osc(f, I(x_{0}, r)) &lt; a</m>. Thus
 				<m>I(x_{0}, r) \subset \{x: 	\osc(f)(x) &lt; a\}</m>, proving that the latter is open.
@@ -1681,7 +1686,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 						<p>A bounded real-valued function <m>f</m> defined on the
 						interval <m>I</m> is Riemann integrable iff 
 						<men xml:id="eqn-1Dint-osc" label="eqn-1Dint-osc">
-						\forall \epsilon >0, \exists  \text{ a partition }
+						\forall \epsilon &gt; 0, \exists  \text{ a partition }
 						\cP:=\{I_{\alpha}\} \text{ such that } 
 						\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert &lt; \epsilon.
 						</men> </p>
@@ -1691,7 +1696,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 					</statement>
 					<proof>
 						<p>Suppose that <m>f</m> is Riemann integrable on <m>I</m> and that
-						<m>\epsilon>0</m> is given. 
+						<m>\epsilon&gt; 0</m> is given. 
 						Then the Darboux integrability criterion gives
 						us a partition <m>\cP:=\{I_{\alpha}\}</m> such that
 						<me>
@@ -1709,14 +1714,14 @@ We can then conclude our proof by appealing to the triangle inequalities.
 						<me>
 						0\le \upint_{I}\, f  -\lowint_{\;I} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
 						</me>
-						Since <m>\epsilon >0</m> is arbitrary, it follows that
+						Since <m>\epsilon &gt; 0</m> is arbitrary, it follows that
 						<m> \upint_{I}\, f -\lowint_{\;I} \, f=0</m>,  and  
 						<m>f</m> is Riemann integrable on <m>I</m>.
 						</p>
 						<p>Finally, suppose that <m>f</m> is continuous on the closed interval
 						<m>I</m>, then it is uniformly continuous on 
-						<m>I</m>. For any given <m>\epsilon >0</m>, there exists
-						<m>\delta >0</m> such that for any partition <m>\cP:=\{I_{\alpha}\}</m>
+						<m>I</m>. For any given <m>\epsilon &gt; 0</m>, there exists
+						<m>\delta &gt; 0</m> such that for any partition <m>\cP:=\{I_{\alpha}\}</m>
 						of <m>I</m> with <m>\lambda (P) &lt; \delta</m>, we have
 						<m>\osc(f, I_{\alpha}) &lt; \epsilon/\vert I\vert</m> for all 
 						<m>I_{\alpha} \in \cP</m>. It then follows that
@@ -1755,7 +1760,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 							For each <m>k\in \bbN</m>, we will prove that the closed set
 							<m>D_{k}:=\{y: \osc(f)(y)\ge \frac 1k\}</m> is a set of
 							content <m>0</m>. </p>
-							<p>Given any <m>\epsilon >0</m>. There exists a partition
+							<p>Given any <m>\epsilon &gt; 0</m>. There exists a partition
 							<m>\cP=\{I_{\alpha}\}</m> of <m>I</m> such that
 							<me>
 							\sum_{\alpha} \osc(f, I_{\alpha})\vert I_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
@@ -1795,7 +1800,7 @@ We can then conclude our proof by appealing to the triangle inequalities.
 							<m>\frac 1k \le \osc(f)(x)\le \osc(f, I_{\alpha}) &lt; \frac{1}{2k}</m>,
 							which would be a contradiction. So <m>x</m> can only be
 							on the boundary of one or more <m>I_{\alpha} \in \cS_{k}</m>.
-							We can choose <m>r>0</m> small enough such that
+							We can choose <m>r&gt; 0</m> small enough such that
 							any <m>y\in I(x, r)</m> and <m>x</m> will be in one such
 							common interval. Therefore, 
 							<m>\vert f(y)-f(x)\vert &lt; \frac{1}{2k}</m>. This would lead to
@@ -2201,8 +2206,8 @@ Furthermore, suppose that <m>f(x)</m> is continuous at <m>x=0</m>. Prove that
 	Then the answer to the question depends on whether we can exchange the following two 
 	limits to get an equality:
 	<me>
-	\lim_{\bx\to \bx_0} \lim_{n\to \infty} f_n(\bx)=  \lim_{n\to \infty} \lim_{\bx\to \bx_0} f_n(\bx)
-	</me>.
+	\lim_{\bx\to \bx_0} \lim_{n\to \infty} f_n(\bx)=  \lim_{n\to \infty} \lim_{\bx\to \bx_0} f_n(\bx).
+	</me>
 	 </li>
 	<li>If each <m>f_n(x)</m> is integrable on <m>E</m>, does it imply that <m>f(x)</m> is also 
 	integrable on <m>E</m>? If so, does it imply
@@ -2217,7 +2222,7 @@ Furthermore, suppose that <m>f(x)</m> is continuous at <m>x=0</m>. Prove that
  <section xml:id="uniformconv">
  <title>Concept of Uniform Convergence</title>
 	<p>Simple examples illustrate  that <em>pointwise limit</em> of a sequence of continuous functions can fail to be continuous, and that even pointwise limit of a sequence of continuously differentiable functions can also fail to be continuous. The key cause is that the convergence may not be 
-	<em>uniform</em>, namely, for each <m>\epsilon >0</m> and each <m> x\in E</m>, 
+	<em>uniform</em>, namely, for each <m>\epsilon &gt; 0</m> and each <m> x\in E</m>, 
 	there exists <m>N</m> which may depend on <m>\epsilon</m>
 as well as on <m>x</m> such that when <m>n\ge N</m>, we have
 <m> |f_n(x)-f(x)| &lt; \epsilon</m>; but the minimum <m>N</m> needed for
@@ -2226,7 +2231,7 @@ convergence.
 </p>
 <definition><title>Uniform Convergence</title>
 <statement><p> Let <m>\{ f_n(x)\}</m> be a sequence of functions defined on a set <m>E</m>. Then <m>\{ f_n(x)\}</m> converges uniformly on <m>E</m> to a limit function <m>f(x)</m> on <m>E</m> if, 
-for every <m>\epsilon >0</m>, there exists
+for every <m>\epsilon &gt; 0</m>, there exists
 <m>N\in \mathbb N</m> such that <m>|f_n(x)-f(x)| &lt; \epsilon</m> for all <m>n\ge N</m>
  and for <em>all </em>   <m>\; x\in E</m>.</p>
  </statement>
@@ -2253,10 +2258,10 @@ consider it on <m>[0, 1]</m>. It still converges
  fails to be continuous at <m>x=1</m>. This is due to the failure of uniform convergence on <m>[0, 1]</m>.</p>
  <p>
 Here we still have 
-                                        <me> \lim_{n\to \infty} \int_{0}^{1}x^{n}\, dx = \int_{0}^{1} f(x)\, dx</me>.</p>
+                                        <me> \lim_{n\to \infty} \int_{0}^{1}x^{n}\, dx = \int_{0}^{1} f(x)\, dx.</me> </p>
                                         </li>
                                         <li>If we modify <m>f_{n}(x)</m> into 
-                                        <me>g_{n}(x)=(n+1) x^{n}(1-x)</me>.
+                                        <me>g_{n}(x)=(n+1) x^{n}(1-x).</me>
                                         Then <m>g_{n}(x)\to g(x):=0</m> pointwise on <m>[0, 1]</m>, although
                                         the convergence is still not uniform, as 
                                         <m>\max_{[0,1]}g_{n}(x)=\left(\frac{n}{n+1}\right)^{n}\to e^{-1}</m>
@@ -2280,7 +2285,7 @@ Here we still have
                                  question (b) raised earlier, we just need to answer whether
                                  the following holds:
                                  <md>
-                                <mrow> \forall \; \epsilon>0, \exists \; 0 &lt; \delta &lt; 1 \text{ and } N \text{ such that for all }  n\ge N,</mrow>
+                                <mrow> \forall \; \epsilon&gt; 0, \exists \; 0 &lt; \delta &lt; 1 \text{ and } N \text{ such that for all }  n\ge N,</mrow>
                       <mrow>          \left| \int_{\delta}^{1} k_{n}(x)\, dx \right| &lt; \epsilon,</mrow></md>
                       where <m> (k_{n}(x))</m> stands for one of 
                       the sequences  <m>\{ f_{n}(x)\}, \{g_{n}(x)\}, \{h_{n}(x)\}</m> above. Through direct
@@ -2317,8 +2322,8 @@ and that <m>\bx_0\in E</m> is such that <m>\lim_{\bx\in E, \bx \to \bx_0} f_n(\b
 for each <m>n</m>. Then both <m> \lim_{\bx\in E, \bx \to \bx_0} f(\bx)</m>
 and <m>\lim_{n\to \infty}L_n</m> exist and equal each other. Namely
 <me>
-\lim_{\bx\in E, \bx \to \bx_0} \lim_{n\to \infty}  f_n(\bx)=\lim_{n\to \infty} \lim_{\bx\in E, \bx \to \bx_0} f_n(\bx)
-</me>.
+\lim_{\bx\in E, \bx \to \bx_0} \lim_{n\to \infty}  f_n(\bx)=\lim_{n\to \infty} \lim_{\bx\in E, \bx \to \bx_0} f_n(\bx).
+</me>
 </p>
 <p>
  As a consequence, suppose that <m>\{f_n(\bx)\}</m> is a sequence of continuous functions defined on a set 
@@ -2332,8 +2337,8 @@ that <m>\{f(\bx)\}</m> is Cauchy as <m>\bx \to \bx_0</m>. The latter means that 
 <p>For any <m>\epsilon \gt 0</m>, by the uniform convergence assumption, there exists some
 <m>N\in \bbN</m> such that
 <me>
-\vert f_n(\bx)-f(\bx)\vert \lt \epsilon \text{ and $ \vert f_n(\bx)-f_N(\bx)\vert \lt \epsilon$ for all $x\in E, n\ge N$}
-</me>.
+\vert f_n(\bx)-f(\bx)\vert \lt \epsilon \text{ and $ \vert f_n(\bx)-f_N(\bx)\vert \lt \epsilon$ for all $x\in E, n\ge N$}.
+</me>
 Using <m>\lim_{\bx\in E, \bx \to \bx_0} f_N(\bx) :=L_N</m>, there exists some neighborhood <m>B(\bx_0)</m>
 of <m>\bx_0</m> such that
 <me>
@@ -2439,7 +2444,7 @@ cases where  the <m>M</m>-test doe not apply directly, as in the case of
 as this series  only converges conditionally.
 Here one needs to check directly whether the 
 Cauchy Criterion for Uniform Convergence holds for the partial sums of this series, namely, 
-we need to examine whether, for any <m>\epsilon>0</m>, we can find
+we need to examine whether, for any <m>\epsilon&gt; 0</m>, we can find
 <m>N</m> such that for all <m>n>m\ge N</m>, we have
 <me>
 |\frac{ \sin (m+1)x }{m+1} + \cdots + \frac{\sin nx}{n}| &lt; \epsilon \quad \text{ for all } x \text{ in a specified set}?
@@ -2450,12 +2455,12 @@ summation by parts via Abel's Lemma.  Set <m>s_m(x)= \sum_{k=1}^{m}  \sin (kx)</
 <m>\sin (kx)</m> is the imaginary part of <m>e^{ikx}</m> and a simple formula for the sum of the latter, we have
 <me>
 s_m(x)=\frac{\cos \frac x2 -\cos \left(m+\frac 12\right) x}{2\sin \frac x2}
-= \frac{\sin \frac{mx}{2} \sin \frac{(m+1)x}{2}}{\sin \frac x2}
-</me>.
+= \frac{\sin \frac{mx}{2} \sin \frac{(m+1)x}{2}}{\sin \frac x2}.
+</me>
 Note that <m>  s_m(\frac 1m)/m \to 2\sin^2\frac 12</m>, so <m>s_m(x)</m> does not remain bounded
-uniformly in <m>m</m> near <m>x=0</m>. However, for any  <m>\pi>\delta>0</m>, 
+uniformly in <m>m</m> near <m>x=0</m>. However, for any  <m>\pi>\delta&gt; 0</m>, 
 when <m>x</m> is restricted to 
-<m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>, there exists some <m>C>0</m> depending 
+<m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>, there exists some <m>C&gt; 0</m> depending 
 on <m>\delta</m> such that <m>\vert s_m(x)\vert \le C</m> uniformly in <m>m</m>.
 Then for such <m>x</m> the Abel summation-by-parts formula gives
 <md>
@@ -2629,7 +2634,7 @@ on <m>[a,c]</m>, and that each <m>f_{n}</m> has a convergent integral
 the following uniform integrability of the family <m>\left\{f_{n}\right\}</m>:
 <mdn>
 	<mrow>
-\forall \; \epsilon>0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, \notag
+\forall \; \epsilon&gt; 0, \exists \; c, a &lt; c &lt; b, \text{ such that } \forall\; c', c &lt; c' &lt; b, \forall \; n, \notag
 	</mrow>
 	<mrow  xml:id="unifib">	
 \left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon.
@@ -2650,7 +2655,7 @@ on <m>[a', b']</m> to conclude that
 </me>
 Next, let <m>c</m> be 
 chosen according to the uniform integrability of the family <m>\left\{f_{n}\right\}</m> in <xref ref="unifib"/>
-for a given <m>\epsilon>0</m>. 
+for a given <m>\epsilon&gt; 0</m>. 
 If we set <m>a'=c</m>, then for any <m>c', c &lt; c' &lt; b</m>, we would get
 <me>
  \left|\int_{c}^{c'} f_{n}(x)\, d\alpha \right| &lt; \epsilon \text{ for all } n.
@@ -2700,7 +2705,7 @@ dominating function</em> <m>g</m> in the sense  that
 <m>\alpha (x) =\sum_{n} \chi_{\left\{n\le x\right\}}(x)</m>, the condition <xref ref="unifib"/>
 takes the form of
 <me> 
-\forall \;\epsilon >0, \exists\; N \text{ such that } \forall \; N'>N, 
+\forall \;\epsilon &gt; 0, \exists\; N \text{ such that } \forall \; N'>N, 
 \forall \;n,  \left| \sum_{m=N}^{N'} f_{n}(m) \right| &lt; \epsilon.
 </me>
 Namely, the <em>tail</em> part of the summation, <m>\sum_{m=N}^{\infty} f_{n}(m)</m>,
@@ -2748,7 +2753,7 @@ should be
 </me>
 and the appropriate modification of the uniform convergence condition should be 
 <me>
-\forall \; \epsilon >0, \exists\; \delta >0 \text{ such that } |f(x, y)-f(x, y_{0})| &lt; \epsilon \text{ for all }
+\forall \; \epsilon &gt; 0, \exists\; \delta &gt; 0 \text{ such that } |f(x, y)-f(x, y_{0})| &lt; \epsilon \text{ for all }
 d(y, y_{0}) &lt; \delta, x\in [a, b].
 </me>
 A similar modification for <xref ref="unifib"/> can be formulated.
@@ -2786,7 +2791,7 @@ A similar modification for <xref ref="unifib"/> can be formulated.
 		<m>f_n(x)=f_n(x_0)+\int_{x_0}^x f_n'(t)\, dt</m>, and
 		<xref ref="thm-uniformconvint"/> implies that <m>\int_{x_0}^x f_n'(t)\, dt\to \int_{x_0}^x g(t)\, dt</m>,
 		so <m>\lim_{n\to\infty} f_n(x)</m> exists---denote it as <m>f(x)</m> and 
-		<me> f(x)=\lim_{n\to\infty} f_n(x_0)+  \int_{x_0}^x g(t)\, dt</me>. It follows that
+		<me> f(x)=\lim_{n\to\infty} f_n(x_0)+  \int_{x_0}^x g(t)\, dt.</me> It follows that
 		<me> 
 		f'(x)= g(x)=\lim_{n\to \infty} f_n'(x).
 		</me>
@@ -2800,7 +2805,7 @@ A similar modification for <xref ref="unifib"/> can be formulated.
 		</p>
 		<p>We now do a proof in the general case. First, we prove that <m>\{f_n(x)\}</m>
 		converges uniformly over <m>[a, b]</m>. Under the assumption of
-		uniform convergence of <m>\{f_n'(x)\}</m> over <m>[a, b]</m>, for any <m>\epsilon >0</m>,
+		uniform convergence of <m>\{f_n'(x)\}</m> over <m>[a, b]</m>, for any <m>\epsilon &gt; 0</m>,
 		there exists <m>N</m> such that for <m>n, m\ge N, x\in [a, b]</m>, we have
 		<men xml:id="duc">
 		|f_n'(x)-f_m'(x)| \lt \epsilon.
@@ -2819,7 +2824,7 @@ A similar modification for <xref ref="unifib"/> can be formulated.
 		therefore it converges uniformly to some <m>f(x)</m> on <m>[a, b]</m>.
 		</p>
 		<p>Next for any <m>x\in (a, b)</m> we define <m>g_n(h)=\left[f_n(x+h)-f_n(x)\right]/h</m> 
-		for <m>0 \lt |h| \lt \delta</m> for some <m>\delta >0</m> (when
+		for <m>0 \lt |h| \lt \delta</m> for some <m>\delta &gt; 0</m> (when
 		<m>x=a</m> or <m>b</m>, we restrict <m>h</m> to have appropriate sign). Note that
 		<m>g_n(h)\to f_n'(x)</m> as <m>h\to 0</m> and that <m>g_n(h)\to \left[f(x+h)-f(x)\right]/h</m>
 		as <m>n\to \infty</m>. We next show that this convergence is 
@@ -2853,7 +2858,7 @@ would not converge for many values of <m>x</m> (e.g. all rational multiples of <
 </p>
 </remark>
 <example> <p> Define
-<me>f(x)= \sum_{k=1}^{\infty} \frac{ \cos (kx)}{k^2}</me>.
+<me>f(x)= \sum_{k=1}^{\infty} \frac{ \cos (kx)}{k^2}.</me>
 The series converges uniformly for <m>x\in\bbR</m> so it defines a continuous function on <m>\bbR</m>.
 To check its differentiability at any <m>x</m>, we need to check whether the differentiated series
 <me>
@@ -2868,8 +2873,8 @@ converges uniformly when restricted to
 <m>\left\{x\in [-\pi, \pi]: 0 &lt; \delta &lt; |x|\right\}</m>. Thus in that
 region, we do have
 <me>
-f'(x)= -\sum_{k=1}^{\infty} \frac{ \sin (kx)}{k}
-</me>.
+f'(x)= -\sum_{k=1}^{\infty} \frac{ \sin (kx)}{k}.
+</me>
 Does <m>f'(0)</m> exist?
 </p>
 </example>
@@ -3118,7 +3123,7 @@ the space of infinite sequences <m>\mathbf x:=\{\mathbf x(k)\}_{k=1}^{\infty}</m
 </me>
 we note that, for <m>p &lt; \infty</m>, if a sequence 
 <m>\left\{{\mathbf x}_{n}\right\} \subset l^{p}</m> converges to some <m>{\mathbf x}_{\infty}</m>  in <m>l^{p} </m>,
-then for any <m>\epsilon >0</m>, there exists <m>L</m> such that
+then for any <m>\epsilon &gt; 0</m>, there exists <m>L</m> such that
 <me>
 \left(\sum_{k=L}^{\infty} |{\mathbf x}_{\infty}(k)|^{p} \right)^{1/p} &lt; \epsilon,
 </me>
@@ -3149,7 +3154,7 @@ and there exists some <m>N</m> such that for <m>n\ge N</m>,
 	<statement> 
  <p>A family <m>\left\{{\mathbf x}_{s}\right\}_{s\in I}</m> of elements in <m>l^{p}</m> is said to be 
  <term>equi-summable </term> in <m>l^{p}</m>, if for any 
- <m>\epsilon >0</m>, there exists <m>L</m> such that
+ <m>\epsilon &gt; 0</m>, there exists <m>L</m> such that
 <men xml:id="eqsm">
 \left(\sum_{k=L}^{\infty} |{\mathbf x}_{s}(k)|^{p} \right)^{1/p} &lt; \epsilon \; \forall \; s\in I.
 </men>
@@ -3219,8 +3224,8 @@ equisummable in <m>l^{p}</m>.
   <mrow> \le \amp 2 \max |f| \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) Q_{n}(t) \, dt +
    \int_{-\delta}^{\delta} |f(x)-f(x+t)|Q_{n}(t) \, dt.</mrow>
    </md>
-   Now for any <m>\epsilon>0</m>, using the uniform continuity of <m>f</m>, we find a
-   <m>\delta >0</m>, such that <m> |f(x)-f(x+t)| &lt; \epsilon </m>, for all <m>t, 
+   Now for any <m>\epsilon&gt; 0</m>, using the uniform continuity of <m>f</m>, we find a
+   <m>\delta &gt; 0</m>, such that <m> |f(x)-f(x+t)| &lt; \epsilon </m>, for all <m>t, 
    |t| &lt; \delta</m>. Then use this <m>\delta</m> in the above, and item (3), there exists
    some <m>N</m> such that for <m>n\ge N</m> we have
    <m> 2 \max |f| \left(\int_{-1}^{\delta} + \int_{\delta}^{1} \right) Q_{n}(t) \, dt &lt; \epsilon</m>,
@@ -3285,17 +3290,17 @@ Show that <m>\{f_n(x)\}\to f(x) </m> uniformly on <m>K</m>.
                                       
                                      <solution><title>A  proof 
                                         using open covering argument</title>
-                                        <p>From the assumptions, we know that for any given <m>\epsilon>0</m>,
+                                        <p>From the assumptions, we know that for any given <m>\epsilon&gt; 0</m>,
                                         and any <m>x\in K</m>, there exist <m>N=N(x)</m> and
-                                        <m>\delta_{1}=\delta(x)>0</m> such that
+                                        <m>\delta_{1}=\delta(x)&gt; 0</m> such that
                                         <me> |f_{n}(x)-f(x)| &lt; \epsilon \text{  for all } n\ge N</me>,
                                         <me> |f(t)-f(x)| &lt; \epsilon  \text{  for all } t \in B(x, \delta_{1})</me>,
                                         where <m>B(x, \delta_{1})</m> stands for the <m>\delta</m> neighborhood
                                         of <m>x</m>.
                                         </p>
                                         <p>Take <m>n=N(x)</m>, then, using the continuity of <m>f_{n}</m>
-                                        at <m>x</m>, there exists some <m>\delta_{2}>0</m>, such that
-                                        <me> |f_{n}(t)-f_{n}(x)| &lt; \epsilon  \text{ for all } t \in B(x, \delta_{2})</me>.
+                                        at <m>x</m>, there exists some <m>\delta_{2}&gt; 0</m>, such that
+                                        <me> |f_{n}(t)-f_{n}(x)| &lt; \epsilon  \text{ for all } t \in B(x, \delta_{2}).</me>
                                         Set <m>\delta=\delta(x) :=\min\left\{\delta_{1},\delta_{2}\right\}</m>, then for
                                         all <m>t \in B(x, \delta)</m>, we have
                                         <md >
@@ -3305,7 +3310,7 @@ Show that <m>\{f_n(x)\}\to f(x) </m> uniformly on <m>K</m>.
                                        Furthermore, using the assumption that <m>f_{n+1}(t)\le f_{n}(t)</m> for any <m>t</m>,
                                        we conclude that <m> 0\le f_{n+1}(t)-f(t)\le f_{n}(t)-f(t)</m>, and 
                                        <me> |f_{m}(t)-f(t)|\le |f_{n}(t)-f(t)| \le 3\epsilon \text{ for all }
-                                       m\ge n, t\in  B(x, \delta)</me>.
+                                       m\ge n, t\in  B(x, \delta).</me>
                                        </p>
                                        <p>Now <m>\{ B(x, \delta): x \in K\}</m> forms an open cover of <m>K</m>.
                                        Using the compactness of <m>K</m>, we find a finite subcover
@@ -3318,7 +3323,7 @@ Show that <m>\{f_n(x)\}\to f(x) </m> uniformly on <m>K</m>.
                                        which concludes our proof.
                                        </p>
                                        <p>The above proof can be written in a more compact way. For any
-                                       <m>\epsilon>0</m>, using the continuity of <m>f_{n}, f</m>, we know
+                                       <m>\epsilon&gt; 0</m>, using the continuity of <m>f_{n}, f</m>, we know
                                        that the set <m>O_{n,\epsilon}:=\left\{x\in K: f_{n}(t)-f(t) &lt; \epsilon\right\}</m> is open. 
                                        Since for any <m>x\in K</m>, <m>f_{n}(x)-f(x)\to 0</m> as <m>n\to \infty</m>,
                                        we conclude that <m>x\in O_{n,\epsilon}</m> for some <m>n</m>. Thus
@@ -3327,7 +3332,7 @@ Show that <m>\{f_n(x)\}\to f(x) </m> uniformly on <m>K</m>.
                                        Since <m> O_{n,\epsilon} \subset O_{m,\epsilon}</m> for <m>m\ge n</m>,
                                        we have in fact <m>K\subset O_{N,\epsilon}</m> for some <m>N</m>,
                                        which implies that for  all <m>x\in K</m> and all <m>n\ge N</m>
-                                       <me> 0\le f_{n}(x)-f(x)\le f_{N}(x) -f(x) &lt; \epsilon</me>.
+                                       <me> 0\le f_{n}(x)-f(x)\le f_{N}(x) -f(x) &lt; \epsilon.</me>
                                        </p>
                                        </solution>
                                        </exercise>
@@ -3349,16 +3354,16 @@ it converges to <m>0</m>.
 \frac{f(x)-f(0)}{x} = \sum_{k=1}^{\infty} \frac{\cos (kx) -1}{x k^2}= -2  \sum_{k=1}^{\infty} \frac{ \sin^2 (\frac{kx}{2})}{xk^2}= -2x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2.
 </me>
 </p>
-<p> Note that for <m>x>0</m>, <m>x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2</m>
+<p> Note that for <m>x&gt; 0</m>, <m>x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2</m>
 is a Riemann sum for the improper
 integral <m>\int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy</m>, so
 we expect
 <me>
-\lim_{x\to 0+} x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2 = \int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy >0.
+\lim_{x\to 0+} x \sum_{k=1}^{\infty} \left(  \frac{ \sin (\frac{kx}{2})}{xk}\right)^2 = \int_0^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy &gt; 0.
 </me>
 </p>
 <p> <xref ref="thm-uniformconvint"/> does not directly apply here. One way to justify the assertion 
-above is to use the divide-and-conquer strategy. For any <m>\epsilon >0</m> given, first we find
+above is to use the divide-and-conquer strategy. For any <m>\epsilon &gt; 0</m> given, first we find
 <m>L>\epsilon^{-1}</m> such that 
 <me> 
 \int_{L} ^{\infty}  \left(  \frac{ \sin (y/2) }{y} \right)^2 dy &lt; \epsilon.
@@ -3627,7 +3632,7 @@ argument works even for complex <m>t</m> as long as we restrict <m>t</m> to sati
 the Theorem implies that for <m>0\le x \le R</m>
 <me>\sum_{n=1}^{\infty} a_n x^n =\lim_{N\to \infty} s_N(x)</me> 
 is a continuous function of <m>x\in [0,R]</m>. As a consequence,
-<me>\sum_{n=1}^{\infty} a_n R^n= \lim_{x\to R-} \sum_{n=1}^{\infty} a_n x^n</me>. 
+<me>\sum_{n=1}^{\infty} a_n R^n= \lim_{x\to R-} \sum_{n=1}^{\infty} a_n x^n.</me>
 This can also be written as
 <me>
 \lim_{N\to \infty} s_N(R)= \lim_{N\to \infty} \lim_{x\to R-} s_N(x) = \lim_{x\to R-} \lim_{N\to \infty} s_N(x) = \lim_{x\to R-} \sum_{n=1}^{\infty} a_n x^n.
@@ -3959,13 +3964,13 @@ centered at <m>x_{0}</m> .
 for any <m>x</m> (even complex valued). When <m>x</m> takes real values, <m>E(x)</m>  also
 takes real values by construction. For <m>x\gt 0</m>, the power series for <m>E(x)</m> shows
 that <m>E(x)\gt 0</m>. One then shows using  <m>E(-x)E(x)=E(0)=1</m>
-that <m>E(x)>0</m> for all real <m>x \lt 0</m>. 
-Then the property <m>E'(x)=E(x)>0</m> shows that <m>E(x)</m> is monotone increasing for
+that <m>E(x)&gt; 0</m> for all real <m>x \lt 0</m>. 
+Then the property <m>E'(x)=E(x)&gt; 0</m> shows that <m>E(x)</m> is monotone increasing for
 real valued <m>x</m>.  </p>
 <p>At this point, there is a well defined inverse function of <m>E(x)</m> for <m>x\in \mathbb R</m>.
 Call it <m>\ln y</m> for <m>y &gt; 0</m>. Then <m>E(\ln y)=y</m> and <m> \ln E(x) =x</m>. It remains to establish that
-<m>\ln y</m> is defined for all <m>y>0</m>. As a consequence of <m>E(x+y) =E(x) E(y)</m>,
-we will have <m>\ln (u v)=\ln u + \ln v</m> for <m>u, v>0</m>.
+<m>\ln y</m> is defined for all <m>y&gt; 0</m>. As a consequence of <m>E(x+y) =E(x) E(y)</m>,
+we will have <m>\ln (u v)=\ln u + \ln v</m> for <m>u, v&gt; 0</m>.
 </p>
 <p>
 Based on the properties of <m>E(x)</m>, one establishes that for any rational <m>x=\frac pq</m>,
@@ -4090,8 +4095,8 @@ using <m>E(x)</m>.
   <me>
   \left\{
   \begin{aligned}
-  u_t(x,t)-u_{xx}(x,t) \amp = 0 \amp 0\lt x \lt l, t>0\\ 
-   u(0,t)\amp =u(l,t)=0 \amp t>0\\
+  u_t(x,t)-u_{xx}(x,t) \amp = 0 \amp 0\lt x \lt l, t&gt; 0\\ 
+   u(0,t)\amp =u(l,t)=0 \amp t&gt; 0\\
    u(x, 0)\amp =g(x) \amp 0\lt x \lt l 
   \end{aligned}
   \right.
@@ -4805,7 +4810,7 @@ for all sufficiently large <m>\lambda</m>, which concludes our proof.
 <theorem> <title>A Convergence Criterion for the Trigonometric Fourier series</title>
 <statement><p> Suppose that <m>g</m> is a <m>2\pi</m> periodic function on <m>\bbR</m> and
 <m>x\in (-\pi, \pi)</m> is such that  there exist
-<m>\delta>0</m> and <m> M &lt; \infty</m> such that
+<m>\delta&gt; 0</m> and <m> M &lt; \infty</m> such that
 <men xml:id="locLip">
 |g(x+t)-g(x)|\le M |t| \text{   for all } t\in (-\delta, \delta).
 </men>
@@ -4843,7 +4848,7 @@ so
 </md>
 If <m>g(t)</m> satisfies
 <me>
-\vert g(x-t)-g(x-) \vert, \vert g(x+t)-g(x+)\vert \le M t\text{ for $t>0$ near $0$},
+\vert g(x-t)-g(x-) \vert, \vert g(x+t)-g(x+)\vert \le M t\text{ for $t&gt; 0$ near $0$},
 </me>
 we can make the same argument to show that <m>S_N[g]( x)-\frac{g(x+)+g(x-)}{2}\to 0</m> 
 as <m>N\to\infty</m>.
@@ -4954,7 +4959,7 @@ For, then, using (a) above,
 + \frac{\max |f|}{\pi} \int_{\delta \le |t|\le \pi} K_{N}(t)\, dt,
 </mrow>
 </md>
-and for any <m>\epsilon >0</m>, we first choose <m> 0 &lt; \delta &lt;\pi</m> such that
+and for any <m>\epsilon &gt; 0</m>, we first choose <m> 0 &lt; \delta &lt;\pi</m> such that
 <m>|f(x-t) -f(x)| &lt; \epsilon</m> for all <m>t</m> with <m>|t|\le \delta</m>, then use this
 <m>\delta</m> in the above, which will make the first integral above <m>&lt; \epsilon</m>
 using (b) above.
@@ -5550,7 +5555,7 @@ If so, determine whether this map is invertible.</li>
  <p>
  <m>I:X\mapsto Y</m> here is invertible, with <m>I^{-1}(v)=v'(x)</m> for any <m>v\in Y</m>.
  However, <m>I^{-1}</m> does not have a finite operator norm with respect to the norms we have chosen here,
- for, that would require the existence of some <m>C'>0</m> such that
+ for, that would require the existence of some <m>C'&gt; 0</m> such that
  <me>
   ||I^{-1}(v)||_{C[a, b]}\le C' ||v||_{C[a, b]} \text{ for all $v\in Y$.}
   </me>
@@ -5592,7 +5597,7 @@ any <m>{\mathbf x}\in X</m> has coordinates <m>(c_{1}, \ldots, c_{n})</m> in thi
 </mrow>	
 </md>
 At the end of this subsection, we will prove a Lemma which implies that there exists some
-constant <m>C>0</m> such that
+constant <m>C&gt; 0</m> such that
 <me>
 \left( \sum_{j=1}^{n}|c_{j}|^{2}\right)^{1/2} \le C|| \sum_{j=1}^{n}c_{j} {\mathbf x}_{j}||=C||{\mathbf x}||
 \text{ for all $\bx \in X$}.
@@ -5704,7 +5709,7 @@ a normed vector space.
   </me>
   In fact, the converse is also true. For, if <m>T: X\mapsto Y</m> is linear and continuous at
   <m>\mathbf 0</m>, then
-  for any <m>\epsilon >0</m>, there exists <m>\delta>0</m> such that 
+  for any <m>\epsilon &gt; 0</m>, there exists <m>\delta&gt; 0</m> such that 
   <m>||T({\mathbf x})||\le \epsilon</m> whenever <m>||{\mathbf x}||\le \delta</m>.
   But for any <m>{\mathbf x}\ne {\mathbf 0}</m>, <m>\Vert \frac{\delta {\mathbf x}}{||{\mathbf x}||} \Vert
   \le \delta</m>, we thus have
@@ -5758,7 +5763,7 @@ a normed vector space.
   <p>But if we consider this linear map  as from <m>{\mathcal R}[-\pi, \pi]</m>
   to <m>l^{2}</m>, it does not have a bounded norm if we equip function  <m>f\in 
   {\mathcal R}[-\pi, \pi]</m> with the norm <m>\int_{-\pi}^{\pi}|f(x)|\, dx</m>, as
-for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such that
+for any <m> C&gt; 0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such that
   <me>
  \Vert (a_{0}, a_{1}, b_{1}, \ldots) \Vert_{l^2}\ge \left( \frac{1}{2\pi} \int_{-\pi}^{\pi}|f(x)|^{2}\;dx\right)^{1/2}\ge C 
  \int_{-\pi}^{\pi}|f(x)|\;dx.
@@ -5797,7 +5802,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
     <me>
     {\mathbf x}=\sum_{k=1}^{n} {\mathbf x}(k) \mathbf v_{k}.
     </me>
-    Then there exits constants <m>c_{2}> c_{1}>0</m> such that
+    Then there exits constants <m>c_{2}> c_{1}&gt; 0</m> such that
     <me>
     c_{2} \left(\sum_{k=1}^{n}|{\mathbf x}(k)|^{2}\right)^{1/2}\ge ||\mathbf x|| 
     \ge c_{1}  \left(\sum_{k=1}^{n}|{\mathbf x}(k)|^{2}\right)^{1/2}\, \forall {\mathbf x}\;\; \in X.
@@ -5863,7 +5868,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
    \lim_{{\mathbf h}\to {\mathbf 0}}
    \frac{\Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h} \Vert_{Y}}{\Vert {\mathbf h} \Vert_{X}}=0.
    </men>
-   In other words, for any <m>\epsilon >0</m>, there exists some <m>\delta>0</m> such that
+   In other words, for any <m>\epsilon &gt; 0</m>, there exists some <m>\delta&gt; 0</m> such that
    <me>
    \Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert_{Y}
    \le \epsilon \Vert {\mathbf h} \Vert_{X}
@@ -5925,7 +5930,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
  \lim_{t\to 0}
    \Vert \frac{ {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t {\mathbf v} }{t} \Vert_{Y}=0,
    </me>
-   or equivalently, for any <m>\epsilon >0</m>, there exists some <m>\delta>0</m> such that
+   or equivalently, for any <m>\epsilon &gt; 0</m>, there exists some <m>\delta&gt; 0</m> such that
    <me>
    \Vert  {\mathbf f}({\mathbf x}+t{\mathbf u})- {\mathbf f}({\mathbf x})-t {\mathbf v} \Vert_{Y}
    &lt; \epsilon |t| \text{ for all } t \text{ with } |t|&lt; \delta.
@@ -5984,7 +5989,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
   </p>
   </statement>
   <proof> <p> The only part that we have not provided detail is to prove the continuity of <m>\bff</m> at 
-  <m>\bx</m>. For any <m>\epsilon >0</m>, there exists some <m>\delta>0</m> such that
+  <m>\bx</m>. For any <m>\epsilon &gt; 0</m>, there exists some <m>\delta&gt; 0</m> such that
    <me>
    \Vert {\mathbf f}({\mathbf x}+{\mathbf h})- {\mathbf f}({\mathbf x})-A{\mathbf h}\Vert\le \epsilon \Vert {\mathbf h} \Vert
    \text{ for all } {\mathbf h} \text { with } \Vert {\mathbf h} \Vert &lt; \delta.
@@ -6070,7 +6075,7 @@ for any <m> C>0</m>,  there exists <m>f\in {\mathcal R}[-\pi, \pi]</m>,  such th
     </me>
 For any direction <m>{\mathbf u}=(\cos\theta, \sin\theta)</m>, 
     <m> f(t\cos\theta, t\sin\theta)=t \cos^{2}\theta \sin\theta</m>, so 
-     <me>D_{(\cos\theta, \sin\theta)}f(0,0)= \cos^{2}\theta \sin\theta</me>. But it does not depend on
+     <me>D_{(\cos\theta, \sin\theta)}f(0,0)= \cos^{2}\theta \sin\theta.</me> But it does not depend on
      <m>{\mathbf u}=(\cos\theta, \sin\theta)</m> in a linear fashion, so <m>f</m> is not differentiable
      at <m>(0, 0)</m>.
 </p>
@@ -6144,11 +6149,11 @@ we have an easy proof using <m> \bff(b)-\bff(a)=\int_{a}^{b}\bff'(x)\, dx</m>.</
 Fix any <m>\epsilon \gt 0</m>, if <xref ref="meanbd"/> does not hold for some <m>c</m>, let <m>c^{*}</m> be
 the infimum of the values <m>c\in [a, b]</m> for which <xref ref="meanbd"/> fails. First we show that
 <m>c^{*}>a</m>. This follows from the continuity of <m>\bff</m> at <m>a</m>, as it shows that for
-some <m>\delta >0</m>  <xref ref="meanbd"/> holds for <m>c\in [a, a+\delta]</m>. By definition of <m>c^{*}</m>,
+some <m>\delta &gt; 0</m>  <xref ref="meanbd"/> holds for <m>c\in [a, a+\delta]</m>. By definition of <m>c^{*}</m>,
 <xref ref="meanbd"/> holds for any <m>c \lt c^{*}</m>. By continuity of <m>\bff</m> at <m>c^{*}</m>
 <xref ref="meanbd"/> continues to hold at <m>c^{*}</m>. Thus <m>c^{*}\lt b</m> under
 our assumption. Then using <m>\Vert\bff'(c^{*})\Vert\le M</m>,
-there exists some <m>\delta^{*}>0</m> such that <m>\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})</m> for
+there exists some <m>\delta^{*}&gt; 0</m> such that <m>\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})</m> for
 <m>c\in [c^{*}, c^{*}+\delta^{*}]</m>, it then follows that, for <m>c\in [c^{*}, c^{*}+\delta^{*}]</m>,
 <md>
 	<mrow>
@@ -6734,7 +6739,7 @@ and it's clear that <m>f'(x)</m> is not continuous near <m>x=0</m>.
 		<p>Note that if <m>0\lt \epsilon' \lt \epsilon</m>, then the fixed point in <m>X_{\epsilon}</m>
 		must coincide with fixed point in <m>X_{\epsilon'}</m>. Since any solution
 		<m>x(t)</m> of <xref ref="SIVP"/> must be a  fixed point in <m>X_{\epsilon'}</m> for some
-		<m>\epsilon' >0</m>, this shows the uniqueness in this context.
+		<m>\epsilon' &gt; 0</m>, this shows the uniqueness in this context.
 		</p>
 		</example>
   </section>
@@ -6815,7 +6820,7 @@ the above is equivalent to
  =\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right].
  </me>
  The continuity assumption of <m>D {\mathbf f}({\mathbf x})</m> at <m>{\mathbf x}_{0}</m>
- implies the existence of some <m>\delta >0</m> such that 
+ implies the existence of some <m>\delta &gt; 0</m> such that 
  <men xml:id="der1-2">
  \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right]
   \Vert \le \frac 12 \text{ for all } {\mathbf x},
@@ -6839,13 +6844,13 @@ the above is equivalent to
  {\mathbf y}_{0}\Vert+ \Vert {\mathbf r}({\mathbf x}; {\mathbf x}_{0})\Vert \right\},
  </men>
  and the differentiability of <m> {\mathbf f}({\mathbf x})</m> at <m>{\mathbf x}_{0}</m>
- implies that, when <m>\delta>0</m> is chosen appropriately, 
+ implies that, when <m>\delta&gt; 0</m> is chosen appropriately, 
  <men xml:id="inverse2">
  \Vert [D{\mathbf f}({\mathbf x}_{0})]^{-1}\Vert \Vert {\mathbf r}({\mathbf x}; {\mathbf x}_{0})\Vert
  \le \frac 12 \Vert {\mathbf x}-{\mathbf x}_{0} \Vert,
  </men> 
  for <m> {\mathbf x}\in \overline{B({\mathbf x}_{0}, \delta)}</m>. Now if
- <m>r>0</m> is chosen such that 
+ <m>r&gt; 0</m> is chosen such that 
  <m> r \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert &lt; \frac{\delta}{2}</m>,
  then for <m> {\mathbf y}\in B({\mathbf y}_{0}, r)</m>, 
  <m> \Vert \phi ({\mathbf x})- {\mathbf x}_{0}\Vert &lt; \delta</m>, thus 
@@ -6856,8 +6861,8 @@ the above is equivalent to
  together with <m>\phi ({\mathbf x})={\mathbf x}</m> implies 
  <men xml:id="inverse3">
  \Vert {\mathbf x}- {\mathbf x}_{0}\Vert\le 2 \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert
-  \Vert {\mathbf y}- {\mathbf y}_{0}\Vert
- </men >.
+  \Vert {\mathbf y}- {\mathbf y}_{0}\Vert.
+ </men>
  </p>
  -->
  <p> Using
@@ -6902,21 +6907,29 @@ B({\mathbf y}_{0}, r)</m>, we examine
  <mrow xml:id="invcon"> 
 = \amp \left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
 \left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) 
- + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),</mrow>
+ </mrow>
+ <mrow number="no">
+ \amp + [D{\mathbf f}({\mathbf x}_{0})]({\mathbf x}_2 - {\mathbf x}_1),</mrow>
 </mdn>
-where we use <m>{\mathbf f}({\mathbf x})- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}</m>
+where we use <m>{\mathbf f}({\mathbf x})- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}</m> in the first two terms of 
+<xref ref="invcon"/>
 in place of <m>{\mathbf f}({\mathbf x})</m> as its  derivative in <m>{\mathbf x}</m>
 is <m> D{\mathbf f}({\mathbf x})- D{\mathbf f}({\mathbf x}_{0})</m>, which satisfies
 <xref ref="der1-2"/>
 when <m>{\mathbf x}\in B({\mathbf x}_{0}, \delta)</m> due to the continuity
 of <m>D{\mathbf f}({\mathbf x})</m> at <m>{\mathbf x}_{0}</m>.  Thus
-<me>
-\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
+<md>
+	<mrow>
+\amp \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
 \left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
-\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert \le
-\frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert
-</me>.
-We get from <xref ref="invcon"/>
+\left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert 
+	</mrow>
+	<mrow>
+		 \amp \le
+\frac 12 \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert.
+</mrow>
+</md>
+Multiplying both sides of  <xref ref="invcon"/>  by <m>\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}</m> and using the above estimate gives
 <md>
 <mrow>
  \Vert {\mathbf x}_2 - {\mathbf x}_1 \Vert 
@@ -6924,7 +6937,7 @@ We get from <xref ref="invcon"/>
 {\mathbf y}_{2}- {\mathbf y}_{1}\right)\Vert
 </mrow>
 <mrow>
- \amp + 
+ + \amp 
 \Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ 
 \left( {\mathbf f}({\mathbf x}_2)- \left[D{\mathbf f}({\mathbf x}_{0})\right]{\mathbf x}_2 \right) - 
 \left({\mathbf f}({\mathbf x}_1)- [D{\mathbf f}({\mathbf x}_{0})]{\mathbf x}_1\right) \right] \Vert
@@ -6966,22 +6979,25 @@ Finally,  the relation
  {\Vert {\mathbf y}- {\mathbf y}_{0}\Vert }
  \le \frac{2\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\Vert^{2} 
  \Vert {\mathbf r}({\mathbf x}; {\mathbf x}_{0}) \Vert}{
- \Vert  {\mathbf x}- {\mathbf x}_{0} \Vert } \to 0
- </me>.
+ \Vert  {\mathbf x}- {\mathbf x}_{0} \Vert } \to 0.
+ </me>
  This shows the 
  differentiability of <m>{\mathbf f}^{-1}</m> at <m>{\mathbf y}_{0}</m> with
  <me>
  D{\mathbf f}^{-1} ({\mathbf y_{0}}) = \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}.
  </me>
+ This concludes the proof.
  </p>
   </proof>
 </theorem>
 
+<?latex \newpage ?>
+<?latex \vspace{1cm} ?>
 
 <remark><p>In our formulation and proof, we take <m>V</m> to be a ball and define 
 <m>{\mathbf f}^{-1}</m> on <m>V</m>. Since <m>U=\bff^{-1}(V)</m> is
 open and contains <m>\bx_{0}</m>, there exists some
-<m>\delta' >0</m> such that <m>B(\bx_{0}, \delta')\subset U</m>, then
+<m>\delta' &gt; 0</m> such that <m>B(\bx_{0}, \delta')\subset U</m>, then
 <m>\bff(B(\bx_{0}, \delta'))</m> is an open neighborhood of <m>\by_{0}</m>
 and <m>\bff^{-1}</m> is then a well defined inverse function of <m>\bff</m>
 on this open set. </p>
@@ -7036,7 +7052,9 @@ invertible. Such an <m>\bff</m> is called an <term>immersion</term> near <m>\bx_
  <m>\bff(U)</m> is represented as a 
  graph; it does not say that <m>\bff(\cM)</m> in a neighborhood of <m>\bff(\bx_{0})</m>
  is represented as a 
- graph. A simple example is the <url href="https://www.desmos.com/calculator/skduzarzqh">Lemniscate of Genoro</url> given by <m>t\mapsto G(t):=(x, y)=(\sin t, \sin t \cos t)</m> 
+ graph.
+	</p> 
+	<p> A simple example is the <url href="https://www.desmos.com/calculator/skduzarzqh">Lemniscate of Genoro</url> given by <m>t\mapsto G(t):=(x, y)=(\sin t, \sin t \cos t)</m> 
   for <m>t\in \bbR</m>. Its image in <m>\bbR^{2}</m> is a figure eight
  crossing the origin. Near <m>t=0</m>, <m>x'(0)=\cos 0=1, y'(0)=\cos^{2}0-\sin^{2}0=1</m>,
  so <m>t\mapsto x=\sin t</m> has an inverse <m>t=\sin^{-1}(x)</m> near <m>x=0</m>, from which one
@@ -7102,14 +7120,14 @@ function on <m>\mathbb R^n \times \mathbb R^m</m>. We use
 of this linear function on <m>\mathbb R^n \times \{\mathbf 0\}</m>.  In other words
 <me>
  D_{\bx}{\mathbf f}({\mathbf x}_{0},{\mathbf y}_{0})\bh=D{\mathbf f}({\mathbf x}_{0},{\mathbf y}_{0})(\bh, 0)
-\quad \bh \in \bbR^{n}
-</me>.
+\quad \bh \in \bbR^{n}.
+</me>
 Similarly we define <m>D_{\by}{\mathbf f}({\mathbf x}_{0},{\mathbf y}_{0})</m>
 by
 <me>
 D_{\by}{\mathbf f}({\mathbf x}_{0},{\mathbf y}_{0})\bk=D{\mathbf f}({\mathbf x}_{0},{\mathbf y}_{0})(0, \bk)
-\quad \bk\in \bbR^{m}
-</me>.
+\quad \bk\in \bbR^{m}.
+</me>
 </p>
 <p>If <m>{\mathbf f}({\mathbf x},{\mathbf y})</m> is differentiable in <m>\bx</m> when <m>\by</m> is
 held fixed, we also use <m>D_{\bx}{\mathbf f}({\mathbf x},{\mathbf y})</m> to denote its derivative 
@@ -7150,7 +7168,7 @@ such that <m>\forall {\mathbf y} \in B({\mathbf y}_0, r), \exists ! {\mathbf x} 
 </statement>
 <proof>
 <p>The heuristic for the first part is similar to that in proving the Inverse
-Function Theorem: for <m>(\bx, \by)\in U_{0}\times V_{0})</m>,
+Function Theorem: for <m>(\bx, \by)\in U_{0}\times V_{0}</m>,
 use the linear approximation of <m>{\mathbf f}</m>  in the <m>{\mathbf x}</m>
 variable to approximate <m>{\mathbf f}({\mathbf x}, {\mathbf y})</m>; more precisely,
 <me>
@@ -7181,8 +7199,8 @@ or <m>{\mathbf x}</m> is a fixed point of the mapping
  </p>
  <p>
  Then in a similar way one can show the existence of a unique fixed point 
- in <m>\overline{B({\mathbf x}_{0}, \delta)}</m> of <m> \phi </m> when <m>\delta>0</m>
- and <m>r>0</m> are chosen appropriately so that <m>\phi</m> satisfies <xref ref="contraction"/>
+ in <m>\overline{B({\mathbf x}_{0}, \delta)}</m> of <m> \phi </m> when <m>\delta&gt; 0</m>
+ and <m>r&gt; 0</m> are chosen appropriately so that <m>\phi</m> satisfies <xref ref="contraction"/>
  for <m> {\mathbf x} \in B({\mathbf x}_{0}, \delta), {\mathbf y}\in B({\mathbf y}_0, r) </m>.
  This shows the existence of <m>{\mathbf x} = {\mathbf u}({\mathbf y})</m>
  for <m>{\mathbf y}\in B({\mathbf y}_0, r) </m>.
@@ -7267,13 +7285,16 @@ or <m>{\mathbf x}</m> is a fixed point of the mapping
  </p>
 </proof>
 </theorem>
+
+<?latex \clearpage ?>
+
 <remark> <p> If,  for  
 part 1,  one assumes <m>\bff</m> is jointly
 differentiable in <m>({\mathbf x}, {\mathbf y})</m> and the 
 derivatives are continuous at <m>(\bx_{0}, \by_{0})</m>, then one can get a simple proof by using the Inverse Function Theorem. One simply defines
 <me>
-F(\bx, \by)=(\bff (\bx, \by), \by)\in \bbR^{n+m}
-</me>.
+F(\bx, \by)=(\bff (\bx, \by), \by)\in \bbR^{n+m}.
+</me>
 Then <m>F(\bx_{0}, \by_{0})=(\mathbf 0, \by_{0})</m>, and the Jacobian matrix at
 <m>(\bx_{0}, \by_{0})</m> is an invertible <m>(n+m)\times (n+m)</m> matrix, so
 there exist a neighborhood <m>U</m> of <m>(\bx_{0}, \by_{0})</m>,  a neighborhood
@@ -7421,8 +7442,8 @@ and <m>g(x, y, z)=x-y</m> and check the rank of
 \amp \frac{\partial f}{\partial z} \\
 \frac{\partial g}{\partial x} \amp \frac{\partial g}{\partial y}
 \amp \frac{\partial g}{\partial z} \end{bmatrix}
-=\begin{bmatrix} 2x \amp 2y \amp -2z \\ 1 \amp -1 \amp 0 \end{bmatrix}
-</me>.
+=\begin{bmatrix} 2x \amp 2y \amp -2z \\ 1 \amp -1 \amp 0 \end{bmatrix}.
+</me>
 Since <m> \det \begin{bmatrix}  2y \amp -2z \\  -1 \amp 0 \end{bmatrix}=-2z</m>, which is <m>\ne 0</m>
 whenever <m>z\ne 0</m>, so if the intersection does not contain any point with <m>z=0</m>, 
 the level set can be represented in the form of <m>(y, z)=(g(x), h(x))</m> for some differentiable
@@ -7433,7 +7454,7 @@ is not in such a range, then the intersection can be represented in the form of
 <m>g, h</m>.The derivatives can be found by  implicit differentiation
 <me>
 2x + 2y \frac{\partial y}{\partial x} - 2 z \frac{\partial z}{\partial x}=0\quad 1-\frac{\partial y}{\partial x}=0.
-</me>.
+</me>
 </p>
 <p>In the above setting one could also apply the Implicit Function Theorem to the <m>(x, z)</m>
 variables to represent the graph as functions of the <m>y</m> variable.
@@ -7478,7 +7499,7 @@ near <m>\bx_{0}</m> is the graph of a differentiable function of  <m>(n-1)</m> v
 neighborhood of <m>\mathbf 0\in\bbR^{n}</m>, <m>f(\mathbf 0)=0</m>,
 and <m>D_{n}f(\mathbf 0)\ne 0</m>.
 Prove that there exist a ball <m>B(\mathbf 0, r)\subset \bbR^{n-1}</m>, 
-<m>\delta >0</m>, and a continuously differentiable function <m>g(\bx', t)</m>
+<m>\delta &gt; 0</m>, and a continuously differentiable function <m>g(\bx', t)</m>
 defined for <m>(\bx', t)\in  B(\mathbf 0, r) \times (-\delta, \delta)</m> such that
 (a) <m>f(\bx', g(\bx', t))=t</m>, (b) <m>g(\mathbf 0, 0)=0</m>, and
 (c) <m>V:=\{(\bx', g(\bx', t)): \bx'\in  B(\mathbf 0, r) \}</m>
@@ -7515,17 +7536,17 @@ Note that <m>F(A; \bx, \lambda)</m> has continuous partial derivatives as a func
  Suppose that <m>A_{0}</m> is symmetric and <m>\bx_{0}</m> is a <alert>simple</alert>
 eigenvector with eigenvalue <m>\lambda_{0}</m>, namely, the eigenspace of <m>A-\lambda_{0}I</m>
 is one-dimensional and spanned by <m>\bx_{0}</m>. Then there exists some
-<m>\delta >0</m> 
+<m>\delta &gt; 0</m> 
 and differentiable functions <m>Evc(A)\in \bbR^{n}</m> and
 <m>Evl(A)\in \bbR</m> defined for  matrices <m>A</m> with <m>\Vert A-A_{0}\Vert \lt \delta</m>,
 such that <xref ref="egv"/> holds with <m>\bx=Evc(A)</m> and <m>\lambda=Evl(A)</m>.
 </p>
 
 <p>According to the Implicit Function Theorem, we need to verify that
-<me>D_{(\bx, \lambda)}F(A_{0},\bx_{0},\lambda_{0})</me> is
+<me>D_{(\bx, \lambda)}F(A_{0}; \bx_{0},\lambda_{0})</me> is
 an invertible map of <m>\bbR^{n+1}</m>. But
 <me>
-D_{(\bx, \lambda)}F(A_{0},\bx_{0},\lambda_{0})(\bv, s)=
+D_{(\bx, \lambda)}F(A_{0}; \bx_{0},\lambda_{0})(\bv, s)=
 ((A_{0}-\lambda_{0})\bv -s \bx_{0}, 2 \bx_{0}\cdot \bv).
 </me>
 We need to establish the unique solvability in <m>(\bv, s)</m> of 
@@ -7543,11 +7564,17 @@ Thus <xref ref="egv1"/> has a solution when <m>(s\bx_{0}+\bw)\cdot \bx_{0}=0</m>
 which determines <m>s</m> uniquely: <m>s=- \bw\cdot \bx_{0}</m>.
 <xref ref="egv2"/>, together with <xref ref="egv1"/>, then determine <m>\bv</m> uniquely.
 </p>
-<p>Note that matrix <m>A</m> need not be symmetric.</p>
+<p>Note that the assumption that the matrix <m>A</m> be symmetric is only used in the solvability criterion of
+	<m>(A_{0}-\lambda_{0}I)\bv = s \bx_{0} + \bw</m>, namely, <m> (s\bx_{0}+\bw)\cdot \bx_{0}=0</m>.
+When the symmetry assumption of <m>A_{0}</m> is dropped, but the eigenvalue <m>\lambda_0</m> is still assumped to be simple, the solvability criterion needs to be modified.
+The proper criterion is <m>(s\bx_{0}+\bw)\cdot \by_{0}=0</m>, where <m>\by_{0} </m> is any vector that solves 
+<m> (A_{0}^T-\lambda_{0}I)\by_{0}=\mathbf 0</m>. Such a <m>\by_0</m> is called a <term>left eigenvector</term> of <m>A_{0}</m> associated with the eigenvalue <m>\lambda_0</m>. The left eigenvector is also unique up to scaling when the eigenvalue is simple.
+So we can continue to show the unique solvability of <xref ref="egv1"/>.
+</p>
 
 <p><term>Question</term>: 
- Can either the symmetry assumption of <m>A_{0}</m> or the simplicity assumption
-on the eigenspace be dropped entirely to have the same conclusions?</p>
+ Explore possible conclusions that can be drawn if either the symmetry assumption of <m>A_{0}</m> or the simplicity assumption
+on the eigenspace be dropped entirely.</p>
 <p>
  <em>Hint</em>: Examine the behavior of eigenvectors and eigenvalues of simple <m>2\times 2</m> matrices.
 </p>
@@ -7579,8 +7606,8 @@ on the eigenspace be dropped entirely to have the same conclusions?</p>
   In terms of the <m>(i, j)</m> entry of the output matrix, it is 
   <me>
   \sum_{k=1}^{n} h_{k}D_{x_{k}}\left( \frac{\partial f_{i}}{\partial x_{j}}\right) (\bx)
-  :=  \sum_{k=1}^{n} h_{k} \frac{\partial^{2} f_{i}}{\partial x_{k}\partial x_{j}} (\bx)
-  </me>.
+  :=  \sum_{k=1}^{n} h_{k} \frac{\partial^{2} f_{i}}{\partial x_{k}\partial x_{j}} (\bx).
+  </me>
   These quantities <m>D_{x_{k}}\left( \frac{\partial f_{i}}{\partial x_{j}}\right) (\bx)
   = \frac{\partial^{2} f_{i}}{\partial x_{k}\partial x_{j}} (\bx)</m> are called the 
   <term>second derivatives</term> of <m>f_{i}(\bx)</m>. Other commonly used notations for the second derivatives of a function <m>f(\bx)</m> include <m>\partial^{2}_{kj} f(\bx)</m> 
@@ -7666,15 +7693,15 @@ the derivative with respect to <m>x</m> of <m>\frac{\partial f}{\partial y}(x, 0
 		Then <m>D_{ji}f(\bx)</m> exists and equals <m>D_{ij}f(\bx)</m>.</p>
  	</statement>
  	<proof>
- 		<p>We may set <m>\bx=\mathbf 0</m>, <m>i=1, j=2</m>, and <m>n=2</m>. Then
-		<md>
-		<mrow>
-		D_{21}f(0, 0)=\amp \lim_{y\to 0}\frac{D_{1}f(0, y)-D_{1}f(0, 0)}{y}
-</mrow>
-<mrow>
-=\amp \lim_{y\to 0} \lim_{x\to 0}\frac{ f(x, y)-f(0, y)-f(x, 0)+f(0,0)}{xy}.</mrow>
-</md>
-But applying the mean value theorem to <m>f(x, y)-f(0, y)</m> as a function of <m>y</m>, we get
+ 		<p>We may set <m>\bx=\mathbf 0</m>, <m>i=1, j=2</m>, and <m>n=2</m>. Then we need to show that
+		<me>
+		D_{21}f(0, 0)= \lim_{y\to 0}\frac{D_{1}f(0, y)-D_{1}f(0, 0)}{y}
+</me>
+exists and equals <m>D_{12}f(0, 0)</m>. But 
+<me>
+\frac{D_{1}f(0, y)-D_{1}f(0, 0)}{y} =  \lim_{x\to 0}\frac{ f(x, y)-f(0, y)-f(x, 0)+f(0,0)}{xy}.
+</me>
+Applying the mean value theorem to <m>f(x, y)-f(0, y)</m> as a function of <m>y</m>, we get
 <me> 
 f(x, y)-f(0, y)-[f(x, 0)-f(0, 0)]=\left[D_{2}f(x, y^{*})-D_{2}f(0, y^{*})\right]y
 </me>
@@ -7687,7 +7714,7 @@ D_{2}f(x, y^{*})-D_{2}f(0, y^{*})=D_{12}f(x^{*}, y^{*})x
 for some <m>x^{*}</m> between <m>0</m> and <m>x</m>. Using the continuity of
 <m>D_{12}f(x, y)</m> at <m>(0, 0)</m>, it follows that
 <me>
-D_{21}f(0, 0)=\lim_{y\to 0} \lim_{x\to 0} D_{12}f(x^{*}, y^{*})=D_{12}f(0, 0).
+D_{21}f(0, 0)=\lim_{y\to 0} \lim_{x\to 0} D_{12}f(x^{*}, y^{*}) \text{ exists and }=D_{12}f(0, 0).
 </me>
 		</p>
  	</proof>
@@ -7769,9 +7796,11 @@ t^{k} +R_{k}(t)
 	<mrow number="no"    >
 	\amp g(t)    
 	</mrow>
-	<mrow  xml:id="eq-remainder">	
+	<mrow number="no"  >
 	= \amp g(0)+g'(0)t+\frac{g''(0)}{2!}t^{2}+\cdots+ \frac{g^{(k-1)}(0)}{(k-1)!}t^{k-1}
-	+\frac{1}{(k-1)!}\int_{0}^{t}g^{(k)}(s)(t-s)^{k-1}\, ds
+	</mrow>
+<mrow  xml:id="eq-remainder">	
+	\amp +\frac{1}{(k-1)!}\int_{0}^{t}g^{(k)}(s)(t-s)^{k-1}\, ds
 	</mrow>	
 	</mdn>,
 	from which we find
@@ -7797,7 +7826,7 @@ t^{k} +R_{k}(t)
 	</p>
 	<p>
 	Using the continuity of <m>\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}</m> at <m>\bx</m>,
-	we find that, for any <m>\epsilon > 0</m>, there exists some <m>\delta >0</m> such that
+	we find that, for any <m>\epsilon > 0</m>, there exists some <m>\delta &gt; 0</m> such that
 	<me>
 	\left\Vert \frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx +\bh) -
 	\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)\right\Vert \lt \epsilon
@@ -7836,8 +7865,8 @@ t^{k} +R_{k}(t)
 		\Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
 		 </men>
 		 Furthermore, under the assumption here, for any subdomain <m>U'</m> of <m>U</m> such
-		 that the closure of <m>U'</m> is compact and any <m>\epsilon >0</m>, there
-		 exists <m>\delta >0</m> such that
+		 that the closure of <m>U'</m> is compact and any <m>\epsilon &gt; 0</m>, there
+		 exists <m>\delta &gt; 0</m> such that
 		 <me>
 		 \Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert \le \epsilon \Vert \bh \Vert^{k} \text{ for all $\bx\in U',
 		 \Vert \bh \Vert \lt \delta$.}
@@ -7848,7 +7877,9 @@ t^{k} +R_{k}(t)
 		 <remark> <p><xref ref="eq-taylor"/> can also be established under the weaker assumption
 		 that all partial derivatives of <m>f</m> of order up to <m>k-1</m> are defined and continuous
 		 in a neighborhood of <m>\bx</m>, and all 
-		 all partial derivatives of <m>f</m> of order  <m>k-1</m> are differentiable at <m>\bx</m>.
+		 all partial derivatives of <m>f</m> of order  <m>k-1</m> are differentiable at <m>\bx</m>; one just needs to apply <xref ref="eq-remainder"/>
+		 with <m>k-1</m> replacing <m>k</m> and uses the differentiability of 
+		 the partial derivatives of <m>f</m> of order  <m>k-1</m> at <m>\bx</m>.
 		 </p>
 		 <p> <m>T_{k}(f,\bx)(\bh)</m> is a polynomial in <m>\bh</m> of degree at most <m>k</m>.
 		 There are contexts where one works with a function <m>f</m> with the property that at some
@@ -7920,8 +7951,8 @@ The condition in <xref ref="thm-uniformconvint"/> requires that <m>[a, b]</m> be
 over <m>x\in [a, b]</m> as <m>n\to \infty</m>. Since the mean value theorem gives
 us <m>\frac{\phi(x, t+h_{n})-\phi(x, t)}{h_{n}}=D_{t}\phi(x, t+\theta h_{n})</m> for some
 <m>0 &lt; \theta &lt; 1</m> depending on <m>x, t, h_{n}</m>, a sufficient condition for this
-uniform convergence is the following condition: For any <m>\epsilon >0</m>
-there exists a <m>\delta>0</m> such that for all <m>x\in [a, b], s \in (t-\delta, t+\delta)</m>
+uniform convergence is the following condition: For any <m>\epsilon &gt; 0</m>
+there exists a <m>\delta&gt; 0</m> such that for all <m>x\in [a, b], s \in (t-\delta, t+\delta)</m>
 <me>
 |D_{t}\phi(x, s)- D_{t}\phi(x, t)| &lt; \epsilon.
 </me>
@@ -7934,7 +7965,7 @@ there exists a <m>\delta>0</m> such that for all <m>x\in [a, b], s \in (t-\delta
 <p>The integrand <m>f(x, t)=\frac{t^{2}x}{(t+x)^{3}}</m> is continuously 
 differentiable in the first quadrant. For any <m>0 &lt; x \le 1</m>, <m>f(x, t)\to 0</m> as
 <m>t\to 0+</m>, so we may extend <m>f(x, 0)=0</m>
-to make the resulting function  continuous for <m>x>0, t\ge 0</m> 
+to make the resulting function  continuous for <m>x&gt; 0, t\ge 0</m> 
 (is it continuous at <m>(x ,t)=(0, 0)</m>?). We can consider either <m>\frac{f(x, t)-f(x, 0)}{t}</m> as <m>t\to 0+</m>, or the limit of <m>D_{t}f(x, t)=\frac{2tx (t+x)-3t^{2}x}{(t+x)^{4}}</m>
 as <m>t\to 0+</m>. </p>
 <p>In the particular example here,
@@ -7942,7 +7973,7 @@ as <m>t\to 0+</m>. </p>
 \int_{0}^{1} \frac{f(x, t)-f(x, 0)}{t} \, dx = \int_{0}^{1} \frac{t x}{(t+x)^{3}}\, dx
 =\int_{0}^{1/t}\frac{y}{(1+y)^{3}}\, dy
 </me>
-which tends to <m>\int_{0}^{\infty}\frac{y}{(1+y)^{3}}\, dy>0</m> as <m>t\to 0+</m>.
+which tends to <m>\int_{0}^{\infty}\frac{y}{(1+y)^{3}}\, dy&gt; 0</m> as <m>t\to 0+</m>.
 On the other hand, <m> \frac{f(x, t)-f(x, 0)}{t} \to 0</m> for every <m>0 &lt; x \le 1</m>
 as <m>t\to 0+</m>. It is instructive to examine how the uniform integrability has failed here.
 </p>
@@ -7951,7 +7982,7 @@ as <m>t\to 0+</m>. It is instructive to examine how the uniform integrability ha
 \lim_{n\to \infty} \int_{0}^{1}\frac{n^{2} x}{(1+nx)^{3}}\, dx=
 \lim_{n\to \infty} \int_{0}^{1}\frac{\frac 1n x}{(\frac 1n + x)^{2}}\, dx.
 </me>
-We simply replace <m>\frac 1n</m> by <m>t>0</m> to get this example.
+We simply replace <m>\frac 1n</m> by <m>t&gt; 0</m> to get this example.
 </p>
 </example>
 <p>When the interval of integration is unbounded, even if we can make 
@@ -8014,7 +8045,7 @@ We also have
 <me> \left| \int_L^{\infty}   D_t f(x,t) \, dx \right| &lt; \epsilon/4.</me>
 For <m> \left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right|</m>, 
 we apply our earlier argument
-to find a <m>\delta >0</m> such that when <m>0 &lt; |h| &lt; \delta</m>, we have
+to find a <m>\delta &gt; 0</m> such that when <m>0 &lt; |h| &lt; \delta</m>, we have
 <me>
 \left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right| &lt; \epsilon/2.
 </me>
@@ -8026,9 +8057,9 @@ This concludes our proof.</p>
 <me>
 u(s,t)=\int_{\mathbb R} \frac {t \, u(x,0)}{(x-s)^2 + t^2} dx
 </me>
-on  the upper half plane <m>\left\{(s,t): t>0\right\}</m>, where <m>u(x,0)</m> is a given bounded function.
+on  the upper half plane <m>\left\{(s,t): t&gt; 0\right\}</m>, where <m>u(x,0)</m> is a given bounded function.
 </p>
-<p> To consider the differentiability of <m>u(s, t)</m> for <m>(s,t)</m> near <m>(s_0,t_0)</m> with <m>t_0>0</m>,  
+<p> To consider the differentiability of <m>u(s, t)</m> for <m>(s,t)</m> near <m>(s_0,t_0)</m> with <m>t_0&gt; 0</m>,  
 note that the integrand <m>f(x,s,t)=  \frac {t \, u(x,0)}{(x-s)^2 + t^2}</m>
 is continuous for <m>(x,s,t) \in \mathbb R \times D_{r}(s_0,t_0)</m>, where <m>D_{r}(s_0,t_0)</m> is the disk of radius <m>r</m> centered at <m>(s_0,t_0)</m> with <m>0 &lt; r &lt; t_0/2</m>, 
 so that when <m>(s,t)\in D_{r}(s_0,t_0)</m>,
@@ -8036,7 +8067,7 @@ we have <m>t>t_0/2</m>; <m>f(x,s,t)</m> is also differentiable in <m>(s,t)</m> f
 </p>
 <p>To verify the uniform convergence of the improper integral
 <m>\int_{\mathbb R} f_s(x,s,t) \, dx</m>, 
-we need to start with <m>\epsilon >0</m>, and look for <m>L>0</m> such that for any 
+we need to start with <m>\epsilon &gt; 0</m>, and look for <m>L&gt; 0</m> such that for any 
 <m>N>M>L</m>,
 <me>
 \left| \int_{N>|x|>M} f_s(x,s,t) \, dx \right| &lt; \epsilon\quad \text{for all  } (s,t)\in D_{r}(s_0,t_0).
@@ -8074,7 +8105,7 @@ there will be difficulty to verify the uniform integrability if we allow <m>t\to
 <p> 
 <ul>
 <li>Check whether <m>\int_{\mathbb R} D_t f(x,t)\, dx</m> satisfies the 
-uniform convergence criterion near <m>t>0</m> and <m>t=0</m>, where
+uniform convergence criterion near <m>t&gt; 0</m> and <m>t=0</m>, where
 <m>f(x, t)</m> is the integrand.</li>
 <li>Determine whether <m>F'(0)=\int_{\mathbb R} D_t f(x,0)\, dx</m>.</li>
 </ul>
@@ -8439,8 +8470,8 @@ Let <m>f(\mathbf x) </m> be a convex function defined
     \mathbf v \cdot (\mathbf x- \mathbf x_{0})\ge 0 \text{ for all } \mathbf x\in K,
     </me>
     which would force <m> \mathbf v=\mathbf 0</m>.  </p>
-    <p> Next we claim  that <m>c>0</m>. This is because <m>(\mathbf x_{0}, f(\mathbf x_{0})+t)
-    \in G_{f}</m> for any <m>t>0</m>, and the above inequality then forces <m>c>0</m>.
+    <p> Next we claim  that <m>c&gt; 0</m>. This is because <m>(\mathbf x_{0}, f(\mathbf x_{0})+t)
+    \in G_{f}</m> for any <m>t&gt; 0</m>, and the above inequality then forces <m>c&gt; 0</m>.
     Now it follows that for any <m>\mathbf x\in K</m>, applying the above inequality for
     <m>y=f(\mathbf x)</m> implies that
     <me>
@@ -8509,7 +8540,7 @@ Let <m>f(\mathbf x) </m> be a convex function defined
 
     
     <p>For the second item, note that for any <m>(u, v)</m> in the rectangle 
-    <m>[a^2, A^2]\times[b^2, B^2]</m>, there exists a unique <m>s>0</m>,
+    <m>[a^2, A^2]\times[b^2, B^2]</m>, there exists a unique <m>s&gt; 0</m>,
     such that <m>s (u, v)</m> lies on the diagonal  from <m>(a^2, B^2)</m> to 
     <m>(A^2, b^2)</m>, which implies the existence of a unique <m>0\le t \le 1</m>
     such that
@@ -8557,7 +8588,7 @@ Let <m>f(\mathbf x) </m> be a convex function defined
 <ol marker="(a).">
 <li>Prove that there exists some <m>\lambda \gt 0</m> such
 that <m>\Vert A\bx \Vert \ge \lambda \Vert\bx \Vert</m> for all <m>\bx\in \bbR^{n}</m>.</li>
-<li> Prove that there exists some <m>\delta >0</m> such that any <m>m\times n</m> matrix
+<li> Prove that there exists some <m>\delta &gt; 0</m> such that any <m>m\times n</m> matrix
 <m>B</m> satisfying <m>\Vert B-A\Vert \lt \delta</m> also has rank <m>n</m>.
 </li>
 </ol>
@@ -8571,10 +8602,10 @@ and takes values in <m>\bbR^{m}</m> with <m>m\ge n</m>, and that <m>D\bff (\ba)<
 has rank <m>n</m>. 
 <ol marker="(a).">
 <li> Prove that there exist
-some <m>r >0</m> and <m>\lambda > 0</m> such that 
+some <m>r &gt; 0</m> and <m>\lambda > 0</m> such that 
 <m>\Vert \bff (\bx) -\bff (\ba)\Vert \ge \lambda \Vert \bx -\ba \Vert </m> for all <m>\bx\in \bbR^{n}</m>
 such that <m>\Vert \bx -\ba \Vert \le r</m>.</li>
-<li> <p>Prove that there exists some <m>\delta >0</m> such that for all <m>\by \in B(\bff(\ba), \delta)</m>,
+<li> <p>Prove that there exists some <m>\delta &gt; 0</m> such that for all <m>\by \in B(\bff(\ba), \delta)</m>,
 the open ball of radius <m>\delta</m> centered at <m>\bff(\ba)</m>, 
 <me>
 \min_{\bx\in \overline{B(\ba, r)}} \Vert \bff (\bx) - \by \Vert
@@ -8590,10 +8621,10 @@ above statement shows that <m>\bff(\bx^{*})</m> is closest to <m>\by</m> among
 all tangents to the image of <m>\bff</m> at <m>\bff(\bx^{*})</m>.</p>
 </li>
 <li>In the set up above, assume furthermore that <m>D\bff(\bx)</m> is continuous in <m>\bx</m>, then prove that 
-<m>r>0</m>  can be adjusted so that <m>D\bff(\bx)</m> has rank <m>n</m> for all
+<m>r&gt; 0</m>  can be adjusted so that <m>D\bff(\bx)</m> has rank <m>n</m> for all
 <m>\bx \in B(\ba, r)</m>. Assume in addition
 that <m>m=n</m>. Prove that <m>\bff (\bx)=\by</m> in the above and 
-<m>r>0</m> above can be adjusted so that such an <m>\bx</m> is unique in <m>B(\ba, r)</m>.
+<m>r&gt; 0</m> above can be adjusted so that such an <m>\bx</m> is unique in <m>B(\ba, r)</m>.
 </li>
 </ol>
 </p>
@@ -8692,7 +8723,7 @@ in Analysis I</q> </p>
   a rectangular box and extend the integrand to be <m>0</m> in the complement. This would 
   require accounting for the contributions to the upper and lower integrals
   from  those rectangular cells in the partition of the enclosing rectangular box that "<em>straddle</em>" between
-  the domain and its complement. This is not too difficult to address, but one does need
+  the domain and its complement. These cells have non-empty intersections with the boundary of the domain of integration. This is not too difficult to address, but one does need
   to control the <term>measure</term> of the boundary of the domain of integration.</p></li>
   <li><p>In any integration theory one expects the integral <m>\int_{A}f</m> to be linear in the integrand
   <m>f</m>, namely, for any integrable <m>f, g</m>, and constants <m>a, b</m>,
@@ -8701,7 +8732,7 @@ in Analysis I</q> </p>
   </me>
   It is also natural to expect that when <m>A</m> can be decomposed as 
   a non-overlapping union of two subsets <m>A_{1}\cup A_{2}</m>,
-  <me>\int_{A}f =\int_{A_{1}}f + \int_{A_{2}}f</me>.
+  <me>\int_{A}f =\int_{A_{1}}f + \int_{A_{2}}f.</me>
   One also hopes that the converse holds: if the terms on the right hand side are well defined, then the left
   hand side should be well defined and equals the right hand side.</p>
   <p>In one dimension this is certainly true when <m>A_{1}, A_{2}</m> are intervals. But
@@ -8982,7 +9013,7 @@ of variables in multiple integrals becomes crucial.</li>
 		</me>
 		</p>
 		<p>
-		For any <m>\epsilon>0</m>, first find a partition <m>\cP_{2}</m> of <m>R</m> such that
+		For any <m>\epsilon&gt; 0</m>, first find a partition <m>\cP_{2}</m> of <m>R</m> such that
 		<me>
 		\upint_{R} \, f \le U(f, \cP_{2}) \le \upint_{R} \, f + \epsilon.
 		</me>
@@ -9014,7 +9045,7 @@ of variables in multiple integrals becomes crucial.</li>
 		 <me>
 		 \vert U(f,\cP)- U(f, \cP^{*})\vert \le 2 N  \max_{R}|f| (\lambda(\cP))^{n}.
 		 </me>
-		 It now follows that there exists some <m>\delta >0</m> such that whenever
+		 It now follows that there exists some <m>\delta &gt; 0</m> such that whenever
 		 <m>\lambda(\cP) &lt; \delta</m> we have
 		 <me>
 		 \vert U(f,\cP)- U(f, \cP^{*})\vert &lt; \epsilon  \text{ so }  U(f,\cP) &lt; \upint_{R} \, f + 2\epsilon,
@@ -9030,8 +9061,8 @@ of variables in multiple integrals becomes crucial.</li>
 		<exercise> <p> Suppose that <m>f, g</m> are bounded functions on the rectangle <m>R</m>. Show
 		that
 		<me>
-		L(f,\cP)+L(g, \cP)\le L(f+g, \cP) \text{ and } U(f+g, \cP)\le U(f, \cP) +U(g, \cP)
-		</me>.
+		L(f,\cP)+L(g, \cP)\le L(f+g, \cP) \text{ and } U(f+g, \cP)\le U(f, \cP) +U(g, \cP).
+		</me>
 		</p>
 		</exercise>
 					
@@ -9045,8 +9076,8 @@ of variables in multiple integrals becomes crucial.</li>
 						on a rectangle <m>R</m> is called <term>Riemann integrable</term>,
 						if there exists a real number <m>S</m> such that
 						<m>\lim_{\lambda(P)\to 0} R(f, \cP, \{\bx_{\alpha}\})=S</m>
-						in the sense that for any <m>\epsilon >0</m>, there exists some
-						<m>\delta >0</m> that
+						in the sense that for any <m>\epsilon &gt; 0</m>, there exists some
+						<m>\delta &gt; 0</m> that
 						<me>
 						\vert R(f, \cP, \{\bx_{\alpha}\}) -S\vert &lt; \epsilon
 						</me>
@@ -9075,8 +9106,8 @@ of variables in multiple integrals becomes crucial.</li>
 							</statement>
 							<proof>
 								<p>Let <m>S_{1}= \int_{R} f_{1}</m> and
-								<m>S_{2}= \int_{R} f_{2}</m>. Then for any <m>\epsilon >0</m>,
-								there exists <m>\delta>0</m> such that for any 
+								<m>S_{2}= \int_{R} f_{2}</m>. Then for any <m>\epsilon &gt; 0</m>,
+								there exists <m>\delta&gt; 0</m> such that for any 
 								partition <m>\cP</m> of <m>R</m>, whenever 
 								<m>\lambda (\cP) &lt; \delta</m>, we have
 								<md>
@@ -9117,8 +9148,8 @@ of variables in multiple integrals becomes crucial.</li>
 							 <xref ref="eqn-Darboux"/> holds. 
 			Call the value on both sides <m>\int_{R}\, f</m>. 
 			Our proof in  <xref ref="propos-upperlower-int"/> essentially
-							carries over to show that, for any <m>\epsilon >0</m>, there 
-							exists some <m>\delta >0</m>, such that for any partition
+							carries over to show that, for any <m>\epsilon &gt; 0</m>, there 
+							exists some <m>\delta &gt; 0</m>, such that for any partition
 							<m>\cP</m> of <m>R</m> with <m>\lambda(\cP) &lt; \delta</m>, we 
 							have
 							<me>
@@ -9243,7 +9274,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 				</p> </statement>
 				<proof>
 				<p> For any real number <m>a</m>, if <m>\bx_{0}\in \{\bx: 	\osc(f)(\bx) &lt; a\}</m>,
-				then there exists some <m>r>0</m> such that
+				then there exists some <m>r&gt; 0</m> such that
 				<m> \osc(f, B(\bx_{0}, r)) &lt; a</m>. For any <m>\bx \in B(\bx_{0}, r)</m>,
 				we observe that <m>\osc(f)(\bx)\le \osc(f, B(\bx_{0}, r)) &lt; a</m>. Thus
 				<m>B(\bx_{0}, r) \subset \{\bx: 	\osc(f)(\bx) &lt; a\}</m>, proving that the latter is open.
@@ -9263,7 +9294,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						<p>A bounded real-valued function <m>f</m> defined on the
 						rectangle <m>R</m> is Riemann integrable iff 
 						<men xml:id="eqn-int-osc" label="eqn-int-osc">
-						\forall \epsilon >0, \exists  \text{ a partition }
+						\forall \epsilon &gt; 0, \exists  \text{ a partition }
 						\cP:=\{R_{\alpha}\} \text{ s.t. } 
 						\sum_{\alpha} \osc(f,R_{\alpha})\vert R_{\alpha} \vert &lt; \epsilon.
 						</men> </p>
@@ -9273,7 +9304,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 					</statement>
 					<proof>
 						<p>Suppose that <m>f</m> is Riemann integrable on <m>R</m> and that
-						<m>\epsilon>0</m> is given. Our proof of <xref ref="propos-upperlower-int"/> gives
+						<m>\epsilon&gt; 0</m> is given. Our proof of <xref ref="propos-upperlower-int"/> gives
 						us a partition <m>\cP:=\{R_{\alpha}\}</m> such that
 						<me>
 						\int_{R}\, f -\frac{\epsilon}{2} &lt; L(f, \cP)\le \int_{R}\, f \le 
@@ -9290,14 +9321,14 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						<me>
 						0\le \upint_{R}\, f  -\lowint_{\;R} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
 						</me>
-						Since <m>\epsilon >0</m> is arbitrary, it follows that
+						Since <m>\epsilon &gt; 0</m> is arbitrary, it follows that
 						<m> \upint_{R}\, f -\lowint_{\;R} \, f=0</m>,  and  
 						<m>f</m> is Riemann integrable on <m>R</m>.
 						</p>
 						<p>Finally, suppose that <m>f</m> is continuous on the closed rectangle
 						<m>R</m>, then it is uniformly continuous on 
-						<m>R</m>. For any given <m>\epsilon >0</m>, there exists
-						<m>\delta >0</m> such that for any partition <m>\cP:=\{R_{\alpha}\}</m>
+						<m>R</m>. For any given <m>\epsilon &gt; 0</m>, there exists
+						<m>\delta &gt; 0</m> such that for any partition <m>\cP:=\{R_{\alpha}\}</m>
 						of <m>R</m> with <m>\lambda (P) &lt; \delta</m>, we have
 						<m>\osc(f, R_{\alpha}) &lt; \epsilon/\vert R\vert</m> for all 
 						<m>R_{\alpha} \in \cP</m>. It then follows that
@@ -9317,8 +9348,8 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						<m>\cP:=\{R_{\alpha}\}</m>
 				of <m>R</m> such that the sum of volume of those rectangles <m>R_{\alpha}</m>,
 				for which <m>\osc(f, R_{\alpha})\ge \epsilon/(2\vert R\vert)</m>, can be made smaller
-				than <m>\epsilon/(2 \osc(f, R))</m> ,
-				as the factors <m>(f, R_{\alpha})</m> have a uniform upper bound <m>\osc(f, R)</m>
+				than <m>\epsilon/(2\cdot \osc(f, R))</m> ,
+				as the factors <m>\osc (f, R_{\alpha})</m> have a uniform upper bound <m>\osc(f, R)</m>
 				for a given bounded function <m>f</m> on <m>R</m>.
 				We will exploit some properties of <m>\osc(f)(\bx)</m> for this.
 				</p>
@@ -9338,8 +9369,8 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
    <me>
    f(x, y)=\begin{cases} \frac 1q \amp x \text{ rational and $y=\frac pq$ with $p, q$ co-prime;} \\
    0 \amp \text{otherwise}
-   \end{cases}
-   </me>.
+   \end{cases}.
+   </me>
    Show that <m>f(x, y)</m> is Riemann integrable on <m>[0, 1]\times [0, 1]</m> and
    <m>\int_{[0, 1]\times [0, 1]} \, f(x, y)\,  =0</m>.</p>
    </exercise>
@@ -9351,7 +9382,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 				<idx>Set of content <m>0</m>, set of measure <m>0</m></idx>
 								<statement>
 								<p> A set <m>S\subset \bbR^{n}</m> is said to have 
-								content <m>0</m>, if for any <m>\epsilon >0</m>, there exists
+								content <m>0</m>, if for any <m>\epsilon &gt; 0</m>, there exists
 								a <em>finite</em> cover <m>\{R_{i}\} </m> 
 								of <m>S</m> by rectangles such that
 								<me>
@@ -9359,7 +9390,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 								</me>
 								</p>
 								<p>A set <m>S\subset \bbR^{n}</m> is said to have 
-								measure <m>0</m>, if for any <m>\epsilon >0</m>, there exists
+								measure <m>0</m>, if for any <m>\epsilon &gt; 0</m>, there exists
 								an <em>at most countable</em> cover <m>\{R_{i}\} </m> 
 								of <m>S</m> by rectangles such that
 								<me>
@@ -9394,7 +9425,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 		<proof>
 		<p>The first and second properties are obvious. For the third one, suppose
 		<m>S=\cup_{i}S_{i}</m>, where each <m>S_{i}</m> is a set of measure <m>0</m>.
-		For any <m>\epsilon>0</m>, there exists an at most countable  cover 
+		For any <m>\epsilon&gt; 0</m>, there exists an at most countable  cover 
 		<m>\{R_{i\,j}\}_{j=1}^{N_{i}}</m> (<m>N_{i}</m> could be <m>\infty</m>)
 		of <m>S_{i}</m> such that <m>\sum_{j=1}^{N_{i}}\vert R_{i\,j}\vert &lt; \frac{\epsilon}{2^{i}}</m>.
 		Then <m>\{R_{i\,j}: i\in \bbN, 1\le j \le N_{i}\}</m> is an at most countable cover of
@@ -9406,7 +9437,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 		</p>
 		<p>The fourth property is a direct consequence of the third property.
 		For the last property, suppose <m>S</m> is a compact set of measure <m>0</m>.
-		For <m>\epsilon>0</m> we can choose a cover of <m>S</m> by  <em>open</em>
+		For <m>\epsilon&gt; 0</m> we can choose a cover of <m>S</m> by  <em>open</em>
 		rectangles <m>\{R_{i}\} </m> such that 
 		<m>\sum_{i}\vert R_{i}\vert &lt; \epsilon</m>. Using the compactness of <m>S</m>, we can
 		then select a finite sub cover which satisfies the desired property.
@@ -9421,16 +9452,16 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 								the following
 								</p>
 								<p><alert>Observation</alert>: If <m>S</m> has content <m>0</m>,
-								then for any <m>\epsilon >0</m>, there exists a partition <m>\cP</m>
+								then for any <m>\epsilon &gt; 0</m>, there exists a partition <m>\cP</m>
 								of a rectangle containing <m>S</m> such that
 								<men xml:id="content0cover">
 								\sum_{R_{\alpha}\in \cP, R\cap S \ne \emptyset} |R_{\alpha}| \lt \epsilon.
 								</men>
 								</p>
-								<p>This can be seen by first finding an open cover
+								<p>This can be seen by first finding a finite open cover
 								<m>\{ U_{\beta}\}</m> of the closure <m>\bar S</m> of <m>S</m>
 								such that <m>\sum_{\beta} |U_{\beta}| \lt \epsilon</m>. Then
-								for any <m>\bx \in \bar S</m>, there exists some <m>r_{\bx}>0</m>
+								for any <m>\bx \in \bar S</m>, there exists some <m>r_{\bx}&gt; 0</m>
 								such that the open hypercube <m>Q(\bx, 4 r_{\bx})</m>
 								with side lengths <m>4 r_{\bx}</m>
 								and centered at <m>\bx</m> is contained in 
@@ -9438,7 +9469,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 						<m>\{ Q(\bx,  r_{\bx}): \bx \in \bar S\}</m> of <m>\bar S</m> and
 						using the compactness of  <m>\bar S</m>, we find a finite cover 
 						<m>\{ Q(\bx_{i},  r_{\bx_{i}}):  1\le i \le N\}</m>. Let 
-						<m>\delta =\min\{r_{\bx_{i}}:  1\le i \le N\}</m>. Then <m>\delta >0</m> and
+						<m>\delta =\min\{r_{\bx_{i}}:  1\le i \le N\}</m>. Then <m>\delta &gt; 0</m> and
 						for any partition <m>\cP</m> of a rectangle  <m>R</m>
 						containing <m>\bar S</m> such that
 						<m>\lambda (\cP) \lt \delta</m>, if any rectangle  <m>R_{\alpha}</m>
@@ -9514,7 +9545,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 							For each <m>k\in \bbN</m>, we will prove that
 							<m>D_{k}:=\{\by: \osc(f)(\by)\ge \frac 1k\}</m> is a set of
 							content <m>0</m>. </p>
-							<p>Given any <m>\epsilon >0</m>. There exists a partition
+							<p>Given any <m>\epsilon &gt; 0</m>. There exists a partition
 							<m>\cP=\{R_{\alpha}\}</m> of <m>R</m> such that
 							<me>
 							\sum_{\alpha} \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
@@ -9554,7 +9585,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 							<m>\frac 1k \le \osc(f)(\bx)\le \osc(f, R_{\alpha}) &lt; \frac{1}{2k}</m>,
 							which would be a contradiction. So <m>\bx</m> can only be
 							on the boundary of one or more <m>R_{\alpha} \in \cS_{k}</m>.
-							We can choose <m>r>0</m> small enough such that
+							We can choose <m>r&gt; 0</m> small enough such that
 							any <m>\by\in B(\bx, r)</m> and <m>\bx</m> will be in one such
 							common rectangle. Therefore, 
 							<m>\vert f(\by)-f(\bx)\vert &lt; \frac{1}{2k}</m>. This would lead to
@@ -9628,7 +9659,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     <proof> <p> The key property used here is the uniform continuity of <m>f</m> on <m>R</m>:
     both sides of <xref ref= "eq-fubini-y"/> and <xref ref="eq-fubini-x"/> can be approximated by
     any Riemann sum with respect to a partition whose size is sufficiently small. 
-    More specifically, for any <m>\epsilon >0</m>, there exists <m>\delta >0</m> such that
+    More specifically, for any <m>\epsilon &gt; 0</m>, there exists <m>\delta &gt; 0</m> such that
     for any rectangle <m>S_{1}</m> of <m>R_{1}</m> and <m>S_{2}</m> of <m>R_{2}</m>
     whose side length is less than <m>\delta</m>, we have
     <me>
@@ -9700,7 +9731,7 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
     \int_{R_{1}\times R_{2}} f(\bx, \by)\, dA
       \right\vert \le  2 \epsilon |R_{1}| |R_{2}|.
       </men>
-      Since <m>\epsilon >0 </m> is arbitrary, it follows from <xref ref="eq-2intseq"/> that
+      Since <m>\epsilon &gt; 0 </m> is arbitrary, it follows from <xref ref="eq-2intseq"/> that
       <xref ref="eq-fubini-y"/> holds. <xref ref="eq-fubini-x"/> can be proved in a similar way.
       <!--
     Since 
@@ -9973,7 +10004,7 @@ perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
  </li>
  <li>If <m>A, B</m> are Jordan-measurable and <m>A\cap B</m> has measure <m>0</m>, then
  <me>
- \int_{A\cup B}f= \int_{A}f +\int_{B}f</me>.
+ \int_{A\cup B}f= \int_{A}f +\int_{B}f.</me>
  </li>
  </ol>
 </p> 
@@ -9985,19 +10016,19 @@ perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
  so <m>A\subset \partial A</m>. Since <m>\partial A</m> has content <m>0</m>, it follows that 
  <m>\bar A=\partial A</m>
  has content <m>0</m>. Then, as in proving <xref ref="content0covers"/>
- and <xref ref="content0covers"/>, for any <m>\epsilon >0</m>, <m>\bar A</m> can be covered by a finite
+ and <xref ref="content0covers"/>, for any <m>\epsilon &gt; 0</m>, <m>\bar A</m> can be covered by a finite
  number of open rectangles <m>\{ S_{i} \}</m> such that <m>\sum_{i}|S_{i}| \lt \epsilon</m>, so
- there exists some <m>\delta >0</m> such that if any partition <m>\cP</m> satisfies 
+ there exists some <m>\delta &gt; 0</m> such that if any partition <m>\cP</m> satisfies 
  <m>\lambda (\cP) \lt \delta</m>, then any rectangle <m>R_{\alpha}</m> of <m>\cP</m> satisfying
  <m>R_{\alpha} \cap \bar A \ne \emptyset</m> must satisfy <m>R_{\alpha} \subset \cup_{i} S_{i}</m>.
  Therefore 
- <me> \sum_{R_{\alpha} \cap \bar A \ne \emptyset} |R_{\alpha} | \le \sum_{i}|S_{i}| \lt \epsilon</me>.
+ <me> \sum_{R_{\alpha} \cap \bar A \ne \emptyset} |R_{\alpha} | \le \sum_{i}|S_{i}| \lt \epsilon.</me>
  It further follows that
  <me> - C \epsilon \le 
  - C \sum_{R_{\alpha} \cap \bar A \ne \emptyset} |R_{\alpha} |\le 
  L(\chi_{A}f, \cP)\le U(\chi_{A}f, \cP) \le C \sum_{R_{\alpha} \cap \bar A \ne \emptyset} |R_{\alpha} |
  \lt C \epsilon</me>,
- where <m>C>0</m> is such that <m>| f(\bx) |\le C</m> for all <m>\bx \in A</m>. Since <m>\epsilon >0</m>
+ where <m>C&gt; 0</m> is such that <m>| f(\bx) |\le C</m> for all <m>\bx \in A</m>. Since <m>\epsilon &gt; 0</m>
  in these inequalities, they show that <m>\chi_{A}f</m> is Riemann integrable with
  <m>\int_{A}f=\int \chi_{A}f =0</m>.</p>
  </proof>
@@ -10010,8 +10041,8 @@ perhaps on a set of measure <m>0</m> of <m>R_{1}</m>.
     <p>If <m>h(\bx, y)</m> is a continuous function defined on <m>G_{A; f, g}</m>, then
     Fubini's Theorem applied to <m>h(\bx, y)\chi_{G_{A; f, g}}(\bx, y)</m> would take the form of
     <me>
-    \int_{G_{A; f, g}} h(\bx, y) = \int_{A} \left(\int_{f(\bx)}^{g(\bx)} h(\bx, y)\, dy \right) \, d\bx
-    </me>.
+    \int_{G_{A; f, g}} h(\bx, y) = \int_{A} \left(\int_{f(\bx)}^{g(\bx)} h(\bx, y)\, dy \right) \, d\bx.
+    </me>
   </p>
     </remark>
  </section>
@@ -10026,7 +10057,7 @@ for the change of variables formula of integrals. The determinant
  columns are held fixed.
 </li>
 <li> If <m>B</m> is obtained from <m>A</m> by interchanging two columns, then
-<me>\det B=-\det A</me>.
+<me>\det B=-\det A.</me>
 </li>
 <li> If <m>A</m> has two equal columns, then <m>\det A=0</m>.</li>
 <li>  If <m>B</m> is obtained from <m>A</m> by
@@ -10121,7 +10152,7 @@ which gives the volume  <m>v(T(E))</m> of <m>T(E)</m>, defined as <m>\int_{T(E)}
 <statement> <p> Suppose that <m>U</m> is an open set in <m>\bbR^{n}</m>
 and <m>T: U\mapsto \bbR^{n}</m> is continuously differentiable,
 <men xml:id="Tass">
-\text{ injective on } U \text{ and } |\det DT({\mathbf x})| >0 \text{ for all } {\mathbf x}\in U.
+\text{ injective on } U \text{ and } |\det DT({\mathbf x})| &gt; 0 \text{ for all } {\mathbf x}\in U.
 </men>
 Suppose that <m>E</m> is any
 Jordan-measurable subset of <m>U</m> such that its closure is in <m>U</m>. 
@@ -10187,7 +10218,7 @@ measure <m>0</m> and it suffices to prove that each <m>T(E_{i})</m> is a set of
 measure <m>0</m>.</p>
 
 <p>Since <m>DT</m> is continuous on <m>U</m> and <m>\bar V_{i}\subset U</m>
-is compact and convex, there exists a bound <m>C_{i}>0</m>
+is compact and convex, there exists a bound <m>C_{i}&gt; 0</m>
 such that <m>\Vert DT(\bx)\Vert \le C_{i}</m> for all <m>\bx \in \bar V_{i}</m>. This then implies
 that
 <me>
@@ -10199,7 +10230,7 @@ in a hypercube <m>Q'</m> of side length no
 more than <m>\sqrt n C_{i }l</m> and <m>|Q'|\le n^{n/2}C_{i}^{n} |Q|</m>.
 </p>
 
-<p>For  any <m>\epsilon >0</m>, let <m>\{Q_{\alpha}\}</m> be a finite or countable collection of 
+<p>For  any <m>\epsilon &gt; 0</m>, let <m>\{Q_{\alpha}\}</m> be a finite or countable collection of 
  hypercubes covering <m>E_{i}</m>
 such that <m>\sum_{\alpha} |Q_{\alpha}| \lt \epsilon</m>. We may assume that each 
 <m>Q_{\alpha}\subset U_{i}</m>---if some of the original <m>Q_{\alpha}</m> does not satisfy this, we
@@ -10213,7 +10244,7 @@ can simply replace it by <m>Q_{\alpha}\cap U_{i}</m>.
 </p>
 
 <p>This is seen by working with each individual <m>Q_{\alpha}</m>: suppose it is given by
-<m>[a_{1},b_{1}]\times\cdots \times [a_{n},b_{n}]</m>, then choose <m>\sigma >0</m> and <m>k\in \bbN</m> such that
+<m>[a_{1},b_{1}]\times\cdots \times [a_{n},b_{n}]</m>, then choose <m>\sigma &gt; 0</m> and <m>k\in \bbN</m> such that
 <me>
 (1+\sigma)^{n} \le 1+\epsilon; 2^{1-k} \lt (b_{j}-a_{j})\sigma \text{ for all $1\le j \le n$.}
 </me>
@@ -10235,7 +10266,7 @@ hypercubes of side length <m>2^{-k}</m> with non-overlapping  interior, therefor
 Collecting these hypercubes we get an at most countable collection 
 <m>\{ Q^*_{\beta}\subset V_{i}\}</m> such that 
 <me>\sum_{\beta} | Q^*_{\beta}| = \sum_{\alpha}|\hat Q_{\alpha}| \lt (1+\epsilon)\epsilon \lt 2\epsilon</me>,
-if we have chosen <m>1>\epsilon>0</m>.
+if we have chosen <m>1>\epsilon&gt; 0</m>.
 </p>
 <p>
 Back to our proof of item (iii)  in <xref ref="Tprop"/>. <m>T(E_{i})</m> is contained in
@@ -10243,7 +10274,7 @@ Back to our proof of item (iii)  in <xref ref="Tprop"/>. <m>T(E_{i})</m> is cont
 in a cube <m>Q'_{\beta}</m> whose volume is <m>\le n^{n/2}C_{i}^{n} |Q^{*}_{\beta}|</m>,
 therefore we have <m>\sum_{\beta}|Q'_{\beta}| \le 2n^{n/2}C_{i}^{n} \epsilon</m>.
 Since <m>n, C_{i}^{n}</m> are fixed here
-and <m>\epsilon >0</m> is arbitrary, this shows that <m>T(E_{i})</m> has measure <m>0</m>.
+and <m>\epsilon &gt; 0</m> is arbitrary, this shows that <m>T(E_{i})</m> has measure <m>0</m>.
 </p>
 
 </proof>
@@ -10261,8 +10292,8 @@ of non-overlapping  hypercubes of equal side lengths. </p>
 <proof> <p> (of <xref ref="volchange"/>) 
 The central idea in proving <xref ref="volchange"/> is that for any 
 open subset <m>U'\subset U</m> with a compact closure <m>\bar U' \subset U</m>
-and <m>\epsilon>0</m>,
-there exists a <m>\delta >0</m> such that for any 
+and <m>\epsilon&gt; 0</m>,
+there exists a <m>\delta &gt; 0</m> such that for any 
 sufficiently small cube <m>Q\subset U'</m> in the sense that its side length are equal and no more than
 <m>\delta</m>, we have
 <me>
@@ -10283,8 +10314,8 @@ the linear Taylor approximation of <m>T({\mathbf x})</m>:
 T({\mathbf x})=T(\bar{\mathbf x}) +  \left(DT(\bar{\mathbf x}) +C({\mathbf x},\bar {\mathbf x})\right)({\mathbf x}-\bar {\mathbf x}) \text{ for any $\bx, \bar \bx \in U'$,}
 </me>
 where <m>|C({\mathbf x},\bar {\mathbf x})|\le \epsilon</m> as long as <m>\Vert {\mathbf x}-\bar {\mathbf x} \Vert \le \delta</m> for some 
-<m>\delta >0</m> which depends
-on <m>T</m>, <m>U'</m> and <m>\epsilon >0</m>. 
+<m>\delta &gt; 0</m> which depends
+on <m>T</m>, <m>U'</m> and <m>\epsilon &gt; 0</m>. 
 For any cube  <m>Q</m> in <m>U'</m> with <m>\bar {\mathbf x}</m> as center and side lengths equal and
  no more than <m>\delta</m>,
 <me>
@@ -10324,7 +10355,7 @@ still approaches <m> 1</m> as <m>\epsilon \to 0 \; \mbox{---} </m> we will keep 
 in the estimate for such hypercubes.
 </p>
 <p>
-For any closed rectangle <m>S\subset U</m> and any <m>\epsilon>0</m>, 
+For any closed rectangle <m>S\subset U</m> and any <m>\epsilon&gt; 0</m>, 
 we can do fine enough partition <m>\cP=\{Q_{\alpha}\}</m> of
 <m>S</m> using hypercubes for which the above estimate holds for each
 <m>Q_{\alpha}</m>. Here we didn't use <xref ref="equal-length-cube"/> to produce sub rectangles <m>Q_{\alpha}</m> of
@@ -10333,15 +10364,15 @@ we can do fine enough partition <m>\cP=\{Q_{\alpha}\}</m> of
 <p> It now follows that 
 <me>
 v(T(S))=\sum_{\alpha}v(T(Q_{\alpha})) \le  (1+\Lambda \epsilon)^n \sum_{\alpha}
-\left|\det \left(DT(\bar {\mathbf x_{\alpha}})\right)\right|  v (Q_{\alpha})
-</me>.
+\left|\det \left(DT(\bar {\mathbf x_{\alpha}})\right)\right|  v (Q_{\alpha}).
+</me>
 The summation above is a Riemann sum for the integral of <m> 
 \left|\det \left(DT({\mathbf x})\right)\right|</m> on <m>S</m>, so as the partition size
 tends to <m>0</m>, we get
 <me>
 v(T(S)) \le (1 +\Lambda \epsilon)^{n}\int_{S} \left|\det \left(D T( {\mathbf x})\right)\right|\, d{\mathbf x}.
 </me>
-Since <m>\epsilon>0</m> is arbitrary, it follows that
+Since <m>\epsilon&gt; 0</m> is arbitrary, it follows that
 <me>
 v(T(S))\le \int_{S} \left|\det \left(DT( {\mathbf x})\right)\right|\, d{\mathbf x}.
 </me>
@@ -10385,7 +10416,7 @@ that
 </lemma>
 
 <corollary> <statement> <p> Suppose that   <m>E</m> in <m>\bbR^{n}</m> is a set of measure zero. For any
-<m>\epsilon >0</m>, there exists a 
+<m>\epsilon &gt; 0</m>, there exists a 
 countable union
 of non-overlapping  hypercubes of equal side lengths <m>Q_{j}</m> covering <m>E</m> such that 
 <m>\sum_{j} |Q_{j}| \lt \epsilon</m>.
@@ -10433,7 +10464,7 @@ injective on a portion of
 <m>\partial U</m> and <m>T(U)</m> is not quite the open disc
 <m> D_R=\left\{(x,y):x^2+y^2 &lt; R^2\right\}.</m> 
  </p>
- <p>However, for any <m>\epsilon >0</m> small,  our Theorem  is applicable on 
+ <p>However, for any <m>\epsilon &gt; 0</m> small,  our Theorem  is applicable on 
 <me> U_{\epsilon}= \left\{(r,\theta): \epsilon &lt; r&lt; R-\epsilon, \epsilon &lt;  \theta &lt; 2\pi -\epsilon\right\}.</me>
  Thus for any function <m>f(x,y)</m> which
 is continuous over <m>\bar D_R</m>, 
@@ -10462,7 +10493,7 @@ we obtain
 Just as in the one variable case, when <m>f</m> is not necessarily continuous (or bounded), 
 one can define improper integral. An examination of the limiting argument above shows that if 
 <m>f(x,y)</m> is known to be
-continuous away from the origin, and for some <m>C>0</m> and <m>1>\delta >0</m>, we have 
+continuous away from the origin, and for some <m>C&gt; 0</m> and <m>1>\delta &gt; 0</m>, we have 
 <me>
 |f(x,y)| \le C r^{-1-\delta},
 </me>
@@ -10507,7 +10538,7 @@ depending on the point over which to view the surface patch near the point as a 
 differentiable surface 
 (<m>m \lt n</m>), also called an <m>m</m>-dimensional 
 <term>differentiable manifold</term>, if for each point <m>p\in S</m>, there exists a neighborhood	
-<m>B(p, r)</m> (<m>r >0</m>)  of <m>p</m> in <m>\bbR^{n}</m> 
+<m>B(p, r)</m> (<m>r &gt; 0</m>)  of <m>p</m> in <m>\bbR^{n}</m> 
 and a differentiable function <m>G</m> defined 
 in a neighborhood <m>W</m> of the coordinate projection 
 <m>p'</m> of <m>p</m>
@@ -10516,8 +10547,8 @@ to some
 <m>p=(p_{1},\cdots, p_{n})</m>, <m>p'=(p_{1},\cdots, p_{m}, 0,\cdots, 0)</m>, and <m>W</m> is open
 considered as a subset of <m>\bbR^{m}</m>, such that
 <me>
-S\cap B(p, r)=\{(\bx, G(\bx)):\bx\in W \subset \bbR^{m}\}
-</me>.
+S\cap B(p, r)=\{(\bx, G(\bx)):\bx\in W \subset \bbR^{m}\}.
+</me>
 </p> 
 </statement>
 </definition>
@@ -10968,7 +10999,7 @@ for <m>0\le \theta_{1}, \theta_{2}\le \pi, 0\le \phi \le 2\pi</m>.</p></statemen
 are orthogonal to each other.</p> </hint>
 </exercise>
 
-<exercise><p> Let <m>r=r(z) >0</m> be continuously differentiable on <m>[a, b]</m>. Then it generates
+<exercise><p> Let <m>r=r(z) &gt; 0</m> be continuously differentiable on <m>[a, b]</m>. Then it generates
 a surface of revolution via the parametrization
 <me>
 (z, \theta)\mapsto (r(z)\cos\theta, r(z)\sin\theta, z) \in \bbR^{3}, a\le z \le b, 0\le \theta \le 2\pi.
@@ -11022,8 +11053,8 @@ As a result, the usual properties of integrals such as the linearity in the inte
 <m>S_{R}: x^{2}+y^{2}+z^{2}=R^{2}</m> in <m>\bbR^{3}</m>, using cylindrical representation,
 its integral on <m>S_{R}</m>, <m>\int_{S_{R}} f(x, y, z) dA</m> is given by
 <me>
-\int_{0}^{2\pi}\int_{-R}^{R} f(\sqrt{R^{2}-z^{2}} \cos\theta, \sqrt{R^{2}-z^{2}} \sin\theta, z) R \ dz\, d\theta
-</me>.
+\int_{0}^{2\pi}\int_{-R}^{R} f(\sqrt{R^{2}-z^{2}} \cos\theta, \sqrt{R^{2}-z^{2}} \sin\theta, z) R \ dz\, d\theta.
+</me>
 For example, 
 <me>
 \int_{S_{R}} x^{2} dA =\int_{0}^{2\pi}\int_{-R}^{R} (R^{2}-z^{2}) \cos^{2}\theta R \ dz\, d\theta.
@@ -11065,7 +11096,7 @@ as <m>D_{t}</m>.
 <li> Verify that <m>\sqrt{\det(g_{ij}(\bx', t))}=\vert \partial_{t} g(\bx', t)\vert</m>.</li>
 <li> Verify that 
 <me>\vert \partial_{t} g(\bx', t)\vert \Vert D f(\bx', g(\bx', t)) \Vert 
-=\sqrt{1+\sum_{i=1}^{n-1}\vert \partial_{i}g(\bx', t)\vert^{2}}</me>.</li>
+=\sqrt{1+\sum_{i=1}^{n-1}\vert \partial_{i}g(\bx', t)\vert^{2}}.</me></li>
 <li> Show that
 <md>
 <mrow>
@@ -11167,7 +11198,7 @@ where <m>\vec{n}(\bx)</m> is an appropriately chosen unit normal vector field to
 If we accept Stokes Theorem, it can be used to give some geometric interpretation for
 <m>\text{curl}\vec{X}</m>.  Fix some <m>\bx_{0}</m> and a plane <m>\Pi</m> containing
 <m>\bx_{0}</m> with a unit normal vector <m>\vec{n}</m>. Take <m>S</m> to be the
-disc in the plane <m>\Pi</m> of radius <m>\epsilon >0</m> centered at <m>\bx_{0}</m>
+disc in the plane <m>\Pi</m> of radius <m>\epsilon &gt; 0</m> centered at <m>\bx_{0}</m>
 and <m>\Gamma</m> to be the boundary of this disc. Then
 <me>
 \lim_{\epsilon \to 0} \frac{1}{\pi \epsilon^{2}} \int_{\Gamma} \vec{X}\cdot d\vec{r}=
@@ -11387,8 +11418,8 @@ of the plane
 <me>
    \begin{cases} x_{1} \hphantom{x_{2}}-a x_{3}-c x_{4} \amp =0 \\
    \hphantom{x_{2}} x_{2} -b x_{3} - d x_{4} \amp =0\\
-   \end{cases}
-   </me>.
+   \end{cases}.
+   </me>
    </p>
    </statement>
    <hint><p>  One could avoid finding explicitly an orthonormal basis for the plane by using
@@ -11487,8 +11518,8 @@ of the plane
   <me>
  ( \bu_{1}\wedge \bu_{2})\wedge \bu_{3}= \bu_{1}\wedge (\bu_{2}\wedge \bu_{3})
  =- \bu_{2}\wedge \bu_{1}\wedge \bu_{3}=-
-    \bu_{1}\wedge \bu_{3}\wedge \bu_{2}
-    </me>.
+    \bu_{1}\wedge \bu_{3}\wedge \bu_{2}.
+    </me>
     </p>
     
   <p>
@@ -11538,7 +11569,7 @@ of the plane
 	<statement> 
    <p>An inner product on a vector space <m>V</m> is a symmetric positive definite covariant tensor
    of order <m>2</m>, namely, a bilinear and symmetric function <m>g</m>
-   on  <m>V</m> such that <m>g({\mathbf x}, {\mathbf x})>0</m> 
+   on  <m>V</m> such that <m>g({\mathbf x}, {\mathbf x})&gt; 0</m> 
    unless <m>{\mathbf x}={\mathbf 0}</m>.  Such a <m>g</m> is also called a metric. 
    </p>
    		</statement>
@@ -12156,8 +12187,8 @@ df(P)({\mathbf v})=D_{{\mathbf v}}f(P) \quad \text{ for all $\bv \in {\mathbb R}
      <me>
      \frac{\partial (f\circ \vg)}{\partial u_{j}}(\bu)
      =\sum_{i=1}^{k} \frac{\partial v_{i}}{\partial u_{j}}
-   \frac{\partial (f\circ \vg^{\dagger})}{\partial v_{i}}(\bv)
-     </me>.
+   \frac{\partial (f\circ \vg^{\dagger})}{\partial v_{i}}(\bv).
+     </me>
      <m>(f\circ \vg)(\bu)</m> and <m>(f\circ \vg^{\dagger})(\bv)</m> are simply two different 
      coordinate representations of the same function <m>f</m>, so we have the following
      <men xml:id="eq-tangent">
@@ -12225,8 +12256,8 @@ Note that <xref ref="eq-tangent"/> is simply a form of the chain rule.
     In matrix notation, this transformation takes the form of
     <me>
      \begin{bmatrix} \xi_{1}(\bu)\\ \vdots \\ \xi_{k}(\bu)\end{bmatrix} =
-   \left[\frac{\partial v_{i}}{\partial u_{j}}\right]^{\rm T} \begin{bmatrix} \eta_{1}(\bv)\\ \vdots \\ \eta_{k}(\bv)\end{bmatrix}
-   </me>.
+   \left[\frac{\partial v_{i}}{\partial u_{j}}\right]^{\rm T} \begin{bmatrix} \eta_{1}(\bv)\\ \vdots \\ \eta_{k}(\bv)\end{bmatrix}.
+   </me>
 </p>
 <p> Treating <m>v_{i}</m> as a function of <m>\bu</m>, <xref ref="eq-differential2"/>
 is simply a case of <xref ref="eq-differential"/>. But we should read both sides of <xref ref="eq-differential2"/>
@@ -12400,7 +12431,7 @@ of covariant alternating tensors of order <m>m</m> of <m>S</m> at <m>\vg(\bu)</m
    in general. Instead,
    <me>
    \left(\frac{\partial f}{\partial x}\right)^{2}+\left(\frac{\partial f}{\partial y}\right)^{2}
-   = \left(\frac{\partial f}{\partial r}\right)^{2}+\frac{1}{r^{2}}\left(\frac{\partial f}{\partial \theta}\right)^{2}</me>.
+   = \left(\frac{\partial f}{\partial r}\right)^{2}+\frac{1}{r^{2}}\left(\frac{\partial f}{\partial \theta}\right)^{2}.</me>
    </p>
 
 </example>
@@ -12500,7 +12531,7 @@ as a system in the polar coordinate <m>(r, \theta)</m> of <m>(x, y)</m> and the 
    Thus <m>{\mathbf x}'(0)=F_{*}(\bu)</m>.
    In components we see
    <me>
-   x_{i}'(0)=\sum_{j=1}^{m} v_{j} \frac{\partial F_{i}}{\partial u_{j}}(P)=dF_{i}(P)(\bv)</me>.
+   x_{i}'(0)=\sum_{j=1}^{m} v_{j} \frac{\partial F_{i}}{\partial u_{j}}(P)=dF_{i}(P)(\bv).</me>
   This is a reason for using <m>dF</m> as a common  notation for <m>F_{*}</m>.
    Another way of writing this relation is to note that
    <md>
@@ -12517,8 +12548,8 @@ as a system in the polar coordinate <m>(r, \theta)</m> of <m>(x, y)</m> and the 
   <mrow>=\amp df (dF(\bv)),</mrow>
   </md>
   where <m>\bw=dF(\bv)</m>. 
-  Namely, <me>d(f\circ F)=df \circ dF \text{ and $D_{{\bv}} (f\circ F)=D_{dF(\bv)}f$}
-  </me>.
+  Namely, <me>d(f\circ F)=df \circ dF \text{ and $D_{{\bv}} (f\circ F)=D_{dF(\bv)}f$}.
+  </me>
   It is easier to understand this relation in terms of the following diagram.
   <me>
   d(f\circ F):  {\mathbb R}^{m}_{P} \xmapsto{dF}
@@ -12853,7 +12884,7 @@ assigning the components in the <m>i+1</m> through <m>k+1</m> position as
  <p>The <term>boundary</term> of 
  the singular <m>(k+1)</m>-cube  <m>c</m>
  is defined to be 
- <me>\partial c=\sum_{i=1}^{k+1}\sum_{s=0}^{1}(-1)^{i+s}c_{i, s}</me>.
+ <me>\partial c=\sum_{i=1}^{k+1}\sum_{s=0}^{1}(-1)^{i+s}c_{i, s}.</me>
  </p>
  <p>The boundary
  of a <m>k</m>-chain, <m>m_{1}c_{1}+\ldots+m_{r} c_{r}</m>, is defined as
@@ -12986,8 +13017,8 @@ It is now clear from the definition of <m>\partial c </m>  that
 
 <me>
 \int_{\partial c}\omega= \sum_{i=1}^{k+1}\sum_{s=0}^{1}(-1)^{i+s} \int_{I^{k}} c_{i, s}^{*} (\omega)
-=\int_{I^{k+1}} d c^{*}( \omega)= \int_{c} d\omega
-</me>.
+=\int_{I^{k+1}} d c^{*}( \omega)= \int_{c} d\omega.
+</me>
 </p>
  </proof> 
  </theorem>
@@ -13080,7 +13111,7 @@ then
 </me>
 according to the change of variables formula in integration, provided that
 <m> \frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
-\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}>0</m>. In other words, this integral 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}&gt; 0</m>. In other words, this integral 
 can be treated as an integral in the <m>y\mbox{--}z</m> coordinate plane. When the sign is not specified,
 the integral takes into account of the orientation of the projection, such as in the case
 that <m>\vg</m> is a parametrization for the round sphere that includes portions of both the upper
@@ -13108,7 +13139,7 @@ which results in
 <me>
 \int_{\vg}x\, dy\wedge dz=2 \int_{y^{2}+z^{2}\le 1, z\ge 0} \sqrt{1-y^{2}-z^{2}}\, dy dz,
 </me>
-provided the parametrization gives a positive Jacobian when <m>x >0</m> (which is
+provided the parametrization gives a positive Jacobian when <m>x &gt; 0</m> (which is
 the case if <m> D_{u}\vg\times D_{v}</m> points upward).
 </p>
 <p>
@@ -13160,9 +13191,9 @@ coordinate plane still applies.
 </p>
 </exercise>
 
-<exercise><p> Let <m>m</m> be an integer and <m>R >0</m>. Define
+<exercise><p> Let <m>m</m> be an integer and <m>R &gt; 0</m>. Define
 <m>c_{R,m}(t)=(R\cos(2\pi m t), R\sin (2\pi m t))</m> as a map <m>I^{1}\mapsto \bbR^{2}\setminus\{(0, 0)\}</m>.
-For any <m>r_{1}, r_{2}>0, r_{1}\ne r_{2}</m>, construct a map <m>c:I^{2}\mapsto \bbR^{2}\setminus\{(0, 0)\}</m> such that <m>c_{r_{2},m}-c_{r_{1},m}=\partial c</m> as a singular <m>2</m>-chain.
+For any <m>r_{1}, r_{2}&gt; 0, r_{1}\ne r_{2}</m>, construct a map <m>c:I^{2}\mapsto \bbR^{2}\setminus\{(0, 0)\}</m> such that <m>c_{r_{2},m}-c_{r_{1},m}=\partial c</m> as a singular <m>2</m>-chain.
 </p>
 </exercise>
 
@@ -13371,7 +13402,7 @@ for some <m>\lambda \in \bbR</m> and and <m>g:\bbR^{2}-\{\mathbf 0\}\mapsto \bbR
 c_{R,1}^{*}(\omega) = \lambda_{R} dt + d(g_{R}),
 </me>
 for some function <m>g_{R}(t)</m> satisfying <m>g_{R}(1)=g_{R}(0)</m>. Show that the
- number is independent of  <m>R>0</m>.
+ number is independent of  <m>R&gt; 0</m>.
 </p> 
 </hint>
 </exercise>
@@ -13389,7 +13420,7 @@ that
 <me>c^{*}(\omega)=\frac{c(u, v) \cdot \left(D_{u} c\times D_{v} c\right) }{|c(u, v)|^{3}}  du\wedge dv.</me>
 </li>
 <li> Suppose that <m>c\Big|_{I^{2}}</m> is injective and 
-<m>|D_{u} c\times D_{v} c|>0</m> so that <m>c(I^{2})</m> is a differentiable surface in 
+<m>|D_{u} c\times D_{v} c|&gt; 0</m> so that <m>c(I^{2})</m> is a differentiable surface in 
 <m> \bbR^{3}\setminus\{\mathbf 0\}</m>. Show that 
 <me>\int_{c(I^{2})} \frac{(x, y, z)\cdot \bn(x, y, z)}{(x^{2}+y^{2}
 +z^{2})^{3/2}}\, dA= \int_{I^{2}} c^{*}(\omega)</me>,

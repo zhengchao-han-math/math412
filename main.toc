@@ -1,0 +1,88 @@
+\hypertarget {Math412-Notes}{}
+\contentsline {chapter}{Preface}{iv}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Select Topics on Integration in One Variable}{1}{chapter.3}%
+\contentsline {section}{\numberline {1.1}A Brief Summary of Riemann-Stieltjes Integral}{1}{section.4}%
+\contentsline {subsection}{\numberline {1.1.1}Summary of Riemann-Stieltjes Integral}{2}{subsection.11}%
+\contentsline {section}{\numberline {1.2}The Completion of the Space of Continuous Functions under Integral Norms}{7}{section.66}%
+\contentsline {section}{\numberline {1.3}The Space of Riemann Integrable Functions}{19}{section.125}%
+\contentsline {section}{\numberline {1.4}Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions}{21}{section.146}%
+\contentsline {chapter}{\numberline {2}Sequences and Series of Functions}{26}{chapter.177}%
+\contentsline {section}{\numberline {2.1}Concept of Uniform Convergence}{26}{section.181}%
+\contentsline {section}{\numberline {2.2}Properties of A Uniformly Convergent Sequence of Functions}{28}{section.193}%
+\contentsline {section}{\numberline {2.3}An Extended Criterion for the Interchange of Integration and Limits of a Sequence of Functions}{32}{section.216}%
+\contentsline {section}{\numberline {2.4}Interchange of Differentiation and Limit of a Sequence of Functions}{35}{section.231}%
+\contentsline {section}{\numberline {2.5}Metrics on Function Spaces}{37}{section.241}%
+\contentsline {section}{\numberline {2.6}Equicontinuous Family of Functions}{37}{section.248}%
+\contentsline {section}{\numberline {2.7}Weierstrass Theorem}{40}{section.273}%
+\contentsline {section}{\numberline {2.8}Exercises}{41}{section.281}%
+\contentsline {chapter}{\numberline {3}Power Series}{44}{chapter.285}%
+\contentsline {section}{\numberline {3.1}Definition of a Power Series and Its Radius of Convergence}{44}{section.286}%
+\contentsline {section}{\numberline {3.2}Properties of a Convergent Power Series}{46}{section.310}%
+\contentsline {section}{\numberline {3.3}Exponential Functions}{51}{section.342}%
+\contentsline {section}{\numberline {3.4}The Trigonometric Functions}{52}{section.343}%
+\contentsline {section}{\numberline {3.5}Exercises}{53}{section.344}%
+\contentsline {chapter}{\numberline {4}Fourier Series}{54}{chapter.345}%
+\contentsline {section}{\numberline {4.1}General Orthogonal Expansion}{55}{section.348}%
+\contentsline {section}{\numberline {4.2}Convergence of the Trigonometric Fourier Series}{63}{section.413}%
+\contentsline {section}{\numberline {4.3}Term-wise Integration and Differentiation of Fourier Series}{68}{section.440}%
+\contentsline {chapter}{\numberline {5}Differential Calculus}{72}{chapter.468}%
+\contentsline {section}{\numberline {5.1}Continuity of a Function of Several Variables}{72}{section.469}%
+\contentsline {section}{\numberline {5.2}Linear Functions}{73}{section.478}%
+\contentsline {subsection}{\numberline {5.2.1}Definition of Linear Functions and Their Matrix Representation}{74}{subsection.479}%
+\contentsline {subsection}{\numberline {5.2.2}Operator Norm of a Linear Map}{76}{subsection.495}%
+\contentsline {subsection}{\numberline {5.2.3}Any Two Norms on a Finite Dimensional Vector Space Are Equivalent}{80}{subsection.515}%
+\contentsline {section}{\numberline {5.3}Differentiation}{80}{section.518}%
+\contentsline {subsection}{\numberline {5.3.1}Differentiability, Directional Derivative, and Partial Derivative}{81}{subsection.519}%
+\contentsline {subsection}{\numberline {5.3.2}Chain Rule}{85}{subsection.549}%
+\contentsline {subsection}{\numberline {5.3.3}A Differentiability Criterion}{88}{subsection.564}%
+\contentsline {section}{\numberline {5.4}Contraction Mapping Principle}{89}{section.571}%
+\contentsline {section}{\numberline {5.5}Inverse and Implicit Function Theorems}{91}{section.583}%
+\contentsline {subsection}{\numberline {5.5.1}Inverse Function Theorem}{91}{subsection.584}%
+\contentsline {subsection}{\numberline {5.5.2}Implicit Function Theorem}{94}{subsection.607}%
+\contentsline {section}{\numberline {5.6}Higher Order Derivatives and Taylor Expansion}{99}{section.634}%
+\contentsline {section}{\numberline {5.7}Differentiation of Integrals}{104}{section.657}%
+\contentsline {section}{\numberline {5.8}Convexity and Some Applications}{107}{section.667}%
+\contentsline {subsection}{\numberline {5.8.1}Convex sets vs Convex Functions}{107}{subsection.668}%
+\contentsline {subsection}{\numberline {5.8.2}Review of Properties of Univariate Convex Functions}{108}{subsection.673}%
+\contentsline {subsection}{\numberline {5.8.3}Some Properties of Convex Functions of Several Variables}{110}{subsection.683}%
+\contentsline {section}{\numberline {5.9}Exercises}{113}{section.700}%
+\contentsline {chapter}{\numberline {6}Integration in Several Variables}{115}{chapter.706}%
+\contentsline {section}{\numberline {6.1}Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle}{117}{section.715}%
+\contentsline {section}{\numberline {6.2}Further Riemann Integrability Criteria}{122}{section.750}%
+\contentsline {subsection}{\numberline {6.2.1}Riemann Integrability Criterion in terms of the Oscillation of the Integrand}{122}{subsection.751}%
+\contentsline {subsubsection}{Exercises}{124}{equation.763}%
+\contentsline {subsection}{\numberline {6.2.2}Sets of Content \(0\) and of Measure \(0\)}{124}{subsection.764}%
+\contentsline {subsubsection}{Exercises}{126}{section*.781}%
+\contentsline {subsection}{\numberline {6.2.3}Riemann Integrability in terms of the Set of Discontinuity of the Integrand}{126}{subsection.782}%
+\contentsline {subsubsection}{Exercises}{127}{section*.784}%
+\contentsline {section}{\numberline {6.3}Fubini's Theorem}{127}{section.785}%
+\contentsline {section}{\numberline {6.4}Integration on a Jordan Measurable Set}{131}{section.810}%
+\contentsline {section}{\numberline {6.5}Determinant}{132}{section.827}%
+\contentsline {section}{\numberline {6.6}Change of Variables in Multi-dimensional Integral}{134}{section.839}%
+\contentsline {section}{\numberline {6.7}A Brief Discussion on the Integration of Functions on a Surface}{139}{section.862}%
+\contentsline {subsection}{\numberline {6.7.1}Definition of an \(m\)-dimensional Differentiable Surface in \(\mathbb {R}^{n}\)}{139}{subsection.863}%
+\contentsline {subsection}{\numberline {6.7.2}Volume of the Image of a Unit Hypercube under a Linear Map}{140}{subsection.871}%
+\contentsline {subsubsection}{Exercises}{142}{section*.881}%
+\contentsline {subsection}{\numberline {6.7.3}Volume of an \(m\)-dimensional Differentiable Surface in \(\mathbb {R}^{n}\)}{142}{subsection.882}%
+\contentsline {subsubsection}{Exercises}{145}{section*.891}%
+\contentsline {subsection}{\numberline {6.7.4}The integral of a Function on an \(m\)-dimensional Differentiable Surface in \(\mathbb {R}^{n}\)}{146}{subsection.892}%
+\contentsline {subsubsection}{Exercises}{146}{section*.894}%
+\contentsline {chapter}{\numberline {7}Exterior Differential Calculus}{148}{chapter.898}%
+\contentsline {section}{\numberline {7.1}A Brief Review of the Notion of Curl and Divergence of a Vector Field}{148}{section.899}%
+\contentsline {section}{\numberline {7.2}Dual space, Tensor product, and Exterior Algebra}{152}{section.904}%
+\contentsline {subsection}{Exercises}{156}{equation.928}%
+\contentsline {section}{\numberline {7.3}Vector Fields and Differential Forms}{157}{section.929}%
+\contentsline {subsection}{\numberline {7.3.1}Definition and Basic Properties of Vector Fields and Differential One-Forms}{157}{subsection.930}%
+\contentsline {subsubsection}{Exercises}{164}{equation.950}%
+\contentsline {subsection}{\numberline {7.3.2}Tangent Map\slash {}Differential and its Pull-Back of a Differentiable Map}{164}{subsection.951}%
+\contentsline {subsubsection}{Exercises}{167}{section*.955}%
+\contentsline {section}{\numberline {7.4}Exterior Differential Operator \(d\) and Boundary Operator \(\partial \)}{167}{section.961}%
+\contentsline {subsection}{\numberline {7.4.1}Exterior Differential Operator}{167}{subsection.962}%
+\contentsline {subsubsection}{Exercises}{169}{Item.968}%
+\contentsline {subsection}{\numberline {7.4.2}The Boundary Operator, Singular Chain, and Stokes Theorem}{169}{subsection.971}%
+\contentsline {subsubsection}{Exercises}{175}{section*.981}%
+\contentsline {subsection}{\numberline {7.4.3}Closed and Exact Forms}{175}{subsection.982}%
+\contentsline {subsubsection}{Exercises}{177}{section*.991}%
+\contentsline {part}{Back Matter}{179}{section*.1001}%
+\contentsline {chapter}{References}{179}{chapter*.1002}%
+\contentsfinish 
