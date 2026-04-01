@@ -72,6 +72,7 @@
 \newcommand{\bbH}{\mathbb{H}}
 <!-- caligraphic-->
 \newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
 \newcommand{\cB}{\mathcal{B}} 
 \newcommand{\cC}{\mathcal{C}}
 \newcommand{\cF}{\mathcal{F}}
@@ -7862,13 +7863,13 @@ t^{k} +R_{k}(t)
 	</md>
 	satisfies
 		 <men xml:id="eq-taylor">
-		\Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
+		\left\lvert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \right\rvert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
 		 </men>
 		 Furthermore, under the assumption here, for any subdomain <m>U'</m> of <m>U</m> such
 		 that the closure of <m>U'</m> is compact and any <m>\epsilon &gt; 0</m>, there
 		 exists <m>\delta &gt; 0</m> such that
 		 <me>
-		 \Vert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \Vert \le \epsilon \Vert \bh \Vert^{k} \text{ for all $\bx\in U',
+		 \left\lvert f(\bx +\bh)- T_{k}(f,\bx)(\bh) \right\rvert \le \epsilon \Vert \bh \Vert^{k} \text{ for all $\bx\in U',
 		 \Vert \bh \Vert \lt \delta$.}
 		 </me>
 		</p> 
@@ -7886,7 +7887,7 @@ t^{k} +R_{k}(t)
 		 <m>\bx</m>, there exists a polynomial in <m>\bh</m> of degree at most <m>k</m>,
 		 <m>P_{k}(\bx;\bh)</m> such that
 		 <men xml:id="eq-ktaylor">
-		 \Vert f(\bx +\bh)-  P_{k}(\bx;\bh)\Vert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
+		 \left\lvert f(\bx +\bh)-  P_{k}(\bx;\bh) \right\rvert/\Vert \bh \Vert^{k} \to 0 \text{ as $\bh \to \mathbf 0$}.
 		 </men>
 		 When this holds, such a <m>P_{k}(\bx;\bh)</m> is unique and <m>f</m> is
 		 differentiable at <m>\bx</m> with <m>f(\bx)=P_{k}(\bx; \mathbf 0)</m>,
@@ -7917,12 +7918,12 @@ t^{k} +R_{k}(t)
  <exercise> <statement> <p>Prove <xref ref="eq-taylor"/> under the assumption that 
  all partial derivatives of <m>f</m> of order up to <m>k-1</m> are defined and continuous
 		 in a neighborhood of <m>\bx</m>, and all 
-		 all partial derivatives of <m>f</m> of order  <m>(k-1)</m> are differentiable at <m>\bx</m>.
+		   partial derivatives of <m>f</m> of order  <m>(k-1)</m> are differentiable at <m>\bx</m>.
 </p>
 </statement>
 <hint> <p> Use <xref ref="eq-remainder"/> with the integral remainder term at order <m>k-1</m> and
 use the differentiability of the order <m>(k-1)</m>  partial derivatives of <m>f</m> at <m>\bx</m>,
-which appear in <m>g^{k-1}(s)</m> in the integral remainder term. </p> 
+which appear in <m>g^{(k-1)}(s)</m> in the integral remainder term. </p> 
 </hint>
 </exercise>
 <exercise><p>Prove that, if <xref ref="eq-ktaylor"/> holds for some <m>P_{k}(\bx; \bh)</m>, then
@@ -7954,7 +7955,7 @@ us <m>\frac{\phi(x, t+h_{n})-\phi(x, t)}{h_{n}}=D_{t}\phi(x, t+\theta h_{n})</m>
 uniform convergence is the following condition: For any <m>\epsilon &gt; 0</m>
 there exists a <m>\delta&gt; 0</m> such that for all <m>x\in [a, b], s \in (t-\delta, t+\delta)</m>
 <me>
-|D_{t}\phi(x, s)- D_{t}\phi(x, t)| &lt; \epsilon.
+\left|D_{t}\phi(x, s)- D_{t}\phi(x, t)\right| &lt; \epsilon.
 </me>
 </p>
 
@@ -7986,7 +7987,7 @@ We simply replace <m>\frac 1n</m> by <m>t&gt; 0</m> to get this example.
 </p>
 </example>
 <p>When the interval of integration is unbounded, even if we can make 
-<m>|  \frac{\phi(x,t+h)-\phi(x,t)}{h} - \phi_t(x,t) |&lt; \epsilon</m>, 
+<m>\left|  \frac{\phi(x,t+h)-\phi(x,t)}{h} - \phi_t(x,t) \right|&lt; \epsilon</m>, 
 uniformly for all <m>x</m> in the interval of integration and <m>h</m> with <m>|h|&lt; \delta</m>,
 this may not guarantee
 that <m> \left| \int_a^b \left(  \frac{\phi(x,t+h)-\phi(x,t)}{h} - \phi_t(x,t) \right) dx \right|</m>
@@ -8001,7 +8002,7 @@ More specifically,  we assume that the improper integral <m>\int_a^{\infty} D_t 
 </p> 
 <blockquote><p>
 For any <m>\epsilon \gt 0</m>, there exists <m>L</m> such that  for any <m>N>M\ge L</m>, 
-<m> | \int_M^{N} D_t f(x,s)\,dx | &lt; \epsilon/4</m> for all <m>s\in I</m>.</p> 
+<m> \left| \int_M^{N} D_t f(x,s)\,dx \right| &lt; \epsilon/4</m> for all <m>s\in I</m>.</p> 
 </blockquote>
 <theorem>
 <statement><p> Suppose that there exists a neighborhood <m>I</m> of <m>t</m> such that  <m>f(x,s)</m> and <m>D_t f(x,s)</m> are continuous in <m>[a,\infty) \times I</m>, that
@@ -8034,7 +8035,7 @@ so using the uniform integrability of <m>|D_t f(x,s)|</m> we get, for <m>N>L</m>
 <mrow> 
 \left| \int_L^{N}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| \amp= 
 \left| \int_L^{N} h^{-1} \int_t^{t+h} D_t f(x,s)\,ds dx \right| </mrow>
-<mrow> \amp \le  |h|^{-1} | \int_t^{t+h} \int_L^{N} D_t f(x,s) dx ds |</mrow>
+<mrow> \amp \le  |h|^{-1} \left| \int_t^{t+h} \int_L^{N} D_t f(x,s) dx ds \right|</mrow>
 <mrow> \amp \le \epsilon/4.</mrow>
 </md>
 Therefore, 
@@ -9532,68 +9533,130 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 					of the Integrand</title>
 					<p>We are now ready to formulate the following theorem.</p>
 					<theorem xml:id="thm-integrability-osc0">
-						<title>Riemann Integrability in terms of the Set of Discontinuity</title>
+						<title>Riemann Integrability in terms of the Set of Discontinuity of the Integrand</title>
 						<statement>
 							<p>A bounded function <m>f</m> on a bounded closed rectangle
 							<m>R</m> is Riemann integrable on <m>R</m> iff its set
 							of discontinuity has measure <m>0</m>.</p>
 						</statement>
-						<proof>
-							<p>We will use <xref ref="eqn-discont"/> for the only if part.
-							</p>
-							<p>Suppose that <m>f</m> is Riemann integrable on <m>R</m>.
-							For each <m>k\in \bbN</m>, we will prove that
-							<m>D_{k}:=\{\by: \osc(f)(\by)\ge \frac 1k\}</m> is a set of
-							content <m>0</m>. </p>
-							<p>Given any <m>\epsilon &gt; 0</m>. There exists a partition
-							<m>\cP=\{R_{\alpha}\}</m> of <m>R</m> such that
-							<me>
-							\sum_{\alpha} \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
-							</me>
-							The rectangles in <m>\cP</m> are divided into two
-							subgroups: the subgroup <m>\cL_{k}</m> consisting
-							those <m>R_{\alpha}</m> such that
-							<m>\osc(f, R_{\alpha})\ge \frac{1}{2k}</m>, and 
-							the subgroup <m>\cS_{k}</m> consisting
-							those <m>R_{\alpha}</m> such that
-							<m>\osc(f, R_{\alpha})&lt; \frac{1}{2k}</m>. Then
-							it follows from
-							<me>
-							\frac{1}{2k} \sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert \le
-				\sum_{R_{\alpha}\in \cL_{k} } \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}
-							</me>
-							that
-							<me>
-							\sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert &lt; \epsilon.
-							</me>
-							</p>
-							<p>
-							We now claim that 
+						
 							<me>D_{k}\subset \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}.
 							</me>
-							This will show that <m>D_{k}</m> is a set of content <m>0</m>.
-							</p>
-							<p>
-							If the claim were not true, there would exist some <m>\bx \in D_{k}
-							\setminus \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}</m>.  
-							Thus <m>\bx \in \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}</m>.
-							Since the complement of <m>\cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}</m>
-							is open, there exists some ball <m>B(\bx, r)
-							\subset \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}</m>.
-							If <m>\bx\in \text{ interior}(R_{\alpha})</m> for some
-							<m>R_{\alpha} \in \cS_{k}</m>, it would force
-							<m>\frac 1k \le \osc(f)(\bx)\le \osc(f, R_{\alpha}) &lt; \frac{1}{2k}</m>,
-							which would be a contradiction. So <m>\bx</m> can only be
-							on the boundary of one or more <m>R_{\alpha} \in \cS_{k}</m>.
-							We can choose <m>r&gt; 0</m> small enough such that
-							any <m>\by\in B(\bx, r)</m> and <m>\bx</m> will be in one such
-							common rectangle. Therefore, 
-							<m>\vert f(\by)-f(\bx)\vert &lt; \frac{1}{2k}</m>. This would lead to
-							<m>\osc(f)(\bx)\le \osc(f, B(\bx, r)) &lt; \frac 1k</m>,
-							contradicting <m>\bx \in D_{k}</m>.
-							</p>
-							<p>The proof for the if part will be added.</p>
-						</proof>
+				<proof>
+    <p>
+        We will use <xref ref="eqn-discont"/> for the only if part.
+    </p>
+    <p>
+        Suppose that <m>f</m> is Riemann integrable on <m>R</m>.
+        For each <m>k\in \bbN</m>, we will prove that
+        <m>D_{k}:=\{\by: \osc(f)(\by)\ge \frac 1k\}</m> is a set of
+        content <m>0</m>. 
+    </p>
+    <p>
+        Given any <m>\epsilon &gt; 0</m>. There exists a partition
+        <m>\cP=\{R_{\alpha}\}</m> of <m>R</m> such that
+        <me>
+        \sum_{\alpha} \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
+        </me>
+        The rectangles in <m>\cP</m> are divided into two
+        subgroups: the subgroup <m>\cL_{k}</m> consisting
+        those <m>R_{\alpha}</m> such that
+        <m>\osc(f, R_{\alpha})\ge \frac{1}{2k}</m>, and 
+        the subgroup <m>\cS_{k}</m> consisting
+        those <m>R_{\alpha}</m> such that
+        <m>\osc(f, R_{\alpha})&lt; \frac{1}{2k}</m>. Then
+        it follows from
+        <me>
+        \frac{1}{2k} \sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert \le
+        \sum_{R_{\alpha}\in \cL_{k} } \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}
+        </me>
+        that
+        <me>
+        \sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert &lt; \epsilon.
+        </me>
+    </p>
+    <p>
+        We now claim that 
+        <me>
+        D_{k}\subset \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}.
+        </me>
+        This will show that <m>D_{k}</m> is a set of content <m>0</m>.
+    </p>
+    <p>
+        If the claim were not true, there would exist some <m>\bx \in D_{k} \setminus \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}</m>.  
+        Thus <m>\bx</m> must lie entirely in the union of the rectangles in <m>\cS_{k}</m>. 
+        Because <m>\cP</m> is a finite partition, <m>\cup_{R_{\alpha}\in \cL_{k}} R_{\alpha}</m> is a closed set. 
+        Its complement is open, so there exists some ball <m>B(\bx, r_1)</m> completely disjoint from all rectangles in <m>\cL_{k}</m>.
+    </p>
+    <p>
+        Let <m>R_1, R_2, \dots, R_m</m> be the finite collection of rectangles in <m>\cS_{k}</m> that actually contain the point <m>\bx</m>. 
+        Since <m>\bx</m> does not belong to any other rectangle in the partition, there exists a sufficiently small radius <m>r \le r_1</m> such that the ball <m>B(\bx, r)</m> only intersects <m>R_1, \dots, R_m</m>. Thus, <m>B(\bx, r) \subset \bigcup_{i=1}^m R_i</m>.
+    </p>
+    <p>
+        Because <m>R_i \in \cS_k</m> for each <m>i \in \{1, \dots, m\}</m>, we know that <m>\osc(f, R_i) &lt; \frac{1}{2k}</m>. 
+        Let <m>c = \max_{1 \le i \le m} \osc(f, R_i)</m>. We strictly have <m>c &lt; \frac{1}{2k}</m>.
+    </p>
+    <p>
+        Now, choose any arbitrary point <m>\by \in B(\bx, r)</m>. By our construction, <m>\by</m> must belong to at least one of these rectangles, say <m>R_j</m>. 
+        Because both <m>\bx</m> and <m>\by</m> belong to <m>R_j</m>, we have:
+        <me>
+        \vert f(\by) - f(\bx) \vert \le \osc(f, R_j) \le c
+        </me>
+        Therefore, for any two points <m>\by, \bz \in B(\bx, r)</m>, we can use the triangle inequality through the anchor point <m>f(\bx)</m>:
+        <me>
+        \vert f(\by) - f(\bz) \vert \le \vert f(\by) - f(\bx) \vert + \vert f(\bx) - f(\bz) \vert \le 2c
+        </me>
+        Taking the supremum over all <m>\by, \bz \in B(\bx, r)</m>, we find the oscillation of <m>f</m> on the ball:
+        <me>
+        \osc(f, B(\bx, r)) \le 2c &lt; \frac{1}{k}
+        </me>
+        By definition, <m>\osc(f)(\bx) \le \osc(f, B(\bx, r))</m>, which implies <m>\osc(f)(\bx) &lt; \frac{1}{k}</m>. 
+        This strictly contradicts the assumption that <m>\bx \in D_{k}</m>. 
+        Thus, our claim holds, and <m>D_k</m> is a set of content <m>0</m>.
+    </p>
+    <p>
+        For the if part, assume that the set of discontinuities <m>D</m> of <m>f</m> has measure <m>0</m>. 
+        Since <m>f</m> is bounded on <m>R</m>, there exists <m>M &gt; 0</m> such that <m>\vert f(\bx) \vert \le M</m> for all <m>\bx \in R</m>. 
+        Given any <m>\epsilon &gt; 0</m>, we want to find a partition <m>\cP</m> of <m>R</m> such that the difference between the upper and lower Darboux sums is less than <m>\epsilon</m>.
+    </p>
+    <p>
+        Let <m>\epsilon' = \frac{\epsilon}{2 \vert R \vert}</m>. Consider the set <m>D_{\epsilon'} = \{\bx \in R : \osc(f)(\bx) \ge \epsilon'\}</m>. 
+        Because <m>D_{\epsilon'} \subset D</m> and <m>D</m> has measure <m>0</m>, <m>D_{\epsilon'}</m> also has measure <m>0</m>. 
+        Furthermore, since the oscillation function is upper semi-continuous, <m>D_{\epsilon'}</m> is closed. 
+        Being a closed subset of a bounded rectangle <m>R</m>, <m>D_{\epsilon'}</m> is compact. 
+        A compact set of measure <m>0</m> has content <m>0</m>, so we can cover <m>D_{\epsilon'}</m> with a finite collection of open rectangles <m>\{V_1, \dots, V_m\}</m> such that the sum of their volumes is less than <m>\frac{\epsilon}{4M}</m>.
+    </p>
+    <p>
+        For every point <m>\bx \in R \setminus D_{\epsilon'}</m>, we have <m>\osc(f)(\bx) &lt; \epsilon'</m>. 
+        By the definition of oscillation at a point, there exists an open rectangle <m>W_{\bx}</m> containing <m>\bx</m> such that <m>\osc(f, W_{\bx}) &lt; \epsilon'</m>. 
+        The collection <m>\{V_1, \dots, V_m\} \cup \{W_{\bx}\}_{\bx \in R \setminus D_{\epsilon'}}</m> forms an open cover of the compact set <m>R</m>. 
+        Therefore, it has a finite subcover, say <m>\{V_1, \dots, V_m, W_1, \dots, W_p\}</m>.
+    </p>
+    <p>
+        We can form a partition <m>\cP</m> of <m>R</m> by extending the faces of all the rectangles in this finite subcover. 
+        For each subrectangle <m>S \in \cP</m>, <m>S</m> is either entirely contained in some <m>W_j</m>, or it is not. 
+        We divide the subrectangles of <m>\cP</m> into two groups: <m>\cA</m>, containing those subrectangles that intersect <m>D_{\epsilon'}</m> (and thus must be covered by the union of <m>V_i</m>), and <m>\cB</m>, containing the remaining subrectangles which are entirely contained within some <m>W_j</m>.
+    </p>
+    <p>
+        For any <m>S \in \cA</m>, the oscillation <m>\osc(f, S) \le 2M</m>. Since these subrectangles are covered by the rectangles <m>V_i</m>, the sum of their volumes is bounded by <m>\sum \vert V_i \vert &lt; \frac{\epsilon}{4M}</m>. 
+        Thus, 
+        <me>
+        \sum_{S \in \cA} \osc(f, S) \vert S \vert \le 2M \sum_{S \in \cA} \vert S \vert &lt; 2M \left( \frac{\epsilon}{4M} \right) = \frac{\epsilon}{2}.
+        </me>
+        For any <m>S \in \cB</m>, <m>S</m> is contained within some <m>W_j</m>, meaning <m>\osc(f, S) \le \osc(f, W_j) &lt; \epsilon' = \frac{\epsilon}{2 \vert R \vert}</m>. 
+        Thus, 
+        <me>
+        \sum_{S \in \cB} \osc(f, S) \vert S \vert &lt; \frac{\epsilon}{2 \vert R \vert} \sum_{S \in \cB} \vert S \vert \le \frac{\epsilon}{2 \vert R \vert} \vert R \vert = \frac{\epsilon}{2}.
+        </me>
+    </p>
+    <p>
+        Summing these two parts over our partition <m>\cP</m>, we find:
+        <me>
+        \sum_{S \in \cP} \osc(f, S) \vert S \vert = \sum_{S \in \cA} \osc(f, S) \vert S \vert + \sum_{S \in \cB} \osc(f, S) \vert S \vert &lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+        </me>
+        This satisfies the Riemann integrability criterion. Thus, <m>f</m> is Riemann integrable on <m>R</m>, which completes the proof.
+    </p>
+</proof>
 					</theorem>
 					<exercises>
 					<exercise> <title>The product of two Riemann integrable functions is Riemann integrable</title>
