@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exterior Differential Operator d and Boundary Operator \partial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="Math412-Notes-10-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Math412-Notes-10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Math412-Notes-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-30" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-9" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-17" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Math412-Notes-10-7"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span>
+</h2>
+<section class="introduction" id="Math412-Notes-10-7-2"><div class="para" id="Math412-Notes-10-7-2-1">We now introduce the two most central objects in the study of integration of differential forms, the exterior differential operator <span class="process-math">\(d\)</span> on differential forms and boundary operator <span class="process-math">\(\partial\)</span> on <dfn class="terminology">singular cubes</dfn> or <dfn class="terminology">chains</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="Math412-Notes-10-7-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exterior Differential Operator</span>
+</h3>
+<div class="para" id="Math412-Notes-10-7-3-2">We use <span class="process-math">\(\bbR^{m}_{P}\)</span> to denote the tangent space at <span class="process-math">\(P\text{.}\)</span> Let <span class="process-math">\(T\bbR^{m}=\{(P, \bv): P\in \bbR^{m}, \bv\in \bbR^{m}_{P}\}\)</span> denote the <dfn class="terminology">tangent bundle</dfn> of <span class="process-math">\(\bbR^{m}\text{,}\)</span> and <span class="process-math">\(\Lambda^{k}(T\bbR^{m})=\{ (P, \omega): P\in \bbR^{m}, \omega \in \Lambda^{k}(\bbR^{m}_{P})\}\)</span>  denote the set of <span class="process-math">\(k\)</span>-forms on <span class="process-math">\(\bbR^{m}\text{:}\)</span> it assigns an alternating tensor of order <span class="process-math">\(k\)</span> at each point of <span class="process-math">\(\bbR^{m}\text{.}\)</span> Such a form is called differentiable if the coefficients of the form in the standard basis <span class="process-math">\(\{dx_{i_{1}}\wedge \cdots \wedge dx_{i_{k}}\}\)</span> are differentiable functions. In fact, we will take <span class="process-math">\(\Lambda^{k}(T\bbR^{m})\)</span> to mean the set of <span class="process-math">\(k\)</span>-forms that are infinitely times differentiable. The slight complication of this notation is to give indication that elements in <span class="process-math">\(T\bbR^{m}\)</span> and in <span class="process-math">\(\Lambda^{k}(T\bbR^{m})\)</span> have a value at each base point, while the notation <span class="process-math">\(\Lambda^{k}(\bbR^{m})\)</span> does not have any relation with a base point.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-3-3">
+<div class="para">For a differentiable function <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(df=\sum_{i=1}^{m} \frac{\partial f}{\partial x_{i}}\, dx_{i}\)</span> may be regarded as the output of a linear operator</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-3-3">
+\begin{equation*}
+d: f\in \Lambda^{0}(T\bbR^{m}):=C^{\infty}(\bbR^{m})\mapsto df\in \Lambda^{1}(T\bbR^{m}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-3-4">
+<div class="para">We now extend this operator to</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-4-1">
+\begin{equation*}
+d: \omega \in \Lambda^{k}(T\bbR^{m})\mapsto d\omega \in \Lambda^{k+1}(T\bbR^{m})
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(1\le k\le m\text{.}\)</span> Any <span class="process-math">\(\omega\in \Lambda^{1}(T\bbR^{m})\)</span> can be expressed as <span class="process-math">\(\omega(\bx)=\sum_{i=1}^{m}\omega_{i}(\bx)dx_{i}\text{.}\)</span> We define</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-4-5">
+\begin{equation*}
+d\omega(\bx)=\sum_{i=1}^{m}d \omega_{i}(\bx)\wedge dx_{i}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(d \omega_{i}(\bx) =\sum_{j=1}^{m}\frac{\partial \omega_{i}}{\partial x_{j}}dx_{j}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-4-7">
+\begin{equation*}
+d\omega(\bx)=\sum_{j &lt; i}  
+\left( \frac{\partial \omega_{i}}{\partial x_j} -  \frac{\partial \omega_{j}}{\partial x_{i}} \right) 
+dx_{j} \wedge dx_{i}.
+\end{equation*}
+</div>
+<div class="para">Recall that our discussion on the curl of a vector field in higher dimensions leads us to this object: if we treat the vector field <span class="process-math">\(X(\bx)\)</span> as a one form <span class="process-math">\(\omega(\bx)\text{,}\)</span> then the curl of <span class="process-math">\(X(\bx)\)</span> corresponds	to <span class="process-math">\(d\omega(\bx)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-3-5">
+<div class="para">For <span class="process-math">\(k\ge 2\text{,}\)</span> it turns out to be natural to define <span class="process-math">\(d\)</span> in a similar way: express</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-5-3">
+\begin{equation*}
+\omega (\bx)=\sum_{1\le i_{1} &lt; i_{2} &lt; \ldots &lt; i_{k}\le m} \omega_{i_{1}i_{2}\ldots i_{k}}(\bx)\  dx_{i_{1}}\wedge dx_{i_{2}}\wedge\ldots \wedge dx_{i_{k}}
+\end{equation*}
+</div>
+<div class="para">and define</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-5-4">
+\begin{equation*}
+d \omega (\bx)=\sum_{1\le i_{1} &lt; i_{2} &lt; \ldots &lt; i_{k}\le m} d\omega_{i_{1}i_{2}\ldots i_{k}}(\bx)\wedge dx_{i_{1}}\wedge dx_{i_{2}}\wedge\ldots \wedge dx_{i_{k}}.
+\end{equation*}
+</div>
+<div class="para">In other words, for any single term <span class="process-math">\(\omega_{i_{1}i_{2}\ldots i_{k}}(\bx) dx_{i_{1}}\wedge dx_{i_{2}}\wedge\ldots \wedge dx_{i_{k}}\text{,}\)</span> its exterior differential is simply</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-5-6">
+\begin{equation*}
+d \omega_{i_{1}i_{2}\ldots i_{k}}(\bx)\wedge dx_{i_{1}}\wedge dx_{i_{2}}\wedge\ldots \wedge dx_{i_{k}}.
+\end{equation*}
+</div>
+<div class="para">We will discuss soon why this definition is natural.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-3-6">
+<div class="para">For example, for such an <span class="process-math">\(\omega\)</span> with <span class="process-math">\(k=2\)</span> in <span class="process-math">\(\bbR^{3}\text{,}\)</span> using</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-6-4">
+\begin{align*}
+\amp d\left(\omega_{12}(\bx) dx_{1}\wedge dx_{2}\right)\\
+= \amp
+\left(\frac{\partial\omega_{12}}{\partial x_{1}}\, dx_{1}+ 
+\frac{\partial\omega_{12}}{\partial x_{2}}\, dx_{2}+
+\frac{\partial\omega_{12}}{\partial x_{3}}\, dx_{3}\right)dx_{1} \wedge dx_{2}\\
+= \amp  \frac{\partial \omega_{12}}{\partial x_{3}} dx_{3} \wedge dx_{1}\wedge dx_{2}\\
+= \amp  \frac{\partial \omega_{12}}{\partial x_{3}} dx_{1}\wedge dx_{2}\wedge dx_{3}
+\end{align*}
+</div>
+<div class="para">and similar computations we get</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-6-5">
+\begin{align*}
+\amp d\left(\omega_{12}(\bx) dx_{1}\wedge dx_{2}+ \omega_{23}(\bx) dx_{2}\wedge dx_{3}+ 
+\omega_{13}(\bx) dx_{1}\wedge dx_{3}\right)\\
+=\amp 
+\frac{\partial \omega_{12}}{\partial x_{3}} dx_{3} \wedge dx_{1}\wedge dx_{2}+
+\frac{\partial \omega_{23}}{\partial x_{1}} dx_{1}\wedge dx_{2}\wedge dx_{3}+
+\frac{\partial \omega_{13}}{\partial x_{2}} dx_{2}\wedge dx_{1}\wedge dx_{3}\\
+=\amp \left( \frac{\partial \omega_{12}}{\partial x_{3}} + \frac{\partial \omega_{23}}{\partial x_{1}} -\frac{\partial \omega_{13}}{\partial x_{2}}\right) dx_{1}\wedge dx_{2}\wedge dx_{3}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-3-7">The most important properties of this operator are summarized in the following theorem; the central ones are the last two.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="Math412-Notes-10-7-3-8"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Exterior Differential Operater <span class="process-math">\(d\)</span>.</span>
+</h4>
+<div class="para logical" id="Math412-Notes-10-7-3-8-2-1">
+<ol class="decimal" id="Math412-Notes-10-7-3-8-2-1-1">
+<li id="Math412-Notes-10-7-3-8-2-1-1-1">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-8-2-1-1-1">
+<span class="process-math">\(d (\omega + \eta) = d \omega + d \eta\)</span>  for any  <span class="process-math">\(\omega, \eta \in \Lambda^{k}(T\bbR^{m})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#Math412-Notes-10-7-3-8-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-3-8-2-1-1-2">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-8-2-1-1-2">
+<span class="process-math">\(d(\omega\wedge \eta)=d\omega \wedge \eta + (-1)^{k} \omega \wedge d\eta\)</span> for any <span class="process-math">\(\omega\in \Lambda^{k}(T\bbR^{m}),  \eta \in  \Lambda^{l}(T\bbR^{m}).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#Math412-Notes-10-7-3-8-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-3-8-2-1-1-3">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-8-2-1-1-3">
+<span class="process-math">\(d \circ d =0\text{,}\)</span> namely, <span class="process-math">\(d(d\omega)=0\)</span> for any <span class="process-math">\(\omega \in \Lambda^{k}(T\bbR^{m})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#Math412-Notes-10-7-3-8-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-3-8-2-1-1-4">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-8-2-1-1-4">
+<span class="process-math">\(F^{*}(d\omega)=d(F^{*}(\omega))\)</span> for any differentiable map <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#Math412-Notes-10-7-3-8-2-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.4.1: Properties of the Exterior Differential Operater d"><a href="#Math412-Notes-10-7-3-8" title="Copy heading and permalink for Theorem 7.4.1: Properties of the Exterior Differential Operater d" aria-label="Copy heading and permalink for Theorem 7.4.1: Properties of the Exterior Differential Operater d">🔗</a></div></article><div class="para logical" id="Math412-Notes-10-7-3-9">
+<div class="para">In the case of <span class="process-math">\(\omega(\bx)=\sum_{i=1}^{m}\omega_{i}(\bx)dx_{i}\text{,}\)</span> the property <span class="process-math">\(d \circ d =0\)</span> is demonstrated as</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-9-3">
+\begin{align*}
+\amp d\left(\sum_{i,\, j =1}^{n}  
+\frac{\partial \omega_{i}}{\partial x_j}  
+dx_{j} \wedge dx_{i}\right) \\
+=\amp \sum_{i,\,j =1}^{n} d \left( \frac{\partial \omega_{i}}{\partial x_j}  \right) \wedge dx_{j} \wedge dx_{i} \\
+=\amp \sum_{i=1}^{n}\sum_{j,\,k=1}^{n}  \left( \frac{\partial^{2} \omega_{i}}{\partial x_j \,\partial x_{k}}  \right)dx_{k} \wedge dx_{j} \wedge dx_{i} \\
+=\amp \sum_{i=1}^{n}\sum_{k &lt; j}^{n}  \left( \frac{\partial^{2} \omega_{i}}{\partial x_j \,\partial x_{k}} -  \frac{\partial^{2} \omega_{i}}{\partial x_k \,\partial x_{j}} \right)dx_{k} \wedge dx_{j} \wedge dx_{i} =0
+\end{align*}
+</div>
+<div class="para">This can also be seen by applying the rules of exterior differentiation:</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-3-9-4">
+\begin{align*}
+d(d\omega)=\amp d(\sum_{i=1}^{n} d\omega_{i}(\bx)\wedge dx_{i})\\
+=\amp
+\sum_{i=1}^{n} \left(d\left( d\omega_{i}(\bx) \right) \wedge dx_{i} -d \omega_{i}(\bx)\wedge d(dx_{i})\right)
+=0
+\end{align*}
+</div>
+<div class="para">using <span class="process-math">\(d\left( d\omega_{i}(\bx) \right)=0\)</span> and <span class="process-math">\(d(dx_{i})=0\text{,}\)</span> which can be verified more easily.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="Math412-Notes-10-7-3-10"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="Math412-Notes-10-7-3-10-1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para logical" id="Math412-Notes-10-7-3-10-1-1">
+<div class="para">Let <span class="process-math">\(\omega (x, y ,z)=P(x, y, z)\, dy\wedge dz\)</span> be a continuous <span class="process-math">\(2\)</span>-form in <span class="process-math">\(\bbR^{3}\)</span> and <span class="process-math">\(F(u, v)=(f_{1}(u, v), f_{2}(u, v), f_{3}(u, v))\)</span> be a differentiable map from <span class="process-math">\(\bbR^{2}\)</span> to <span class="process-math">\(\bbR^{3}\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-1" id="Math412-Notes-10-7-3-10-1-1-7">
+<li id="Math412-Notes-10-7-3-10-1-1-7-1">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-10-1-1-7-1">Compute <span class="process-math">\(d\omega\text{,}\)</span>  <span class="process-math">\(d(d\omega)\text{,}\)</span> <span class="process-math">\(F^{*}(\omega)\text{,}\)</span> <span class="process-math">\(F^{*}(d \omega)\)</span> and <span class="process-math">\(d F^{*}(\omega)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.1.1.a"><a href="#Math412-Notes-10-7-3-10-1-1-7-1" title="Copy heading and permalink for Item 7.4.1.1.a" aria-label="Copy heading and permalink for Item 7.4.1.1.a">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-3-10-1-1-7-2">
+<div class="para" id="p-derived-Math412-Notes-10-7-3-10-1-1-7-2">If <span class="process-math">\(f_{3}(u, v)=\text{const.}\)</span> for <span class="process-math">\((u, v)\in \bbR^{2}\text{,}\)</span> verify that <span class="process-math">\(F^{*}(\omega)=0\)</span> and <span class="process-math">\(F^{*}(d \omega)=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.1.1.b"><a href="#Math412-Notes-10-7-3-10-1-1-7-2" title="Copy heading and permalink for Item 7.4.1.1.b" aria-label="Copy heading and permalink for Item 7.4.1.1.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.1.1"><a href="#Math412-Notes-10-7-3-10-1" title="Copy heading and permalink for Exercise 7.4.1.1" aria-label="Copy heading and permalink for Exercise 7.4.1.1">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-3-10-2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-3-10-2-1">
+<span class="process-math">\(F(u, v, w)=(f_{1}(u, v, w), f_{2}(u, v, w ), f_{3}(u, v, w))\)</span> be a differentiable map from <span class="process-math">\(\bbR^{3}\)</span> to <span class="process-math">\(\bbR^{3}\text{.}\)</span> Compute <span class="process-math">\(F^{*}\left( G(x, y, z) dx\wedge dy\wedge dz\right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.1.2"><a href="#Math412-Notes-10-7-3-10-2" title="Copy heading and permalink for Exercise 7.4.1.2" aria-label="Copy heading and permalink for Exercise 7.4.1.2">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-3-10-3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-3-10-3-1">Compute <span class="process-math">\(d\left[ (P\, dx + Q \, dy +R \, dz)\wedge dz \right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-3-10-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.1.3"><a href="#Math412-Notes-10-7-3-10-3" title="Copy heading and permalink for Exercise 7.4.1.3" aria-label="Copy heading and permalink for Exercise 7.4.1.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.4.1"><a href="#Math412-Notes-10-7-3-10" title="Copy heading and permalink for Exercises 7.4.1" aria-label="Copy heading and permalink for Exercises 7.4.1">🔗</a></div></section><div class="autopermalink" data-description="Subsection 7.4.1: Exterior Differential Operator"><a href="#Math412-Notes-10-7-3" title="Copy heading and permalink for Subsection 7.4.1: Exterior Differential Operator" aria-label="Copy heading and permalink for Subsection 7.4.1: Exterior Differential Operator">🔗</a></div></section><section class="subsection" id="Math412-Notes-10-7-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span>
+</h3>
+<div class="para" id="Math412-Notes-10-7-4-2">Since <span class="process-math">\(k\)</span>-forms act on <span class="process-math">\(k\)</span>-tuples of vectors, or <span class="process-math">\(k\)</span>-dimensional subspaces, we now discuss the geometric objects which interact with <span class="process-math">\(k\)</span>-forms. Our ultimate goal is to introduce <span class="process-math">\(k\)</span>-dimensional surfaces or manifolds. A proper definition of the latter requires some preparation. Informally we can think of a <span class="process-math">\(k\)</span>-dimensional surface as pieced together by reasonably well behaved patches. Here "reasonably well behaved" means that it can be represented by a parametric map defined on a simple domain in <span class="process-math">\(\bbR^{k}\text{,}\)</span> and a simple domain is meant either the standard cube <span class="process-math">\(I^{k}:=[0,1]\times\cdots\times[0, 1]\)</span> or the standard simplex <span class="process-math">\(Q^{k}\)</span> (another commonly used notation is <span class="process-math">\(\Delta^{k}\)</span>), defined as <span class="process-math">\(\{(x_{1},\ldots, x_{k}): x_{i}\ge 0 \text{ for each } i=1,\ldots, k, \text{ and } \sum_{i=1}^{k}x_{i}\le 1\}\text{.}\)</span> The latter is a generalization of triangle in <span class="process-math">\(\bbR^{2}\)</span> and tetrahedron in <span class="process-math">\(\bbR^{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-3">Piecing together the patches would require consideration of the "faces" and other lower dimensional edges of the patches. Both the cube and the simplex have relative simple description of their faces and lower dimensional edges. For the purpose of developing integration, the cube is easier, for the integration limits are easy. But it is even easier to catalog all lower dimensional faces and edges of the simplex, for the simplex <span class="process-math">\(Q^{k}\)</span> has <span class="process-math">\(k+1\)</span> vertices defined by requiring any  <span class="process-math">\(k\)</span> of the  <span class="process-math">\(k+1\)</span> inequalities in the definition of <span class="process-math">\(Q^{k}\)</span> to be equalities, and any  <span class="process-math">\(l\)</span> dimensional edge/face of <span class="process-math">\(Q^{k}\)</span> corresponds	to setting <span class="process-math">\(k-l\)</span> of the  <span class="process-math">\(k+1\)</span> inequalities in the definition of <span class="process-math">\(Q^{k}\)</span> to be equalities, which has <span class="process-math">\(l+1\)</span> vertices. For <span class="process-math">\(I^{k}\text{,}\)</span> its <span class="process-math">\(k-1\)</span> dimensional faces are easy to describe: it has one pair corresponding to each <span class="process-math">\(x_{i}\)</span> being <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{;}\)</span> however, it has <span class="process-math">\(2^{k}\)</span> vertices vs the <span class="process-math">\(k+1\)</span> vertices of  <span class="process-math">\(Q^{k}\text{,}\)</span> and not any choice of <span class="process-math">\(l+1\)</span> vertices of <span class="process-math">\(I^{k}\)</span> correspond to an  <span class="process-math">\(l\)</span> dimensional edge/face of <span class="process-math">\(I^{k}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-4">We will follow Spivak to focus on using <span class="process-math">\(I^{k}\)</span> as our standard domain. An actual theory of piecing together patches modeled on either <span class="process-math">\(I^{k}\)</span> or <span class="process-math">\(Q^{k}\)</span> is difficult. In two dimension, it amounts to showing that any surface (to be properly defined) can be triangulated. One way to bypass this task is to use a <dfn class="terminology">partition of unity</dfn> to write the integrand<span class="process-math">\(\mbox{---}\)</span>a differential form in this context<span class="process-math">\(\mbox{---}\)</span>as the sum of some terms, each of which has support in a cube.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-5">For now we will only focus on how a <span class="process-math">\(k\)</span>-form <span class="process-math">\(\omega\)</span> defined on <span class="process-math">\(A\subset \bbR^{n}\)</span> interacts with a single <span class="process-math">\(k\)</span>-dimensional patch in <span class="process-math">\(A\text{,}\)</span> called a <dfn class="terminology">singular <span class="process-math">\(k\)</span>-cube</dfn>, defined as a continuous (or differentiable) map <span class="process-math">\(c: I^{k}\mapsto A\subset \bbR^{n}\text{.}\)</span> We will not require <span class="process-math">\(c\)</span> to be bijective, or the Jacobian of <span class="process-math">\(c\)</span> to have rank <span class="process-math">\(k\)</span> everywhere, so <span class="process-math">\(c(I^{k})\)</span> may not be a <span class="process-math">\(k\)</span>-dimensional geometric object, or has a clear lower dimensional faces/edges. But we will use <span class="process-math">\(c\)</span> to pull back <span class="process-math">\(\omega\)</span> to <span class="process-math">\(I^{k}\text{,}\)</span> then <span class="process-math">\(c^{*}(\omega)\)</span> becomes a <span class="process-math">\(k\)</span>-form on <span class="process-math">\(I^{k}\text{,}\)</span> and <span class="process-math">\(I^{k}\)</span> has clearly defined lower dimensional faces/edges.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-6">
+<div class="para">In fact, since our set up was to study the integration of a <span class="process-math">\(k\)</span>-form <span class="process-math">\(\omega\)</span> on the <span class="process-math">\(k\)</span>-dimensional boundary faces of a singular <span class="process-math">\((k+1)\)</span>-cube, we will change <span class="process-math">\(c\)</span> to be a singular <span class="process-math">\((k+1)\)</span>-cube now. <span class="process-math">\(I^{k+1}\)</span> has <span class="process-math">\(2(k+1)\)</span> <span class="process-math">\(k\)</span>-dimensional faces, and each face of <span class="process-math">\(I^{k+1}\)</span> has identical geometry as <span class="process-math">\(I^{k}\text{.}\)</span> Since <span class="process-math">\(x_{i}=0\)</span> or <span class="process-math">\(1\)</span> gives rise to a face of <span class="process-math">\(c\text{,}\)</span> we denote such a face by <span class="process-math">\(c_{i, 0}\)</span> or <span class="process-math">\(c_{i, 1}\)</span> respectively. Technically define</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-6-17">
+\begin{equation*}
+F_{i, 0}(x_{1},\ldots, x_{k})=(x_{1},\ldots, x_{i-1}, 0, x_{i}, \ldots, x_{k}),
+\end{equation*}
+</div>
+<div class="para">namely, setting the <span class="process-math">\(i\)</span>th component of <span class="process-math">\(F_{i, 0}(x_{1},\ldots, x_{k})\)</span> to be <span class="process-math">\(0\text{,}\)</span> and assigning the components in the <span class="process-math">\(i+1\)</span> through <span class="process-math">\(k+1\)</span> position as <span class="process-math">\((x_{i}, \ldots, x_{k})\text{.}\)</span> Similarly for <span class="process-math">\(F_{i, 1}\text{.}\)</span> Then <span class="process-math">\(c_{i, 0}=c\circ F_{i, 0}\)</span> and <span class="process-math">\(c_{i, 1}=c\circ F_{i, 1}\)</span> each defines a singular <span class="process-math">\(k\)</span>-cube in <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-7">
+<div class="para">We will let <span class="process-math">\(s\)</span> to take either <span class="process-math">\(0\)</span> or <span class="process-math">\(1\)</span> and integrate <span class="process-math">\(c_{i, s}^{*}(\omega)=f_{i, s}(\bx)dx_{1}\wedge\cdots\wedge dx_{k}\)</span> on <span class="process-math">\(I^{k}\)</span> and define</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-7-6">
+\begin{equation*}
+\int_{c_{i, s} } \omega:= \int_{I^{k}} c_{i, s}^{*}(\omega)=\int_{I^{k}} f_{i, s}(\bx)dx_{1}\cdots dx_{k}.
+\end{equation*}
+</div>
+<div class="para">To consider the effect of the integration of <span class="process-math">\(\omega\)</span> on all faces of <span class="process-math">\(I^{k+1}\)</span> we will consider an appropriate algebraic sum of these integrals. The result amounts to considering some algebraic sums of the <span class="process-math">\(c_{i, s}\)</span>’s, and leads to the definition of a <dfn class="terminology"><span class="process-math">\(k\)</span>-chain</dfn> as a  finite sum of singular <span class="process-math">\(k\)</span>-cubes with integer coefficients.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-7-4-8"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Boundary of a Singular Cube and a Singular Chain.</span>
+</h4>
+<div class="para logical" id="Math412-Notes-10-7-4-8-2-1">
+<div class="para">The <dfn class="terminology">boundary</dfn> of the singular <span class="process-math">\((k+1)\)</span>-cube  <span class="process-math">\(c\)</span> is defined to be</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-8-2-1-4">
+\begin{equation*}
+\partial c=\sum_{i=1}^{k+1}\sum_{s=0}^{1}(-1)^{i+s}c_{i, s}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="Math412-Notes-10-7-4-8-2-2">The boundary of a <span class="process-math">\(k\)</span>-chain, <span class="process-math">\(m_{1}c_{1}+\ldots+m_{r} c_{r}\text{,}\)</span> is defined as <span class="process-math">\(m_{1}\partial c_{1}+\ldots+m_{r} \partial c_{r}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.4.2: The Boundary of a Singular Cube and a Singular Chain"><a href="#Math412-Notes-10-7-4-8" title="Copy heading and permalink for Definition 7.4.2: The Boundary of a Singular Cube and a Singular Chain" aria-label="Copy heading and permalink for Definition 7.4.2: The Boundary of a Singular Cube and a Singular Chain">🔗</a></div></article><div class="para" id="Math412-Notes-10-7-4-9">The reason for this choice of sign will become clear in the proof of Stokes Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="Math412-Notes-10-7-4-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-4-10-1">The sum in the definition of the boundary is a formal sum of maps from <span class="process-math">\(I^{k}\)</span> into to A, not as a sum of vector-valued functions.  For one thing, if <span class="process-math">\(c_{1}, c_{2}:I^{k}\mapsto A\text{,}\)</span> then as the sum of vector-valued functions <span class="process-math">\(c_{1}+c_{2}\)</span> may not take values in <span class="process-math">\(A\text{.}\)</span> Secondly, we are going to use <span class="process-math">\(c_{1}+c_{2}\)</span> only in the context of how they pull back forms on <span class="process-math">\(A\)</span> to those on <span class="process-math">\(I^{k}\text{:}\)</span> <span class="process-math">\((c_{1}+c_{2})^{*}(\omega)=c_{1}^{*}(\omega)+c_{2}^{*}(\omega)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-10-2">Let’s take the case of <span class="process-math">\(c(x, y)=(x, y^{2})\)</span> for <span class="process-math">\((x, y)\in I^{2}\text{,}\)</span> <span class="process-math">\(A=I^{2}\)</span> and <span class="process-math">\(c_{1,0}(t)=c(0, t)=(0, t^{2})\text{,}\)</span> <span class="process-math">\(c_{1, 1}(t)=c(1, t)=(1, t^{2})\text{.}\)</span> Then the vector-valued algebraic sum <span class="process-math">\(c_{1, 1}(t)-c_{1, 0}(t)\)</span> of <span class="process-math">\(c_{1,0}(t)\)</span> and <span class="process-math">\(c_{1, 1}(t)\)</span> is the map <span class="process-math">\(c(t)=(1, 0)\text{.}\)</span> Then for any differential form <span class="process-math">\(\omega\)</span> defined in <span class="process-math">\((x, y)\in I^{2}\text{,}\)</span> <span class="process-math">\(c^{*}(\omega)=0\text{,}\)</span> while if we  take <span class="process-math">\(\omega=x\, dy\text{,}\)</span> then <span class="process-math">\((c_{1, 1}-c_{1, 0})^{*}(x\, dy)=1\, d(t^{2})- 0 \, d(t^{2})=2t\, dt\text{.}\)</span> If we consider the vector-valued sum <span class="process-math">\(c_{1, 1}(t)+c_{1, 0}(t)\text{,}\)</span> it is <span class="process-math">\(t\mapsto (1, 2 t^{2})\text{,}\)</span> which may not take value in <span class="process-math">\(A=I^{2}\)</span> for a certain range of <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 7.4.3"><a href="#Math412-Notes-10-7-4-10" title="Copy heading and permalink for Remark 7.4.3" aria-label="Copy heading and permalink for Remark 7.4.3">🔗</a></div></article><div class="para logical" id="Math412-Notes-10-7-4-11">
+<div class="para">As a simple illustration of the integral of a <span class="process-math">\(k\)</span>-form on a <span class="process-math">\(k\)</span>-cube or chain, consider the case of <span class="process-math">\(k=1\text{:}\)</span> suppose that <span class="process-math">\(\omega(\bx)=\sum_{i=1}^{n}\omega_{i}(\bx)dx_{i}\)</span> is a <span class="process-math">\(1\)</span>-form in <span class="process-math">\(\bbR^{n}\text{,}\)</span> and <span class="process-math">\(c:[0, 1]\mapsto \bbR^{n}\)</span> is a <span class="process-math">\(1\)</span>-cube, then <span class="process-math">\(c^{*}(\omega)=\sum_{i=1}^{n}\omega_{i}(c(t))c_{i}'(t)dt\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-11-10">
+\begin{equation*}
+\int_{c} \omega =\int_{[0, 1]} \sum_{i=1}^{n}\omega_{i}(c(t))c_{i}'(t)dt
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-12">
+<div class="para">In the case that <span class="process-math">\(\omega=df\)</span> for some differentiable function <span class="process-math">\(f(\bx)\text{,}\)</span> <span class="process-math">\(\omega_{i}(\bx)=D_{i}f(\bx)\text{,}\)</span> and <span class="process-math">\(\sum_{i=1}^{n} D_{i}f(c(t))c_{i}'(t) =[f(c(t))]'\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-12-5">
+\begin{equation*}
+\int_{[0, 1]} \sum_{i=1}^{n}\omega_{i}(c(t))c_{i}'(t)dt
+=\int_{[0, 1]} [f(c(t))]'\, dt=f(c(1))-f(c(0))= \int_{\partial c} f.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-13">Once these definitions are properly developed, we are be ready to prove a version of Stokes Theorem on a singular cube (or chain).<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="Math412-Notes-10-7-4-14"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Stokes Theorem on Singular Chains.</span>
+</h4>
+<div class="para logical" id="Math412-Notes-10-7-4-14-2-1">
+<div class="para">If <span class="process-math">\(\omega\)</span> is  a <span class="process-math">\(k\)</span>-form in <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(c\)</span> is a singular <span class="process-math">\((k+1)\)</span>-cube (or chain), then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-2-1-6">
+\begin{equation*}
+\int_{\partial c} \omega = \int_{c} d\omega.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.4.4: Stokes Theorem on Singular Chains"><a href="#Math412-Notes-10-7-4-14" title="Copy heading and permalink for Theorem 7.4.4: Stokes Theorem on Singular Chains" aria-label="Copy heading and permalink for Theorem 7.4.4: Stokes Theorem on Singular Chains">🔗</a></div></article><details id="Math412-Notes-10-7-4-14-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="Math412-Notes-10-7-4-14-3-1">
+<div class="para">
+<span class="process-math">\(c^{*}(\omega)\)</span> is a <span class="process-math">\(k\)</span>-form on <span class="process-math">\(I^{k+1}\text{,}\)</span> so can be written as</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-1-4">
+\begin{equation*}
+c^{*}(\omega)(\bx)=\sum_{i=1}^{k+1}f_{i}(\bx) dx_{1}\wedge \cdots \wedge\widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1},
+\end{equation*}
+</div>
+<div class="para">where  <span class="process-math">\(\widehat{dx_{i}}\)</span> means that the <span class="process-math">\(dx_{i}\)</span> is omitted in the wedge product. Then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-1-7">
+\begin{equation*}
+c^{*}(d \omega)(\bx)=d \left[ c^{*}( \omega)\right](\bx)=
+\sum_{i=1}^{k+1}df_{i}(\bx)\wedge dx_{1}\wedge \cdots \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-14-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-14-3-2">
+<div class="para">We claim that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-2-1">
+\begin{equation*}
+c_{i, 0}^{*}(\omega) = f_{i}(x_{1},\ldots, x_{i-1}, 0, x_{i}, \ldots, x_{k}) dx_{1}\wedge \cdots \wedge dx_{k},
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-2-2">
+\begin{equation*}
+c_{i, 1}^{*}(\omega) = f_{i}(x_{1},\ldots, x_{i-1}, 1, x_{i}, \ldots, x_{k}) dx_{1}\wedge \cdots \wedge dx_{k}.
+\end{equation*}
+</div>
+<div class="para">This is because <span class="process-math">\(F_{i, 0}^{*}(dx_{i})=0\)</span> and <span class="process-math">\(F_{i, 1}^{*}(dx_{i})=0\)</span> (Heuristically, on these faces <span class="process-math">\(x_{i}\)</span> is a constant, so <span class="process-math">\(dx_{i}=0\)</span> when applied to tangent vectors in these faces), so, for <span class="process-math">\(j\ne i\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-2-8">
+\begin{equation*}
+F_{i, 0}^{*} (dx_{1}\wedge \cdots \widehat{dx_{j}}\wedge \cdots \wedge dx_{k+1})=0\text{,}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(c_{i, 0}^{*}(\omega)\)</span> will have only one term arising from <span class="process-math">\(f_{i}(\bx) dx_{1}\wedge \cdots \wedge\widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}\)</span> with <span class="process-math">\(x_{i}=0\)</span> in <span class="process-math">\(f_{i}(\bx)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-2-13">
+\begin{equation*}
+c_{i, 0}^{*}(\omega) =F_{i, 0}^{*} (c^{*}(\omega))=  f_{i}(x_{1},\ldots, x_{i-1}, 0, x_{i}, \ldots, x_{k}) dx_{1}\wedge \cdots \wedge dx_{k}.
+\end{equation*}
+</div>
+<div class="para">The same argument works for <span class="process-math">\(c_{i, 1}^{*}(\omega)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-14-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-14-3-3">
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-3-1">
+\begin{align*}
+\amp df_{i}(\bx)\wedge dx_{1}\wedge \cdots \wedge \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}\\
+= \amp (-1)^{i+1}D_{i} f_{i}(\bx) dx_{1}\wedge \cdots \wedge dx_{i}\wedge \cdots \wedge dx_{k+1},
+\end{align*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-3-2">
+\begin{align*}
+\amp \int_{I^{k+1}} df_{i}(\bx)\wedge dx_{1}\wedge \cdots \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}\\
+= \amp (-1)^{i+1}\int_{I^{k+1}}  D_{i} f_{i}(\bx) dx_{1}\wedge \cdots dx_{i}\wedge \cdots \wedge dx_{k+1}
+\end{align*}
+</div>
+<div class="para">But integrating out the <span class="process-math">\(i\)</span>-th coordinate first gives</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-3-4">
+\begin{align*}
+\amp \int_{I^{k+1}}  D_{i} f_{i}(\bx) dx_{1}\wedge \cdots dx_{i}\wedge \cdots \wedge dx_{k+1} \\
+=\amp \int_{I^{k}} f_{i}(x_{1},\ldots, x_{i-1}, x_{i}, x_{i+1}, \ldots, x_{k+1})\Big|_{x_{i}=0}^{x_{i}=1} 
+dx_{1}\cdots \widehat{dx_{i}}\cdots d x_{k+1}
+\end{align*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-3-5">
+\begin{align*}
+\amp \int_{I^{k+1}} df_{i}(\bx)\wedge dx_{1}\wedge \cdots \widehat{dx_{i}}\wedge \cdots \wedge dx_{k+1}\\
+=\amp (-1)^{i+1} \int_{I^{k}} \left( F_{i, 1}^{*}(c^{*}(\omega))- F_{i, 0}^{*}(c^{*}(\omega))\right)\\
+=\amp (-1)^{i+1} \int_{I^{k}} \left( c_{i, 1}^{*}(\omega)- c_{i, 0}^{*}(\omega)\right)
+\end{align*}
+</div>
+<div class="para">It is now clear from the definition of <span class="process-math">\(\partial c \)</span>  that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-14-3-3-7">
+\begin{equation*}
+\int_{\partial c}\omega= \sum_{i=1}^{k+1}\sum_{s=0}^{1}(-1)^{i+s} \int_{I^{k}} c_{i, s}^{*} (\omega)
+=\int_{I^{k+1}} d c^{*}( \omega)= \int_{c} d\omega.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-14-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.4.4.1"><a href="#Math412-Notes-10-7-4-14-3" title="Copy heading and permalink for Proof 7.4.4.1" aria-label="Copy heading and permalink for Proof 7.4.4.1">🔗</a></div></article></details><article class="remark remark-like" id="Math412-Notes-10-7-4-15"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-4-15-1">This version of the Stokes Theorem is formulated as  integrals on standard cells <span class="process-math">\(I^{k}\)</span> and <span class="process-math">\(I^{k+1}\)</span> of forms pulled back by a map <span class="process-math">\(c\)</span> defined on <span class="process-math">\(I^{k+1}\text{.}\)</span> In concrete situations <span class="process-math">\(c\)</span> often defines a <span class="process-math">\((k+1)\)</span>-dimensional differentiable surface with the restriction of <span class="process-math">\(c\)</span> to the boundary of <span class="process-math">\(I^{k+1}\)</span> defining <span class="process-math">\(k\)</span>-dimensional differentiable surfaces. In such cases the integrals can be considered as defined on these geometric surfaces. The <span class="process-math">\(k=1\)</span> case gives the classical Stokes Theorem for a surface parametrized via  a map from <span class="process-math">\(I^{2}\mbox{--}\)</span> see the example below for details. If we encounter more complicated surfaces in applications, we need to partition the surface as the non-overlapping union of several pieces which may share some common edges and each piece can be parametrized via  a map from <span class="process-math">\(I^{2}\text{,}\)</span> one then needs to account for the contributions from the difference pieces in the boundary integral <span class="process-math">\(\int_{\partial c}\omega\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-15-2">In some sense, the operator <span class="process-math">\(d\)</span> and the boundary <span class="process-math">\(\partial c\)</span> are motivated and defined to make the Stokes Theorem hold in the general setting.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-15-3">The <span class="process-math">\(\partial\)</span> operator also has the property that <span class="process-math">\(\partial \circ \partial =0\text{.}\)</span> It is a reflection of the property that each of the faces of <span class="process-math">\(I^{k+1}\)</span> has <span class="process-math">\((k-1)\)</span>-dimensional edges, and when computing <span class="process-math">\(\partial \circ \partial ( I^{k+1})\text{,}\)</span> each of these edges appears as the edge of exactly two faces with opposite orientation! The proof given in Spivak is merely an analytical way of book-keeping this property.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 7.4.5"><a href="#Math412-Notes-10-7-4-15" title="Copy heading and permalink for Remark 7.4.5" aria-label="Copy heading and permalink for Remark 7.4.5">🔗</a></div></article><details id="Math412-Notes-10-7-4-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Example relating the integral of a two form to a classical surface integral.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="Math412-Notes-10-7-4-16-2">
+<div class="para">Consider the two form</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-1">
+\begin{equation*}
+\omega(x, y, z) = P(x, y, z) \, dy\wedge dz + Q(x, y, z)\, dz\wedge dx + R(x, y, z) \, dx\wedge dy
+\end{equation*}
+</div>
+<div class="para">in <span class="process-math">\(\bbR^{3}\text{.}\)</span> Suppose <span class="process-math">\(\vg: (u, v)\in I^{2} \mapsto \bbR^{3}\)</span> is a singular <span class="process-math">\(2\)</span>-cube. We defined <span class="process-math">\(\int_{\vg}\omega \)</span> as <span class="process-math">\(\int_{I^{2}} \vg^{*}(\omega)\text{.}\)</span> Let’s see a more concrete form of <span class="process-math">\(\vg^{*}(\omega)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-8">
+\begin{align*}
+\vg^{*}(\omega) \amp= P\circ \vg \left(\frac{\partial y}{\partial u} \, du + \frac{\partial y}{\partial v} \, dv\right)
+\wedge \left(\frac{\partial z}{\partial u} \, du + \frac{\partial z}{\partial v} \, dv\right) \\
+\amp + Q\circ \vg \left(\frac{\partial z}{\partial u} \, du + \frac{\partial z}{\partial v} \, dv\right)
+\wedge \left(\frac{\partial x}{\partial u} \, du + \frac{\partial x}{\partial v} \, dv\right) \\
+\amp + R\circ \vg \left(\frac{\partial x}{\partial u} \, du + \frac{\partial x}{\partial v} \, dv\right)
+\wedge \left(\frac{\partial y}{\partial u} \, du + \frac{\partial y}{\partial v} \, dv\right) \\
+\amp= P\circ \vg \left(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}  \right) du\wedge dv \\
+\amp+ Q\circ \vg \left(\frac{\partial z}{\partial u} \frac{\partial x}{\partial v}- 
+\frac{\partial z}{\partial v} \frac{\partial x}{\partial u}  \right) du\wedge dv \\
+\amp+ R\circ \vg \left(\frac{\partial x}{\partial u} \frac{\partial y}{\partial v}- 
+\frac{\partial x}{\partial v} \frac{\partial y}{\partial u}  \right) du\wedge dv 
+\end{align*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-9">
+\begin{equation*}
+D_{u}\vg\times D_{v}\vg=\left( \frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}, \frac{\partial z}{\partial u} \frac{\partial x}{\partial v}- 
+\frac{\partial z}{\partial v} \frac{\partial x}{\partial u}, 
+\frac{\partial x}{\partial u} \frac{\partial y}{\partial v}- 
+\frac{\partial x}{\partial v} \frac{\partial y}{\partial u}\right),
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-10">
+\begin{equation*}
+\vg^{*}(\omega)=(P\circ \vg, Q\circ \vg, R\circ \vg) \cdot \left( D_{u}\vg\times D_{v}\vg\right)\,
+du\wedge dv,
+\end{equation*}
+</div>
+<div class="para">and if we use <span class="process-math">\(\nu\)</span> to denote the unit vector in the direction of <span class="process-math">\(D_{u}\vg\times D_{v}\vg\)</span> (when it is not <span class="process-math">\(\mathbf 0\)</span>), then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-14">
+\begin{equation*}
+\vg^{*}(\omega)=(P\circ \vg, Q\circ \vg, R\circ \vg)\cdot \nu  \Vert D_{u}\vg\times D_{v}\vg\Vert
+\, du\wedge dv
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-15">
+\begin{equation*}
+\int_{I^{2}} \vg^{*}(\omega)= \int_{I^{2}} (P\circ \vg, Q\circ \vg, R\circ \vg)\cdot \nu  \Vert D_{u}\vg\times D_{v}\vg\Vert \, du\, dv.
+\end{equation*}
+</div>
+<div class="para">Recall that the integral of <span class="process-math">\(\Vert D_{u}\vg\times D_{v}\vg\Vert\)</span> gives the surface area of the parametric surface <span class="process-math">\(\vg=\vg(u, v)\)</span> over the parameter domain, and the integral on the right hand side above is identified as the surface integral</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-2-18">
+\begin{equation*}
+\int_{\vg(I^{2})} (P, Q, R)\cdot \nu \, dA.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-16-3">Because of this relation one often finds in older texts that <span class="process-math">\(\int_{S} (P, Q, R)\cdot \nu \, dA\)</span> is written as <span class="process-math">\(\int_{S} P\, dy dz + Q\, dz dx +R\,  dx dy\)</span> on a surface <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-16-4">
+<div class="para">If we look at the term involving <span class="process-math">\(P, Q\)</span> or <span class="process-math">\(R\)</span> individually, say, the term <span class="process-math">\(P\circ \vg \left(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}  \right)\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-4-4">
+\begin{equation*}
+\int_{I^{2}} P\circ \vg \left(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}  \right) \, du dv
+=\int_{\text{Projection into the } y, z 
+\text{ plane of } \vg(I^{2})} P \,dy dz
+\end{equation*}
+</div>
+<div class="para">according to the change of variables formula in integration, provided that <span class="process-math">\(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}&gt; 0\text{.}\)</span> In other words, this integral can be treated as an integral in the <span class="process-math">\(y\mbox{--}z\)</span> coordinate plane. When the sign is not specified, the integral takes into account of the orientation of the projection, such as in the case that <span class="process-math">\(\vg\)</span> is a parametrization for the round sphere that includes portions of both the upper and lower hemisphere, where <span class="process-math">\(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}\)</span> will be positive in some region while negative in some other region,  so the resulting integral reflects this. As a result, <span class="process-math">\(\int_{\vg}\omega\)</span> can be interpreted as projecting <span class="process-math">\(\omega\)</span> to each of the possible two dimensional coordinate planes and computing the integral of the projected component in the projected domain, taking into account of the orientation of the projection, and summing up these integrals.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-16-5">
+<div class="para">For example, if <span class="process-math">\(\vg\)</span> is a parametrization for the upper half unit sphere centered at the origin, then its projection onto the <span class="process-math">\(y\mbox{--}z\)</span> plane will be two-to-one, with the right half and left half carrying opposite signs in the Jacobian. Suppose the unit normal corresponding to the parametrization <span class="process-math">\(\vg\)</span> is outward with respect to the sphere. Since  <span class="process-math">\(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}- 
+\frac{\partial y}{\partial v} \frac{\partial z}{\partial u}\)</span> is the <span class="process-math">\(x\)</span>-component of the normal, we know it is positive when <span class="process-math">\(\vg\)</span> lands on the right half of the sphere and is negative  and when <span class="process-math">\(\vg\)</span> lands on the left half of the sphere. If <span class="process-math">\(\omega=x\, dy\wedge dz\text{,}\)</span> then the <span class="process-math">\(x\)</span> factor would also take opposite signs on the two halves of the sphere, so</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-5-10">
+\begin{equation*}
+\int_{\vg: x=\vg_{1}\ge 0} x\, dy\wedge dz =\int_{y^{2}+z^{2}\le 1, z\ge 0} \sqrt{1-y^{2}-z^{2}}\, dy dz\text{,}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-5-11">
+\begin{equation*}
+\int_{\vg: x=\vg_{1}\le 0} x\, dy\wedge dz =\int_{y^{2}+z^{2}\le 1, z\ge 0} -\sqrt{1-y^{2}-z^{2}} (-1)\, dy dz\text{,}
+\end{equation*}
+</div>
+<div class="para">which results in</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-5-12">
+\begin{equation*}
+\int_{\vg}x\, dy\wedge dz=2 \int_{y^{2}+z^{2}\le 1, z\ge 0} \sqrt{1-y^{2}-z^{2}}\, dy dz,
+\end{equation*}
+</div>
+<div class="para">provided the parametrization gives a positive Jacobian when <span class="process-math">\(x &gt; 0\)</span> (which is the case if <span class="process-math">\(D_{u}\vg\times D_{v}\)</span> points upward).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-16-6">
+<div class="para">If one chooses to use <span class="process-math">\(\vg(x,y)=(x,y, \sqrt{1-x^{2}-y^{2}})\)</span> as a parametrization, then one could also use this parametrization to evaluate the integral directly, using</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-6-2">
+\begin{equation*}
+dy\wedge dz= dy\wedge (\frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy)=-
+\frac{\partial z}{\partial x}dx\wedge dy,
+\end{equation*}
+</div>
+<div class="para">and get</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-6-3">
+\begin{equation*}
+\int_{\vg}x\, dy\wedge dz= - \int_{x^{2}+y^{2}\le 1} x \frac{\partial z}{\partial x}\,dx\, dy
+=\int_{x^{2}+y^{2}\le 1}\frac{x^{2}}{\sqrt{1-x^{2}-y^{2}}} \,dx\, dy.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-4-16-7">
+<div class="para">A third option to evaluate the above integral is to think of <span class="process-math">\(\vg\)</span> as part of <span class="process-math">\(\partial c\)</span> for some singular <span class="process-math">\(3\)</span>-cube (or chain). One could imagine defining a <span class="process-math">\(3\)</span>-cube <span class="process-math">\(c\)</span> mapping into the upper half unit ball such that its restriction to its top face gives rise to <span class="process-math">\(\vg\text{,}\)</span> its restriction to its bottom face gives rise to a parametrization for the unit disk in the plane <span class="process-math">\(z=0\text{,}\)</span>  and its restriction to its lateral faces maps to the unit circle <span class="process-math">\(x^{2}+y^{2}=1, z=0\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-7-9">
+\begin{equation*}
+\int_{\partial c} x \, dy\wedge dz= \int_{\vg}x\, dy\wedge dz - \int_{\text{bottom}} x\, dy\wedge dz.
+\end{equation*}
+</div>
+<div class="para">But on the bottom face, <span class="process-math">\(z=0\text{,}\)</span> so <span class="process-math">\(dy\wedge dz=0\)</span> in the integral. On the other hand, we can apply the Stokes’ Theorem to get</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-4-16-7-12">
+\begin{equation*}
+\int_{\vg}x\, dy\wedge dz= \int_{c} d(x \, dy\wedge dz)= \int_{c} dx \wedge dy\wedge dz.
+\end{equation*}
+</div>
+<div class="para">A similar consideration for how to compute integrals of a <span class="process-math">\(3\)</span>-form leads us to conclude that <span class="process-math">\(\int_{c} dx \wedge dy\wedge dz\)</span> is the volume of the upper half unit sphere.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-4-16-8">In higher dimensions,  a surface may no longer have a notion of a normal vector, but the latter interpretation of projecting on each coordinate plane still applies.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-16-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.4.6: Example relating the integral of a two form to a classical surface integral"><a href="#Math412-Notes-10-7-4-16" title="Copy heading and permalink for Example 7.4.6: Example relating the integral of a two form to a classical surface integral" aria-label="Copy heading and permalink for Example 7.4.6: Example relating the integral of a two form to a classical surface integral">🔗</a></div></article></details><section class="exercises" id="Math412-Notes-10-7-4-17"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="Math412-Notes-10-7-4-17-1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-4-17-1-1">Define <span class="process-math">\(c(u, v)=(u, v)\)</span> for <span class="process-math">\((u,  v)\in I^{2}\text{.}\)</span> For any differentiable <span class="process-math">\(1\)</span>-form <span class="process-math">\(\omega= P \, dx + Q\, dy\)</span> in <span class="process-math">\(I^{2}\text{,}\)</span> work out <span class="process-math">\((\partial c)^{*}(\omega)\)</span> and <span class="process-math">\(d \left( c^{*}(\omega) \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.2.1"><a href="#Math412-Notes-10-7-4-17-1" title="Copy heading and permalink for Exercise 7.4.2.1" aria-label="Copy heading and permalink for Exercise 7.4.2.1">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-4-17-2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-4-17-2-1">Let <span class="process-math">\(c(u, v)=(f_{1}(u, v), f_{2}(u, v), f_{3}(u, v))\)</span> be a differentiable map from <span class="process-math">\(I^{2}\)</span> to <span class="process-math">\(\bbR^{3}\)</span> and <span class="process-math">\(\omega = P\, dx + Q\, dy + R\, dz\)</span> be a differentiable <span class="process-math">\(1\)</span>-form in <span class="process-math">\(\bbR^{3}\text{.}\)</span> Work out <span class="process-math">\((\partial c)^{*}(\omega)\)</span> and <span class="process-math">\(d \left( c^{*}(\omega) \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.2.2"><a href="#Math412-Notes-10-7-4-17-2" title="Copy heading and permalink for Exercise 7.4.2.2" aria-label="Copy heading and permalink for Exercise 7.4.2.2">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-4-17-3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-4-17-3-1">Let <span class="process-math">\(m\)</span> be an integer and <span class="process-math">\(R &gt; 0\text{.}\)</span> Define <span class="process-math">\(c_{R,m}(t)=(R\cos(2\pi m t), R\sin (2\pi m t))\)</span> as a map <span class="process-math">\(I^{1}\mapsto \bbR^{2}\setminus\{(0, 0)\}\text{.}\)</span> For any <span class="process-math">\(r_{1}, r_{2}&gt; 0, r_{1}\ne r_{2}\text{,}\)</span> construct a map <span class="process-math">\(c:I^{2}\mapsto \bbR^{2}\setminus\{(0, 0)\}\)</span> such that <span class="process-math">\(c_{r_{2},m}-c_{r_{1},m}=\partial c\)</span> as a singular <span class="process-math">\(2\)</span>-chain.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-17-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.2.3"><a href="#Math412-Notes-10-7-4-17-3" title="Copy heading and permalink for Exercise 7.4.2.3" aria-label="Copy heading and permalink for Exercise 7.4.2.3">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-4-17-4"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="Math412-Notes-10-7-4-17-4-1">If <span class="process-math">\(c\)</span> is a singular <span class="process-math">\(1\)</span>-cube in <span class="process-math">\(\bbR^{2} -\{ \mathbf 0\}\)</span> with <span class="process-math">\(c(0) = c(1)\text{,}\)</span> show that there is an integer <span class="process-math">\(m\)</span> such that <span class="process-math">\(c - c_{1,m} = \partial c^{2}\)</span> for some <span class="process-math">\(2\)</span>-chain <span class="process-math">\(c^{2}\text{.}\)</span> Here <span class="process-math">\(c_{R, m}(t)=R(\cos(2\pi m t), \sin (2\pi m t))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-4-17-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.2.4"><a href="#Math412-Notes-10-7-4-17-4" title="Copy heading and permalink for Exercise 7.4.2.4" aria-label="Copy heading and permalink for Exercise 7.4.2.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.4.2"><a href="#Math412-Notes-10-7-4-17" title="Copy heading and permalink for Exercises 7.4.2" aria-label="Copy heading and permalink for Exercises 7.4.2">🔗</a></div></section><div class="autopermalink" data-description="Subsection 7.4.2: The Boundary Operator, Singular Chain, and Stokes Theorem"><a href="#Math412-Notes-10-7-4" title="Copy heading and permalink for Subsection 7.4.2: The Boundary Operator, Singular Chain, and Stokes Theorem" aria-label="Copy heading and permalink for Subsection 7.4.2: The Boundary Operator, Singular Chain, and Stokes Theorem">🔗</a></div></section><section class="subsection" id="Math412-Notes-10-7-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Closed and Exact Forms</span>
+</h3>
+<article class="definition definition-like" id="Math412-Notes-10-7-5-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-5-2-1-1">A <span class="process-math">\(k\)</span>-form <span class="process-math">\(\omega\)</span> is called closed if <span class="process-math">\(d\omega=0\text{;}\)</span> it is called exact if there exists a <span class="process-math">\((k-1)\)</span>-form <span class="process-math">\(\eta\)</span> such that <span class="process-math">\(\omega=d\eta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.4.7"><a href="#Math412-Notes-10-7-5-2" title="Copy heading and permalink for Definition 7.4.7" aria-label="Copy heading and permalink for Definition 7.4.7">🔗</a></div></article><div class="para" id="Math412-Notes-10-7-5-3">Note that, due to <span class="process-math">\(d\circ d=0\text{,}\)</span> any exact form must be closed.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-5-4">
+<div class="para">Questions that we need to address include</div>
+<ul class="disc" id="Math412-Notes-10-7-5-4-1">
+<li id="Math412-Notes-10-7-5-4-1-1">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-4-1-1">How do we check whether a form is closed or exact?</div>
+<div class="autopermalink" data-description="Item"><a href="#Math412-Notes-10-7-5-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-4-1-2">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-4-1-2">Is every closed form also exact?</div>
+<div class="autopermalink" data-description="Item"><a href="#Math412-Notes-10-7-5-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-5-5">
+<div class="para">Since for any one form <span class="process-math">\(\omega(\bx)=\sum_{i=1}^{m}\omega_{i}(\bx)dx_{i}\)</span> we have</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-5-2">
+\begin{equation*}
+d\omega(\bx)=\sum_{j &lt; i}  
+\left( \frac{\partial \omega_{i}}{\partial x_j} -  \frac{\partial \omega_{j}}{\partial x_{i}} \right) 
+dx_{j} \wedge dx_{i},
+\end{equation*}
+</div>
+<div class="para">it’s clear that <span class="process-math">\(d\omega=0\)</span> iff <span class="process-math">\(\frac{\partial \omega_{i}}{\partial x_j} = \frac{\partial \omega_{j}}{\partial x_{i}}\)</span> for all <span class="process-math">\(i, j\text{.}\)</span> These are <span class="process-math">\(\frac{m(m-1)}{2}\)</span> conditions on <span class="process-math">\(m\)</span> components of <span class="process-math">\(\omega\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-5-6">
+<div class="para">For a two-form <span class="process-math">\(\omega(\bx)=\sum_{i &lt; j} \omega_{ij} dx_{i}\wedge dx_{j}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-6-2">
+\begin{equation*}
+d\omega(\bx)=\sum_{i &lt; j}d \omega_{ij} \wedge dx_{i}\wedge dx_{j},
+\end{equation*}
+</div>
+<div class="para">and if one examines the coefficient of <span class="process-math">\(dx_{i}\wedge dx_{j}\wedge dx_{k}\)</span> for some <span class="process-math">\(i &lt; j &lt; k\text{,}\)</span> one gets</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-6-5">
+\begin{equation*}
+D_{k} \omega_{ij} + D_{i} \omega_{jk}-D_{j}\omega_{ik}.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d\omega=0\)</span> if and only if all the triple sums above are equal to zero. But these conditions are not that easy to comprehend. In dimension <span class="process-math">\(4\text{,}\)</span> a two form would have <span class="process-math">\(6\)</span> components, and <span class="process-math">\(d\omega=0\)</span> encodes <span class="process-math">\(4\)</span> equations.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-5-7">Based on our observation earlier that <span class="process-math">\(\omega=d\eta\)</span> for any one-form <span class="process-math">\(\eta\)</span> would satisfy <span class="process-math">\(d\omega=0\text{,}\)</span> we get plenty of solutions this way, and the solutions are in terms of <span class="process-math">\(m\)</span> arbitrary differentiable functions as components of <span class="process-math">\(\eta\)</span> in regions of <span class="process-math">\(\bbR^{m}\text{.}\)</span> Whether these provide all possible solutions is the second question raised above.The answer turns out to depend on the topology of the domain.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-7-5-8">The one form <span class="process-math">\(\omega=-\frac{y}{x^{2}+y^{2}}dx + \frac{x}{x^{2}+y^{2}} dy\)</span> is closed on <span class="process-math">\(\bbR^{2}\setminus\{0\}\text{,}\)</span> but is not exact, for it were equal to  <span class="process-math">\(df\)</span> for some differentiable function <span class="process-math">\(f\)</span> on <span class="process-math">\(\bbR^{2}\setminus\{0\}\text{,}\)</span> then for any <span class="process-math">\(1\)</span>-cube <span class="process-math">\(c\)</span> in  <span class="process-math">\(\bbR^{2}\setminus\{0\}\text{,}\)</span> <span class="process-math">\(\int_{c} df =f(c(1))-f(c(0))\)</span> as the simplest form of Stokes’ Theorem. As a consequence, <span class="process-math">\(\int_{c} df =0\)</span> when <span class="process-math">\(c(1)=c(0)\text{.}\)</span> But if we take <span class="process-math">\(c(t)=(\cos (2\pi t), \sin (2\pi t))\text{,}\)</span> <span class="process-math">\(0\le t \le 1\text{,}\)</span> we find that <span class="process-math">\(\int_{c} \omega= 2\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-7-5-9"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-5-9-1-1">A domain <span class="process-math">\(A\subset \bbR^{m}\)</span> is called star-shaped if there exists a point <span class="process-math">\(O\in A\)</span> such that for any <span class="process-math">\(P\in A\)</span> and any <span class="process-math">\(t\in [0, 1]\text{,}\)</span> <span class="process-math">\((1-t)O+tP\in A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.4.8"><a href="#Math412-Notes-10-7-5-9" title="Copy heading and permalink for Definition 7.4.8" aria-label="Copy heading and permalink for Definition 7.4.8">🔗</a></div></article><article class="theorem theorem-like" id="Math412-Notes-10-7-5-10"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Poincaré Lemma.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-5-10-2-1">Assume that <span class="process-math">\(A\)</span> is an open star-shaped domain in <span class="process-math">\(\bbR^{m}\text{,}\)</span> then any closed form on <span class="process-math">\(A\)</span> is an exact form.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.4.9: Poincaré Lemma"><a href="#Math412-Notes-10-7-5-10" title="Copy heading and permalink for Theorem 7.4.9: Poincaré Lemma" aria-label="Copy heading and permalink for Theorem 7.4.9: Poincaré Lemma">🔗</a></div></article><details id="Math412-Notes-10-7-5-10-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="Math412-Notes-10-7-5-10-3-1">
+<div class="para">We may assume that <span class="process-math">\(A\)</span> is star-shaped with respect to the origin. The key information we use is that <span class="process-math">\(F(t, x)=tx\)</span> for <span class="process-math">\((t, x)\in [0, 1]\times A\)</span> is a homotopy in <span class="process-math">\(A\)</span> of <span class="process-math">\(F(1, \cdot)\)</span> and <span class="process-math">\(F(0, \cdot)\text{.}\)</span> The heart of the argument is that there exists <span class="process-math">\(I: \Lambda^{l+1}(TA)\mapsto \Lambda^{l}(TA)\)</span> for <span class="process-math">\(l=1, \ldots, m\)</span> such that</div>
+<div class="displaymath process-math" id="homotopy">
+\begin{equation}
+\omega = I(d\omega) + d\left(I(\omega)\right) \text{ for any } \omega \in \Lambda^{k}(TA).\tag{7.4.1}
+\end{equation}
+</div>
+<div class="para">As a result, when <span class="process-math">\(d\omega=0\text{,}\)</span> we find <span class="process-math">\(\omega=d\left(I(\omega)\right)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-10-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-5-10-3-2">
+<div class="para">Let’s assume that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-2-1">
+\begin{equation*}
+\omega(\bx)=\sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \omega_{i_{1}\cdots i_{k}}(\bx) 
+dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k}}.
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(t\in [0, 1]\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-2-3">
+\begin{equation*}
+F(t, \cdot)^{*}(\omega)= \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} t^{k}\omega_{i_{1}\cdots i_{k}}(t\bx) 
+dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k}}
+\end{equation*}
+</div>
+<div class="para">is a <span class="process-math">\(k\)</span>-form on <span class="process-math">\(A\text{.}\)</span>  Note that <span class="process-math">\(F(1, \cdot)^{*}(\omega)=\omega\)</span> and <span class="process-math">\(F(0, \cdot)^{*}(\omega)=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-10-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-7-5-10-3-3">
+<div class="para">Consideration for <span class="process-math">\(D_{t} F(t, \cdot)^{*}(\omega)\)</span> leads to the <span class="process-math">\(k\)</span>-form on <span class="process-math">\([0, 1]\times A\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-4">
+\begin{equation*}
+F^{*}(\omega)= \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \omega_{i_{1}\cdots i_{k}}(t\bx) 
+\left(t\,dx_{i_{1}}+ x_{i_{1}} dt\right)\wedge\cdots \wedge \left(t \, dx_{i_{k}}+ x_{i_{k}}dt\right).
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(F^{*}(\omega)(\frac{\partial }{\partial t}, \cdot)\)</span> defines a <span class="process-math">\((k-1)\)</span>-form on <span class="process-math">\([0, 1]\times A\)</span> by</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-8">
+\begin{equation*}
+F^{*}(\omega)(\frac{\partial }{\partial t}, \cdot): (\bv_{1},\cdots, \bv_{k-1})\mapsto F^{*}(\omega)(\frac{\partial }{\partial t}, \bv_{1},\cdots, \bv_{k-1}).
+\end{equation*}
+</div>
+<div class="para">We define</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-9">
+\begin{equation*}
+I(\omega) = \int_{0}^{1}F^{*}(\omega)(\frac{\partial }{\partial t}, \cdot)\, dt.
+\end{equation*}
+</div>
+<div class="para">More concretely, <span class="process-math">\(F^{*}(\omega)(\frac{\partial }{\partial t}, \cdot)\)</span> is obtained from <span class="process-math">\(F^{*}(\omega)\)</span> by only keeping terms with one factor of <span class="process-math">\(x_{i_{l}}dt\)</span> and the remaining factors of <span class="process-math">\(t dx_{i_{j}}\text{,}\)</span> then dropping the <span class="process-math">\(dt\)</span> factor (as its action on <span class="process-math">\(\frac{\partial }{\partial t}\)</span> would be <span class="process-math">\(1\)</span>) and adjusting the sign according to the position of <span class="process-math">\(x_{i_{l}}dt\text{,}\)</span> and integrating out the resulting expression in <span class="process-math">\(t\)</span> to get</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-19">
+\begin{align*}
+I(\omega) 
+= \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m}
+\int_{0}^{1} t^{k-1}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt  
+\left(x_{i_{1}} dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}}\right.\\
+\amp\left.- x_{i_{2}}dx_{i_{1}}\wedge dx_{i_{3}}\wedge \cdots \wedge dx_{i_{k}}+ \cdots +(-1)^{k+1} x_{i_{k}}dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k-1}}\right).
+\end{align*}
+</div>
+<div class="para">It is then straightforward to verify that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-20">
+\begin{align*}
+\amp I(d\omega) + d\left(I(\omega)\right) \\
+= \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \int_{0}^{1}\left(\sum_{l=1}^{m}t^{k} x_{l}D_{l} \omega_{i_{1}\cdots i_{k}}(t\bx) +k t^{k-1} \omega_{i_{1}\cdots i_{k}}(t\bx)\right)\, dt \\
+= \amp \omega(\bx).
+\end{align*}
+</div>
+<div class="para">Below are the verifications.</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-21">
+\begin{align*}
+\amp dI(\omega) \\
+= \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \left\{\sum_{l=1}^{m}
+\left( \int_{0}^{1} t^{k}D_{l}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) dx_{l}\wedge
+\left(x_{i_{1}} dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}} \right. \right.\\
+\amp\left. - x_{i_{2}}dx_{i_{1}}\wedge dx_{i_{3}}\wedge \cdots \wedge dx_{i_{k}}+ \cdots +(-1)^{k+1} x_{i_{k}}dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k-1}}\right)\\
+\amp +\left(\int_{0}^{1} t^{k-1}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) 
+\left(d x_{i_{1}}\wedge dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}} \right.\\
+\amp \left. \left.- dx_{i_{2}}\wedge dx_{i_{1}}\wedge dx_{i_{3}}\wedge \cdots \wedge dx_{i_{k}}+ \cdots +(-1)^{k+1} dx_{i_{k}}\wedge dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k-1}}\right)\right\}\\
+= \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m} \left\{\sum_{l=1}^{m}
+\left( \int_{0}^{1} t^{k}D_{l}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) dx_{l}\wedge
+\left(x_{i_{1}} dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}}\right. \right.\\
+\amp \left.- x_{i_{2}}dx_{i_{1}}\wedge dx_{i_{3}}\wedge \cdots \wedge dx_{i_{k}}+ \cdots +(-1)^{k+1} x_{i_{k}}dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k-1}}\right) \\
+\amp \left. +  \left(\int_{0}^{1} k t^{k-1}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right)d x_{i_{1}}\wedge dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}}\right\}, 
+\end{align*}
+</div>
+<div class="para">while</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-10-3-3-22">
+\begin{align*}
+\amp I(d\omega) \\
+= \amp \sum_{1\le i_{1} &lt; \cdots &lt; i_{k}\le m; 1\le l \le m} \left\{
+\left( \int_{0}^{1} t^{k}D_{l}\omega_{i_{1}\cdots i_{k}}(t\bx)\,dt\right) 
+\left(x_{l} d x_{i_{1}}\wedge dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}} 
+\right. \right.\\
+\amp +dx_{l}\left[
+-x_{i_{1}} dx_{i_{2}}\wedge\cdots \wedge dx_{i_{k}}+ x_{i_{2}} dx_{i_{1}}\wedge dx_{i_{3}}\wedge \cdots \wedge dx_{i_{k}} \right. \\
+\amp \left. \left.\left.+ \cdots +(-1)^{k} x_{i_{k}} dx_{i_{1}}\wedge\cdots \wedge dx_{i_{k-1}}\right]\right)\right\}
+\end{align*}
+</div>
+<div class="para">Adding the above two terms completes our verification.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-10-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.4.9.1"><a href="#Math412-Notes-10-7-5-10-3" title="Copy heading and permalink for Proof 7.4.9.1" aria-label="Copy heading and permalink for Proof 7.4.9.1">🔗</a></div></article></details><article class="remark remark-like" id="Math412-Notes-10-7-5-11"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="Math412-Notes-10-7-5-11-1">We used a specific homotopy <span class="process-math">\(F(t, \cdot)\)</span> in this proof for a star-shaped domain; this proof can be adapted to work for other homotopy. In particular, it can be used to show that if <span class="process-math">\(F(t, \cdot)\)</span> is a (differentiable) homotopy for <span class="process-math">\(t\in [a, b]\text{,}\)</span> and <span class="process-math">\(\omega\)</span> is a closed form, then <span class="process-math">\(F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)\)</span> is exact, and often one can construct an <span class="process-math">\(\eta=I(\omega)\)</span> explicitly as described in the proof of Poincaré’s Lemma so that <span class="process-math">\(d\eta= F(b, \cdot)^{*}(\omega) - F(a, \cdot)^{*}(\omega)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 7.4.10"><a href="#Math412-Notes-10-7-5-11" title="Copy heading and permalink for Remark 7.4.10" aria-label="Copy heading and permalink for Remark 7.4.10">🔗</a></div></article><section class="exercises" id="Math412-Notes-10-7-5-12"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="Math412-Notes-10-7-5-12-1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para logical" id="Math412-Notes-10-7-5-12-1-1-1">
+<div class="para">Let   <span class="process-math">\(\Theta(x,y)=\frac{-y\, dx + x\, dy}{x^{2}+y^{2}}\)</span> be the <span class="process-math">\(1\)</span>-form on <span class="process-math">\(\bbR^{2}\setminus\{(0, 0)\}\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-1" id="Math412-Notes-10-7-5-12-1-1-1-4">
+<li id="Math412-Notes-10-7-5-12-1-1-1-4-1">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-1-1-1-4-1">Show that  <span class="process-math">\(\Theta(x,y)\)</span> is closed on <span class="process-math">\(\bbR^{2}\setminus\{(0, 0)\}\)</span> but not exact in <span class="process-math">\(\bbR^{2}\setminus\{(0, 0)\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.1.a"><a href="#Math412-Notes-10-7-5-12-1-1-1-4-1" title="Copy heading and permalink for Item 7.4.3.1.a" aria-label="Copy heading and permalink for Item 7.4.3.1.a">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-1-1-1-4-2">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-1-1-1-4-2">Show also that <span class="process-math">\(\Theta (x, y)\)</span> is exact on <span class="process-math">\(\bbR^{2}\setminus\{(x, 0): x\le 0\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.1.b"><a href="#Math412-Notes-10-7-5-12-1-1-1-4-2" title="Copy heading and permalink for Item 7.4.3.1.b" aria-label="Copy heading and permalink for Item 7.4.3.1.b">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-1-1-1-4-3">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-1-1-1-4-3">Suppose that <span class="process-math">\(\omega\)</span> is a <span class="process-math">\(1\)</span>-form on <span class="process-math">\(\bbR^{2}-\{\mathbf 0\}\)</span> such that <span class="process-math">\(d\omega=0\text{,}\)</span> prove that <span class="process-math">\(\omega = \lambda \Theta + dg\)</span> for some <span class="process-math">\(\lambda \in \bbR\)</span> and and <span class="process-math">\(g:\bbR^{2}-\{\mathbf 0\}\mapsto \bbR\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.1.c"><a href="#Math412-Notes-10-7-5-12-1-1-1-4-3" title="Copy heading and permalink for Item 7.4.3.1.c" aria-label="Copy heading and permalink for Item 7.4.3.1.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-12-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="Math412-Notes-10-7-5-12-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="Math412-Notes-10-7-5-12-1-2-1">
+<div class="para">With <span class="process-math">\(c_{R,1}(t)=(R\cos (2\pi t), R\sin (2\pi t))\)</span> for <span class="process-math">\(t\in I^{1}\text{,}\)</span> and <span class="process-math">\(c_{R,1}^{*}(\omega)\)</span> being closed on <span class="process-math">\(I^{1}\text{,}\)</span> we can write</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-12-1-2-1-5">
+\begin{equation*}
+c_{R,1}^{*}(\omega) = \lambda_{R} dt + d(g_{R}),
+\end{equation*}
+</div>
+<div class="para">for some function <span class="process-math">\(g_{R}(t)\)</span> satisfying <span class="process-math">\(g_{R}(1)=g_{R}(0)\text{.}\)</span> Show that the number is independent of  <span class="process-math">\(R&gt; 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-12-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 7.4.3.1.1"><a href="#Math412-Notes-10-7-5-12-1-2" title="Copy heading and permalink for Hint 7.4.3.1.1" aria-label="Copy heading and permalink for Hint 7.4.3.1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7.4.3.1"><a href="#Math412-Notes-10-7-5-12-1" title="Copy heading and permalink for Exercise 7.4.3.1" aria-label="Copy heading and permalink for Exercise 7.4.3.1">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-7-5-12-2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para logical" id="Math412-Notes-10-7-5-12-2-1">
+<div class="para">Consider the two-form</div>
+<div class="displaymath process-math" id="Math412-Notes-10-7-5-12-2-1-1">
+\begin{equation*}
+\omega=\frac{x\, dy\wedge dz + y dz\wedge dx + z dx \wedge dy}{(x^{2}+y^{2}
++z^{2})^{3/2}}
+\end{equation*}
+</div>
+<div class="para">on <span class="process-math">\(\bbR^{3}\setminus\{\mathbf 0\}\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-1" id="Math412-Notes-10-7-5-12-2-1-3">
+<li id="Math412-Notes-10-7-5-12-2-1-3-1">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-1">Verify that <span class="process-math">\(d\omega =0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.a"><a href="#Math412-Notes-10-7-5-12-2-1-3-1" title="Copy heading and permalink for Item 7.4.3.2.a" aria-label="Copy heading and permalink for Item 7.4.3.2.a">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-2-1-3-2">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-2">Suppose that <span class="process-math">\(c: (u, v)\in \bbR^{2}\mapsto \bbR^{3}\setminus\{\mathbf 0\}\)</span> is differentiable. Verify that<div class="displaymath process-math" id="Math412-Notes-10-7-5-12-2-1-3-2-2">
+\begin{equation*}
+c^{*}(\omega)=\frac{c(u, v) \cdot \left(D_{u} c\times D_{v} c\right) }{|c(u, v)|^{3}}  du\wedge dv.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.b"><a href="#Math412-Notes-10-7-5-12-2-1-3-2" title="Copy heading and permalink for Item 7.4.3.2.b" aria-label="Copy heading and permalink for Item 7.4.3.2.b">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-2-1-3-3">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-3">Suppose that <span class="process-math">\(c\Big|_{I^{2}}\)</span> is injective and <span class="process-math">\(|D_{u} c\times D_{v} c|&gt; 0\)</span> so that <span class="process-math">\(c(I^{2})\)</span> is a differentiable surface in <span class="process-math">\(\bbR^{3}\setminus\{\mathbf 0\}\text{.}\)</span> Show that<div class="displaymath process-math" id="Math412-Notes-10-7-5-12-2-1-3-3-5">
+\begin{equation*}
+\int_{c(I^{2})} \frac{(x, y, z)\cdot \bn(x, y, z)}{(x^{2}+y^{2}
++z^{2})^{3/2}}\, dA= \int_{I^{2}} c^{*}(\omega)\text{,}
+\end{equation*}
+</div>where<div class="displaymath process-math" id="Math412-Notes-10-7-5-12-2-1-3-3-6">
+\begin{equation*}
+\bn (c(u, v))=\frac{ D_{u} c\times D_{v} c}{|D_{u} c\times D_{v}c|}
+\end{equation*}
+</div>is a unit normal to the parametric surface <span class="process-math">\(c(u, v)\)</span> at <span class="process-math">\(c(u, v)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.c"><a href="#Math412-Notes-10-7-5-12-2-1-3-3" title="Copy heading and permalink for Item 7.4.3.2.c" aria-label="Copy heading and permalink for Item 7.4.3.2.c">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-2-1-3-4">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-4">Choose the spherical polar coordinate parametrization <span class="process-math">\(s\)</span> for the sphere <span class="process-math">\(x^{2}+y^{2}+z^{2}=R^{2}\)</span> defined for <span class="process-math">\((\phi, \theta)\in [0, \pi]\times [0, 2\pi]\)</span> to show that <span class="process-math">\(D_{u} s\times D_{v} s\)</span> is an outward normal and that <span class="process-math">\(\int_{s}\omega= 4\pi\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.d"><a href="#Math412-Notes-10-7-5-12-2-1-3-4" title="Copy heading and permalink for Item 7.4.3.2.d" aria-label="Copy heading and permalink for Item 7.4.3.2.d">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-2-1-3-5">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-5">Show that for any continuous <span class="process-math">\(1\)</span>-form <span class="process-math">\(\eta\)</span> in <span class="process-math">\(\bbR^{3}\setminus\{\mathbf 0\}\text{,}\)</span> <span class="process-math">\(\int_{\partial s} \eta =0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.e"><a href="#Math412-Notes-10-7-5-12-2-1-3-5" title="Copy heading and permalink for Item 7.4.3.2.e" aria-label="Copy heading and permalink for Item 7.4.3.2.e">🔗</a></div>
+</li>
+<li id="Math412-Notes-10-7-5-12-2-1-3-6">
+<div class="para" id="p-derived-Math412-Notes-10-7-5-12-2-1-3-6">Show that there does not exist a <span class="process-math">\(1\)</span>-form <span class="process-math">\(\eta\)</span> in <span class="process-math">\(\bbR^{3}\setminus\{\mathbf 0\}\)</span> such that <span class="process-math">\(d\eta=\omega\)</span> in <span class="process-math">\(\bbR^{3}\setminus\{\mathbf 0\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 7.4.3.2.f"><a href="#Math412-Notes-10-7-5-12-2-1-3-6" title="Copy heading and permalink for Item 7.4.3.2.f" aria-label="Copy heading and permalink for Item 7.4.3.2.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-7-5-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.4.3.2"><a href="#Math412-Notes-10-7-5-12-2" title="Copy heading and permalink for Exercise 7.4.3.2" aria-label="Copy heading and permalink for Exercise 7.4.3.2">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.4.3"><a href="#Math412-Notes-10-7-5-12" title="Copy heading and permalink for Exercises 7.4.3" aria-label="Copy heading and permalink for Exercises 7.4.3">🔗</a></div></section><div class="autopermalink" data-description="Subsection 7.4.3: Closed and Exact Forms"><a href="#Math412-Notes-10-7-5" title="Copy heading and permalink for Subsection 7.4.3: Closed and Exact Forms" aria-label="Copy heading and permalink for Subsection 7.4.3: Closed and Exact Forms">🔗</a></div></section><div class="autopermalink" data-description="Section 7.4: Exterior Differential Operator d and Boundary Operator \partial"><a href="#Math412-Notes-10-7" title="Copy heading and permalink for Section 7.4: Exterior Differential Operator d and Boundary Operator \partial" aria-label="Copy heading and permalink for Section 7.4: Exterior Differential Operator d and Boundary Operator \partial">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="Math412-Notes-10-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Math412-Notes-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

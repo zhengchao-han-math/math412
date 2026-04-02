@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of continuous functions.</span>
+</h3> <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical">
+<div class="para">The functions defining the change of coordinate from  polar coordinates to rectangular coordinates are continuous for <span class="process-math">\((r, \theta) \in \bbR^+ \times [0, 2\pi]\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+x \amp = r \cos \theta\\
+y \amp =r \sin \theta
+\end{align*}
+</div>
+<div class="para">Part of the inverse, <span class="process-math">\(r=\sqrt{x^2+y^2}\text{,}\)</span> is defined on <span class="process-math">\(\bbR^2\)</span> and continuous there, but <span class="process-math">\(\theta\)</span> as a function of <span class="process-math">\((x, y)\)</span> is only defined on <span class="process-math">\(\bbR^2 \setminus\{\text{a ray from } 0\}\)</span>--- one often uses the formula <span class="process-math">\(\theta=\tan^{-1}(\frac yx)\text{,}\)</span> but it works only for <span class="process-math">\(x\gt 0\text{.}\)</span>
+</div>
+</div></article> <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para">The inner product function: <span class="process-math">\((\bx, \by)\in \bbR^n\times \bbR^n\mapsto \bx\cdot \by \in  \bbR\)</span> is continuous on <span class="process-math">\(\bbR^n\times \bbR^n\text{.}\)</span>
+</div>
+<div class="para">Suppose <span class="process-math">\(\bff_1: U\mapsto \bbR^n\)</span> and <span class="process-math">\(\bff_2: U\mapsto \bbR^n\)</span> are two continuous functions from <span class="process-math">\(U\)</span> to <span class="process-math">\(\bbR^n\text{,}\)</span> then composition with the continuous inner product makes <span class="process-math">\(\bff_1(\bu)\cdot \bff_2(\bu)\)</span> a continuous function from <span class="process-math">\(U\)</span> to <span class="process-math">\(\bbR\text{.}\)</span>
+</div></article> <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para">Let <span class="process-math">\((X, \Vert \cdot \Vert )\)</span> be any normed vector space, then <span class="process-math">\(\bx \mapsto \Vert \bx\Vert \in \bbR\)</span> is continuous from <span class="process-math">\(X\)</span> to <span class="process-math">\(\bbR\text{.}\)</span> This follows from using the triangle inequality to get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert \Vert \bx+\bh\Vert-\Vert \bx\Vert \vert \le \Vert \bh \Vert.
+\end{equation*}
+</div></article> <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para logical">
+<div class="para">Define <span class="process-math">\(S(u)=u(x)^{2}\)</span> for any <span class="process-math">\(u\in C[a, b]\text{,}\)</span> then <span class="process-math">\(u\mapsto S(u)\in C[a, b]\)</span> is continuous in <span class="process-math">\(C[a, b]\text{.}\)</span> We check that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert S(u+h)(x)-S(u)(x)\vert =\vert 2 u(x)h(x)+h(x)^{2}\vert \le 2 \Vert u \Vert_{C[a, b]} \Vert h\Vert_{C[a, b]}+
+\Vert h\Vert_{C[a, b]}^{2}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\Vert S(u+h)(x)-S(u)(x)\Vert_{C[a, b]}^{2} \to 0\)</span> as <span class="process-math">\(\Vert h\Vert_{C[a, b]} \to 0\text{,}\)</span> proving the continuity of <span class="process-math">\(S(u)\text{.}\)</span>
+</div>
+</div></article></article><span class="incontext"><a href="sec_continuity.html#example-4" class="internal">in-context</a></span>
+</body>
+</html>

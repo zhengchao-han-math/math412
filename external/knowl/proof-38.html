@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathbf x_{0}\in K\)</span> be a boundary point of the closed convex set <span class="process-math">\(K\text{.}\)</span> Then there exists a sequence <span class="process-math">\(\mathbf x_{k} \not\in K, \mathbf x_{k} \to \mathbf x_{0}\text{.}\)</span> Each <span class="process-math">\(\mathbf x_{k}\)</span> also has a closest point <span class="process-math">\(\mathbf p_{k}\in K\text{.}\)</span> This is done either by the Bolzano-Weierstrass compactness theorem or the parallelogram law of the Euclidean norm</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\Vert \frac{\mathbf p -\mathbf q}{2}\Vert^{2}=\Vert \mathbf p- \mathbf x_{k}\Vert^{2}
++ \Vert \mathbf q- \mathbf x_{k}\Vert^{2}-2 \Vert \frac{\mathbf p +\mathbf q}{2}- \mathbf x_{k}\Vert^{2}
+\end{equation*}
+</div>
+<div class="para">and the completeness of <span class="process-math">\(\mathbb R^{n}\text{.}\)</span> This law shows that if <span class="process-math">\(\mathbf q_{l}\in K\)</span> is such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert \mathbf q_{l}- \mathbf x_{k} \Vert \to \inf \{\Vert \mathbf x- \mathbf x_{k} \Vert: \mathbf x \in K\},
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(\mathbf q_{l}\)</span> is a Cauchy sequence, therefore has a limit, and  that limit is in <span class="process-math">\(K\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Next we claim that</div>
+<div class="displaymath process-math">
+\begin{equation}
+(\mathbf p_{k}- \mathbf x_{k})\cdot (\mathbf x - \mathbf p_{k})\ge 0 \text{ for all } \mathbf x \in K.\tag{4.8.3}
+\end{equation}
+</div>
+<div class="para">This follows from considering</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(t) :=(t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k})\cdot (t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k}).
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(h(t)=\Vert t\mathbf x +(1-t) \mathbf p_{k}-\mathbf x_{k}\Vert^{2}\text{,}\)</span> and <span class="process-math">\(t\mathbf x +(1-t) \mathbf p_{k}\in K\)</span> for <span class="process-math">\(0\le t \le 1\text{,}\)</span> so <span class="process-math">\(h(0)\le h(t)\)</span> for all <span class="process-math">\(0 \le t\le 1\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h'(0)=2 (\mathbf p_{k}- \mathbf x_{k})\cdot (\mathbf x - \mathbf p_{k})\ge 0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Define <span class="process-math">\(\mathbf n_{k}=(\mathbf p_{k}- \mathbf x_{k})/\Vert \mathbf p_{k}- \mathbf x_{k}\Vert\text{.}\)</span> Then <span class="process-math">\(\mathbf n_{k}\)</span> is a sequence of unit vectors, so there exists a subsequence, still denoted by itself, and a limiting unit vector <span class="process-math">\(\mathbf n\)</span> such that <span class="process-math">\(\mathbf n_{k}\to \mathbf n\text{.}\)</span> We also know that <span class="process-math">\(\mathbf p_{k} \to \mathbf x_{0}\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/zephyr.html">
+\begin{equation*}
+\Vert \mathbf p_{k} - \mathbf x_{0} \Vert \le \Vert \mathbf p_{k} - \mathbf x_{k} \Vert 
++ \Vert \mathbf x_{k} - \mathbf x_{0} \Vert \le 2 \Vert \mathbf x_{k}-\mathbf x_{0} \Vert.
+\end{equation*}
+</div>
+<div class="para">For  each fixed <span class="process-math">\(\mathbf x \in K\text{,}\)</span>  dividing through both sides of <a href="" class="xref" data-knowl="./knowl/zephyr.html" title="Equation 4.8.3">(4.8.3)</a>  by <span class="process-math">\(\Vert \mathbf p_{k}- \mathbf x_{k}\Vert\text{,}\)</span> and passing to the limit, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/zephyr.html">
+\begin{equation*}
+\mathbf n \cdot ( \mathbf x - \mathbf x_{0}) \ge 0,
+\end{equation*}
+</div>
+<div class="para">which is the inequality defining a supporting hyperplane.</div>
+</div> <div class="para">In summary, the idea is  that, in the absence of a direct construction of a supporting plane at the given point, one finds a relatively easy way to construct a supporting plane at a nearby, but unspecified point, and one then takes a limiting process to obtain a supporting plane at the given point.</div></article><span class="incontext"><a href="section-22.html#proof-38" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">We note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_{N}[f](x)= \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x-t) K_{N}(t)\, dt
+\end{equation*}
+</div>
+<div class="para">where</div>
+<ol class="lower-alpha">
+<li><div class="para"><div class="displaymath process-math">
+\begin{equation*}
+\quad K_{N}(t):=\frac{D_{0}(t)+D_{1}(t)+\cdots+D_{N}(t)}{N+1}
+=\frac{1-cos(N+1)t}{(N+1)(1-\cos t)}\ge 0,
+\end{equation*}
+</div></div></li>
+<li><div class="para"><div class="displaymath process-math">
+\begin{equation*}
+\quad \frac{1}{2\pi} \int_{-\pi}^{\pi}K_{N}(t)\, dt=1  \text{ for any } N,
+\end{equation*}
+</div></div></li>
+<li><div class="para"><div class="displaymath process-math">
+\begin{equation*}
+\quad \text{for any } 0 &lt; \delta &lt;\pi, \int_{\delta \le |x|\le \pi} K_{N}(t)\, dt \to 0 \text{ as } N\to \infty.
+\end{equation*}
+</div></div></li>
+</ol>
+<div class="para">For, then, using (a) above,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp |\sigma_{N}[f](x)-f(x)|\\
+= \amp |\frac{1}{2\pi} \int_{-\pi}^{\pi}[f(x-t) -f(x)] K_{N}(t)\, dt|\\
+\le  \amp \frac{1}{2\pi} \int_{-\delta}^{\delta}|f(x-t) -f(x)| K_{N}(t)\, dt
++ \frac{\max |f|}{\pi} \int_{\delta \le |t|\le \pi} K_{N}(t)\, dt,
+\end{align*}
+</div>
+<div class="para">and for any <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> we first choose <span class="process-math">\(0 &lt; \delta &lt;\pi\)</span> such that <span class="process-math">\(|f(x-t) -f(x)| &lt; \epsilon\)</span> for all <span class="process-math">\(t\)</span> with <span class="process-math">\(|t|\le \delta\text{,}\)</span> then use this <span class="process-math">\(\delta\)</span> in the above, which will make the first integral above <span class="process-math">\(&lt; \epsilon\)</span> using (b) above. Finally, for sufficiently large <span class="process-math">\(N\text{,}\)</span> the second integral above will also be less than <span class="process-math">\(\epsilon\)</span> using (c) above. This proves the first assertion. When <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([-\pi, \pi]\)</span> and is <span class="process-math">\(2\pi\)</span> periodic, then <span class="process-math">\(\delta\)</span> above can be chosen independent of <span class="process-math">\(x\in [-\pi, \pi]\text{,}\)</span> which shows that the convergence is uniform over <span class="process-math">\([-\pi, \pi]\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="sec-FSConv.html#p-159" class="internal">in-context</a></span>
+</body>
+</html>

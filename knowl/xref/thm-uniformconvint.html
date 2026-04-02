@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interchange of Limits and Integration.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(\{f_n(x)\}\)</span> is a sequence of Riemann-Stieltjes integrable functions with respect to <span class="process-math">\(\alpha\)</span> on <span class="process-math">\((a, b)\)</span> with <span class="process-math">\(\alpha(b)-\alpha(a)\)</span> finite, and that <span class="process-math">\(f_n(x)\to f(x)\)</span> uniformly over <span class="process-math">\((a, b)\text{.}\)</span> Then <span class="process-math">\(f(x)\)</span> is Riemann-Stieltjes integrable functions with respect to <span class="process-math">\(\alpha\)</span> on <span class="process-math">\((a, b)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation}
+\int_a^b f(x)\, d\alpha(x) =\lim_{n\to \infty} \int_a^b f_n(x)\, d\alpha(x).\tag{2.2.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-uniformconvint-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
+<div class="para">Suppose that  <span class="process-math">\(\{a_n(x)\}\)</span> is a sequence of Riemann-Stieltjes integrable functions with respect to <span class="process-math">\(\alpha\)</span> on <span class="process-math">\((a, b)\)</span> with <span class="process-math">\(\alpha(b)-\alpha(a)\)</span> finite, and that the series <span class="process-math">\(\sum_{n=1}^{\infty}a_n(x)\)</span> converges uniformly over <span class="process-math">\((a,  b)\text{.}\)</span> Then <span class="process-math">\(\sum_{n=1}^{\infty}a_n(x)\)</span> is Riemann-Stieltjes integrable functions with respect to <span class="process-math">\(\alpha\)</span> on <span class="process-math">\((a, b)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b \left( \sum_{n=1}^{\infty}a_n(x) \right)\, d\alpha(x)= \sum_{n=1}^{\infty} \int_a^b a_n(x)\, d\alpha(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-uniformconvint-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.2.7: Interchange of Limits and Integration"><a href="#thm-uniformconvint" title="Copy heading and permalink for Theorem 2.2.7: Interchange of Limits and Integration" aria-label="Copy heading and permalink for Theorem 2.2.7: Interchange of Limits and Integration">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">For simplicity of presentation we will assume that <span class="process-math">\(\alpha(x)\)</span> is monotone increasing, and set <span class="process-math">\(L=\alpha(b)-\alpha(a)\text{.}\)</span> For any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we first use the uniform convergence  of <span class="process-math">\(\{f_n(x)\}\)</span> to <span class="process-math">\(f(x)\)</span> on <span class="process-math">\((a, b)\)</span> to find some <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(n\ge N\)</span> and all <span class="process-math">\(x\in (a, b)\text{,}\)</span> <span class="process-math">\(\vert f_n(x)-f(x)\vert \lt \epsilon/L\text{.}\)</span> So for any partition <span class="process-math">\(\cP\)</span> of <span class="process-math">\([a, b]\)</span> and any interval <span class="process-math">\(I\in \cP\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n(x) \le \vert f_n(x)-f(x)\vert +f(x) \lt \epsilon/L +M_f(I)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x\in I\text{,}\)</span> from which it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U(f_n, \cP, \alpha)\le U(f, \cP, \alpha)+\epsilon.
+\end{equation*}
+</div>
+<div class="para">Similarly, we have <span class="process-math">\(U(f, \cP, \alpha)\le U(f_n, \cP, \alpha)+\epsilon\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert U(f, \cP, \alpha)- U(f_n, \cP, \alpha)\vert \le \epsilon \quad \forall n\ge N
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert L(f, \cP, \alpha)- L(f_n, \cP, \alpha)\vert \le \epsilon \quad \forall n\ge N.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-uniformconvint-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Next, for any <span class="process-math">\(n\ge N\text{,}\)</span> we find a partition <span class="process-math">\(\cP_n\)</span> of <span class="process-math">\([a, b]\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/limitint.html">
+\begin{equation*}
+\int_a^b f_n(x)\, d\alpha(x)-\epsilon \le L(f_n, \cP_n, \alpha) 
+\le U(f_n, \cP_n, \alpha)\le 
+\int_a^b f_n(x)\, d\alpha(x) +\epsilon.
+\end{equation*}
+</div>
+<div class="para">Now we find</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/limitint.html">
+\begin{equation*}
+L(f_n, \cP_n, \alpha)-\epsilon \le L(f, \cP_n, \alpha)\le U(f, \cP_n, \alpha)\le U(f_n, \cP_n, \alpha)+\epsilon,
+\end{equation*}
+</div>
+<div class="para">which, when combined with the above estimates, gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/limitint.html">
+\begin{equation*}
+\int_a^b f_n(x)\, d\alpha(x)-2\epsilon  \le L(f, \cP_n, \alpha)\le U(f, \cP_n, \alpha)\le
+\int_a^b f_n(x)\, d\alpha(x) +2\epsilon.
+\end{equation*}
+</div>
+<div class="para">This shows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/limitint.html">
+\begin{equation*}
+U(f, \cP_n, \alpha)-L(f, \cP_n, \alpha) \lt 4\epsilon \text{ so  $\int_a^b f(x)\, d\alpha(x)$ exists;}
+\end{equation*}
+</div>
+<div class="para">and since <span class="process-math">\(L(f, \cP_n, \alpha) \le \int_a^b f(x)\, d\alpha(x) \le U(f, \cP_n, \alpha)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/limitint.html">
+\begin{equation*}
+\vert \int_a^b f(x)\, d\alpha(x) - \int_a^b f_n(x)\, d\alpha(x)\vert \lt 2\epsilon \quad \forall n\ge N.
+\end{equation*}
+</div>
+<div class="para">This shows that <a href="uniformconvprop.html#limitint" class="xref" data-knowl="./knowl/xref/limitint.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.1">(2.2.1)</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-uniformconvint-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The case for the series follows from the above by applying it to the sequence of partial sums of the series.<div class="autopermalink" data-description="Paragraph"><a href="#thm-uniformconvint-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.2.7.1"><a href="#thm-uniformconvint-3" title="Copy heading and permalink for Proof 2.2.7.1" aria-label="Copy heading and permalink for Proof 2.2.7.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="uniformconvprop.html#thm-uniformconvint">in-context</a></span>
+</body>
+</html>

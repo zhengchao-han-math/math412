@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">For <span class="process-math">\(\bx=(x_1, x_2)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f_i(\bx)-f_i(\bx_0)=\amp f_i(x_1, x_2)-f_i(x_1, 0)+f_i(x_1, 0)-f_i(0, 0)\\
+= \amp \frac{\partial f_i}{\partial x_2}(x_1, b)x_2+ \frac{\partial f_i}{\partial x_1}(a, 0)x_1\\
+= \amp \frac{\partial f_i}{\partial x_1}(0, 0) x_1 + \frac{\partial f_i}{\partial x_2}(0, 0)x_2\\
+\amp + \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1+
+\left[ \frac{\partial f_i}{\partial x_2}(x_1, b)- \frac{\partial f_i}{\partial x_2}(0, 0)\right] x_2
+\end{align*}
+</div>
+<div class="para">for some <span class="process-math">\(a\)</span> between <span class="process-math">\(x_1\)</span> and <span class="process-math">\(0\)</span> and some <span class="process-math">\(b\)</span> between <span class="process-math">\(x_2\)</span> and <span class="process-math">\(0\text{.}\)</span> Using the continuity at <span class="process-math">\(\bx_0=(0, 0)\)</span> of the partial derivatives, for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we can find some <span class="process-math">\(\delta \gt 0\)</span> such that whenever <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \delta\text{,}\)</span> we have <span class="process-math">\(\vert \frac{\partial f_i}{\partial x_j}(\bx)- \frac{\partial f_i}{\partial x_j}(\bx_0)\vert \lt \epsilon\text{.}\)</span> This implies that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \vert \left[ \frac{\partial f_i}{\partial x_1}(a, 0)-\frac{\partial f_i}{\partial x_1}(0, 0)\right] x_1+
+\left[ \frac{\partial f_i}{\partial x_2}(x_1, b)- \frac{\partial f_i}{\partial x_2}(0, 0)\right] x_2\vert \\
+\le \amp \epsilon \left(|x_1|+|x_2|\right)\le \sqrt 2 \epsilon \Vert \bx-\bx_0\Vert,
+\end{align*}
+</div>
+<div class="para">which shows the differentiability of <span class="process-math">\(f_i(\bx)\)</span> at <span class="process-math">\(\bx_0=(0, 0)\text{.}\)</span> The general case can be worked out in a similar way.</div>
+</div>
+<span class="incontext"><a href="section-17.html#p-254" class="internal">in-context</a></span>
+</body>
+</html>

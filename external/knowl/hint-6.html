@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="hint solution-like">
+<h3 class="heading">
+<span class="type">Hint</span><span class="space"> </span><span class="codenumber">3.1.15.1</span><span class="period">.</span>
+</h3>First need to work out<div class="displaymath process-math">
+\begin{align*}
+S_{N}[g](x)\amp =\frac{1}{2l} \int_{-l}^{l}g(t) \left(1 + \sum_{n=1}^{N} 2 \cos\left(\frac{n\pi (x-t)}{l}\right)\right)\, dt\\
+\amp = \frac{1}{2l} \int_{-l}^{l}g(t) \left( \sum_{n=-N}^{N} e^{\frac{i n\pi (x-t)}{l}} \right)\, dt\text{,}
+\end{align*}
+</div>then establish<div class="displaymath process-math">
+\begin{equation*}
+1 + \sum_{n=1}^{N} 2 \cos\left(\frac{n\pi s}{l} \right)= \sum_{n=-N}^{N} e^{\frac{i n\pi s}{l}}
+=\frac{\sin \frac{(N+\frac 12)\pi s}{l}}{\sin\frac {\pi s}{2l}}
+\end{equation*}
+</div>using either the relation <span class="process-math">\(2\sin \frac{\pi s}{2l} \cos  \frac{(N+\frac 12)\pi s}{l} =\sin(\frac{(N+1)\pi s}{l})-\sin(\frac{N\pi s}{l})\)</span> or <span class="process-math">\(\cos \left(\frac{n\pi s}{l} \right)= \text{Re}(e^{\frac{i n\pi s}{l} })\text{.}\)</span>
+</div>
+<span class="incontext"><a href="sec-orthogonal.html#hint-6" class="internal">in-context</a></span>
+</body>
+</html>

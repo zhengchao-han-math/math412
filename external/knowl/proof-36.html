@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">First we break up the integrals into parts and estimate them separately</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \left| \int_a^{\infty}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right|\\
+\le \amp 
+\left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right| 
++ \left| \int_L^{\infty}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| \\
+\amp + \left| \int_L^{\infty}   D_t f(x,t) \, dx \right|.
+\end{align*}
+</div>
+</div> Next, we apply the fundamental  theorem of calculus to <span class="process-math">\(f(x,t+h)-f(x,t)\)</span> to get<div class="displaymath process-math">
+\begin{equation*}
+f(x,t+h)-f(x,t)=\int_t^{t+h} D_t f(x,s)\,ds,
+\end{equation*}
+</div>so using the uniform integrability of <span class="process-math">\(|D_t f(x,s)|\)</span> we get, for <span class="process-math">\(N&gt;L\text{,}\)</span><div class="displaymath process-math">
+\begin{align*}
+\left| \int_L^{N}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| \amp= 
+\left| \int_L^{N} h^{-1} \int_t^{t+h} D_t f(x,s)\,ds dx \right| \\
+\amp \le  |h|^{-1} | \int_t^{t+h} \int_L^{N} D_t f(x,s) dx ds |\\
+\amp \le \epsilon/4.
+\end{align*}
+</div>Therefore,<div class="displaymath process-math">
+\begin{equation*}
+\left| \int_L^{\infty}   \frac{f(x,t+h)-f(x,t)}{h} \,dx  \right| = \left| \lim_{N\to \infty}  \int_L^{N}   \frac{f(x,t+h)-f(x,t)}{h} \,dx \right| \le \epsilon/4.
+\end{equation*}
+</div>We also have<div class="displaymath process-math">
+\begin{equation*}
+\left| \int_L^{\infty}   D_t f(x,t) \, dx \right| &lt; \epsilon/4.
+\end{equation*}
+</div>For <span class="process-math">\(\left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right|\text{,}\)</span> we apply our earlier argument to find a <span class="process-math">\(\delta &gt;0\)</span> such that when <span class="process-math">\(0 &lt; |h| &lt; \delta\text{,}\)</span> we have<div class="displaymath process-math">
+\begin{equation*}
+\left| \int_a^{L}  \left(  \frac{f(x,t+h)-f(x,t)}{h} - D_t f(x,t) \right) dx \right| &lt; \epsilon/2.
+\end{equation*}
+</div>This concludes our proof.</article><span class="incontext"><a href="section-21.html#proof-36" class="internal">in-context</a></span>
+</body>
+</html>

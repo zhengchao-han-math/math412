@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>According to <a href="" class="xref" data-knowl="./knowl/thm-Lebes-diff.html" title="Theorem 4.4: Lebesgue's Differentiability Theorem of a Monotone Function">Theorem 4.4</a>, <span class="process-math">\(h^{-1}(f(x+h)-f(x))\to f'(x)\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> For each <span class="process-math">\(h &gt; 0\text{,}\)</span> <span class="process-math">\(h^{-1}(f(x+h)-f(x)) \)</span> is a non-negative function in <span class="process-math">\(\cR[a, b]\)</span> (extend <span class="process-math">\(f(x)=f(b)\)</span> for <span class="process-math">\(x &gt; b\)</span>), and<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Lebes-diff.html">
+\begin{equation*}
+\int_{a}^{b} h^{-1}(f(x+h)-f(x)) \, dx =h^{-1}\left( \int_{b}^{b+h} f(x)\,dx - \int_{a}^{a+h} f(x)\, dx\right)
+\le f(b)- f(a),
+\end{equation*}
+</div>using <span class="process-math">\(\int_{a}^{a+h} f(x)\, dx\ge f(a) h\text{.}\)</span> Thus by Fatou Theorem,<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-Lebes-diff.html">
+\begin{align*}
+\int_{a}^{b} f'(x)\, dx \amp = \int_{a}^{b} \liminf_{h\to 0+} h^{-1}(f(x+h)-f(x)) \, dx\\
+\amp  \le
+\liminf_{h\to 0+} \int_{a}^{b}  h^{-1}(f(x+h)-f(x)) \, dx \le f(b)-f(a).
+\end{align*}
+</div></article><span class="incontext"><a href="section-4.html#proof-14" class="internal">in-context</a></span>
+</body>
+</html>

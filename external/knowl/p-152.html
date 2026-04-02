@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">For the general case, first note that if <span class="process-math">\(h\in C^{1}[-\pi, \pi]\text{,}\)</span> then integration by parts gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= - h(t)\lambda^{-1} \cos (\lambda t) \Big|_{-\pi}^{\pi} +
+\int_{-\pi}^{\pi} \lambda^{-1} \cos (\lambda t) h'(t)\, dt \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(\lambda \to \infty\text{.}\)</span> For the given <span class="process-math">\(h\in \cR[-\pi, \pi]\text{,}\)</span> take any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we first find some <span class="process-math">\(\hat h \in C^{1}[-\pi, \pi]\)</span> such that <span class="process-math">\(\int_{-\pi}^{\pi} |h(t)-\hat h(t)|\, dt \lt \epsilon\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt + 
+\int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt,
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt\vert \le \int_{-\pi}^{\pi} \vert h(t)-\hat h(t)\vert \, dt \lt \epsilon,
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\vert \int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt \vert \lt \epsilon\)</span> for all sufficiently large <span class="process-math">\(\lambda\text{,}\)</span> which concludes our proof.</div>
+</div>
+<span class="incontext"><a href="sec-FSConv.html#p-152" class="internal">in-context</a></span>
+</body>
+</html>

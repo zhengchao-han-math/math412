@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">The heuristic idea is to use the differentiability of <span class="process-math">\({\mathbf f}\)</span> to approximate <span class="process-math">\({\mathbf f}({\mathbf x}) \text{,}\)</span> when <span class="process-math">\(\bx\)</span> is near <span class="process-math">\(\bx_{0}\text{,}\)</span> by the mapping <span class="process-math">\({\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})\text{.}\)</span> If there were no remainder term, then solving <span class="process-math">\({\mathbf f}({\mathbf x})= {\mathbf y}\)</span> would be equivalent to solving</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})=
+{\mathbf y}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is straightforward under the assumption that <span class="process-math">\(D{\mathbf f}({\mathbf x}_{0})\)</span> is bijective. In the presence of the remainder</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0}) := {\mathbf f}({\mathbf x})
+-\left\{ {\mathbf f}({\mathbf x}_{0})+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0}) \right\}
+\end{equation*}
+</div>
+<div class="para">we would need to solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0})+ {\mathbf f}({\mathbf x}_{0}) +
+D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0})= {\mathbf y} .\tag{4.5.1}
+\end{equation}
+</div>
+<div class="para">Using <span class="process-math">\({\mathbf y}_{0}={\mathbf f}({\mathbf x}_{0})\)</span> and the invertibility assumption on <span class="process-math">\(D{\mathbf f}({\mathbf x}_{0})\text{,}\)</span> the above is equivalent to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+{\mathbf x}-{\mathbf x}_{0}= 
+\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}-
+{\mathbf y}_{0}-{\mathbf r}({\mathbf x}; {\mathbf x}_{0})\right\}.
+\end{equation*}
+</div>
+<div class="para">In other words, we look for a fixed point <span class="process-math">\({\mathbf x}\)</span> near <span class="process-math">\({\mathbf x}_{0}\)</span> of the mapping</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{align*}
+\phi ({\mathbf x}) := \amp {\mathbf x}_{0} + \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}-
+{\mathbf y}_{0}-{\mathbf r}({\mathbf x}; {\mathbf x}_{0})\right\}\\
+=\amp {\mathbf x}_{0} + \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}- 
+{\mathbf f}({\mathbf x}) + D{\mathbf f}({\mathbf x}_{0})({\mathbf x}-{\mathbf x}_{0}) \right\}\\
+=\amp {\mathbf x}+ \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left\{ {\mathbf y}- {\mathbf f}({\mathbf x}) \right\}.
+\end{align*}
+</div>
+<div class="para">
+<span class="process-math">\(\phi ({\mathbf x})\)</span> is differentiable whenever <span class="process-math">\({\mathbf f}({\mathbf x})\)</span> is and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation*}
+D\phi ({\mathbf x})= I - \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}D {\mathbf f}({\mathbf x})
+=\left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right].
+\end{equation*}
+</div>
+<div class="para">The continuity assumption of <span class="process-math">\(D {\mathbf f}({\mathbf x})\)</span> at <span class="process-math">\({\mathbf x}_{0}\)</span> implies the existence of some <span class="process-math">\(\delta &gt;0\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+\Vert \left[D{\mathbf f}({\mathbf x}_{0})\right]^{-1}\left[ D{\mathbf f}({\mathbf x}_{0})- D {\mathbf f}({\mathbf x})\right]
+\Vert \le \frac 12 \text{ for all } {\mathbf x} \text{ such that }
+\Vert {\mathbf x}-{\mathbf x}_{0}\Vert \le \delta.\tag{4.5.2}
+\end{equation}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/vecmeanvalue.html" title="Theorem 4.3.9">Theorem 4.3.9</a>  it follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vecmeanvalue.html">
+\begin{equation}
+\Vert \phi ({\mathbf x}_{1})-\phi ({\mathbf x}_{2})\Vert \le \frac 12 ||{\mathbf x}_{1}-{\mathbf x}_{2}\Vert\tag{4.5.3}
+\end{equation}
+</div>
+<div class="para">for <span class="process-math">\({\mathbf x}_{1}, {\mathbf x}_{2}\in \overline{B({\mathbf x}_{0}, \delta)}\text{.}\)</span> It remains to show that one can choose an open set <span class="process-math">\(V\)</span> containing <span class="process-math">\({\mathbf y}_{0}\)</span> such that <span class="process-math">\(\phi ({\mathbf x})\in \overline{B({\mathbf x}_{0}, \delta)}\)</span> when <span class="process-math">\({\mathbf x}\in \overline{B({\mathbf x}_{0}, \delta)}\)</span> and <span class="process-math">\({\mathbf y}\in V\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="section-19.html#p-264" class="internal">in-context</a></span>
+</body>
+</html>

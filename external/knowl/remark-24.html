@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Sometimes we work with a set of orthogonal vectors which are not necessarily unit vectors. This is the case with <span class="process-math">\(\left\{ 1,  \cos \left(\frac{n \pi x}{l}\right), \sin \left(\frac{n \pi x}{l}\right) : n\in\mathbb N\right\}\)</span> on <span class="process-math">\([-l, l]\text{.}\)</span>  Here we modify the definition of the Fourier coefficients of <span class="process-math">\(g\in \cR[-l, l]\)</span> by defining</div>
+<div class="displaymath process-math">
+\begin{align*}
+a_{0} \amp = \frac{(f, 1)}{(1, 1)}=\frac {1}{2l}  \int_{-l}^{l} g(x) \, dx,\\
+a_{n}\amp = \frac{(f,  \cos \left(\frac{n \pi x}{l}\right))}{(\cos \left(\frac{n \pi x}{l}\right),\cos \left(\frac{n \pi x}{l}\right))}
+= \frac 1l
+\int_{-l}^{l} g(x) \cos \left(\frac{n \pi x}{l}\right) \, dx \text{ for } n\ge 1,\\
+b_{n} \amp =\frac{(f,  \sin \left(\frac{n \pi x}{l}\right))}{(\sin \left(\frac{n \pi x}{l}\right),\sin \left(\frac{n \pi x}{l}\right))}
+= \frac{1}{l} \int_{-l}^{l} g(x) \sin \left(\frac{n \pi x}{l}\right) \, dx \text{ for } n\ge 1,
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{N}[g](x):=a_0 +\sum_{n=1}^{N}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right]
+\end{equation*}
+</div>
+<div class="para">as the partial sums of the Fourier series of <span class="process-math">\(g(x)\)</span> on  <span class="process-math">\([-l, l]\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x)\sim a_0 +\sum_{n=1}^{\infty}\left[ a_n \cos \left(\frac{n \pi x}{l}\right) + b_n \sin \left(\frac{n \pi x}{l}\right) \right].
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">When we work with the set of orthogonal functions <span class="process-math">\(\left\{\sin \left(\frac{n \pi x}{l}\right): n\in\mathbb N\right\}\)</span> on <span class="process-math">\([0, l]\text{,}\)</span> the Fourier coefficients of <span class="process-math">\(g\in \cR[0,l]\)</span> with respect to this set of orthogonal functions on <span class="process-math">\([0, l]\)</span> are defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_{n}=\frac{(g, \sin \left(\frac{n \pi x}{l}\right))}{(\sin \left(\frac{n \pi x}{l}\right),\sin \left(\frac{n \pi x}{l}\right))}
+=\frac 2l \int_{0}^{l} g(x) \sin \left(\frac{n \pi x}{l}\right)\, dx.
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="sec-orthogonal.html#remark-24" class="internal">in-context</a></span>
+</body>
+</html>

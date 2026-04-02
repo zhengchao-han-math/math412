@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">We will use <a href="" class="xref" data-knowl="./knowl/eqn-discont.html" title="Equation 5.2.1">(5.2.1)</a>.</div> <div class="para">Suppose that <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(R\text{.}\)</span> For each <span class="process-math">\(k\in \bbN\text{,}\)</span> we will prove that <span class="process-math">\(D_{k}:=\{\by: \osc(f)(\by)\ge \frac 1k\}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Given any <span class="process-math">\(\epsilon &gt;0\text{.}\)</span> There exists a partition <span class="process-math">\(\cP=\{R_{\alpha}\}\)</span> of <span class="process-math">\(R\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
+\end{equation*}
+</div>
+<div class="para">The rectangles in <span class="process-math">\(\cP\)</span> are divided into two subgroups: the subgroup <span class="process-math">\(\cL_{k}\)</span> consisting those <span class="process-math">\(R_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, R_{\alpha})\ge \frac{1}{2k}\text{,}\)</span> and the subgroup <span class="process-math">\(\cS_{k}\)</span> consisting those <span class="process-math">\(R_{\alpha}\)</span> such that <span class="process-math">\(\osc(f, R_{\alpha})&lt; \frac{1}{2k}\text{.}\)</span> Then it follows from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2k} \sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert \le
+\sum_{R_{\alpha}\in \cL_{k} } \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}
+\end{equation*}
+</div>
+<div class="para">that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">We now claim that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{k}\subset \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}.
+\end{equation*}
+</div>
+<div class="para">This will show that <span class="process-math">\(D_{k}\)</span> is a set of content <span class="process-math">\(0\text{.}\)</span>
+</div>
+</div> <div class="para">If the claim were not true, there would exist some <span class="process-math">\(\bx \in D_{k}
+\setminus \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}\text{.}\)</span> Thus <span class="process-math">\(\bx \in \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}\text{.}\)</span> Since the complement of <span class="process-math">\(\cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}\)</span> is open, there exists some ball <span class="process-math">\(B(\bx, r)
+\subset \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}\text{.}\)</span> If <span class="process-math">\(\bx\in \text{ interior}(R_{\alpha})\)</span> for some <span class="process-math">\(R_{\alpha} \in \cS_{k}\text{,}\)</span> it would force <span class="process-math">\(\frac 1k \le \osc(f)(\bx)\le \osc(f, R_{\alpha}) &lt; \frac{1}{2k}\text{,}\)</span> which would be a contradiction. So <span class="process-math">\(\bx\)</span> can only be on the boundary of one or more <span class="process-math">\(R_{\alpha} \in \cS_{k}\text{.}\)</span> We can choose <span class="process-math">\(r&gt;0\)</span> small enough such that any <span class="process-math">\(\by\in B(\bx, r)\)</span> and <span class="process-math">\(\bx\)</span> will be in one such common rectangle. Therefore, <span class="process-math">\(\vert f(\by)-f(\bx)\vert &lt; \frac{1}{2k}\text{.}\)</span> This would lead to <span class="process-math">\(\osc(f)(\bx)\le \osc(f, B(\bx, r)) &lt; \frac 1k\text{,}\)</span> contradicting <span class="process-math">\(\bx \in D_{k}\text{.}\)</span>
+</div> <div class="para">The proof for the if part will be added.</div></article></body>
+</html>

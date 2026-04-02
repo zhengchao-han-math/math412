@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The docinfo block is the analogue to the latex preamble -->
+<!-- This is where you can define macros and other book-wide -->
+<!--  settings.                                              -->
+<docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- The next three lines are likely for mature projects only: -->
+
+<!-- <brandlogo url="" source="images/cover.png"/> -->
+<!-- <covers front="images/front.pdf" back="images/back.pdf"/> -->
+<!-- <document-id>unique-book-id</document-id> -->
+
+\usepackage{mathtools}
+\usepackage{STIX}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+<!-- macros for defining latex math shortcuts. It is good practice  -->
+<!-- to define these semantically, so that the macro relates to what-->
+<!-- it defines.                                                    -->
+<macros>
+<!-- math bold fonts-->
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+<!-- blackboard fonts-->
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbH}{\mathbb{H}}
+<!-- caligraphic-->
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\spt}{\text{support }}
+
+\def\upint{\mathchoice%
+    {\mkern10mu\overline{\vphantom{\intop}\mkern8mu}\mkern-24mu}%
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mathchoice%
+    {\mkern10mu\underline{\vphantom{\intop}\mkern8mu}\mkern-24mu}%
+    {\mkern7mu\underline{\vphantom{\int}\mkern7mu}\mkern-10mu}%
+    {\mkern7mu\underline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\underline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+
+\makeatletter
+\def\catlim{%
+  \relax\if@display
+    \expandafter\varprojlim
+  \else
+    \expandafter\lim
+  \fi
+}
+\makeatother
+
+% new \oset and \uset macro; 
+\makeatletter
+\newcommand{\oset}[2]{%
+  \mathrel{\mathop{#2}\limits^{
+    \vbox to -3\ex@{\kern-2\ex@
+    \hbox{$\hspace{6pt}#1$}\vss}}}}
+\newcommand{\uset}[2]{%
+   {\mathop{#2}\limits_{\vbox to 3.5\ex@{\kern-\tw@\ex@
+    \hbox{$\hspace{-3pt} #1$}}}}}
+\makeatother
+
+\newcommand{\Uint}{{\oset{\bar{}}{\int}\!\!\!}} 
+\newcommand{\Lint}{{\uset{\bar{}}{\int}\!\!\!\!}}
+\makeatletter
+\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
+\newcommand\tb@int[2]{%
+  \sbox\z@{$\m@th#1\int$}%
+  \if#2t%
+    \rlap{\hbox to\wd\z@{%
+      \hfil
+      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+      \kern.05em % a small correction on the top
+    }}
+  \else
+    \rlap{\hbox to\wd\z@{%
+      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+      \hfil
+    }}
+  \fi
+}
+\makeatother
+
+</macros>
+
+<!-- If you put any latex-image elements you can include preambles  -->
+<!-- for those in the next element.                                 -->
+<latex-image-preamble>
+  \usepackage{tikz, pgfplots}
+  \usetikzlibrary{positioning,matrix,arrows}
+  \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+  \usetikzlibrary{decorations.markings} 
+</latex-image-preamble>
+
+<!-- It is possible to rename elements using the tags below -->
+  <rename element="investigation" xml:lang="en-US">Puzzle</rename>
+  <rename element="assemblage" xml:lang="en-US">Summary</rename>
+
+<!-- Specify the default type of cross reference:           -->
+  <cross-references text="type-global" />
+  
+
+</docinfo>
+

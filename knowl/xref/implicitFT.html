@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Implicit Function Theorem.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\({\mathbf f}({\mathbf x},{\mathbf y})\)</span> be a continuous mapping from a neighborhood <span class="process-math">\(U_{0}\times V_{0}\)</span> of <span class="process-math">\(({\mathbf x}_0,{\mathbf y}_0)\)</span> in <span class="process-math">\(\mathbb R^n \times \mathbb R^m\)</span> into <span class="process-math">\(\mathbb R^n\text{,}\)</span> with <span class="process-math">\({\mathbf f}({\mathbf x}_0,{\mathbf y}_0)={\mathbf 0}\text{.}\)</span> Assume that  <span class="process-math">\({\mathbf f}({\mathbf x},{\mathbf y})\)</span> is differentiable in the <span class="process-math">\({\mathbf x}\)</span> variable in this neighborhood and <span class="process-math">\(D_{{\mathbf x}}{\mathbf f}({\mathbf x},{\mathbf y})\)</span> is continuous at <span class="process-math">\(({\mathbf x}_0,{\mathbf y}_0)\text{.}\)</span> If <span class="process-math">\(D_{{\mathbf x}}{\mathbf f}({\mathbf x}_0,{\mathbf y}_0)\)</span> is a bijection from <span class="process-math">\(\mathbb R^n\)</span> onto <span class="process-math">\(\mathbb R^n\)</span> , then</div>
+<ol class="decimal" id="implicitFT-2-1-14">
+<li>
+<div class="para">There is a ball <span class="process-math">\(B({\mathbf y}_0, r)\subset V_{0}\)</span> in <span class="process-math">\(\mathbb R^m\)</span> and a neighborhood <span class="process-math">\(U\subset U_{0}\)</span> of <span class="process-math">\({\mathbf x}_0\)</span> in <span class="process-math">\(\mathbb R^n\)</span> such that <span class="process-math">\(\forall {\mathbf y} \in B({\mathbf y}_0, r), \exists ! {\mathbf x} \in U\)</span> satisfying <span class="process-math">\(\bff({\mathbf x}, {\mathbf y})={\mathbf 0}\text{,}\)</span> and <span class="process-math">\({\mathbf x}\)</span> depends on <span class="process-math">\({\mathbf y}\)</span> continuously.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#implicitFT-2-1-14-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">Denote the mapping <span class="process-math">\({\mathbf y} \mapsto {\mathbf x}\)</span> by <span class="process-math">\({\mathbf x} = {\mathbf u}({\mathbf y})\text{.}\)</span> If <span class="process-math">\(\bff\)</span> is <span class="process-math">\(C^1\)</span> jointly in <span class="process-math">\(({\mathbf x}, {\mathbf y})\in U\times B({\mathbf y}_0, r)\text{,}\)</span> then <span class="process-math">\({\mathbf u}\)</span> is <span class="process-math">\(C^1\)</span> in <span class="process-math">\({\mathbf y}\in B({\mathbf y}_0, r)\)</span> and<div class="displaymath process-math">
+\begin{equation*}
+D{\mathbf u} ({\mathbf y}) = -\left[D_{\mathbf x}{\mathbf f}({\mathbf u}({\mathbf y}),{\mathbf y}))\right]^{-1} \circ D_{\mathbf y}{\mathbf f}({\mathbf u}({\mathbf y}),{\mathbf y}).
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#implicitFT-2-1-14-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.5.8: Implicit Function Theorem"><a href="#implicitFT" title="Copy heading and permalink for Theorem 5.5.8: Implicit Function Theorem" aria-label="Copy heading and permalink for Theorem 5.5.8: Implicit Function Theorem">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">The heuristic for the first part is similar to that in proving the Inverse Function Theorem: for <span class="process-math">\((\bx, \by)\in U_{0}\times V_{0}\text{,}\)</span> use the linear approximation of <span class="process-math">\({\mathbf f}\)</span>  in the <span class="process-math">\({\mathbf x}\)</span> variable to approximate <span class="process-math">\({\mathbf f}({\mathbf x}, {\mathbf y})\text{;}\)</span> more precisely,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0}, {\mathbf y}):={\mathbf f}({\mathbf x}, {\mathbf y})-
+{\mathbf f}({\mathbf x}_{0}, {\mathbf y})-D_{{\mathbf x}} {\mathbf f}({\mathbf x}_{0}, {\mathbf y})
+({\mathbf x}-{\mathbf x}_{0}).
+\end{equation*}
+</div>
+<div class="para">Then the equation <span class="process-math">\({\mathbf f}({\mathbf x}, {\mathbf y})={\mathbf 0}\)</span> is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathbf r}({\mathbf x}; {\mathbf x}_{0}, {\mathbf y})=-
+{\mathbf f}({\mathbf x}_{0}, {\mathbf y})-D_{{\mathbf x}} {\mathbf f}({\mathbf x}_{0}, {\mathbf y})
+({\mathbf x}-{\mathbf x}_{0}),
+\end{equation*}
+</div>
+<div class="para">or <span class="process-math">\({\mathbf x}\)</span> is a fixed point of the mapping</div>
+<div class="displaymath process-math">
+\begin{align*}
+\phi ({\mathbf x}) := \amp {\mathbf x}_{0} + 
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y})\right]^{-1}
+\left\{ - {\mathbf f}({\mathbf x}_{0}, {\mathbf y})
+-{\mathbf r}({\mathbf x}; {\mathbf x}_{0}, {\mathbf y})\right\}\\
+=\amp {\mathbf x}_{0} + 
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y})\right]^{-1}
+\left\{ - {\mathbf f}({\mathbf x}, {\mathbf y}) + D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y})({\mathbf x}-{\mathbf x}_{0}) \right\}\\
+=\amp {\mathbf x}+ \left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y})\right]^{-1}
+\left\{ - {\mathbf f}({\mathbf x}, {\mathbf y}) \right\}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Then in a similar way one can show the existence of a unique fixed point in <span class="process-math">\(\overline{B({\mathbf x}_{0}, \delta)}\)</span> of <span class="process-math">\(\phi \)</span> when <span class="process-math">\(\delta&gt; 0\)</span> and <span class="process-math">\(r&gt; 0\)</span> are chosen appropriately so that <span class="process-math">\(\phi\)</span> satisfies <a href="ch-differentiaion-8.html#contraction" class="xref" data-knowl="./knowl/xref/contraction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5.3">(5.5.3)</a> for <span class="process-math">\({\mathbf x} \in B({\mathbf x}_{0}, \delta), {\mathbf y}\in B({\mathbf y}_0, r) \text{.}\)</span> This shows the existence of <span class="process-math">\({\mathbf x} = {\mathbf u}({\mathbf y})\)</span> for <span class="process-math">\({\mathbf y}\in B({\mathbf y}_0, r) \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">In fact, there is some flexibility in setting up <span class="process-math">\(\phi\text{.}\)</span> One could use a modified <span class="process-math">\(\phi\)</span> such as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi ({\mathbf x}) :={\mathbf x}+ 
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}
+\left\{ - {\mathbf f}({\mathbf x}, {\mathbf y}) \right\}
+\end{equation*}
+</div>
+<div class="para">and use its fixed point to construct <span class="process-math">\({\mathbf x} = {\mathbf u}({\mathbf y})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">To prove the continuity of <span class="process-math">\({\mathbf x} = {\mathbf u}({\mathbf y})\text{,}\)</span> one takes <span class="process-math">\({\mathbf y}_{1}, {\mathbf y}_{2}\in B({\mathbf y}_0, r) \)</span> and tries to use the relation</div>
+<div class="displaymath process-math">
+\begin{align*}
+{\mathbf 0} =\amp {\mathbf f}({\mathbf u}({\mathbf y}_{2}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})\\
+=\amp {\mathbf f}({\mathbf u}({\mathbf y}_{2}), {\mathbf y}_{2})-{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})+ {\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})
+\end{align*}
+</div>
+<div class="para">and the information that <span class="process-math">\({\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1}) \to \mathbf 0\)</span> as <span class="process-math">\(\by_{2}\to \by_{1}\)</span> to show that <span class="process-math">\({\mathbf u}({\mathbf y}_{2})\to 
+{\mathbf u}({\mathbf y}_{1})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">But a standard application of the mean value theorem can only give an upper bound of <span class="process-math">\(\Vert {\mathbf f}({\mathbf u}({\mathbf y}_{2}), {\mathbf y}_{2})-{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})\Vert\)</span> in terms of <span class="process-math">\(\Vert {\mathbf u}({\mathbf y}_{2})- 
+{\mathbf u}({\mathbf y}_{1})\Vert\text{.}\)</span> Since <span class="process-math">\(D_{\bx}\bff(\bx, \by_{2})\)</span> is close to <span class="process-math">\(D_{\bx}\bff(\bx_{0}, \by_{0})\)</span> when <span class="process-math">\(\bx \in B({\mathbf x}_{0}, \delta)\)</span> and <span class="process-math">\(\by \in B(\by_{0}, r)\text{,}\)</span> the derivative of <span class="process-math">\(\bff(\bx, \by_{2})-D_{\bx}\bff(\bx_{0}, \by_{0})\bx\)</span> with respect to <span class="process-math">\(\bx\)</span> is small in the same neighorhood. In other words,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bff(\bx, \by_{2})=D_{\bx}\bff(\bx_{0}, \by_{0})\bx+ \left[ \bff(\bx, \by_{2})-D_{\bx}\bff(\bx_{0}, \by_{0})\bx\right]
+\end{equation*}
+</div>
+<div class="para">"behaves like" <span class="process-math">\(D_{\bx}\bff(\bx_{0}, \by_{0})\bx\)</span> as a function of <span class="process-math">\(\bx\in B({\mathbf x}_{0}, \delta)\text{.}\)</span> We implement this as</div>
+<div class="displaymath process-math">
+\begin{align*}
+{\mathbf 0} =\amp {\mathbf f}({\mathbf u}({\mathbf y}_{2}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})\\
+=\amp  \left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]
+\left[{\mathbf u}({\mathbf y}_{2})- {\mathbf u}({\mathbf y}_{1})\right] 
++  {\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})\\
++ \amp \left\{ {\mathbf f}({\mathbf u}({\mathbf y}_{2}), {\mathbf y}_{2})-
+D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})]{\mathbf u}({\mathbf y}_{2})\right\}
+-\left\{ {\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})]{\mathbf u}({\mathbf y}_{1})\right\}
+\end{align*}
+</div>
+<div class="para">from which one gets</div>
+<div class="displaymath process-math">
+\begin{align*}
+{\mathbf u}({\mathbf y}_{2})- {\mathbf u}({\mathbf y}_{1}) =\amp - \left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}
+\left\{ {\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})\right\}\\
+\amp+ \left\{{\mathbf u}({\mathbf y}_{2})-
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}{\mathbf f}({\mathbf u}({\mathbf y}_{2}),{\mathbf y}_{2})\right\}\\
+\amp - \left\{{\mathbf u}({\mathbf y}_{1})+
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}{\mathbf f}({\mathbf u}({\mathbf y}_{1}),{\mathbf y}_{2})\right\}
+\end{align*}
+</div>
+<div class="para">One then uses that the <span class="process-math">\({\mathbf x}\)</span> derivative of <span class="process-math">\({\mathbf x}\mapsto {\mathbf x}-
+\left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}
+{\mathbf f}(\mathbf x,{\mathbf y}_{2})\)</span> can be made smaller than <span class="process-math">\(1/2\)</span> when <span class="process-math">\({\mathbf x}\in B({\mathbf x}_{0}, \delta), {\mathbf y}_{2}\in B({\mathbf y}_0, r) \)</span> to get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert {\mathbf u}({\mathbf y}_{2})- {\mathbf u}({\mathbf y}_{1}) \Vert
+\le 2 \Vert \left[D_{{\mathbf x}}{\mathbf f}({\mathbf x}_{0}, {\mathbf y}_{0})\right]^{-1}\Vert
+\Vert {\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{2})-
+{\mathbf f}({\mathbf u}({\mathbf y}_{1}), {\mathbf y}_{1})\Vert,
+\end{equation*}
+</div>
+<div class="para">which shows the continuity of <span class="process-math">\({\mathbf u}({\mathbf y})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The differentiability of <span class="process-math">\(\bu (\by)\)</span> is shown in the same way as in the proof of the Inverse Function Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#implicitFT-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.5.8.1"><a href="#implicitFT-3" title="Copy heading and permalink for Proof 5.5.8.1" aria-label="Copy heading and permalink for Proof 5.5.8.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="ch-differentiaion-8.html#implicitFT">in-context</a></span>
+</body>
+</html>

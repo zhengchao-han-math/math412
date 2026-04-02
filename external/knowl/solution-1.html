@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.8.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">A  proof of using open covering argument</span>
+</h3> <div class="para logical">
+<div class="para">From the assumptions, we know that for any given <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> and any <span class="process-math">\(x\in K\text{,}\)</span> there exist <span class="process-math">\(N=N(x)\)</span> and <span class="process-math">\(\delta_{1}=\delta(x)&gt;0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{n}(x)-f(x)| &lt; \epsilon \text{  for all } n\ge N\text{,}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f(t)-f(x)| &lt; \epsilon  \text{  for all } t \in B(x, \delta_{1})\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(B(x, \delta_{1})\)</span> stands for the <span class="process-math">\(\delta\)</span> neighborhood of <span class="process-math">\(x\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Take <span class="process-math">\(n=N(x)\text{,}\)</span> then, using the continuity of <span class="process-math">\(f_{n}\)</span> at <span class="process-math">\(x\text{,}\)</span> there exists some <span class="process-math">\(\delta_{2}&gt;0\text{,}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{n}(t)-f_{n}(x)| &lt; \epsilon  \text{ for all } t \in B(x, \delta_{2})\text{.}
+\end{equation*}
+</div>
+<div class="para">Set <span class="process-math">\(\delta=\delta(x) :=\min\left\{\delta_{1},\delta_{2}\right\}\text{,}\)</span> then for all <span class="process-math">\(t \in B(x, \delta)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+|f_{n}(t)-f(t)|  \amp \le |f_{n}(t)-f_{n}(x)|+|f_{n}(x)-f(x)| +|f(x)-f(t)| \\
+\amp \le \epsilon + \epsilon + \epsilon = 3\epsilon \text{.}
+\end{align*}
+</div>
+<div class="para">Furthermore, using the assumption that <span class="process-math">\(f_{n+1}(t)\le f_{n}(t)\)</span> for any <span class="process-math">\(t\text{,}\)</span> we conclude that <span class="process-math">\(0\le f_{n+1}(t)-f(t)\le f_{n}(t)-f(t)\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{m}(t)-f(t)|\le |f_{n}(t)-f(t)| \le 3\epsilon \text{ for all }
+m\ge n, t\in  B(x, \delta)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Now <span class="process-math">\(\{ B(x, \delta): x \in K\}\)</span> forms an open cover of <span class="process-math">\(K\text{.}\)</span> Using the compactness of <span class="process-math">\(K\text{,}\)</span> we find a finite subcover <span class="process-math">\(\cup_{i=1}^{k}  B(x_{k}, \delta(x_{k}))\)</span> of <span class="process-math">\(K\)</span> for some <span class="process-math">\(\left\{ x_{i}\right\}_{i=1}^{k}\text{.}\)</span>  Set <span class="process-math">\(N =\max_{1\le i \le k} N(x_{i})\text{.}\)</span> Then  for any <span class="process-math">\(t\in K\text{,}\)</span> we have <span class="process-math">\(t\in B(x_{i},\delta (x_{i}))\)</span> for some <span class="process-math">\(i\text{,}\)</span> therefore, for all <span class="process-math">\(m\ge N\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f_{m}(t)-f(t)|\le 3\epsilon\text{,}
+\end{equation*}
+</div>
+<div class="para">which concludes our proof.</div>
+</div> <div class="para logical">
+<div class="para">The above proof can be written in a more compact way. For any <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> using the continuity of <span class="process-math">\(f_{n}, f\text{,}\)</span> we know that the set <span class="process-math">\(O_{n,\epsilon}:=\left\{x\in K: f_{n}(t)-f(t) &lt; \epsilon\right\}\)</span> is open. Since for any <span class="process-math">\(x\in K\text{,}\)</span> <span class="process-math">\(f_{n}(x)-f(x)\to 0\)</span> as <span class="process-math">\(n\to \infty\text{,}\)</span> we conclude that <span class="process-math">\(x\in O_{n,\epsilon}\)</span> for some <span class="process-math">\(n\text{.}\)</span> Thus <span class="process-math">\(\cup_{n}O_{n,\epsilon}\)</span> is an open over of <span class="process-math">\(K\text{.}\)</span> By the compactness of <span class="process-math">\(K\text{,}\)</span> there exists some finite subcover. Since <span class="process-math">\(O_{n,\epsilon} \subset O_{m,\epsilon}\)</span> for <span class="process-math">\(m\ge n\text{,}\)</span> we have in fact <span class="process-math">\(K\subset O_{N,\epsilon}\)</span> for some <span class="process-math">\(N\text{,}\)</span> which implies that for  all <span class="process-math">\(x\in K\)</span> and all <span class="process-math">\(n\ge N\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\le f_{n}(x)-f(x)\le f_{N}(x) -f(x) &lt; \epsilon\text{.}
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="exercises-1.html#solution-1" class="internal">in-context</a></span>
+</body>
+</html>

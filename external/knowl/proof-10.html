@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\)</span> and that <span class="process-math">\(\epsilon&gt;0\)</span> is given. Then the Darboux integrability criterion gives us a partition <span class="process-math">\(\cP:=\{I_{\alpha}\}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{I}\, f -\frac{\epsilon}{2} &lt; L(f, \cP)\le \int_{I}\, f \le 
+U (f, \cP)  &lt; \int_{I}\, f  + \frac{\epsilon}{2},
+\end{equation*}
+</div>
+<div class="para">which implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert
+=U (f, \cP)-L (f, \cP) &lt; \epsilon.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Suppose that <a href="" class="xref" data-knowl="./knowl/eqn-int-osc.html" title="Equation 3.2">(3.2)</a> holds. Then <span class="process-math">\(U (f, \cP)-L (f, \cP) &lt; \epsilon,\)</span>  and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn-int-osc.html">
+\begin{equation*}
+0\le \upint_{I}\, f  -\lowint_{I} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\epsilon &gt;0\)</span> is arbitrary, it follows that <span class="process-math">\(\upint_{I}\, f -\lowint_{I} \, f=0\text{,}\)</span>  and <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Finally, suppose that <span class="process-math">\(f\)</span> is continuous on the closed interval <span class="process-math">\(I\text{,}\)</span> then it is uniformly continuous on <span class="process-math">\(I\text{.}\)</span> For any given <span class="process-math">\(\epsilon &gt;0\text{,}\)</span> there exists <span class="process-math">\(\delta &gt;0\)</span> such that for any partition <span class="process-math">\(\cP:=\{I_{\alpha}\}\)</span> of <span class="process-math">\(I\)</span> with <span class="process-math">\(\lambda (P) &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\osc(f, I_{\alpha}) &lt; \epsilon/\vert I\vert\)</span> for all <span class="process-math">\(I_{\alpha} \in \cP\text{.}\)</span> It then follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert \le \epsilon,
+\end{equation*}
+</div>
+<div class="para">proving the Riemann integrability of <span class="process-math">\(f\)</span> on <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="section-3.html#proof-10" class="internal">in-context</a></span>
+</body>
+</html>

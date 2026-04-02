@@ -1,0 +1,1229 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2024-01-08T21:45:35-05:00       *%
+%*   A recent stable commit (2022-07-01):   *%
+%* 6c761d3dba23af92cba35001c852aac04ae99a5f *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+\documentclass[oneside,10pt,]{article}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% The tcolorbox library loads TikZ, its calc package is generally useful,
+%% and is necessary for some smaller documents that use partial tcolor boxes
+%% See:  https://github.com/PreTeXtBook/pretext/issues/1624
+\usetikzlibrary{calc}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Footnote counters and part/chapter counters are manipulated
+%% April 2018:  chngcntr  commands now integrated into the kernel,
+%% but circa 2018/2019 the package would still try to redefine them,
+%% so we need to do the work of loading conditionally for old kernels.
+%% From version 1.1a,  chngcntr  should detect defintions made by LaTeX kernel.
+\ifdefined\counterwithin
+\else
+    \usepackage{chngcntr}
+\fi
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use publisher page-geometry entry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Micromanage spacing, etc.  The named "microtype-options"
+%% template may be employed to fine-tune package behavior
+\usepackage{microtype}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC 
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+\pagestyle{plain}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmmm}
+{%
+\renewcommand{\divisionnameptx}{#1}%
+\renewcommand{\titleptx}{#2}%
+\renewcommand{\subtitleptx}{#3}%
+\renewcommand{\shortitleptx}{#4}%
+\renewcommand{\authorsptx}{#5}%
+\renewcommand{\epigraphptx}{#6}%
+\section[{#4}]{#2}%
+\label{#7}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+%% Equation Numbering
+%% Controlled by  numbering.equations.level  processing parameter
+%% No adjustment here implies document-wide numbering
+\numberwithin{equation}{section}
+%% Footnote Numbering
+%% Specified by numbering.footnotes.level
+\counterwithin*{footnote}{section}
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% Hyperlinking active in electronic PDFs, all links without surrounding boxes and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+%% Less-clever names for hyperlinks are more reliable, *especially* for structural parts
+%% See comments in the code to learn more about the importance of tnis setting
+\hypersetup{hypertexnames=false}
+\hypersetup{pdftitle={Notes on the Completion of the Space of Continuous Functions under Integral Norms}}
+%% If you manually remove hyperref, leave in this next command
+%% This will allow LaTeX compilation, employing this no-op command
+\providecommand\phantomsection{}
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%%
+%% tcolorbox, with styles, for THEOREM-LIKE
+%%
+%% proposition: fairly simple numbered block/structure
+\tcbset{ propositionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{proposition}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, propositionstyle, }
+%% theorem: fairly simple numbered block/structure
+\tcbset{ theoremstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{theorem}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, theoremstyle, }
+%% corollary: fairly simple numbered block/structure
+\tcbset{ corollarystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{corollary}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, corollarystyle, }
+%% lemma: fairly simple numbered block/structure
+\tcbset{ lemmastyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{lemma}[4]{title={{#1~\thetcbcounter\notblank{#2#3}{\space}{}\notblank{#2}{\space#2}{}\notblank{#3}{\space(#3)}{}}}, phantomlabel={#4}, breakable, parbox=false, after={\par}, fontupper=\itshape, lemmastyle, }
+%%
+%% tcolorbox, with styles, for PROOF-LIKE
+%%
+%% proof: title is a replacement
+\tcbset{ proofstyle/.style={bwminimalstyle, fonttitle=\blocktitlefont\itshape, attach title to upper, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\blacksquare\)},
+} }
+\newtcolorbox{proof}[3]{title={\notblank{#2}{#2}{#1.}}, phantom={\hypertarget{#3}{}}, breakable, parbox=false, after={\par}, proofstyle }
+%%
+%% tcolorbox, with styles, for DEFINITION-LIKE
+%%
+%% definition: fairly simple numbered block/structure
+\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\lozenge\)}, } }
+\newtcolorbox[use counter from=block]{definition}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, definitionstyle, }
+%%
+%% tcolorbox, with styles, for REMARK-LIKE
+%%
+%% remark: fairly simple numbered block/structure
+\tcbset{ remarkstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{remark}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, remarkstyle, }
+%%
+%% tcolorbox, with styles, for inline exercises
+%%
+%% inlineexercise: fairly simple numbered block/structure
+\tcbset{ inlineexercisestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{inlineexercise}[3]{title={{#1~\thetcbcounter\notblank{#2}{\space\space#2}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, inlineexercisestyle, }
+%%
+%% xparse environments for introductions and conclusions of divisions
+%%
+%% introduction: in a structured division
+\NewDocumentEnvironment{introduction}{m}
+{\notblank{#1}{\noindent\textbf{#1}\space}{}}{\par\medskip}
+%%
+%% tcolorbox, with styles, for miscellaneous environments
+%%
+%% paragraphs: the terminal, pseudo-division
+%% We use the lowest LaTeX traditional division
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{#1}
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\NewDocumentEnvironment{paragraphs}{mm}
+{\subparagraph*{#1}\hypertarget{#2}{}}{}
+%% Graphics Preamble Entries
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from PTX for XML characters
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\def\upint{\mathchoice
+    {\mkern10mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\relax\if@display
+ \mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int
+\else 
+\underline{\vphantom{\int}\mkern7mu}\mkern-10mu\int
+\fi}
+\makeatletter
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+%% Title page information for article
+\title{Notes on the Completion of the Space of Continuous Functions under Integral Norms}
+\author{Zheng-Chao Han\\
+\href{mailto:zchan@rutgers.edu}{\nolinkurl{zchan@rutgers.edu}}
+}
+\date{January 8, 2024}
+\begin{document}
+%% bottom alignment is explicit, since it normally depends on oneside, twoside
+\raggedbottom
+%% Target for xref to top-level element is document start
+\hypertarget{article-Notes412Integral}{}
+\maketitle
+\thispagestyle{empty}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1 A Brief Summary of Riemann-Stieltjes Integral}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{A Brief Summary of Riemann-Stieltjes Integral}{}{A Brief Summary of Riemann-Stieltjes Integral}{}{}{section-RS-int}
+\begin{introduction}{}%
+In the context of probability, if a random variable has a probability density function \(p(x)\), then the probability that the variable falls into \([a, b]\) is given by \(\int_{a}^{b} p(x)\, dx\). Such a random variable can't have a positive probability taking on a single value. A general random variable \(X\) has a cumulative distribution	function \(F(x) :=\cP(x: X\le x)\). It is a non-decreasing function of \(x\)-{}-{}-we will also use the terminology increasing function interchangeably. The Riemann-Stieltjes integral with respect to an increasing function is a step in describing the probability of a general random variable in terms of integrals.%
+\par
+In the context of functional analysis, there is a need to consider possible convergence of a sequence of linear functional on \(C[a, b]\), given in the form of \(g\in C[a, b]\mapsto \int_{a}^{b} g(x)f_{k}(x)\, dx\), where \(\{f_{k}\}\) is a sequence of continuous or Riemann integrable functions on \([a, b]\) with certain bounds, say, \(\int_{a}^{b} |f_{k}(x)|\, dx\le M\) for all \(k\). If there is a limit, then it could be given in terms of the Riemann-Stieltjes integral with respect to some increasing function.%
+\end{introduction}%
+Given a monotone increasing function \(\alpha\) on \([a, b]\), we can mimic the steps in defining the usual Riemann integral of a given bounded function \(f\) on \([a, b]\) to define the lower sum%
+\begin{equation*}
+L(f, \cP, d \alpha)  :=\sum_{i=1}^{k} m_{I_{i}} (f) d\alpha(I_{i})
+\end{equation*}
+and upper sum%
+\begin{equation*}
+U(f, \cP, d \alpha)  :=\sum_{i=1}^{k} M_{I_{i}} (f) d\alpha (I_{i})
+\end{equation*}
+of \(f\) with respect to a partition \(\cP=\{a=x_{0} < x_{1} < \cdots < x_{k}=b\}\) of \([a, b]\), with \(I_{i}=[x_{i-1}, x_{i}]\), \(d\alpha (I_{i})=\alpha(x_{i})-\alpha(x_{i-1})\), \(m_{I_{i}} (f)=\inf_{I_{i}}f\), and \(M_{I_{i}} (f) =\sum_{I_{i}}f\).%
+\begin{definition}{Definition}{}{definition-def-upperlower-int-def}%
+\index{upper integral, lower integral}%
+\label{notation-def-upperlower-int-def-b}%
+Suppose that \(f\) is a bounded function defined on the interval \([a, b]\). Then its upper integral, and respectively lower integral, on \([a, b]\)  with respect to \(\alpha\) is defined as \(\inf_{\cP}U(f, \cP, \alpha)\), and respectively \(\sup_{\cP}U(f, \cP, \alpha)\), where \(\cP\) runs over all partitions of \(\cP\).%
+\par
+The upper integral is denoted as \(\upint_{a}^{b}\,f\, d\alpha\), while the lower integral is denoted as \(\lowint_{a}^{b}\,f\, d\alpha\).%
+\end{definition}
+When \(\alpha(x)=x\), we write \(U(f, \cP)\) for \(U(f, \cP, dx)\), and \(L(f, \cP)\) for \(L(f, \cP, dx)\).%
+\begin{inlineexercise}{Exercise}{}{exercise-RS-int-f}%
+Let \(\cC\) denote the standard tertiary Cantor set on \([0, 1]\) and \(\chi_{\cC}\) denote its characteristic function which takes  value \(1\) on \(\cC\) and \(0\) elsewhere. Let \(\cP\) be a partition of \([0, 1]\) into intervals of equal length \(3^{-k}\) for some \(k\in \bbN\). Find \(U(\chi_{\cC}, \cP)\) and \(L(\chi_{\cC}, \cP)\). Is there a positive lower bound of \(L(\chi_{\cC}, \cP)\) independent of \(\cP\)?%
+\end{inlineexercise}%
+\begin{proposition}{Proposition}{Basic property of upper and lower integral of a bounded real-valued function.}{}{proposition-propos-upperlower-int}%
+Suppose that \(f\) is a bounded function defined on the interval \([a, b]\). Then%
+\begin{equation*}
+\lowint_a^b\,f\, d\alpha \le  \upint_a^b\,f\, d\alpha.
+\end{equation*}
+\end{proposition}
+\begin{proof}{Proof}{}{proof-propos-upperlower-int-c}
+Let \(\cP_{1}, \cP_{2}\) be two arbitrary partitions of \([a, b]\), and \(\cP^{*}\) be a refinement of both \(\cP_{1}\) and \(\cP_{2}\). Then%
+\begin{equation*}
+L(f, \cP_{1},d\alpha)\le L(f, \cP^{*}, d \alpha)\le U(f, \cP^{*}, d \alpha)\le U(f, \cP_{2}, d \alpha).
+\end{equation*}
+As a result,%
+\begin{equation*}
+L(f, \cP_{1}, d \alpha)\le  \upint_a^b \,f\, d \alpha) =\inf_{\cP_{2}} U(f, \cP_{2}, d \alpha),
+\end{equation*}
+and%
+\begin{equation*}
+\lowint_a^b \,f\, d \alpha =\sup_{\cP_{1}} L(f, \cP_{1}, d \alpha)\le \upint_a^b \,f\, d \alpha.\qedhere
+\end{equation*}
+%
+\end{proof}
+\begin{definition}{Definition}{}{definition-def-riemann-stieltjes-integrable}%
+\index{Riemann-Stieltjes integrable function}%
+\label{notation-def-riemann-stieltjes-integrable-b}%
+A bounded real-valued function \(f\) defined on an interval \([a, b]\) is called \terminology{Riemann-Stieltjes integrable} with respect to \(d\alpha\), if%
+\begin{equation*}
+\lowint_a^b\,f\, d\alpha =  \upint_a^b\,f\, d\alpha.
+\end{equation*}
+In such a case we write \(f\in \cR(\alpha)\) on \([a, b]\), and use \(\int_{a}^{b} \,f\, d\alpha\) for \(\lowint_a^b\,f\, d\alpha \).%
+\end{definition}
+\begin{theorem}{Theorem}{Riemann-Stieltjes integrability criterion.}{}{theorem-RS-int-i}%
+A bounded real-valued function \(f\) defined on the interval \([a, b]\) is Riemann-Stieltjes integrable iff for any \(\epsilon > 0\), there exists a partition \(\cP\) of \([a, b]\) such that%
+\begin{equation}
+U(f, \cP, d\alpha) - L(f, \cP, d\alpha) < \epsilon.\label{men-RS-IntC}
+\end{equation}
+\end{theorem}
+\begin{inlineexercise}{Exercise}{}{exercise-RS-int-j}%
+Define%
+\begin{equation*}
+H(x)=\begin{cases} 1 \amp x \ge 0 \\ 0 \amp x < 0 
+\end{cases}
+\text{ and }
+G(x) =\begin{cases} 1 \amp x > 0 \\ 0 \amp x \le 0 
+\end{cases} 
+\end{equation*}
+Determine \(\lowint_{-1}^{1} H(x)\, dH(x)\), \(\upint_{-1}^{1} H(x)\, dH(x)\), \(\lowint_{-1}^{1} G(x)\, dH(x)\), \(\upint_{-1}^{1} G(x)\, dH(x)\), and find out if either \(H\) or \(G\) is in \(\cR(dH)\) over \([-1, 1]\).%
+\end{inlineexercise}%
+\begin{theorem}{Theorem}{}{}{theorem-RS-int-k}%
+If \(f\) is continuous on \([a, b]\), then \(f\in \cR (\alpha)\) on \([a, b]\).\end{theorem}
+\begin{theorem}{Theorem}{}{}{theorem-RS-int-l}%
+If \(f\) is monotone on \([a, b]\) and \(\alpha\) continuous on \([a, b]\), then \(f\in \cR (\alpha)\) on \([a, b]\).\end{theorem}
+\begin{theorem}{Theorem}{}{}{theorem-RS-int-m}%
+If \(f\) is bounded on \([a, b]\) and has only finitely many points of discontinuity, and \(\alpha\) is continuous at every point at which \(f\) is discontinuous, then \(f\in \cR (\alpha)\) on \([a, b]\).\end{theorem}
+\begin{theorem}{Theorem}{Properties of Riemann-Stieltjes Integral.}{}{theorem-RS-int-n}%
+Suppose that \(f_{1}, f_{2} \in \cR(\alpha)\) on \([a,  b]\). %
+\begin{enumerate}[label=(\alph*)]
+\item{}\(f_{1}+f_{2} \in \cR(\alpha)\) and \(c f_{1}  \in \cR(\alpha)\) on \([a,  b]\) for any scalar \(c\), and%
+\begin{align*}
+\int_{a}^{b} (f_{1}+f_{2})\, d\alpha \amp= \int_{a}^{b} f_{1} d\alpha +\int_{a}^{b} f_{2}\, d\alpha\\
+\int_{a}^{b}c f_{1} d\alpha \amp= c  \int_{a}^{b} f_{1} d\alpha.
+\end{align*}
+%
+\item{}\(f_{1} f_{2} \in \cR(\alpha)\).%
+\item{}\(|f_{1}| \in \cR(\alpha)\) and \(\left| \int_{a}^{b} f_{1} d\alpha\right|
+\le \int_{a}^{b} |f_{1}| d\alpha\).%
+\item{}If \(f_{1}(x)\le f_{2}(x)\) on \([a, b]\), then%
+\begin{equation*}
+\int_{a}^{b} f_{1} d\alpha \le  \int_{a}^{b} f_{2} d\alpha.
+\end{equation*}
+%
+\item{}For any \(c, a < c < b\), then \(f_{1}\in \cR(\alpha)\) on \([a, c]\) and on \([c, b]\), and%
+\begin{equation*}
+\int_{a}^{c} f_{1} d\alpha +  \int_{c}^{b} f_{1} d\alpha =  \int_{a}^{b} f_{1} d\alpha.
+\end{equation*}
+%
+\item{}If \(|f_{1}(x)|\le M\) on \([a, b]\), then%
+\begin{equation*}
+\left|  \int_{a}^{b} f_{1} d\alpha \right|\le M[\alpha(b)-\alpha(b)].
+\end{equation*}
+%
+\item{}If \(\beta\) is another monotone increasing function on \([a, b]\) and \(f_{1} \in \cR(\beta)\) on \([a, b]\), then \(f_{1} \in cR(\alpha +\beta)\) on \([a, b]\) and%
+\begin{equation*}
+\int_{a}^{b} f_{1} d(\alpha+\beta) = \int_{a}^{b} f_{1} d\alpha + \int_{a}^{b} f_{1} d\beta.
+\end{equation*}
+%
+\end{enumerate}
+\end{theorem}
+\begin{theorem}{Theorem}{}{}{theorem-RS-int-o}%
+Assume that \(f\) is bounded on \([a, b]\) and that \(\alpha' \in \cR\) on \([a, b]\) (namely, \(\alpha'\) is Riemann integrable on \([a, b]\)). Then \(f\in \cR(\alpha)\) on \([a, b]\) iff \(f\alpha' \in \cR\) on \([a, b]\), and%
+\begin{equation}
+\int_{a}^{b} f\, d\alpha = \int_{a}^{b} f \alpha'\, dx.\label{men-int-rseval}
+\end{equation}
+\end{theorem}
+\begin{corollary}{Corollary}{}{}{corollary-cor-ftcr}%
+Assume that \(\alpha' \in \cR\) on \([a, b]\). Then for any \(t\in [a, b]\)%
+\begin{equation}
+\int_{a}^{t} \alpha'(x)\, dx = \alpha(t)-\alpha(a).\label{men-eq-ftcr}
+\end{equation}
+\end{corollary}
+\begin{remark}{Remark}{}{remark-RS-int-q}%
+The assumption \(\alpha' \in \cR\) on \([a, b]\) is needed. Using a construction similar to that of a Cantor set, Volterra constructed a function (not monotone though) which had derivative everywhere in \([0, 1]\) but its derivative is not Riemann integrable. Cantor's function is monotone increasing in \([0, 1]\), equals a constant in any of the middle third interval removed, therefore has derivative equal \(0\) at any point of those intervals. Since Cantor's set has measure \(0\), Cantor's function has derivative equal \(0\) almost everywhere in \([0, 1]\). If we can define an integral for such a function, its integral on any subinterval of \([0, 1]\) must be \(0\), thus the above equality relation can't hold in such a case.%
+\end{remark}
+\begin{remark}{Remark}{}{remark-RS-int-r}%
+Suppose that \(f\in \cR(\alpha)\) on \([a, b]\) and \(a < c < b\). Then \(\int_{a}^{c}1\, d \alpha=\alpha(c)-\alpha(a)\), \(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha=\alpha(c+0)-\alpha(a)\). Since \([a, c]=\cap_{k}[a, c+ \frac 1k]\), or one could think of \(\int_{a}^{c}1\, d \alpha\) as \(\int \chi_{[a, c]} (x)\, d\alpha\), and since \(\lim_{k\to\infty} \chi_{[a, c+\frac 1k]} (x)=\chi_{[a, c]} (x)\), one expects \(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha= \int_{a}^{c}1\, d \alpha\). This would require \(\alpha(c+0)=\alpha(c)\). For this reason, one often chooses to work with an \(\alpha\) which is right-continuous.%
+\par
+Since \(\lim_{k\to\infty} \int_{a}^{c- \frac 1k}1\, d \alpha=\alpha(c-0)-\alpha(a)\) and \([a, c)=\cup_{k}[a, c- \frac 1k]\), it is reasonable to treat \(\lim_{k\to\infty} \int_{a}^{c- \frac 1k}1\, d \alpha\) as \(\int_{[a, c)} 1\, d\alpha\) and \(\lim_{k\to\infty} \int_{a}^{c+ \frac 1k}1\, d \alpha\) as \(\int_{[a, c]} 1\, d\alpha\); namely, the notation of integration over a set is more precise than that of integration over a lower and upper limit.%
+\end{remark}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 2 The Completion of the Space of Continuous Functions under Integral Norms}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{The Completion of the Space of Continuous Functions under Integral Norms}{}{The Completion of the Space of Continuous Functions under Integral Norms}{}{}{section-chp-int}
+We sketch below some main properties of  the Completion of the Space of Continuous Functions under Integral Norms. The main line of approach is adapted from the following article by P. Lax, \emph{Rethinking the Lebesgue Integral}, The American Mathematical Monthly, Dec., 2009, Vol. 116, No. 10 (Dec., 2009), pp. 863-881. Although the discussion can be done with respect to the Riemann-Stieltjes integral, we limit our discussion to the standard Riemann integral.%
+\par
+For any \(1\le p < \infty\), let \(L^{p}[a,  b]\) denote the completion of \(C[a, b]\) under the norm \(\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}\). From the abstract completion process, each element \(\phi\in L^{p}[a,  b]\) is an equivalence class of Cauchy sequences \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm. We would like to address the following questions%
+\par
+%
+\begin{enumerate}[label=\alph*.]
+\item{}Does each equivalence class of Cauchy sequences \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm associate to a pointwise-defined function on \([a, b]\)?%
+\item{}Does each equivalence class of Cauchy sequences \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm associate to a well-defined integral? What usual properties of integrals are preserved?%
+\item{}Establish criteria for other limiting process of functions in \(C[a, b]\) or \(L^{p}[a,  b]\), e.g., pointwise limit, that result in a limit in \(L^{p}[a,  b]\).%
+\end{enumerate}
+%
+\begin{paragraphs}{An elementary observation.}{paragraphs-chp-int-e}%
+ Suppose that \(\{ c_{k}\}\) is a Cauchy sequence in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm. Then for \([c, d]\subset [a, b]\), \(\int_{c}^{d} c_{k}(x)\, dx\) is a Cauchy sequence in \(\bbR\); and for any \(1\le q \le p\), \(\Vert c_{k} \Vert_{L^{q}[c,d]}\)  is a Cauchy sequence in \(\bbR\). Furthermore, \(\lim_{k\to\infty} \int_{c}^{d} c_{k}(x)\, dx\) and \(\lim_{k\to\infty}\Vert c_{k} \Vert_{L^{q}[c,d]}\) remain the same if \(\{ c_{k}\}\) is replaced by an equivalent Cauchy sequence.\end{paragraphs}%
+\par
+These properties are simple consequences of the triangle inequalities:%
+\begin{align*}
+\vert \int_{c}^{d} c_{k}(x)\, dx - \int_{c}^{d} c_{l}(x)\, dx\vert \amp\le \int_{c}^{d} \vert c_{k}(x)-c_{l}(x)\vert \, dx\\
+\amp\le \left(\int_{c}^{d} \vert c_{k}(x)-c_{l}(x)\vert^{p} \, dx\right)^{1/p}(d-c)^{1-1/p},\\
+\left| \Vert c_{k} \Vert_{L^{q}[c,d]} -\Vert c_{l} \Vert_{L^{q}[c,d]}\right| \amp\le \Vert c_{k} -c_{l}\Vert_{L^{q}[c,d]}\\
+\amp 	\le  \Vert c_{k} -c_{l}\Vert_{L^{p}[c,d]}(d-c)^{1/q-1/p}.
+\end{align*}
+%
+\par
+As a result, if we denote by \(\phi\) the equivalence class of \(\{ c_{k}\}\), it makes sense to define%
+\begin{equation*}
+\int_{c}^{d} \phi = \lim_{k\to\infty} \int_{c}^{d} c_{k}(x)\, dx, \quad
+\Vert \phi \Vert_{L^{q}[c,d]}= \lim_{k\to\infty}\Vert c_{k} \Vert_{L^{q}[c,d]}.
+\end{equation*}
+Any \(c\in C[a, b]\) defines a Cauchy sequence \(\{c_{k} = c\}\) in \(L^{p}[a, b]\) and \(\Vert c \Vert_{L^{q}[c,d]}\) as defined through the limiting process above equals the definition through Riemann's integral.%
+\par
+It also follows routinely that if \(\{[c_{i}, d_{i}]\}\) is a finite collection of disjoint subintervals of \([a, b]\), then%
+\begin{equation*}
+\int_{\cup_{i} [c_{i}, d_{i}] }\phi = \sum_{i}\int_{[c_{i},d_{i}]} \phi 
+\end{equation*}
+is well defined; the intervals \(\{[c_{i}, d_{i}]\}\) can also be replaced by open or half-open intervals. Furthermore, if \(\phi, \psi \in L^{p}[a, b]\), then for any scalars \(a, b\),%
+\begin{equation*}
+\int_{[a, b]} (a \phi + b \psi ) = a \int_{[a, b]} \phi + b \int_{[a, b]} \psi.
+\end{equation*}
+%
+\par
+Any open set \(G\) of \(\bbR\) is a union of at most countably many open intervals \((c_{i}, d_{i})\). For any \(c\in C[a, b]\) and any open subset \(G\) of \([a, b]\), the integrals  \(\int_{G} c(x)\, dx\) and \(\int_{G} |c(x)|^{p}\, dx\) have  clearly defined meanings as the (absolutely convergent) sum of the integrals on each constitutive open intervals, with \(\int_{G} 1\, dx=|G|\), the length of \(G\) .%
+\begin{definition}{Definition}{Uniform Absolute Continuity of A Sequence of Integrals.}{definition-def-uniform-abs-contin}%
+The integrals of a sequence of functions \(\{ c_{k}\}\)  in \(C[a, b]\) are said to be \terminology{uniformly absolutely continuous} on \([a, b]\) if for any \(\epsilon > 0\), there exists a \(\delta > 0\) such that for any open subset \(G\) of \([a, b]\) with its length \(|G| < \delta\),%
+\begin{equation*}
+\int_{G} |c_{k}(x)|^{p}\, dx < \epsilon \text{ for all } k.
+\end{equation*}
+%
+\end{definition}
+\begin{proposition}{Proposition}{Uniform Absolute Continuity of the Integrals of A Cauchy Sequence in \(C[a, b]\).}{}{proposition-uniform-abs-contin}%
+The integrals of any  Cauchy sequence  \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm are uniformly absolutely continuous on \([a, b]\).\end{proposition}
+\begin{proof}{Proof}{}{proof-uniform-abs-contin-c}
+For the given \(\epsilon > 0\), there exists some \(N\) such that for all \(k, l \ge N\), \(\Vert c_{k} -c_{l}\Vert_{L^{p}[a,b]} < \epsilon^{1/p}/2\). Since \(c_{i}\in C[a, b]\) for \(i=1,\cdots, N\), there exists a common \(M > 0\) such that \(|c_{k}(x)|\le M\) for all \(x\in [a, b]\) and \(1\le k \le N\), therefore, there exists \(\delta > 0\) such that for any open subset \(G\) of \([a, b]\) with its length \(|G| < \delta\), we have%
+\begin{equation*}
+\int_{G} |c_{k}(x)|^{p}\, dx < \epsilon/2^{p} \text{ for } 1\le k \le N.
+\end{equation*}
+Now for \(l > N\), the triangle inequality continues to hold for integrals on \(G\), which implies that%
+\begin{equation*}
+\Vert c_{l}\Vert_{L^{p}(G)} \le \Vert c_{l}-c_{N}\Vert_{L^{p}(G)}+ \Vert c_{N}\Vert_{L^{p}(G)}
+\le  \epsilon^{1/p}/2 +  \epsilon^{1/p}/2.
+\end{equation*}
+from which our conclusion follows.\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-exe-abc}%
+In the context of \hyperref[proposition-uniform-abs-contin]{Proposition~{\xreffont\ref{proposition-uniform-abs-contin}}}, suppose that the open set \(G\) is decomposed as the union of at most countably many disjoint open intervals: \(G=\cup_{l}I_{l}\), and set \(a_{k, l}=\int_{I_{l}} |c_{k}(x)|^{p}\, dx\). Prove that%
+\begin{equation*}
+\lim_{k\to\infty} \sum_{l} a_{k, l}= \sum_{l} \lim_{k\to\infty}  a_{k, l}.
+\end{equation*}
+This allows to define \(\int_{G} |\phi(x)|^{p}\, dx \) as \(\sum_{l} \int_{I_{l}} |\phi(x)|^{p}\, dx\), given by \(\lim_{k\to\infty} \int_{G} |c_{k}(x)|^{p}\, dx\).%
+\par
+As a consequence, prove the \terminology{absolute continuity of the integral} of \(|\phi|^{p}\), namely, for any \(\phi \in L^{p}[a, b]\) and for any \(\epsilon > 0\), there exists a \(\delta > 0\) such that for any open subset \(G\) of \([a, b]\) with its length \(|G| < \delta\),%
+\begin{equation*}
+\int_{G} |\phi(x)|^{p}\, dx < \epsilon.
+\end{equation*}
+%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-m}%
+Construct \(b_{k, l}\ge 0\) for \(k, l\) such that \(\lim_{k\to\infty}  b_{k, l}\) exists for each \(l\) and%
+\begin{equation*}
+\lim_{k\to\infty} \sum_{l} b_{k, l}\ne \sum_{l} \lim_{k\to\infty}  b_{k, l}.
+\end{equation*}
+%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-n}%
+Construct a sequence of non-negative functions \(\{c_{k}(x)\}\) in \(C[0, 1]\) such that \(\lim_{k\to\infty} c_{k}(x)=0\) for each \(x\in [0, 1]\) but \(\lim_{k\to\infty} \int_{0}^{1}c_{k}(x)\, dx > 0\). Verify that the integrals of this sequence fail to be uniformly absolutely continuous on \([0, 1]\).%
+\end{inlineexercise}%
+\begin{definition}{Definition}{Negligible set.}{definition-chp-int-o}%
+A point set is called negligible if it can be covered by an open set of arbitrarily small volume, namely, for any \(\epsilon > 0\), there exists an open cover \(G\) such that \(|G| < \epsilon\).%
+\end{definition}
+The notion of negligible set here is a special case in the context of Lebesgue measure on \(\bbR\) of the notion of a set of measure \(0\). Note that the union of at most countable number of negligible sets is still negligible.%
+\par
+When two functions are equal  except on a negligible set, we use the customary language that they are equal \(a.e.\).%
+\begin{definition}{Definition}{Realization of a Cauchy Sequence in \(L^{p}[a, b]\).}{definition-chp-int-r}%
+A function \(\phi (x)\) defined \(a.e.\) on \([a,  b]\) is said to be a realization of \(\phi \in L^{p}[a, b]\) if there exists a Cauchy sequence \(\{c_{k}\}\) of continuous functions in \([a, b]\) in the equivalence class of \(\phi\) which converges a.e to \(\phi (x)\):%
+\begin{equation*}
+\lim_{k\to \infty} c_{k}(x)\to \phi (x) \ a.e..
+\end{equation*}
+%
+\end{definition}
+\begin{proposition}{Proposition}{Realization of elements of \(L^{p}[a, b]\).}{}{proposition-lprealization}%
+%
+\begin{enumerate}[label=(\roman*)]
+\item{}Any Cauchy sequence \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm has a subsequence which converges pointwise \(a.e.\) on \([a, b]\). Furthermore, for any \(\epsilon > 0\), there exists an open set \(G\) with \(|G| < \epsilon\) such that  \(\{ c_{k}\}\) converges uniformly over \(G^{c}\).%
+\item{}If \(\{ c_{k}\}\) and \(\{ \tilde c_{k}\}\) are two equivalent Cauchy sequences  in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm such that both \(\lim_{k\to \infty} c_{k}(x)\) and \(\lim_{k\to \infty} \tilde c_{k}(x)\) exist \(a.e.\), then \(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\) \(a.e. \).%
+\par
+As a result, any \(\phi\) in \(L^{p}[a, b]\), namely, an equivalence class of Cauchy sequences in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm,  has an \(a.e.\)  pointwise defined realization defined on \([a, b]\). We will denote such a realization by \(\phi (x)\). In particular, if \(\phi\) in \(L^{p}[a, b]\) is such that \(\Vert \phi \Vert_{L^{p}[a, b]}=0\), then \(\phi(x)=0\) \(a.e.\) on \([a, b]\).%
+\item{}If \(\{ c_{k}\}\) and \(\{ \tilde c_{k}\}\) are two Cauchy sequences  in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm such that \(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\) \(a.e.\), then \(\{ c_{k}\}\) and \(\{ \tilde c_{k}\}\) are equivalent Cauchy sequences in \(L^{p}[a,  b]\).%
+\end{enumerate}
+\end{proposition}
+\begin{proof}{Proof}{}{proof-lprealization-c}
+Any Cauchy sequence \(\{ c_{k}\}\) in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm has a subsequence, still denoted as \(\{ c_{k}\}\), such that%
+\begin{equation*}
+\Vert c_{k} -c_{k+1}\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
+\end{equation*}
+where \(\epsilon_{k} > 0\) are such that \(\sum_{k} \epsilon_{k}\) converges.%
+\par
+Define%
+\begin{equation*}
+D_{k} =\{x\in [a, b]: \vert c_{k}(x) -c_{k+1}(x)\vert > \epsilon_{k}\}.
+\end{equation*}
+Then \(D_{k}\) is open and it follows from%
+\begin{equation*}
+\epsilon_{k}^{p} |D_{k}| \le \int_{[a,b]} \vert c_{k}(x) -c_{k+1}(x)\vert^{p}\, dx \le \epsilon_{k}^{2p}
+\end{equation*}
+that \(|D_{k}|\le  \epsilon_{k}^{p}\).%
+\par
+Note that \(\cup_{k=N}^{\infty}D_{k}\) is open and%
+\begin{equation*}
+|\cup_{k=N}^{\infty}D_{k}|\le 
+\sum_{k=N}^{\infty}|D_{k}| \le \sum_{k=N}^{\infty}\epsilon_{k}^{p}\to 0\text{,}
+\end{equation*}
+as \(N\to\infty\). Therefore, the set \(E\)\footnotemark{} defined by%
+\begin{equation*}
+E=\cap_{N=1}^{\infty}  \cup_{k=N}^{\infty}D_{k}
+\end{equation*}
+is negligible, and for any \(x\in E^{c}\), there exists some \(N_{x}\) such that \(x\in \cap_{k=N}^{\infty}D_{k}^{c}\), which makes \(\{c_{k}(x)\}\) a Cauchy sequence in \(\bbR\), therefore \(\lim_{k\to\infty} c_{k}(x)\) exists. Furthermore, for any \(\epsilon > 0\), there exists some \(N_{\epsilon}\) such that \(|\cup_{k=N}^{\infty}D_{k}| < \epsilon\). On the complement of \(\cup_{k=N}^{\infty}D_{k}\), \(\vert c_{k}(x) -c_{k+1}(x)\vert \le \epsilon_{k}\) for all \(k\ge N\), implying that \(\{c_{k}(x)\}\) converges uniformly on this set.%
+\par
+For (ii), we can use the equivalent Cauchy sequences \(\{ c_{k}\}\) and \(\{ \tilde c_{k}\}\) to construct a new Cauchy sequence, say, with \(c_{k}\) as the \((2k-1)\)-th term and \(\{ \tilde c_{k}\}\) as the \((2k)\)-th term, then appeal to the proof of (i), making sure that in selecting the subsequence, infinitely many terms from both sequences are selected. This subsequence, selected from two \(a.e.\) convergent  sequences, converges \(a.e.\), which shows that \(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\) \(a.e. \).%
+\par
+For (iii), define \(f_{k}(x)=c_{k}(x)-\tilde c_{k}(x)\), then \(\{f_{k}(x)\}\) is a Cauchy sequence  in \(C[a, b]\) under the \(L^{p}[a,  b]\)-norm such that \(\lim_{k\to\infty} f_{k}(x)=0\) \(a.e.\). We now show that \(\{f_{k}(x)\}\to 0\) in \(L^{p}[a, b]\). For any \(\epsilon > 0\), first apply \hyperref[proposition-uniform-abs-contin]{Proposition~{\xreffont\ref{proposition-uniform-abs-contin}}} to \(\{f_{k}(x)\}\) to find \(\delta > 0\) such that for any open set \(G\) in \([a, b]\) with \(|G| < \delta\), we have \(\int_{G} |f_{k}(x)|^{p}\, dx < \epsilon\). Then apply the proof for (i) to \(\{f_{k}(x)\}\) to find an open set \(G\) in \([a, b]\) with \(|G| < \delta\) such that \(f_{k} \to 0\) uniformly in \(G^{c}\). Thus there exists \(N\) such that \(|f_{k}(x)|^{p} \le \epsilon \) for all \(x\in G^{c}\) and \(k\ge N\). We would like to estimate \(\int_{[a, b]} |f_{k}(x)|^{p}\, dx\) by \(\int_{G} |f_{k}(x)|^{p}\, dx + \int_{G^{c}} |f_{k}(x)|^{p}\, dx\). But in the Riemann integral setting, integration over an arbitrary closed set is not defined.  We complete the argument in the following way. Since \(|f_{k}(x)|^{p} \in \mathcal R[a, b]\), we can find a partition \(a=a_{0} < a_{1} < \cdots < a_{N_{k}}=b\) such that%
+\begin{equation*}
+\left| \int_{a}^{b} |f_{k}(x)|^{p}\, dx -\sum_{i=1}^{N_{k}} m_{i}(|f_{k}|^{p})(a_{i}-a_{i-1})\right| < \epsilon.
+\end{equation*}
+For any interval \([a_{i-1}, a_{i}]\) that has non-empty intersection with \(G^{c}\), we see that \(m_{i}(|f_{k}|^{p})=\inf_{[a_{i-1}, a_{i}]}|f_{k}|^{p} \le \epsilon\); the remaining subintervals \([a_{i-1}, a_{i}]\) are contained in \(G\), and the lower Riemann sum over such intervals \(\le \int_{G} |f_{k}(x)|^{p}\, dx \le \epsilon\) for any \(k\ge N\). It then follows that for any \(k\ge N\),%
+\begin{equation*}
+\int_{a}^{b} |f_{k}(x)|^{p}\, dx\le (b-a)\epsilon + 2\epsilon.
+\end{equation*}
+proving that \(\int_{a}^{b} |f_{k}(x)|^{p}\, dx\to 0\) as \(k\to \infty\).%
+\end{proof}
+\footnotetext[1]{\(E\) is the set of points that belong to infinitely many \(D_{k}\)'s, and \(E^{c}\) is then the set of points that belong to at most a finite number of \(D_{k}\)'s.\label{fn-lprealization-c-c-e}}%
+\begin{remark}{Remark}{}{remark-chp-int-t}%
+As a consequence of \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}}, for any realization \(\phi (x)\) of some \(\phi \in L^{p}[a, b]\) and any \(\epsilon > 0\), there exists a closed set \(F\) of \([a, b]\) with \(|F^{c}| < \epsilon\) such that the \emph{restriction} of \(\phi(x)\) on \(F\) is continuous. Note that this is not saying that \(\phi(x)\) is continuous at every point of \(F\) as a function on \([a, b]\). Furthermore, for any \(\phi \in L^{p}[a, b]\) and any \(\epsilon,
+\epsilon' > 0\), one can find a continuous approximation \(c\in C[a, b]\) in the sense that exists an open set \(G\) with \(|G| < \epsilon'\) such that%
+\begin{equation*}
+\Vert \phi - c \Vert_{L^{p}[a, b]} < \epsilon, \quad\text{ and } \vert \phi (x) - c(x) \vert < \epsilon \text{ for all } x\in G^{c}.
+\end{equation*}
+Here \(\Vert \phi - c \Vert_{L^{p}[a, b]}\) is defined through the limiting process instead of the Riemann integral for a  general \(\phi \in L^{p}[a, b]\).%
+\end{remark}
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-u}%
+Let \(f \in L^{1}[a,  b]\). Extend \(f\) to be \(0\) outside of \([a, b]\). Prove that \(\int_{a}^{b}|f(x+h)-f(x)|\, dx \to 0\) as \(|h|\to 0\).%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-v}%
+Let \(f \in L^{1}[a,  b]\). Prove that \(F(t) :=\int_{a}^{t} f(x)\, dx\) is a continuous function of \(x\in [a, b]\).%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-exe-avcn}%
+Let \(f \in L^{1}[a,  b]\). Extend \(f\) to be \(0\) outside of \([a, b]\) and define \(f_{h}(x)=h^{-1}\int_{x}^{x+h} f(y)\, dy\) for \(h > 0\) small. Prove that \(\int_{a}^{b}|f_{h}(x)-f(x)|\, dx \to 0\) as \(h \to 0\).%
+\end{inlineexercise}%
+\begin{corollary}{Corollary}{\(L^{p}[a, b]\) is closed under taking absolute values and maximums.}{}{corollary-chp-int-x}%
+If \(\{ c_{k} \}\) in \(C[a, b]\) is a Cauchy sequence in \(L^{p}[a, b]\)-norm, representing \(\phi\) in \(L^{p}[a, b]\), then  \(\{ |c_{k}| \}\) in \(C[a, b]\) is a Cauchy sequence in \(L^{p}[a, b]\)-norm whose realization is given by \(|\phi (x)|\).%
+\par
+If \(\phi, \psi\in L^{p}[a, b]\), then \(\max\{\phi, \psi\} :=(\phi + \psi + |\phi - \psi||)/2 
+\in L^{p}[a, b]\) and \(\min\{\phi, \psi\} :=(\phi + \psi - |\phi - \psi|)/2 
+\in L^{p}[a, b]\).%
+\end{corollary}
+\begin{proposition}{Proposition}{Rapidly Convergent Sequence in \(L^{p}[a, b]\).}{}{proposition-rcsthm}%
+Let \(\{\phi_{k}\}\) be a sequence of elements in \(L^{p}[a, b]\) converging rapidly in the sense%
+\begin{equation*}
+\Vert \phi_{k} - \phi_{k+1} \Vert_{L^{p}[a, b]} < \epsilon_{k}^{2}
+\end{equation*}
+where \(\sum_{k}  \epsilon_{k}\) converges. Then there exists a unique \(\phi \in L^{p}[a, b]\) such that \(\Vert \phi_{k} - \phi \Vert_{L^{p}[a, b]}\to 0\) and \(\phi_{k} (x) \to \phi (x)\)\(\ a.e.\) as \(k\to \infty\).\end{proposition}
+\begin{proof}{Proof}{}{proof-rcsthm-c}
+For each \(\phi_{k}\) there exists some \(c_{k} \in C[a,  b]\) and an open set  \(G_{k}\) with \(|G_{k}| < \epsilon_{k}\) such that%
+\begin{equation*}
+\Vert \phi_{k} - c_{k} \Vert_{L^{p}[a, b]} < \epsilon_{k}^{2}, \text{ and } 
+\vert \phi_{k} (x) - c_{k}(x) \vert < \epsilon_{k}^{2} \text{ for all } x\in G_{k}^{c}.
+\end{equation*}
+Then the set \(E=\cap_{l=1}^{\infty}\cup_{k=l}^{\infty} G_{k}\) is negligible, as \(|\cup_{k=l}^{\infty} G_{k}|\le \sum_{k=l}^{\infty}|G_{k}| \to 0\) as \(l\to \infty\), and for any \(x\in E^{c}\), there exists some \(l_{x}\) such that \(x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}\). This implies that \(\{ c_{k}\}\) satisfies%
+\begin{equation*}
+\Vert c_{k} - c_{k+1} \Vert_{L^{p}[a, b]} < 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
+\text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert< \epsilon_{k}^{2} \text{ for } k\ge l_{x}\text{.}
+\end{equation*}
+Then \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}} applied to  \(\{ c_{k}\}\) implies that there exists a unique \(\phi \in L^{p}[a, b]\) such that%
+\begin{equation*}
+\Vert c_{k} - \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
+\end{equation*}
+We can then conclude our proof by appealing to the triangle inequalities.\end{proof}
+\begin{definition}{Definition}{Nonnegative Elements of \(L^{p}[a, b]\).}{definition-chp-int-z}%
+An element \(\phi \in L^{p}[a, b]\) is said to be non-negative if its realization \(\phi (x)\) satisfies \(\phi (x) \ge 0\)  \(a.e.\) on \([a, b]\).%
+\end{definition}
+\begin{proposition}{Proposition}{Characterization of Nonnegative Elements of \(L^{p}[a, b]\).}{}{proposition-poselem}%
+An element \(\phi \in L^{p}[a, b]\) is non-negative iff there exists a Cauchy sequence \(\{ c_{k}\}\) representing \(\phi\) such that \(c_{k}^{-}:=\min\{ c_{k}(x), 0\}\) satisfies \(\Vert c_{k}^{-} \Vert_{L^{p}}\to 0\) as \(k\to \infty\).%
+\par
+As a consequence, if \(\phi \in L^{p}[a, b]\) is non-negative, then \(\int_{[a, b]} \phi \ge 0\).\footnotemark{}%
+\end{proposition}
+\begin{proof}{Proof}{}{proof-poselem-c}
+Suppose that \(\{ c_{k}\}\) is a sequence in \(C[a, b]\), Cauchy in \(L^{p}[a, b]\)-norm, representing \(\phi\) such that \(\Vert c_{k}^{-} \Vert_{L^{p}}\to 0\) as \(k\to \infty\). Define \(c_{k}^{+}=c_{k}- c_{k}^{-}\), which is identified as \(\max\{ c_{k}(x), 0\}\). Then \(\{ c_{k}^{+}\}\) is a sequence in \(C[a, b]\), Cauchy in \(L^{p}[a, b]\)-norm. \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}} applied to both \(\{ c_{k}^{+}\}\) and \(\{ c_{k}^{-}\}\) implies that there exists a subsequence, still indexed by \(k\) to avoid extra indices, such that \(\lim_{k\to \infty} c_{k}^{+}(x)\) exists \(a.e.\), which is evidently \(\ge 0\) \(a.e.\), and \(\lim_{k\to \infty} c_{k}^{-}(x)\to 0\) \(a.e.\) (refer to (ii) of \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}} ). Therefore%
+\begin{equation*}
+\lim_{k\to \infty} c_{k}(x)= \lim_{k\to \infty} c_{k}^{+}(x) + \lim_{k\to \infty} c_{k}^{-}(x)\ge 0 \; a.e.
+\end{equation*}
+%
+\par
+Conversely, suppose that \(\phi (x)\ge 0\) \(a.e.\) and \(\{c_{k}\}\) is a  sequence in \(C[a, b]\), Cauchy under the \(L^{p}[a, b]\) norm representing \(\phi\) and \(c_{k}(x)\to \phi(x)\) \(a.e.\).  Then we must have \(\lim_{k\to \infty} c_{k}^{-}(x)\to 0\) \(a.e.\). Noting that%
+\begin{equation*}
+\vert c_{k}^{-}(x) - c_{l}^{-}(x)\vert \le \vert c_{k}(x) - c_{l}(x)\vert
+\end{equation*}
+we see that \(\{ c_{k}^{-}\}\) is also a sequence in \(C[a, b]\), Cauchy under the \(L^{p}[a, b]\) norm. Then the proof of of \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}} shows that \(c_{k}^{-}\to 0\) in \(L^{p}[a, b]\) norm.%
+\end{proof}
+\footnotetext[2]{Since \(\int_{[a, b]} \phi \) is defined through a limiting process via an approximate sequence not via a Riemann sum using \(\phi(x)\), the sign of \(\int_{[a, b]} \phi \) does not automatically follow from \(\phi (x)\ge 0\) \(\ a.e.\).\label{fn-poselem-b-b-c}}%
+\begin{theorem}{Theorem}{Monotone Convergence Theorem.}{}{theorem-MCT}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) such that \(0\le \phi_{k}(x)\le \phi_{k+1}(x)\) \(a.e.\) for all \(k\) and that \(\int_{a}^{b} \phi_{k}\) is bounded. Then the \(a.e.\) defined \(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\) (it could take value \(\infty\)) is the realization of some \(\phi \in L^{1}[a, b]\), and \(\Vert \phi_{k}-\phi \Vert_{L^{1}[a, b]}\to 0\) as \(k\to \infty\).%
+\end{theorem}
+\begin{proof}{Proof}{}{proof-MCT-c}
+First, \hyperref[proposition-poselem]{Proposition~{\xreffont\ref{proposition-poselem}}} implies that \(\int_{a}^{b} \phi_{k}(x)\, dx \le \int_{a}^{b} \phi_{k+1}(x)\, dx\), so the sequence of scalars \(\{ \int_{a}^{b} \phi_{k}(x)\, dx\}\) as a bounded, monotone increasing sequence is convergent. Since for \(l > k\), \(\int_{a}^{b} |\phi_{l}(x)-\phi_{k}(x)|\, dx= \int_{a}^{b} (\phi_{l}(x)-\phi_{k}(x))\, dx\), it follows that \(\{ \phi_{k}\}\) is a Cauchy sequence in \(L^{1}[a, b]\). Then by \hyperref[proposition-rcsthm]{Proposition~{\xreffont\ref{proposition-rcsthm}}} it has a subsequence converging to some \(\tilde \phi\) in \(L^{1}[a, b]\), and to \(\tilde \phi (x)\)\(\ a.e.\) pointwise. This identifies \(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\) with \(\tilde \phi(x)\)\(\ a.e.\) pointwise, showing that \(\phi \in L^{1}[a, b]\). Since the full sequence \(\{ \phi_{k}\}\) is a Cauchy sequence in \(L^{1}[a, b]\), it follows that \(\phi_{k} \to \phi\) in \(L^{1}[a, b]\).\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-ac}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) such that \(\phi_{k}(x)\ge \phi_{k+1}(x)\) \(a.e.\) for all \(k\) and that \(\int_{a}^{b} \phi_{k}\) is bounded. Prove that the \(a.e.\) defined \(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\) is the realization of some \(\phi \in L^{1}[a, b]\), and \(\Vert \phi_{k}-\phi \Vert_{L^{1}[a, b]}\to 0\) as \(k\to \infty\).%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-ad}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) such that \(\phi_{k}(x)\ge 0\) \(a.e.\) for all \(k\) and that \(\sum_{k=1 }^{l}\int_{a}^{b} \phi_{k}\) is bounded independent of \(k\). Prove that \(\lim_{l\to\infty} \sum_{k=1 }^{l}\phi_{k}(x)\) is the realization of some of element in \(L^{1}[a, b]\). Denoting it as \(\sum_{k=1 }^{\infty}\phi_{k}\), prove that%
+\begin{equation*}
+\int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
+\sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right)\text{.}
+\end{equation*}
+%
+\end{inlineexercise}%
+\begin{theorem}{Theorem}{Fatou Theorem.}{}{theorem-fatou}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) such that \(\phi_{k}(x)\ge 0\)\(\ a.e.\) for all \(k\) and that  \(\liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)\) is finite. Then%
+\begin{equation*}
+\liminf_{k\to \infty} \phi_{k}(x) :=\lim_{l\to \infty} \inf\{\phi_{k}(x): k\ge l\} \in L^{1}[a, b]
+\end{equation*}
+and%
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) \le \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x).
+\end{equation*}
+\end{theorem}
+\begin{proof}{Proof}{}{proof-fatou-c}
+Define \(\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}\). Then \(\psi_{k,l}\in L^{1}[a, b]\) and \(\psi_{k,l}(x)\ge \psi_{k,l+1}(x)\) \(a.e.\). Then \hyperref[theorem-MCT]{Theorem~{\xreffont\ref{theorem-MCT}}} implies that \(\Phi_{k}=\lim_{l\to\infty} \psi_{k,l} \in L^{1}[a, b]\) with \(\int_{a}^{b} \Phi_{k} = \lim_{l\to\infty}\int_{a}^{b} \psi_{k,l}\). Since for any \(l > l' \ge k\), \(\psi_{k,l} \le \phi_{l'}\), it follows that \(\int_{a}^{b} \Phi_{k}  \le \int_{a}^{b} \phi_{l'}\), therefore, \(\int_{a}^{b} \Phi_{k}  \le  \inf\{ \int_{a}^{b} \phi_{l'}: l'\ge k\}\).%
+\par
+Now \(\Phi_{k} \le \Phi_{k+1} \) and \(\int_{a}^{b} \Phi_{k} \) is bounded under our assumption. Then \hyperref[theorem-MCT]{Theorem~{\xreffont\ref{theorem-MCT}}} implies \(\lim_{k\to\infty} \Phi_{k} \in L^{1}[a, b]\) and%
+\begin{equation*}
+\int_{a}^{b}  \liminf_{k\to \infty} \phi_{k}(x)
+= \int_{a}^{b} \lim_{k\to\infty}  \Phi_{k} = \lim_{k\to\infty}  \int_{a}^{b}  \Phi_{k} 
+\le \lim_{k\to\infty} \inf\{ \int_{a}^{b} \phi_{l'}: l'\ge k\},
+\end{equation*}
+which equals \(\liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)\).%
+\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-af}%
+Construct a sequence \(\{\phi_{k}\}\) in \(L^{1}[a, b]\) such that \(\phi_{k}(x)\ge 0\) \(\ a.e.\) for all \(k\), and%
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) < \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)\text{.}
+\end{equation*}
+%
+\end{inlineexercise}%
+\begin{theorem}{Theorem}{Dominated Convergence Theorem.}{}{theorem-DCT}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) such that \(\lim_{k\to\infty} \phi_{k}(x) =\phi (x)\) exists \(a.e.\), and there exists a \(g\in L^{1}[a, b]\) such that \(|\phi_{k}(x)|\le g(x)\)\(\ a.e.\). Then \(\phi \in L^{1}[a, b]\) and \(\phi_{k}\to \phi\) in \(L^{1}[a, b]\). As a consequence, \(\int_{a}^{b} \phi_{k} \to \int_{a}^{b} \phi\) as \(k\to \infty\).\end{theorem}
+\begin{proof}{Proof}{}{proof-DCT-c}
+Define \(\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}\). Then \(\psi_{k,l}\in L^{1}[a, b]\) and \(\psi_{k,l}(x)\ge \psi_{k,l+1}(x)\) \(a.e.\). \(\phi_{k}\) and \(\psi_{k,l}\) are no longer necessarily non-negative, but \(|\psi_{k,l}(x)|\le g(x)\) \(a.e.\). Then \(\{ g(x)\pm \psi_{k,l}(x)\}\) are non-negative functions in \(L^{1}[a, b]\), monotone in \(l\). Therefore, \(\lim_{l\to\infty} (g(x)\pm \psi_{k,l}(x)) \in L^{1}[a, b]\), with%
+\begin{equation*}
+\int_{a}^{b}\left( g \pm \lim_{l\to\infty} \psi_{k,l}\right)
+=\lim_{l\to\infty} \int_{a}^{b}\left( g\pm \psi_{k,l}\right),
+\end{equation*}
+from which it follows that \(\Phi_{k}= \lim_{l\to\infty} \psi_{k,l}\in L^{1}[a, b]\), with%
+\begin{equation*}
+\int_{a}^{b} \Phi_{k} = \lim_{l\to\infty} \int_{a}^{b} \psi_{k,l}.
+\end{equation*}
+Note that it follows from \(\phi_{k}(x)\to \phi(x)\) \(\ a.e.\) that  \(\Phi_{k}(x)\to \phi (x)\) \(\ a.e.\) as \(k\to \infty\). Therefore by \hyperref[theorem-MCT]{Theorem~{\xreffont\ref{theorem-MCT}}} \(\phi \in L^{1}[a, b]\).%
+\par
+We can now apply Fatou Theorem to the sequence of non-negative functions \(2 g - |\phi_{k}-\phi| \in L^{1}[a, b]\) to imply%
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)
+\le \liminf_{k\to\infty} \int_{a}^{b} \left( 2 g - |\phi_{k}-\phi|\right)
+= \int_{a}^{b} 2g - \limsup_{k\to\infty} \int_{a}^{b} |\phi_{k}-\phi|.
+\end{equation*}
+Since \(\liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)=2g\), it follows that \(\limsup_{k\to\infty}  \int_{a}^{b }|\phi_{k}-\phi|=0\).%
+\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-chp-int-ah}%
+Suppose that \(\{\phi_{k}\}\) is a sequence in \(L^{1}[a, b]\) and that \(\sum_{k=1 }^{\infty}\int_{a}^{b} |\phi_{k}|\) is convergent. Prove that  \(\lim_{l\to\infty} \sum_{k=1 }^{l} \phi_{k}(x)\) is the realization of some of element in \(L^{1}[a, b]\). Denoting it as \(\sum_{k=1 }^{\infty}\phi_{k}\), prove that%
+\begin{equation*}
+\int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
+\sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right)\text{.}
+\end{equation*}
+%
+\end{inlineexercise}%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 3 The Space of Riemann Integrable Functions}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{The Space of Riemann Integrable Functions}{}{The Space of Riemann Integrable Functions}{}{}{section-Notes412Integral-e}
+\begin{introduction}{}%
+Here we discuss the relation between the space of Riemann integrable functions on \([a, b]\) and \(L^{1}[a, b]\), the completion of \(C[a, b]\) under the \(L^{1}[a, b]\) norm.\end{introduction}%
+We first make the following definition.%
+\begin{definition}{Definition}{}{definition-def-osc}%
+\index{oscillation of a function}%
+\label{notation-def-osc-b}%
+Let \(f\) be defined on an interval \(I\). The oscillation of a function \(f\) over the set \(S \subset I\) is defined to be%
+\begin{equation*}
+\sup_{S}f - \inf_{S}f = M(f, S)-m(f, S)
+\end{equation*}
+and is denoted as \(\osc(f, S)\).%
+\par
+The oscillation of a function \(f\)  at a point \(x\) is defined to be%
+\begin{equation*}
+\lim_{r\searrow 0} \osc(f, I\cap I(x, r)),
+\end{equation*}
+and is denoted as \(\osc(f)(x)\). Here \(I(x, r)\) is the open interval of radius \(r\) centered at \(x\).%
+\end{definition}
+\begin{proposition}{Proposition}{Upper semi-continuity of \(\osc(f)(x)\).}{}{proposition-Notes412Integral-e-e}%
+The function \(\osc(f)(x)\) is upper 	semi-continuous. As a consequence, for any real number \(a\), the set \(\{x: 	\osc(f)(x)\ge a \}\) is closed.\end{proposition}
+\begin{proof}{Proof}{}{proof-Notes412Integral-e-e-c}
+For any real number \(a\), if \(x_{0}\in \{x: 	\osc(f)(x) < a\}\), then there exists some \(r>0\) such that \(\osc(f, I(x_{0}, r)) < a\). For any \(x \in I(x_{0}, r)\), we observe that \(\osc(f)(x)\le \osc(f, I(x_{0}, r)) < a\). Thus \(I(x_{0}, r) \subset \{x: 	\osc(f)(x) < a\}\), proving that the latter is open.%
+\end{proof}
+Note that%
+\begin{equation}
+\{x: f \text{ discontinuous at } x\}=
+\cup_{k\in \bbN} \{y: \osc(f)(y)\ge \frac 1k\},\label{men-eqn-discont}
+\end{equation}
+namely, \(\{x: f \text{ discontinuous at } x\}\) is a countable union of of the closed sets \(\{y: \osc(f)(y)\ge \frac 1k\}\).%
+\begin{theorem}{Theorem}{Riemann integrability criterion in terms of the oscillation of the integrand.}{}{theorem-thm-Riemann-integrability-oscillation}%
+A bounded real-valued function \(f\) defined on the interval \(I\) is Riemann integrable iff%
+\begin{equation}
+\forall \epsilon >0, \exists  \text{ a partition }
+\cP:=\{I_{\alpha}\} \text{ such that } 
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert < \epsilon.\label{men-eqn-int-osc}
+\end{equation}
+%
+\par
+In particular, if \(f\) is continuous on the closed interval \(I\), then \(f\) is Riemann integrable on \(I\).%
+\end{theorem}
+\begin{proof}{Proof}{}{proof-thm-Riemann-integrability-oscillation-c}
+Suppose that \(f\) is Riemann integrable on \(I\) and that \(\epsilon>0\) is given. Then the Darboux integrability criterion gives us a partition \(\cP:=\{I_{\alpha}\}\) such that%
+\begin{equation*}
+\int_{I}\, f -\frac{\epsilon}{2} < L(f, \cP)\le \int_{I}\, f \le 
+U (f, \cP)  < \int_{I}\, f  + \frac{\epsilon}{2},
+\end{equation*}
+which implies that%
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert
+=U (f, \cP)-L (f, \cP) < \epsilon.
+\end{equation*}
+%
+\par
+Suppose that \hyperref[men-eqn-int-osc]{({\xreffont\ref{men-eqn-int-osc}})} holds. Then \(U (f, \cP)-L (f, \cP) < \epsilon,\)  and%
+\begin{equation*}
+0\le \upint_{I}\, f  -\lowint_{I} \, f  \le U (f, \cP)-L (f, \cP) < \epsilon.
+\end{equation*}
+Since \(\epsilon >0\) is arbitrary, it follows that \(\upint_{I}\, f -\lowint_{I} \, f=0\),  and \(f\) is Riemann integrable on \(I\).%
+\par
+Finally, suppose that \(f\) is continuous on the closed interval \(I\), then it is uniformly continuous on \(I\). For any given \(\epsilon >0\), there exists \(\delta >0\) such that for any partition \(\cP:=\{I_{\alpha}\}\) of \(I\) with \(\lambda (P) < \delta\), we have \(\osc(f, I_{\alpha}) < \epsilon/\vert I\vert\) for all \(I_{\alpha} \in \cP\). It then follows that%
+\begin{equation*}
+\sum_{\alpha} \osc(f,I_{\alpha})\vert I_{\alpha} \vert \le \epsilon,
+\end{equation*}
+proving the Riemann integrability of \(f\) on \(I\).%
+\end{proof}
+\begin{definition}{Definition}{}{definition-def-content0}%
+\index{Set of content \(0\)}%
+A set \(S\subset \bbR\) is said to have content \(0\), if for any \(\epsilon >0\), there exists a \emph{finite} cover \(\{I_{i}\} \) of \(S\) by intervals such that%
+\begin{equation*}
+\sum_{i}\vert I_{i}\vert < \epsilon.
+\end{equation*}
+%
+\end{definition}
+We are now ready to formulate the following theorem.%
+\begin{theorem}{Theorem}{Riemann integrability in terms of the set of discontinuity.}{}{theorem-thm-integrability-osc0}%
+A bounded function \(f\) on a bounded closed interval \(I\) is Riemann integrable on \(I\) iff its set of discontinuity is negligible.%
+\end{theorem}
+\begin{proof}{Proof}{}{proof-thm-integrability-osc0-c}
+We will use \hyperref[men-eqn-discont]{({\xreffont\ref{men-eqn-discont}})} for the only if part.%
+\par
+Suppose that \(f\) is Riemann integrable on \(I\). For each \(k\in \bbN\), we will prove that the closed set \(D_{k}:=\{y: \osc(f)(y)\ge \frac 1k\}\) is a set of content \(0\).%
+\par
+Given any \(\epsilon >0\). There exists a partition \(\cP=\{I_{\alpha}\}\) of \(I\) such that%
+\begin{equation*}
+\sum_{\alpha} \osc(f, I_{\alpha})\vert I_{\alpha} \vert < \frac{\epsilon}{2k}.
+\end{equation*}
+The intervals in \(\cP\) are divided into two subgroups: the subgroup \(\cL_{k}\) consisting those \(I_{\alpha}\) such that \(\osc(f, I_{\alpha})\ge \frac{1}{2k}\), and the subgroup \(\cS_{k}\) consisting those \(I_{\alpha}\) such that \(\osc(f, I_{\alpha})< \frac{1}{2k}\). Then it follows from%
+\begin{equation*}
+\frac{1}{2k} \sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert \le
+\sum_{I_{\alpha}\in \cL_{k} } \osc(f, I_{\alpha})\vert I_{\alpha} \vert < \frac{\epsilon}{2k}
+\end{equation*}
+that%
+\begin{equation*}
+\sum_{I_{\alpha}\in \cL_{k} } \vert I_{\alpha} \vert < \epsilon.
+\end{equation*}
+%
+\par
+We now claim that%
+\begin{equation*}
+D_{k}\subset \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}.
+\end{equation*}
+This will show that \(D_{k}\) is a set of content \(0\).%
+\par
+If the claim were not true, there would exist some \(x \in D_{k}
+\setminus \cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\). Thus \(x \in \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\). Since the complement of \(\cup_{I_{\alpha}\in \cL_{k} } I_{\alpha}\) is open, there exists some interval \(I(x, r)
+\subset \cup_{I_{\alpha}\in \cS_{k} } I_{\alpha}\). If \(x\in \text{ interior}(I_{\alpha})\) for some \(I_{\alpha} \in \cS_{k}\), it would force \(\frac 1k \le \osc(f)(x)\le \osc(f, I_{\alpha}) < \frac{1}{2k}\), which would be a contradiction. So \(x\) can only be on the boundary of one or more \(I_{\alpha} \in \cS_{k}\). We can choose \(r>0\) small enough such that any \(y\in I(x, r)\) and \(x\) will be in one such common interval. Therefore, \(\vert f(y)-f(x)\vert < \frac{1}{2k}\). This would lead to \(\osc(f)(x)\le \osc(f, I(x, r)) < \frac 1k\), contradicting \(x \in D_{k}\).%
+\par
+For the if part, take any \(\epsilon > 0\), then choose \(k\) such that \(k^{-1} < \epsilon\). The closed set \(D_{k}=\{y: \osc(f)(y)\ge \frac 1k\}\) is a subset of the negligible set \(D\), so can be covered by a union \(G\) of a finite number of intervals such that \(|G| < \epsilon\). Every point \(x\in [a, b]\setminus G\) has an open interval \(I(x, r)\) such that \(\osc(f, I(x, r)) < k^{-1}\). The closed set \([a, b]\setminus G\) can be covered by the union of a finite number of such intervals and one can find a fine enough partition \(\cP=\{I_{i}\}\) of \([a, b]\) such that if any \(I_{i}\) contains a point of \(D_{k}^{c}\), then \(\osc(f, I_{i})< k^{-1}\); and the union of those \(I_{i}\subset D_{k} \) has their sum of lengths \(< \epsilon\). This would give%
+\begin{equation*}
+\sum_{i} \osc(f, I_{i})|I_{i}| \le k^{-1}(b-a) + 2\epsilon \sup_{[a, b]}|f| ,
+\end{equation*}
+which proves that \(f\)  satisfies the Riemann integrability criterion.%
+\end{proof}
+\begin{corollary}{Corollary}{Approximation Property of Functions in \(\cR[a, b]\).}{}{corollary-Notes412Integral-e-k}%
+Any Riemann integrable function \(f\in \cR[a, b]\) lies in \(L^{p}[a, b]\) for any \(1\le p < \infty\), and for any \(\epsilon > 0\) there exists a continuous function \(c\in C[a, b]\) and an open set \(G\) in \([a, b]\) such that \(|G| < \epsilon\), \(f=c\) on \(G^{c}\), and \(\max_{[a, b]}|c| \le \max_{[a,b]}|f|\).\end{corollary}
+\begin{proof}{Proof}{}{proof-Notes412Integral-e-k-c}
+Since the set \(D\) of discontinuity of \(f\) is negligible, for any \(\epsilon > 0\) there exists  an open set \(G\) in \([a, b]\) such that it covers \(D\) and \(|G| < \epsilon\). For every point \(x\) in the closed set \([a, b]\setminus G\), \(\osc(f)(x)=0\), so \(f\) is a continuous function on this closed set.   It can be extended to a continuous function \(c\) on \([a, b]\) such that \(\max_{[a, b]}|c| \le \max_{[a,b]}|f|\). Then this \(c\) satisfies our requirements.\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-e-l}%
+Suppose that \(c(x)\in C[a, b]\) and \(E\subset [a, b]\) is negligible. Is it true that any modification of \(c(x)\) on \(E\) into a bounded  function \(\tilde c(x)\) will remain to have a negligible set of discontinuity and remain Riemann integrable on \([a, b]\)?%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-e-m}%
+Suppose that \(E\) is a closed negligible subset of \([a, b]\). Prove that the set of discontinuity of the characteristic function \(\chi_{E}(x)\) is precisely \(E\).%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-e-n}%
+Suppose that \(E\) is the union of at most countably many closed negligible subsets of \([a, b]\). Prove that there is a bounded function \(f(x)\) defined on \([a, b]\) whose set of discontinuity is precisely \(E\).%
+\end{inlineexercise}%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 4 Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Section}{Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions}{}{Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions}{}{}{section-Notes412Integral-f}
+\begin{introduction}{}%
+\hyperref[corollary-cor-ftcr]{Corollary~{\xreffont\ref{corollary-cor-ftcr}}} extends the Fundamental Theorem of Calculus to those monotone functions \(\alpha\) such that \(\alpha'\) exists and is Riemann integrable. Here we discuss its further generalization and related issues. Questions that need to be addressed include %
+\begin{enumerate}[label=(\Roman*).]
+\item{}Identify conditions that guarantee that \(\alpha'\) exists and is Riemann integrable, or \(a.e.\) exists and is in \(L^{1}[a, b]\).%
+\item{}Does \hyperref[men-eq-ftcr]{({\xreffont\ref{men-eq-ftcr}})} hold for any function \(\alpha\) such that \(\alpha'\)  \(a.e.\) exists and is in \(L^{1}[a, b]\)? More generally, under what conditions on a function \(f\) on \([a, b]\)  there would exist a function \(g\in L^{1}[a, b]\) such that%
+\begin{equation}
+f(t)-f(a) =\int_{a}^{t} g(x)\, dx\label{men-eq-ftcl}
+\end{equation}
+holds?%
+\end{enumerate}
+ The last question has two parts: (a). The necessary conditions for \hyperref[men-eq-ftcl]{({\xreffont\ref{men-eq-ftcl}})} to hold, in particular, does it hold that \(f'(x)=g(x)\) for \(a.e.\)\(x\in [a, b]\)? (b). The sufficient conditions for  \hyperref[men-eq-ftcl]{({\xreffont\ref{men-eq-ftcl}})} to hold.\end{introduction}%
+\begin{definition}{Definition}{Absolute Continuous Function.}{definition-def-uniform-abs-contin-fn}%
+A function \(f\) defined  on \([a, b]\) is said to be \terminology{absolutely continuous} on \([a, b]\) if for any \(\epsilon > 0\), there exists a \(\delta > 0\) such that for any finite collection	 of disjoint intervals \(\{[a_{i}, b_{i}]: 1\le i \le k\}\) of \([a, b]\) with its total length \(\sum_{i=1}^{k}(b_{i}-a_{i}) < \delta\),%
+\begin{equation}
+\sum_{i=1}^{k}|f(b_{i})-f(a_{i})| < \epsilon.\label{men-eq-abcfn}
+\end{equation}
+%
+\end{definition}
+By \hyperref[exercise-exe-abc]{Exercise~{\xreffont\ref{exercise-exe-abc}}}, if \hyperref[men-eq-ftcl]{({\xreffont\ref{men-eq-ftcl}})} holds, then \(f\) is absolutely continuous on \([a, b]\).%
+\par
+If \(f\) is \terminology{Lipschitz continuous} on \([a, b]\), namely, there exists some \(L > 0\) such that \(|f(x)-f(y)|\le L |y-x|\) for any \(x, y\in [a, b]\), then \(f\) is absolutely continuous on \([a, b]\).%
+\par
+If \(f\in C[a, b]\) is differentiable everywhere in \((a, b)\) and \(f'\) is bounded on \((a, b)\), then \(f\) is Lipschitz continuous on \([a, b]\), therefore, is absolutely continuous on \([a, b]\).%
+\par
+Cantor's function is differentiable \(a.e.\) in \((a, b)\), yet is not absolutely continuous on \([a, b]\).%
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-f-h}%
+Suppose that  \(f\in C[a, b]\) is differentiable \(a.e.\) in \((a, b)\) and \(|f'|\le M < \infty\) \(a.e.\) on \((a, b)\). Is \(f\) necessarily Lipschitz continuous on \([a, b]\)? Is it necessarily absolutely continuous on \([a, b]\)?%
+\end{inlineexercise}%
+We will prove below that any absolutely continuous function on \([a, b]\) is differentiable \(a.e.\) on \([a, b]\) with its derivative a function in \(L^{1}[a, b]\). Assuming this for now, we prove%
+\begin{theorem}{Theorem}{Differentiability of an Indefinite Integral.}{}{theorem-thm-lebes-diff}%
+Suppost that \(g\in L^{1}[a, b]\). Then the function \(f(x) :=\int_{a}^{x} g(t)\, dt\) is differentiable \(a.e.\) on \([a, b]\) and \(f'(x)=g(x)\)\(a.e.\) on \([a, b]\).\end{theorem}
+\begin{proof}{Proof}{}{proof-thm-lebes-diff-c}
+According to our discussion above, \(f(x) :=\int_{a}^{x} g(t)\, dt\) is differentiable \(a.e.\) on \([a, b]\) and \(f'(x)\in L^{1}[a, b]\). This implies that \(g_{h}(x) := h^{-1}\int_{x}^{x+h} g(t)\, dt =h^{-1}(f(x+h)-f(x)) \to f'(x)\) \(a.e.\) on \([a, b]\) as \(|h|\to 0\).%
+\par
+On the other hand, according to \hyperref[exercise-exe-avcn]{Exercise~{\xreffont\ref{exercise-exe-avcn}}}, \(\int_{a}^{b}|g_{h}(x)-g(x)|\, dx\to 0\) as \(h\to 0\). Then by (i) of \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}},  there exists a sequence \(h_{k}\to 0\) such that \(g_{h_{k}}(x)\to g(x)\) \(a.e.\) on \([a, b]\) as \(k\to \infty\). This then identifies \(f'(x)=g(x)\) \(a.e.\) on \([a, b]\).%
+\par
+We could also complete the last part by using the Fatou Theorem:%
+\begin{align*}
+\int_{a}^{b} |f'(x)-g(x)|\, dx \amp= \int_{a}^{b} \lim_{k\to \infty }|g_{h_{k}}(x)-g(x)|\, dx \\
+\amp \le \liminf{k\to \infty}  \int_{a}^{b} |g_{h_{k}}(x)-g(x)|\, dx=0,
+\end{align*}
+from which we conclude that \(f'(x)=g(x)\) \(a.e.\) on \([a, b]\) via (ii) of \hyperref[proposition-lprealization]{Proposition~{\xreffont\ref{proposition-lprealization}}}.%
+\end{proof}
+For the remaining part, we will state and use Lebesgue's differentiability theorem of a monotone function but will skip its proof.%
+\begin{theorem}{Theorem}{Lebesgue's Differentiability Theorem of a Monotone Function.}{}{theorem-thm-Lebes-diff}%
+Any monotone function on \([a, b]\) is differentiable \(a.e.\) on \([a, b]\).%
+\end{theorem}
+\begin{proposition}{Proposition}{Integrability of the Derivative of a Monotone Function.}{}{proposition-prop-mono-int}%
+Suppose that \(f\) is a monotone increasing function on \([a, b]\), then its derivative, \(f'(x)\), is the realization of a function in \(L^{1}[a, b]\). Furthermore,%
+\begin{equation*}
+\int_{a}^{b} f'(x)\,dx \le f(b)-f(a).
+\end{equation*}
+\end{proposition}
+\begin{proof}{Proof}{}{proof-prop-mono-int-c}
+According to \hyperref[theorem-thm-Lebes-diff]{Theorem~{\xreffont\ref{theorem-thm-Lebes-diff}}}, \(h^{-1}(f(x+h)-f(x))\to f'(x)\)\(a.e.\) on \([a, b]\). For each \(h > 0\), \(h^{-1}(f(x+h)-f(x)) \) is a non-negative function in \(\cR[a, b]\) (extend \(f(x)=f(b)\) for \(x > b\)), and%
+\begin{equation*}
+\int_{a}^{b} h^{-1}(f(x+h)-f(x)) \, dx =h^{-1}\left( \int_{b}^{b+h} f(x)\,dx - \int_{a}^{a+h} f(x)\, dx\right)
+\le f(b)- f(a),
+\end{equation*}
+using \(\int_{a}^{a+h} f(x)\, dx\ge f(a) h\). Thus by Fatou Theorem,%
+\begin{align*}
+\int_{a}^{b} f'(x)\, dx \amp = \int_{a}^{b} \liminf_{h\to 0+} h^{-1}(f(x+h)-f(x)) \, dx\\
+\amp  \le
+\liminf_{h\to 0+} \int_{a}^{b}  h^{-1}(f(x+h)-f(x)) \, dx \le f(b)-f(a).\qedhere
+\end{align*}
+\end{proof}
+\begin{definition}{Definition}{Function of Bounded Variation.}{definition-def-bv}%
+A function \(f\) on \([a, b]\) is said to have bounded variation on \([a, b]\), if there exists some \(M > 0\) such that for any partition \(\cP=\{a=a_{0} < a_{1} < \cdots < a_{k}=b\}\),%
+\begin{equation*}
+\sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})| \le M.
+\end{equation*}
+\(\sup_{\cP} \sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})|\) is called the total variation of \(f\) on \([a, b]\) and is denoted as \(V(f, [a, b])\).%
+\end{definition}
+If \(f\) is a monotone increasing function on \([a, b]\), then it has bounded variation on \([a, b]\) and \(V(f, [a, b])=f(b)-f(a)\).%
+\par
+If \(f=g-h\) is the difference of two monotone increasing functions on \([a, b]\), then it has bounded variation on \([a, b]\) and \(V(f, [a, b])\le V(g, [a, b])+V(h, [a, b])\).%
+\begin{proposition}{Proposition}{}{}{proposition-prop-bv-mono}%
+Any function of bounded variation on \([a, b]\) is the difference of  two monotone increasing functions.\end{proposition}
+\begin{proof}{Proof}{}{proof-prop-bv-mono-b}
+Let \(f\) be a function of bounded variation on \([a, b]\). Define \(g(x) :=V(f, [a, x])\). Then \(g(x)\) is a monotone increasing function on \([a, b]\). We now prove that \(h(x):=g(x)-f(x)\) is a monotone increasing function on \([a, b]\).%
+\par
+Take \(x < y\) in \([a, b]\), then%
+\begin{equation*}
+h(y)-h(x)=g(y)-g(x)-[f(y)-f(x)]=V(f, [x, y]) -[f(y)-f(x)].
+\end{equation*}
+\(V(f, [x, y])\) is the supremum of \(\sum_{i=1}^{k} |f(a_{i})-f(a_{i-1})|\) for any partition \(\{x= a_{0} < a_{1} < \cdots < a_{k}=y\}\), so \(V(f, [x, y])\ge |f(y)-f(x)|\).%
+\end{proof}
+An absolutely continuous function on \([a, b]\) has bounded variation on \([a, b]\), therefore, according to \hyperref[proposition-prop-bv-mono]{Proposition~{\xreffont\ref{proposition-prop-bv-mono}}}, \hyperref[theorem-thm-Lebes-diff]{Theorem~{\xreffont\ref{theorem-thm-Lebes-diff}}} and \hyperref[proposition-prop-mono-int]{Proposition~{\xreffont\ref{proposition-prop-mono-int}}}, has its derivative in \(L^{1}[a,  b]\).%
+\begin{theorem}{Theorem}{Fundamental Theorem of Calculus.}{}{theorem-thm-ac}%
+A function \(f\) on \([a, b]\) satisfies \hyperref[men-eq-ftcl]{({\xreffont\ref{men-eq-ftcl}})} for some function \(g\in L^{1}[a, b]\) iff \(f\) is absolutely continuous on \([a, b]\). When \hyperref[men-eq-ftcl]{({\xreffont\ref{men-eq-ftcl}})} holds, \(f'(x)=g(x)\)\(a.e.\) on \([a, b]\).\end{theorem}
+\begin{proof}{Proof}{}{proof-thm-ac-c}
+We already discussed the necessary	part. For the sufficient part, suppose that \(f\) is absolutely continuous on \([a, b]\). Then, according to our discussion above, \(f'(x)\) exists \(a.e.\) on \([a, b]\) and is an element in \(L^{1}[a,  b]\). Set \(F(x)=\int_{a}^{x} f'(t)\, dt\). Then, according to \hyperref[theorem-thm-lebes-diff]{Theorem~{\xreffont\ref{theorem-thm-lebes-diff}}}, \(F(x)\) is is absolutely continuous on \([a, b]\) and \(F'(x)=f'(x)\) \(a.e.\) on \([a, b]\).%
+\par
+Now \(f(x)-F(x)\) is  absolutely continuous on \([a, b]\) and \((f(x)-F(x))'=0\) \(a.e.\) on \([a, b]\). We can draw our conclusion based on the following Lemma.%
+\end{proof}
+\begin{lemma}{Lemma}{Absolute Function with Vanishing Derivative.}{}{lemma-lemm-ac}%
+Suppose that \(g(x)\) is absolutely continuous on \([a, b]\) and \(g'(x)=0\)\(a.e.\) on \([a, b]\). Then \(g\) must be a constant function on \([a, b]\).\end{lemma}
+We will use the concept and properties of Vitali covering in proving this.%
+\begin{definition}{Definition}{Vitali Covering.}{definition-def-vitali}%
+Suppose that \(\Gamma =\{I_{\alpha}\}\) is a family of intervals covering a set \(E\subset (a,b)\). Suppose that for any \(\epsilon >0\) and any \(x\in E\), there exists an interval \(I\in \Gamma\) such that \(x\in I\) and \(|I| < \epsilon\). Then \(\Gamma\) is said for form a Vitali covering of \(E\)%
+\end{definition}
+\begin{lemma}{Lemma}{Vitali Covering Lemma.}{}{lemma-lemm-vitali}%
+Suppose that \(\Gamma =\{I_{\alpha}\}\) is a Vitali covering of \(E\subset (a,b)\). Then for any \(\epsilon > 0\), there exists a finite collection of disjoint intervals \(\{I_{i}, 1\le i \le k\}\) of \(\Gamma\) such that \(E\setminus \cup_{i=1}^{k}I_{i}\) can be covered by an open set \(G\) with \(|G| < \epsilon\).\end{lemma}
+\begin{proof}{Proof}{}{proof-lemm-vitali-c}
+We may take the \(I_{\alpha}\) to be closed intervals in \((a, b)\). We choose \(I_{i}\) inductively. Choose \(I_{1}\) from \(\Gamma\) such that \(2|I_{1}| > \sup |I_{\alpha}|\).  After \(\{I_{i}, 1\le i \le l\}\) are chosen, if \(E\setminus \cup_{i=1}^{l}I_{i} \ne \emptyset\), define \(\delta_{l+1}=\sup\{|I_{\alpha}|: I_{\alpha} \cap I_{i} =\emptyset, i=1,\cdots, l\}\). Then \(\delta_{l+1} > 0\) and we choose some \(I_{l+1}\in \Gamma\) such that \(I_{l+1} \cap I_{i} =\emptyset, i=1,\cdots, l\) and \(2|I_{l+1}| > \delta_{l+1}\).%
+\par
+Since this collection of disjoint intervals are all contained in \((a, b)\), \(\sum_{l} |I_{l}| < \infty\). Thus, for a given \(\epsilon > 0\), there exists \(k\) such that \(\sum_{l> k} |I_{l}| <  \epsilon/5\).%
+\par
+Any \(x\in E\setminus \cup_{i=1}^{l}I_{i}\) must be contained in some \(I\in \Gamma\) such that \(I \cap I_{i}=\emptyset, i=1,\cdots, k\). Since \(|I| > 0\) and \(\delta_{l}\to 0\) as \(l\to\infty\), we claim that \(I\cap I_{l}\ne \emptyset\) for some \(l > k\), for, whenever \(\delta_{l'} < |I|\), \(I\cap I_{l}\ne \emptyset\) for some \(l < l'\). Let \(I_{l}'\) be the interval with the same center point as \(I_{l}\) but \(|I_{l}'|=5 |I_{l}|\), then \(I\subset I_{l}'\) whenever \(I\cap I_{l}\ne \emptyset\). Thus \(\cup_{l > k} I_{l}'\) covers \(E\setminus \cup_{i=1}^{l}I_{i}\) with \(\sum_{l > k}  |I_{l}'| =5 \sum_{l > k}  |I_{l}|< \epsilon\).%
+\end{proof}
+\begin{proof}{Proof}{Proof of Lemma~{\xreffont\ref*{lemma-lemm-ac}}.}{proof-Notes412Integral-f-x}
+Suppose \(g\) is not a constant function on \([a, b]\). Then there exists some \(c\in (a, b)\) such that \(|g(c)-g(a)| > 2\epsilon\) for some \(\epsilon  > 0\). Consider \(E_{c} :=\{x\in (a, c): g'(x)=0\}\). Then \([a, c]\setminus E_{c}\) is negligible. For any \(x\in E_{c}\) and any \(r > 0\), for all sufficiently small \(h > 0\), we have \([x, x+h]\subset (a, c)\) and%
+\begin{equation*}
+|g(x+h)-g(x)|\le r h.
+\end{equation*}
+Thus for any fixed such \(r > 0\), the family \(\{[x, x+h]: x\in E_{c}\}\) forms a Vitali cover of \(E_{c}\). Thus, for any \(\delta > 0\), there exists disjoint intervals%
+\begin{equation*}
+[x_{1}, x_{1}+h_{1}], \cdots, [x_{k}, x_{k}+h_{k}]
+\end{equation*}
+such that%
+\begin{equation*}
+[a, c] \setminus  \cup_{i=1}^{k} [x_{i}, x_{i}+h_{i}]
+\subset \left([a, c]\setminus E_{c}\right) \cup \left( E_{c}\setminus \cup_{i=1}^{k} [x_{i}, x_{i}+h_{i}]\right)
+\end{equation*}
+can be covered by  an open set \(G\) with \(|G| < \delta\).%
+\par
+We may assume that%
+\begin{equation*}
+a < x_{1} < x_{1}+h_{1} < x_{2} < x_{2}+h_{2} < \cdots < x_{k} < x_{k}+h_{k} < c.
+\end{equation*}
+These points, together with \(a \) and \(c\), forms a partition of \([a, c]\). The sum of the lengths of those intervals of this partition not-overlapping with any of \((x_{i}, x_{i}+h_{i})\) is \(< \delta\). Then%
+\begin{equation*}
+2\epsilon < |g(c)-g(a)| \le \sum_{i=1}^{k} |g(x_{i})-g(x_{i}+h_{i})| + \sum_{i=0}^{k} |g(x_{i}+h_{i})-g(x_{i+1})|
+\end{equation*}
+where we set \(x_{0}+h_{0}=a\) and \(x_{k+1}=c\).%
+\par
+We fix \(r > 0\) such that \(r(b-a) < \epsilon\). Using the absolute continuity of \(f\) on \([a, b]\), there exists some \(\delta > 0\) such that for any collection of disjoint intervals \([a_{j}, b_{j}]\) with \(\sum_{j} (b_{j}-a_{j}) < \delta\), we have \(\sum_{j}|g(b_{j})-g(a_{j})| < \epsilon\). For this reason, \(\sum_{i=0}^{k} |g(x_{i}+h_{i})-g(x_{i+1})| < \epsilon\). But%
+\begin{equation*}
+\sum_{i=1}^{k} |g(x_{i})-g(x_{i}+h_{i})| \le \sum_{i=1}^{k}r h_{i} \le r(b-a) < \epsilon.
+\end{equation*}
+We now see a contradiction and must conclude that \(g\) is a constant function on \([a, b]\)%
+\end{proof}
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-f-y}%
+Suppose that  \(f\) is absolutely continuous on  \((a, b)\) and \(|f'|\le M < \infty\) \(a.e.\) on \((a, b)\). Is \(f\) necessarily Lipschitz continuous on \([a, b]\)?%
+\end{inlineexercise}%
+\begin{inlineexercise}{Exercise}{}{exercise-Notes412Integral-f-z}%
+Suppose that  \(f\) has bounded variation on \([0, 1]\) and is absolutely continuous on  \([\epsilon ,1]\) for any \(0 < \epsilon < 1\). Furthermore, suppose that \(f(x)\) is continuous at \(x=0\). Prove that \(f\) is absolutely continuous on  \([0 ,1]\).%
+\end{inlineexercise}%
+\end{sectionptx}
+\end{document}
