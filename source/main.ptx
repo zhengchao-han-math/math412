@@ -7788,7 +7788,7 @@ t^{k} +R_{k}(t)
 	\amp +\cdots +  \frac{t^{k}}{k!}\sum_{j_{1},\ldots,j_{k}=1}^{n} v_{j_{1}}\cdots v_{j_{k}}\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)+R_{k}(t).
 	</mrow>
 	</md>
-	The remainder has the property that <m>\Vert R_{k}(t)\Vert/t^{k} \to 0</m>
+	The remainder has the property that <m>\vert R_{k}(t)\vert/t^{k} \to 0</m>
 	as <m>t \to 0</m>.
 	</p>
 	<p> To get  the dependence	of <m>R_{k}(t)</m> in  <xref ref="taylor1"/> on <m>\bv</m>,
@@ -7829,8 +7829,8 @@ t^{k} +R_{k}(t)
 	Using the continuity of <m>\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}</m> at <m>\bx</m>,
 	we find that, for any <m>\epsilon > 0</m>, there exists some <m>\delta &gt; 0</m> such that
 	<me>
-	\left\Vert \frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx +\bh) -
-	\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)\right\Vert \lt \epsilon
+	\left\vert \frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx +\bh) -
+	\frac{\partial^{k} f}{\partial x_{j_{k}}\cdots \partial x_{j_{1}}}(\bx)\right\vert \lt \epsilon
 	</me>
 	 for all <m>\bh</m> with <m>\Vert \bh \Vert \lt \delta</m>.  Thus when
 	 <m>0\le  \Vert \bh \Vert \lt \delta</m>, we have
@@ -9540,8 +9540,6 @@ m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(
 							of discontinuity has measure <m>0</m>.</p>
 						</statement>
 						
-							<me>D_{k}\subset \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}.
-							</me>
 				<proof>
     <p>
         We will use <xref ref="eqn-discont"/> for the only if part.
