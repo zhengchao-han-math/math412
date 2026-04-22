@@ -7506,7 +7506,7 @@ defined for <m>(\bx', t)\in  B(\mathbf 0, r) \times (-\delta, \delta)</m> such t
 (c) <m>V:=\{(\bx', g(\bx', t)): \bx'\in  B(\mathbf 0, r) \}</m>
 forms a neighborhood of <m>\mathbf 0\in\bbR^{n}</m>.</p>
 <p>Note that for each fixed <m>t\in  (-\delta, \delta)</m>, 
-<m>f=t</m> on the set <m>\{(\bx', g(\bx', t)): (\bx', t)\in  B(\mathbf 0, r)</m>,
+<m>f=t</m> on the set <m>\{(\bx', g(\bx', t)): (\bx', t)\in  B(\mathbf 0, r)\}</m>,
 so this neighborhood is <term>foliated</term> by <term>leaves</term> which
 are level surfaces of <m>f</m>.</p>
 </statement>
@@ -11077,7 +11077,7 @@ which of them has less area?
 </exercise>
 <exercise><p> Check whether Archimedes' observation about the area of the portion of a sphere between two
 parallel planes equal the area  of the circumscribed cylinder between the same parallel planes holds in
-<m>\bbR^{n}</m> for <m>m &gt; 3</m>. Namely, compare the area of the portion of the sphere
+<m>\bbR^{n}</m> for <m>n &gt; 3</m>. Namely, compare the area of the portion of the sphere
 <m>x_{1}^{2}+\cdots+x_{n}^{2}=R^{2}</m> between <m>z_{1}\le x_{n}\le z_{2}</m>
 and that of <m>x_{1}^{2}+\cdots+x_{n-1}^{2}=R^{2}</m>, <m>z_{1}\le x_{n}\le z_{2}</m>, for 
 a general <m>n</m>.</p>
@@ -11122,7 +11122,7 @@ For example,
 </me>
 But this integral could also be evaluated using the symmetry of the sphere
 <me>
-\int_{S_{R}} x^{2} dA=\int_{S_{R}} x^{2} dA=\int_{S_{R}} x^{2} dA=\int_{S_{R}} \frac{x^{2}+y^{2}+z^{2}}{3} dA
+\int_{S_{R}} x^{2} dA=\int_{S_{R}} y^{2} dA=\int_{S_{R}} z^{2} dA=\int_{S_{R}} \frac{x^{2}+y^{2}+z^{2}}{3} dA
 =\frac{4R^{4}\pi}{3}.
 </me>
 </p> 
@@ -11228,8 +11228,8 @@ flux of the vector field across a closed surface near a point?</em>
 The answers turn out to be the <term>curl</term> and, respectively, <term>divergence</term>
 of the vector field <m>\vec{X}</m> at the point. 
 </p>
-<p>For <m>n=3</m>, the curl of
-<m>\vec{X}=(X_{1}(\bx),X_{2}(\bx), X_{3}(\bx))</m> at <m>\bx</m> is the vector 
+<p>For <m>n=3</m>, the curl of 
+<m>\vec{X}=(X_{1}(\bx),X_{2}(\bx), X_{3}(\bx))</m> in rectangular coordinates at <m>\bx</m> is the vector 
 <me>
 \text{curl} \vec{X}(\bx)=
 (\frac{\partial X_3}{\partial x_2}-\frac{\partial X_2}{\partial x_3},
@@ -11242,12 +11242,24 @@ so the curl of such a vector field takes the form of
 <me>
 (0, 0, \frac{\partial X_2}{\partial x_1}-\frac{\partial X_1}{\partial x_2}).
 </me>
-The divergence of <m>\vec{X}=(X_{1}(\bx), X_{2}(\bx), X_{3}(\bx))</m> is the scalar function
+The divergence of a vector field <m>\vec{X}</m> is the scalar function, defined in rectangular coordinates as
 <me>
 \text{div}\vec{X}(\bx)= \sum_{j=1}^{3} \frac{\partial X_j(\bx)}{\partial x_j}.
 </me>
 </p>
-<p>The Stokes Theorem says that if <m>\Gamma: t\in [a, b]\mapsto \vec{r}(t)</m> is a 
+
+<p>We will see below that the curl of a vector field is the infinitesimal rate of circulation of the vector field along closed loops surrounding a point, 
+	and the divergence of a vector field is the infinitesimal rate of flux of the vector field across closed surfaces surrounding a point.
+</p>
+
+<p>First, we will show that the following limit
+	<men xml:id="eq-circulation">
+\lim_{\epsilon\to 0}\frac{1}{\text{Area enclosed by } \Gamma} \int_{\Gamma} \vec{X}\cdot d\vec{r}.
+</men>
+in the plane through a point <m>\bx_{0}</m> with unit normal <m>\vec{n}</m> exists and is given by <m>\text{curl}\vec{X}(\bx_{0}) \cdot \vec{n}</m>, if the vector field <m>\vec{X}</m> is differentiable at <m>\bx_{0}</m>. 
+This gives a geometric interpretation for the curl of a vector field. 
+</p>
+ <p>The Stokes Theorem says that if <m>\Gamma: t\in [a, b]\mapsto \vec{r}(t)</m> is a 
 differentiable closed loop (meaning <m>\Gamma(a)=\Gamma(b)</m>) in <m>\bbR^{3}</m>
 and spans a differentiable surface <m>S</m>, then
 <me>
@@ -11256,7 +11268,7 @@ and spans a differentiable surface <m>S</m>, then
 where <m>\vec{n}(\bx)</m> is an appropriately chosen unit normal vector field to <m>S</m>.
 </p>
 <p>
-If we accept Stokes Theorem, it can be used to give some geometric interpretation for
+If we accept Stokes Theorem, it can be used to verify this geometric interpretation for
 <m>\text{curl}\vec{X}</m>.  Fix some <m>\bx_{0}</m> and a plane <m>\Pi</m> containing
 <m>\bx_{0}</m> with a unit normal vector <m>\vec{n}</m>. Take <m>S</m> to be the
 disc in the plane <m>\Pi</m> of radius <m>\epsilon &gt; 0</m> centered at <m>\bx_{0}</m>
@@ -11265,18 +11277,10 @@ and <m>\Gamma</m> to be the boundary of this disc. Then
 \lim_{\epsilon \to 0} \frac{1}{\pi \epsilon^{2}} \int_{\Gamma} \vec{X}\cdot d\vec{r}=
 \lim_{\epsilon \to 0} \frac{1}{\pi \epsilon^{2}} \int_S \text{curl}\vec{X}(\bx) \cdot \vec{n}(\bx)\, dA
 =\text{curl}\vec{X}(\bx_{0}) \cdot \vec{n}.
-</me>
-Thus <m>\text{curl}\vec{X}(\bx_{0}) \cdot \vec{n}</m> is the infinitesimal rate of
-circulation<m>\mbox{---}</m>circulation per unit area<m>\mbox{---}</m>of <m>\vec{X}</m> along closed loops surrounding <m>\bx_{0}</m> in the plane
-through <m>\bx_{0}</m> with unit normal <m>\vec{n}</m>.
+</me> 
 </p>
-<p>In fact, we can see why <m>\text{curl}\vec{X}</m> is defined this way by examining 
-<me>
-\lim_{\epsilon \to 0} \frac{1}{\pi \epsilon^{2}} \int_{\Gamma} \vec{X}\cdot d\vec{r}
-</me>
-without the knowledge of Stokes Theorem. We will see  that, if the vector field <m>\vec{X}</m> is
-differentiable at <m>\bx_{0}</m>, then  this limit exists and is given by the expression above. 
-</p>
+
+
 <p>In the simple setting of the two dimensional plane, if <m>\vec{X}</m> is continuously
 differentiable in a neighborhood of <m>{\mathbf x}_{0}=(x_{0}, y_{0})</m>,
 and we take <m>\Gamma</m> to be a small square loop of side length 
@@ -11301,12 +11305,10 @@ This is the simplest form of Green's theorem
 and motivates the definition of the curl of a two dimensional vector field
 <m>(X_{1}(x, y), X_{2}(x, y))</m> as 
 <m> \frac{\partial X_{2}(x, y)}{\partial x}- \frac{\partial X_{1}(x, y)}{\partial y}</m>.
-Note that at any point <m>{\mathbf x}_{0}=(x_{0}, y_{0})</m>, its value is determined
-as 
-<me>
-\lim_{\epsilon\to 0}\frac{1}{\text{Area enclosed by } \Gamma} \int_{\Gamma} \vec{X}\cdot d\vec{r}.
-</me>
+Note that at any point <m>{\mathbf x}_{0}=(x_{0}, y_{0})</m>, its value is the same as determined
+by <xref ref="eq-circulation"/> for any choice of a small square loop around <m>{\mathbf x}_{0}</m>.
 </p>
+
 <p>In three dimension or higher, the simplest loops are planar ones, namely, a loop
 contained in the
 plane spanned by  a pair of orthonormal vectors <m>\vec{\xi}</m> and <m>\vec{\eta}</m> ---
@@ -11315,14 +11317,19 @@ spanned by <m>\vec{\xi}</m> and <m>\vec{\eta}</m>  given as
 <me>
 \vec{\gamma}(t)=x(t)\vec{\xi} + y(t)\vec{\eta}.
 </me>
-Assuming <m>\vec{X}</m> to have the necessary differentiability, then Taylor expansion 
+Assuming <m>\vec{X}</m> to have the necessary differentiability, then <m>\vec{X}</m> has the Taylor expansion 
 <me>
 \vec{X}(\vec{\gamma}(t))= \vec{X}({\mathbf x}_{0})+
 \left[\frac{\partial \vec{X}}{\partial {\mathbf x}}({\mathbf x}_{0})\right]( \vec{\gamma}(t)- {\mathbf x}_{0})+ 
 h.o.t.\ (\Vert \vec{\gamma}(t)- {\mathbf x}_{0}\Vert )
 </me>
-gives the 
-leading order term of <m>\int_{\Gamma} \vec{X}\cdot d\vec{r}</m> to be
+where <m>h.o.t.\ (\Vert \vec{\gamma}(t)- {\mathbf x}_{0}\Vert )</m> stands for the higher order terms in the Taylor expansion, which is of order <m>\Vert \vec{\gamma}(t)- {\mathbf x}_{0}\Vert^{2}</m> or higher.
+For the closed curve <m>Gamma</m>, <m> \int_{\Gamma} \vec{X}({\mathbf x}_{0})\cdot d\vec{r}=0</m>, so after expanding   
+<md>
+	\left[\frac{\partial \vec{X}}{\partial {\mathbf x}}({\mathbf x}_{0})\right]( \vec{\gamma}(t)- {\mathbf x}_{0})\cdot \vec{\gamma}'(t)
+</md>
+in terms of the components of <m>\vec{\xi}</m> and <m>\vec{\eta}</m>, we see that
+the leading order term of <m>\int_{\Gamma} \vec{X}\cdot d\vec{r}</m> is given by
 <md>
 <mrow> \amp \sum_{i,j} \frac{\partial X_i({\mathbf x}_0)}{\partial x_j} \int_{\Gamma} \left(x(t)\xi_j + y(t)\eta_j\right)
 \left(x'(t)\xi_i +y'(t)\eta_i\right)dt </mrow>
@@ -11345,7 +11352,7 @@ but
 <me>
 \int_{\Gamma} x(t)y'(t)dt = -  \int_{\Gamma} y(t)x'(t) dt
 </me>
-equals the area enclosed by <m> \Gamma</m> --- one may take <m>\Gamma</m> to be a square 
+equals the area enclosed by <m> \Gamma</m>; here, one may take <m>\Gamma</m> to be a square 
 or circle loop to see this, so 
 the leading order term of <m> \int_{\Gamma} \vec{X}\cdot d\vec{r}</m> is 
 <me>
@@ -11521,8 +11528,8 @@ of the plane
  		</statement>
  </definition>
  <p> 
-  Each non-zero element in <m>V^{*}</m>
- determines a hyperplane (through the origin) in <m>V</m>, namely, a subspace of codimension one; 
+  Each non-zero element <m>\alpha\in V^{*}</m>
+ determines a hyperplane (through the origin) in <m>V</m>, namely, the subspace <m>\{\mathbf x \in V : \alpha(\mathbf x) = 0\}</m>; 
  and two such elements determine the 
  same hyperplane, if they are non-zero multiple of each other. 
  </p>
@@ -11532,10 +11539,10 @@ of the plane
  <m>\left\{{\mathbf x}\in V: \alpha_{i} ({\mathbf x})=0, 1\le i \le m\right\}</m>, namely,
  as the set of solutions of a system of <m>m</m> linear homogeneous equations.
  If <m>\dim \text{Span} \left\{ \alpha_{i}, 1\le i \le m\right\}=l</m>, then this is a codimension <m>l</m>
- subspace. This is seen by writing out each <m>\alpha_{i}</m> in terms of its coefficients,
- then <m>\left\{{\mathbf x}\in V: \alpha_{i} ({\mathbf x})=0, 1\le i \le m\right\}</m>
- is the solution set of a system of <m>m</m> linear equations in <m>n</m> variables, with 
- a coefficient matrix whose row rank is <m>l</m>, thus the solution space is <m>n-l</m> dimensional.
+ subspace. This is seen by writing out each <m>\alpha_{i}</m> in the form of 
+ <m>\alpha_{i}(\mathbf x)=a_{i1}x_{1}+\ldots + a_{in}x_{n}</m> in some basis of <m>V</m>, 
+ then the system of equations <m>\alpha_{i} ({\mathbf x})=0, 1\le i \le m</m> is a system of <m>m</m> linear equations in <m>n</m> variables, 
+ with a coefficient matrix whose row rank is <m>l</m>, thus the solution space is <m>n-l</m> dimensional.
  </p>
  <p> Another way is to choose a basis <m>\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}</m> for 
  a subspace 
@@ -12022,20 +12029,21 @@ derivatives of differentiable functions. First, recall the directional derivativ
     <m>U</m> with <m>\bu(0)=\bu_{0}</m>.
     Then the chain rule
     <me>
-    \left[ \vg(\bu(t)) \right]' =D_{\bu}\vg(\bu(t)) \bu'(t)
+    \left[ \vg(\bu(t)) \right]' =[D_{\bu}\vg(\bu(t))] \bu'(t)=\sum_{i=1}^{k} \frac{du_{i}}{dt} \partial_{u_{i}}\vg(\bu(t))
+	 \text{ for } t \text{ near } 0
    </me>
     implies that the tangent of the curve <m>\vg(\bu(t))</m>
     at <m>P_{0}</m>, <m>\left[ \vg(\bu(t)) \right]'|_{t=0}</m>, is a 
-    linear combination of <m>D_{u_{i}}\vg(\bu_0)</m>, where <m>D_{u_{i}}\vg(\bu_0)</m>
+    linear combination of <m>\partial_{u_{i}}\vg(\bu_0)</m>, where <m>\partial_{u_{i}}\vg(\bu_0)</m>
     is an alternative notation for <m>D_{\be_{i}}\vg(\bu_0)</m>, namely, the partial derivative
-    of <m>\vg(\bu)</m> with respect to its <m>i</m>th coordinate. The span of these <m>k</m>
-    vectors forms the tangent space of the surface at <m>P_{0}</m>. 
+    of <m>\vg(\bu)</m> with respect to its <m>i</m>th coordinate. Note that every such tangent vector lies in the span of these <m>k</m>
+    vectors, which forms the tangent space of the surface at <m>P_{0}</m>. 
     </p>
     <p>In order for 
     such a parametrization <m>\vg(\bu)</m> to represent a geometric <m>k</m>-dimensional
     surface, we  require that these <m>k</m>
     vectors be linearly independent so the tangent space to the surface is <m>k</m>-dimensional,
-    namely the matrix <m>[D_{u_{1}}\vg(\bu_0)\, \ldots\, D_{u_{k}}\vg(\bu_0)]</m> has rank <m>k</m>.
+    namely the matrix <m>[\partial_{u_{1}}\vg(\bu_0)\, \ldots\, \partial_{u_{k}}\vg(\bu_0)]</m> has rank <m>k</m>.
     Let <m>S</m> denote this patch of differentiable surface. Then there is a well defined
     tangent space <m>S_{\vg(\bu)}</m> for every <m>\bu</m> (or rather for every point 
     <m>\vg(\bu)</m> on <m>S</m>). When <m>\vg(\bu)</m>
@@ -12049,29 +12057,29 @@ derivatives of differentiable functions. First, recall the directional derivativ
   to the surface <m>S</m>
   becomes a function on the surface. To consider its differentiability properties
   on the surface, we use the parametrization <m>\vg(\bu)</m> to
-  get a function <m>f\circ \vg</m> in the parameter domain of <m>\bu</m>, then its directional derivative
-  at <m>P_{0}</m> in the direction of <m>D_{u_{i}}\vg(\bu_0)</m> is given by
+  get a function <m>f\circ \vg</m> in the parameter domain of <m>\bu</m>, then the directional derivative of <m>f</m>
+  at <m>P_{0}</m> in the direction of <m>\partial_{u_i}\vg(\bu_0)</m> is given by
   <me> 
- D_{D_{u_{i}}\vg(\bu_0)} f \Big|_{\vg(\bu_0)}=\sum_{j=1}^{n}\frac{\partial f}{\partial x_{j}}(\vg(\bu_{0})) D_{\be_{i}}\vg_{j}(\bu_0)
+ D_{\partial_{u_i}\vg(\bu_0)} f \Big|_{\vg(\bu_0)}=\sum_{j=1}^{n}\frac{\partial f}{\partial x_{j}}(\vg(\bu_{0})) D_{\be_{i}}\vg_{j}(\bu_0)
   =\frac{\partial \left( f\circ \vg\right) }{\partial u_{i}}(\bu_0).
   </me>
   It is this kind of consideration that makes it natural to use <m>\frac{\partial  }{\partial u_{i}}\Big|_{\vg(\bu_0)}</m>
   to represent the tangent vector 
-  <m> D_{u_{i}}\vg(\bu_0)</m> to the surface at <m>P_{0}=\vg(\bu_0)</m>, 
+  <m> \partial_{u_i}\vg(\bu_0)</m> to the surface at <m>P_{0}=\vg(\bu_0)</m>, 
   when <m>\vg(\bu)</m> is a parametric
   representation of the surface. Namely,
   <ul>
-  <li> <m>\frac{\partial \vg}{\partial u_{i}}=D_{u_{i}}\vg</m> is a geometric tangent vector to the surface 
+  <li> <m>\frac{\partial \vg}{\partial u_{i}}=\partial_{u_i}\vg</m> is a geometric tangent vector to the surface 
   <m>\bx=\vg(\bu)</m> at <m>\vg(\bu)</m> arising from a curve whose parametrization in the 
   <m>\bu</m> parameter space runs along the <m>u_{i}</m> direction.</li>
-  <li> <m>\frac{\partial (f\circ \vg)}{\partial u_{i}}=D_{D_{u_{i}}\vg}f</m> means that,  as an operator,
+  <li> <m>\frac{\partial (f\circ \vg)}{\partial u_{i}}=D_{\partial_{u_i}\vg}f</m> means that,  as an operator,
   <m>\frac{\partial }{\partial u_{i}}</m> represents directional derivative in the direction of
- the tangent <m>D_{u_{i}}\vg</m>.
+ the tangent <m>\partial_{u_i}\vg</m>.
  </li>
  </ul>
  Thus
  <me>
- D_{D_{u_{i}}\vg(\bu_0)} f \Big|_{\vg(\bu_0)}=D_{\frac{\partial  }{\partial u_{i}}\Big|_{\vg(\bu_0)}}f .
+ D_{\partial_{u_i}\vg(\bu_0)} f \Big|_{\vg(\bu_0)}=D_{\frac{\partial  }{\partial u_{i}}\Big|_{\vg(\bu_0)}}f .
  </me>
   In this notation, 
     <m>\left\{  \frac{\partial }{\partial u_{1}}\Big|_P, \ldots,  \frac{\partial }{\partial u_{k}}\Big|_P\right\}</m>
@@ -12085,6 +12093,10 @@ derivatives of differentiable functions. First, recall the directional derivativ
     </me>
     for <m>P=\vg(\bu)</m>.
     </p>
+	<figure xml:id="fig-tangents-surface">
+						<caption>An illustration of tangents on a surface in relation to partial differentiation with respect to the parameter variables  generated with the help of Gemini</caption>
+						<image    source="images/Gemini_Generated_Image_tangents.png"/>
+					</figure>
 <definition><title>Vector Field on a Differentiable Surface</title>
 	<statement> 
 <p>A vector field <m>X</m> on a differentiable surface <m>S</m> is
@@ -12108,12 +12120,12 @@ used in connection with the parametrization, then <m>\frac{\partial }{\partial u
 represents a vector field in <m>U</m>, which takes the vector <m>\be_{i}</m> everywhere in <m>U</m>. 
 One should watch out for the context in which this notation is used. In the latter context, a vector field
 in <m>U</m> is simply an <m>R^{k}</m>-valued function, so one can take its derivative and in this case
-<m>D_{\bv}\left(\frac{\partial }{\partial u_{i}}\right)=0</m> for any <m>\bv\in \bbR^{k}_{\bu}</m>. 
+<m>D_{\bv}\left(\frac{\partial }{\partial u_{i}}\right)=0</m> for any <m>\bv\in \bbR^{k}_{\bu}</m>, as <m>\frac{\partial }{\partial u_{i}}=\be_{i}</m>  in this context. 
 But in the former context,
 <m>\bv</m> should be regarded as 
-the tangent vector <m>\frac{d \vg(\bu+t\bv)}{dt}\Big|_{t=0}=D\vg(\bu)\bv \in S_{\vg(\bu)}</m> on <m>S</m>,
+the tangent vector <m>\frac{d \vg(\bu+t\bv)}{dt}\Big|_{t=0}=D_{\bu}\vg(\bu)=[D\vg(\bu)]\bv \in S_{\vg(\bu)}</m> on <m>S</m>,
 and <m>D_{\bv}\left(\frac{\partial }{\partial u_{i}}\right)</m> should be related to
-<m>D_{D\vg(\bu)\bv}\left(\frac{\partial \vg(\bu)}{\partial u_{i}}\right)</m>. But this output in <m>\bbR^{n}</m>
+<m>D_{[D\vg(\bu)]\bv}\left(\frac{\partial \vg(\bu)}{\partial u_{i}}\right)=\sum_{j=1}^{k}v_j \frac{\partial^2 \vg_(\bu)}{\partial u_j \partial u_{i}}</m>. But this output in <m>\bbR^{n}</m>
 may not be a tangent vector to <m>S</m> at <m>\vg(\bu)</m>. There is a way to obtain a tangent vector
 to <m>S</m> at <m>\vg(\bu)</m> through orthogonal projection. This will introduce the notion of
 <term>covariant differentiation</term> of vector field on <m>S</m>. 
@@ -12558,7 +12570,7 @@ as a system in the polar coordinate <m>(r, \theta)</m> of <m>(x, y)</m> and the 
  differentiable function <m>f</m> on <m>\bbR^{n}</m> is differentiated through <m>F</m>:
    <me>D_{\frac{\partial  }{\partial u_{i}}}\left( f\circ F\right)=D_{F_{*}\left(\frac{\partial  }{\partial u_{i}}\right) }f</me>,
   namely, to treat <m>F_{*}\left(\frac{\partial  }{\partial u_{i}}\right)</m> as tangent vector
-  <m>D_{u_{i}}F(P)</m> at <m>F(P)</m>.  When <m>F</m> is a parametrization map,
+  <m>\partial_{u_i}F(P)</m> at <m>F(P)</m>.  When <m>F</m> is a parametrization map,
   we have identified  in our notation <m>F_{*}\left(\frac{\partial  }{\partial u_{i}}\right)</m> with
   <m>\left(\frac{\partial  }{\partial u_{i}}\right)</m>.
  </p>
