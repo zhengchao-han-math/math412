@@ -11717,7 +11717,7 @@ of the plane
    </p>
    <p>
    For any basis <m>\left\{\alpha_{1},\ldots, \alpha_{n}\right\}</m> of <m>V^{*}</m> for
-   <m>m\ge 2</m>,
+   <m>n\ge 2</m>,
    <m>\sum_{i=1}^{n}\alpha_{i}\otimes \alpha_{i}</m> defines an inner product on <m>V</m>
    so that its dual basis is an orthonormal basis in this metric.
    </p>
@@ -12606,6 +12606,14 @@ as a system in the polar coordinate <m>(r, \theta)</m> of <m>(x, y)</m> and the 
    <me>
    x_{i}'(0)=\sum_{j=1}^{m} v_{j} \frac{\partial F_{i}}{\partial u_{j}}(P)=dF_{i}(P)(\bv).</me>
   This is a reason for using <m>dF</m> as a common  notation for <m>F_{*}</m>.
+   </p>
+   <p>
+	<figure xml:id="fig-tangentmap">
+						<caption>An illustration of the tangent map  generated with the help of Gemini</caption>
+						<image    source="images/Gemini_Generated_Image_tangentmap.png"/>
+					</figure>
+				</p>
+   <p>
    Another way of writing this relation is to note that
    <md>
    <mrow>
