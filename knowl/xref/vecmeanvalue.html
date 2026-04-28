@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para">Suppose that <span class="process-math">\(\bff(x)\)</span> is a vector-valued function, differentiable on <span class="process-math">\((a, b)\)</span> and continuous on <span class="process-math">\([a, b]\text{,}\)</span> and that there exists some <span class="process-math">\(M\gt 0\)</span> such that <span class="process-math">\(\Vert \bff'(x)\Vert \le M\)</span> for all <span class="process-math">\(x\in (a, b)\text{.}\)</span> Then <span class="process-math">\(\Vert \bff(b)-\bff(a)\Vert \le M(b-a)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.3.9"><a href="#vecmeanvalue" title="Copy heading and permalink for Theorem 5.3.9" aria-label="Copy heading and permalink for Theorem 5.3.9">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">If we assume, in addition, that <span class="process-math">\(\bff'(x)\)</span> is continuous on <span class="process-math">\((a,  b)\text{,}\)</span> then we have an easy proof using <span class="process-math">\(\bff(b)-\bff(a)=\int_{a}^{b}\bff'(x)\, dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For the general case, it suffices to prove that for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html">
+\begin{equation}
+\Vert\bff(c)-\bff(a)\Vert\le (M+\epsilon)(c-a) +\epsilon \text{ for all $c\in [a, b]$.}\tag{5.3.4}
+\end{equation}
+</div>
+<div class="para">Fix any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> if <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> does not hold for some <span class="process-math">\(c\text{,}\)</span> let <span class="process-math">\(c^{*}\)</span> be the infimum of the values <span class="process-math">\(c\in [a, b]\)</span> for which <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> fails. First we show that <span class="process-math">\(c^{*}&gt;a\text{.}\)</span> This follows from the continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(a\text{,}\)</span> as it shows that for some <span class="process-math">\(\delta &gt; 0\)</span>  <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> holds for <span class="process-math">\(c\in [a, a+\delta]\text{.}\)</span> By definition of <span class="process-math">\(c^{*}\text{,}\)</span> <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> holds for any <span class="process-math">\(c \lt c^{*}\text{.}\)</span> By continuity of <span class="process-math">\(\bff\)</span> at <span class="process-math">\(c^{*}\)</span> <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> continues to hold at <span class="process-math">\(c^{*}\text{.}\)</span> Thus <span class="process-math">\(c^{*}\lt b\)</span> under our assumption. Then using <span class="process-math">\(\Vert\bff'(c^{*})\Vert\le M\text{,}\)</span> there exists some <span class="process-math">\(\delta^{*}&gt; 0\)</span> such that <span class="process-math">\(\Vert \bff(c)-f(c^{*})\Vert\le (M+\epsilon)(c-c^{*})\)</span> for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> it then follows that, for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html ./knowl/xref/meanbd.html">
+\begin{align*}
+\Vert\bff(c)-\bff(a)\Vert\le \amp \Vert\bff(c)- \bff(c^{*})\Vert + \Vert\bff(c^{*})-\bff(a)\Vert\\
+\le \amp (M+\epsilon)(c-c^{*}) + (M+\epsilon)(c^{*}-a) +\epsilon
+\end{align*}
+</div>
+<div class="para">showing that <a href="ch-differentiaion-6.html#meanbd" class="xref" data-knowl="./knowl/xref/meanbd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a> continues to hold for <span class="process-math">\(c\in [c^{*}, c^{*}+\delta^{*}]\text{,}\)</span> contradicting the definition of <span class="process-math">\(c^{*}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#vecmeanvalue-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.3.9.1"><a href="#vecmeanvalue-2" title="Copy heading and permalink for Proof 5.3.9.1" aria-label="Copy heading and permalink for Proof 5.3.9.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="ch-differentiaion-6.html#vecmeanvalue">in-context</a></span>
+</body>
+</html>

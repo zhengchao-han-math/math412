@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Only the verification of the last property requires more than a few lines of argument. One easy way is to use an induction argument on <span class="process-math">\(n\text{,}\)</span> the dimension. <span class="process-math">\(R':=[a_{2}, b_{2}]\times \cdots \times [a_{n}, b_{n}]\)</span> is an <span class="process-math">\((n-1)\)</span>-dimensional rectangle, and the partitions <span class="process-math">\(\{\cP_{2},\ldots, \cP_{n}\}\)</span> form a partition <span class="process-math">\(\cP'\)</span> of <span class="process-math">\(R'\text{.}\)</span> Suppose that <span class="process-math">\(\{I_{1,1},\ldots, I_{1,k}\}\)</span> are the subintervals of <span class="process-math">\(\cP_{1}\text{.}\)</span> In the summation <span class="process-math">\(\sum_{S\in \cP}\vert S\vert\text{,}\)</span> group <span class="process-math">\(S\)</span> according to its constitutive factor in the first variable: each <span class="process-math">\(S\)</span> has the form of <span class="process-math">\(I_{1,j}\times S'\)</span> for some <span class="process-math">\(I_{1,j}\in \cP_{1}\)</span> and <span class="process-math">\(S'\in \cP'\text{,}\)</span> thus we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}}\sum_{S'\in \cP'}
+\vert I_{1,j} \times S'\vert.
+\end{equation*}
+</div>
+<div class="para">By induction, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{S'\in \cP'}
+\vert I_{1,j} \times S'\vert= \vert I_{1,j}\vert \sum_{S'\in \cP'}
+\vert  S'\vert= \vert I_{1,j}\vert \vert R'\vert.
+\end{equation*}
+</div>
+<div class="para">It now follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}} \vert I_{1,j}\vert \vert R'\vert
+=(b_{1}-a_{1})  \vert R'\vert=\vert R\vert.
+\end{equation*}
+</div>
+</div> <div class="para">Note that a partition of <span class="process-math">\(R\)</span> in our definition is defined in terms of a collection of partitions <span class="process-math">\(\cP_{i}\)</span> for each constitutive factor. As a result, if the projection onto a factor of two rectangles <span class="process-math">\(S_{1}, S_{2}\)</span> in  a partition of <span class="process-math">\(R\)</span> share more than one points, they must have identical subinterval in that factor. One could allow more general choices of rectangles in a partition; it would just make it harder to bookkeep such rectangles, and our definition suffices for our purpose of defining the integral of a function.</div></article><span class="incontext"><a href="section-int-def.html#remark-44" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(X\)</span> be any finite dimensional vector space over <span class="process-math">\(\mathbb R\text{,}\)</span> and let <span class="process-math">\(\mathbf v_{1},\cdots, \mathbf v_{n}\)</span> be a basis. For any <span class="process-math">\({\mathbf x}\in X\text{,}\)</span> let <span class="process-math">\(({\mathbf x}(1),\cdots, {\mathbf x}(n))\)</span> be the coordinates of <span class="process-math">\(\mathbf x\)</span> in this basis:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathbf x}=\sum_{k=1}^{n} {\mathbf x}(k) \mathbf v_{k}.
+\end{equation*}
+</div>
+<div class="para">Then there exits constants <span class="process-math">\(c_{2}&gt; c_{1}&gt; 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_{2} \left(\sum_{k=1}^{n}|{\mathbf x}(k)|^{2}\right)^{1/2}\ge ||\mathbf x|| 
+\ge c_{1}  \left(\sum_{k=1}^{n}|{\mathbf x}(k)|^{2}\right)^{1/2}\, \forall {\mathbf x}\;\; \in X.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-norms-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 5.2.13"><a href="#lem-norms" title="Copy heading and permalink for Lemma 5.2.13" aria-label="Copy heading and permalink for Lemma 5.2.13">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">The general statement of the Lemma follows from the inequality above, as <span class="process-math">\(\left(\sum_{k=1}^{n}|{\mathbf x}(k)|^{2}\right)^{1/2}\)</span> is a concrete norm on <span class="process-math">\(X\text{,}\)</span> and any two norms satisfy a similar inequality via their relations with this norm.<div class="autopermalink" data-description="Paragraph"><a href="#lem-norms-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The first inequality follows from triangle inequality. For the second inequality, if it does not hold, then using homogeneity of norms, there would exist a sequence <span class="process-math">\({\mathbf x}_{m}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\sum_{k=1}^{n}|{\mathbf x}_{m}(k)|^{2}\right)^{1/2}=1, \text{ but } ||{\mathbf x}_{m}||\to 0.
+\end{equation*}
+</div>
+<div class="para">The sequence <span class="process-math">\(({\mathbf x}_m(1), \ldots, {\mathbf x}_m(n))\)</span> is a sequence in <span class="process-math">\(\mathbb R^{n}\)</span> with unit Euclidean norm. By the Bolzano-Weierstrass Theorem, it has a convergent subsequence. Still call it <span class="process-math">\(({\mathbf x}_m(1), \ldots, {\mathbf x}_m(n))\)</span> to simply notation, and let <span class="process-math">\(({\mathbf x}_{\infty}(1), \ldots, {\mathbf x}_{\infty}(n))\)</span> be such that <span class="process-math">\(({\mathbf x}_{m}(1), \ldots, {\mathbf x}_{m}(n))\to ({\mathbf x}_{\infty}(1), \ldots, {\mathbf x}_{\infty}(n))\)</span> as <span class="process-math">\(m\to \infty\text{.}\)</span> Then <span class="process-math">\(\left(\sum_{k=1}^{n}|{\mathbf x}_{\infty}(k)|^{2}\right)^{1/2}=1\text{.}\)</span> Thus <span class="process-math">\({\mathbf x}_{\infty}:=\sum_{k=1}^{n}{\mathbf x}_{\infty}(k) {\mathbf v}_{k}\ne {\mathbf 0}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-norms-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">But  by the first inequality, which is already established,</div>
+<div class="displaymath process-math">
+\begin{align*}
+||{\mathbf x}_{\infty} || \amp \le  ||{\mathbf x}_{\infty}- {\mathbf x}_{m}|| +  ||{\mathbf x}_{m} ||\\
+\amp \le c_{2} \left(\sum_{k=1}^{n}|{\mathbf x}_{m}(k)-{\mathbf x}_{\infty}(k)|^{2}\right)^{1/2} + 
+||{\mathbf x}_{m} ||
+\end{align*}
+</div>
+<div class="para">Now using</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{m\to \infty} \left(\sum_{k=1}^{n}|{\mathbf x}_{m}(k)-{\mathbf x}_{\infty}(k)|^{2}\right)^{1/2}=0 \quad
+\text{ and } \lim_{m\to \infty}  ||{\mathbf x}_{m} ||=0,
+\end{equation*}
+</div>
+<div class="para">it follows that <span class="process-math">\(||{\mathbf x}_{\infty} || =0\text{,}\)</span> which contradicts the property of a norm. This concludes our proof of the Lemma.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-norms-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.2.13.1"><a href="#lem-norms-2" title="Copy heading and permalink for Proof 5.2.13.1" aria-label="Copy heading and permalink for Proof 5.2.13.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="section-linearmaps.html#lem-norms">in-context</a></span>
+</body>
+</html>

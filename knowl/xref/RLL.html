@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann-Lebesgue Lemma.</span>
+</h3>
+<div class="para logical">
+<div class="para">For any Riemann integrable function <span class="process-math">\(h\)</span> on <span class="process-math">\((-\pi, \pi)\text{,}\)</span> the following holds</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt\to 0 \text{ as } \lambda \to \infty.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#RLL-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.2.1: Riemann-Lebesgue Lemma"><a href="#RLL" title="Copy heading and permalink for Lemma 4.2.1: Riemann-Lebesgue Lemma" aria-label="Copy heading and permalink for Lemma 4.2.1: Riemann-Lebesgue Lemma">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">If we only take <span class="process-math">\(\lambda=N\)</span> as integers, then this follows from the Bessel’s inequality. The same argument also shows that <span class="process-math">\(\int_{-\pi}^{\pi} h(t)\cos(N t)\, dt\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> These properties are sufficient for applications to <span class="process-math">\(\int_{-\pi}^{\pi}
+h(x; t) \sin (N+\frac 12)t\; dt\text{,}\)</span> as <span class="process-math">\(\sin (N+\frac 12)t=\cos\frac t2 \sin(Nt)+\sin\frac t2 \cos(Nt)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#RLL-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For the general case, first note that if <span class="process-math">\(h\in C^{1}[-\pi, \pi]\text{,}\)</span> then integration by parts gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= - h(t)\lambda^{-1} \cos (\lambda t) \Big|_{-\pi}^{\pi} +
+\int_{-\pi}^{\pi} \lambda^{-1} \cos (\lambda t) h'(t)\, dt \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(\lambda \to \infty\text{.}\)</span> For the given <span class="process-math">\(h\in \cR[-\pi, \pi]\text{,}\)</span> take any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we first find some <span class="process-math">\(\hat h \in C^{1}[-\pi, \pi]\)</span> such that <span class="process-math">\(\int_{-\pi}^{\pi} |h(t)-\hat h(t)|\, dt \lt \epsilon\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt + 
+\int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt,
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt\vert \le \int_{-\pi}^{\pi} \vert h(t)-\hat h(t)\vert \, dt \lt \epsilon,
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\vert \int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt \vert \lt \epsilon\)</span> for all sufficiently large <span class="process-math">\(\lambda\text{,}\)</span> which concludes our proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#RLL-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.1.1"><a href="#RLL-3" title="Copy heading and permalink for Proof 4.2.1.1" aria-label="Copy heading and permalink for Proof 4.2.1.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-FSConv.html#RLL">in-context</a></span>
+</body>
+</html>

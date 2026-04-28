@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dual space, Tensor product, and Exterior Algebra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="Math412-Notes-10-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Math412-Notes-10.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Math412-Notes-10-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-31" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-11" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-18" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Math412-Notes-10-5"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dual space, Tensor product, and Exterior Algebra</span>
+</h2>
+<div class="para logical" id="Math412-Notes-10-5-2">
+<div class="para">We are all familiar with representing a hyperplane in <span class="process-math">\(\mathbb R^{n}\)</span> in the form of</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-2-2">
+\begin{equation*}
+a_{1}x_{1}+\ldots+a_{n}x_{n}=b 
+\text{ for some }a_{1},\ldots, a_{n}, \text{ not all zero, and some } b.
+\end{equation*}
+</div>
+<div class="para">Restricting to the case <span class="process-math">\(b=0\text{,}\)</span> such a hyperplane can be thought of as the <em class="emphasis">null space</em> of the <dfn class="terminology">linear function</dfn>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-2-6">
+\begin{equation*}
+\alpha ({\mathbf x}) := a_{1}x_{1}+\ldots+a_{n}x_{n}
+\end{equation*}
+</div>
+<div class="para">defined on the vectors <span class="process-math">\({\mathbf x}\in {\mathbb R}^{n}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-5-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Covectors and Dual Space.</span>
+</h3>
+<div class="para" id="Math412-Notes-10-5-3-2-1">The set of all linear functions on a (finite dimensional) vector space <span class="process-math">\(V\)</span> is called the dual space of <span class="process-math">\(V\text{,}\)</span> and is denoted as <span class="process-math">\(V^{*}\text{.}\)</span> Elements of <span class="process-math">\(V^{*}\)</span> are called covectors.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="Math412-Notes-10-5-3-2-2">A multilinear function of order <span class="process-math">\(m\)</span> if a function <span class="process-math">\(\alpha:V\times\cdots\times V\mapsto \bbR\)</span> (with <span class="process-math">\(m\)</span> factors of <span class="process-math">\(V\)</span>) such that <span class="process-math">\(\alpha(\bx_{1},\cdots, \bx_{m})\)</span> is linear in each <span class="process-math">\(\bx_{i}\)</span> when the rest is held as fixed. Such an <span class="process-math">\(\alpha\)</span> is also called a covariant tensor of order <span class="process-math">\(m\text{.}\)</span> The space  of covariant tensors of order <span class="process-math">\(m\)</span> on <span class="process-math">\(V\)</span> is denoted as <span class="process-math">\({\mathcal T}^{m}(V)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.1: Covectors and Dual Space"><a href="#Math412-Notes-10-5-3" title="Copy heading and permalink for Definition 7.2.1: Covectors and Dual Space" aria-label="Copy heading and permalink for Definition 7.2.1: Covectors and Dual Space">🔗</a></div></article><div class="para" id="Math412-Notes-10-5-4">Each non-zero element <span class="process-math">\(\alpha\in V^{*}\)</span> determines a hyperplane (through the origin) in <span class="process-math">\(V\text{,}\)</span> namely, the subspace <span class="process-math">\(\{\mathbf x \in V : \alpha(\mathbf x) = 0\}\text{;}\)</span> and two such elements determine the same hyperplane, if they are non-zero multiple of each other.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-5">There are at least two ways to describe a subspace of <span class="process-math">\(V\)</span> of codimension bigger than one. One way is as the intersection of several codimension one hypersurfaces: <span class="process-math">\(\left\{{\mathbf x}\in V: \alpha_{i} ({\mathbf x})=0, 1\le i \le m\right\}\text{,}\)</span> namely, as the set of solutions of a system of <span class="process-math">\(m\)</span> linear homogeneous equations. If <span class="process-math">\(\dim \text{Span} \left\{ \alpha_{i}, 1\le i \le m\right\}=l\text{,}\)</span> then this is a codimension <span class="process-math">\(l\)</span> subspace. This is seen by writing out each <span class="process-math">\(\alpha_{i}\)</span> in the form of <span class="process-math">\(\alpha_{i}(\mathbf x)=a_{i1}x_{1}+\ldots + a_{in}x_{n}\)</span> in some basis of <span class="process-math">\(V\text{,}\)</span> then the system of equations <span class="process-math">\(\alpha_{i} ({\mathbf x})=0, 1\le i \le m\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> variables, with a coefficient matrix whose row rank is <span class="process-math">\(l\text{,}\)</span> thus the solution space is <span class="process-math">\(n-l\)</span> dimensional.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-6">
+<div class="para">Another way is to choose a basis <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}\)</span> for a subspace of <span class="process-math">\(V\text{.}\)</span> But there are other choices for a basis of this subspace. Exterior algebra provides a convenient tool to identify a subspace (with orientation). Suppose <span class="process-math">\(\left\{ {\mathbf v}_{1}, \ldots, {\mathbf v}_{k}\right\}\)</span> is another basis of the subspace, then we can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/basistransf.html" id="basistransf">
+\begin{equation}
+{\mathbf v}_{j}=\sum_{i=1}^{k}a_{ij} {\mathbf u}_{i}, 1\le j \le k\tag{7.2.1}
+\end{equation}
+</div>
+<div class="para">for some coefficients <span class="process-math">\(a_{ij} \text{.}\)</span> This would form a <span class="process-math">\(k\times k\)</span> invertible matrix <span class="process-math">\(A\)</span> with <span class="process-math">\(a_{ij} \)</span> as its entries. <a href="Math412-Notes-10-5.html#basistransf" class="xref" data-knowl="./knowl/xref/basistransf.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.1">(7.2.1)</a> can be written compactly in a matrix form:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/basistransf.html" id="basistransfm">
+\begin{equation}
+[{\mathbf v}_{1}\, \cdots \,{\mathbf v}_{k}]=[{\mathbf u}_{1}\, \cdots \,{\mathbf u}_{k}]A.\tag{7.2.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-7">It turns out that the following product between vectors, a generalization of the cross product between vectors in <span class="process-math">\(\bbR^{3}\)</span> called the <dfn class="terminology">exterior product</dfn>, provides an efficient tool to describe oriented subspaces of <span class="process-math">\(V\text{.}\)</span> We first give a preliminary formal definition to illustrate its usage; a more  precise definition, together with the justification for the existence/construction of this product, will be given shortly.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-5-8"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exterior Product.</span>
+</h3>
+<div class="para logical" id="Math412-Notes-10-5-8-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space. The exterior product is a product <span class="process-math">\(\bu\wedge \bv\)</span> between <span class="process-math">\(\bu,\bv\in V\)</span> such that it is linear in each factor and antisymmetric in <span class="process-math">\(\bu,\bv\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-8-2-1-5">
+\begin{equation*}
+\bu\wedge \bv=- \bv\wedge \bu.
+\end{equation*}
+</div>
+<div class="para">Furthermore, this product extends to any <span class="process-math">\(k\)</span>-tuple of vectors <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}\)</span> in <span class="process-math">\(V\)</span> which obeys associativity and is linear in each factor and antisymmetric in any adjacent pairs.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.2: Exterior Product"><a href="#Math412-Notes-10-5-8" title="Copy heading and permalink for Definition 7.2.2: Exterior Product" aria-label="Copy heading and permalink for Definition 7.2.2: Exterior Product">🔗</a></div></article><div class="para logical" id="Math412-Notes-10-5-9">
+<div class="para">As an illustration, take <span class="process-math">\(k=3\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-9-2">
+\begin{equation*}
+( \bu_{1}\wedge \bu_{2})\wedge \bu_{3}= \bu_{1}\wedge (\bu_{2}\wedge \bu_{3})
+=- \bu_{2}\wedge \bu_{1}\wedge \bu_{3}=-
+\bu_{1}\wedge \bu_{3}\wedge \bu_{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-10">
+<div class="para">Back to <a href="Math412-Notes-10-5.html#basistransfm" class="xref" data-knowl="./knowl/xref/basistransfm.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.2">(7.2.2)</a>. The algebraic rules of exterior algebra would lead to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/basistransfm.html" id="extbasis">
+\begin{equation}
+{\mathbf v}_{1}\wedge \ldots\wedge {\mathbf v}_{k}=( \det A )\,
+{\mathbf u}_{1}\wedge \ldots\wedge {\mathbf u}_{k}.\tag{7.2.3}
+\end{equation}
+</div>
+<div class="para">This is particularly easy to see in the case of <span class="process-math">\(k=2\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/basistransfm.html" id="Math412-Notes-10-5-10-4">
+\begin{equation*}
+{\mathbf v}_{1}\wedge {\mathbf v}_{2}= \left( a_{11} {\mathbf u}_{1}+a_{21} {\mathbf u}_{2}\right)
+\wedge \left( a_{12} {\mathbf u}_{1}+a_{22} {\mathbf u}_{2}\right)
+= \left( a_{11}a_{22}-a_{12}a_{21}\right)  {\mathbf u}_{1}\wedge {\mathbf u}_{2}.
+\end{equation*}
+</div>
+<div class="para">Thus the exterior product of a basis <span class="process-math">\({\mathbf v}_{1}\wedge \ldots\wedge {\mathbf v}_{k}\text{,}\)</span> up to the scaling factor <span class="process-math">\(\det A\text{,}\)</span> is independent of the choice of  a basis for the subspace.  In fact, the sign of <span class="process-math">\(\det A\)</span> can be used to identify whether the two bases <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}\)</span> and <span class="process-math">\(\left\{ {\mathbf v}_{1}, \ldots, {\mathbf v}_{k}\right\}\)</span> are in the same or opposite <dfn class="terminology">orientation</dfn> of the subspace.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="Math412-Notes-10-5-11"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="Math412-Notes-10-5-11-1">
+<div class="para">For any basis <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{n}\right\}\)</span> of a vector space <span class="process-math">\(V\text{,}\)</span> there is a unique basis <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> of <span class="process-math">\(V^{*}\)</span> such that</div>
+<div class="displaymath process-math" id="dual">
+\begin{equation}
+\alpha_{i}({\mathbf u}_{j})=\delta_{ij} \text{ for } 1\le i, j \le n.\tag{7.2.4}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-11-2">Conversely, for any basis <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> of <span class="process-math">\(V^{*}\text{,}\)</span> there is a unique basis <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{n}\right\}\)</span> of <span class="process-math">\(V\)</span> such that <a href="Math412-Notes-10-5.html#dual" class="xref" data-knowl="./knowl/xref/dual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.4">(7.2.4)</a> holds.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 7.2.3"><a href="#Math412-Notes-10-5-11" title="Copy heading and permalink for Proposition 7.2.3" aria-label="Copy heading and permalink for Proposition 7.2.3">🔗</a></div></article><article class="definition definition-like" id="Math412-Notes-10-5-12"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dual Basis.</span>
+</h3>
+<div class="para" id="Math412-Notes-10-5-12-2-1">
+<span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> above is called the dual basis of <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{n}\right\}\text{,}\)</span> and the latter is called the dual basis of <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.4: Dual Basis"><a href="#Math412-Notes-10-5-12" title="Copy heading and permalink for Definition 7.2.4: Dual Basis" aria-label="Copy heading and permalink for Definition 7.2.4: Dual Basis">🔗</a></div></article><article class="definition definition-like" id="Math412-Notes-10-5-13"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner Product on a Vector Space.</span>
+</h3>
+<div class="para" id="Math412-Notes-10-5-13-2-1">An inner product on a vector space <span class="process-math">\(V\)</span> is a symmetric positive definite covariant tensor of order <span class="process-math">\(2\text{,}\)</span> namely, a bilinear and symmetric function <span class="process-math">\(g\)</span> on  <span class="process-math">\(V\)</span> such that <span class="process-math">\(g({\mathbf x}, {\mathbf x})&gt; 0\)</span> unless <span class="process-math">\({\mathbf x}={\mathbf 0}\text{.}\)</span>  Such a <span class="process-math">\(g\)</span> is also called a metric.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.5: Inner Product on a Vector Space"><a href="#Math412-Notes-10-5-13" title="Copy heading and permalink for Definition 7.2.5: Inner Product on a Vector Space" aria-label="Copy heading and permalink for Definition 7.2.5: Inner Product on a Vector Space">🔗</a></div></article><div class="para" id="Math412-Notes-10-5-14">On an inner product space one can define orthonormal bases. If two bases <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{n}\right\}\)</span> and <span class="process-math">\(\left\{ {\mathbf v}_{1}, \ldots, {\mathbf v}_{n}\right\}\)</span> are orthonormal with respect to a metric <span class="process-math">\(g\text{,}\)</span> and are related via <a href="Math412-Notes-10-5.html#basistransf" class="xref" data-knowl="./knowl/xref/basistransf.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.1">(7.2.1)</a>, then the matrix <span class="process-math">\(A\)</span> must be an orthogonal matrix.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-5-15"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Isometry of a Metric.</span>
+</h3>
+<div class="para" id="Math412-Notes-10-5-15-2-1">A linear map <span class="process-math">\(T: V\mapsto V\)</span> is called an isometry of <span class="process-math">\(g\text{,}\)</span> if <span class="process-math">\(g(T {\mathbf x}, T {\mathbf x})=g({\mathbf x}, {\mathbf x}) \)</span> holds for all <span class="process-math">\({\mathbf x} \in V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.6: Isometry of a Metric"><a href="#Math412-Notes-10-5-15" title="Copy heading and permalink for Definition 7.2.6: Isometry of a Metric" aria-label="Copy heading and permalink for Definition 7.2.6: Isometry of a Metric">🔗</a></div></article><div class="para" id="Math412-Notes-10-5-16">This condition is equivalent to <span class="process-math">\(g(T {\mathbf x}, T {\mathbf y})=g({\mathbf x}, {\mathbf y}) \)</span> holds for all <span class="process-math">\({\mathbf x}, {\mathbf y} \in V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-17">
+<div class="para">On an inner product space <span class="process-math">\(V\)</span> with <span class="process-math">\(g\)</span> as its inner product, there is an isomorphism <span class="process-math">\(\sharp: V^{*}\mapsto V\)</span> such that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-17-4">
+\begin{equation*}
+\alpha(\mathbf x)=g(\sharp \alpha, \mathbf x) \text{ for } \alpha \in V^{*}, \mathbf x\in V.
+\end{equation*}
+</div>
+<div class="para">This induces an inner product on <span class="process-math">\(V^{*}\)</span> via</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-17-6">
+\begin{equation*}
+g(\alpha, \beta)=g(\sharp \alpha, \sharp \beta) \text{ for } \alpha, \beta \in V^{*}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-18">An abstract vector space does not have a natural definition of volume even for cells of the form <span class="process-math">\(\left\{s_{1}{\mathbf u}_{1}+ \ldots+ s_{k} {\mathbf u}_{k}: 0\le s_{i}\le 1,
+1\le i \le k\right\}\text{.}\)</span> But once an inner product <span class="process-math">\(g\)</span> is introduced, it is natural to define the <span class="process-math">\(k\)</span> dimensional volume of such cells to be <span class="process-math">\(1\)</span> whenever <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}\)</span> is an orthonormal basis. This volume is invariant under all isometries of <span class="process-math">\(g\text{.}\)</span> If <span class="process-math">\(\left\{ {\mathbf u}_{1}, \ldots, {\mathbf u}_{k}\right\}\)</span> is an orthonormal basis of <span class="process-math">\(g\)</span> and <a href="Math412-Notes-10-5.html#basistransf" class="xref" data-knowl="./knowl/xref/basistransf.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.1">(7.2.1)</a> holds, then <a href="Math412-Notes-10-5.html#extbasis" class="xref" data-knowl="./knowl/xref/extbasis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.3">(7.2.3)</a> shows that the corresponding cell generated by <span class="process-math">\(\left\{ {\mathbf v}_{1}, \ldots, {\mathbf v}_{k}\right\}\)</span> has volume equal to <span class="process-math">\(|\det A|\text{;}\)</span> in other words, the exterior vector <span class="process-math">\({\mathbf v}_{1}\wedge \ldots\wedge {\mathbf v}_{k}\)</span> encodes both the volume and orientation of the parallelepiped formed with these vectors as edges.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-19">An inner product on <span class="process-math">\(V\)</span> is just a special kind of bilinear function on <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-5-20"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tensor Product.</span>
+</h3>
+<div class="para logical" id="Math412-Notes-10-5-20-2-1">
+<div class="para">The tensor product of any two linear functions <span class="process-math">\(\alpha, \beta\)</span> on <span class="process-math">\(V\)</span> is the bilinear function</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-20-2-1-3">
+\begin{equation*}
+\alpha \otimes \beta ({\mathbf x}, {\mathbf y})= \alpha ({\mathbf x}) \beta ({\mathbf y}) 
+\text{ for } {\mathbf x}, {\mathbf y} \in V.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="Math412-Notes-10-5-20-2-2">
+<div class="para">If <span class="process-math">\(\alpha\in {\mathcal T}^{m}(V)\)</span> and <span class="process-math">\(\beta \in {\mathcal T}^{l}(V)\text{,}\)</span> then <span class="process-math">\(\alpha \otimes \beta \in  {\mathcal T}^{m+l}(V)\)</span> is defined by</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-20-2-2-4">
+\begin{align*}
+\amp \alpha \otimes \beta (\bx_{1}, \ldots, \bx_{m},\bx_{m+1},\ldots, \bx_{m+l})\\
+= \amp \alpha(\bx_{1}, \ldots, \bx_{m})\beta (\bx_{m+1},\ldots, \bx_{m+l}) 
+\text{ for $\bx_{1}, \ldots, \bx_{m},\bx_{m+1},\ldots, \bx_{m+l} \in V$.}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-20-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.7: Tensor Product"><a href="#Math412-Notes-10-5-20" title="Copy heading and permalink for Definition 7.2.7: Tensor Product" aria-label="Copy heading and permalink for Definition 7.2.7: Tensor Product">🔗</a></div></article><div class="para" id="Math412-Notes-10-5-21">Note that <span class="process-math">\(\alpha \otimes \beta \ne  \beta \otimes \alpha \)</span> in general.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-22">For any basis <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> of <span class="process-math">\(V^{*}\)</span> for <span class="process-math">\(n\ge 2\text{,}\)</span> <span class="process-math">\(\sum_{i=1}^{n}\alpha_{i}\otimes \alpha_{i}\)</span> defines an inner product on <span class="process-math">\(V\)</span> so that its dual basis is an orthonormal basis in this metric.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="Math412-Notes-10-5-23"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Alternating Form.</span>
+</h3>
+<div class="para logical" id="Math412-Notes-10-5-23-2-1">
+<div class="para">An <span class="process-math">\(m\)</span>-linear function <span class="process-math">\(\omega \in {\mathcal T}^{m}(V)\)</span> is called an alternating form on <span class="process-math">\(V\)</span> if</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-23-2-1-4">
+\begin{equation*}
+\omega({\mathbf x}_{\sigma(1)}, \ldots, {\mathbf x}_{\sigma(m)})
+=\text{sgn}\ \sigma\, \omega({\mathbf x}_1, \ldots, {\mathbf x}_m) \text{ for all permutations } \sigma.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="Math412-Notes-10-5-23-2-2">The subspace of alternating forms on <span class="process-math">\(V\)</span> is denoted as <span class="process-math">\(\Lambda^{m}(V)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-23-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.8: Alternating Form"><a href="#Math412-Notes-10-5-23" title="Copy heading and permalink for Definition 7.2.8: Alternating Form" aria-label="Copy heading and permalink for Definition 7.2.8: Alternating Form">🔗</a></div></article><article class="definition definition-like" id="Math412-Notes-10-5-24"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Alt Map.</span>
+</h3>
+<div class="para logical" id="Math412-Notes-10-5-24-2-1">
+<div class="para">We define <span class="process-math">\(\text{Alt}: {\mathcal T}^{m}(V) \mapsto \Lambda^{m}(V)\)</span> by</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-24-2-1-2">
+\begin{equation*}
+\text{Alt}(\omega )({\mathbf x}_1, \ldots, {\mathbf x}_m) 
+=\frac{1}{m!}\sum_{\sigma}\text{sgn}\ \sigma\, \omega({\mathbf x}_{\sigma(1)}, \ldots, {\mathbf x}_{\sigma(m)})\text{,}
+\end{equation*}
+</div>
+<div class="para">and define the <dfn class="terminology">wedge product</dfn>, also called <dfn class="terminology">exterior product</dfn>,</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-24-2-1-5">
+\begin{equation*}
+\alpha \wedge \beta =\frac{(m+l)!}{m!\, l!} \text{Alt}(\alpha \otimes \beta) \text{ for }
+\alpha \in {\Lambda}^{m}(V), \beta \in {\Lambda}^{l}(V). 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-24-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.9: Alt Map"><a href="#Math412-Notes-10-5-24" title="Copy heading and permalink for Definition 7.2.9: Alt Map" aria-label="Copy heading and permalink for Definition 7.2.9: Alt Map">🔗</a></div></article><div class="para logical" id="Math412-Notes-10-5-25">
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-25-1">
+\begin{equation*}
+\text{Alt}(\omega )= \omega \text{ if $\omega \in {\Lambda}^{m}(V)$.}
+\end{equation*}
+</div>
+<div class="para">The following property will be used often.</div>
+<div class="displaymath process-math" id="eq-extprod">
+\begin{equation}
+\left(\alpha \wedge \beta \right)\wedge \gamma =\alpha \wedge  \left(\beta \wedge \gamma \right)
+=\frac{(k+l+m)!}{k!\, l!\, m!} \text{Alt}(\alpha\otimes \beta \otimes \gamma)\tag{7.2.5}
+\end{equation}
+</div>
+<div class="para">for <span class="process-math">\(\alpha \in \Lambda^{m}(V), \beta\in \Lambda^{l}(V), \gamma\in \Lambda^{k}(V)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-26">
+<div class="para">In the case of <span class="process-math">\(m=l=1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-26-2">
+\begin{equation*}
+\text{Alt}(\alpha \otimes \beta)=\frac 12 \left( \alpha \otimes \beta-\beta \otimes \alpha \right),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-26-3">
+\begin{equation*}
+\alpha \wedge \beta=\alpha \otimes \beta-\beta \otimes \alpha.
+\end{equation*}
+</div>
+<div class="para">In the case of <span class="process-math">\(k=l=m=1\)</span> we also get</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-26-5">
+\begin{align*}
+\amp \left(\alpha \wedge \beta \right)\wedge \gamma\\
+= \amp \alpha\otimes \beta \otimes \gamma
++  \beta \otimes \gamma \otimes \alpha+   \gamma \otimes \alpha\otimes \beta\\
+\amp
+-  \beta \otimes \alpha\otimes \gamma - \alpha \otimes \gamma \otimes \beta
+- \gamma \otimes \beta \otimes \alpha.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-27">
+<div class="para">It also follows that <span class="process-math">\(\alpha \wedge \alpha =0\)</span> if <span class="process-math">\(\alpha \in \Lambda^{1}(V)\text{.}\)</span> However, if <span class="process-math">\(n\ge 4\)</span> and <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> is a basis of <span class="process-math">\(V^{*}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-27-6">
+\begin{equation*}
+(\alpha_{1} \wedge \alpha_{2}+\alpha_{3} \wedge \alpha_{4})\wedge
+(\alpha_{1} \wedge \alpha_{2}+\alpha_{3} \wedge \alpha_{4})
+=2 \alpha_{1} \wedge \alpha_{2}\wedge \alpha_{3} \wedge \alpha_{4}\ne 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-28">If <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\)</span> is a basis of <span class="process-math">\(V^{*}\text{,}\)</span> then <span class="process-math">\(\{\alpha_{i}\otimes \alpha_{j}: 1\le i, j\le n\}\)</span> forms a basis of <span class="process-math">\({\mathcal T}^{2}(V)\text{,}\)</span> and <span class="process-math">\(\{\alpha_{i}\wedge \alpha_{j}: 1\le i &lt; j\le n\}\)</span> forms a basis of <span class="process-math">\(\Lambda^{2}(V)\text{.}\)</span> <span class="process-math">\(\{\alpha_{i}\otimes \alpha_{j} + \alpha_{j}\otimes \alpha_{i}: 1\le i\le j\le n\}\)</span> forms a basis of <span class="process-math">\({\mathcal S}^{2}(V)\text{,}\)</span> the space of symmetric two tensors of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-29">Alternatively, a tensor <span class="process-math">\(g\in {\mathcal S}^{2}(V)\)</span> is determined by its actions on <span class="process-math">\(\{(\bu_{i}, \bu_{j}): 1\le i\le j\le n\}\text{,}\)</span> while a tensor <span class="process-math">\(\omega\in \Lambda^{2}(V)\)</span> is determined by its actions on <span class="process-math">\(\{(\bu_{i}, \bu_{j}): 1\le i &lt; j\le n\}\text{.}\)</span> Here <span class="process-math">\(\{\bu_{1}, \ldots, \bu_{n}\}\)</span> is the dual basis of <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{n}\right\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-30">
+<div class="para">For any <span class="process-math">\(\bx =\sum_{i=1}^{n}x_{i} \bu_{i}\)</span> and <span class="process-math">\(\by =\sum_{i=1}^{n}y_{i} \bu_{i}\text{,}\)</span> then a symmetric <span class="process-math">\(2\)</span>-tensor <span class="process-math">\(g\)</span> satisfies</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-30-5">
+\begin{align*}
+g(\bx, \by)= \amp g(\sum_{i=1}^{n}x_{i} \bu_{i}, \sum_{i=1}^{n}y_{i} \bu_{i})\\
+=\amp \sum_{i=1}^{n}\sum_{j=1}^{n}x_{i} y_{j }g( \bu_{i}, \bu_{j})\\
+=\amp \sum_{i=1}^{n} x_{i} y_{i }g( \bu_{i}, \bu_{i}) +
+\sum_{i &lt; j} \left(x_{i} y_{j }+ x_{j}y_{i}\right) g( \bu_{i}, \bu_{j})
+\end{align*}
+</div>
+<div class="para">while an antisymmetric <span class="process-math">\(2\)</span>-tensor <span class="process-math">\(\omega\)</span> satisfies</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-30-8">
+\begin{equation*}
+\omega(\bx, \by)= \sum_{i=1}^{n}\sum_{j=1}^{n}x_{i} y_{j }\omega( \bu_{i}, \bu_{j})
+=\sum_{i &lt; j} \left(x_{i} y_{j }- x_{j}y_{i}\right) \omega ( \bu_{i}, \bu_{j}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-31">
+<div class="para">For example, when <span class="process-math">\(n=2\text{,}\)</span> <span class="process-math">\({\mathcal S}^{2}(\bbR^{2})\)</span> is three dimensional, while <span class="process-math">\(\Lambda^{2}(\bbR^{2})\)</span> is one dimensional, and <span class="process-math">\(g\in {\mathcal S}^{2}(\bbR^{2})\)</span> is determined by</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-31-5">
+\begin{equation*}
+g(\bx, \by)=x_{1}y_{1}g(\bu_{1}, \bu_{1})+(x_{1}y_{2}+x_{2}y_{1})g(\bu_{1}, \bu_{2})+
+x_{2}y_{2}g(\bu_{2}, \bu_{2}),
+\end{equation*}
+</div>
+<div class="para">while <span class="process-math">\(\omega \in { \Lambda}^{2}(\bbR^{2})\)</span> is determined by</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-31-7">
+\begin{equation*}
+\omega(\bx, \by)=(x_{1}y_{2}-x_{2}y_{1})\omega(\bu_{1}, \bu_{2}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-32">
+<div class="para">In computations sometimes <span class="process-math">\(\alpha_{i}\wedge \alpha_{j}\)</span> may show up even when <span class="process-math">\(i\ge j\text{,}\)</span> but to identify the coefficients of  the resulting alternating tensor, one needs to transform all terms in terms of the basis discussed above. For example, <span class="process-math">\(a\, \alpha\otimes \beta + b\, \beta\otimes \alpha \in {\mathcal T}^{2}(V)\text{,}\)</span> and if we apply the Alt operation on it, we get a tensor in <span class="process-math">\(\Lambda^{2}(V)\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-32-5">
+\begin{equation*}
+\frac{a}{2} \left(\alpha\otimes \beta- \beta\otimes \alpha\right)
++\frac{b}{2} \left( \beta\otimes \alpha- \alpha\otimes \beta \right),
+\end{equation*}
+</div>
+<div class="para">which  could be recognized to be <span class="process-math">\(\frac{a}{2} \alpha\wedge \beta + \frac{b}{2}\beta\wedge\alpha\)</span> but ends up identified as <span class="process-math">\(\frac{a-b}{2} \alpha\wedge \beta\text{.}\)</span> The discussion here applies to higher order tensors as well.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-33">We can treat vectors in <span class="process-math">\(V\)</span> as linear functions on <span class="process-math">\(V^{*}\text{,}\)</span> then tensor product and exterior product  on <span class="process-math">\(V\)</span> make sense. For instance, for any <span class="process-math">\(\bu, \bv \in V\text{,}\)</span> <span class="process-math">\(\bu\otimes \bv \in {\mathcal T}^{2}(V^{*})\)</span> in the sense that <span class="process-math">\(\bu\otimes \bv (\alpha, \beta)= \alpha (\bu) \beta (\bv)\)</span> and <span class="process-math">\(\bu\wedge\bv \in {\Lambda}^{2}(V^{*})\)</span> in the sense that <span class="process-math">\(\bu\wedge \bv (\alpha, \beta)= \alpha (\bu) \beta (\bv)-\alpha(\bv)\beta (\bu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-34">
+<div class="para">For any linear transformation <span class="process-math">\(L:V\mapsto W\text{,}\)</span> there is a naturally defined adjoint map, labeled as <span class="process-math">\(L^{*}\text{,}\)</span> such that for any <span class="process-math">\(\alpha \in W^{*}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="eq-adj">
+\begin{equation}
+L^{*}(\alpha)\in V^{*} \text{ is defined via }  L^{*}(\alpha)({\mathbf x})=\alpha(L({\mathbf x})) \text{ for all }
+{\mathbf x} \in V.\tag{7.2.6}
+\end{equation}
+</div>
+<div class="para">In fact, one can define <span class="process-math">\(L^{*}\)</span> on <span class="process-math">\({\mathcal T}^{m}(W)\)</span> in a similar way such that for any <span class="process-math">\(\omega\in {\mathcal T}^{m}(W)\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-34-8">
+\begin{equation*}
+L^{*}(\omega)({\mathbf x}_{1}, \ldots, {\mathbf x}_{m})
+=\omega(L({\mathbf x}_{1}), \ldots, L({\mathbf x}_{m})) \text{ for all }
+{\mathbf x}_{1}, \ldots, {\mathbf x}_{m} \in V.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Math412-Notes-10-5-35">For a metric <span class="process-math">\(g\)</span> on <span class="process-math">\(W\text{,}\)</span> <span class="process-math">\(L^{*}(g)\)</span> is a metric on <span class="process-math">\(V\)</span> provided that <span class="process-math">\(L\)</span> is injective. In such a case, we call <span class="process-math">\(L^{*}(g)\)</span> the <dfn class="terminology">pull-back metric</dfn> of <span class="process-math">\(g\)</span> by <span class="process-math">\(L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-36">
+<div class="para">When <span class="process-math">\(\omega\)</span> is an alternating tensor on <span class="process-math">\(W\text{,}\)</span> <span class="process-math">\(L^{*}(\omega)\)</span> is an alternating tensor on <span class="process-math">\(V\text{.}\)</span> Furthermore, for two alternating tensors <span class="process-math">\(\alpha, \beta\)</span> on <span class="process-math">\(W\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-36-7">
+\begin{equation*}
+L^{*}(\alpha\wedge \beta)= L^{*}(\alpha)\wedge L^{*}(\beta).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Math412-Notes-10-5-37">
+<div class="para">A property related to <a href="Math412-Notes-10-5.html#eq-adj" class="xref" data-knowl="./knowl/xref/eq-adj.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.6">(7.2.6)</a> is that for any two bases <span class="process-math">\(\{\bu_{1},\cdots, \bu_{n}\}\)</span> and <span class="process-math">\(\{\bv_{1},\cdots, \bv_{n}\}\)</span> of <span class="process-math">\(V\text{,}\)</span> let <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{n}\}\)</span> and <span class="process-math">\(\{\beta_{1}, \cdots, \beta_{n}\}\)</span> be their respective dual bases in <span class="process-math">\(V^{*}\text{,}\)</span> then for any vector <span class="process-math">\(X\in V\text{,}\)</span> and covector <span class="process-math">\(\omega \in V^{*}\text{,}\)</span> if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-adj.html" id="Math412-Notes-10-5-37-10">
+\begin{equation*}
+X=\sum_{i=1}^{n}x_{i} \bu_{i}=\sum_{i=1}^{n}y_{i}\bv_{i}, \quad
+\omega=\sum_{i=1}^{n} a_{i} \alpha_{i}=\sum_{i=1}^{n} b_{i}\beta_{i}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-adj.html" id="Math412-Notes-10-5-37-11">
+\begin{equation*}
+\omega (X) = \sum_{i=1}^{n} a_{i} x_{i}=\sum_{i=1}^{n} b_{i} y_{i}.
+\end{equation*}
+</div>
+<div class="para">In the context of Stokes Theorem we will treat <span class="process-math">\(\sum_{i=1}^{n} X_{i}(\bx)x_{i}'(t)\)</span> as the pairing between a vector and a covector  and will apply the above  transformation property when applying a change of variables.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-37" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="Math412-Notes-10-5-38"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="Math412-Notes-10-5-38-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-1-1">Let <span class="process-math">\(\alpha, \beta\in V^{*}\)</span> be such that <span class="process-math">\(\{\bx \in V: \alpha(\bx)=0\}\)</span> is identical to <span class="process-math">\(\{\bx \in V: \beta(\bx)=0\}\text{.}\)</span> Prove that there exists some constant <span class="process-math">\(c\)</span> such that <span class="process-math">\(\alpha =c\beta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.1"><a href="#Math412-Notes-10-5-38-1" title="Copy heading and permalink for Exercise 7.2.1" aria-label="Copy heading and permalink for Exercise 7.2.1">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-2-1">Prove that <span class="process-math">\(T:V\mapsto V\)</span> is an isometry with respect to the metric <span class="process-math">\(g\)</span> iff <span class="process-math">\(g(T\bx, T\by)=g(\bx, \by)\)</span> for all <span class="process-math">\(\bx, \by \in V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.2"><a href="#Math412-Notes-10-5-38-2" title="Copy heading and permalink for Exercise 7.2.2" aria-label="Copy heading and permalink for Exercise 7.2.2">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-3-1">Let <span class="process-math">\(\{\bu_{1},\cdots, \bu_{n}\}\)</span> be a basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{n}\}\)</span> be its dual basis. Let <span class="process-math">\(g\)</span> be a metric on <span class="process-math">\(V\text{,}\)</span> and <span class="process-math">\(g_{ij}=g(\bu_{i},\bu_{j})\text{.}\)</span> Then for the covector <span class="process-math">\(\alpha=\sum_{i=1}^{n} a_{i} \alpha_{i}\in V^{*}\text{,}\)</span> we have <span class="process-math">\(\sharp \alpha= \sum_{i, j=1}^{n} a_{i} g^{ij}\bu_{j}\text{,}\)</span> where <span class="process-math">\(g^{ij}\)</span> are the coefficients of the inverse matrix of <span class="process-math">\([g_{ij}]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.3"><a href="#Math412-Notes-10-5-38-3" title="Copy heading and permalink for Exercise 7.2.3" aria-label="Copy heading and permalink for Exercise 7.2.3">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-4-1">Prove the general case of <a href="Math412-Notes-10-5.html#extbasis" class="xref" data-knowl="./knowl/xref/extbasis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.3">(7.2.3)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.4"><a href="#Math412-Notes-10-5-38-4" title="Copy heading and permalink for Exercise 7.2.4" aria-label="Copy heading and permalink for Exercise 7.2.4">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="Math412-Notes-10-5-38-5-1">
+<div class="para">Let <span class="process-math">\(\left\{\alpha_{1},\ldots, \alpha_{2n}\right\}\)</span> be a basis of <span class="process-math">\(V^{*}\)</span> and <span class="process-math">\(\omega=\alpha_{1} \wedge \alpha_{2}+\alpha_{3} \wedge \alpha_{4}+\cdots+
+\alpha_{2n-1} \wedge \alpha_{2n} \in \Lambda^{2}(V)\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="Math412-Notes-10-5-38-5-1-4">
+\begin{equation*}
+\omega\wedge \cdots \wedge \omega = n! \ \alpha_{1} \wedge \alpha_{2}\wedge\alpha_{3} \wedge \alpha_{4}\wedge \cdots \wedge
+\alpha_{2n-1} \wedge \alpha_{2n}\text{,}
+\end{equation*}
+</div>
+<div class="para">where the wedge product has <span class="process-math">\(n\)</span> factors of <span class="process-math">\(\omega\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.5"><a href="#Math412-Notes-10-5-38-5" title="Copy heading and permalink for Exercise 7.2.5" aria-label="Copy heading and permalink for Exercise 7.2.5">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-6-1">Let <span class="process-math">\(\{\bu_{1},\cdots, \bu_{n}\}\)</span> be a basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{n}\}\)</span> be its dual basis in <span class="process-math">\(V^{*}\text{,}\)</span> <span class="process-math">\(\{\bv_{1},\cdots, \bv_{m}\}\)</span> a basis of <span class="process-math">\(W\)</span> and <span class="process-math">\(\{\beta_{1}, \cdots, \beta_{m}\}\)</span> be its dual basis in <span class="process-math">\(W^{*}\text{.}\)</span> Let <span class="process-math">\(L:V\mapsto W\)</span> be a linear map and the <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> be the matrix representation of <span class="process-math">\(L\)</span> with respect to the bases <span class="process-math">\(\{\bu_{1},\cdots, \bu_{n}\}\)</span> and <span class="process-math">\(\{\bv_{1},\cdots, \bv_{m}\}\text{.}\)</span> Then <span class="process-math">\(L^{*}\)</span> is represented by <span class="process-math">\(A^{\rm T}\)</span> with respect to the bases <span class="process-math">\(\{\beta_{1}, \cdots, \beta_{m}\}\)</span> and <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{n}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.6"><a href="#Math412-Notes-10-5-38-6" title="Copy heading and permalink for Exercise 7.2.6" aria-label="Copy heading and permalink for Exercise 7.2.6">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="Math412-Notes-10-5-38-7-1">Let <span class="process-math">\(\{\bu_{1},\cdots, \bu_{n}\}\)</span> and <span class="process-math">\(\{\bv_{1},\cdots, \bv_{n}\}\)</span> of <span class="process-math">\(V\)</span> be two bases of <span class="process-math">\(V\text{,}\)</span>  and <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{n}\}\)</span> and <span class="process-math">\(\{\beta_{1}, \cdots, \beta_{n}\}\)</span> be their respective dual bases in <span class="process-math">\(V^{*}\text{.}\)</span> Suppose that <span class="process-math">\(\bv_{i}=\sum_{k=1}^{n}a_{ik} \bu_{k}\)</span> for some matrix <span class="process-math">\(A=[a_{ik}]\text{.}\)</span> Prove that <span class="process-math">\(\beta_{i}=\sum_{k=1}^{n}b_{ik} \alpha_{k}\text{,}\)</span> where <span class="process-math">\([b_{ik}]=(A^{-1})^{T}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.7"><a href="#Math412-Notes-10-5-38-7" title="Copy heading and permalink for Exercise 7.2.7" aria-label="Copy heading and permalink for Exercise 7.2.7">🔗</a></div></article><article class="exercise exercise-like" id="Math412-Notes-10-5-38-8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="Math412-Notes-10-5-38-8-1">
+<div class="para">Prove <a href="Math412-Notes-10-5.html#eq-extprod" class="xref" data-knowl="./knowl/xref/eq-extprod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.5">(7.2.5)</a> and use it to show that for any <span class="process-math">\(k\)</span> covectors <span class="process-math">\(\{\alpha_{1},\cdots, \alpha_{k}\}\)</span> in <span class="process-math">\(V^{*}\)</span> and <span class="process-math">\(k\)</span> vectors <span class="process-math">\(\{\bu_{1},\cdots, \bu_{k}\}\)</span> in <span class="process-math">\(V\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-extprod.html" id="Math412-Notes-10-5-38-8-1-8">
+\begin{equation*}
+\alpha_{1}\wedge \cdots\wedge \alpha_{k}(\bu_{1},\cdots, \bu_{k})
+=\det \left[ \alpha_{i}(\bu_{j})\right].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Math412-Notes-10-5-38-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.8"><a href="#Math412-Notes-10-5-38-8" title="Copy heading and permalink for Exercise 7.2.8" aria-label="Copy heading and permalink for Exercise 7.2.8">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.2"><a href="#Math412-Notes-10-5-38" title="Copy heading and permalink for Exercises 7.2" aria-label="Copy heading and permalink for Exercises 7.2">🔗</a></div></section><div class="autopermalink" data-description="Section 7.2: Dual space, Tensor product, and Exterior Algebra"><a href="#Math412-Notes-10-5" title="Copy heading and permalink for Section 7.2: Dual space, Tensor product, and Exterior Algebra" aria-label="Copy heading and permalink for Section 7.2: Dual space, Tensor product, and Exterior Algebra">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="Math412-Notes-10-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Math412-Notes-10-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

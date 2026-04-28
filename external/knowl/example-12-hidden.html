@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">Often we are interested in whether eigenvectors and eigenvalues of a matrix depend on the entries of the matrix in a continuous or differentiable way. Since any non-zero multiple of an eigenvector of a matrix is still an eigenvector, we need to impose some normalizing condition to speak of a continuously varying eigenvector.</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(A_{0}\)</span> be an <span class="process-math">\(n\times n\)</span> matrix and <span class="process-math">\(\bx_{0}\ne \mathbf 0\)</span> satisfies <span class="process-math">\(A_{0}\bx_{0}=\lambda_{0}\bx_{0}\)</span> for some <span class="process-math">\(\lambda_{0}\text{.}\)</span> We normalize <span class="process-math">\(\bx_{0}\)</span> such that <span class="process-math">\(\Vert \bx_{0}\Vert=1\)</span> (We use the Euclidean metric here for its desirable differentiability). Then a unit norm eigenvector and eigenvalue pair of matrix <span class="process-math">\(A\)</span> can be formulated as to satisfy</div>
+<div class="displaymath process-math">
+\begin{equation}
+F(A; \bx, \lambda)=((A-\lambda)\bx, \Vert \bx \Vert^{2})=(\mathbf 0, 1)\in \bbR^{n+1}\text{.}\tag{4.5.7}
+\end{equation}
+</div>
+<div class="para">Note that <span class="process-math">\(F(A; \bx, \lambda)\)</span> has continuous partial derivatives as a function of <span class="process-math">\((A; \bx, \lambda)\in \bbR^{n\times n}\times \bbR^{n}\times \bbR\text{.}\)</span> Our aim is to solve for <span class="process-math">\((\bx, \lambda)\)</span> as a function of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div class="para">
+<dfn class="terminology">Claim</dfn>. Suppose that <span class="process-math">\(A_{0}\)</span> is symmetric and <span class="process-math">\(\bx_{0}\)</span> is a <em class="alert">simple</em> eigenvector with eigenvalue <span class="process-math">\(\lambda_{0}\text{,}\)</span> namely, the eigenspace of <span class="process-math">\(A-\lambda_{0}I\)</span> is one-dimensional and spanned by <span class="process-math">\(\bx_{0}\text{.}\)</span> Then there exists some <span class="process-math">\(\delta &gt;0\)</span> and differentiable functions <span class="process-math">\(Evc(A)\in \bbR^{n}\)</span> and <span class="process-math">\(Evl(A)\in \bbR\)</span> defined for  matrices <span class="process-math">\(A\)</span> with <span class="process-math">\(\Vert A-A_{0}\Vert \lt \delta\text{,}\)</span> such that <a href="" class="xref" data-knowl="./knowl/egv.html" title="Equation 4.5.7">(4.5.7)</a> holds with <span class="process-math">\(\bx=Evc(A)\)</span> and <span class="process-math">\(\lambda=Evl(A)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">According to the Implicit Function Theorem, we need to verify that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{(\bx, \lambda)}F(A_{0},\bx_{0},\lambda_{0})
+\end{equation*}
+</div>
+<div class="para">is an invertible map of <span class="process-math">\(\bbR^{n+1}\text{.}\)</span> But</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{(\bx, \lambda)}F(A_{0},\bx_{0},\lambda_{0})(\bv, s)=
+((A_{0}-\lambda_{0})\bv -s \bx_{0}, 2 \bx_{0}\cdot \bv).
+\end{equation*}
+</div>
+<div class="para">We need to establish the unique solvability in <span class="process-math">\((\bv, s)\)</span> of</div>
+<div class="displaymath process-math">
+\begin{align}
+(A_{0}-\lambda_{0}I)\bv -s \bx_{0} \amp = \bw \tag{4.5.8}\\
+2 \bx_{0}\cdot \bv \amp = t\tag{4.5.9}
+\end{align}
+</div>
+<div class="para">for any given <span class="process-math">\(\bw \in \bbR^{n}\text{,}\)</span> <span class="process-math">\(t\in \bbR\text{.}\)</span>
+</div>
+</div> <div class="para">Under our assumption, the matrix <span class="process-math">\(A-\lambda_{0}I\)</span> has rank <span class="process-math">\((n-1)\)</span> and <span class="process-math">\((A-\lambda_{0}I)\bv=\bc\)</span> has a solution iff <span class="process-math">\(\bc\cdot \bx_{0}=0\text{.}\)</span> Thus <a href="" class="xref" data-knowl="./knowl/egv1.html" title="Equation 4.5.8">(4.5.8)</a> has a solution when <span class="process-math">\((s\bx_{0}+\bw)\cdot \bx_{0}=0\text{,}\)</span> which determines <span class="process-math">\(s\)</span> uniquely: <span class="process-math">\(s=- \bw\cdot \bx_{0}\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/egv2.html" title="Equation 4.5.9">(4.5.9)</a>, together with <a href="" class="xref" data-knowl="./knowl/egv1.html" title="Equation 4.5.8">(4.5.8)</a>, then determine <span class="process-math">\(\bv\)</span> uniquely.</div> <div class="para">Note that matrix <span class="process-math">\(A\)</span> need not be symmetric.</div> <div class="para">
+<dfn class="terminology">Question</dfn>: <div class="para">Can either the symmetry assumption of <span class="process-math">\(A_{0}\)</span> or the simplicity assumption on the eigenspace be dropped entirely to have the same conclusions?</div> <em class="emphasis">Hint</em>: Examine the behavior of eigenvectors and eigenvalues of simple <span class="process-math">\(2\times 2\)</span> matrices.</div></article></body>
+</html>

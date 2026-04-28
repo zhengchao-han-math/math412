@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\cP_{1}, \cP_{2}\)</span> be two arbitrary partitions of <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(\cP^{*}\)</span> be a refinement of both <span class="process-math">\(\cP_{1}\)</span> and <span class="process-math">\(\cP_{2}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(f, \cP_{1})\le L(f, \cP^{*})\le U(f, \cP^{*})\le U(f, \cP_{2}).
+\end{equation*}
+</div>
+<div class="para">As a result,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(f, \cP_{1})\le  \upint_{R} \, f =\inf_{\cP_{2}} U(f, \cP_{2}),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lowint_{R} \, f =\sup_{\cP_{1}} L(f, \cP_{1})\le \upint_{R} \, f.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">For any <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> first find a partition <span class="process-math">\(\cP_{2}\)</span> of <span class="process-math">\(R\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\upint_{R} \, f \le U(f, \cP_{2}) \le \upint_{R} \, f + \epsilon.
+\end{equation*}
+</div>
+<div class="para">Now take any partition <span class="process-math">\(\cP\)</span> of <span class="process-math">\(R\)</span> of small partition size <span class="process-math">\(\lambda(\cP)\)</span> (to be determined). Let <span class="process-math">\(\cP^{*}\)</span> be the canonical refinement of <span class="process-math">\(\cP\)</span> and <span class="process-math">\(\cP_{2}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\upint_{R} \, f \le U(f, \cP_{*}) \le U(f, \cP_{2}) \le \upint_{R} \, f + \epsilon.
+\end{equation*}
+</div>
+<div class="para">and there exists a number <span class="process-math">\(N\)</span> depending only on the  partition <span class="process-math">\(\cP_{2}\)</span> such that in the sums <span class="process-math">\(U(f,\cP)\)</span> and <span class="process-math">\(U(f, \cP^{*})\text{,}\)</span> all but at most <span class="process-math">\(N\)</span> terms may differ, as in the construction of <span class="process-math">\(\cP^{*}\text{,}\)</span> the number of sub intervals of the factors of <span class="process-math">\(\cP\)</span> that need to be refined in relation to <span class="process-math">\(\cP_{2}\)</span> has a bound that depends only on <span class="process-math">\(\cP_{2}\text{.}\)</span> Note that  each term that may differ has a factor from the volume of the sub rectangle which is bounded above by <span class="process-math">\((\lambda(\cP))^{n}\text{,}\)</span> and  the remaining factor is bounded above in absolute value by <span class="process-math">\(\sup_{R}|f|\text{,}\)</span> thus each such term  is bounded above in absolute value by <span class="process-math">\(\sup_{R}|f| (\lambda(\cP))^{n}\text{,}\)</span> as a result</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert U(f,\cP)- U(f, \cP^{*})\vert \le N \sup_{R}|f| (\lambda(\cP))^{n}.
+\end{equation*}
+</div>
+<div class="para">It now follows that there exists some <span class="process-math">\(\delta &gt;0\)</span> such that whenever <span class="process-math">\(\lambda(\cP) &lt; \delta\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vert U(f,\cP)- U(f, \cP^{*})\vert &lt; \epsilon  \text{ so }  U(f,\cP) &lt; \upint_{R} \, f + 2\epsilon,
+\end{equation*}
+</div>
+<div class="para">proving that <span class="process-math">\(\lim_{\lambda(\cP)\to 0} U(f, \cP)= \upint_{R} \, f\text{.}\)</span>
+</div>
+</div> <div class="para">The proof of <span class="process-math">\(\sup_{\cP}L(f, \cP) = \lim_{\lambda(\cP)\to 0} L(f, \cP)\)</span> is done in a similar way.</div></article></body>
+</html>

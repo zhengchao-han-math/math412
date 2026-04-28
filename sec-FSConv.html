@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Convergence of the Trigonometric Fourier Series</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-orthogonal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Fseries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="int-diff.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-31" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-11" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-18" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-FSConv"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Convergence of the Trigonometric Fourier Series</span>
+</h2>
+<div class="para" id="sec-FSConv-2">We now investigate the issue of convergence of the trigonometric Fourier series. To simplify the set up, we will take <span class="process-math">\(l=\pi\)</span> from now on; the general case can be reduced to this case by a simple change of variables <span class="process-math">\(x\mapsto \pi x/l\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-FSConv-3">
+<div class="para">In an earlier exercise it is established that</div>
+<div class="displaymath process-math" id="sec-FSConv-3-1">
+\begin{equation*}
+S_{N}[g](x)=\sum_{n=-N}^{N} c_{n} e^{i nx}=
+\frac{1}{2\pi} \int_{-\pi}^{\pi}g(t) D_{N}(x-t)\, dt
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="sec-FSConv-3-2">
+\begin{equation*}
+D_{N}(t)= \sum_{-N}^{N} e^{-i n t}=\frac{\sin (N+\frac 12)t }{\sin\frac { t}{2}}.
+\end{equation*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="sec-FSConv-3-3">
+\begin{equation*}
+\frac{1}{2\pi} \int_{-\pi}^{\pi} D_{N}(t)\, dt=1.
+\end{equation*}
+</div>
+<div class="para">Using this property and extending <span class="process-math">\(g(x)\)</span> as a <span class="process-math">\(2\pi\)</span> periodic function on <span class="process-math">\(\bbR\)</span> we have</div>
+<div class="displaymath process-math" id="sec-FSConv-3-7">
+\begin{equation*}
+S_N[g]( x)= \frac{1}{2\pi} \int_{-\pi}^{\pi} g(x-t) D_{N}(t)\, dt
+\end{equation*}
+</div>
+<div class="para">by a change of variable <span class="process-math">\(t \mapsto x-t\)</span> in <span class="process-math">\(\int_{-\pi}^{\pi} g(t)D_{N}(x-t)\, dt\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-FSConv-3-10">
+\begin{align*}
+S_N[g]( x)-g(x)\amp = \frac{1}{2\pi} \int_{-\pi}^{\pi}[g(x-t) -g(x)] D_{N}(t)\, dt\\
+\amp=\frac{1}{2\pi} \int_{-\pi}^{\pi}
+h(x; t) \sin (N+\frac 12)t\; dt,
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(h(x; t)=\frac{g(x-t) -g(x)}{\sin \frac t2}\text{.}\)</span> The following Riemann-Lebesgue Lemma plays an important role.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="RLL"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann-Lebesgue Lemma.</span>
+</h3>
+<div class="para logical" id="RLL-2-1">
+<div class="para">For any Riemann integrable function <span class="process-math">\(h\)</span> on <span class="process-math">\((-\pi, \pi)\text{,}\)</span> the following holds</div>
+<div class="displaymath process-math" id="RLL-2-1-3">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt\to 0 \text{ as } \lambda \to \infty.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#RLL-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.2.1: Riemann-Lebesgue Lemma"><a href="#RLL" title="Copy heading and permalink for Lemma 4.2.1: Riemann-Lebesgue Lemma" aria-label="Copy heading and permalink for Lemma 4.2.1: Riemann-Lebesgue Lemma">🔗</a></div></article><details id="RLL-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="RLL-3-1">If we only take <span class="process-math">\(\lambda=N\)</span> as integers, then this follows from the Bessel’s inequality. The same argument also shows that <span class="process-math">\(\int_{-\pi}^{\pi} h(t)\cos(N t)\, dt\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> These properties are sufficient for applications to <span class="process-math">\(\int_{-\pi}^{\pi}
+h(x; t) \sin (N+\frac 12)t\; dt\text{,}\)</span> as <span class="process-math">\(\sin (N+\frac 12)t=\cos\frac t2 \sin(Nt)+\sin\frac t2 \cos(Nt)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#RLL-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="RLL-3-2">
+<div class="para">For the general case, first note that if <span class="process-math">\(h\in C^{1}[-\pi, \pi]\text{,}\)</span> then integration by parts gives</div>
+<div class="displaymath process-math" id="RLL-3-2-2">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= - h(t)\lambda^{-1} \cos (\lambda t) \Big|_{-\pi}^{\pi} +
+\int_{-\pi}^{\pi} \lambda^{-1} \cos (\lambda t) h'(t)\, dt \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(\lambda \to \infty\text{.}\)</span> For the given <span class="process-math">\(h\in \cR[-\pi, \pi]\text{,}\)</span> take any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> we first find some <span class="process-math">\(\hat h \in C^{1}[-\pi, \pi]\)</span> such that <span class="process-math">\(\int_{-\pi}^{\pi} |h(t)-\hat h(t)|\, dt \lt \epsilon\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="RLL-3-2-8">
+\begin{equation*}
+\int_{-\pi}^{\pi} h(t)\sin(\lambda t)\, dt= \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt + 
+\int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt,
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="RLL-3-2-9">
+\begin{equation*}
+\vert \int_{-\pi}^{\pi} [h(t)-\hat h(t)]\sin(\lambda t)\, dt\vert \le \int_{-\pi}^{\pi} \vert h(t)-\hat h(t)\vert \, dt \lt \epsilon,
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\vert \int_{-\pi}^{\pi} \hat h(t)\sin(\lambda t)\, dt \vert \lt \epsilon\)</span> for all sufficiently large <span class="process-math">\(\lambda\text{,}\)</span> which concludes our proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#RLL-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.1.1"><a href="#RLL-3" title="Copy heading and permalink for Proof 4.2.1.1" aria-label="Copy heading and permalink for Proof 4.2.1.1">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-FSConv-5"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Convergence Criterion for the Trigonometric Fourier series.</span>
+</h3>
+<div class="para logical" id="sec-FSConv-5-2-1">
+<div class="para">Suppose that <span class="process-math">\(g\)</span> is a <span class="process-math">\(2\pi\)</span> periodic function on <span class="process-math">\(\bbR\)</span> and <span class="process-math">\(x\in (-\pi, \pi)\)</span> is such that  there exist <span class="process-math">\(\delta&gt; 0\)</span> and <span class="process-math">\(M &lt; \infty\)</span> such that</div>
+<div class="displaymath process-math" id="locLip">
+\begin{equation}
+|g(x+t)-g(x)|\le M |t| \text{   for all } t\in (-\delta, \delta).\tag{4.2.1}
+\end{equation}
+</div>
+<div class="para">Then <span class="process-math">\(S_N[g]( x)-g(x)\to 0\)</span> as <span class="process-math">\(N\to\infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.2.2: A Convergence Criterion for the Trigonometric Fourier series"><a href="#sec-FSConv-5" title="Copy heading and permalink for Theorem 4.2.2: A Convergence Criterion for the Trigonometric Fourier series" aria-label="Copy heading and permalink for Theorem 4.2.2: A Convergence Criterion for the Trigonometric Fourier series">🔗</a></div></article><details id="sec-FSConv-5-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-FSConv-5-3-1">Under our assumption, <span class="process-math">\(h(x; t)=\frac{g(x-t) -g(x)}{\sin \frac t2}\)</span> is Riemann integrable on <span class="process-math">\((-\pi, \pi)\text{,}\)</span> so we can apply the Riemann-Lebesgue  <a href="sec-FSConv.html#RLL" class="xref" data-knowl="./knowl/xref/RLL.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.1: Riemann-Lebesgue Lemma">Lemma 4.2.1</a> to draw our conclusion.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.2.1"><a href="#sec-FSConv-5-3" title="Copy heading and permalink for Proof 4.2.2.1" aria-label="Copy heading and permalink for Proof 4.2.2.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-FSConv-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-FSConv-6-1">Condition <a href="sec-FSConv.html#locLip" class="xref" data-knowl="./knowl/xref/locLip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2.1">(4.2.1)</a> implies that <span class="process-math">\(g\)</span> is continuous at <span class="process-math">\(x\text{.}\)</span>  Note that if <span class="process-math">\(g'(x)\)</span> exists, then <a href="sec-FSConv.html#locLip" class="xref" data-knowl="./knowl/xref/locLip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2.1">(4.2.1)</a> is satisfied at <span class="process-math">\(x\text{.}\)</span> In fact, <a href="sec-FSConv.html#locLip" class="xref" data-knowl="./knowl/xref/locLip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2.1">(4.2.1)</a> is satisfied at <span class="process-math">\(x\)</span> if both the left derivative <span class="process-math">\(g'(x-)\)</span> and the right derivative <span class="process-math">\(g'(x+)\)</span> exist.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-FSConv-6-2">
+<div class="para">If <span class="process-math">\(g(t)\)</span> has both a right limit <span class="process-math">\(g(x+)\)</span> and a left limit <span class="process-math">\(g(x-)\)</span> at <span class="process-math">\(x\)</span> and <span class="process-math">\(g(x+)\ne g(x-)\text{,}\)</span> we can rewrite <span class="process-math">\(S_N[g]( x)\)</span> as</div>
+<div class="displaymath process-math" id="sec-FSConv-6-2-7">
+\begin{equation*}
+S_N[g]( x)= \frac{1}{2\pi} \int_{0}^{\pi}\left[ g(x-t)+g(x+t)\right] D_{N}(t)\, dt,
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="sec-FSConv-6-2-8">
+\begin{align*}
+\amp S_N[g]( x)-\frac{g(x+)+g(x-)}{2}\\
+= \amp \frac{1}{2\pi} \int_{0}^{\pi}\left[ g(x-t)-g(x-)+g(x+t)-g(x+)\right] D_{N}(t)\, dt.
+\end{align*}
+</div>
+<div class="para">If <span class="process-math">\(g(t)\)</span> satisfies</div>
+<div class="displaymath process-math" id="sec-FSConv-6-2-10">
+\begin{equation*}
+\vert g(x-t)-g(x-) \vert, \vert g(x+t)-g(x+)\vert \le M t\text{ for $t&gt; 0$ near $0$},
+\end{equation*}
+</div>
+<div class="para">we can make the same argument to show that <span class="process-math">\(S_N[g]( x)-\frac{g(x+)+g(x-)}{2}\to 0\)</span> as <span class="process-math">\(N\to\infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-FSConv-6-3">Note that whether or not  <span class="process-math">\(h(x; t)\)</span> is integrable so as to apply  <a href="sec-FSConv.html#RLL" class="xref" data-knowl="./knowl/xref/RLL.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.1: Riemann-Lebesgue Lemma">Lemma 4.2.1</a> depends only on the the local behavior of <span class="process-math">\(g(t)\)</span> near <span class="process-math">\(x\text{,}\)</span> so whether or not <span class="process-math">\(S_N[g]( x)\)</span> converges depends only on the local behavior of <span class="process-math">\(g(t)\)</span> near <span class="process-math">\(x\text{.}\)</span> This is known as the <em class="emphasis">Riemann’s localization theorem</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.2.3"><a href="#sec-FSConv-6" title="Copy heading and permalink for Remark 4.2.3" aria-label="Copy heading and permalink for Remark 4.2.3">🔗</a></div></article><div class="para" id="sec-FSConv-7">As a consequence	of the above theorem, if <span class="process-math">\(g\in C[-\pi, \pi]\)</span> and has continuous derivative on <span class="process-math">\(C[-\pi, \pi]\text{,}\)</span> we can redefine <span class="process-math">\(g(-\pi)\)</span> to be <span class="process-math">\(g(\pi)\)</span> and extend this function to be a <span class="process-math">\(2\pi\)</span> periodic function on <span class="process-math">\(\bbR\text{.}\)</span> Then the resulting function satisfies the assumption of the above theorem at any <span class="process-math">\(x\)</span> such that <span class="process-math">\(-\pi \lt x \lt \pi\text{,}\)</span> so <span class="process-math">\(S_N[g]( x)\to g(x)\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> At <span class="process-math">\(x=\pi\text{,}\)</span> the left limit of the extended function is <span class="process-math">\(g(\pi)\)</span> and the right limit  of the extended function is <span class="process-math">\(g(-\pi)\text{.}\)</span> Thus <span class="process-math">\(S_N[g]( \pi)\to \frac{g(\pi)+g(-\pi)}{2}\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> Since the Fourier series expansion here is <span class="process-math">\(2\pi\)</span> periodic, the proper interpretation of the expansion is that the series equals the <span class="process-math">\(2\pi\)</span> periodic extension of the given function on <span class="process-math">\((-\pi, \pi]\)</span> in the above sense.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-FSConv-8">In applying Fourier expansions, it is important to have a keen awareness of the system of orthogoal functions we are working with. For example, if we are working with the set of orthogonal functions <span class="process-math">\(\{ \sin (nx): n\in \mathbb N\}\)</span> on <span class="process-math">\([0, \pi]\text{,}\)</span> then the Fourier series expansion of a function <span class="process-math">\(f\in \cR[0, \pi]\)</span> with respect to this set of orthogonal functions is <span class="process-math">\(\sum_{n=1}^{\infty} b_{n} \sin (nx)\text{,}\)</span> where <span class="process-math">\(b_{n}=\frac{2}{\pi} \int_{0}^{\pi} f(x) \sin (nx)\, dx\text{.}\)</span> The proper interpretation of this expansion is that the series equals the odd extension of the given function on <span class="process-math">\((-\pi, \pi)\)</span> in the above sense. In particular, if <span class="process-math">\(f\in C[0, \pi]\)</span> and <span class="process-math">\(f(0)\ne 0\)</span> or <span class="process-math">\(f(\pi)\ne 0\text{,}\)</span> then the odd extension of <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\(0\)</span> or at <span class="process-math">\(\pi\text{,}\)</span> so the Fourier series expansion of <span class="process-math">\(f\)</span> with respect to the set of orthogonal functions <span class="process-math">\(\{ \sin (nx): n\in \mathbb N\}\)</span> at <span class="process-math">\(0\)</span> or at <span class="process-math">\(\pi\)</span> does not converge to <span class="process-math">\(f(0)\)</span> or to <span class="process-math">\(f(\pi)\text{,}\)</span> but converges to <span class="process-math">\(0\)</span> instead. A similar phenomenon occurs if we are working with the set of orthogonal functions <span class="process-math">\(\{ \cos (nx): n\in \mathbb N\cup \{0\}\}\)</span> on <span class="process-math">\([0, \pi]\text{,}\)</span> then the Fourier series expansion of a function <span class="process-math">\(f\in \cR[0, \pi]\)</span> with respect to this set of orthogonal functions is <span class="process-math">\(\frac{a_0}{2}+\sum_{n=1}^{\infty} a_{n} \cos (nx)\text{,}\)</span> where <span class="process-math">\(a_{n}=\frac{2}{\pi} \int_{0}^{\pi} f(x) \cos (nx)\, dx\text{.}\)</span> The proper interpretation of this expansion is that the series equals the even extension of the given function on <span class="process-math">\((-\pi, \pi)\)</span> in the above sense.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-FSConv-9">Often, a function <span class="process-math">\(g\)</span> is given by some analytic expression, but that expression outside of the relevant interval has no direct bearing on the Fourier series expansion of <span class="process-math">\(g\)</span> with respect to a given set of orthogonal functions. The following figures illustrate the above phenomenon of different extensions of a given function on <span class="process-math">\([0, \pi]\)</span> or on <span class="process-math">\([-\pi, \pi]\)</span> and the resulting different Fourier series expansions with respect to the sets of orthogonal functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-FS"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;grid-template-columns:31.0344827586207% 31.0344827586207% 31.0344827586207%;column-gap:3.333333333333333%;">
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fig-FS-0TPP"><img src="external/images/FS-0TPP.png" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph  of <span class="process-math">\(f(x)=x\)</span> and its Fourier serires on <span class="process-math">\([0, 2\pi]\)</span> together with the graphs of their <span class="process-math">\(2\pi\)</span> periodic extensions<div class="autopermalink" data-description="Figure 4.2.4.(a)"><a href="#fig-FS-0TPP" title="Copy heading and permalink for Figure 4.2.4.(a)" aria-label="Copy heading and permalink for Figure 4.2.4.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fig-Cos-Sin"><img src="external/images/FS-Cos-Sin.png" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph  of <span class="process-math">\(f(x)=x\)</span> and its Fourier cosine and sine serires on <span class="process-math">\([0, \pi]\)</span> together with the graphs of their <span class="process-math">\(2\pi\)</span> periodic extensions<div class="autopermalink" data-description="Figure 4.2.4.(b)"><a href="#fig-Cos-Sin" title="Copy heading and permalink for Figure 4.2.4.(b)" aria-label="Copy heading and permalink for Figure 4.2.4.(b)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fig-FS-TTPP"><img src="external/images/FS-TTPP.png" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph  of <span class="process-math">\(f(x)=x\)</span> and its Fourier serires on <span class="process-math">\([-\pi, \pi]\)</span> together with the graphs of their <span class="process-math">\(2\pi\)</span> periodic extensions<div class="autopermalink" data-description="Figure 4.2.4.(c)"><a href="#fig-FS-TTPP" title="Copy heading and permalink for Figure 4.2.4.(c)" aria-label="Copy heading and permalink for Figure 4.2.4.(c)">🔗</a></div></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Different Fourier Expansions of <span class="process-math">\(f(x)=x\)</span><div class="autopermalink" data-description="Figure 4.2.4"><a href="#fig-FS" title="Copy heading and permalink for Figure 4.2.4" aria-label="Copy heading and permalink for Figure 4.2.4">🔗</a></div></figcaption></figure><article class="remark remark-like" id="sec-FSConv-11"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-FSConv-11-1">For any <span class="process-math">\(x\in (-\pi, \pi)\text{,}\)</span> there exist continuous functions <span class="process-math">\(f\)</span> such that <span class="process-math">\(S_N[f](x)\)</span> does not converge, so continuity of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> alone may not guarantee that <span class="process-math">\(S_N[f]( x)\)</span> converges as <span class="process-math">\(N\to\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-FSConv-11-2">
+<div class="para">However, a modified trigonometric series, the <dfn class="terminology">Fejér</dfn> series, defined as the arithmetic average of <span class="process-math">\(S_{n}[f] (x)\)</span>’s:</div>
+<div class="displaymath process-math" id="sec-FSConv-11-2-3">
+\begin{equation*}
+\sigma_{N}[f](x)=\frac{S_{0}[f](x)+S_{1}[f](x)+\cdots+S_N[f]( x)}{N+1}
+\end{equation*}
+</div>
+<div class="para">does converge to <span class="process-math">\(f(x)\)</span> for any <span class="process-math">\(f\)</span> which is continuous at <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.2.5"><a href="#sec-FSConv-11" title="Copy heading and permalink for Remark 4.2.5" aria-label="Copy heading and permalink for Remark 4.2.5">🔗</a></div></article><article class="theorem theorem-like" id="sec-FSConv-12"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fejér Theorem.</span>
+</h3>
+<div class="para" id="sec-FSConv-12-2-1">Suppose that the Riemann integrable function <span class="process-math">\(f\)</span> on <span class="process-math">\((-\pi, \pi)\)</span> is continuous at <span class="process-math">\(x\in (-\pi, \pi)\text{,}\)</span> then <span class="process-math">\(\sigma_{N}[f](x)\to f(x)\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([-\pi, \pi]\)</span> and is <span class="process-math">\(2\pi\)</span> periodic, then <span class="process-math">\(\sigma_{N}[f](x)\to f(x)\)</span> uniformly over <span class="process-math">\([-\pi, \pi]\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> Suppose that <span class="process-math">\(f(t)\)</span> has both a right limit <span class="process-math">\(f(x+)\)</span> and a left limit <span class="process-math">\(f(x-)\)</span> at <span class="process-math">\(x\text{,}\)</span>  then <span class="process-math">\(\sigma_{N}[f](x)\to \frac{f(x+)+f(x-)}{2}\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.2.6: Fejér Theorem"><a href="#sec-FSConv-12" title="Copy heading and permalink for Theorem 4.2.6: Fejér Theorem" aria-label="Copy heading and permalink for Theorem 4.2.6: Fejér Theorem">🔗</a></div></article><details id="sec-FSConv-12-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-FSConv-12-3-1">
+<div class="para">We note that</div>
+<div class="displaymath process-math" id="sec-FSConv-12-3-1-1">
+\begin{equation*}
+\sigma_{N}[f](x)= \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x-t) K_{N}(t)\, dt
+\end{equation*}
+</div>
+<div class="para">where</div>
+<ol class="lower-alpha ol-marker-1" id="sec-FSConv-12-3-1-2">
+<li id="sec-FSConv-12-3-1-2-1">
+<div class="para" id="p-derived-sec-FSConv-12-3-1-2-1"><div class="displaymath process-math" id="sec-FSConv-12-3-1-2-1-1">
+\begin{equation*}
+\quad K_{N}(t):=\frac{D_{0}(t)+D_{1}(t)+\cdots+D_{N}(t)}{N+1}
+=\frac{1-cos(N+1)t}{(N+1)(1-\cos t)}\ge 0,
+\end{equation*}
+</div></div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-FSConv-12-3-1-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-FSConv-12-3-1-2-2">
+<div class="para" id="p-derived-sec-FSConv-12-3-1-2-2"><div class="displaymath process-math" id="sec-FSConv-12-3-1-2-2-1">
+\begin{equation*}
+\quad \frac{1}{2\pi} \int_{-\pi}^{\pi}K_{N}(t)\, dt=1  \text{ for any } N,
+\end{equation*}
+</div></div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-FSConv-12-3-1-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-FSConv-12-3-1-2-3">
+<div class="para" id="p-derived-sec-FSConv-12-3-1-2-3"><div class="displaymath process-math" id="sec-FSConv-12-3-1-2-3-1">
+\begin{equation*}
+\quad \text{for any } 0 &lt; \delta &lt;\pi, \int_{\delta \le |t|\le \pi} K_{N}(t)\, dt \to 0 \text{ as } N\to \infty.
+\end{equation*}
+</div></div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-FSConv-12-3-1-2-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="para">For, then, using (a) above,</div>
+<div class="displaymath process-math" id="sec-FSConv-12-3-1-3">
+\begin{align*}
+\amp |\sigma_{N}[f](x)-f(x)|\\
+= \amp |\frac{1}{2\pi} \int_{-\pi}^{\pi}[f(x-t) -f(x)] K_{N}(t)\, dt|\\
+\le  \amp \frac{1}{2\pi} \int_{-\delta}^{\delta}|f(x-t) -f(x)| K_{N}(t)\, dt
++ \frac{\max |f|}{\pi} \int_{\delta \le |t|\le \pi} K_{N}(t)\, dt,
+\end{align*}
+</div>
+<div class="para">and for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> we first choose <span class="process-math">\(0 &lt; \delta &lt;\pi\)</span> such that <span class="process-math">\(|f(x-t) -f(x)| &lt; \epsilon\)</span> for all <span class="process-math">\(t\)</span> with <span class="process-math">\(|t|\le \delta\text{,}\)</span> then use this <span class="process-math">\(\delta\)</span> in the above, which will make the first integral above <span class="process-math">\(&lt; \epsilon\)</span> using (b) above. Finally, for sufficiently large <span class="process-math">\(N\text{,}\)</span> the second integral above will also be less than <span class="process-math">\(\epsilon\)</span> using (c) above. This proves the first assertion. When <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([-\pi, \pi]\)</span> and is <span class="process-math">\(2\pi\)</span> periodic, then <span class="process-math">\(\delta\)</span> above can be chosen independent of <span class="process-math">\(x\in [-\pi, \pi]\text{,}\)</span> which shows that the convergence is uniform over <span class="process-math">\([-\pi, \pi]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-FSConv-12-3-2">
+<div class="para">If <span class="process-math">\(f\)</span> has both left and right limits at <span class="process-math">\(x\text{,}\)</span> one could use the evenness of <span class="process-math">\(K_{N}(t)\)</span> or <span class="process-math">\(D_{N}(t)\)</span> to rewrite the integral <span class="process-math">\(\int_{-\pi}^{\pi}\)</span> as two separate integrals. For example,</div>
+<div class="displaymath process-math" id="sec-FSConv-12-3-2-6">
+\begin{align*}
+\sigma_{N}[f](x) \amp= \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x-t) K_{N}(t)\, dt\\
+\amp= \frac{1}{2\pi} \int_{0}^{\pi}\left[f(x-t) +f(x+t)\right] K_{N}(t)\, dt 
+\end{align*}
+</div>
+<div class="para">and one can use</div>
+<div class="displaymath process-math" id="sec-FSConv-12-3-2-7">
+\begin{equation*}
+\frac{1}{2\pi} \int_{0}^{\pi} K_{N}(t)\, dt=\frac 12
+\end{equation*}
+</div>
+<div class="para">to carry out a similar convergence argument.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-12-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.6.1"><a href="#sec-FSConv-12-3" title="Copy heading and permalink for Proof 4.2.6.1" aria-label="Copy heading and permalink for Proof 4.2.6.1">🔗</a></div></article></details><div class="para" id="sec-FSConv-13">Fejér’s theorem implies  that the span of <span class="process-math">\(\{ e^{i nx}\}\)</span> (equivalently <span class="process-math">\(\{\cos(nx), \sin(nx)\}\)</span>) is  dense in both <span class="process-math">\(C[-\pi, \pi]\)</span> and <span class="process-math">\(\cR[-\pi ,\pi]\)</span> in the mean square sense, for, given any <span class="process-math">\(g\in \cR[-\pi ,\pi]\)</span> and <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> first find a <span class="process-math">\(2\pi\)</span> periodic and continuous function <span class="process-math">\(f\)</span> such that <span class="process-math">\(\Vert f-g\Vert :=\left(\int_{-\pi}^{\pi}|f(t)-g(t)|^{2}\, dt\right)^{1/2}\lt \epsilon\text{.}\)</span> Then find <span class="process-math">\(N\)</span> such that <span class="process-math">\(\Vert f- \sigma_{N}(f)\Vert \lt \epsilon\)</span> by the above theorem. Finally triangle inequality implies that <span class="process-math">\(\Vert g- \sigma_{N}(f)\Vert \lt 2\epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-FSConv-14">As a consequence we have<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="sec-FSConv-15"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mean Square Convergence and Parseval Equality.</span>
+</h3>
+<div class="para logical" id="sec-FSConv-15-2-1">
+<div class="para">For any <span class="process-math">\(g\in \cR[-\pi ,\pi]\text{,}\)</span> <span class="process-math">\(\Vert S_{N}(g)-g\Vert\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> As a consequence, the following Parseval equality holds:</div>
+<div class="displaymath process-math" id="sec-FSConv-15-2-1-4">
+\begin{equation*}
+\int_{0}^{2l} |g(x)|^{2}\, dx = \pi\left( 2 |a_{0}|^{2}+ \sum_{n=1}^{\infty} \left[ |a_{n}|^{2}+|b_{n}|^{2}\right]\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.2.7: Mean Square Convergence and Parseval Equality"><a href="#sec-FSConv-15" title="Copy heading and permalink for Theorem 4.2.7: Mean Square Convergence and Parseval Equality" aria-label="Copy heading and permalink for Theorem 4.2.7: Mean Square Convergence and Parseval Equality">🔗</a></div></article><details id="sec-FSConv-15-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-FSConv-15-3-1">
+<div class="para">Since the span of <span class="process-math">\(\{ e^{i nx}\}_{n=-N'}^{N'}\)</span> is a subspace of <span class="process-math">\(\{ e^{i nx}\}_{n=-N}^{N}\)</span> when <span class="process-math">\(N' \le N\text{,}\)</span> the Best Approximation Theorem implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/parseval.html" id="sec-FSConv-15-3-1-4">
+\begin{equation*}
+\Vert S_{N}(g)-g\Vert\le \Vert S_{N'}(g)-g\Vert \text{ when $N' \le N$.}
+\end{equation*}
+</div>
+<div class="para">For any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> Fejér’s theorem gives some trigonometric polynomial <span class="process-math">\(p\)</span> of degree <span class="process-math">\(N'\)</span> such that <span class="process-math">\(\Vert g- p\Vert \lt \epsilon\text{.}\)</span> Then the Best Approximation Theorem implies that <span class="process-math">\(\Vert S_{N'}(g)-g\Vert \lt \epsilon\text{.}\)</span> Then for all <span class="process-math">\(N\ge N'\text{,}\)</span> we have <span class="process-math">\(\Vert S_{N}(g)-g\Vert\le \epsilon\text{.}\)</span> The Parseval equality follows from <a href="sec-orthogonal.html#sec-orthogonal-36-2-1-5" class="xref" data-knowl="./knowl/xref/parseval.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1.3">(4.1.3)</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-15-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.7.1"><a href="#sec-FSConv-15-3" title="Copy heading and permalink for Proof 4.2.7.1" aria-label="Copy heading and permalink for Proof 4.2.7.1">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-FSConv-16"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-FSConv-16-1-1">
+<span class="process-math">\(\{ e^{i nx}\}_{n=-\infty}^{\infty}\)</span> is a set of maximal orthogonal functions	 in <span class="process-math">\(L^{2}[-\pi, \pi]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.2.8"><a href="#sec-FSConv-16" title="Copy heading and permalink for Theorem 4.2.8" aria-label="Copy heading and permalink for Theorem 4.2.8">🔗</a></div></article><details id="sec-FSConv-16-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-FSConv-16-2-1">
+<div class="para">Suppose not. Let <span class="process-math">\(g\in L^{2}[-\pi, \pi]\)</span> be a non-zero function in <span class="process-math">\(L^{2}[-\pi, \pi]\)</span> orthogonal to each <span class="process-math">\(e^{i nx}\text{.}\)</span> We may assume that <span class="process-math">\(\Vert g \Vert =1\text{.}\)</span> Then for any trigonometric	 polynomial <span class="process-math">\(p\)</span> of the form <span class="process-math">\(\sum_{n=-N}^{N}c_{n }e^{i nx}\text{,}\)</span> the orthogonality property implies that</div>
+<div class="displaymath process-math" id="sec-FSConv-16-2-1-7">
+\begin{equation*}
+\Vert g - p\Vert^{2}=\Vert g \Vert^{2}+ \Vert p\Vert^{2}\ge 1.
+\end{equation*}
+</div>
+<div class="para">But we can find a continuous <span class="process-math">\(2\pi\)</span> periodic function <span class="process-math">\(f\)</span> such that <span class="process-math">\(\Vert g-f\Vert \lt \frac 14\text{,}\)</span> and a trigonometric	 polynomial <span class="process-math">\(p\)</span> of the form <span class="process-math">\(\sum_{n=-N}^{N}c_{n }e^{i nx}\)</span> such that  <span class="process-math">\(\Vert p-f\Vert \lt \frac 14\text{.}\)</span> Then the triangle inequality implies that</div>
+<div class="displaymath process-math" id="sec-FSConv-16-2-1-14">
+\begin{equation*}
+\Vert g-p\Vert \le \Vert g-f\Vert+ \Vert p-f\Vert \lt \frac 12\text{,}
+\end{equation*}
+</div>
+<div class="para">which contradicts the property <span class="process-math">\(\Vert g - p\Vert\ge 1\)</span> established earlier.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-FSConv-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.8.1"><a href="#sec-FSConv-16-2" title="Copy heading and permalink for Proof 4.2.8.1" aria-label="Copy heading and permalink for Proof 4.2.8.1">🔗</a></div></article></details><div class="autopermalink" data-description="Section 4.2: Convergence of the Trigonometric Fourier Series"><a href="#sec-FSConv" title="Copy heading and permalink for Section 4.2: Convergence of the Trigonometric Fourier Series" aria-label="Copy heading and permalink for Section 4.2: Convergence of the Trigonometric Fourier Series">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-orthogonal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="int-diff.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Completion of the Space of Continuous Functions under Integral Norms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="RS-int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chp-lpintegral.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chp-lpintegral-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-31" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-11" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-18" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp-int"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span>
+</h2>
+<div class="para" id="chp-int-2">The space <span class="process-math">\(C[a, b]\)</span> of continuous  functions on a closed interval <span class="process-math">\([a, b]\)</span> is a closed metric space in theuniform norm <span class="process-math">\(\Vert f \Vert_{C^0} :=\max_{x\in [a, b]} |f(x)|\text{.}\)</span> However, it is not complete in theintegral norms <span class="process-math">\(\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}\)</span> for any <span class="process-math">\(1\le p &lt; \infty\text{.}\)</span> The completion of <span class="process-math">\(C[a, b]\)</span> under these integral norms leads to the important classes of functions called <span class="process-math">\(L^p\)</span>-<dfn class="terminology">integrable functions</dfn>, which are more general than continuous functions but still have well-defined integrals.	Such functions play important roles in analysis and its applications.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-3">We sketch below some main properties of  the completion of the space of continuous functions under integral norms. The main line of approach is adapted from the following article by P. Lax, <em class="emphasis">Rethinking the Lebesgue Integral</em>, The American Mathematical Monthly, Dec., 2009, Vol. 116, No. 10 (Dec., 2009), pp. 863-881. Although the discussion can be done with respect to the Riemann-Stieltjes integral, we limit our discussion to the standard Riemann integral.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-4">The main feature of  this discussion is to establish the important property that the class of integrable functions is closed under reasonable sequential limit while avoiding the discussion of the so called <span class="process-math">\(\sigma\)</span>-algebra of measurable sets. Any set can be identified by its characteristic function, and the union and intersection of a finite number or countably many sets can also be represented in terms of algebraic sum or limits of the characteristic functions of the relevant sets, so when a sequence of characteristic functions has a limit in the integral sense, it gives information about the limit of the corresponding	sets.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-5">For any <span class="process-math">\(1\le p &lt; \infty\text{,}\)</span> let <span class="process-math">\(L^{p}[a,  b]\)</span> denote the completion of <span class="process-math">\(C[a, b]\)</span> in thenorm <span class="process-math">\(\Vert f \Vert_{L^{p}[a, b]} :=\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p}\text{.}\)</span> From the abstract completion process, each element <span class="process-math">\(\phi\in L^{p}[a,  b]\)</span> is an equivalence class of  sequences <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> which is Cauchy in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm. We would like to address the following questions<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp-int-6">
+<ol class="lower-alpha ol-marker-2" id="chp-int-6-1">
+<li id="chp-int-6-1-1">
+<div class="para" id="p-derived-chp-int-6-1-1">Does each equivalence class of Cauchy sequences <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm associate to a pointwise-defined function on <span class="process-math">\([a, b]\text{?}\)</span>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#chp-int-6-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="chp-int-6-1-2">
+<div class="para" id="p-derived-chp-int-6-1-2">Does each equivalence class of Cauchy sequences <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm associate to a well-defined integral? What usual properties of integrals are preserved?</div>
+<div class="autopermalink" data-description="Item b"><a href="#chp-int-6-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="chp-int-6-1-3">
+<div class="para" id="p-derived-chp-int-6-1-3">Establish criteria for other limiting process of functions in <span class="process-math">\(C[a, b]\)</span> or <span class="process-math">\(L^{p}[a,  b]\text{,}\)</span> e.g., pointwise limit, that result in a limit in <span class="process-math">\(L^{p}[a,  b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#chp-int-6-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-7">It turns out that <span class="process-math">\(L^{p}[a,  b]\)</span> are different spaces for different values of <span class="process-math">\(p\text{,}\)</span>  even though they are defined through a completion process starting from the same space <span class="process-math">\(C[a, b]\text{.}\)</span> Their differences lie in the different norms used.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="paragraphs" id="chp-int-8"><h3 class="heading"><span class="title">An elementary observation.</span></h3>
+<div class="para" id="chp-int-8-2">Suppose that <span class="process-math">\(\{ c_{k}(x)\}\)</span> is a Cauchy sequence in <span class="process-math">\(C[a, b]\)</span> in the <span class="process-math">\(L^{p}[a,  b]\)</span>-norm. Then for <span class="process-math">\([a', b']\subset [a, b]\text{,}\)</span> <span class="process-math">\(\int_{a'}^{b'} c_{k}(x)\, dx\)</span> is a Cauchy sequence in <span class="process-math">\(\bbR\text{;}\)</span> and for any <span class="process-math">\(1\le q \le p\text{,}\)</span> <span class="process-math">\(\Vert c_{k}(x)\Vert_{L^{q}[c,d]}\)</span>  is a Cauchy sequence in <span class="process-math">\(\bbR\text{.}\)</span> Furthermore, <span class="process-math">\(\lim_{k\to\infty} \int_{a'}^{b'} c_{k}(x)\, dx\)</span> and <span class="process-math">\(\lim_{k\to\infty}\Vert c_{k}(x)\Vert_{L^{q}[c,d]}\)</span> remain the same if <span class="process-math">\(\{ c_{k}(x)\}\)</span> is replaced by an equivalent Cauchy sequence.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Paragraphs: An elementary observation"><a href="#chp-int-8" title="Copy heading and permalink for Paragraphs: An elementary observation" aria-label="Copy heading and permalink for Paragraphs: An elementary observation">🔗</a></div></section><div class="para logical" id="chp-int-9">
+<div class="para">These properties are simple consequences of the triangle inequalities:</div>
+<div class="displaymath process-math" id="chp-int-9-1">
+\begin{align*}
+\vert \int_{a'}^{b'} c_{k}(x)\, dx - \int_{a'}^{b'} c_{l}(x)\, dx\vert \amp\le \int_{a'}^{b'} \vert c_{k}(x)-c_{l}(x)\vert \, dx\\
+\amp\le \left(\int_{a'}^{b'} \vert c_{k}(x)-c_{l}(x)\vert^{p} \, dx\right)^{1/p}(b'-a')^{1-1/p},\\
+\left| \Vert c_{k}(x)\Vert_{L^{q}[a', b']} -\Vert c_{l}(x) \Vert_{L^{q}[a', b']}\right| \amp\le \Vert c_{k}(x)-c_{l}(x)\Vert_{L^{q}[a', b']}\\
+\amp 	\le  \Vert c_{k}(x) -c_{l}(x)\Vert_{L^{p}[a', b']}(b'-a')^{1/q-1/p}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp-int-10">
+<div class="para">As a result, if we denote by <span class="process-math">\(\phi\)</span> the equivalence class of <span class="process-math">\(\{ c_{k}(x)\}\text{,}\)</span> it makes sense to define</div>
+<div class="displaymath process-math" id="chp-int-10-3">
+\begin{equation*}
+\int_{a'}^{b'} \phi = \lim_{k\to\infty} \int_{a'}^{b'} c_{k}(x)\, dx, \quad
+\Vert \phi \Vert_{L^{q}[a', b']}= \lim_{k\to\infty}\Vert c_{k}(x)\Vert_{L^{q}[a', b']}.
+\end{equation*}
+</div>
+<div class="para">Any <span class="process-math">\(c(x)\in C[a, b]\)</span> defines a Cauchy sequence <span class="process-math">\(\{c_{k}(x)= c(x)\}\)</span> in <span class="process-math">\(L^{p}[a, b]\)</span> and <span class="process-math">\(\Vert c \Vert_{L^{q}[c,d]}\)</span> as defined through the limiting process above equals the definition through Riemann’s integral.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp-int-11">
+<div class="para">It also follows routinely that if <span class="process-math">\(\{[c_{i}, d_{i}]\}\)</span> is a finite collection of disjoint subintervals of <span class="process-math">\([a, b]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="chp-int-11-3">
+\begin{equation*}
+\int_{\cup_{i} [c_{i}, d_{i}] }\phi = \sum_{i}\int_{[c_{i},d_{i}]} \phi 
+\end{equation*}
+</div>
+<div class="para">is well defined; the intervals <span class="process-math">\(\{[c_{i}, d_{i}]\}\)</span> can also be replaced by open or half-open intervals. Furthermore, if <span class="process-math">\(\phi, \psi \in L^{p}[a, b]\text{,}\)</span> then for any scalars <span class="process-math">\(\alpha, \beta\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="chp-int-11-7">
+\begin{equation*}
+\int_{[a, b]} (\alpha \phi + \beta \psi ) = \alpha \int_{[a, b]} \phi + \beta \int_{[a, b]} \psi.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-12">Any open set <span class="process-math">\(G\)</span> of <span class="process-math">\(\bbR\)</span> is a union of at most countably many disjoint open intervals <span class="process-math">\((c_{i}, d_{i})\text{.}\)</span> For any <span class="process-math">\(c(x) \in C[a, b]\)</span> and any open subset <span class="process-math">\(G\)</span> of <span class="process-math">\([a, b]\text{,}\)</span> the integrals  <span class="process-math">\(\int_{G} c(x)\, dx\)</span> and <span class="process-math">\(\int_{G} |c(x)|^{p}\, dx\)</span> have  clearly defined meanings as the (absolutely convergent) sum of the integrals on each constitutive open interval, with <span class="process-math">\(\int_{G} 1\, dx=|G|\text{,}\)</span> the length of <span class="process-math">\(G\)</span> .<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-uniform-abs-contin"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniform Absolute Continuity of A Sequence of Integrals in <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para logical" id="def-uniform-abs-contin-2-1">
+<div class="para">The <span class="process-math">\(L^{p}\)</span>-integrals of a sequence of functions <span class="process-math">\(\{ c_{k}(x)\}\)</span>  in <span class="process-math">\(C[a, b]\)</span> are said to be <dfn class="terminology">uniformly absolutely continuous</dfn> on <span class="process-math">\([a, b]\)</span> if for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(\delta &gt; 0\)</span> such that for any open subset <span class="process-math">\(G\)</span> of <span class="process-math">\([a, b]\)</span> with its length <span class="process-math">\(|G| &lt; \delta\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="def-uniform-abs-contin-2-1-11">
+\begin{equation*}
+\int_{G} |c_{k}(x)|^{p}\, dx &lt; \epsilon \text{ for all } k.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-uniform-abs-contin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.2.1: Uniform Absolute Continuity of A Sequence of Integrals in L^{p}[a, b]"><a href="#def-uniform-abs-contin" title="Copy heading and permalink for Definition 1.2.1: Uniform Absolute Continuity of A Sequence of Integrals in L^{p}[a, b]" aria-label="Copy heading and permalink for Definition 1.2.1: Uniform Absolute Continuity of A Sequence of Integrals in L^{p}[a, b]">🔗</a></div></article><article class="proposition theorem-like" id="uniform-abs-contin"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniform Absolute Continuity of the Integrals of a  Sequence in <span class="process-math">\(C[a, b]\)</span> which is Cauchy in the <span class="process-math">\(L^{p}[a, b]\)</span> norm.</span>
+</h3>
+<div class="para" id="uniform-abs-contin-2-1">The <span class="process-math">\(L^{p}\)</span>-integrals of any  Cauchy sequence  <span class="process-math">\(\{ c_{k}(x) \}\)</span> in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm are uniformly absolutely continuous on <span class="process-math">\([a, b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#uniform-abs-contin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.2.2: Uniform Absolute Continuity of the Integrals of a  Sequence in C[a, b] which is Cauchy in the L^{p}[a, b] norm"><a href="#uniform-abs-contin" title="Copy heading and permalink for Proposition 1.2.2: Uniform Absolute Continuity of the Integrals of a  Sequence in C[a, b] which is Cauchy in the L^{p}[a, b] norm" aria-label="Copy heading and permalink for Proposition 1.2.2: Uniform Absolute Continuity of the Integrals of a  Sequence in C[a, b] which is Cauchy in the L^{p}[a, b] norm">🔗</a></div></article><details id="uniform-abs-contin-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="uniform-abs-contin-3-1">
+<div class="para">For the given <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists some <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(k, l \ge N\text{,}\)</span> <span class="process-math">\(\Vert c_{k}(x) -c_{l}(x)\Vert_{L^{p}[a,b]} &lt; \epsilon^{1/p}/2\text{.}\)</span> Since <span class="process-math">\(c_{i}(x)\in C[a, b]\)</span> for <span class="process-math">\(i=1,\cdots, N\text{,}\)</span> there exists a common <span class="process-math">\(M &gt; 0\)</span> such that <span class="process-math">\(|c_{k}(x)|\le M\)</span> for all <span class="process-math">\(x\in [a, b]\)</span> and <span class="process-math">\(1\le k \le N\text{,}\)</span> therefore, there exists <span class="process-math">\(\delta &gt; 0\)</span> such that for any open subset <span class="process-math">\(G\)</span> of <span class="process-math">\([a, b]\)</span> with its length <span class="process-math">\(|G| &lt; \delta\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="uniform-abs-contin-3-1-15">
+\begin{equation*}
+\int_{G} |c_{k}(x)|^{p}\, dx &lt; \epsilon/2^{p} \text{ for } 1\le k \le N.
+\end{equation*}
+</div>
+<div class="para">Now for <span class="process-math">\(l &gt; N\text{,}\)</span> the triangle inequality continues to hold for integrals on <span class="process-math">\(G\text{,}\)</span> which implies that</div>
+<div class="displaymath process-math" id="uniform-abs-contin-3-1-18">
+\begin{equation*}
+\Vert c_{l}(x)\Vert_{L^{p}(G)} \le \Vert c_{l}(x)-c_{N}(x)\Vert_{L^{p}(G)}+ \Vert c_{N}(x)\Vert_{L^{p}(G)}
+\le  \epsilon^{1/p}/2 +  \epsilon^{1/p}/2.
+\end{equation*}
+</div>
+<div class="para">from which our conclusion follows.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#uniform-abs-contin-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.2.1"><a href="#uniform-abs-contin-3" title="Copy heading and permalink for Proof 1.2.2.1" aria-label="Copy heading and permalink for Proof 1.2.2.1">🔗</a></div></article></details><details id="exe-abc" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exe-abc-1">
+<div class="para">In the context of <a href="chp-int.html#uniform-abs-contin" class="xref" data-knowl="./knowl/xref/uniform-abs-contin.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.2: Uniform Absolute Continuity of the Integrals of a  Sequence in C[a, b] which is Cauchy in the L^{p}[a, b] norm">Proposition 1.2.2</a>, suppose that the open set <span class="process-math">\(G\)</span> is decomposed as the union of at most countably many disjoint open intervals: <span class="process-math">\(G=\cup_{l}I_{l}\text{,}\)</span> and set <span class="process-math">\(a_{k, l}=\int_{I_{l}} |c_{k}(x)|^{p}\, dx\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/uniform-abs-contin.html" id="exe-abc-1-5">
+\begin{equation*}
+\lim_{k\to\infty} \sum_{l} a_{k, l}= \sum_{l} \lim_{k\to\infty}  a_{k, l}.
+\end{equation*}
+</div>
+<div class="para">This allows to define <span class="process-math">\(\int_{G} |\phi(x)|^{p}\, dx \)</span> as <span class="process-math">\(\sum_{l} \int_{I_{l}} |\phi(x)|^{p}\, dx\text{,}\)</span> given by <span class="process-math">\(\lim_{k\to\infty} \int_{G} |c_{k}(x)|^{p}\, dx\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exe-abc-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exe-abc-2">
+<div class="para">As a consequence, prove the <dfn class="terminology">absolute continuity of the integral</dfn> of <span class="process-math">\(|\phi|^{p}\text{,}\)</span> namely, for any <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> and for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(\delta &gt; 0\)</span> such that for any open subset <span class="process-math">\(G\)</span> of <span class="process-math">\([a, b]\)</span> with its length <span class="process-math">\(|G| &lt; \delta\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="exe-abc-2-9">
+\begin{equation*}
+\int_{G} |\phi(x)|^{p}\, dx &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exe-abc-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.3"><a href="#exe-abc" title="Copy heading and permalink for Exercise 1.2.3" aria-label="Copy heading and permalink for Exercise 1.2.3">🔗</a></div></article></details><details id="chp-int-16" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="chp-int-16-1-1">
+<div class="para">Construct <span class="process-math">\(b_{k, l}\ge 0\)</span> for <span class="process-math">\(k, l\)</span> such that <span class="process-math">\(\lim_{k\to\infty}  b_{k, l}\)</span> exists for each <span class="process-math">\(l\)</span> (the convergence can even be uniform in <span class="process-math">\(l\)</span>) and</div>
+<div class="displaymath process-math" id="chp-int-16-1-1-6">
+\begin{equation*}
+\lim_{k\to\infty} \sum_{l} b_{k, l}\ne \sum_{l} \lim_{k\to\infty}  b_{k, l}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="chp-int-16-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="chp-int-16-2-1">
+<div class="para">One can set <span class="process-math">\(b_{k, l} = \frac 1k\)</span> for <span class="process-math">\(l \le k\)</span> and <span class="process-math">\(b_{k, l} =0\)</span> for <span class="process-math">\(l &gt; k\text{.}\)</span> If one thinks of <span class="process-math">\(\sum_{l} b_{k, l}\)</span> as the integral of a function defined on <span class="process-math">\([0, \infty)\text{,}\)</span> then an analog of the notion of uniform absolute continuity is needed to justify the interchange of limit and summation, and that notion would require, for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> the existence of some <span class="process-math">\(N\)</span> such that</div>
+<div class="displaymath process-math" id="chp-int-16-2-1-9">
+\begin{equation*}
+|\sum_{l=N+1}^{\infty} b_{k, l}| &lt; \epsilon \text{ for all } k.
+\end{equation*}
+</div>
+<div class="para">The example above fails to satisfy this requirement.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.2.4.1"><a href="#chp-int-16-2" title="Copy heading and permalink for Hint 1.2.4.1" aria-label="Copy heading and permalink for Hint 1.2.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.2.4"><a href="#chp-int-16" title="Copy heading and permalink for Exercise 1.2.4" aria-label="Copy heading and permalink for Exercise 1.2.4">🔗</a></div></article></details><details id="chp-int-17" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="chp-int-17-1">Construct a sequence of non-negative functions <span class="process-math">\(\{c_{k}(x)\}\)</span> in <span class="process-math">\(C[0, 1]\)</span> such that <span class="process-math">\(\lim_{k\to\infty} c_{k}(x)=0\)</span> for each <span class="process-math">\(x\in [0, 1]\)</span> but <span class="process-math">\(\lim_{k\to\infty} \int_{0}^{1}c_{k}(x)\, dx &gt; 0\text{.}\)</span> Verify that the integrals of this sequence fail to be uniformly absolutely continuous on <span class="process-math">\([0, 1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.5"><a href="#chp-int-17" title="Copy heading and permalink for Exercise 1.2.5" aria-label="Copy heading and permalink for Exercise 1.2.5">🔗</a></div></article></details><article class="definition definition-like" id="chp-int-18"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Negligible Set.</span>
+</h3>
+<div class="para" id="chp-int-18-2-1">A point set <span class="process-math">\(E\)</span> is called negligible if it can be covered by an open set of arbitrarily small volume, namely, for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists an open cover <span class="process-math">\(G\)</span> of <span class="process-math">\(E\)</span> such that <span class="process-math">\(|G| &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.2.6: Negligible Set"><a href="#chp-int-18" title="Copy heading and permalink for Definition 1.2.6: Negligible Set" aria-label="Copy heading and permalink for Definition 1.2.6: Negligible Set">🔗</a></div></article><div class="para" id="chp-int-19">The notion of negligible set here is a special case in the context of Lebesgue measure on <span class="process-math">\(\bbR\)</span> of the notion of a set of measure <span class="process-math">\(0\text{.}\)</span> Note that the union of at most countable number of negligible sets is still negligible.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-20">When two functions are equal  except on a negligible set, we use the customary language that they are equal <span class="process-math">\(a.e.\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chp-int-21"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Realization of a Cauchy Sequence in <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para logical" id="chp-int-21-2-1">
+<div class="para">A function <span class="process-math">\(\phi (x)\)</span> defined <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a,  b]\)</span> is said to be a realization of <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> if there exists a Cauchy sequence <span class="process-math">\(\{c_{k}(x)\}\)</span> of continuous functions in <span class="process-math">\([a, b]\)</span> in the equivalence class of <span class="process-math">\(\phi\)</span> which converges a.e to <span class="process-math">\(\phi (x)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="chp-int-21-2-1-9">
+\begin{equation*}
+\lim_{k\to \infty} c_{k}(x)\to \phi (x) \ a.e..
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.2.7: Realization of a Cauchy Sequence in L^{p}[a, b]"><a href="#chp-int-21" title="Copy heading and permalink for Definition 1.2.7: Realization of a Cauchy Sequence in L^{p}[a, b]" aria-label="Copy heading and permalink for Definition 1.2.7: Realization of a Cauchy Sequence in L^{p}[a, b]">🔗</a></div></article><div class="para" id="chp-int-22">Note that if <span class="process-math">\(I\)</span> is any interval of finite length (either open or closed) in <span class="process-math">\([a, b]\text{,}\)</span> then for any <span class="process-math">\(k\text{,}\)</span> one can find a continuous function <span class="process-math">\(c_{k}(x)\)</span> with support in the interior of <span class="process-math">\(I\text{,}\)</span> such that <span class="process-math">\(\int |\chi_{I}(x)-c_{k}(x)|^p\, dx &lt; 1/k\text{.}\)</span> This shows that the characteristic function <span class="process-math">\(\chi_{I}(x)\)</span> of <span class="process-math">\(I\)</span>  is a realization of a function in <span class="process-math">\(L^{p}[a, b]\text{,}\)</span> namely, it is a function in <span class="process-math">\(L^{p}[a, b]\text{.}\)</span> The same applies to the linear combination of  a finite number of such characteristic functions.<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-23">Since the Riemann sum of a function is the integral of such a linear combination of  a finite number of such characteristic functions. and any Riemann integrable function on <span class="process-math">\([a, b]\)</span> can be approximated in <span class="process-math">\(L[a, b]\)</span> by its Riemann sums, we conclude that any Riemann integrable function is a realization of some function in <span class="process-math">\(L^{p}[a. b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp-int-24">A similar argument shows that the characteristic function of any open set of <span class="process-math">\(\mathbb R\)</span> with finite length is a realization of some function in <span class="process-math">\(L^{p}[a. b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="lprealization"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Realization of Elements of <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para logical" id="lprealization-2-1">
+<ol class="lower-roman ol-marker-3" id="lprealization-2-1-1">
+<li id="lprealization-2-1-1-1">
+<div class="para" id="p-derived-lprealization-2-1-1-1">Any Cauchy sequence <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm has a subsequence which converges pointwise <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span> Furthermore, for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists an open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \epsilon\)</span> such that  <span class="process-math">\(\{ c_{k}(x)\}\)</span> converges uniformly over <span class="process-math">\(G^{c}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item i"><a href="#lprealization-2-1-1-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
+</li>
+<li id="lprealization-2-1-1-2">
+<div class="para" id="lprealization-2-1-1-2-1">If <span class="process-math">\(\{ c_{k}(x)\}\)</span> and <span class="process-math">\(\{ \tilde c_{k}(x)\}\)</span> are two equivalent Cauchy sequences  in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm such that both <span class="process-math">\(\lim_{k\to \infty} c_{k}(x)\)</span> and <span class="process-math">\(\lim_{k\to \infty} \tilde c_{k}(x)\)</span> exist <span class="process-math">\(a.e.\text{,}\)</span> then <span class="process-math">\(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\)</span> <span class="process-math">\(a.e. \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lprealization-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lprealization-2-1-1-2-2">As a result, any <span class="process-math">\(\phi\)</span> in <span class="process-math">\(L^{p}[a, b]\text{,}\)</span> namely, an equivalence class of Cauchy sequences in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm,  has an <span class="process-math">\(a.e.\)</span>  pointwise defined realization defined on <span class="process-math">\([a, b]\text{.}\)</span> We will denote such a realization by <span class="process-math">\(\phi (x)\text{.}\)</span> In particular, if <span class="process-math">\(\phi\)</span> in <span class="process-math">\(L^{p}[a, b]\)</span> is such that <span class="process-math">\(\Vert \phi \Vert_{L^{p}[a, b]}=0\text{,}\)</span> then <span class="process-math">\(\phi(x)=0\)</span> <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lprealization-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item ii"><a href="#lprealization-2-1-1-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
+</li>
+<li id="lprealization-2-1-1-3">
+<div class="para" id="p-derived-lprealization-2-1-1-3">If <span class="process-math">\(\{ c_{k}(x)\}\)</span> and <span class="process-math">\(\{ \tilde c_{k}(x)\}\)</span> are two Cauchy sequences  in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm such that <span class="process-math">\(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\)</span> <span class="process-math">\(a.e.\text{,}\)</span> then <span class="process-math">\(\{ c_{k}(x)\}\)</span> and <span class="process-math">\(\{ \tilde c_{k}(x)\}\)</span> are equivalent Cauchy sequences in <span class="process-math">\(L^{p}[a,  b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item iii"><a href="#lprealization-2-1-1-3" title="Copy heading and permalink for Item iii" aria-label="Copy heading and permalink for Item iii">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#lprealization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]"><a href="#lprealization" title="Copy heading and permalink for Proposition 1.2.8: Realization of Elements of L^{p}[a, b]" aria-label="Copy heading and permalink for Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">🔗</a></div></article><details id="lprealization-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lprealization-3-1">
+<div class="para">Any Cauchy sequence <span class="process-math">\(\{ c_{k}(x) \}\)</span> in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm has a subsequence, still denoted as <span class="process-math">\(\{ c_{k}(x) \}\text{,}\)</span> such that</div>
+<div class="displaymath process-math" id="lprealization-3-1-5">
+\begin{equation*}
+\Vert c_{k}(x) -c_{k+1}(x)\Vert_{L^{p}[a, b]}\le \epsilon_{k}^{2},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\epsilon_{k} &gt; 0\)</span> are such that <span class="process-math">\(\sum_{k} \epsilon_{k}\)</span> converges.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lprealization-3-2">
+<div class="para">Define</div>
+<div class="displaymath process-math" id="lprealization-3-2-1">
+\begin{equation*}
+D_{k} =\{x\in [a, b]: \vert c_{k}(x) -c_{k+1}(x)\vert &gt; \epsilon_{k}\}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(D_{k}\)</span> is open and it follows from</div>
+<div class="displaymath process-math" id="lprealization-3-2-3">
+\begin{equation*}
+\epsilon_{k}^{p} |D_{k}| \le \int_{[a,b]} \vert c_{k}(x) -c_{k+1}(x)\vert^{p}\, dx \le \epsilon_{k}^{2p}
+\end{equation*}
+</div>
+<div class="para">that <span class="process-math">\(|D_{k}|\le  \epsilon_{k}^{p}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lprealization-3-3">
+<div class="para">Note that <span class="process-math">\(\cup_{k=N}^{\infty}D_{k}\)</span> is open and</div>
+<div class="displaymath process-math" id="lprealization-3-3-2">
+\begin{equation*}
+|\cup_{k=N}^{\infty}D_{k}|\le 
+\sum_{k=N}^{\infty}|D_{k}| \le \sum_{k=N}^{\infty}\epsilon_{k}^{p}\to 0\text{,}
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(N\to\infty\text{.}\)</span> Here, the <span class="process-math">\(D_{k}\)</span>’s may not be disjoint, but this subadditivity property used above holds.  Define the set <span class="process-math">\(E\)</span> by</div>
+<div class="displaymath process-math" id="lprealization-3-3-6">
+\begin{equation*}
+E=\cap_{N=1}^{\infty}  \cup_{k=N}^{\infty}D_{k}.
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(E\)</span> is the set of points that belong to infinitely many <span class="process-math">\(D_{k}\)</span>’s, and <span class="process-math">\(E^{c}\)</span> is then the set of points that belong to at most a finite number of <span class="process-math">\(D_{k}\)</span>’s. Since <span class="process-math">\(|\cup_{k=N}^{\infty}D_{k}|\to 0\)</span> as <span class="process-math">\(N\to \infty\text{,}\)</span> <span class="process-math">\(E\)</span> is negligible, and for any <span class="process-math">\(x\in E^{c}\text{,}\)</span> there exists some <span class="process-math">\(N_{x}\)</span> such that <span class="process-math">\(x\in \cap_{k=N_{x}}^{\infty}D_{k}^{c}\text{,}\)</span> which makes <span class="process-math">\(\{c_{k}(x)\}\)</span> a Cauchy sequence in <span class="process-math">\(\bbR\text{,}\)</span> therefore <span class="process-math">\(\lim_{k\to\infty} c_{k}(x)\)</span> exists. Furthermore, for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists some <span class="process-math">\(N_{\epsilon}\)</span> such that <span class="process-math">\(|\cup_{k=N_{\epsilon}}^{\infty}D_{k}| &lt; \epsilon\text{.}\)</span> On the complement of <span class="process-math">\(\cup_{k=N_{\epsilon}}^{\infty}D_{k}\text{,}\)</span> <span class="process-math">\(\vert c_{k}(x) -c_{k+1}(x)\vert \le \epsilon_{k}\)</span> for all <span class="process-math">\(k\ge N_{\epsilon}\text{,}\)</span> implying that <span class="process-math">\(\{c_{k}(x)\}\)</span> converges uniformly on this set.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lprealization-3-4">For (ii), we can use the equivalent Cauchy sequences <span class="process-math">\(\{ c_{k}(x)\}\)</span> and <span class="process-math">\(\{ \tilde c_{k}(x)\}\)</span> to construct a new Cauchy sequence, say, with <span class="process-math">\(c_{k}(x)\)</span> as the <span class="process-math">\((2k-1)\)</span>-th term and <span class="process-math">\(\{ \tilde c_{k}(x)\}\)</span> as the <span class="process-math">\((2k)\)</span>-th term, then appeal to the proof of (i), making sure that in selecting the subsequence, infinitely many terms from both sequences are selected. This subsequence, selected from two <span class="process-math">\(a.e.\)</span> convergent  sequences, converges <span class="process-math">\(a.e.\text{,}\)</span> which shows that <span class="process-math">\(\lim_{k\to \infty} c_{k}(x)=\lim_{k\to \infty} \tilde c_{k}(x)\)</span> <span class="process-math">\(a.e. \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lprealization-3-5">For (iii), define <span class="process-math">\(f_{k}(x)=c_{k}(x)-\tilde c_{k}(x)\text{,}\)</span> then <span class="process-math">\(\{f_{k}(x)\}\)</span> is a Cauchy sequence  in <span class="process-math">\(C[a, b]\)</span> in the<span class="process-math">\(L^{p}[a,  b]\)</span>-norm such that <span class="process-math">\(\lim_{k\to\infty} f_{k}(x)=0\)</span> <span class="process-math">\(a.e.\text{.}\)</span> We now show that <span class="process-math">\(\{f_{k}(x)\}\to 0\)</span> in <span class="process-math">\(L^{p}[a, b]\text{.}\)</span> We argue by contradiction: suppose not, then there exists some <span class="process-math">\(\sigma &gt; 0\)</span> and a subsequence of <span class="process-math">\(\{f_{k}(x)\}\text{,}\)</span> still denoted as <span class="process-math">\(\{f_{k}(x)\}\text{,}\)</span> such that <span class="process-math">\(\int_{a}^{b} |f_{k}(x)|^{p}\, dx \ge \sigma\)</span> for all <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lprealization-3-6">For any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> first apply <a href="chp-int.html#uniform-abs-contin" class="xref" data-knowl="./knowl/xref/uniform-abs-contin.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.2: Uniform Absolute Continuity of the Integrals of a  Sequence in C[a, b] which is Cauchy in the L^{p}[a, b] norm">Proposition 1.2.2</a> to <span class="process-math">\(\{f_{k}(x)\}\)</span> to find <span class="process-math">\(\delta &gt; 0\)</span> such that for any open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|G| &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\int_{G} |f_{k}(x)|^{p}\, dx &lt; \epsilon\text{.}\)</span> Next apply the proof for (i) to <span class="process-math">\(\{f_{k}(x)\}\)</span> to find a subsequence of <span class="process-math">\(\{f_{k}(x)\}\text{,}\)</span> still denoted as <span class="process-math">\(\{f_{k}(x)\}\text{,}\)</span> a limit function <span class="process-math">\(\phi(x)\)</span> <span class="process-math">\(a.e.\)</span> defined, and an open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|G| &lt; \delta\)</span> such that <span class="process-math">\(f_{k}(x) \to \phi (x)\)</span> <span class="process-math">\(a.e.\)</span> and uniformly in <span class="process-math">\(G^{c}\text{.}\)</span> Since it is assumed that <span class="process-math">\(f_{k}(x) \to 0\)</span> <span class="process-math">\(a.e.\text{,}\)</span> we must have <span class="process-math">\(\phi(x)=0\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Thus there exists <span class="process-math">\(N\)</span> such that <span class="process-math">\(|f_{k}(x)|^{p} \le \epsilon \)</span> for all <span class="process-math">\(x\in G^{c}\)</span> and <span class="process-math">\(k\ge N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lprealization-3-7">
+<div class="para">We would like to estimate <span class="process-math">\(\int_{[a, b]} |f_{k}(x)|^{p}\, dx\)</span> by <span class="process-math">\(\int_{G} |f_{k}(x)|^{p}\, dx + \int_{G^{c}} |f_{k}(x)|^{p}\, dx\text{.}\)</span> But in the Riemann integral setting, integration over an arbitrary closed set is not defined.  We complete the argument in the following way. For any <span class="process-math">\(k &gt; N\text{,}\)</span> since <span class="process-math">\(|f_{k}(x)|^{p} \in \mathcal R[a, b]\text{,}\)</span> we can find a partition <span class="process-math">\(a=a_{0} &lt; a_{1} &lt; \cdots &lt; a_{N_{k}}=b\)</span> such that</div>
+<div class="displaymath process-math" id="lprealization-3-7-6">
+\begin{equation*}
+\left| \int_{a}^{b} |f_{k}(x)|^{p}\, dx -\sum_{i=1}^{N_{k}} m_{i}(|f_{k}|^{p})(a_{i}-a_{i-1})\right| &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">For any interval <span class="process-math">\([a_{i-1}, a_{i}]\)</span> that has non-empty intersection with <span class="process-math">\(G^{c}\text{,}\)</span> we see that <span class="process-math">\(m_{i}(|f_{k}|^{p})=\inf_{[a_{i-1}, a_{i}]}|f_{k}|^{p} \le \epsilon\text{;}\)</span> the remaining subintervals <span class="process-math">\([a_{i-1}, a_{i}]\)</span> are contained in <span class="process-math">\(G\text{,}\)</span> and the lower Riemann sum over such intervals <span class="process-math">\(\le \int_{G} |f_{k}(x)|^{p}\, dx \le \epsilon\)</span> for any <span class="process-math">\(k\ge N\text{.}\)</span> It then follows that for any <span class="process-math">\(k\ge N\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lprealization-3-7-15">
+\begin{equation*}
+\int_{a}^{b} |f_{k}(x)|^{p}\, dx\le (b-a)\epsilon + 2\epsilon.
+\end{equation*}
+</div>
+<div class="para">Choose <span class="process-math">\(\epsilon &gt;0 \)</span> at the beginning such that <span class="process-math">\((b-a)\epsilon + 2\epsilon &lt; \sigma\text{,}\)</span> this  then shows a contradiction with our assumption that <span class="process-math">\(\int_{a}^{b} |f_{k}(x)|^{p}\, dx \ge \sigma\)</span> for all <span class="process-math">\(k\text{.}\)</span> Thus we have shown that <span class="process-math">\(\int_{a}^{b} |f_{k}(x)|^{p}\, dx\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lprealization-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.8.1"><a href="#lprealization-3" title="Copy heading and permalink for Proof 1.2.8.1" aria-label="Copy heading and permalink for Proof 1.2.8.1">🔗</a></div></article></details><article class="remark remark-like" id="chp-int-26"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="chp-int-26-1">
+<div class="para">The second part of (i) of <a href="chp-int.html#lprealization" class="xref" data-knowl="./knowl/xref/lprealization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">Proposition 1.2.8</a> is usually called Egorov’s Theorem. As a consequence of it, for any realization <span class="process-math">\(\phi (x)\)</span> of some <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> and any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a closed set <span class="process-math">\(F\)</span> of <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|F^{c}| &lt; \epsilon\)</span> such that the <em class="emphasis">restriction</em> of <span class="process-math">\(\phi(x)\)</span> on <span class="process-math">\(F\)</span> is continuous. Note that this is not saying that <span class="process-math">\(\phi(x)\)</span> is continuous at every point of <span class="process-math">\(F\)</span> as a function on <span class="process-math">\([a, b]\text{.}\)</span> Furthermore, for any <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> and any <span class="process-math">\(\epsilon,
+\epsilon' &gt; 0\text{,}\)</span> one can find a continuous approximation <span class="process-math">\(c(x) \in C[a, b]\)</span> in the sense that exists an open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \epsilon'\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="chp-int-26-1-19">
+\begin{equation*}
+\Vert \phi - c \Vert_{L^{p}[a, b]} &lt; \epsilon, \quad\text{ and } \vert \phi (x) - c(x) \vert &lt; \epsilon \text{ for all } x\in G^{c}.
+\end{equation*}
+</div>
+<div class="para">Here <span class="process-math">\(\Vert \phi - c \Vert_{L^{p}[a, b]}\)</span> is defined through the limiting process instead of the Riemann integral for a  general <span class="process-math">\(\phi \in L^{p}[a, b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.2.9"><a href="#chp-int-26" title="Copy heading and permalink for Remark 1.2.9" aria-label="Copy heading and permalink for Remark 1.2.9">🔗</a></div></article><details id="chp-int-27" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="chp-int-27-1">Let <span class="process-math">\(f \in L^{1}[a,  b]\text{.}\)</span> Extend <span class="process-math">\(f\)</span> to be <span class="process-math">\(0\)</span> outside of <span class="process-math">\([a, b]\text{.}\)</span> Prove that <span class="process-math">\(\int_{a}^{b}|f(x+h)-f(x)|\, dx \to 0\)</span> as <span class="process-math">\(|h|\to 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.10"><a href="#chp-int-27" title="Copy heading and permalink for Exercise 1.2.10" aria-label="Copy heading and permalink for Exercise 1.2.10">🔗</a></div></article></details><details id="chp-int-28" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="chp-int-28-1">Let <span class="process-math">\(f \in L^{1}[a,  b]\text{.}\)</span> Prove that <span class="process-math">\(F(t) :=\int_{a}^{t} f(x)\, dx\)</span> is a continuous function of <span class="process-math">\(x\in [a, b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.11"><a href="#chp-int-28" title="Copy heading and permalink for Exercise 1.2.11" aria-label="Copy heading and permalink for Exercise 1.2.11">🔗</a></div></article></details><details id="exe-avcn" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exe-avcn-1">Let <span class="process-math">\(f \in L^{1}[a,  b]\text{.}\)</span> Extend <span class="process-math">\(f\)</span> to be <span class="process-math">\(0\)</span> outside of <span class="process-math">\([a, b]\)</span> and define <span class="process-math">\(f_{h}(x)=h^{-1}\int_{x}^{x+h} f(y)\, dy\)</span> for <span class="process-math">\(h &gt; 0\)</span> small. Prove that <span class="process-math">\(\int_{a}^{b}|f_{h}(x)-f(x)|\, dx \to 0\)</span> as <span class="process-math">\(h \to 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exe-avcn-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.12"><a href="#exe-avcn" title="Copy heading and permalink for Exercise 1.2.12" aria-label="Copy heading and permalink for Exercise 1.2.12">🔗</a></div></article></details><article class="corollary theorem-like" id="chp-int-30"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(L^{p}[a, b]\)</span> is closed under taking absolute values and maximums.</span>
+</h3>
+<div class="para" id="chp-int-30-2-1">If <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> is a Cauchy sequence in <span class="process-math">\(L^{p}[a, b]\)</span>-norm, representing <span class="process-math">\(\phi\)</span> in <span class="process-math">\(L^{p}[a, b]\text{,}\)</span> then  <span class="process-math">\(\{ |c_{k}(x)| \}\)</span> in <span class="process-math">\(C[a, b]\)</span> is a Cauchy sequence in <span class="process-math">\(L^{p}[a, b]\)</span>-norm whose realization is given by <span class="process-math">\(|\phi (x)|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-30-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="chp-int-30-2-2">If <span class="process-math">\(\phi, \psi\in L^{p}[a, b]\text{,}\)</span> then <span class="process-math">\(\max\{\phi, \psi\} :=(\phi + \psi + |\phi - \psi||)/2 
+\in L^{p}[a, b]\)</span> and <span class="process-math">\(\min\{\phi, \psi\} :=(\phi + \psi - |\phi - \psi|)/2 
+\in L^{p}[a, b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-30-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 1.2.13: L^{p}[a, b] is closed under taking absolute values and maximums"><a href="#chp-int-30" title="Copy heading and permalink for Corollary 1.2.13: L^{p}[a, b] is closed under taking absolute values and maximums" aria-label="Copy heading and permalink for Corollary 1.2.13: L^{p}[a, b] is closed under taking absolute values and maximums">🔗</a></div></article><article class="proposition theorem-like" id="rcsthm"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rapidly Convergent Sequence in <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para logical" id="rcsthm-2-1">
+<div class="para">Let <span class="process-math">\(\{\phi_{k}\}\)</span> be a sequence of elements in <span class="process-math">\(L^{p}[a, b]\)</span> converging rapidly in the sense</div>
+<div class="displaymath process-math" id="rcsthm-2-1-3">
+\begin{equation*}
+\Vert \phi_{k} - \phi_{k+1} \Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\sum_{k}  \epsilon_{k}\)</span> converges. Then there exists a unique <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> such that <span class="process-math">\(\Vert \phi_{k} - \phi \Vert_{L^{p}[a, b]}\to 0\)</span> and <span class="process-math">\(\phi_{k} (x) \to \phi (x)\)</span> <span class="process-math">\(\ a.e.\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rcsthm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.2.14: Rapidly Convergent Sequence in L^{p}[a, b]"><a href="#rcsthm" title="Copy heading and permalink for Proposition 1.2.14: Rapidly Convergent Sequence in L^{p}[a, b]" aria-label="Copy heading and permalink for Proposition 1.2.14: Rapidly Convergent Sequence in L^{p}[a, b]">🔗</a></div></article><details id="rcsthm-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="rcsthm-3-1">
+<div class="para">For each <span class="process-math">\(\phi_{k}\)</span> there exists some <span class="process-math">\(c_{k}(x)\in C[a,  b]\)</span> and an open set  <span class="process-math">\(G_{k}\)</span> with <span class="process-math">\(|G_{k}| &lt; \epsilon_{k}\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="rcsthm-3-1-5">
+\begin{equation*}
+\Vert \phi_{k} (x) - c_{k}(x)\Vert_{L^{p}[a, b]} &lt; \epsilon_{k}^{2}, \text{ and } 
+\vert \phi_{k} (x) - c_{k}(x) \vert &lt; \epsilon_{k} \text{ for all } x\in G_{k}^{c}.
+\end{equation*}
+</div>
+<div class="para">Then the set <span class="process-math">\(E=\cap_{l=1}^{\infty}\cup_{k=l}^{\infty} G_{k}\)</span> is negligible, as <span class="process-math">\(|\cup_{k=l}^{\infty} G_{k}|\le \sum_{k=l}^{\infty}|G_{k}| \to 0\)</span> as <span class="process-math">\(l\to \infty\text{,}\)</span> and for any <span class="process-math">\(x\in E^{c}\text{,}\)</span> there exists some <span class="process-math">\(l_{x}\)</span> such that <span class="process-math">\(x\in \cap_{k=l_{x}}^{\infty} G_{k}^{c}\text{.}\)</span> This implies that <span class="process-math">\(\{ c_{k}(x)\}\)</span> satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="rcsthm-3-1-13">
+\begin{equation*}
+\Vert c_{k}(x)- c_{k+1}(x) \Vert_{L^{p}[a, b]} &lt; 2\epsilon_{k}^{2} + \epsilon_{k+1}^{2}
+\text{ and } \vert \phi_{k}(x) - c_{k}(x) \vert&lt; \epsilon_{k} \text{ for } k\ge l_{x}.
+\end{equation*}
+</div>
+<div class="para">Then <a href="chp-int.html#lprealization" class="xref" data-knowl="./knowl/xref/lprealization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">Proposition 1.2.8</a> applied to  <span class="process-math">\(\{ c_{k}(x)\}\)</span> implies that there exists a unique <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="rcsthm-3-1-17">
+\begin{equation*}
+\Vert c_{k}(x)- \phi \Vert_{L^{p}[a, b]} \to 0 \text{ and } c_{k}(x)\to \phi (x)\; a.e. \text{ as } k\to \infty.
+\end{equation*}
+</div>
+<div class="para">We can then conclude our proof by appealing to the triangle inequalities.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rcsthm-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.14.1"><a href="#rcsthm-3" title="Copy heading and permalink for Proof 1.2.14.1" aria-label="Copy heading and permalink for Proof 1.2.14.1">🔗</a></div></article></details><article class="definition definition-like" id="chp-int-32"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nonnegative Elements of <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para" id="chp-int-32-2-1">An element <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> is said to be non-negative if its realization <span class="process-math">\(\phi (x)\)</span> satisfies <span class="process-math">\(\phi (x) \ge 0\)</span>  <span class="process-math">\(a.e.\)</span> on <span class="process-math">\([a, b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.2.15: Nonnegative Elements of L^{p}[a, b]"><a href="#chp-int-32" title="Copy heading and permalink for Definition 1.2.15: Nonnegative Elements of L^{p}[a, b]" aria-label="Copy heading and permalink for Definition 1.2.15: Nonnegative Elements of L^{p}[a, b]">🔗</a></div></article><article class="proposition theorem-like" id="poselem"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Characterization of Nonnegative Elements of <span class="process-math">\(L^{p}[a, b]\)</span>.</span>
+</h3>
+<div class="para" id="poselem-2-1">An element <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> is non-negative iff there exists a Cauchy sequence <span class="process-math">\(\{ c_{k}(x)\}\)</span> representing <span class="process-math">\(\phi\)</span> such that <span class="process-math">\(c_{k}^{-}(x):=\min\{ c_{k}(x), 0\}\)</span> satisfies <span class="process-math">\(\Vert c_{k}^{-} \Vert_{L^{p}}\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#poselem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="poselem-2-2">As a consequence, if <span class="process-math">\(\phi \in L^{p}[a, b]\)</span> is non-negative, then there exists a Cauchy sequence <span class="process-math">\(\{ c_{k}(x)\}\)</span> in <span class="process-math">\(C[a, b]\)</span> representing <span class="process-math">\(\phi\)</span> such that <span class="process-math">\(\Vert c_{k}^{+} -\phi\Vert_{L^{p}}\to 0\)</span> as <span class="process-math">\(k\to \infty\)</span> and <span class="process-math">\(\int_{[a, b]} \phi = \lim_{k\to\infty} \int_{[a, b]} c_{k}^{+}(x)\, dx \ge 0\text{.}\)</span><details class="ptx-footnote" aria-live="polite" id="poselem-2-2-8"><summary class="ptx-footnote__number" title="Footnote 1.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="poselem-2-2-8">Since <span class="process-math">\(\int_{[a, b]} \phi \)</span> is defined through a limiting process via an approximate sequence not via a Riemann sum using <span class="process-math">\(\phi(x)\text{,}\)</span> the sign of <span class="process-math">\(\int_{[a, b]} \phi \)</span> does not automatically follow from <span class="process-math">\(\phi (x)\ge 0\)</span> <span class="process-math">\(\ a.e.\text{.}\)</span>
+</div></details><div class="autopermalink" data-description="Paragraph"><a href="#poselem-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.2.16: Characterization of Nonnegative Elements of L^{p}[a, b]"><a href="#poselem" title="Copy heading and permalink for Proposition 1.2.16: Characterization of Nonnegative Elements of L^{p}[a, b]" aria-label="Copy heading and permalink for Proposition 1.2.16: Characterization of Nonnegative Elements of L^{p}[a, b]">🔗</a></div></article><details id="poselem-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="poselem-3-1">
+<div class="para">Suppose that <span class="process-math">\(\{ c_{k}(x)\}\)</span> is a sequence in <span class="process-math">\(C[a, b]\text{,}\)</span> Cauchy in <span class="process-math">\(L^{p}[a, b]\)</span>-norm, representing <span class="process-math">\(\phi\)</span> such that <span class="process-math">\(\Vert c_{k}^{-} \Vert_{L^{p}}\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span> Define <span class="process-math">\(c_{k}^{+}(x)=c_{k}(x)- c_{k}^{-}(x)\text{,}\)</span> which is identified as <span class="process-math">\(\max\{ c_{k}(x), 0\}\text{.}\)</span> Then <span class="process-math">\(\{ c_{k}^{+}(x)\}\)</span> is a sequence in <span class="process-math">\(C[a, b]\text{,}\)</span> Cauchy in <span class="process-math">\(L^{p}[a, b]\)</span>-norm. <a href="chp-int.html#lprealization" class="xref" data-knowl="./knowl/xref/lprealization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">Proposition 1.2.8</a> applied to both <span class="process-math">\(\{ c_{k}^{+}(x)\}\)</span> and <span class="process-math">\(\{ c_{k}^{-}(x)\}\)</span> implies that there exists a subsequence, still indexed by <span class="process-math">\(k\)</span> to avoid extra indices, such that <span class="process-math">\(\lim_{k\to \infty} c_{k}^{+}(x)\)</span> exists <span class="process-math">\(a.e.\text{,}\)</span> which is evidently <span class="process-math">\(\ge 0\)</span> <span class="process-math">\(a.e.\text{,}\)</span> and <span class="process-math">\(\lim_{k\to \infty} c_{k}^{-}(x)\to 0\)</span> <span class="process-math">\(a.e.\)</span> (refer to (ii) of <a href="chp-int.html#lprealization" class="xref" data-knowl="./knowl/xref/lprealization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">Proposition 1.2.8</a> ). Therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html ./knowl/xref/lprealization.html" id="poselem-3-1-23">
+\begin{equation*}
+\lim_{k\to \infty} c_{k}(x)= \lim_{k\to \infty} c_{k}^{+}(x) + \lim_{k\to \infty} c_{k}^{-}(x)\ge 0 \; a.e.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#poselem-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="poselem-3-2">
+<div class="para">Conversely, suppose that <span class="process-math">\(\phi (x)\ge 0\)</span> <span class="process-math">\(a.e.\)</span> and <span class="process-math">\(\{c_{k}(x)\}\)</span> is a  sequence in <span class="process-math">\(C[a, b]\text{,}\)</span> Cauchy in the<span class="process-math">\(L^{p}[a, b]\)</span> norm representing <span class="process-math">\(\phi\)</span> and <span class="process-math">\(c_{k}(x)\to \phi(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span>  Then we must have <span class="process-math">\(\lim_{k\to \infty} c_{k}^{-}(x)\to 0\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Noting that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="poselem-3-2-11">
+\begin{equation*}
+\vert c_{k}^{-}(x) - c_{l}^{-}(x)\vert \le \vert c_{k}(x) - c_{l}(x)\vert
+\end{equation*}
+</div>
+<div class="para">we see that <span class="process-math">\(\{ c_{k}^{-}(x)\}\)</span> is also a sequence in <span class="process-math">\(C[a, b]\text{,}\)</span> Cauchy in the<span class="process-math">\(L^{p}[a, b]\)</span> norm. Then the proof of of <a href="chp-int.html#lprealization" class="xref" data-knowl="./knowl/xref/lprealization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.8: Realization of Elements of L^{p}[a, b]">Proposition 1.2.8</a> shows that <span class="process-math">\(c_{k}^{-}(x)\to 0\)</span> in <span class="process-math">\(L^{p}[a, b]\)</span> norm, and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lprealization.html" id="poselem-3-2-18">
+\begin{equation*}
+\Vert c_{k}^{+}(x)-\phi(x)\Vert_{L^{p}[a, b]}\le \Vert c_{k}(x)-\phi(x)\Vert_{L^{p}[a, b]} + 
+\Vert c_{k}^{-}(x)\Vert_{L^{p}[a, b]} \to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(k\to \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#poselem-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.16.1"><a href="#poselem-3" title="Copy heading and permalink for Proof 1.2.16.1" aria-label="Copy heading and permalink for Proof 1.2.16.1">🔗</a></div></article></details><div class="para" id="chp-int-34">Since a function in <span class="process-math">\(L^{p}[a, b]\)</span> may not be bounded, we may no longer conclude that <span class="process-math">\(f(x)g(x)\in L[a, b]\)</span> whenever <span class="process-math">\(f(x), g(x)\in L[a, b]\text{.}\)</span> However we have the following<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-prod"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="prop-prod-1-1">
+<ol class="lower-alpha ol-marker-4" id="prop-prod-1-1-1">
+<li id="prop-prod-1-1-1-1">
+<div class="para" id="p-derived-prop-prod-1-1-1-1">Suppose that <span class="process-math">\(f(x)\in L^{p}[a, b]\)</span> and <span class="process-math">\(g(x)\in L^{p'}[a, b]\)</span> for some <span class="process-math">\(p, p'\ge1\)</span> such that <span class="process-math">\(1/p +1/p'=1\text{.}\)</span> Then <span class="process-math">\(f(x)g(x)\in L[a, b]\)</span> and<div class="displaymath process-math" id="prop-prod-1-1-1-1-6">
+\begin{equation*}
+\int_{a}^{b}|f(x)g(x)|\, dx\le\left( \int_{a}^{b} |f(x)|^{p}\, dx\right)^{1/p} \left( \int_{a}^{b} |g(x)|^{p'}\, dx\right)^{1/p'}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#prop-prod-1-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="prop-prod-1-1-1-2">
+<div class="para" id="p-derived-prop-prod-1-1-1-2">Suppose that <span class="process-math">\(f(x), g(x)\in L[a, b]\)</span> and that  there exists some <span class="process-math">\(M &gt; 0\)</span> such that <span class="process-math">\(|g(x)|\le M\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Then <span class="process-math">\(f(x)g(x)\in L[a, b]\)</span> and<div class="displaymath process-math" id="prop-prod-1-1-1-2-6">
+\begin{equation*}
+\int_{a}^{b}|f(x)g(x)|\, dx\le M \int_{a}^{b} |f(x)|\, dx.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#prop-prod-1-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.2.17"><a href="#prop-prod" title="Copy heading and permalink for Proposition 1.2.17" aria-label="Copy heading and permalink for Proposition 1.2.17">🔗</a></div></article><details id="prop-prod-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-prod-2-1">For (a), take <span class="process-math">\(\{b_{k}(x)\}\subset \in C[a, b]\)</span> such that <span class="process-math">\(b_{k}(x)\to f(x)\)</span> in <span class="process-math">\(L^{p}[a, b]\)</span> and <span class="process-math">\(\{c_{k}(x)\} \subset \in C[a, b]\)</span> such that <span class="process-math">\(c_{k}(x)\to g(x)\)</span> in <span class="process-math">\(L^{p'}[a, b]\text{.}\)</span> We show that <span class="process-math">\(\{b_{k}(x)c_{k}(x)\}\)</span> is Cauchy in <span class="process-math">\(L[a, b]\)</span> and that <span class="process-math">\(f(x)g(x)\)</span> is a realization of this sequence.<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-2">
+<div class="para">Note that there exists some <span class="process-math">\(M &gt; 0\)</span> such that for all <span class="process-math">\(k, l\)</span>
+</div>
+<div class="displaymath process-math" id="prop-prod-2-2-3">
+\begin{equation*}
+\Vert b_{l}(x) \Vert_{L^{p}[a,b]}, \Vert c_{k}(x)\Vert_{L^{p'}[a,b]}\le M.
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="prop-prod-2-2-4">
+\begin{align*}
+\amp \Vert b_{k}(x)c_{k}(x)-b_{l}(x)c_{l}(x)\Vert_{L[a,b]} \\
+\le \amp \Vert \left(b_{k}(x)-b_{l}(x)\right)c_{k}(x)\Vert_{L[a,b]} +
+\Vert b_{l}(x)\left( c_{k}(x)-c_{l}(x) \right)\Vert_{L[a,b]}\\
+\le \amp \Vert \left(b_{k}(x)-b_{l}(x)\right)\Vert_{L^{p}[a,b]} \Vert c_{k}(x)\Vert_{L^{p'}[a,b]}
++ \Vert b_{l}(x) \Vert_{L^{p}[a,b]} \Vert \left( c_{k}(x)-c_{l}(x) \right)\Vert_{L^{p'}[a,b]}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\Vert \left(b_{k}(x)-b_{l}(x)\right)\Vert_{L^{p}[a,b]} \to 0\)</span> and <span class="process-math">\(\Vert \left( c_{k}(x)-c_{l}(x) \right)\Vert_{L^{p'}[a,b]}\to 0\)</span> as <span class="process-math">\(k, l\to \infty\text{,}\)</span> we can conclude that <span class="process-math">\(\Vert b_{k}(x)c_{k}(x)-b_{l}(x)c_{l}(x)\Vert_{L[a,b]} \to 0\)</span> as <span class="process-math">\(k, l\to \infty\text{.}\)</span>  Since <span class="process-math">\(b_{k}(x)\to f(x)\)</span> <span class="process-math">\(a.e.\)</span> and <span class="process-math">\(c_{k}(x)\to g(x)\)</span> <span class="process-math">\(a.e.\text{,}\)</span> it follows that <span class="process-math">\(b_{k}(x)c_{k}(x)\to f(x)g(x)\)</span> <span class="process-math">\(a.e.\text{,}\)</span> making <span class="process-math">\(f(x)g(x)\)</span> as a realization of the Cauchy sequence <span class="process-math">\(\{b_{k}(x)c_{k}(x)\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-3">
+<div class="para">Finally, using</div>
+<div class="displaymath process-math" id="prop-prod-2-3-1">
+\begin{equation*}
+\int_{a}^{b} |f(x)||g(x)|\, dx = \lim_{k\to \infty} \int_{a}^{b} |b_{k}(x)||c_{k}(x)|\, dx
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="prop-prod-2-3-2">
+\begin{equation*}
+\int_{a}^{b} |f(x)|^{p}\, dx= \lim_{k\to \infty} \int_{a}^{b} |b_{k}(x)|^{p}\, dx
+\end{equation*}
+</div>
+<div class="para">as well as</div>
+<div class="displaymath process-math" id="prop-prod-2-3-3">
+\begin{equation*}
+\int_{a}^{b} |g(x)|^{p'}\, dx= \lim_{k\to \infty} \int_{a}^{b} |c_{k}(x)|^{p'}\, dx
+\end{equation*}
+</div>
+<div class="para">it follows from the Hlder’s inequality</div>
+<div class="displaymath process-math" id="prop-prod-2-3-4">
+\begin{equation*}
+\int_{a}^{b} |b_{k}(x)||c_{k}(x)|\, dx
+\le \left(\int_{a}^{b} |b_{k}(x)|^{p}\, dx\right)^{1/p}
+\left(\int_{a}^{b} |c_{k}(x)|^{p'}\, dx\right)^{1/p'}
+\end{equation*}
+</div>
+<div class="para">that the same inequality holds for <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-4">
+<div class="para">For (b), the key is how the assumption <span class="process-math">\(|g(x)|\le M\)</span> <span class="process-math">\(a.e.\)</span> can be reflected in a Cauchy sequence from <span class="process-math">\(C[a, b]\)</span> approximating <span class="process-math">\(g\)</span> in <span class="process-math">\(L[a, b]\text{.}\)</span> Let <span class="process-math">\(\{c_{k}(x)\}\subset C[a, b]\)</span> be a Cauchy sequence for <span class="process-math">\(g\in L[a, b]\text{.}\)</span> Define</div>
+<div class="displaymath process-math" id="prop-prod-2-4-8">
+\begin{equation*}
+c^{M}_{k}(x)=\begin{cases} M \amp \text{ if } c_{k}(x) &gt; M\\
+c_{k}(x) \amp \text{ if } -M \le c_{k}(x)\le M\\
+-M \amp \text{ if } c_{k}(x) &lt; -M\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">We claim that <span class="process-math">\(\{ c^{M}_{k}(x)\}\subset C[a, b]\)</span> is a Cauchy sequence equivalent to <span class="process-math">\(\{c_{k}(x)\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-5">
+<div class="para">First, observing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/poselem.html" id="prop-prod-2-5-1">
+\begin{equation*}
+|c^{M}_{k}(x)-c^{M}_{l}(x)|\le |c_{k}(x)-c_{l}(x)|
+\end{equation*}
+</div>
+<div class="para">holds point wise. It then follows that  <span class="process-math">\(\{ c^{M}_{k}\}\subset C[a, b]\)</span> is a Cauchy sequence in <span class="process-math">\(L[a, b]\text{.}\)</span> Next, similar to the proof of <a href="chp-int.html#poselem" class="xref" data-knowl="./knowl/xref/poselem.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.16: Characterization of Nonnegative Elements of L^{p}[a, b]">Proposition 1.2.16</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/poselem.html" id="prop-prod-2-5-5">
+\begin{equation*}
+|c_{k}(x)-c^{M}_{k}(x)| =(c_{k}(x)-M)_{+}-(c_{k}(x)+M)_{-}
+\end{equation*}
+</div>
+<div class="para">and that <span class="process-math">\((c_{k}(x)-M)_{+}=-(M-c_{k}(x))_{-}\to 0\)</span> in <span class="process-math">\(L^{p}[a, b]\text{,}\)</span> as <span class="process-math">\(M-g(x)\ge 0\)</span> and <span class="process-math">\(M-c_{k}(x) \to M-g(x)\)</span>  in <span class="process-math">\(L^{p}[a, b]\text{;}\)</span> similarly, <span class="process-math">\((c_{k}(x)+M)_{-} \to 0\)</span> in <span class="process-math">\(L^{p}[a, b]\text{.}\)</span> This shows that <span class="process-math">\(\{ c^{M}_{k}(x)\}\)</span> is equivalent to <span class="process-math">\(\{c_{k}(x)\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-6">
+<div class="para">Now if <span class="process-math">\(\{b_{k}(x)\}\subset C[a, b]\)</span> is a Cauchy sequence for <span class="process-math">\(f\)</span> in <span class="process-math">\(L[a,  b]\text{,}\)</span> then we claim that <span class="process-math">\(\{b_{k}(x) c_{k}^{M}(x)\} \)</span> is a Cauchy sequence for <span class="process-math">\(f(x)g(x)\)</span> in <span class="process-math">\(L[a, b]\text{.}\)</span> This is because</div>
+<div class="displaymath process-math" id="prop-prod-2-6-7">
+\begin{align*}
+\amp \int_{a}^{b}|b_{k}(x)c_{k}^{M}(x)-b_{l}(x)c_{l}^{M}(x)|\, dx \\
+\le \amp \int_{a}^{b}|\left( b_{k}(x)- b_{l}(x)\right)c_{k}^{M}(x)|\, dx +
+\int_{a}^{b}|b_{l}(x) \left(c_{k}^{M}(x)-c_{l}^{M}(x)\right)|\, dx\\
+\le \amp M \int_{a}^{b}| b_{k}(x)- b_{l}(x)|\, dx +
+\int_{a}^{b}|b_{l}(x) \left(c_{k}^{M}(x)-c_{l}^{M}(x)\right)|\, dx
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-prod-2-7">
+<div class="para">For any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> first find <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(k, l\ge N\text{,}\)</span> <span class="process-math">\(M \int_{a}^{b}| b_{k}(x)- b_{l}(x)|\, dx &lt; \epsilon\text{.}\)</span> Note that there exists some <span class="process-math">\(M' &gt; 0\)</span> such that <span class="process-math">\(\int_{a}^{b}|b_{l}(x)|\, dx \le M'\)</span> for all <span class="process-math">\(l\text{,}\)</span> and that there exists some <span class="process-math">\(\delta &gt; 0\)</span> such that for any open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \delta\text{,}\)</span> we have <span class="process-math">\(2M \int_{G} |b_{l}(x)|\, dx &lt; \epsilon/M'\)</span> for all <span class="process-math">\(l\text{.}\)</span> For such a <span class="process-math">\(\delta &gt; 0\text{,}\)</span> we can find some open set <span class="process-math">\(G\)</span> with <span class="process-math">\(|G| &lt; \delta\)</span> such that a subsequence of <span class="process-math">\(\{c_{k}^{M}(x) \}\text{,}\)</span> still denoted as <span class="process-math">\(\{c_{k}^{M}(x) \}\text{,}\)</span> satisfies <span class="process-math">\(c_{k}^{M}(x) \to \phi(x)\)</span> uniformly on <span class="process-math">\(G^{c}\text{.}\)</span> Therefore, we can find some <span class="process-math">\(K\)</span> such that for all <span class="process-math">\(k, l\ge K\text{,}\)</span> we have <span class="process-math">\(| c_{k}^{M}(x)-c_{l}^{M}(x)| &lt; \epsilon/M'\)</span> for all <span class="process-math">\(x\in G^{c}\text{,}\)</span> which leads to</div>
+<div class="displaymath process-math" id="prop-prod-2-7-24">
+\begin{equation*}
+\int_{G^{c}} |b_{l}(x) \left(c_{k}^{M}(x)-c_{l}^{M}(x)\right)|\, dx\le \epsilon.
+\end{equation*}
+</div>
+<div class="para">But</div>
+<div class="displaymath process-math" id="prop-prod-2-7-25">
+\begin{equation*}
+\int_{G} |b_{l}(x) \left(c_{k}^{M}(x)-c_{l}^{M}(x)\right)|\, dx\le 2M \int_{G} |b_{l}(x) |\, dx &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">This leads to</div>
+<div class="displaymath process-math" id="prop-prod-2-7-26">
+\begin{equation*}
+\int_{a}^{b}|b_{k}(x)c_{k}^{M}(x)-b_{l}(x)c_{l}^{M}(x)|\, dx  &lt; 3\epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-prod-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.17.1"><a href="#prop-prod-2" title="Copy heading and permalink for Proof 1.2.17.1" aria-label="Copy heading and permalink for Proof 1.2.17.1">🔗</a></div></article></details><article class="theorem theorem-like" id="MCT"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Convergence Theorem.</span>
+</h3>
+<div class="para" id="MCT-2-1">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(0\le \phi_{k}(x)\le \phi_{k+1}(x)\)</span> <span class="process-math">\(a.e.\)</span> for all <span class="process-math">\(k\)</span> and that <span class="process-math">\(\int_{a}^{b} \phi_{k}\)</span> is bounded. Then the <span class="process-math">\(a.e.\)</span> defined <span class="process-math">\(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\)</span> (it could take value <span class="process-math">\(\infty\)</span>) is the realization of some <span class="process-math">\(\phi \in L^{1}[a, b]\text{,}\)</span> and <span class="process-math">\(\Vert \phi_{k}-\phi \Vert_{L^{1}[a, b]}\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#MCT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.2.18: Monotone Convergence Theorem"><a href="#MCT" title="Copy heading and permalink for Theorem 1.2.18: Monotone Convergence Theorem" aria-label="Copy heading and permalink for Theorem 1.2.18: Monotone Convergence Theorem">🔗</a></div></article><details id="MCT-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="MCT-3-1">First, <a href="chp-int.html#poselem" class="xref" data-knowl="./knowl/xref/poselem.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.16: Characterization of Nonnegative Elements of L^{p}[a, b]">Proposition 1.2.16</a> implies that <span class="process-math">\(\int_{a}^{b} \phi_{k}(x)\, dx \le \int_{a}^{b} \phi_{k+1}(x)\, dx\text{,}\)</span> so the sequence of scalars <span class="process-math">\(\{ \int_{a}^{b} \phi_{k}(x)\, dx\}\)</span> as a bounded, monotone increasing sequence is convergent. Since for <span class="process-math">\(l &gt; k\text{,}\)</span> <span class="process-math">\(\int_{a}^{b} |\phi_{l}(x)-\phi_{k}(x)|\, dx= \int_{a}^{b} (\phi_{l}(x)-\phi_{k}(x))\, dx\text{,}\)</span> it follows that <span class="process-math">\(\{ \phi_{k}\}\)</span> is a Cauchy sequence in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> Then by <a href="chp-int.html#rcsthm" class="xref" data-knowl="./knowl/xref/rcsthm.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.14: Rapidly Convergent Sequence in L^{p}[a, b]">Proposition 1.2.14</a> it has a subsequence <span class="process-math">\(\{ \phi_{k_{l}}\}\)</span> converging to some <span class="process-math">\(\tilde \phi\)</span> in <span class="process-math">\(L^{1}[a, b]\text{,}\)</span> and to <span class="process-math">\(\tilde \phi (x)\)</span> <span class="process-math">\(\ a.e.\)</span> pointwise. This identifies <span class="process-math">\(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\)</span> with <span class="process-math">\(\tilde \phi(x)\)</span> <span class="process-math">\(\ a.e.\)</span> pointwise, showing that <span class="process-math">\(\phi \in L^{1}[a, b]\text{.}\)</span> Since the full sequence <span class="process-math">\(\{ \phi_{k}\}\)</span> is a Cauchy sequence in <span class="process-math">\(L^{1}[a, b]\text{,}\)</span> we show that <span class="process-math">\(\phi_{k} \to \phi\)</span> in <span class="process-math">\(L^{1}[a, b]\)</span> as follows.<div class="autopermalink" data-description="Paragraph"><a href="#MCT-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="MCT-3-2">
+<div class="para">For any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists <span class="process-math">\(L\)</span> such that for all <span class="process-math">\(l\ge L\text{,}\)</span> <span class="process-math">\(\int_{a}^{b}|\phi_{k_{l}}(x)-\phi(x)|\, dx &lt; \epsilon\text{;}\)</span> also, there exists <span class="process-math">\(N\)</span> such that whenever <span class="process-math">\(k, m\ge N\text{,}\)</span> <span class="process-math">\(\int_{a}^{b}|\phi_{k}(x)-\phi_{m}(x)|\, dx &lt; \epsilon\text{.}\)</span> Let <span class="process-math">\(N'=\max\{N, k_{L}\}\text{.}\)</span> Then when <span class="process-math">\(k \ge N'\text{,}\)</span> we can find <span class="process-math">\(l\)</span> such that <span class="process-math">\(k_{l} \ge N'\)</span> so</div>
+<div class="displaymath process-math" id="MCT-3-2-12">
+\begin{equation*}
+\int_{a}^{b}|\phi_{k}(x)-\phi(x)|\, dx \le \int_{a}^{b}|\phi_{k}(x)-\phi_{k_{l}}(x)|\, dx
++ \int_{a}^{b}|\phi_{k_{l}}(x)-\phi(x)|\, dx \le 2\epsilon,
+\end{equation*}
+</div>
+<div class="para">proving that <span class="process-math">\(\phi_{k} \to \phi\)</span> in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#MCT-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.18.1"><a href="#MCT-3" title="Copy heading and permalink for Proof 1.2.18.1" aria-label="Copy heading and permalink for Proof 1.2.18.1">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-desc-open"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="cor-desc-open-1-1">Suppose that <span class="process-math">\(G_{n}\)</span> is a sequence of open set such that <span class="process-math">\(G_{n+1}\subset G_{n}\)</span> for all <span class="process-math">\(n\)</span> and <span class="process-math">\(\cap_{n=1}^{\infty}G_{n}\)</span> is negligible and that <span class="process-math">\(|G_{1}| &lt; \infty\text{,}\)</span> then  <span class="process-math">\(|G_{n}|\to 0\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-desc-open-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 1.2.19"><a href="#cor-desc-open" title="Copy heading and permalink for Corollary 1.2.19" aria-label="Copy heading and permalink for Corollary 1.2.19">🔗</a></div></article><details id="cor-desc-open-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-desc-open-2-1">Note that <span class="process-math">\(\chi_{G_{n+1}}(x)\le \chi_{G_{n}}(x)\)</span> and that <span class="process-math">\(\chi_{G_{n}}(x) \to 0\)</span> except on <span class="process-math">\(\cap_{n=1}^{\infty}G_{n}\text{.}\)</span> It follows that <span class="process-math">\(1- \chi_{G_{n+1}}(x)\ge 1- \chi_{G_{n}}(x)\)</span> and that <span class="process-math">\(1- \chi_{G_{n}}(x)\to 1\)</span> except on <span class="process-math">\(\cap_{n=1}^{\infty}G_{n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-desc-open-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="cor-desc-open-2-2">
+<div class="para">Then <a href="chp-int.html#MCT" class="xref" data-knowl="./knowl/xref/MCT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.18: Monotone Convergence Theorem">Theorem 1.2.18</a> implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/MCT.html" id="cor-desc-open-2-2-2">
+\begin{equation*}
+\int_{a}^{b}\left( 1- \chi_{G_{n}}(x)\right)\, dx \to \int_{a}^{b} 1\, dx=b-a,
+\end{equation*}
+</div>
+<div class="para">from which we conclude that <span class="process-math">\(|G_{n}|=\int_{a}^{b} \chi_{G_{n}}(x)\, dx \to 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-desc-open-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.19.1"><a href="#cor-desc-open-2" title="Copy heading and permalink for Proof 1.2.19.1" aria-label="Copy heading and permalink for Proof 1.2.19.1">🔗</a></div></article></details><div class="para" id="chp-int-38">The assumption that <span class="process-math">\(|G_{1}| &lt; \infty\)</span> (it suffices that some <span class="process-math">\(|G_{n}| &lt; \infty\)</span>) cannot be removed, for <span class="process-math">\(G_{n}=(n,\infty)\)</span> is a decreasing sequence of open set with <span class="process-math">\(\cap_{n=1}^{\infty}G_{n}=\emptyset\)</span> is certainly negligible, but <span class="process-math">\(|G_{n}|\)</span> does not converge to <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-38" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="chp-int-39" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="chp-int-39-1">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(\phi_{k}(x)\ge \phi_{k+1}(x)\)</span> <span class="process-math">\(a.e.\)</span> for all <span class="process-math">\(k\)</span> and that <span class="process-math">\(\int_{a}^{b} \phi_{k}\)</span> is bounded. Prove that the <span class="process-math">\(a.e.\)</span> defined <span class="process-math">\(\phi (x) :=\lim_{k\to \infty} \phi_{k}(x)\)</span> is the realization of some <span class="process-math">\(\phi \in L^{1}[a, b]\text{,}\)</span> and <span class="process-math">\(\Vert \phi_{k}-\phi \Vert_{L^{1}[a, b]}\to 0\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp-int-39-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.20"><a href="#chp-int-39" title="Copy heading and permalink for Exercise 1.2.20" aria-label="Copy heading and permalink for Exercise 1.2.20">🔗</a></div></article></details><details id="chp-int-40" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="chp-int-40-1">
+<div class="para">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(\phi_{k}(x)\ge 0\)</span> <span class="process-math">\(a.e.\)</span> for all <span class="process-math">\(k\)</span> and that <span class="process-math">\(\sum_{k=1 }^{l}\int_{a}^{b} \phi_{k}\)</span> is bounded independent of <span class="process-math">\(k\text{.}\)</span> Prove that <span class="process-math">\(\lim_{l\to\infty} \sum_{k=1 }^{l}\phi_{k}(x)\)</span> is the realization of some of element in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> Denoting it as <span class="process-math">\(\sum_{k=1 }^{\infty}\phi_{k}\text{,}\)</span> prove that</div>
+<div class="displaymath process-math" id="chp-int-40-1-11">
+\begin{equation*}
+\int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
+\sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-40-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.21"><a href="#chp-int-40" title="Copy heading and permalink for Exercise 1.2.21" aria-label="Copy heading and permalink for Exercise 1.2.21">🔗</a></div></article></details><article class="theorem theorem-like" id="fatou"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fatou Theorem.</span>
+</h3>
+<div class="para logical" id="fatou-2-1">
+<div class="para">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(\phi_{k}(x)\ge 0\)</span> <span class="process-math">\(\ a.e.\)</span> for all <span class="process-math">\(k\)</span> and that  <span class="process-math">\(\liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)\)</span> is finite. Then</div>
+<div class="displaymath process-math" id="fatou-2-1-7">
+\begin{equation*}
+\liminf_{k\to \infty} \phi_{k}(x) :=\lim_{l\to \infty} \inf\{\phi_{k}(x): k\ge l\} \in L^{1}[a, b]
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="fatou-2-1-8">
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) \le \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#fatou-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.2.22: Fatou Theorem"><a href="#fatou" title="Copy heading and permalink for Theorem 1.2.22: Fatou Theorem" aria-label="Copy heading and permalink for Theorem 1.2.22: Fatou Theorem">🔗</a></div></article><details id="fatou-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="fatou-3-1">Define <span class="process-math">\(\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}\text{.}\)</span> Then <span class="process-math">\(\psi_{k,l}\in L^{1}[a, b]\)</span> and <span class="process-math">\(\psi_{k,l}(x)\ge \psi_{k,l+1}(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Then <a href="chp-int.html#MCT" class="xref" data-knowl="./knowl/xref/MCT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.18: Monotone Convergence Theorem">Theorem 1.2.18</a> implies that <span class="process-math">\(\Phi_{k}=\lim_{l\to\infty} \psi_{k,l} \in L^{1}[a, b]\)</span> with <span class="process-math">\(\int_{a}^{b} \Phi_{k} = \lim_{l\to\infty}\int_{a}^{b} \psi_{k,l}\text{.}\)</span> Since for any <span class="process-math">\(l &gt; l' \ge k\text{,}\)</span> <span class="process-math">\(\psi_{k,l} \le \phi_{l'}\text{,}\)</span> it follows that <span class="process-math">\(\int_{a}^{b} \Phi_{k}  \le \int_{a}^{b} \phi_{l'}\text{,}\)</span> therefore, <span class="process-math">\(\int_{a}^{b} \Phi_{k}  \le  \inf\{ \int_{a}^{b} \phi_{l'}: l'\ge k\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#fatou-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="fatou-3-2">
+<div class="para">Now <span class="process-math">\(\Phi_{k} \le \Phi_{k+1} \)</span> and <span class="process-math">\(\int_{a}^{b} \Phi_{k} \)</span> is bounded under our assumption. Then <a href="chp-int.html#MCT" class="xref" data-knowl="./knowl/xref/MCT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.18: Monotone Convergence Theorem">Theorem 1.2.18</a> implies <span class="process-math">\(\lim_{k\to\infty} \Phi_{k} \in L^{1}[a, b]\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/MCT.html" id="fatou-3-2-5">
+\begin{equation*}
+\int_{a}^{b}  \liminf_{k\to \infty} \phi_{k}(x)
+= \int_{a}^{b} \lim_{k\to\infty}  \Phi_{k} = \lim_{k\to\infty}  \int_{a}^{b}  \Phi_{k} 
+\le \lim_{k\to\infty} \inf\{ \int_{a}^{b} \phi_{l'}: l'\ge k\},
+\end{equation*}
+</div>
+<div class="para">which equals <span class="process-math">\(\liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#fatou-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.22.1"><a href="#fatou-3" title="Copy heading and permalink for Proof 1.2.22.1" aria-label="Copy heading and permalink for Proof 1.2.22.1">🔗</a></div></article></details><details id="chp-int-42" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="chp-int-42-1">
+<div class="para">Construct a sequence <span class="process-math">\(\{\phi_{k}\}\)</span> in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(\phi_{k}(x)\ge 0\)</span> <span class="process-math">\(\ a.e.\)</span> for all <span class="process-math">\(k\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="chp-int-42-1-6">
+\begin{equation*}
+\int_{a}^{b} \liminf_{k\to \infty} \phi_{k}(x) &lt; \liminf_{k\to \infty} \int_{a}^{b} \phi_{k}(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-42-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.23"><a href="#chp-int-42" title="Copy heading and permalink for Exercise 1.2.23" aria-label="Copy heading and permalink for Exercise 1.2.23">🔗</a></div></article></details><article class="theorem theorem-like" id="DCT"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dominated Convergence Theorem.</span>
+</h3>
+<div class="para" id="DCT-2-1">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> such that <span class="process-math">\(\lim_{k\to\infty} \phi_{k}(x) =\phi (x)\)</span> exists <span class="process-math">\(a.e.\text{,}\)</span> and there exists a <span class="process-math">\(g\in L^{1}[a, b]\)</span> such that <span class="process-math">\(|\phi_{k}(x)|\le g(x)\)</span> <span class="process-math">\(\ a.e.\text{.}\)</span> Then <span class="process-math">\(\phi \in L^{1}[a, b]\)</span> and <span class="process-math">\(\phi_{k}\to \phi\)</span> in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> As a consequence, <span class="process-math">\(\int_{a}^{b} \phi_{k} \to \int_{a}^{b} \phi\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#DCT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.2.24: Dominated Convergence Theorem"><a href="#DCT" title="Copy heading and permalink for Theorem 1.2.24: Dominated Convergence Theorem" aria-label="Copy heading and permalink for Theorem 1.2.24: Dominated Convergence Theorem">🔗</a></div></article><details id="DCT-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="DCT-3-1">
+<div class="para">Define <span class="process-math">\(\psi_{k,l}=\min\{\phi_{k},\cdots, \phi_{k+l}\}\text{.}\)</span> Then <span class="process-math">\(\psi_{k,l}\in L^{1}[a, b]\)</span> and <span class="process-math">\(\psi_{k,l}(x)\ge \psi_{k,l+1}(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span> <span class="process-math">\(\phi_{k}\)</span> and <span class="process-math">\(\psi_{k,l}\)</span> are no longer necessarily non-negative, but <span class="process-math">\(|\psi_{k,l}(x)|\le g(x)\)</span> <span class="process-math">\(a.e.\text{.}\)</span> Then <span class="process-math">\(\{ g(x)\pm \psi_{k,l}(x)\}\)</span> are non-negative functions in <span class="process-math">\(L^{1}[a, b]\text{,}\)</span> monotone in <span class="process-math">\(l\text{.}\)</span> Therefore, <span class="process-math">\(\lim_{l\to\infty} (g(x)\pm \psi_{k,l}(x)) \in L^{1}[a, b]\text{,}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/MCT.html" id="DCT-3-1-13">
+\begin{equation*}
+\int_{a}^{b}\left( g \pm \lim_{l\to\infty} \psi_{k,l}\right)
+=\lim_{l\to\infty} \int_{a}^{b}\left( g\pm \psi_{k,l}\right),
+\end{equation*}
+</div>
+<div class="para">from which it follows that <span class="process-math">\(\Phi_{k}= \lim_{l\to\infty} \psi_{k,l}\in L^{1}[a, b]\text{,}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/MCT.html" id="DCT-3-1-15">
+\begin{equation*}
+\int_{a}^{b} \Phi_{k} = \lim_{l\to\infty} \int_{a}^{b} \psi_{k,l}.
+\end{equation*}
+</div>
+<div class="para">Note that it follows from <span class="process-math">\(\phi_{k}(x)\to \phi(x)\)</span> <span class="process-math">\(\ a.e.\)</span> that  <span class="process-math">\(\Phi_{k}(x)\to \phi (x)\)</span> <span class="process-math">\(\ a.e.\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span> Therefore by <a href="chp-int.html#MCT" class="xref" data-knowl="./knowl/xref/MCT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.18: Monotone Convergence Theorem">Theorem 1.2.18</a> <span class="process-math">\(\phi \in L^{1}[a, b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#DCT-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="DCT-3-2">
+<div class="para">We can now apply Fatou Theorem to the sequence of non-negative functions <span class="process-math">\(2 g - |\phi_{k}-\phi| \in L^{1}[a, b]\)</span> to imply</div>
+<div class="displaymath process-math" id="DCT-3-2-2">
+\begin{align*}
+\int_{a}^{b} \liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)
+\amp \le \liminf_{k\to\infty} \int_{a}^{b} \left( 2 g - |\phi_{k}-\phi|\right)\\
+\amp = \int_{a}^{b} 2g - \limsup_{k\to\infty} \int_{a}^{b} |\phi_{k}-\phi|.
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\liminf_{k\to\infty}\left( 2 g - |\phi_{k}-\phi|\right)=2g\text{,}\)</span> it follows that <span class="process-math">\(\limsup_{k\to\infty}  \int_{a}^{b }|\phi_{k}-\phi|=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#DCT-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.24.1"><a href="#DCT-3" title="Copy heading and permalink for Proof 1.2.24.1" aria-label="Copy heading and permalink for Proof 1.2.24.1">🔗</a></div></article></details><details id="DCT-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Second proof in special cases.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="DCT-4-2">
+<div class="para">We provide another proof when each of <span class="process-math">\(\phi_{k} \in C[a, b]\text{.}\)</span> Let <span class="process-math">\(E\)</span> be a negligible set such that <span class="process-math">\(\phi_{k}(x)\to \phi(x)\)</span> on <span class="process-math">\(E^{c}\text{.}\)</span> Recall that</div>
+<div class="displaymath process-math" id="DCT-4-2-5">
+\begin{equation*}
+E^{c}=\cap_{m=1}^{\infty}\cup_{N=1}^{\infty}\cap_{k=N}^{\infty}\{x: |\phi_{k}(x)-\phi(x)| \le 1/m\}.
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math" id="DCT-4-2-6">
+\begin{equation*}
+E= \cup_{m=1}^{\infty}\cap_{N=1}^{\infty}\cup_{k=N}^{\infty}\{x: |\phi_{k}(x)-\phi(x)| &gt; 1/m\}
+\end{equation*}
+</div>
+<div class="para">and  each <span class="process-math">\(\cap_{N=1}^{\infty}\cup_{k=N}^{\infty}\{x: |\phi_{k}(x)-\phi(x)| &gt; 1/m\}\)</span> is negligible. Since we have not developed the theory of measurable sets and measure, it’s not easy to make use of this information.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#DCT-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="DCT-4-3">
+<div class="para">Under the assumption that each <span class="process-math">\(\phi_{k}\in C[a, b]\text{,}\)</span> we can modify the above relation as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-desc-open.html" id="DCT-4-3-2">
+\begin{equation*}
+E= \cup_{m=1}^{\infty}\cap_{N=1}^{\infty}\cup_{k, l=N}^{\infty}\{x: |\phi_{k}(x)-\phi_{l}(x)| &gt; 1/m\}
+\end{equation*}
+</div>
+<div class="para">and each <span class="process-math">\(G_{m, N} := \cup_{k, l=N}^{\infty}\{x: |\phi_{k}(x)-\phi_{l}(x)| &gt; 1/m\}\)</span> is open. Now that <span class="process-math">\(\cap_{N=1}^{\infty} G_{m, N}\)</span> is negligible, it follows from <a href="chp-int.html#cor-desc-open" class="xref" data-knowl="./knowl/xref/cor-desc-open.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.2.19">Corollary 1.2.19</a> that <span class="process-math">\(|G_{m, N}|\to 0\)</span> as <span class="process-math">\(N\to \infty\text{.}\)</span> Using <span class="process-math">\(g\in L[a, b]\text{,}\)</span> it follows that,  for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists some <span class="process-math">\(\delta &gt;0 \)</span> that for any open set <span class="process-math">\(G\)</span> in <span class="process-math">\([a, b]\)</span> with <span class="process-math">\(|G| &lt; \delta\text{,}\)</span> we have <span class="process-math">\(\int_{G}g\, dx &lt; \epsilon\text{.}\)</span> It then follows that <span class="process-math">\(\int_{G}|\phi_{k}(x)|\, dx &lt; \epsilon\)</span> and <span class="process-math">\(\int_{G}|\phi(x)|\, dx \le \epsilon\text{,}\)</span> therefore <span class="process-math">\(\int_{G}|\phi_{k}(x)-\phi(x)|\, dx \le 2\epsilon\text{.}\)</span> It further follows that, there exists <span class="process-math">\(N_{m}\)</span> such that <span class="process-math">\(|G_{m, N_{m}}| &lt; \delta/2^{m}\text{,}\)</span> from which we deduce that the open set <span class="process-math">\(G :=\cup_{m=1}^{\infty} G_{m, N_{m}}\)</span> satisfies <span class="process-math">\(|G| &lt; \delta\)</span> and in <span class="process-math">\(G^{c}\)</span> we have <span class="process-math">\(|\phi_{k}(x)-\phi_{l}(x)| \le 1/m\)</span> for <span class="process-math">\(k, l \ge N_{m}\text{.}\)</span>  This shows that <span class="process-math">\(\{\phi_{k}\}\)</span> converges (to <span class="process-math">\(\phi\)</span>) uniformly on <span class="process-math">\(G^{c}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#DCT-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="DCT-4-4">It now follows that, for the <span class="process-math">\(G\)</span> above,  <span class="process-math">\(\int_{G}|\phi_{k}(x)-\phi(x)|\, dx \le 2\epsilon\text{,}\)</span> and using <span class="process-math">\(\{\phi_{k}\}\)</span> converges (to <span class="process-math">\(\phi\)</span>) uniformly on <span class="process-math">\(G^{c}\text{,}\)</span> we argue that <span class="process-math">\(\int_{G^{c}}|\phi_{k}(x)-\phi(x)|\, dx\to 0\text{.}\)</span> This shows that <span class="process-math">\(\int_{a}^{b}|\phi_{k}(x)-\phi(x)|\, dx\to 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#DCT-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.2.24.2: Second proof in special cases"><a href="#DCT-4" title="Copy heading and permalink for Proof 1.2.24.2: Second proof in special cases" aria-label="Copy heading and permalink for Proof 1.2.24.2: Second proof in special cases">🔗</a></div></article></details><details id="chp-int-44" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="chp-int-44-1">
+<div class="para">Suppose that <span class="process-math">\(\{\phi_{k}\}\)</span> is a sequence in <span class="process-math">\(L^{1}[a, b]\)</span> and that <span class="process-math">\(\sum_{k=1 }^{\infty}\int_{a}^{b} |\phi_{k}|\)</span> is convergent. Prove that  <span class="process-math">\(\lim_{l\to\infty} \sum_{k=1 }^{l} \phi_{k}(x)\)</span> is the realization of some of element in <span class="process-math">\(L^{1}[a, b]\text{.}\)</span> Denoting it as <span class="process-math">\(\sum_{k=1 }^{\infty}\phi_{k}\text{,}\)</span> prove that</div>
+<div class="displaymath process-math" id="chp-int-44-1-7">
+\begin{equation*}
+\int_{a}^{b} \left( \sum_{k=1 }^{\infty} \phi_{k}\right)\, dx =
+\sum_{k=1 }^{\infty} \left(  \int_{a}^{b} \phi_{k}\, dx\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp-int-44-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.25"><a href="#chp-int-44" title="Copy heading and permalink for Exercise 1.2.25" aria-label="Copy heading and permalink for Exercise 1.2.25">🔗</a></div></article></details><div class="autopermalink" data-description="Section 1.2: The Completion of the Space of Continuous Functions under Integral Norms"><a href="#chp-int" title="Copy heading and permalink for Section 1.2: The Completion of the Space of Continuous Functions under Integral Norms" aria-label="Copy heading and permalink for Section 1.2: The Completion of the Space of Continuous Functions under Integral Norms">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="RS-int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp-lpintegral-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

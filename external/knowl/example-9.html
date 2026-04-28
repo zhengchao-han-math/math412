@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of a Local Solution of an Initial Value Problem of an ODE.</span>
+</h3> Suppose that <span class="process-math">\(f(x, t)\)</span> is a continuous function defined on <span class="process-math">\((x, t)\in [x_{0}-\delta_{0}, x_{0}+\delta_{0}]\times [-\epsilon_{0}, \epsilon_{0}]\text{,}\)</span> and that there exists some <span class="process-math">\(L\gt 0\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="./knowl/SIVP.html ./knowl/SIVP.html ./knowl/SIVP.html">
+\begin{equation*}
+\vert f(x, t) -f(y, t)\vert \le L |x-y| \text{ for all 
+$(x, t), (y, t)\in [x_{0}-\delta_{0}, x_{0}+\delta_{0}]\times [-\epsilon_{0}, \epsilon_{0}]$.}
+\end{equation*}
+</div>Then there exists some <span class="process-math">\(\epsilon, 0 \lt \epsilon \le \epsilon_{0}\)</span> and a unique function <span class="process-math">\(x(t)\)</span> in <span class="process-math">\(C^{1}[ -\epsilon, \epsilon]\)</span> satisfying<div class="displaymath process-math" data-contains-math-knowls="./knowl/SIVP.html ./knowl/SIVP.html ./knowl/SIVP.html">
+\begin{equation}
+x'(t)=f(x(t), t), \; t\in [ -\epsilon, \epsilon]; \; x(0)=x_{0}.\tag{4.4.1}
+\end{equation}
+</div>
+<div class="para logical">
+<div class="para">A solution <span class="process-math">\(x(t)\)</span> to <a href="" class="xref" data-knowl="./knowl/SIVP.html" title="Equation 4.4.1">(4.4.1)</a> is equivalent to a solution of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/SIVP.html ./knowl/SIVP.html">
+\begin{equation*}
+x(t) =x_{0} +\int_{0}^{t} f(x(s), s)\, ds,
+\end{equation*}
+</div>
+<div class="para">which can be regarded as a fixed point of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/SIVP.html ./knowl/SIVP.html">
+\begin{equation*}
+\phi (x)= x_{0} +\int_{0}^{t} f(x(s), s)\, ds
+\end{equation*}
+</div>
+<div class="para">on an appropriate space <span class="process-math">\(X\text{.}\)</span> We will choose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/SIVP.html ./knowl/SIVP.html">
+\begin{equation*}
+X_{\epsilon}=\{x(t)\in C[ -\epsilon, \epsilon]:
+|x(t)-x_{0}|\le \delta_{0} \text{ for all $t\in [ -\epsilon, \epsilon]$} \}
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(0 \lt \epsilon \le \epsilon_{0}\)</span> appropriately chosen so that <span class="process-math">\(\phi\)</span> is a contraction on <span class="process-math">\(X_{\epsilon}\text{.}\)</span> Note that a fixed point <span class="process-math">\(x(t)\)</span> in <span class="process-math">\(X_{\epsilon}\)</span> of <span class="process-math">\(\phi\)</span> is automatically in <span class="process-math">\(C^{1}[ -\epsilon, \epsilon]\)</span> and satisfied the <a href="" class="xref" data-knowl="./knowl/SIVP.html" title="Equation 4.4.1">(4.4.1)</a>.</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(f(x, t)\)</span> is continuous on <span class="process-math">\([x_{0}-\delta_{0}, x_{0}+\delta_{0}]\times [-\epsilon_{0}, \epsilon_{0}]\text{,}\)</span> there exists some <span class="process-math">\(M\gt 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f(x, t)|\le M \text{ for all $(x, t)\in [x_{0}-\delta_{0}, x_{0}+\delta_{0}]\times [-\epsilon_{0}, \epsilon_{0}]$.}
+\end{equation*}
+</div>
+<div class="para">Then, for any <span class="process-math">\(x\in X_{\epsilon}\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\phi(x)-x_{0}|\le \left| \int_{0}^{t} f(x(s), s)\, ds \right| \le M |t| \le \delta_{0}
+\end{equation*}
+</div>
+<div class="para">provided that <span class="process-math">\(0\lt \epsilon \le \epsilon_{0}\)</span> is chosen such that <span class="process-math">\(M \epsilon \le \delta_{0}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Then for any <span class="process-math">\(x(t), y(t)\in X_{\epsilon}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\phi(x(t))-\phi(y(t))|\le \left| \int_{0}^{t} \left( f(x(s), s)-f(y(s), s)\right) \, ds \right|
+\le L |t|\ \max_{s\in [ -\epsilon, \epsilon]} |x(s)-y(s)|
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(t\in [ -\epsilon, \epsilon]\text{.}\)</span> Thus if <span class="process-math">\(\epsilon\)</span> is chosen to further satisfy <span class="process-math">\(L\epsilon \lt 1\text{,}\)</span> then <span class="process-math">\(\phi\)</span> becomes a contraction on <span class="process-math">\(X_{\epsilon}\text{.}\)</span> Note that <span class="process-math">\(X_{\epsilon}\)</span> is a complete metric space with the metric <span class="process-math">\(d(x, y)=\max_{s\in [ -\epsilon, \epsilon]} |x(s)-y(s)|\text{.}\)</span> Thus the Contraction Mapping Principle is applicable and it implies the existence and uniqueness of a fixed point of <span class="process-math">\(\phi\)</span> in <span class="process-math">\(X_{\epsilon}\text{.}\)</span>
+</div>
+</div> <div class="para">Note that if <span class="process-math">\(0\lt \epsilon' \lt \epsilon\text{,}\)</span> then the fixed point in <span class="process-math">\(X_{\epsilon}\)</span> must coincide with fixed point in <span class="process-math">\(X_{\epsilon'}\text{.}\)</span> Since any solution <span class="process-math">\(x(t)\)</span> of <a href="" class="xref" data-knowl="./knowl/SIVP.html" title="Equation 4.4.1">(4.4.1)</a> must be a  fixed point in <span class="process-math">\(X_{\epsilon'}\)</span> for some <span class="process-math">\(\epsilon' &gt;0\text{,}\)</span> this shows the uniqueness in this context.</div></article><span class="incontext"><a href="section-contraction.html#example-9" class="internal">in-context</a></span>
+</body>
+</html>

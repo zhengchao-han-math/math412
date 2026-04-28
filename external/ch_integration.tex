@@ -1,0 +1,674 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2022-08-09T20:32:18-04:00       *%
+%*   A recent stable commit (2020-08-09):   *%
+%* 98f21740783f166a773df4dc83cab5293ab63a4a *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+%% We elect to always write snapshot output into <job>.dep file
+\RequirePackage{snapshot}
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% The tcolorbox library loads TikZ, its calc package is generally useful,
+%% and is necessary for some smaller documents that use partial tcolor boxes
+%% See:  https://github.com/rbeezer/mathbook/issues/1624
+\usetikzlibrary{calc}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Micromanage spacing, etc.  The named "microtype-options"
+%% template may be employed to fine-tune package behavior
+\usepackage{microtype}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC 
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% Fixes a bug with transition from chapters to appendices in a "book"
+%% See generating XSL code for more details about necessity
+\newtitlemark{\chaptertitlename}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+%% Plain pages should have the same font for page numbers
+\renewpagestyle{plain}{%
+\setfoot{}{\pagefont\thepage}{}%
+}%
+%% Single pages as in default LaTeX
+\renewpagestyle{headings}{%
+\sethead{\pagefont\slshape\MakeUppercase{\ifthechapter{\chaptertitlename\space\thechapter.\space}{}\chaptertitle}}{}{\pagefont\thepage}%
+}%
+\pagestyle{headings}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Chapter}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Section}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\section[{#3}]{#1}%
+\label{#6}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\chaptername}{Chapter}
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% Hyperlinking active in electronic PDFs, all links without surrounding boxes and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={Math412 Notes}}
+%% If you manually remove hyperref, leave in this next command
+%% This will allow LaTeX compilation, employing this no-op command
+\providecommand\phantomsection{}
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%%
+%% tcolorbox, with styles, for THEOREM-LIKE
+%%
+%% proposition: fairly simple numbered block/structure
+\tcbset{ propositionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{proposition}[3]{title={{Proposition~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, fontupper=\itshape, propositionstyle, }
+%%
+%% tcolorbox, with styles, for DEFINITION-LIKE
+%%
+%% definition: fairly simple numbered block/structure
+\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\lozenge\)}, } }
+\newtcolorbox[use counter from=block]{definition}[2]{title={{Definition~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, definitionstyle, }
+%%
+%% tcolorbox, with styles, for REMARK-LIKE
+%%
+%% remark: fairly simple numbered block/structure
+\tcbset{ remarkstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{remark}[2]{title={{Remark~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, remarkstyle, }
+%%
+%% xparse environments for introductions and conclusions of divisions
+%%
+%% introduction: in a structured division
+\NewDocumentEnvironment{introduction}{m}
+{\notblank{#1}{\noindent\textbf{#1}\space}{}}{\par\medskip}
+%%
+%% tcolorbox, with styles, for miscellaneous environments
+%%
+%% proof: title is a replacement
+\tcbset{ proofstyle/.style={bwminimalstyle, fonttitle=\blocktitlefont\itshape, attach title to upper, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\blacksquare\)},
+} }
+\newtcolorbox{proof}[2]{title={\notblank{#1}{#1}{Proof.}}, phantom={\hypertarget{#2}{}}, breakable, parbox=false, after={\par}, proofstyle }
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning,matrix,arrows}
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\def\upint{\mathchoice
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\makeatletter
+\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
+\newcommand\tb@int[2]{
+  \sbox\z@{$\m@th#1\int$}
+  \if#2t
+    \rlap{\hbox to\wd\z@{
+      \hfil
+      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+      \kern.05em 
+    }}
+  \else
+    \rlap{\hbox to\wd\z@{
+      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+      \hfil
+    }}
+  \fi
+}
+\makeatother
+\makeatletter
+\newcommand{\oset}[2]{
+  \mathrel{\mathop{#2}\limits^{
+    \vbox to -3\ex@{\kern-2\ex@
+    \hbox{$\hspace{6pt}#1$}\vss}}}}
+\newcommand{\uset}[2]{
+   {\mathop{#2}\limits_{\vbox to 3.5\ex@{\kern-\tw@\ex@
+    \hbox{$\hspace{-3pt} #1$}}}}}
+\makeatother
+\newcommand{\Uint}{{\oset{\bar{}}{\int}\!\!\!}} 
+\newcommand{\Lint}{{\uset{\bar{}}{\int}\!\!\!\!}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+%% bottom alignment is explicit, since it normally depends on oneside, twoside
+\raggedbottom
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 1 Integration in Several Variables}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Integration in Several Variables}{}{Integration in Several Variables}{}{}{x:chapter:ch_integration}
+\begin{introduction}{}%
+There are many aspects of integration in several variables. In this chapter we  first discuss the definition and evaluation of the integral of well behaved \emph{scalar functions}  on simple domains in the Euclidean space \(\bbR^{n}\) which are generalizations of rectangular boxes, triangles and tetrahedrons in two and three dimensions, called \emph{hypercubes} and \emph{simplexes} respectively. We then extend the discussion to \emph{domains with piecewise \(C^{1}\) boundary}. In the next chapter we will extend the discussion, where the domain of integration is a lower dimensional surface in the Euclidean space \(\bbR^{n}\), and the integrand is given in terms of \emph{coupling} of a vector field and the tangent plane of the surface, or more formally, the integration of a differential form over a surface or a \terminology{singular chain}.%
+\par
+Below are some main issues to be addressed.%
+%
+\begin{enumerate}
+\item{}It is not too different from integration in one dimension if one only discusses integrals of a scalar function defined in a multi-dimensional rectangle. One can establish a similar integrability criterion and prove a version of the \terminology{Fubini Theorem}, which reduces the evaluation of the integral to iterated one variable integrals.%
+\item{}Complications come in when one tries to define integrals in more general domains in multi-dimensions. One main issue is how to properly define \terminology{partitions}. Partitions in the Riemann sense require that there is a well defined notion of area (volume) for the \emph{cells} used in the partition, which is why traditionally we only confine to rectangular cells in partitions. Another aspect is that we want the cells to be \emph{non-overlapping}, and this is relatively easy to achieve using rectangular cells.%
+\par
+One way to resolve the issue of decomposing a general domain as a non-overlapping union of rectangular cells is to enclose the domain (required to be bounded) by a rectangular box and extend the integrand to be \(0\) in the complement. This would require accounting for the contributions to the upper and lower integrals from  those rectangular cells in the partition of the box that "\emph{straddle}" between the domain and its complement. This is not too difficult to address, but one does need to control the \emph{measure} of the boundary of the domain of integration.%
+\item{}In any integration theory one expects the integral \(\int_{A}f\) to be linear in the integrand \(f\), namely, for any integrable \(f, g\), and constants \(a, b\),%
+\begin{equation*}
+\int_{A} \left( a f+ b g\right)\, = a \int_{A}f  + b \int_{A}g.
+\end{equation*}
+It is also natural to expect that when \(A\) can be decomposed as a non-overlapping union of two subsets \(A_{1}\cup A_{2}\)%
+\begin{equation*}
+\int_{A}f =\int_{A_{1}}f + \int_{A_{2}}f\text{.}
+\end{equation*}
+One also hopes that the converse holds: if the terms on the right hand side are well defined, then the left hand side should be well defined and equals the right hand side.%
+\par
+In one dimension this is certainly true when \(A_{1}, A_{2}\) are intervals. But even in that context, Riemann integration theory places restrictions on these sets: if we take \(A=[0,1], A_{1}={\mathbb Q}\cap [0, 1], A_{2}=[0,1]\setminus A_{1}\), then it is reasonable to argue that Dirichlet's non-Riemann integrable function on \([0,1]\) could be regarded as integrable on both \(A_{1}\) and \(A_{2}\) as it is a constant on either set, but its integral on \([0, 1]\) is not defined. One key issue is that Riemann's integration theory does not allow general sets such as \(A_{2}\) here as cells in the partition, and each partition has to be a \emph{finite} partition. As a result one can't directly define Riemann integral on a domain with infinite length (area or volume).%
+\item{}A more serious issue is that \emph{reasonable limits of Riemann integrable functions may not be Riemann integrable}. The rectification of this issue requires by Lebesgue's integration theory.%
+\item{}The simplistic idea of using "nice cells" to partition a domain of integration becomes more challenging when one tries to carry it out to surfaces or hypersurfaces. The issue of defining the area (volume) of cells has to be tackled first.%
+\item{}A basic difficulty in discussing the integration on a surface is how to properly define a surface. Unlike in the case of a curve, which can always be thought of as defined through a map on an interval, there is no simple or canonical domain  which can be used to define a surface, except for a \emph{patch} of a surface.%
+\item{}For the purpose of integration theory on a surface, it suffices that one can partition the surface into some non-overlapping union of patches such that each patch has a \emph{parametric representation} through a map defined on a nice domain such as a rectangular box or simplex, and one defines the integration on each such patch on this nice domain through this parametrization.%
+\item{}The implementation of the above approach still requires substantial preparation work. First, the existence and construction of such a partition would require careful proof. Second, there is usually no canonical parametrization for a patch of a surface, so one has to verify that different parametrizations do not lead to different values of the integrals.%
+\end{enumerate}
+\end{introduction}%
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.1 Integral of a scalar function on multi-dimensional rectangles and more general domains}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Integral of a scalar function on multi-dimensional rectangles and more general domains}{}{Integral of a scalar function on multi-dimensional rectangles and more general domains}{}{}{x:section:section-int-Rn}
+\begin{definition}{}{x:definition:hypercube}%
+\index{hypercube}%
+\index{partition}%
+\index{hypercube!\(n\)-dimensional rectangle!partition}%
+\label{g:notation:idm411032582544}%
+A set of the form \(R=[a_{1}, b_{1}]\times \cdots \times [a_{n}, b_{n}]\) , where \(a_{i} < b_{i}\) for each \(i\), is called a \terminology{hypercube} in \(\bbR^{n}\). We also informally call it an \(n\)-dimensional rectangle (or rectangular box). We define its \terminology{volume} to be%
+\begin{equation*}
+|R| := (b_{1}-a_{1})\cdots (b_{n}-a_{n}).
+\end{equation*}
+%
+\par
+When \(a_{i}=b_{i}\) is allowed, and this equality holds for at least one \(i\), we call such an \(R\) a degenerate hypercube (or informally a degenerate rectangle), and define its volume to be \(0\).%
+\par
+Suppose that \(\cP_{i}\) is a partition of \([a_{i}, b_{i}]\) for \(1\le i \le n\). Then these partitions \(\cP_{i}\)'s form a partition \(\cP\) of \(R=[a_{1}, b_{1}]\times \cdots \times [a_{n}, b_{n}]\) in the following sense:%
+\begin{enumerate}[label=(\roman*).]
+\item{}The cells of the partition \(\cP\) consist of  \(\{S:=I_{1}\times\cdots \times I_{n}: I_{i} \text{ is a subinterval of  } \cP_{i}\}\) ;%
+\item{}the union of the cells of \(\cP =I\);%
+\item{}the intersection of any two different cells of \(\cP\)  is either the empty set, or a degenerate rectangle; and%
+\item{}\(\vert R\vert=\sum_{S\in \cP}\vert S\vert\).%
+\end{enumerate}
+We may denote this partition by \(\cP_{1}\times\cdots \times \cP_{n}\).%
+\par
+The \emph{mesh size} \(\lambda(\cP)\) of \(\cP:=\cP_{1}\times\cdots \times \cP_{n}\) is defined as%
+\begin{equation*}
+\lambda(\cP) :=\max\{\vert I_{i}\vert: S:=I_{1}\times\cdots\times I_{n} \in \cP\}.
+\end{equation*}
+%
+\end{definition}
+\begin{remark}{}{g:remark:idm411032584320}%
+Only the verification of the last property requires more than a few lines of argument. One easy way is to use an induction argument on \(n\), the dimension. \(R':=[a_{2}, b_{2}]\times \cdots \times [a_{n}, b_{n}]\) is an \((n-1)\)-dimensional rectangle, and the partitions \(\{\cP_{2},\ldots, \cP_{n}\}\) form a partition \(\cP'\) of \(R'\). Suppose that \(\{I_{1,1},\ldots, I_{1,k}\}\) are the subintervals of \(\cP_{1}\). In the summation \(\sum_{S\in \cP}\vert S\vert\), group \(S\) according to its constitutive factor in the first variable, each \(S\) has the form of \(I_{1,j}\times S'\) for some \(I_{1,j}\in \cP_{1}\) and \(S'\in \cP'\), thus we have%
+\begin{equation*}
+\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}}\sum_{S'\in \cP'}
+\vert I_{1,j} \times S'\vert.
+\end{equation*}
+By induction, we have%
+\begin{equation*}
+\sum_{S'\in \cP'}
+\vert I_{1,j} \times S'\vert= \vert I_{1,j}\vert \sum_{S'\in \cP'}
+\vert  S'\vert= \vert I_{1,j}\vert \vert R'\vert.
+\end{equation*}
+It now follows that%
+\begin{equation*}
+\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}} \vert I_{1,j}\vert \vert R'\vert
+=(b_{1}-a_{1})  \vert R'\vert=\vert R\vert.
+\end{equation*}
+%
+\par
+Note that a partition of \(R\) in our definition is defined in terms of a collection of partitions \(\cP_{i}\) for each constitutive factor. As a result, if the projection onto a factor of two rectangles \(S_{1}, S_{2}\) in  a partition of \(R\) share more than one points, they must have identical subinterval in that factor. One could allow more general choices of rectangles in a partition; it would just make it harder to bookkeep such rectangles, and our definition suffices for our purpose of defining the integral of a function.%
+\end{remark}
+\begin{definition}{}{x:definition:def-integral-scalar}%
+\index{integral of a scalar function}%
+\index{Riemmann sum}%
+\index{upper sum}%
+\index{lower sum}%
+\label{g:notation:idm411032551472}%
+Suppose that \(f\) is a bounded real-valued function defined on the rectangle \(R\), \(\cP\) a partition of \(R\), and a point \(\bx_{\alpha}\in R_{\alpha}\) is chosen for each sub rectangle \(R_{\alpha}\) of \(\cP\). We define the corresponding \terminology{Riemann sum} as%
+\begin{equation*}
+R(f, \cP, \{\bx_{\alpha}\}):=\sum_{\alpha} f(\bx_{\alpha}) \vert R_{\alpha} \vert.
+\end{equation*}
+%
+\par
+Define%
+\begin{equation*}
+M_{S}(f):=\sup_{\bx\in S}f(\bx) \quad \text{and} \quad 
+m_{S}(f):=\inf_{\bx\in S}f(\bx) 
+\end{equation*}
+as the supremum and, respectively, infimum of \(f\) on the rectangle \(S\). Then the \terminology{upper sum} \(U(f, \cP)\) and, respectively, the \terminology{lower sum} \(L(f, \cP)\), of \(f\) on \(R\) with respect to the partition \(\cP\) is defined as%
+\begin{equation*}
+U(f, \cP) :=\sum_{\alpha} M_{S_{\alpha}}(f) \vert S_{\alpha}\vert,
+\quad
+L(f, \cP) :=\sum_{\alpha} m_{S_{\alpha}}(f) \vert S_{\alpha}\vert.
+\end{equation*}
+%
+\end{definition}
+Note that%
+\begin{equation*}
+L(f, \cP)\le R(f, \cP, \{\bx_{\alpha}\})\le U(f, \cP).
+\end{equation*}
+We are interested in whether \(R(f, \cP, \{\bx_{\alpha}\})\) has a limit as \(\lambda (\cP)\to 0\) which is independent of how \(\bx_{\alpha}\in S_{\alpha}\) is chosen. It is easier to study whether \(U(f, \cP)\)and, respectively, \(L(f, \cP)\), has a limit as \(\lambda (\cP)\to 0\).%
+\begin{definition}{}{x:definition:def-refinement-partition}%
+\index{refinement of a partition}%
+A partition \(\cP^{*}:=\cP^{*}_{1}\times\cdots \times \cP^{*}_{n}\) is called a \terminology{refinement} of partition \(\cP:=\cP_{1}\times\cdots \times \cP_{n}\) if each \(\cP^{*}_{i}\) is a refinement of \(\cP_{i}\).\end{definition}
+Note that if \(\cP^{*}\) is a refinement of partition \(\cP\), then \(\lambda(\cP^{*})\le \lambda(\cP)\), and that%
+\begin{equation*}
+U(f, \cP^{*})\le U(f, \cP), L(f, \cP^{*})\ge L(f, \cP).
+\end{equation*}
+Just as in one dimension, if \(\cP_{1}, \cP_{2}\) are two partitions of \(R\), then there is a partition \(\cP^{*}\) which is a refinement of both \(\cP_{1}\) and \(\cP_{2}\), and there is an essentially canonical way of constructing such an \(\cP^{*}\) by adjoining all the end points of the subintervals of the factors of \(\cP_{1}, \cP_{2}\).%
+\begin{proposition}{Upper and lower integral of a bounded function defined on a rectangle.}{}{g:proposition:idm411032533664}%
+Suppose that \(f\) is a bounded function defined on the rectangle \(R\subset \bbR^{n}\). Then%
+\begin{equation*}
+\inf_{\cP}U(f, \cP) = \lim_{\lambda(\cP)\to 0} U(f, \cP),
+\end{equation*}
+and%
+\begin{equation*}
+\sup_{\cP}L(f, \cP) = \lim_{\lambda(\cP)\to 0} L(f, \cP).
+\end{equation*}
+Furthermore,%
+\begin{equation*}
+\sup_{\cP}L(f, \cP)\le \inf_{\cP}U(f, \cP).
+\end{equation*}
+\begin{proof}{}{g:proof:idm411032525824}
+Let \(\cP_{1}, \cP_{2}\) be two arbitrary partitions of \(R\), and \(\cP^{*}\) be a refinement of both \(\cP_{1}\) and \(\cP_{2}\). Then%
+\begin{equation*}
+L(f, \cP_{1})\le L(f, \cP^{*})\le U(f, \cP^{*})\le U(f, \cP_{2}).
+\end{equation*}
+As a result,   \(\upint_{R}\, f, \lowint_{R}\,f\)%
+\begin{equation*}
+L(f, \cP_{1})\le  \Uint_{R} \, f :=\inf_{\cP_{2}} U(f, \cP_{2}),
+\end{equation*}
+and%
+\begin{equation*}
+\lowint_{R} \, f :=\sup_{\cP_{1}} L(f, \cP_{1})\le \Uint_{R} \, f.
+\end{equation*}
+%
+\par
+For any \(\epsilon>0\), first find a partition \(\cP_{2}\) of \(R\) such that%
+\begin{equation*}
+\Uint_{R} \, f \le U(f, \cP_{2}) \le \Uint_{R} \, f + \epsilon.
+\end{equation*}
+Now take any partition \(\cP\) of \(R\) of small mesh size \(\lambda(\cP)\) (to be determined). Let \(\cP^{*}\) be the canonical refinement of \(\cP\) and \(\cP_{2}\). Then there exists a number \(N\) depending only on the  partition \(\cP_{2}\) such that in the sums \(U(f,\cP)\) and \(U(f, \cP^{*})\), all but at most \(N\) terms may differ, and each term that may differ is bounded above in absolute value by \(\sup_{R}|f| (\lambda(\cP))^{n}\), thus%
+\begin{equation*}
+\vert U(f,\cP)- U(f, \cP^{*})\vert \le N \sup_{R}|f| (\lambda(\cP))^{n}.
+\end{equation*}
+It now follows that there exists some \(\delta >0\) such that whenever \(\lambda(\cP) < \delta\) we have%
+\begin{equation*}
+\vert U(f,\cP)- U(f, \cP^{*})\vert < \epsilon  \text{ so }  U(f,\cP) < \Uint_{R} \, f + 2\epsilon,
+\end{equation*}
+proving that \(\lim_{\lambda(\cP)\to 0} U(f, \cP)= \Uint_{R} \, f\).%
+\end{proof}
+\end{proposition}
+\end{sectionptx}
+\end{chapterptx}
+\end{document}

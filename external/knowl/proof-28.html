@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">We first work out <span class="process-math">\(\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0)\)</span> by using the differentiability of <span class="process-math">\(\mathbf f\)</span> at <span class="process-math">\(\bx_0\)</span> and of <span class="process-math">\(\mathbf g\)</span> at <span class="process-math">\(\by_0=\mathbf f(\bx_0)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0) \amp
+= \mathbf g (\mathbf f(\bx)) - \mathbf g ( \mathbf f(\bx_0)) \\
+\amp = [D\mathbf g(\mathbf f(\bx_0))] \left[ \mathbf f(\bx)- \mathbf f(\bx_0)\right] +\bz(\mathbf f(\bx), \mathbf f(\bx_0))
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\Vert \bz(\by, \by_0)\Vert/\Vert \by -\by_0\Vert \to 0\)</span> as <span class="process-math">\(\by \to \by_0\text{;}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf f(\bx) - \mathbf f(\bx_0)=[D\mathbf f(\bx_0)](\bx -\bx_0) +\bw (\bx, \bx_0),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\Vert \bw(\bx, \bx_0)\Vert/\Vert \bx -\bx_0\Vert \to 0\)</span> as <span class="process-math">\(\bx \to \bx_0\text{,}\)</span> so we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbf g \circ \mathbf f(\bx) - \mathbf g \circ \mathbf f(\bx_0)
+=\amp [D\mathbf g (\mathbf f(\bx_0))][D\mathbf f(\bx_0)](\bx -\bx_0)\\
+\amp + [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) 
++ \bz(\mathbf f(\bx), \mathbf f(\bx_0)).
+\end{align*}
+</div>
+<div class="para">The differentiability of <span class="process-math">\(\mathbf g \circ \mathbf f(\bx)\)</span> at <span class="process-math">\(\bx_0\)</span> is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) 
++ \bz(\mathbf f(\bx), \mathbf f(\bx_0)) \Vert/\Vert \bx -\bx_0\Vert \to 0  \text{ as } \bx \to \bx_0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Using the property of matrix norm on <span class="process-math">\(\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert \le
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\Vert_{\cF} \Vert\bw(\bx, \bx_0) \Vert,
+\end{equation*}
+</div>
+<div class="para">therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert [D\mathbf g (\mathbf f(\bx_0))]\bw(\bx, \bx_0) \Vert/\Vert \bx -\bx_0\Vert \to 0  \text{ as } \bx \to \bx_0.
+\end{equation*}
+</div>
+<div class="para">For  <span class="process-math">\(\bz(\mathbf f(\bx), \mathbf f(\bx_0))\text{,}\)</span> informally</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \bx -\bx_0 \Vert}
+=\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \by -\by_0\Vert} \frac{\Vert \by -\by_0\Vert}{\Vert \bx -\bx_0 \Vert},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\by =\mathbf f (\bx)\)</span> and <span class="process-math">\(\by_0=\mathbf f (\bx_0)\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\Vert \by -\by_0\Vert}{\Vert \bx -\bx_0 \Vert} \text{ remains bounded
+as $\bx \to \bx_0$ and 
+$\frac{\Vert \bz (\by, \by_0) \Vert}{\Vert \by -\by_0\Vert} \to 0$   as  $\by \to \by_0$.}
+\end{equation*}
+</div>
+<div class="para">But this argument has a minor flaw, for  <span class="process-math">\(\Vert \by -\by_0\Vert\)</span> could be <span class="process-math">\(0\text{.}\)</span> To fix this issue, for any <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> there exists some <span class="process-math">\(\delta \gt 0\)</span> such that <span class="process-math">\(\Vert \bz (\by, \by_0) \Vert \le \epsilon \Vert \by -\by_0\Vert\)</span> whenever <span class="process-math">\(\Vert \by -\by_0\Vert \lt \delta\text{.}\)</span>  Then using</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Vert \by -\by_0 \Vert \le \amp  \Vert \bw (\bx, \bx_0)  + [D\mathbf f(\bx_0)](\bx -\bx_0)\Vert\\
+\le \amp \Vert \bw (\bx, \bx_0) \Vert  + \Vert [D\mathbf f(\bx_0)](\bx -\bx_0)\Vert \\
+\le \amp \Vert \bw (\bx, \bx_0) \Vert  + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert 
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(\frac{\Vert \bw (\bx, \bx_0) \Vert}{\Vert \bx -\bx_0 \Vert}\to 0\)</span> as <span class="process-math">\(\bx\to \bx_0\text{,}\)</span> we can find some <span class="process-math">\(\sigma \gt 0\)</span> such that when <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \sigma\text{,}\)</span> <span class="process-math">\(\Vert \bw (\bx, \bx_0) \Vert \lt \epsilon \Vert \bx -\bx_0\Vert\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert \by-\by_0 \Vert\le \epsilon \Vert \bx -\bx_0\Vert + \Vert [D\mathbf f(\bx_0)]\Vert \Vert \bx -\bx_0\Vert
+\le \left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert \lt \delta.
+\end{equation*}
+</div>
+<div class="para">Putting these together, when <span class="process-math">\(\Vert \bx -\bx_0\Vert \lt \sigma\)</span>  we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Vert \bz (\by, \by_0) \Vert \le \epsilon \Vert \by-\by_0 \Vert\le  \epsilon 
+\left( \epsilon + \Vert [D\mathbf f(\bx_0)]\Vert\right) \Vert \bx -\bx_0\Vert,
+\end{equation*}
+</div>
+<div class="para">which shows the differentiability of <span class="process-math">\(\bg \circ \bff \)</span> at <span class="process-math">\(\bx_0\text{.}\)</span> </div>
+</div></article><span class="incontext"><a href="section-17.html#proof-28" class="internal">in-context</a></span>
+</body>
+</html>

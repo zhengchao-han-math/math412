@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<chapter xml:id="ch_integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Integration in Several Variables</title>
+<introduction>
+    <p>There are many aspects of integration in several variables. In this chapter we  first discuss 
+    the definition and evaluation of the integral of 
+	well behaved <em>scalar functions</em>  on simple domains 
+	in the Euclidean space <m>\bbR^{n}</m> which are generalizations of rectangular boxes, triangles
+	and tetrahedrons in
+	two and three dimensions, called <em>hypercubes</em> and <em>simplexes</em>
+	respectively. We then extend the discussion
+	to <em>domains with piecewise <m>C^{1}</m> boundary</em>.
+	In the next chapter we will extend the discussion, where the domain of
+	integration is a lower dimensional surface in the Euclidean space <m>\bbR^{n}</m>, 
+	and the integrand is given in terms of <em>coupling</em> of a vector field and the tangent
+	plane of the surface, or more formally, the integration of a differential form over a surface or
+	a <term>singular chain</term>.  </p>
+	
+	<p>Below are some main issues to be addressed.</p>
+	
+	<ol>
+  <li>It is not too different from integration in one dimension if one only discusses integrals of a scalar function
+  defined in a multi-dimensional rectangle. One can establish a similar integrability criterion
+  and prove a version of the <term>Fubini Theorem</term>, 
+  which reduces the evaluation of the integral to iterated one variable integrals.</li>
+  <li><p>Complications come in when one tries to define integrals in more general domains in
+  multi-dimensions. One main issue is how to properly define <term>partitions</term>. 
+  Partitions in the Riemann
+  sense require that there is a well defined notion of area (volume) for the <em>cells</em> used in the 
+  partition, which is why traditionally we only confine to rectangular cells in partitions. Another aspect
+  is that we want the cells to be <em>non-overlapping</em>, and this is relatively easy to achieve using
+  rectangular cells. </p>
+  <p>One way to resolve the issue of decomposing a general domain as a
+  non-overlapping union of rectangular cells is to enclose the domain (required to be bounded) by
+  a rectangular box and extend the integrand to be <m>0</m> in the complement. This would 
+  require accounting for the contributions to the upper and lower integrals
+  from  those rectangular cells in the partition of the enclosing rectangular box that "<em>straddle</em>" between
+  the domain and its complement. This is not too difficult to address, but one does need
+  to control the <em>measure</em> of the boundary of the domain of integration.</p></li>
+  <li><p>In any integration theory one expects the integral <m>\int_{A}f</m> to be linear in the integrand
+  <m>f</m>, namely, for any integrable <m>f, g</m>, and constants <m>a, b</m>,
+  <me>
+  \int_{A} \left( a f+ b g\right)\, = a \int_{A}f  + b \int_{A}g.
+  </me>
+  It is also natural to expect that when <m>A</m> can be decomposed as 
+  a non-overlapping union of two subsets <m>A_{1}\cup A_{2}</m>,
+  <me>\int_{A}f =\int_{A_{1}}f + \int_{A_{2}}f</me>.
+  One also hopes that the converse holds: if the terms on the right hand side are well defined, then the left
+  hand side should be well defined and equals the right hand side.</p>
+  <p>In one dimension this is certainly true when <m>A_{1}, A_{2}</m> are intervals. But
+  even in that context, Riemann integration theory places restrictions on these sets:
+  if we take <m>A=[0,1], A_{1}={\mathbb Q}\cap [0, 1], A_{2}=[0,1]\setminus A_{1}</m>, 
+  then it is reasonable to argue that Dirichlet's non-Riemann integrable function on <m>[0,1]</m>
+  could be regarded as integrable on both <m>A_{1}</m> and <m> A_{2}</m> as it is a 
+  constant on either set, but its Riemann integral on <m>[0, 1]</m> is not defined. 
+  One key issue is that Riemann's integration theory does not allow
+   general sets such as <m> A_{2}</m> here 
+   as cells in the partition, and each partition has to be a <em>finite</em>
+  partition. As a result one can't directly define Riemann integral on a domain with infinite 
+  length (area or volume) or when the integrand is unbounded.</p> </li>
+  <li>A more serious issue is that <em>reasonable limits of Riemann integrable functions
+  may not be Riemann integrable</em>. The rectification of this issue requires by Lebesgue's integration
+  theory. </li>
+  <li>The simplistic idea of using "nice cells" to partition a domain of integration becomes
+  more challenging when one tries to carry it out to surfaces or hypersurfaces. The issue of 
+  defining the area (volume) of cells on such surfaces has to be tackled first.</li>
+  <li>A basic difficulty in discussing the integration on a surface is how to properly define a surface.
+  Unlike in the case of a curve, which can always be thought of as defined through a map on
+  an interval, there is no simple or canonical domain  which can be used to define a surface,
+  except for a <em>patch</em> of a surface.</li>
+  <li>For the purpose of integration theory on a surface, it suffices that one can partition
+  the surface into some non-overlapping union of patches such that each patch has a 
+ <em> parametric representation</em> through a map defined on a nice domain such as a
+ rectangular box or simplex, and one defines the integration on each such patch on this nice domain
+ through this parametrization. </li>
+ <li>The implementation of the above approach still requires substantial preparation work.
+ First, the existence and construction of such a partition would require careful proof. Second,
+ there is usually no canonical parametrization for a patch of a surface, so one has to verify
+ that different parametrizations do not lead to different values of the integrals.</li>
+
+ </ol>
+   </introduction>
+   
+   <section permid="section-int-def" xml:id="section-int-def">
+   	<title>Basic definitions and properties for the integral of a scalar function on 
+	a multi-dimensional rectangle </title>
+	<p>There is little difference between one and higher dimensions in the discussion of
+	this and next section; differences will show when discussing evaluation of integrals and change
+	of variables.
+	</p>
+	<definition xml:id="hypercube">
+		<idx>hypercube</idx><idx>partition</idx>
+		<idx><h>hypercube</h><h><m>n</m>-dimensional rectangle</h><h>partition</h></idx>
+		<notation>
+			<usage><m>\cP_{1}\times\cdots \times \cP_{n}</m></usage>
+			<description>A partition of a hypercube defined in terms of a collection of
+			partitions of its constitutive factors</description>
+		</notation>
+		<statement>
+			<p>A set of the form <m>R=[a_{1}, b_{1}]\times \cdots \times [a_{n}, b_{n}]</m> ,
+			 where <m>a_{i} &lt; b_{i}</m> for each <m>i</m>, is
+			called a <term>hypercube</term> in <m>\bbR^{n}</m>. 
+			We also informally call it an <m>n</m>-dimensional
+			rectangle (or rectangular box). We define its <term>volume</term> to be
+			<me>
+			|R| := (b_{1}-a_{1})\cdots (b_{n}-a_{n}).
+			</me>
+			</p>
+			<p> When <m>a_{i}=b_{i}</m> is allowed, and this equality holds for at least one <m>i</m>,
+			we call such an <m>R</m> a degenerate hypercube (or informally a degenerate rectangle),
+			and define its volume to be <m>0</m>.
+			</p>
+			<p>Suppose that <m>\cP_{i}</m> is a partition of <m>[a_{i}, b_{i}]</m> for <m>1\le i \le n</m>.
+			Then these partitions <m>\cP_{i}</m>'s form a partition <m>\cP</m> of
+			<m>R=[a_{1}, b_{1}]\times \cdots \times [a_{n}, b_{n}]</m> in the following sense:
+			<ol label="(i).">
+			<li> The cells of the partition <m>\cP</m> consist of  <m>
+			\{S:=I_{1}\times\cdots \times I_{n}: I_{i} \text{ is a subinterval of  } \cP_{i}\}</m> ; 
+			</li>
+			<li>
+			 The union of the cells of <m>\cP =I</m>;
+			 </li>
+			 <li>  The intersection of any two
+			different cells of <m>\cP</m>  is either the empty set, or a degenerate rectangle; and 
+			</li>
+			<li> <m>\vert R\vert=\sum_{S\in \cP}\vert S\vert</m>.
+			</li>
+			</ol>
+			We may denote this partition by <m>\cP_{1}\times\cdots \times \cP_{n}</m>.
+			</p>
+			<p>The <em>partition size</em> <m>\lambda(\cP)</m>
+			of <m>\cP:=\cP_{1}\times\cdots \times \cP_{n}</m> is defined as
+			<me>
+			\lambda(\cP) :=\max\{\vert I_{i}\vert: S:=I_{1}\times\cdots\times I_{n} \in \cP\}.
+			</me>
+			</p>
+			</statement>
+			</definition>
+			<remark>
+				<p>Only the verification of the last property requires more than a few lines
+				of argument. One easy way is to use an induction argument on <m>n</m>, the
+				dimension. <m>R':=[a_{2}, b_{2}]\times \cdots \times [a_{n}, b_{n}]</m>
+				is an <m>(n-1)</m>-dimensional rectangle, and the partitions 
+				<m>\{\cP_{2},\ldots, \cP_{n}\}</m> form a partition <m>\cP'</m> of 
+				<m>R'</m>. Suppose that <m>\{I_{1,1},\ldots, I_{1,k}\}</m> are the
+				subintervals of <m>\cP_{1}</m>. In the summation
+				<m>\sum_{S\in \cP}\vert S\vert</m>, group <m>S</m> according to its
+				constitutive factor in the first variable: each <m>S</m> has the form
+				of <m>I_{1,j}\times S'</m> for some <m>I_{1,j}\in \cP_{1}</m> 
+				and <m>S'\in \cP'</m>, thus we have
+				<me>
+				\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}}\sum_{S'\in \cP'}
+				\vert I_{1,j} \times S'\vert.
+				</me>
+				By induction, we have 
+				<me>\sum_{S'\in \cP'}
+				\vert I_{1,j} \times S'\vert= \vert I_{1,j}\vert \sum_{S'\in \cP'}
+				\vert  S'\vert= \vert I_{1,j}\vert \vert R'\vert.
+				</me>
+				It now follows that
+				<me>
+				\sum_{S\in \cP}\vert S\vert=\sum_{I_{1,j}\in \cP_{1}} \vert I_{1,j}\vert \vert R'\vert
+				=(b_{1}-a_{1})  \vert R'\vert=\vert R\vert.
+				</me>
+				  </p>
+				  <p>Note that a partition of <m>R</m> in our definition is defined in terms of 
+				  a collection of partitions <m>\cP_{i}</m> for each constitutive factor. As a result,
+				  if the projection onto a factor
+				   of two rectangles <m>S_{1}, S_{2}</m> in  a partition of <m>R</m> share more than
+				   one points, they must have identical subinterval in that factor. One could allow more
+				   general choices of rectangles in a partition; it would just make it harder to bookkeep 
+				   such rectangles, and our definition suffices for our purpose of defining the integral of a
+				   function.
+				   </p>
+			</remark>
+			<definition xml:id="def-integral-scalar">
+				<idx>integral of a scalar function</idx><idx>Riemann sum</idx>
+				<idx>upper sum</idx><idx>lower sum</idx>
+				<notation>
+					<usage><m>\int_{R}\, f</m>, <m>\int_{R}\, f\, d\bx</m></usage>
+					<description>The definition of the Riemann sum, upper sum, lower sum,
+					and  integral of a scalar function on
+					a hypercube <m>R</m></description>
+				</notation>
+				<statement>
+				<p>Suppose that <m>f</m> is a bounded real-valued function defined on the rectangle 
+				<m>R</m>, <m>\cP</m> a partition of <m>R</m>, and a point
+				<m>\bx_{\alpha}\in R_{\alpha}</m> is chosen for each sub rectangle 
+				<m>R_{\alpha}</m> of <m>\cP</m>. We define the corresponding	
+				<term>Riemann sum</term> as
+				<me>
+				R(f, \cP, \{\bx_{\alpha}\}):=\sum_{\alpha} f(\bx_{\alpha}) \vert R_{\alpha} \vert.
+				</me>
+				</p>
+				<p>Define
+				<me>M_{S}(f):=\sup_{\bx\in S}f(\bx) \quad \text{and} \quad 
+				m_{S}(f):=\inf_{\bx\in S}f(\bx) 
+				</me>
+				as the supremum, and respectively infimum, of <m>f</m> on the rectangle <m>S</m>.
+				Then the <term>upper sum</term> <m>U(f, \cP)</m>, and respectively the 
+				<term>lower sum</term> <m>L(f, \cP)</m>, 
+				of <m>f</m> on <m>R</m> with respect to the partition <m>\cP</m>
+				is defined as
+				<me>
+				U(f, \cP) :=\sum_{\alpha} M_{S_{\alpha}}(f) \vert S_{\alpha}\vert,
+				\quad
+				L(f, \cP) :=\sum_{\alpha} m_{S_{\alpha}}(f) \vert S_{\alpha}\vert.
+				</me>
+				</p>
+				</statement>
+				</definition>
+				<p>Note that 
+				<me>
+				L(f, \cP)\le R(f, \cP, \{\bx_{\alpha}\})\le U(f, \cP).
+				</me>
+				We are interested in whether <m>R(f, \cP, \{\bx_{\alpha}\})</m> has a limit
+				as <m>\lambda (\cP)\to 0</m> which is independent of how
+				<m>\bx_{\alpha}\in S_{\alpha}</m> is chosen. It is easier to study
+				whether <m>U(f, \cP)</m>, and respectively <m>L(f, \cP)</m>, has a limit
+				as <m>\lambda (\cP)\to 0</m>.
+				</p>
+				<definition xml:id="def-refinement-partition">
+					<idx>refinement of a partition</idx>
+					<statement>
+					A partition <m>\cP^{*}:=\cP^{*}_{1}\times\cdots \times \cP^{*}_{n}</m>
+					is called a <term>refinement</term>
+					 of partition <m>\cP:=\cP_{1}\times\cdots \times \cP_{n}</m>
+					if each <m>\cP^{*}_{i}</m> is a refinement of <m>\cP_{i}</m>.
+					</statement>
+					</definition>
+					<figure xml:id="fig-partition-refinement">
+						<caption>An illustration of a common refinement of two given partitions</caption>
+						<image width="50%"  height="50%" source="•">
+							<description>•</description>
+						</image>
+					</figure>
+					<p>Note that if <m>\cP^{*}</m> is a refinement of partition <m>\cP</m>, then
+					<m>\lambda(\cP^{*})\le \lambda(\cP)</m>, and that
+					<me>
+					U(f, \cP^{*})\le U(f, \cP), L(f, \cP^{*})\ge L(f, \cP).
+					</me>
+					 Just as in one dimension, if
+					<m>\cP_{1}, \cP_{2}</m> are two partitions of <m>R</m>,
+					then there is a partition <m>\cP^{*}</m> which is a refinement of both 
+					<m>\cP_{1}</m> and <m> \cP_{2}</m>, and there is an essentially
+					canonical way of constructing such an <m>\cP^{*}</m> by adjoining all
+					the end points of the subintervals of the factors of <m>\cP_{1}, \cP_{2}</m>.
+					</p>
+					<definition xml:id="def-upperlower-int-def">
+						<idx>upper integral, lower integral</idx>
+						<notation>
+							<usage><m>\upint_{R}\,f, \lowint_{R}\,f </m></usage>
+							<description>upper integral and lower integral of a function on a set</description>
+						</notation>
+						<statement>
+						Suppose that <m>f</m> is a bounded function defined
+					on the rectangle <m>R\subset \bbR^{n}</m>. Then its upper integral,
+					and respectively lower integral, on
+					<m> R</m> is defined as <m>\inf_{\cP}U(f, \cP)</m>, 
+					and respectively <m>\sup_{\cP}U(f, \cP)</m>, where
+					<m>\cP</m> runs over all partitions of <m>\cP</m>. 
+					The upper integral is denoted
+					as <m>\upint_{R}\,f</m>, while the lower integral is denoted
+					as <m>\lowint_{R}\,f</m>.
+					</statement>
+					</definition>
+							
+					<proposition xml:id="propos-upperlower-int">
+					<title>Basic property of upper and lower integral of 
+					a bounded real-valued function defined
+					on a rectangle</title>
+					<statement>Suppose that <m>f</m> is a bounded function defined
+					on the rectangle <m>R\subset \bbR^{n}</m>. Then
+					<me>
+					 \upint_{R}\,f= \lim_{\lambda(\cP)\to 0} U(f, \cP),
+					</me>
+					and
+					<me>
+					 \lowint_{R}\,f = \lim_{\lambda(\cP)\to 0} L(f, \cP).
+					</me>
+					Furthermore,
+					<me>
+					 \lowint_{R}\,f \le  \upint_{R}\,f.
+					</me>
+					<proof> <p> Let <m>\cP_{1}, \cP_{2}</m> be two arbitrary partitions of <m>R</m>,
+					and <m>\cP^{*}</m> be a refinement of both 
+					<m>\cP_{1}</m> and <m> \cP_{2}</m>. Then
+					<me>
+					L(f, \cP_{1})\le L(f, \cP^{*})\le U(f, \cP^{*})\le U(f, \cP_{2}).
+					</me>
+					As a result,   
+										<me>
+		L(f, \cP_{1})\le  \upint_{R} \, f =\inf_{\cP_{2}} U(f, \cP_{2}),
+		</me>
+		and 
+		<me>
+		\lowint_{R} \, f =\sup_{\cP_{1}} L(f, \cP_{1})\le \upint_{R} \, f.
+		</me>
+		</p>
+		<p>
+		For any <m>\epsilon>0</m>, first find a partition <m>\cP_{2}</m> of <m>R</m> such that
+		<me>
+		\upint_{R} \, f \le U(f, \cP_{2}) \le \upint_{R} \, f + \epsilon.
+		</me>
+		Now take any partition <m>\cP</m> of <m>R</m> of small partition size <m>\lambda(\cP)</m>
+		(to be determined). Let <m>\cP^{*}</m> be the canonical refinement of
+		 <m>\cP</m> and <m>\cP_{2}</m>. Then
+		 <me>
+		\upint_{R} \, f \le U(f, \cP_{*}) \le U(f, \cP_{2}) \le \upint_{R} \, f + \epsilon.
+		</me>
+		and there exists a number <m>N</m> depending only
+		 on the  partition <m>\cP_{2}</m> such that in the sums 
+		 <m>U(f,\cP)</m> and <m>U(f, \cP^{*})</m>, all but at most <m>N</m> terms may differ,
+		 as in the construction of <m>\cP^{*}</m>, the number of sub intervals of the factors
+		 of <m>\cP</m> that need to be refined in relation to <m>\cP_{2}</m> has a bound that depends 
+		 only on <m>\cP_{2}</m>. 
+		 Note that  each term that may differ has a factor from the volume of
+		 the sub rectangle which is bounded above by <m>(\lambda(\cP))^{n}</m>,
+		 and  the remaining factor is bounded above in absolute value by <m>\sup_{R}|f|</m>, thus 
+		 each such term  is bounded above in absolute value by
+		 <m>\sup_{R}|f| (\lambda(\cP))^{n}</m>, as a result
+		 <me>
+		 \vert U(f,\cP)- U(f, \cP^{*})\vert \le N \sup_{R}|f| (\lambda(\cP))^{n}.
+		 </me>
+		 It now follows that there exists some <m>\delta >0</m> such that whenever
+		 <m>\lambda(\cP) &lt; \delta</m> we have
+		 <me>
+		 \vert U(f,\cP)- U(f, \cP^{*})\vert &lt; \epsilon  \text{ so }  U(f,\cP) &lt; \upint_{R} \, f + 2\epsilon,
+		 </me>
+		 proving that <m>\lim_{\lambda(\cP)\to 0} U(f, \cP)= \upint_{R} \, f</m>.
+		 </p>
+		<p>
+		The proof of <m>\sup_{\cP}L(f, \cP) = \lim_{\lambda(\cP)\to 0} L(f, \cP)</m> is done in a similar way.
+		</p>
+		</proof>
+					</statement>
+					</proposition>
+		<definition xml:id="def-riemann-integrable">
+			<idx>Riemann integrable function</idx>
+			<notation>
+				<usage><m>\int_{R}\, f</m></usage>
+				<description>The Riemann integral of <m>f</m></description>
+			</notation>
+						<statement><p>A bounded real-valued function <m>f</m> defined 
+						on a rectangle <m>R</m> is called <term>Riemann integrable</term>,
+						if there exists a real number <m>S</m> such that
+						<m>\lim_{\lambda(P)\to 0} R(f, \cP, \{\bx_{\alpha}\})=S</m>
+						in the sense that for any <m>\epsilon >0</m>, there exists some
+						<m>\delta >0</m> that
+						<me>
+						\vert R(f, \cP, \{\bx_{\alpha}\}) -S\vert &lt; \epsilon
+						</me>
+						for any partition <m>\cP</m> and choice of
+						<m>\bx_{\alpha}\in R_{\alpha}\in \cP</m>,
+						as long as <m>\lambda(P) &lt; \delta</m>.
+						</p>
+						<p>When such an <m>S</m> exists, it is unique, and we denote
+						it by <m>\int_{R}\, f</m>.
+						</p>
+						</statement>
+						</definition>
+						<theorem xml:id="thm-int-linear">
+							<title>Linearity of integral</title>
+							<statement>
+								<p>Suppose that <m>f_{1}, f_{2}</m> are Riemann 
+								integrable on <m>R</m>, and <m>c_{1}, c_{2}</m> are 
+								constants, then <m>c_{1}f_{1}+c_{2}f_{2}</m> is also
+								Riemann 
+								integrable on <m>R</m>, and 
+								<men xml:id="eqn-int-linearity">
+								\int_{R}\left( c_{1}f_{1}+c_{2}f_{2}\right) 
+								= c_{1} \int_{R} f_{1} + c_{2} \int_{R} f_{2}.
+								</men>
+								</p>
+							</statement>
+							<proof>
+								<p>Let <m>S_{1}= \int_{R} f_{1}</m> and
+								<m>S_{2}= \int_{R} f_{2}</m>. Then for any <m>\epsilon >0</m>,
+								there exists <m>\delta>0</m> such that for any 
+								partition <m>\cP</m> of <m>R</m>, whenever 
+								<m>\lambda (\cP) &lt; \delta</m>, we have
+								<md>
+							<mrow> \vert R(f_{1}, \cP, \{\bx_{\alpha}\}) -S_{1}\vert &lt; \epsilon,</mrow>
+							<mrow> \vert R(f_{2}, \cP, \{\bx_{\alpha}\}) -S_{2}\vert &lt; \epsilon.</mrow>
+								</md>
+								Then
+								<me>
+								\vert R(c_{1}f_{1}+c_{2}f_{2}, \cP, \{\bx_{\alpha}\}) -
+								\left(c_{1}S_{1}+c_{2 S_{2 \right)}}\vert
+								\le |c_{1}| \vert R(f_{1}, \cP, \{\bx_{\alpha}\}) -S_{1}\vert
+								+ |c_{2}| \vert R(f_{2}, \cP, \{\bx_{\alpha}\}) -S_{2}\vert
+								\vert &lt; \left(|c_{1}|+|c_{2}| \right) \epsilon,
+								</me>
+								which shows the integrability of <m>c_{1}f_{1}+c_{2}f_{2}</m>
+								as well as <xref ref="eqn-int-linearity"/>.
+								 </p>
+							</proof>
+						</theorem>
+						<p> Based on  Proposition <xref ref="propos-upperlower-int"/>, 
+						a <em>necessary condition</em>
+						that <m>f </m> be Riemann integrable on <m>R</m> is that
+						<men xml:id="eqn-Darboux" label="eqn-Darboux">
+						\lowint_{R} \, f  =\upint_{R}\, f.
+						</men>
+						This turns out to be also <em>sufficient</em>.
+						</p>
+						<theorem>
+							<title>Riemann integrability criterion</title>
+							<statement>A bounded real-valued function <m>f</m> defined on the
+						rectangle <m>R</m> is Riemann integrable iff 
+						 <xref ref="eqn-Darboux"/> holds.
+							</statement>
+							<proof> We only need to prove the if part. Suppose 
+							 <xref ref="eqn-Darboux"/> holds. 
+			Call the value on both sides <m>\int_{R}\, f</m>. 
+			Our proof in  Proposition <xref ref="propos-upperlower-int"/>essentially
+							carries over to show that, for any <m>\epsilon >0</m>, there 
+							exists some <m>\delta >0</m>, such that for any partition
+							<m>\cP</m> of <m>R</m> with <m>\lambda(\cP) &lt; \delta</m>, we 
+							have
+							<me>
+						\int_{R}\, f-\epsilon &lt; L(f, \cP) \le \int_{R}\, f \le U(f, \cP) &lt; \int_{R}\, f +\epsilon.
+							</me>
+							Then for any choice of <m>\bx_{\alpha}\in R_{\alpha}\in \cP</m>, we 
+							have
+							<me>
+						\int_{R}\, f-\epsilon &lt; L(f, \cP) \le R(f, \cP, \{\bx_{\alpha}\})\le U(f, \cP) &lt; \int_{R}\, f +\epsilon,
+							</me>
+							which shows that <m>f</m> is Riemann integrable on <m>R</m>.
+							</proof>
+							
+						
+						</theorem>
+						<example> <p> Let
+						<me>f(x)=\begin{cases} 1 \quad x \in [0, 1] \text{ rational, } \\
+									0 \quad x \in [0, 1] \text{ irrational; } 
+									\end{cases}
+									</me>
+			<me>g(x, y) =\begin{cases} 1 \quad x \in [0, 1] \text{ rational,}  y=0\\
+								0 \quad \text{ elsewhere in } [0, 1]\times[0, 1]; 
+								\end{cases}
+								</me>
+								and <m>h(x, y)=f(x)f(y)</m>.
+									</p>
+								<p> <m>f</m> is discontinuous everywhere on <m>[0,1]</m>,
+								<m>g</m> is continuous on <m>[0,1]\times (0, 1]</m>,
+								but is discontinuous on <m>[0, 1]\times \{0\}</m>,
+							while <m>h</m> is discontinuous everywhere on <m>[0,1]\times[0,1]</m>.
+							</p>
+<p>For any partition <m>\cP_{1}: 0=s_{0} &lt;  s_{1} &lt; \cdots &lt; s_{k}=1 </m> of <m>[0, 1]</m> in the
+<m>x</m> variable,  <m>U(f, \cP_{1})=1</m> and <m>L(f, \cP_{1})=0</m>. Thus
+<m>\lowint_{[0,1]}\, f(x)\, dx =0</m> , <m>\upint_{[0, 1]}\, f(x)\, dx =1</m>, and <m>f</m> is not
+integrable on <m>[0, 1]</m>.
+</p>
+<p>For any partition <m>\cP_{2}: 0=t_{0} &lt;  t_{1} &lt; \cdots &lt; t_{l}=1 </m> of <m>[0, 1]</m> in the
+<m>y</m> variable,  <m>m(g, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=0</m> for all <m>i, j</m>, and 
+<me>
+M(g, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=\begin{cases} 1 \quad j=0,\\
+0 \quad j>1. 
+\end{cases}
+</me>
+Thus <m>L(g, \cP_{1}\times \cP_{2})=0</m>, <m>U(g, \cP_{1}\times \cP_{2})=t_{1}</m>,
+and <m>\lowint_{[0,1]\times [0,1]}\, g =0</m>,   <m> \upint_{[0,1]\times [0,1]}\, g =0</m>, so
+we conclude that <m>g</m> is Riemann integrable on <m>[0,1]\times [0,1]</m>,
+and <m>\int_{[0,1]\times [0,1]} g =0</m>.  
+</p>
+<p>For <m>h</m>, we have <m>m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=0,
+m(h, [s_{i-1},s_{i}]\times[t_{j-1}, t_{j} ])=1</m> for all <m>i, j</m>, so <m>L(h, \cP_{1}\times \cP_{2})=0</m>, <m>U(g, \cP_{1}\times \cP_{2})=1</m>. As a result, <m>\lowint_{[0,1]\times [0,1]}\, h =0</m>,
+<m>\upint_{[0,1]\times [0,1]}\, h =1</m>, so <m>h</m> is not Riemann integrable on <m>[0,1]\times [0,1]</m>.
+</p>
+						</example>
+						</section>
+						<section xml:id="section-int-criterioa"><title>Further Riemann
+						integrability criteria</title>
+						<p>
+			To find a more easily checkable criterion for 	<xref ref="eqn-Darboux"/> , we 
+			first make the following definition.</p>
+			<definition xml:id="def-osc">
+				<idx>oscillation of a function</idx>
+				<notation>
+					<usage><m>\osc(f, R)</m> and <m>\osc(f)(\bx)</m></usage>
+					<description>
+					The oscillation of a function <m>f</m> over a set <m>S</m>.
+					 The oscillation of a function <m>f</m>  at a point <m>\bx</m>. </description>
+				</notation>
+				<statement>
+				<p> 
+				Let <m>f</m> be defined on <m>R</m>. 
+				The oscillation of a function <m>f</m> over the set <m>S \subset R</m> is defined to be
+				<me>
+				\sup_{S}f - \inf_{S}f = M(f, S)-m(f, S)
+				</me>
+				and is denoted as <m>\osc(f, S)</m>. 
+				</p>
+				<p>
+				The oscillation of a function <m>f</m>  at a point <m>\bx</m> 
+				is defined to be
+				<me>
+				\lim_{r\searrow 0} \osc(f, R\cap B(\bx, r)),
+				</me>
+				and is denoted as <m>\osc(f)(\bx)</m>. Here <m>B(\bx, r)</m> is the open ball of radius 
+				<m>r</m> centered at <m>\bx</m>.
+				</p>
+				</statement>
+				</definition>
+				<p>Note that we could replace the open ball <m>B(\bx, r)</m> by its closure in
+				<m>R\cap B(\bx, r)</m> in the definition of <m>\osc(f)(\bx)</m>. Furthermore,
+				<me>\lim_{r\searrow 0} \osc(f, R\cap B(\bx, r))=\lim_{s\searrow 0} \osc(f, R\cap R(\bx, s))
+				=\lim_{s\searrow 0} \osc(f, R\cap \bar{R}(\bx, s))</me>,
+				where <m>R(\bx, s)</m> denotes the open rectangle centered at <m>\bx</m> with
+				<m>2s</m> as its side length.  This follows from the relation
+				<me>
+				\osc(f, U) \le \osc(f, V) \text{ whenever } U\subset V,
+				</me>
+				and <m>B(\bx, r) \subset R(\bx, r) \subset B(\bx, \sqrt{n}r)</m>.
+				</p>
+				<p>Note also that <m>f</m> is continuous at <m>\bx</m> iff <m>\osc(f)(\bx)=0</m>.
+				</p>
+				<exercise><p>Suppose that <m>\bx \in U \subset R</m>. Is it true that
+				<m>\osc(f)(\bx)\le \osc(f, U)</m>?</p>
+				</exercise>
+				<proposition><title>Upper semi-continuity of <m>\osc(f)(\bx)</m></title>
+				<statement>The function <m>	\osc(f)(\bx)</m> is upper 	semi-continuous. As a consequence, for any real number <m>a</m>, the set <m>\{\bx: 	\osc(f)(\bx)\ge a \}</m> is closed.
+				</statement>
+				<proof>
+				<p> For any real number <m>a</m>, if <m>\bx_{0}\in \{\bx: 	\osc(f)(\bx) &lt; a\}</m>,
+				then there exists some <m>r>0</m> such that
+				<m> \osc(f, B(\bx_{0}, r)) &lt; a</m>. For any <m>\bx \in B(\bx_{0}, r)</m>,
+				we observe that <m>\osc(f)(\bx)\le \osc(f, B(\bx_{0}, r)) &lt; a</m>. Thus
+				<m>B(\bx_{0}, r) \subset \{\bx: 	\osc(f)(\bx) &lt; a\}</m>, proving that the latter is open.
+				</p>
+				</proof>
+				</proposition>		
+				<p> Note that 
+				<men xml:id="eqn-discont">\{\bx: f \text{ discontinuous at } \bx\}=
+				\cup_{k\in \bbN} \{\by: \osc(f)(\by)\ge \frac 1k\},
+				</men>
+				namely, <m>\{\bx: f \text{ discontinuous at } \bx\}</m> is a countable union of
+				of the closed sets <m>\{\by: \osc(f)(\by)\ge \frac 1k\}</m>.
+				 </p>
+				<theorem xml:id="thm-Riemann-integrability-oscillation">
+					<title>Riemann integrability criterion in terms of the oscillation of the integrand</title>
+					<statement>
+						<p>A bounded real-valued function <m>f</m> defined on the
+						rectangle <m>R</m> is Riemann integrable iff 
+						<men xml:id="eqn-int-osc" label="eqn-int-osc">
+						\forall \epsilon >0, \exists  \text{ a partition }
+						\cP:=\{R_{\alpha}\} \text{ such that } 
+						\sum_{\alpha} \osc(f,R_{\alpha})\vert R_{\alpha} \vert &lt; \epsilon.
+						</men> </p>
+						<p>
+						In particular, if <m>f</m> is continuous on the closed rectangle
+						<m>R</m>, then <m>f</m> is Riemann integrable on <m>R</m>.</p>
+					</statement>
+					<proof>
+						<p>Suppose that <m>f</m> is Riemann integrable on <m>R</m> and that
+						<m>\epsilon>0</m> is given. Our proof of  Proposition <xref ref="propos-upperlower-int"/>gives
+						us a partition <m>\cP:=\{R_{\alpha}\}</m> such that
+						<me>
+						\int_{R}\, f -\frac{\epsilon}{2} &lt; L(f, \cP)\le \int_{R}\, f \le 
+						U (f, \cP)  &lt; \int_{R}\, f  + \frac{\epsilon}{2},
+						</me>
+						which implies that
+						<me>
+						\sum_{\alpha} \osc(f,R_{\alpha})\vert R_{\alpha} \vert
+						=U (f, \cP)-L (f, \cP) &lt; \epsilon.
+						</me>
+						</p>
+						<p>Suppose that <xref ref="eqn-int-osc"/> holds. 
+						Then <m>U (f, \cP)-L (f, \cP) &lt; \epsilon,</m>  and
+						<me>
+						0\le \upint_{R}\, f  -\lowint_{R} \, f  \le U (f, \cP)-L (f, \cP) &lt; \epsilon.
+						</me>
+						Since <m>\epsilon >0</m> is arbitrary, it follows that
+						<m> \upint_{R}\, f -\lowint_{R} \, f=0</m>,  and  
+						<m>f</m> is Riemann integrable on <m>R</m>.
+						</p>
+						<p>Finally, suppose that <m>f</m> is continuous on the closed rectangle
+						<m>R</m>, then it is uniformly continuous on 
+						<m>R</m>. For any given <m>\epsilon >0</m>, there exists
+						<m>\delta >0</m> such that for any partition <m>\cP:=\{R_{\alpha}\}</m>
+						of <m>R</m> with <m>\lambda (P) &lt; \delta</m>, we have
+						<m>\osc(f, R_{\alpha}) &lt; \epsilon/\vert R\vert</m> for all 
+						<m>R_{\alpha} \in \cP</m>. It then follows that
+						<me>
+						\sum_{\alpha} \osc(f,R_{\alpha})\vert R_{\alpha} \vert \le \epsilon,
+						</me>
+						proving the Riemann integrability of <m>f</m> on <m>R</m>.
+						</p>
+					</proof>
+				</theorem>
+				<p> Note that when <m>f</m> is continuous on the closed rectangle <m>R</m>,
+				we achieve <xref ref="eqn-int-osc"/> by constructing a partition 
+				<m>\cP:=\{R_{\alpha}\}</m>
+				of <m>R</m> such that <m>\osc(f, R_{\alpha}) &lt; \epsilon/\vert R\vert</m> for all 
+						<m>R_{\alpha} \in \cP</m>. We can also achieve
+						<xref ref="eqn-int-osc"/> if we can construct a partition
+						<m>\cP:=\{R_{\alpha}\}</m>
+				of <m>R</m> such that the sum of volume of those rectangles <m>R_{\alpha}</m>,
+				for which <m>\osc(f, R_{\alpha})\ge \epsilon/(2\vert R\vert)</m>, can be made smaller
+				than <m>\epsilon/(2\osc(f, R))</m> ,
+				as the factors <m>(f, R_{\alpha})</m> have a uniform upper bound <m>\osc(f, R)</m>
+				for a given bounded function <m>f</m> on <m>R</m>.
+				We will exploit some properties of <m>\osc(f)(\bx)</m> for this.
+				</p>
+				
+			<definition xml:id="def-content0-measure0">
+				<idx>Set of content <m>0</m>, set of measure <m>0</m></idx>
+								<statement>
+								<p> A set <m>S\subset \bbR^{n}</m> is said to have 
+								content <m>0</m>, if for any <m>\epsilon >0</m>, there exists
+								a <em>finite</em> cover <m>\{R_{i}\} </m> 
+								of <m>S</m> by rectangles such that
+								<me>
+								\sum_{i}\vert R_{i}\vert &lt; \epsilon.
+								</me>
+								</p>
+								<p>A set <m>S\subset \bbR^{n}</m> is said to have 
+								measure <m>0</m>, if for any <m>\epsilon >0</m>, there exists
+								an <em>at most countable</em> cover <m>\{R_{i}\} </m> 
+								of <m>S</m> by rectangles such that
+								<me>
+								\sum_{i}\vert R_{i}\vert &lt; \epsilon.
+								</me>
+								</p>
+								</statement>
+								</definition>
+								<proposition><title>Relation between sets of content <m>0</m>
+								and sets of measure <m>0</m></title>
+								<ol>
+		<li> A set of content <m>0</m> must be a set of measure <m>0</m>.</li>
+		<li>The closure of a set of content <m>0</m> must be a set of  content <m>0</m>.</li>
+		<li> A countable union of sets of content <m>0</m> must be a set of measure <m>0</m>.
+As a consequence, a countable union of sets of content <m>0</m> must be a set of measure <m>0</m>.</li>
+		<li>A <em>compact</em> set of measure <m>0</m> is also a set of content <m>0</m>.</li>
+		</ol>
+		<proof>
+		<p>The first and second properties are obvious. For the third one, suppose
+		<m>S=\cup_{i}S_{i}</m>, where each <m>S_{i}</m> is a set of measure <m>0</m>.
+		For any <m>\epsilon>0</m>, there exists an at most countable  cover 
+		<m>\{R_{i\,j}\}_{j=1}^{N_{i}}</m> (<m>N_{i}</m> could be <m>\infty</m>)
+		of <m>S_{i}</m> such that <m>\sum_{j=1}^{N_{i}}\vert R_{i\,j}\vert &lt; \frac{\epsilon}{2^{i}}</m>.
+		Then <m>\{R_{i\,j}: i\in \bbN, 1\le j \le N_{i}\}</m> is an at most countable cover of
+		<m>S</m>, and
+		<me>
+		\sum_{i}\sum_{j=1}^{N_{i}}\vert R_{i\,j}\vert &lt; \sum_{i} \frac{\epsilon}{2^{i}}=\epsilon,
+		</me>
+		proving that <m>S</m> is a set of measure <m>0</m>.
+		</p>
+		<p>For the last property, suppose <m>S</m> is a compact set of measure <m>0</m>.
+		For <m>\epsilon>0</m> we can choose a cover of <m>S</m> by  <em>open</em>
+		rectangles <m>\{R_{i}\} </m> such that 
+		<m>\sum_{i}\vert R_{i}\vert &lt; \epsilon</m>. Using the compactness of <m>S</m>, we can
+		then select a finite sub cover which satisfies the desired property.
+		</p>
+		
+		</proof>
+		</proposition>
+					<p>The set <m>\bbQ</m> of rationals in <m>\bbR</m> is a set of
+					measure <m>0</m>, but not a set of content <m>0</m>; its closure,
+					<m>\bbR</m>, is not a set of measure <m>0</m>.
+					</p>		
+					<p>We are now ready to formulate the following theorem.</p>
+					<theorem xml:id="thm-integrability-osc0">
+						<title>Riemann integrability in terms of set of discontinuity</title>
+						<statement>
+							<p>A bounded function <m>f</m> on a bounded closed rectangle
+							<m>R</m> is Riemann integrable on <m>R</m> iff its set
+							of discontinuity has measure <m>0</m>.</p>
+						</statement>
+						<proof>
+							<p>We will use <xref ref="eqn-discont"/>.
+							</p>
+							<p>Suppose that <m>f</m> is Riemann integrable on <m>R</m>.
+							For each <m>k\in \bbN</m>, we will prove that
+							<m>D_{k}:=\{\by: \osc(f)(\by)\ge \frac 1k\}</m> is a set of
+							content <m>0</m>. </p>
+							<p>Given any <m>\epsilon >0</m>. There exists a partition
+							<m>\cP=\{R_{\alpha}\}</m> of <m>R</m> such that
+							<me>
+							\sum_{\alpha} \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}.
+							</me>
+							The rectangles in <m>\cP</m> are divided into two
+							subgroups: the subgroup <m>\cL_{k}</m> consisting
+							those <m>R_{\alpha}</m> such that
+							<m>\osc(f, R_{\alpha})\ge \frac{1}{2k}</m>, and 
+							the subgroup <m>\cS_{k}</m> consisting
+							those <m>R_{\alpha}</m> such that
+							<m>\osc(f, R_{\alpha})&lt; \frac{1}{2k}</m>. Then
+							it follows from
+							<me>
+							\frac{1}{2k} \sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert \le
+				\sum_{R_{\alpha}\in \cL_{k} } \osc(f, R_{\alpha})\vert R_{\alpha} \vert &lt; \frac{\epsilon}{2k}
+							</me>
+							that
+							<me>
+							\sum_{R_{\alpha}\in \cL_{k} } \vert R_{\alpha} \vert &lt; \epsilon.
+							</me>
+							</p>
+							<p>
+							We now claim that 
+							<me>D_{k}\subset \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}.
+							</me>
+							This will show that <m>D_{k}</m> is a set of content <m>0</m>.
+							</p>
+							<p>
+							If the claim were not true, there would exist some <m>\bx \in D_{k}
+							\setminus \cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}</m>.  
+							Thus <m>\bx \in \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}</m>.
+							Since the complement of <m>\cup_{R_{\alpha}\in \cL_{k} } R_{\alpha}</m>
+							is open, there exists some ball <m>B(\bx, r)
+							\subset \cup_{R_{\alpha}\in \cS_{k} } R_{\alpha}</m>.
+							If <m>\bx\in \text{ interior}(R_{\alpha})</m> for some
+							<m>R_{\alpha} \in \cS_{k}</m>, it would force
+							<m>\frac 1k \le \osc(f)(\bx)\le \osc(f, R_{\alpha}) &lt; \frac{1}{2k}</m>,
+							which would be a contradiction. So <m>\bx</m> can only be
+							on the boundary of one or more <m>R_{\alpha} \in \cS_{k}</m>.
+							We can choose <m>r>0</m> small enough such that
+							any <m>\by\in B(\bx, r)</m> and <m>\bx</m> will be in one such
+							common rectangle. Therefore, 
+							<m>\vert f(\by)-f(\bx)\vert &lt; \frac{1}{2k}</m>. This would lead to
+							<m>\osc(f)(\bx)\le \osc(f, B(\bx, r)) &lt; \frac 1k</m>,
+							contradicting <m>\bx \in D_{k}</m>.
+							</p>
+							<p>The proof for the if part will be added.</p>
+						</proof>
+					</theorem>
+   </section>
+</chapter>

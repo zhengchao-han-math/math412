@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equicontinuous Family of Functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math412 Notes">
+<meta property="book:author" content="Zheng-Chao Han">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math412-Notes.html"><span class="title">Math412 Notes</span> <span class="subtitle">Select Topics in Mathematical Analysis of Functions of One or Several Variables</span></a></h1>
+<p class="byline">Zheng-Chao Han</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="fcnspacemetric.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-SSFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SW.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbH}{\mathbb{H}}
+
+\newcommand{\cM}{\mathcal{M}} 
+\newcommand{\cA}{\mathcal{A}} 
+\newcommand{\cB}{\mathcal{B}} 
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+
+
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sP}{\mathscr{P}}
+
+
+\newcommand{\vg}{{\vec{\gamma}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\spt}{\text{support }}
+\newcommand{\osc}{\text{osc}}
+
+\newcommand{\lowint}{\mkern4mu\underline{ \int \mkern-6mu \mathstrut}}
+
+
+
+\def\upint{\mathchoice
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\int}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chp-lpintegral.html" class="internal"><span class="codenumber">1</span> <span class="title">Select Topics on Integration in One Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="RS-int.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Summary of Riemann-Stieltjes Integral</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="RS-int.html#subsec-summary-RSintegral" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Summary of Riemann-Stieltjes Integral</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-int.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completion of the Space of Continuous Functions under Integral Norms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-4.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Space of Riemann Integrable Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp-lpintegral-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extension of the Fundamental Theorem of Calculus; Absolutely Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-SSFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences and Series of Functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconv.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Concept of Uniform Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="uniformconvprop.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of A Uniformly Convergent Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="termwiseintex.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An Extended Criterion for the Interchange of Integration and Limits  of a Sequence of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="xlimitdiff.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Interchange of Differentiation and Limit of a Sequence of  Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fcnspacemetric.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Metrics on Function Spaces</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="equicontinuity.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Equicontinuous Family of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SW.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-SSFunctions-10.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-powerseries.html" class="internal"><span class="codenumber">3</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_psradius.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Definition of a Power Series and Its Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-psproperties.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of a Convergent Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-powerseries-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exe-ps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Fseries.html" class="internal"><span class="codenumber">4</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonal.html" class="internal"><span class="codenumber">4.1</span> <span class="title">General Orthogonal Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-FSConv.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Convergence of the Trigonometric Fourier Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="int-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Term-wise Integration and Differentiation of Fourier Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiaion.html" class="internal"><span class="codenumber">5</span> <span class="title">Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-continuity.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Continuity of a Function of Several Variables</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-linearmaps.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Linear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-linearmap" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Definition of  Linear Functions and Their Matrix Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-OperNorm" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Operator Norm of a Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-linearmaps.html#subsec-lem-norms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Any Two Norms on a Finite Dimensional Vector Space Are Equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsection-differentiation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Differentiability, Directional Derivative, and Partial Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-chainrule" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-6.html#subsec-diffCrit" class="internal"><span class="codenumber">5.3.3</span> <span class="title">A Differentiability Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-contraction.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Contraction Mapping Principle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-8.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse and Implicit Function Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-ift" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Inverse Function Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-8.html#subsec-impft" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Implicit Function Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-higherderiv.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Higher Order Derivatives and Taylor Expansion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-differentiaion-10.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Differentiation of Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-differentiaion-11.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Convexity and Some Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-3" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Convex sets vs Convex Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-4" class="internal"><span class="codenumber">5.8.2</span> <span class="title">Review of Properties  of Univariate Convex  Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-differentiaion-11.html#ch-differentiaion-11-5" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Some Properties of Convex Functions of Several Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-differentiaion-12.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration in Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-int-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Basic Definitions and Properties for the Integral of a Scalar Function on a Multi-dimensional Rectangle</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-int-criterioa.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Further Riemann Integrability Criteria</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Riemann Integrability Criterion in terms of the Oscillation of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-2-12" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Sets of Content <span class="process-math">\(0\)</span> and of Measure <span class="process-math">\(0\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-3-7" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Riemann Integrability in terms of the Set of Discontinuity of the Integrand</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-int-criterioa.html#section-int-criterioa-4-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fubini’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Integration on a Jordan Measurable Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-integration-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Change of Variables in Multi-dimensional Integral</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-integration-9.html" class="internal"><span class="codenumber">6.7</span> <span class="title">A Brief Discussion on the Integration of Functions on a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-3" class="internal"><span class="codenumber">6.7.1</span> <span class="title">Definition of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Volume of the Image of a Unit Hypercube under a Linear Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-4-10" class="internal"><span class="codenumber">6.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Volume of an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-5-8" class="internal"><span class="codenumber">6.7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6" class="internal"><span class="codenumber">6.7.4</span> <span class="title">The integral of a Function on an <span class="process-math">\(m\)</span>-dimensional Differentiable Surface in <span class="process-math">\(\bbR^{n}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-integration-9.html#ch-integration-9-6-5" class="internal"><span class="codenumber">6.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Math412-Notes-10.html" class="internal"><span class="codenumber">7</span> <span class="title">Exterior Differential Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Math412-Notes-10-4.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A Brief Review of the Notion of Curl and Divergence of a Vector Field</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-5.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Dual space, Tensor product, and Exterior Algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-5.html#Math412-Notes-10-5-38" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Vector Fields and Differential Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Definition and Basic Properties of Vector Fields and Differential One-Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-2-31" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Tangent Map/Differential and its Pull-Back of a Differentiable Map</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-6.html#Math412-Notes-10-6-3-11" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Exterior Differential Operator <span class="process-math">\(d\)</span> and Boundary Operator <span class="process-math">\(\partial\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exterior Differential Operator</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-3-10" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Boundary Operator, Singular Chain, and Stokes Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-4-18" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Closed and Exact Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Math412-Notes-10-7.html#Math412-Notes-10-7-5-12" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="Math412-Notes-11.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Math412-Notes-11-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="equicontinuity"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equicontinuous Family of Functions</span>
+</h2>
+<article class="definition definition-like" id="equicontinuity-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equicontinuous Family.</span>
+</h3>
+<div class="para logical" id="equicontinuity-2-2-1">
+<div class="para">A family <span class="process-math">\(\mathcal F\)</span> of functions <span class="process-math">\(f\)</span> defined on a set <span class="process-math">\(E\)</span> in a metric space <span class="process-math">\((X, d)\)</span> is said to be <dfn class="terminology">equicontinuous</dfn> on <span class="process-math">\(E\)</span> if for every <span class="process-math">\(\epsilon &gt; 0\)</span> there exists some <span class="process-math">\(\delta &gt; 0\)</span> such that</div>
+<div class="displaymath process-math" id="equicont">
+\begin{equation}
+|f(x)-f(y)| &lt; \epsilon \text{ whenever } d(x, y) &lt; \delta, x, y \in E, \text{ and } f \in \mathcal F.\tag{2.6.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.6.1: Equicontinuous Family"><a href="#equicontinuity-2" title="Copy heading and permalink for Definition 2.6.1: Equicontinuous Family" aria-label="Copy heading and permalink for Definition 2.6.1: Equicontinuous Family">🔗</a></div></article><article class="remark remark-like" id="equicontinuity-3"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">On the notion of equicontinuous family of functions.</span>
+</h3>
+<div class="para" id="equicontinuity-3-2">A fundamental property of the set of real numbers <span class="process-math">\(\mathbb R\)</span> is the Bolzano-Weierstrass Theorem: <em class="emphasis">any bounded sequence in <span class="process-math">\(\mathbb R\)</span> has a convergent subsequence.</em> One would like to find an appropriate	 extension of this property on function spaces such as the set <span class="process-math">\(C(E)\)</span> of continuous functions on a metric space <span class="process-math">\(E\text{.}\)</span> Unfortunately, the direct extension does not hold, as demonstrated by the sequence of functions <span class="process-math">\(\left\{f_{n}(x)=\sin n x\right\}\)</span> in <span class="process-math">\(C([0,2\pi])\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="equicontinuity-3-3">Using <span class="process-math">\(\int_{0}^{2\pi} |\sin nx -\sin m x|^{2}\, dx =2\pi\)</span> when <span class="process-math">\(n\ne m\text{,}\)</span> it’s clear that <span class="process-math">\(\left\{\sin n x\right\}\)</span> can’t have a subsequence converging uniformly on <span class="process-math">\([0, 2\pi]\text{.}\)</span> In fact it can’t have a subsequence converging pointwise  on  <span class="process-math">\([0, 2\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="equicontinuity-3-4">In the situation of the example, what one can directly extend is the following property: <em class="emphasis">there exists a countable dense subset <span class="process-math">\(F\)</span> of <span class="process-math">\([0,2\pi]\)</span> and a subsequence <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> such that it converges at every <span class="process-math">\(x\in F\text{.}\)</span></em> To be able to say that one can choose a subsequence <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> such that it converges at every <span class="process-math">\(x\in [0,2\pi]\text{,}\)</span> one needs to control the behavior of <span class="process-math">\(\left\{ f_{n_{k}}(x) \right\}\)</span> for <span class="process-math">\(x\in [0,2\pi]\setminus F\text{.}\)</span> The condition of being equicontinuous is the one what would give us the desired property.<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="equicontinuity-3-5">
+<div class="para">Heuristically, the equicontinuous condition guarantees that  the oscillation of <span class="process-math">\(f_{n}(x)\)</span> to be smaller than <span class="process-math">\(\epsilon &gt; 0\)</span> for <span class="process-math">\(x\)</span> over any neighborhood <span class="process-math">\(V\)</span> of suitably small diameter, uniformly in <span class="process-math">\(n\text{.}\)</span> This allows us to propagate the property</div>
+<div class="displaymath process-math" id="equicontinuity-3-5-6">
+\begin{equation*}
+|f_{n_{i}}(p)-f_{n_{j}}(p)| &lt; \epsilon \text{ for one point } p \in V
+\end{equation*}
+</div>
+<div class="para">to</div>
+<div class="displaymath process-math" id="equicontinuity-3-5-7">
+\begin{equation*}
+|f_{n_{i}}(x)-f_{n_{j}}(x)| &lt; 3\epsilon \text{ for all } x \in V.
+\end{equation*}
+</div>
+<div class="para">Using  the <em class="emphasis">total boundedness</em> of <span class="process-math">\(E=[a, b]\text{,}\)</span> this shows that <span class="process-math">\(\{ f_{n_{i}}(x)\}\)</span> is uniformly Cauchy on <span class="process-math">\(E\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.6.2: On the notion of equicontinuous family of functions"><a href="#equicontinuity-3" title="Copy heading and permalink for Remark 2.6.2: On the notion of equicontinuous family of functions" aria-label="Copy heading and permalink for Remark 2.6.2: On the notion of equicontinuous family of functions">🔗</a></div></article><article class="definition definition-like" id="def-ptwsbd"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-ptwsbd-1-1">
+<div class="para">A sequence of functions <span class="process-math">\(\{f_{n}\} \)</span> defined on <span class="process-math">\(E\)</span> is said to be <dfn class="terminology">pointwise bounded</dfn> on <span class="process-math">\(E\)</span> if for every <span class="process-math">\(x\in E\)</span>  the sequence of scalars <span class="process-math">\(\{f_{n}(x)\} \)</span> is bounded. <span class="process-math">\(\{f_{n}\} \)</span>  is said to be uniformly bounded on <span class="process-math">\(E\)</span> if there exists <span class="process-math">\(M &gt; 0\)</span> such that</div>
+<div class="displaymath process-math" id="def-ptwsbd-1-1-10">
+\begin{equation*}
+|f_{n}(x)| &lt; M \text{ for all } n \text{ and } x\in E.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-ptwsbd-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.6.3"><a href="#def-ptwsbd" title="Copy heading and permalink for Definition 2.6.3" aria-label="Copy heading and permalink for Definition 2.6.3">🔗</a></div></article><article class="proposition theorem-like" id="slctconvsubs"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Selecting a Convergent Subsequence.</span>
+</h3>
+<div class="para" id="slctconvsubs-2-1">Suppose that  <span class="process-math">\(\{f_{n}\} \)</span> is a sequence of pointwise bounded functions on a <em class="emphasis">countable</em> set <span class="process-math">\(C\text{.}\)</span> Then it has a subsequence <span class="process-math">\(\{f_{n_{k}}\}\)</span> such that <span class="process-math">\(\{f_{n_{k}}(x)\}\)</span> converges for every <span class="process-math">\(x\in C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#slctconvsubs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.6.4: Selecting a Convergent Subsequence"><a href="#slctconvsubs" title="Copy heading and permalink for Proposition 2.6.4: Selecting a Convergent Subsequence" aria-label="Copy heading and permalink for Proposition 2.6.4: Selecting a Convergent Subsequence">🔗</a></div></article><details id="slctconvsubs-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="slctconvsubs-3-1">Let <span class="process-math">\(\{p_{i}\}\text{,}\)</span> <span class="process-math">\(i=1,\cdots\text{,}\)</span> be the points of <span class="process-math">\(C\)</span> arranged in a sequence. Then <span class="process-math">\(\{f_{n}(p_{1})\} \)</span> is a bounded sequence, therefore, has a convergent subsequence, say <span class="process-math">\(\{f_{n_{1,k}}(p_{1})\} \text{.}\)</span> Next we pick a convergent subsequence <span class="process-math">\(\{f_{n_{2, k}}(p_{2})\} \)</span> from the bounded sequence <span class="process-math">\(\{f_{n_{1,k}}(p_{2})\} \text{.}\)</span> Continuing in this fashion for each <span class="process-math">\(p_{i}\text{,}\)</span> we obtain <span class="process-math">\(\{f_{n_{i, k}}\}\)</span> such that for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(\{f_{n_{i, k}}(p_{j})\}\)</span> converges for each <span class="process-math">\(j\le i\)</span> as <span class="process-math">\(k\to \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#slctconvsubs-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="slctconvsubs-3-2">Finally, <span class="process-math">\(\{f_{n_{i, i}}\}\)</span> is a subsequence of <span class="process-math">\(\{f_{n}\} \)</span> which converges at each <span class="process-math">\(x_{j}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#slctconvsubs-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.4.1"><a href="#slctconvsubs-3" title="Copy heading and permalink for Proof 2.6.4.1" aria-label="Copy heading and permalink for Proof 2.6.4.1">🔗</a></div></article></details><article class="theorem theorem-like" id="Ascolli-Arzela"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Ascolli-Arzel Theorem.</span>
+</h3>
+<div class="para logical" id="Ascolli-Arzela-2-1">
+<div class="para">Suppose that <span class="process-math">\(K\)</span> is a compact metric space and that <span class="process-math">\(\{f_{n}\} \)</span> is a sequence in <span class="process-math">\(C(K)\)</span> pointwise bounded and equicontinuous on <span class="process-math">\(K\text{.}\)</span>  Then</div>
+<ol class="lower-alpha ol-marker-1" id="Ascolli-Arzela-2-1-5">
+<li id="Ascolli-Arzela-2-1-5-1">
+<div class="para" id="p-derived-Ascolli-Arzela-2-1-5-1">
+<span class="process-math">\(\{f_{n}\} \)</span> is uniformly bounded on <span class="process-math">\(K\text{,}\)</span>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#Ascolli-Arzela-2-1-5-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="Ascolli-Arzela-2-1-5-2">
+<div class="para" id="p-derived-Ascolli-Arzela-2-1-5-2">
+<span class="process-math">\(\{f_{n}\} \)</span> contains a uniformly convergent subsequence.</div>
+<div class="autopermalink" data-description="Item b"><a href="#Ascolli-Arzela-2-1-5-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.6.5: Ascolli-Arzel Theorem"><a href="#Ascolli-Arzela" title="Copy heading and permalink for Theorem 2.6.5: Ascolli-Arzel Theorem" aria-label="Copy heading and permalink for Theorem 2.6.5: Ascolli-Arzel Theorem">🔗</a></div></article><details id="Ascolli-Arzela-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="Ascolli-Arzela-3-1">For any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> let <span class="process-math">\(\delta &gt; 0\)</span> be such that <a href="equicontinuity.html#equicont" class="xref" data-knowl="./knowl/xref/equicont.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.6.1">(2.6.1)</a> holds. Since <span class="process-math">\(K\)</span> is compact, it can be covered by a finite number of sets of diameter <span class="process-math">\(&lt; \delta\text{,}\)</span> say, <span class="process-math">\(V_{1}, \cdots, V_{m}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Ascolli-Arzela-3-2">
+<div class="para">Pick <span class="process-math">\(p_{i} \in V_{i}\)</span> for each <span class="process-math">\(i=1,\cdots, m\text{.}\)</span> Then for each <span class="process-math">\(i=1,\cdots,m\text{,}\)</span> there exists some <span class="process-math">\(M_{i} &gt; 0\)</span> such that <span class="process-math">\(|f_{n}(p_{i})|\le M_{i}\)</span> for all <span class="process-math">\(n\text{.}\)</span> Any <span class="process-math">\(x\in V_{i}\)</span> satisfies</div>
+<div class="displaymath process-math" id="Ascolli-Arzela-3-2-8">
+\begin{equation*}
+|f_{n}(x)-f_{n}(p_{i})| &lt; \epsilon, \text{ therefore } |f_{n}(x)|\le M_{i}+\epsilon.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(M=\max_{1\le i\le m}M_{i}\text{.}\)</span> Then any <span class="process-math">\(x\in K\)</span> satisfies <span class="process-math">\(|f_{n}(x)|\le M+\epsilon\)</span> for all <span class="process-math">\(n\text{,}\)</span> which shows (a).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Ascolli-Arzela-3-3">The compactness of <span class="process-math">\(K\)</span> implies that it has a dense countable subset <span class="process-math">\(\{q_{i}\}\text{.}\)</span> It then follows from <a href="equicontinuity.html#slctconvsubs" class="xref" data-knowl="./knowl/xref/slctconvsubs.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.6.4: Selecting a Convergent Subsequence">Proposition 2.6.4</a> that we can  pick a subsequence <span class="process-math">\(\{f_{n_{k}}\}\)</span> such that <span class="process-math">\(\{f_{n_{k}}(q_{i})\}\)</span> converges for each <span class="process-math">\(q_{i}\text{,}\)</span> <span class="process-math">\(i=1,\cdots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Ascolli-Arzela-3-4">Each <span class="process-math">\(V_{i}\)</span> contains some <span class="process-math">\(q_{j_{i}}\text{.}\)</span> It follows that there exists some <span class="process-math">\(N\)</span> such  that <span class="process-math">\(|f_{n_{k}}(q_{j_i})-f_{n_{l}}(q_{j_i})| &lt; \epsilon\)</span> for all <span class="process-math">\(k, l\ge N\)</span> and <span class="process-math">\(i=1,\cdots, m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Ascolli-Arzela-3-5">
+<div class="para">Using the finite cover <span class="process-math">\(\{V_{i}\}_{i=1}^{m}\)</span> of <span class="process-math">\(K\)</span> and <a href="equicontinuity.html#equicont" class="xref" data-knowl="./knowl/xref/equicont.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.6.1">(2.6.1)</a> on <span class="process-math">\(\{f_{n_{k}}\}\text{,}\)</span> we find that for any <span class="process-math">\(x\in K\text{,}\)</span> <span class="process-math">\(d(x, q_{j_i}) &lt; \delta \)</span> for some <span class="process-math">\(i=1,\cdots, m\text{,}\)</span> therefore,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/equicont.html" id="Ascolli-Arzela-3-5-8">
+\begin{align*}
+\amp |f_{n_{k}}(x)-f_{n_{l}}(x)|\\
+\le \amp |f_{n_{k}}(x)-f_{n_{k}}(q_{j_i})|+| f_{n_{k}}(q_{j_i})-f_{n_{l}}(q_{j_i})|
++ |f_{n_{l}}(q_{j_i})-f_{n_{l}}(x)| \le 3\epsilon
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(k, l\ge N\text{.}\)</span> This show that <span class="process-math">\(\{f_{n_{k}}\}\)</span> is uniformly Cauchy on <span class="process-math">\(K\text{,}\)</span> therefore proving (b).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Ascolli-Arzela-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.5.1"><a href="#Ascolli-Arzela-3" title="Copy heading and permalink for Proof 2.6.5.1" aria-label="Copy heading and permalink for Proof 2.6.5.1">🔗</a></div></article></details><article class="remark remark-like" id="equicontinuity-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="equicontinuity-7-1">
+<div class="para">The Bolzano-Weierstrass/Ascolli-Arzel property has extensions to function spaces where the convergence is not uniform but in integral norms. We first describe a generalization  in the context of the space <span class="process-math">\(l^{p}\text{,}\)</span> defined for <span class="process-math">\(p &lt; \infty\)</span> as the space of infinite sequences <span class="process-math">\(\mathbf x:=\{\mathbf x(k)\}_{k=1}^{\infty}\)</span> such that</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-4">
+\begin{equation*}
+\Vert \mathbf x\Vert_{p} :=\left(\sum_{k=1}^{\infty} |\mathbf x(k)|^{p}\right)^{1/p} &lt; \infty,
+\end{equation*}
+</div>
+<div class="para">we note that, for <span class="process-math">\(p &lt; \infty\text{,}\)</span> if a sequence <span class="process-math">\(\left\{{\mathbf x}_{n}\right\} \subset l^{p}\)</span> converges to some <span class="process-math">\({\mathbf x}_{\infty}\)</span>  in <span class="process-math">\(l^{p} \text{,}\)</span> then for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists <span class="process-math">\(L\)</span> such that</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-11">
+\begin{equation*}
+\left(\sum_{k=L}^{\infty} |{\mathbf x}_{\infty}(k)|^{p} \right)^{1/p} &lt; \epsilon,
+\end{equation*}
+</div>
+<div class="para">and there exists some <span class="process-math">\(N\)</span> such that for <span class="process-math">\(n\ge N\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-14">
+\begin{equation*}
+||{\mathbf x}_{n}-{\mathbf x}_{\infty}||_{p}= \left(\sum_{k=1}^{\infty} |{\mathbf x}_{n}(k)-{\mathbf x}_{\infty}(k)|^{p} \right)^{1/p} &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">This then implies, by Minkowski’s inequality, that</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-15">
+\begin{equation*}
+\left(\sum_{k=L}^{\infty} |{\mathbf x}_{n}(k)|^{p} \right)^{1/p}
+\le \left(\sum_{k=L}^{\infty} |{\mathbf x}_{n}(k)-{\mathbf x}_{\infty}(k)|^{p} \right)^{1/p} +
+\left(\sum_{k=L}^{\infty} |{\mathbf x}_{\infty}(k)|^{p} \right)^{1/p} &lt; 2\epsilon.
+\end{equation*}
+</div>
+<div class="para">For the finite number of elements <span class="process-math">\(\left\{{\mathbf x}_{n}\right\}_{n=1}^{N-1}\text{,}\)</span> we can certainly find some <span class="process-math">\(L' \ge L\)</span> such that, for <span class="process-math">\(n=1, \ldots, N-1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-19">
+\begin{equation*}
+\left(\sum_{k=L'}^{\infty} |{\mathbf x}_{n}(k)|^{p} \right)^{1/p} &lt; \epsilon,
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="equicontinuity-7-1-20">
+\begin{equation*}
+\left(\sum_{k=L'}^{\infty} |{\mathbf x}_{n}(k)|^{p} \right)^{1/p} &lt; 2\epsilon, \forall \;n.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="equicontinuity-7-2">This turns out to be also a sufficient condition in order to extract a convergent subsequence in <span class="process-math">\(l^{p}\text{.}\)</span> We formulate the condition more precisely in the following.<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.6.6"><a href="#equicontinuity-7" title="Copy heading and permalink for Remark 2.6.6" aria-label="Copy heading and permalink for Remark 2.6.6">🔗</a></div></article><article class="definition definition-like" id="equicontinuity-8"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equi-summable Family in <span class="process-math">\(l^{p}\)</span>.</span>
+</h3>
+<div class="para logical" id="equicontinuity-8-2-1">
+<div class="para">A family <span class="process-math">\(\left\{{\mathbf x}_{s}\right\}_{s\in I}\)</span> of elements in <span class="process-math">\(l^{p}\)</span> is said to be <dfn class="terminology">equi-summable</dfn> in <span class="process-math">\(l^{p}\text{,}\)</span> if for any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists <span class="process-math">\(L\)</span> such that</div>
+<div class="displaymath process-math" id="eqsm">
+\begin{equation}
+\left(\sum_{k=L}^{\infty} |{\mathbf x}_{s}(k)|^{p} \right)^{1/p} &lt; \epsilon \; \forall \; s\in I.\tag{2.6.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.6.7: Equi-summable Family in l^{p}"><a href="#equicontinuity-8" title="Copy heading and permalink for Definition 2.6.7: Equi-summable Family in l^{p}" aria-label="Copy heading and permalink for Definition 2.6.7: Equi-summable Family in l^{p}">🔗</a></div></article><article class="theorem theorem-like" id="lpcomp"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">(Sequential) Compactness Condition in <span class="process-math">\(l^{p}\)</span>.</span>
+</h3>
+<div class="para" id="lpcomp-2">For <span class="process-math">\(p &lt; \infty\text{,}\)</span> a sequence <span class="process-math">\(\left\{{\mathbf x}_{n}\right\} \subset l^{p}\)</span> has a subsequence converging in <span class="process-math">\(l^{p}\)</span> iff this sequence is equisummable in <span class="process-math">\(l^{p}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lpcomp-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.6.8: (Sequential) Compactness Condition in l^{p}"><a href="#lpcomp" title="Copy heading and permalink for Theorem 2.6.8: (Sequential) Compactness Condition in l^{p}" aria-label="Copy heading and permalink for Theorem 2.6.8: (Sequential) Compactness Condition in l^{p}">🔗</a></div></article><details id="equicontinuity-10" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="equicontinuity-10-1">Prove that <span class="process-math">\(l^{p}\)</span> is a complete metric space.<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.9"><a href="#equicontinuity-10" title="Copy heading and permalink for Exercise 2.6.9" aria-label="Copy heading and permalink for Exercise 2.6.9">🔗</a></div></article></details><details id="equicontinuity-11" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="equicontinuity-11-1">Provide a proof of <a href="equicontinuity.html#lpcomp" class="xref" data-knowl="./knowl/xref/lpcomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.6.8: (Sequential) Compactness Condition in l^{p}">Theorem 2.6.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#equicontinuity-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.10"><a href="#equicontinuity-11" title="Copy heading and permalink for Exercise 2.6.10" aria-label="Copy heading and permalink for Exercise 2.6.10">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.6: Equicontinuous Family of Functions"><a href="#equicontinuity" title="Copy heading and permalink for Section 2.6: Equicontinuous Family of Functions" aria-label="Copy heading and permalink for Section 2.6: Equicontinuous Family of Functions">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="fcnspacemetric.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SW.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
