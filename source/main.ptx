@@ -12388,7 +12388,7 @@ of covariant alternating tensors of order <m>m</m> of <m>S</m> at <m>\vg(\bu)</m
 </p>
 <example>
 <p>In the case of two dimensions, if <m>u_{1}=r, u_{2}=\theta</m> are the polar coordinates of 
-   <m>(x_{1}, x_{2})\in {\mathbb R}^{2}</m>, then
+   <m>(x, y)\in {\mathbb R}^{2}</m>, then
    <md alignment="alignat">
    <mrow> \frac{\partial }{\partial r} \amp= \frac{\partial x}{\partial r} \frac{\partial }{\partial x} +
    \frac{\partial y}{\partial r} \frac{\partial }{\partial y} \amp\amp
@@ -12946,7 +12946,12 @@ assigning the components in the <m>i+1</m> through <m>k+1</m> position as
  <m> (x_{i}, \ldots, x_{k})</m>. Similarly for <m>F_{i, 1}</m>. Then 
  <m>c_{i, 0}=c\circ F_{i, 0}</m> and <m>c_{i, 1}=c\circ F_{i, 1}</m> each
   defines a singular <m>k</m>-cube in <m>A</m>.</p>
-  
+  <p>
+	<figure xml:id="fig-singular-cube" class="figure">
+						<caption>An illustration of the standard singular cube, its faces, and induced face-maps of a singular cube</caption>
+						<image    source="images/SingularCube.pdf"/>
+					</figure>
+  </p>
   <p>
    We will let <m>s</m> to take either <m>0</m> or <m>1</m>
    and integrate <m>c_{i, s}^{*}(\omega)=f_{i, s}(\bx)dx_{1}\wedge\cdots\wedge dx_{k}</m> 
